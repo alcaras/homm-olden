@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<main>
+<nav class="topnav">
+  <a href="{{ '/' | relative_url }}">Index</a>
+  <a href="{{ '/subclasses/' | relative_url }}">Subclasses</a>
+  <a href="{{ '/heroes/' | relative_url }}">Heroes</a>
+</nav>
+{{ content }}
+<footer class="sitefoot">
+  Datamined from <em>Heroes of Might and Magic: Olden Era</em>.
+  Source files in <code>StreamingAssets/Core.zip</code>; build scripts in
+  <code>catalog/scripts/</code>.
+</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Game install data — NEVER commit (copyrighted)
+HeroesOldenEra_Data/
+
+# Extracted game data (also copyrighted; regenerated from Core.zip)
+catalog/raw/
+
+# Python / Jekyll
+__pycache__/
+*.pyc
+.DS_Store
+_site/
+.jekyll-cache/
+.bundle/
+vendor/
+Gemfile.lock
