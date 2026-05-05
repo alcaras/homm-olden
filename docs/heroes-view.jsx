@@ -5,6 +5,7 @@ const HeroesView = () => {
   const [q, setQ] = React.useState('');
   const [kind, setKind] = React.useState('all');     // all | might | magic
   const [faction, setFaction] = React.useState('all');
+  const [sort, setSort] = React.useState({ key: 'num', dir: 1 });
 
   const factionMap = Object.fromEntries(FACTIONS.map(f => [f.id, f]));
 
@@ -15,10 +16,29 @@ const HeroesView = () => {
     if (!ql) return true;
     if (h.name.toLowerCase().includes(ql)) return true;
     if (h.specialty.toLowerCase().includes(ql)) return true;
+    if ((h.specDesc || '').toLowerCase().includes(ql)) return true;
     if (h.skills.some(s => s.toLowerCase().includes(ql))) return true;
     if (h.army.toLowerCase().includes(ql)) return true;
     return false;
   });
+
+  // Sort comparator — applied within each per-class table.
+  const sortedList = (list) => {
+    const k = sort.key;
+    const numeric = ['A','D','P','K','armyScore','num'].includes(k);
+    return [...list].sort((a, b) => {
+      let av, bv;
+      if (k === 'num')        { av = HEROES.indexOf(a); bv = HEROES.indexOf(b); }
+      else if (k === 'name')      { av = a.name.toLowerCase(); bv = b.name.toLowerCase(); }
+      else if (k === 'specialty') { av = (a.specialty||'').toLowerCase(); bv = (b.specialty||'').toLowerCase(); }
+      else if (['A','D','P','K'].includes(k)) { av = a.stats[k] ?? 0; bv = b.stats[k] ?? 0; }
+      else if (k === 'armyScore') { av = a.armyScore ?? 0; bv = b.armyScore ?? 0; }
+      else { av = a[k]; bv = b[k]; }
+      if (av < bv) return -1 * sort.dir;
+      if (av > bv) return  1 * sort.dir;
+      return HEROES.indexOf(a) - HEROES.indexOf(b);
+    });
+  };
 
   // Group filtered heroes by faction → kind
   const byFaction = {};
@@ -32,7 +52,6 @@ const HeroesView = () => {
   const SkillChips = ({skills}) => (
     <span>
       {skills.map((s, i) => {
-        // strip level suffix to detect faction skill
         const m = s.match(/^(.+?)\s+L(\d)$/);
         const base = m ? m[1] : s;
         const lv = m ? m[2] : '';
@@ -60,6 +79,18 @@ const HeroesView = () => {
           </React.Fragment>
         ))}
       </span>
+    );
+  };
+
+  const SortHead = ({ label, k, num, title }) => {
+    const active = sort.key === k;
+    const arrow = active ? (sort.dir > 0 ? '↑' : '↓') : '';
+    return (
+      <th title={title}
+          className={`sortable${active?' active':''}${num?' num':''}`}
+          onClick={() => setSort(s => s.key === k ? { key: k, dir: -s.dir } : { key: k, dir: 1 })}>
+        {label} <span className="sort-arrow">{arrow}</span>
+      </th>
     );
   };
 
@@ -105,9 +136,9 @@ const HeroesView = () => {
         Within each faction, <span className="glyph-might"><strong>⚔</strong></span> heroes
         are the Might class, <span className="glyph-magic"><strong>✦</strong></span> are
         Magic. Stats: <strong>A</strong>ttack · <strong>D</strong>efense ·{' '}
-        <strong>P</strong>ower · <strong>K</strong>nowledge. Faction-skill chips are
-        outlined in burnt orange; doubled border indicates L2 (hero starts with the faction
-        skill at advanced instead of L1 + a second skill).
+        <strong>P</strong>ower · <strong>K</strong>nowledge. <strong>Score</strong> is
+        the starting-army value (Σ unit squad value × avg stack count). Click any column
+        header to sort within each class table.
       </p>
 
       {FACTIONS.map(f => {
@@ -131,6 +162,7 @@ const HeroesView = () => {
               const list = group[k];
               if (!list.length) return null;
               const className = k==='might' ? f.might : f.magic;
+              const sortedRows = sortedList(list);
               return (
                 <div key={k}>
                   <h3>
@@ -142,16 +174,22 @@ const HeroesView = () => {
                   <table className="heroes">
                     <thead>
                       <tr>
-                        <th>#</th>
+                        <SortHead label="#" k="num" num />
                         <th></th>
-                        <th>Hero</th>
-                        <th>Stats</th>
+                        <SortHead label="Hero" k="name" />
+                        <SortHead label="Specialty" k="specialty" />
+                        <SortHead label="A" k="A" num title="Attack" />
+                        <SortHead label="D" k="D" num title="Defense" />
+                        <SortHead label="P" k="P" num title="Spell Power" />
+                        <SortHead label="K" k="K" num title="Knowledge" />
+                        <SortHead label="Score" k="armyScore" num
+                                  title="Starting-army squadValue × avg stack count" />
                         <th>Starting skills</th>
                         <th>Starting army</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {list.map((h, i) => (
+                      {sortedRows.map((h) => (
                         <tr key={h.id || h.name}>
                           <td className="h-num">{HEROES.indexOf(h)+1}</td>
                           <td className="h-portrait-cell">
@@ -161,23 +199,31 @@ const HeroesView = () => {
                           </td>
                           <td>
                             <div className="h-name-row">
+                              <span className="h-name">{h.name}</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div className="spec-cell" title={h.specDesc || ''}>
                               {h.specId && (
                                 <img loading="lazy" className="spec-icon"
                                      src={`img/specs/${h.specId}.png`} alt=""
-                                     title={h.specialty}
+                                     title={h.specDesc || h.specialty}
                                      onError={(e)=>{e.target.style.visibility='hidden';}} />
                               )}
-                              <span className="h-name">{h.name}</span>
+                              <div className="spec-text">
+                                <div className="spec-name">{h.specialty}</div>
+                                {h.specDesc && (
+                                  <div className="spec-desc">{h.specDesc}</div>
+                                )}
+                              </div>
                             </div>
-                            <div className="h-spec">{h.specialty}</div>
                           </td>
-                          <td>
-                            <div className="stats-row">
-                              <span className="lbl">A</span><span className="v">{h.stats.A}</span>
-                              <span className="lbl">D</span><span className="v">{h.stats.D}</span>
-                              <span className="lbl">P</span><span className="v">{h.stats.P}</span>
-                              <span className="lbl">K</span><span className="v">{h.stats.K}</span>
-                            </div>
+                          <td className="num"><span className="stat-v">{h.stats.A}</span></td>
+                          <td className="num"><span className="stat-v">{h.stats.D}</span></td>
+                          <td className="num"><span className="stat-v">{h.stats.P}</span></td>
+                          <td className="num"><span className="stat-v">{h.stats.K}</span></td>
+                          <td className="num army-score">
+                            {h.armyScore?.toLocaleString() ?? '—'}
                           </td>
                           <td><SkillChips skills={h.skills} /></td>
                           <td><Army army={h.army} /></td>

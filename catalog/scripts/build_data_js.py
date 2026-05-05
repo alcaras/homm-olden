@@ -23,6 +23,29 @@ ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "catalog" / "raw"
 OUT = ROOT / "docs" / "data.js"
 
+# Game build fingerprint
+import datetime as _dt
+GAME_DATA = ROOT / "HeroesOldenEra_Data"
+build_guid = ""
+boot = GAME_DATA / "boot.config"
+if boot.exists():
+    for line in boot.read_text().splitlines():
+        if line.startswith("build-guid="):
+            build_guid = line.split("=", 1)[1].strip()
+            break
+core_zip = GAME_DATA / "StreamingAssets" / "Core.zip"
+core_mtime = (
+    _dt.datetime.fromtimestamp(core_zip.stat().st_mtime, _dt.timezone.utc)
+       .strftime("%Y-%m-%d")
+    if core_zip.exists() else ""
+)
+generated_at = _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d")
+META = {
+    "buildGuid": build_guid,
+    "coreDate": core_mtime,
+    "generatedAt": generated_at,
+}
+
 
 # ---------- Localization ----------
 EN: dict[str, str] = {}
@@ -188,12 +211,15 @@ def hero_sort_key(h: dict) -> tuple:
     return (cls, num, hid)
 
 
-# Specialization name lookup
-spec_lookup: dict[str, str] = {}
+# Specialization name + description lookup
+spec_lookup: dict[str, dict[str, str]] = {}
 for spec_file in (RAW / "DB" / "heroes_specializations").glob("specializations_*.json"):
     for s in load_array(spec_file):
         if isinstance(s, dict) and s.get("id"):
-            spec_lookup[s["id"]] = t(s.get("name"), default=s["id"])
+            spec_lookup[s["id"]] = {
+                "name": t(s.get("name"), default=s["id"]),
+                "desc": t(s.get("desc"), default=""),
+            }
 
 heroes_raw: list[dict] = []
 for p in (RAW / "DB" / "heroes").glob("*/*.json"):
@@ -202,6 +228,13 @@ for p in (RAW / "DB" / "heroes").glob("*/*.json"):
     for r in load_array(p):
         if isinstance(r, dict):
             heroes_raw.append(r)
+
+# Unit-id → squadValue lookup (for hero army-score computation)
+unit_sv: dict[str, int] = {}
+for p in (RAW / "DB" / "units" / "units_logics").rglob("*.json"):
+    for u in load_array(p):
+        if isinstance(u, dict) and u.get("id") and u.get("squadValue") is not None:
+            unit_sv[u["id"]] = u["squadValue"]
 
 HEROES_OUT: list[dict] = []
 for ukey in [u for _, u, *_ in FACTION_DEFS]:
@@ -231,13 +264,23 @@ for ukey in [u for _, u, *_ in FACTION_DEFS]:
         army = " · ".join(squad_parts) or "—"
 
         spec_id = h.get("specialization") or ""
+        spec_info = spec_lookup.get(spec_id, {"name": "", "desc": ""})
+        # Army score = sum over startSquad of squadValue × avg(min,max)
+        army_score = 0
+        for st in h.get("startSquad") or []:
+            sv = unit_sv.get(st.get("sid") or "", 0) or 0
+            mn = st.get("min") or 0
+            mx = st.get("max") or 0
+            army_score += sv * (mn + mx) / 2
         HEROES_OUT.append({
             "id": hid,
             "specId": spec_id,
             "faction": DID_BY_UKEY[ukey],
             "kind": h.get("classType") or "?",
             "name": t(hid, default=hid),
-            "specialty": spec_lookup.get(spec_id, ""),
+            "specialty": spec_info["name"],
+            "specDesc": spec_info["desc"],
+            "armyScore": round(army_score),
             "stats": {
                 "A": stats.get("offence"),
                 "D": stats.get("defence"),
@@ -319,7 +362,8 @@ lines.append(f"const SKILL_COLUMNS = {js(SKILL_COLUMNS)};")
 lines.append(f"const SUBCLASSES = {js(SUBCLASSES_OUT)};")
 lines.append(f"const HEROES = {js(HEROES_OUT)};")
 lines.append(f"const UNITS = {js(UNITS_OUT)};")
-lines.append("return { FACTIONS, SKILL_COLUMNS, SUBCLASSES, HEROES, UNITS };")
+lines.append(f"const META = {js(META)};")
+lines.append("return { FACTIONS, SKILL_COLUMNS, SUBCLASSES, HEROES, UNITS, META };")
 lines.append("})();")
 
 OUT.write_text("\n".join(lines))

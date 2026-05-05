@@ -99,12 +99,6 @@ const IndexView = ({ go }) => {
         </li>
       </ul>
 
-      <p className="note">
-        <strong>Reproduce.</strong>{' '}
-        <code>python3 catalog/scripts/build_docs.py</code> regenerates these pages from{' '}
-        <code>HeroesOldenEra_Data/StreamingAssets/Core.zip</code> after extraction into{' '}
-        <code>catalog/raw/</code>.
-      </p>
     </div>
   );
 };

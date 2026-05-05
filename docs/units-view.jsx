@@ -21,7 +21,8 @@ const UnitsView = () => {
 
   const ql = q.trim().toLowerCase();
   const filtered = UNITS.filter(u => {
-    if (faction !== 'all' && u.faction !== faction) return false;
+    if (faction === 'factions' && u.faction === 'neutral') return false;
+    if (faction !== 'all' && faction !== 'factions' && u.faction !== faction) return false;
     if (tier !== 'all' && u.tier !== Number(tier)) return false;
     if (variant !== 'all' && u.variant !== variant) return false;
     if (atkType !== 'all' && u.attack !== atkType) return false;
@@ -88,7 +89,11 @@ const UnitsView = () => {
         <div className="filter-group">
           <label>Faction</label>
           <div className="seg">
-            <button className={faction==='all'?'active':''} onClick={()=>setFaction('all')}>All</button>
+            <button className={faction==='all'?'active':''}
+                    onClick={()=>setFaction('all')}>All</button>
+            <button className={faction==='factions'?'active':''}
+                    title="All playable factions (excludes Neutral)"
+                    onClick={()=>setFaction('factions')}>Factions</button>
             {factionOptions.map(o => (
               <button key={o.id} className={faction===o.id?'active':''}
                       onClick={()=>setFaction(o.id)}>{o.label}</button>

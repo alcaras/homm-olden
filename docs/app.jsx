@@ -48,9 +48,15 @@ const App = () => {
       {view==='units'      && <window.UnitsView />}
 
       <footer className="sitefoot">
-        Datamined from <em>Heroes of Might and Magic: Olden Era</em>. Source files in{' '}
-        <code>StreamingAssets/Core.zip</code>; build scripts in{' '}
-        <code>catalog/scripts/</code>.
+        {window.OE_DATA?.META && (
+          <span>
+            Game build <code>{window.OE_DATA.META.buildGuid.slice(0, 8) || '—'}</code>
+            {window.OE_DATA.META.coreDate && (
+              <> · <code>Core.zip</code> dated {window.OE_DATA.META.coreDate}</>
+            )}
+            {' · '}generated {window.OE_DATA.META.generatedAt}
+          </span>
+        )}
       </footer>
     </div>
   );
