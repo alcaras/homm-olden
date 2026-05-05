@@ -764,6 +764,45 @@ table.units .variant-alt  { color: var(--accent-2); border-color: var(--accent-2
 .faction-pill.faction-dungeon    { color: #4a2c70; border-color: #c1b3d4; }
 .faction-pill.faction-neutral    { color: var(--muted); border-color: var(--rule); }
 
+/* multi-select segmented control: highlight uses a softer accent so it's
+   visually distinct from single-select 'active' (which uses ink fill). */
+.seg.multi button.active {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+.seg.multi button.active:first-child,
+.seg.multi button:nth-child(2).active {
+  /* 'All' and 'Factions' shortcut buttons stay ink-styled */
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* heroes flat-table wrapper (single big sortable view) */
+.heroes-wrap {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  overflow: auto;
+  position: relative;
+  max-height: calc(100vh - 320px);
+}
+table.heroes.flat thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg-warm);
+  border-bottom: 1px solid var(--rule-bold);
+}
+table.heroes.flat .h-class-line {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
 /* sortable heroes-table headers */
 table.heroes thead th.sortable {
   cursor: pointer;

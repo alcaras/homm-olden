@@ -3,11 +3,23 @@
 const UnitsView = () => {
   const { FACTIONS, UNITS } = window.OE_DATA;
   const [q, setQ] = React.useState('');
+  // 'all' (everything) | 'factions' (any non-neutral) | Set of explicit ids
   const [faction, setFaction] = React.useState('all');
+  const [factionSet, setFactionSet] = React.useState(new Set());
   const [tier, setTier] = React.useState('all');
   const [variant, setVariant] = React.useState('all');
   const [atkType, setAtkType] = React.useState('all');
   const [sort, setSort] = React.useState({ key: 'tier', dir: 1 });
+
+  const setFactionMode = (mode) => { setFaction(mode); setFactionSet(new Set()); };
+  const toggleFaction = (id) => {
+    setFactionSet(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+    setFaction('multi');
+  };
 
   // Faction id list incl. neutral. Units use the display id ('temple' etc.).
   const factionOptions = [
@@ -22,7 +34,11 @@ const UnitsView = () => {
   const ql = q.trim().toLowerCase();
   const filtered = UNITS.filter(u => {
     if (faction === 'factions' && u.faction === 'neutral') return false;
-    if (faction !== 'all' && faction !== 'factions' && u.faction !== faction) return false;
+    if (faction === 'multi') {
+      if (factionSet.size > 0 && !factionSet.has(u.faction)) return false;
+    } else if (faction !== 'all' && faction !== 'factions' && u.faction !== faction) {
+      return false;
+    }
     if (tier !== 'all' && u.tier !== Number(tier)) return false;
     if (variant !== 'all' && u.variant !== variant) return false;
     if (atkType !== 'all' && u.attack !== atkType) return false;
@@ -88,16 +104,20 @@ const UnitsView = () => {
 
         <div className="filter-group">
           <label>Faction</label>
-          <div className="seg">
+          <div className="seg multi"
+               title="Select one or more, or use 'All' / 'Factions' shortcuts">
             <button className={faction==='all'?'active':''}
-                    onClick={()=>setFaction('all')}>All</button>
+                    onClick={()=>setFactionMode('all')}>All</button>
             <button className={faction==='factions'?'active':''}
                     title="All playable factions (excludes Neutral)"
-                    onClick={()=>setFaction('factions')}>Factions</button>
-            {factionOptions.map(o => (
-              <button key={o.id} className={faction===o.id?'active':''}
-                      onClick={()=>setFaction(o.id)}>{o.label}</button>
-            ))}
+                    onClick={()=>setFactionMode('factions')}>Factions</button>
+            {factionOptions.map(o => {
+              const on = faction === 'multi' ? factionSet.has(o.id) : false;
+              return (
+                <button key={o.id} className={on?'active':''}
+                        onClick={()=>toggleFaction(o.id)}>{o.label}</button>
+              );
+            })}
           </div>
         </div>
 

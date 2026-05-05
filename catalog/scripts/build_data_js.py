@@ -35,11 +35,10 @@ if boot.exists():
             break
 core_zip = GAME_DATA / "StreamingAssets" / "Core.zip"
 core_mtime = (
-    _dt.datetime.fromtimestamp(core_zip.stat().st_mtime, _dt.timezone.utc)
-       .strftime("%Y-%m-%d")
+    _dt.date.fromtimestamp(core_zip.stat().st_mtime).isoformat()
     if core_zip.exists() else ""
 )
-generated_at = _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d")
+generated_at = _dt.date.today().isoformat()
 META = {
     "buildGuid": build_guid,
     "coreDate": core_mtime,
@@ -319,7 +318,9 @@ for p in unit_files:
             atk_raw = atk.get("attackType_") or atk.get("attackType")
             if atk_raw:
                 break
-        atk_label = {"melee": "Melee", "shoot": "Long", "range": "Ranged"}.get(atk_raw, "—")
+        # attackType_ values: melee | shoot | range
+        # `shoot` = ranged attackers (archers/spellcasters); `range` = long-reach melee.
+        atk_label = {"melee": "Melee", "shoot": "Ranged", "range": "Long"}.get(atk_raw, "—")
 
         UNITS_OUT.append({
             "id": uid,
