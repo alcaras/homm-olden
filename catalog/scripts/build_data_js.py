@@ -322,6 +322,28 @@ for p in unit_files:
         # `shoot` = ranged attackers (archers/spellcasters); `range` = long-reach melee.
         atk_label = {"melee": "Melee", "shoot": "Ranged", "range": "Long"}.get(atk_raw, "—")
 
+        # Collect passives + abilities by scanning the EN dictionary.
+        # Format: <id>_passive_<N>_name / _description (and same for ability)
+        import re as _re
+        def collect(kind: str) -> list[dict]:
+            pat = _re.compile(rf"^{_re.escape(uid)}_{kind}_(\d+)_name$")
+            out = []
+            for sid, text in EN.items():
+                m = pat.match(sid)
+                if not m:
+                    continue
+                num = int(m.group(1))
+                desc = EN.get(f"{uid}_{kind}_{num}_description", "")
+                out.append({"name": text, "desc": desc, "_n": num})
+            out.sort(key=lambda x: x["_n"])
+            for x in out:
+                x.pop("_n", None)
+            return out
+
+        passives = collect("passive")
+        abilities = collect("ability")
+        narrative = EN.get(f"{uid}_narrativeDescription", "")
+
         UNITS_OUT.append({
             "id": uid,
             "name": t(f"{uid}_name", default=uid.replace("_", " ").title()),
@@ -340,6 +362,9 @@ for p in unit_files:
             "cost": cost_gold,
             "ai": u.get("ai"),
             "tags": u.get("tags") or [],
+            "narrative": narrative,
+            "passives": passives,
+            "abilities": abilities,
         })
 
 # Sort units: tier asc, faction order, name

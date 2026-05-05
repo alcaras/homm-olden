@@ -898,6 +898,73 @@ table.heroes .spec-desc {
   padding: 1px;
 }
 
+/* unit name cell with hover tooltip */
+.units-wrap { position: relative; }
+table.units td.u-name-cell { position: relative; overflow: visible; }
+.u-name-wrap {
+  position: relative;
+  cursor: help;
+  display: inline-block;
+}
+.u-tooltip {
+  position: absolute;
+  top: 100%;
+  left: -8px;
+  margin-top: 6px;
+  width: 380px;
+  max-width: 80vw;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule-bold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.1);
+  padding: 0.7rem 0.9rem;
+  font-family: Charter, Georgia, serif;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  z-index: 100;
+  display: none;
+  white-space: normal;
+  pointer-events: none;
+}
+.u-name-wrap:hover .u-tooltip,
+.u-name-wrap:focus-within .u-tooltip { display: block; }
+.u-tooltip .tt-narr {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.84rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.u-tooltip .tt-section { margin-top: 0.45rem; }
+.u-tooltip .tt-section:first-child { margin-top: 0; }
+.u-tooltip .tt-head {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.u-tooltip .tt-entry { margin-bottom: 0.35rem; }
+.u-tooltip .tt-entry:last-child { margin-bottom: 0; }
+.u-tooltip .tt-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+.u-tooltip .tt-desc {
+  color: var(--ink-2);
+}
+
+/* Bottom-row tooltips flip up so they don't get clipped */
+.units-wrap table.units tbody tr:nth-last-child(-n+5) .u-tooltip {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
 /* unit icon in units table */
 .u-icon-cell { width: 44px; padding-right: 0.3rem !important; }
 .u-icon {

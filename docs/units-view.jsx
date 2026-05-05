@@ -202,9 +202,40 @@ const UnitsView = () => {
                       {factionLabel[u.faction] || u.faction}
                     </span>
                   </td>
-                  <td>
-                    <div className="u-name">{u.name}</div>
-                    <div className="u-id">{u.id}</div>
+                  <td className="u-name-cell">
+                    <span className="u-name-wrap">
+                      <span className="u-name">{u.name}</span>
+                      <span className="u-id">{u.id}</span>
+                      {(u.passives?.length || u.abilities?.length || u.narrative) && (
+                        <div className="u-tooltip">
+                          {u.narrative && (
+                            <div className="tt-narr">{u.narrative}</div>
+                          )}
+                          {u.passives?.length > 0 && (
+                            <div className="tt-section">
+                              <div className="tt-head">Passives</div>
+                              {u.passives.map((p, i) => (
+                                <div key={i} className="tt-entry">
+                                  <span className="tt-name">{p.name}</span>
+                                  {p.desc && <span className="tt-desc"> {p.desc}</span>}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {u.abilities?.length > 0 && (
+                            <div className="tt-section">
+                              <div className="tt-head">Abilities</div>
+                              {u.abilities.map((a, i) => (
+                                <div key={i} className="tt-entry">
+                                  <span className="tt-name">{a.name}</span>
+                                  {a.desc && <span className="tt-desc"> {a.desc}</span>}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </span>
                   </td>
                   <td>
                     <span className={`variant variant-${u.variant}`}>
