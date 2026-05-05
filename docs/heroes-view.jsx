@@ -160,10 +160,10 @@ const HeroesView = () => {
               <SortHead label="D" k="D" num title="Defense" />
               <SortHead label="P" k="P" num title="Spell Power" />
               <SortHead label="K" k="K" num title="Knowledge" />
-              <SortHead label="Score" k="armyScore" num
-                        title="Starting-army value: Σ unit squadValue × avg stack count" />
               <th>Starting skills</th>
               <th>Starting army</th>
+              <SortHead label="Starting army score" k="armyScore" num
+                        title="Σ unit squadValue × avg stack count" />
             </tr>
           </thead>
           <tbody>
@@ -213,9 +213,9 @@ const HeroesView = () => {
                   <td className="num"><span className="stat-v">{h.stats.D}</span></td>
                   <td className="num"><span className="stat-v">{h.stats.P}</span></td>
                   <td className="num"><span className="stat-v">{h.stats.K}</span></td>
-                  <td className="num army-score">{h.armyScore?.toLocaleString() ?? '—'}</td>
                   <td><SkillChips skills={h.skills} /></td>
                   <td><Army army={h.army} /></td>
+                  <td className="num army-score">{h.armyScore?.toLocaleString() ?? '—'}</td>
                 </tr>
               );
             })}
