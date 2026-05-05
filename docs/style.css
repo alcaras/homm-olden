@@ -1,0 +1,770 @@
+/* Olden Era reference — refined Tufte aesthetic.
+   Cream paper, Charter serif, single accent per faction-kind. */
+
+:root {
+  --bg:        #fbf7ec;
+  --bg-warm:   #f5efdd;
+  --paper:     #fffdf6;
+  --ink:       #1a1612;
+  --ink-2:     #3a342c;
+  --muted:     #6b6358;
+  --faint:     #a59c8d;
+  --rule:      #e3dac3;
+  --rule-bold: #1a1612;
+  --hover:     #f3ecd6;
+  --accent:    #9a4818;       /* burnt orange — might */
+  --accent-2:  #2c5d83;       /* slate blue — magic */
+  --gold:      #b8861b;
+  --combat:    oklch(0.55 0.12 35);
+  --magic:     oklch(0.50 0.10 245);
+  --school:    oklch(0.50 0.10 295);
+  --utility:   oklch(0.50 0.05 110);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: Charter, "Iowan Old Style", "Iowan Old Style BT",
+               Palatino, Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.55;
+  font-feature-settings: "kern", "liga", "onum";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+               "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ---------- shell ---------- */
+.shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+header.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 2px solid var(--rule-bold);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.masthead .brand {
+  font-family: "Charter", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.masthead .brand .sub {
+  font-style: italic;
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 0.5em;
+}
+.masthead .meta {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+nav.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2rem;
+}
+nav.tabs button {
+  font-family: inherit;
+  background: none;
+  border: 0;
+  padding: 0.7rem 1rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s;
+}
+nav.tabs button:hover { color: var(--ink); }
+nav.tabs button.active {
+  color: var(--ink);
+  border-bottom-color: var(--rule-bold);
+  font-weight: 600;
+}
+nav.tabs .grow { flex: 1; }
+
+/* ---------- typography ---------- */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+h1 { font-size: 2.2rem; line-height: 1.15; margin: 0.2em 0 0.4em; }
+h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 2.2rem 0 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--rule);
+}
+h3 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  color: var(--muted);
+  margin: 1.4rem 0 0.5rem;
+}
+
+p { margin: 0.4em 0 0.9em; max-width: 62em; text-wrap: pretty; }
+p.lede { font-size: 1.1em; color: var(--ink-2); max-width: 42em; }
+em { color: var(--ink); }
+strong { font-weight: 600; }
+code, .mono {
+  font-family: "JetBrains Mono", Menlo, "SF Mono", Consolas, monospace;
+  font-size: 0.88em;
+}
+
+/* ---------- glyphs / chips ---------- */
+.glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2em;
+  height: 1.2em;
+  font-size: 0.78em;
+  vertical-align: 0.05em;
+  font-weight: 600;
+}
+.glyph-might { color: var(--accent); }
+.glyph-magic { color: var(--accent-2); }
+
+.faction-pill {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  padding: 0.2em 0.55em;
+  border-radius: 2px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.kbd {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--muted);
+}
+
+/* ---------- index page cards ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin: 1.4rem 0 2rem;
+}
+@media (max-width: 760px) { .card-grid { grid-template-columns: 1fr; } }
+
+.card {
+  display: block;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 1.4rem 1.5rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 0.15s, background 0.15s;
+}
+.card:hover {
+  border-color: var(--rule-bold);
+  background: var(--paper);
+}
+.card .card-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.card .card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+.card .card-desc {
+  color: var(--ink-2);
+  font-size: 0.96rem;
+  margin: 0;
+}
+.card .card-stats {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.card .card-stats b {
+  display: block;
+  font-family: Charter, Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-transform: none;
+  line-height: 1;
+}
+
+.faction-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.4rem;
+  margin: 0.4rem 0 2rem;
+}
+@media (max-width: 760px) { .faction-strip { grid-template-columns: repeat(3, 1fr); } }
+.faction-strip > div {
+  border: 1px solid var(--rule);
+  padding: 0.7rem 0.7rem 0.6rem;
+  background: var(--paper);
+}
+.faction-strip .name {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.faction-strip .skill {
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  margin-top: 0.15rem;
+}
+.faction-strip .classes {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+/* ---------- subclass matrix ---------- */
+.matrix-wrap {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  overflow: auto;
+  position: relative;
+  max-height: calc(100vh - 240px);
+}
+table.matrix {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  width: max-content;
+  min-width: 100%;
+}
+table.matrix th, table.matrix td {
+  padding: 0.34rem 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--rule);
+}
+table.matrix thead th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-warm);
+  font-weight: 600;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-2);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--rule-bold);
+  z-index: 2;
+  cursor: help;
+}
+table.matrix thead th.group-cap {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+  padding-top: 0.25rem;
+  padding-bottom: 0.2rem;
+  z-index: 2;
+}
+table.matrix thead th.group-cap.combat  { color: var(--combat); }
+table.matrix thead th.group-cap.magic   { color: var(--magic); }
+table.matrix thead th.group-cap.school  { color: var(--school); }
+table.matrix thead th.group-cap.utility { color: var(--utility); }
+
+/* row-header cells (subclass name + class) */
+table.matrix th.row-head, table.matrix td.row-head {
+  text-align: left;
+  font-family: Charter, Georgia, serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  background: var(--paper);
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  padding-right: 0.8rem;
+  white-space: nowrap;
+}
+table.matrix th.row-head { z-index: 3; background: var(--bg-warm); }
+table.matrix td.row-head { border-right: 1px solid var(--rule); }
+table.matrix td.row-head .row-class {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 1px;
+}
+table.matrix td.row-glyph {
+  width: 28px;
+  padding-left: 0.7rem;
+  background: var(--paper);
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  border-right: 0;
+}
+table.matrix th.row-glyph {
+  position: sticky; left: 0; z-index: 3; background: var(--bg-warm); width: 28px;
+}
+
+/* group dividers */
+table.matrix .group-edge { border-left: 1px solid var(--rule-bold); }
+
+/* effect cell */
+table.matrix td.col-effect, table.matrix th.col-effect {
+  text-align: left;
+  white-space: normal;
+  font-family: Charter, Georgia, serif;
+  font-style: italic;
+  color: var(--ink-2);
+  max-width: 22em;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  padding: 0.5rem 0.8rem;
+}
+table.matrix td.col-effect b { font-style: normal; font-weight: 600; color: var(--ink); }
+
+/* faction divider rows */
+table.matrix tr.faction-row td {
+  background: var(--bg-warm);
+  text-align: left;
+  padding: 0.5rem 0.8rem 0.4rem;
+  border-top: 1px solid var(--rule-bold);
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  left: 0;
+}
+table.matrix tr.faction-row td .fac-skill {
+  text-transform: none;
+  font-family: Charter, Georgia, serif;
+  font-style: italic;
+  font-size: 0.84rem;
+  letter-spacing: 0;
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 0.6em;
+}
+
+/* skill cells */
+table.matrix td.skill-cell {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+}
+table.matrix td.skill-cell.on        { color: var(--ink); }
+table.matrix td.skill-cell.on .dot   { display: inline-block; width: 8px; height: 8px; border-radius: 1px; background: currentColor; }
+table.matrix td.skill-cell.on.combat  { color: var(--combat); }
+table.matrix td.skill-cell.on.magic   { color: var(--magic); }
+table.matrix td.skill-cell.on.school  { color: var(--school); }
+table.matrix td.skill-cell.on.utility { color: var(--utility); }
+
+/* crosshair hover (column highlight on row hover) */
+table.matrix tbody tr:not(.faction-row):hover td { background: var(--hover); }
+table.matrix tbody tr:not(.faction-row):hover td.row-head,
+table.matrix tbody tr:not(.faction-row):hover td.row-glyph { background: #ede5cc; }
+table.matrix .col-hl { background: var(--hover); }
+
+/* ---------- heroes view ---------- */
+.controls {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0.4rem 0 1.6rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--rule);
+}
+.controls .filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.controls label {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.search {
+  font-family: Charter, Georgia, serif;
+  font-size: 0.95rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 0.42rem 0.7rem;
+  width: 220px;
+  color: var(--ink);
+  border-radius: 0;
+}
+.search:focus { outline: none; border-color: var(--rule-bold); }
+
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.seg button {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  background: none;
+  border: 0;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  cursor: pointer;
+  border-right: 1px solid var(--rule);
+}
+.seg button:last-child { border-right: 0; }
+.seg button.active { background: var(--ink); color: var(--paper); }
+.seg button:hover:not(.active) { color: var(--ink); }
+
+.count {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-left: auto;
+}
+
+/* faction band header inside heroes list */
+.faction-band {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2.2rem 0 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule-bold);
+}
+.faction-band .name {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.faction-band .skill {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.faction-band .counts {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-left: auto;
+}
+
+/* heroes table */
+table.heroes {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 1rem;
+}
+table.heroes th {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-weight: 600;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--muted);
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--rule-bold);
+  white-space: nowrap;
+}
+table.heroes th.num, table.heroes td.num { text-align: right; padding-right: 0.6rem; }
+table.heroes td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+table.heroes tr:hover td { background: var(--hover); }
+table.heroes .h-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+table.heroes .h-spec {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.92em;
+  display: block;
+  margin-top: 1px;
+}
+table.heroes .stats-row {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+table.heroes .stats-row .lbl {
+  color: var(--faint);
+  font-size: 0.66rem;
+  margin-right: 0.1em;
+}
+table.heroes .stats-row .v {
+  display: inline-block;
+  min-width: 1.1em;
+  font-weight: 600;
+  margin-right: 0.5em;
+}
+table.heroes .skill-chip {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+  padding: 0.08em 0.45em;
+  border: 1px solid var(--rule);
+  margin-right: 0.3em;
+  margin-bottom: 0.15em;
+  white-space: nowrap;
+  background: var(--paper);
+  color: var(--ink-2);
+  border-radius: 2px;
+}
+table.heroes .skill-chip.faction { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+table.heroes .skill-chip.l2 { border-style: double; border-width: 3px; }
+table.heroes .army {
+  color: var(--ink-2);
+  font-size: 0.92em;
+  font-style: italic;
+}
+table.heroes .army .stack {
+  white-space: nowrap;
+  margin-right: 0.4em;
+}
+table.heroes .army .sep {
+  color: var(--faint);
+  margin-right: 0.4em;
+}
+table.heroes td.h-num {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+  color: var(--faint);
+  width: 28px;
+  padding-left: 0.6rem;
+}
+
+/* footer notes */
+.note {
+  font-size: 0.92em;
+  color: var(--muted);
+  border-left: 2px solid var(--rule);
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  margin: 1.2rem 0;
+  max-width: 50em;
+}
+.note strong { color: var(--ink); }
+
+footer.sitefoot {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* legend */
+.legend {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0;
+  margin-bottom: 0.6rem;
+}
+.legend .swatch {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 0.4em;
+  vertical-align: 0.05em;
+}
+.legend .combat  { background: var(--combat); }
+.legend .magic   { background: var(--magic); }
+.legend .school  { background: var(--school); }
+.legend .utility { background: var(--utility); }
+
+/* ---------- units view ---------- */
+.units-wrap {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  overflow: auto;
+  position: relative;
+  max-height: calc(100vh - 320px);
+}
+table.units {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+table.units thead th {
+  position: sticky; top: 0; z-index: 2;
+  background: var(--bg-warm);
+  font-weight: 600;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  text-align: left;
+  padding: 0.5rem 0.55rem;
+  border-bottom: 1px solid var(--rule-bold);
+  white-space: nowrap;
+  user-select: none;
+}
+table.units thead th.num     { text-align: right; }
+table.units thead th.sortable { cursor: pointer; }
+table.units thead th.sortable:hover { color: var(--ink); }
+table.units thead th.active  { color: var(--ink); }
+table.units thead th .sort-arrow {
+  display: inline-block;
+  width: 0.7em;
+  color: var(--accent);
+  margin-left: 0.15em;
+}
+
+table.units td {
+  padding: 0.36rem 0.55rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+table.units td.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.units tbody tr:hover td { background: var(--hover); }
+
+table.units .u-name {
+  font-family: Charter, Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+}
+table.units .u-id {
+  font-family: "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  color: var(--faint);
+  margin-top: 1px;
+}
+
+table.units .ratio { color: var(--ink-2); font-weight: 600; }
+table.units .dmg { color: var(--ink-2); }
+
+table.units .variant {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 0.1em 0.5em;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper);
+}
+table.units .variant-base { color: var(--muted); }
+table.units .variant-upg  { color: var(--accent);   border-color: var(--accent); }
+table.units .variant-alt  { color: var(--accent-2); border-color: var(--accent-2); border-style: dashed; }
+
+/* Faction pills inside units table — colored borders */
+.faction-pill.faction-temple     { color: #8a4218; border-color: #d6b69b; }
+.faction-pill.faction-necropolis { color: #555a5e; border-color: #c8c8cf; }
+.faction-pill.faction-sylvan     { color: #2f6d3a; border-color: #b9d2bb; }
+.faction-pill.faction-hive       { color: #8a3018; border-color: #e0b59f; }
+.faction-pill.faction-schism     { color: #2c5d83; border-color: #b6cad8; }
+.faction-pill.faction-dungeon    { color: #4a2c70; border-color: #c1b3d4; }
+.faction-pill.faction-neutral    { color: var(--muted); border-color: var(--rule); }
+
+@media (max-width: 760px) {
+  .shell { padding: 1.4rem 1rem 3rem; }
+  table.matrix, table.units { font-size: 0.7rem; }
+}

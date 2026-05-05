@@ -1,0 +1,109 @@
+/* Index / overview view */
+
+const IndexView = ({ go }) => {
+  const { FACTIONS, HEROES, SUBCLASSES, UNITS } = window.OE_DATA;
+
+  return (
+    <div>
+      <h1>HOMM Olden Era — Reference</h1>
+      <p className="lede">
+        Hero classes, subclasses, and starting loadouts for{' '}
+        <em>Heroes of Might and Magic: Olden Era</em>. Datamined from the game's JSON
+        files; updated to match the current build.
+      </p>
+
+      <h2>Pages</h2>
+      <div className="card-grid">
+        <a className="card" href="#subclasses" onClick={(e)=>{e.preventDefault();go('subclasses');}}>
+          <div className="card-eyebrow">Reference matrix</div>
+          <div className="card-title">Subclasses & Required Skills</div>
+          <p className="card-desc">
+            Every subclass — two per class, twelve classes — and the five skills each needs
+            at level&nbsp;3, plus the unique passive effect. Surfaces the fixed{' '}
+            <em>1 Combat + 1 Magic + 1 School + 2 Utility</em> recipe at a glance.
+          </p>
+          <div className="card-stats">
+            <span><b>{SUBCLASSES.length}</b>subclasses</span>
+            <span><b>20</b>skill columns</span>
+            <span><b>12</b>classes</span>
+          </div>
+        </a>
+
+        <a className="card" href="#heroes" onClick={(e)=>{e.preventDefault();go('heroes');}}>
+          <div className="card-eyebrow">Roster</div>
+          <div className="card-title">Heroes — Stats, Skills & Armies</div>
+          <p className="card-desc">
+            All {HEROES.length} stock heroes by faction, with starting Attack / Defense /
+            Power / Knowledge, starting skills (faction skill plus one other), starting
+            army composition, and the hero's signature specialization. Filterable by
+            faction, class, or any text.
+          </p>
+          <div className="card-stats">
+            <span><b>{HEROES.length}</b>heroes</span>
+            <span><b>{FACTIONS.length}</b>factions</span>
+            <span><b>2</b>classes each</span>
+          </div>
+        </a>
+
+        <a className="card" href="#units" onClick={(e)=>{e.preventDefault();go('units');}}>
+          <div className="card-eyebrow">Bestiary</div>
+          <div className="card-title">Units — Creature Stats</div>
+          <p className="card-desc">
+            Every recruitable creature in three variants — base, upgrade, alt
+            upgrade — with HP, attack, defense, damage, initiative, speed, the
+            game's internal squad-value scalar, and gold cost. Sortable on every
+            stat; filter by faction, tier, or variant.
+          </p>
+          <div className="card-stats">
+            <span><b>{UNITS.length}</b>unit entries</span>
+            <span><b>7</b>tiers</span>
+            <span><b>{FACTIONS.length + 1}</b>factions + neutral</span>
+          </div>
+        </a>
+      </div>
+
+      <h2>Factions</h2>
+      <div className="faction-strip">
+        {FACTIONS.map(f => (
+          <div key={f.id}>
+            <div className="name">{f.name}</div>
+            <div className="skill">{f.skill}</div>
+            <div className="classes">
+              <span className="glyph glyph-might">⚔</span> {f.might}
+              <br/>
+              <span className="glyph glyph-magic">✦</span> {f.magic}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Notes</h2>
+      <ul style={{maxWidth:'56em', color:'var(--ink-2)', paddingLeft:'1.1rem'}}>
+        <li style={{marginBottom:'0.4em'}}>
+          Six playable factions: Temple (human), Necropolis (undead), Sylvan (nature),
+          Hive (demon), Schism (unfrozen), Dungeon. Each has 18 heroes split into two
+          classes — Might and Magic.
+        </li>
+        <li style={{marginBottom:'0.4em'}}>
+          Two skills are class-locked and never appear in subclass conditions:{' '}
+          <em>Combat</em> (Might-only) and <em>Thaumaturgy</em> (Magic-only).{' '}
+          <em>Siegecraft</em> and <em>Recruitment</em> are also never required for any
+          subclass.
+        </li>
+        <li>
+          Effect text is preserved verbatim; placeholders like <code>{'{0}'}</code> are
+          filled at runtime from each subclass's <code>bonuses</code> block.
+        </li>
+      </ul>
+
+      <p className="note">
+        <strong>Reproduce.</strong>{' '}
+        <code>python3 catalog/scripts/build_docs.py</code> regenerates these pages from{' '}
+        <code>HeroesOldenEra_Data/StreamingAssets/Core.zip</code> after extraction into{' '}
+        <code>catalog/raw/</code>.
+      </p>
+    </div>
+  );
+};
+
+window.IndexView = IndexView;
