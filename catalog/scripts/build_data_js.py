@@ -232,6 +232,8 @@ for ukey in [u for _, u, *_ in FACTION_DEFS]:
 
         spec_id = h.get("specialization") or ""
         HEROES_OUT.append({
+            "id": hid,
+            "specId": spec_id,
             "faction": DID_BY_UKEY[ukey],
             "kind": h.get("classType") or "?",
             "name": t(hid, default=hid),
@@ -268,12 +270,21 @@ for p in unit_files:
         # Map in-game faction key to our display id; neutrals stay 'neutral'
         fid = DID_BY_UKEY.get(ukey, "neutral")
 
+        # Attack type from first defaultAttacks entry: melee | shoot | range
+        atk_raw = None
+        for atk in u.get("defaultAttacks") or []:
+            atk_raw = atk.get("attackType_") or atk.get("attackType")
+            if atk_raw:
+                break
+        atk_label = {"melee": "Melee", "shoot": "Long", "range": "Ranged"}.get(atk_raw, "—")
+
         UNITS_OUT.append({
             "id": uid,
             "name": t(f"{uid}_name", default=uid.replace("_", " ").title()),
             "faction": fid,
             "tier": u.get("tier") if isinstance(u.get("tier"), int) else 0,
             "variant": variant,
+            "attack": atk_label,           # Melee / Ranged / Long
             "hp": stats.get("hp"),
             "off": stats.get("offence"),
             "def": stats.get("defence"),

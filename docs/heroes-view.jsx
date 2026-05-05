@@ -117,6 +117,9 @@ const HeroesView = () => {
         return (
           <section key={f.id}>
             <div className="faction-band">
+              <img loading="lazy" className="faction-band-icon"
+                   src={`img/factions/${f.id}.png`} alt=""
+                   onError={(e)=>{e.target.style.display='none';}} />
               <span className="name">{f.name}</span>
               <span className="skill">faction skill: {f.skill}</span>
               <span className="counts">
@@ -140,6 +143,7 @@ const HeroesView = () => {
                     <thead>
                       <tr>
                         <th>#</th>
+                        <th></th>
                         <th>Hero</th>
                         <th>Stats</th>
                         <th>Starting skills</th>
@@ -148,10 +152,23 @@ const HeroesView = () => {
                     </thead>
                     <tbody>
                       {list.map((h, i) => (
-                        <tr key={h.name}>
+                        <tr key={h.id || h.name}>
                           <td className="h-num">{HEROES.indexOf(h)+1}</td>
+                          <td className="h-portrait-cell">
+                            <img loading="lazy" className="h-portrait"
+                                 src={`img/heroes/${h.id}.png`} alt=""
+                                 onError={(e)=>{e.target.style.visibility='hidden';}} />
+                          </td>
                           <td>
-                            <div className="h-name">{h.name}</div>
+                            <div className="h-name-row">
+                              {h.specId && (
+                                <img loading="lazy" className="spec-icon"
+                                     src={`img/specs/${h.specId}.png`} alt=""
+                                     title={h.specialty}
+                                     onError={(e)=>{e.target.style.visibility='hidden';}} />
+                              )}
+                              <span className="h-name">{h.name}</span>
+                            </div>
                             <div className="h-spec">{h.specialty}</div>
                           </td>
                           <td>

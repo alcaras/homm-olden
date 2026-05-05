@@ -6,6 +6,7 @@ const UnitsView = () => {
   const [faction, setFaction] = React.useState('all');
   const [tier, setTier] = React.useState('all');
   const [variant, setVariant] = React.useState('all');
+  const [atkType, setAtkType] = React.useState('all');
   const [sort, setSort] = React.useState({ key: 'tier', dir: 1 });
 
   // Faction id list incl. neutral. Units use the display id ('temple' etc.).
@@ -23,6 +24,7 @@ const UnitsView = () => {
     if (faction !== 'all' && u.faction !== faction) return false;
     if (tier !== 'all' && u.tier !== Number(tier)) return false;
     if (variant !== 'all' && u.variant !== variant) return false;
+    if (atkType !== 'all' && u.attack !== atkType) return false;
     if (!ql) return true;
     if (u.name.toLowerCase().includes(ql)) return true;
     if (u.id.toLowerCase().includes(ql)) return true;
@@ -115,6 +117,16 @@ const UnitsView = () => {
           </div>
         </div>
 
+        <div className="filter-group">
+          <label>Attack</label>
+          <div className="seg">
+            <button className={atkType==='all'?'active':''}    onClick={()=>setAtkType('all')}>All</button>
+            <button className={atkType==='Melee'?'active':''}  onClick={()=>setAtkType('Melee')}>⚔ Melee</button>
+            <button className={atkType==='Long'?'active':''}   onClick={()=>setAtkType('Long')}>↔ Long</button>
+            <button className={atkType==='Ranged'?'active':''} onClick={()=>setAtkType('Ranged')}>🏹 Ranged</button>
+          </div>
+        </div>
+
         <span className="count">{sorted.length} units</span>
       </div>
 
@@ -128,10 +140,12 @@ const UnitsView = () => {
         <table className="units">
           <thead>
             <tr>
+              <th></th>
               <SortHead label="Tier" k="tier" num />
               <SortHead label="Faction" k="faction" />
               <SortHead label="Unit" k="name" />
               <th>Var.</th>
+              <SortHead label="Atk" k="attack" />
               <SortHead label="HP" k="hp" num />
               <SortHead label="Off" k="off" num />
               <SortHead label="Def" k="def" num />
@@ -147,8 +161,16 @@ const UnitsView = () => {
             {sorted.map(u => {
               const dmgAvg = (u.dmgMin + u.dmgMax) / 2;
               const ratio = u.cost ? (u.squadValue / u.cost) : 0;
+              const atkGlyph = u.attack === 'Melee'  ? '⚔'
+                             : u.attack === 'Long'   ? '↔'
+                             : u.attack === 'Ranged' ? '🏹' : '';
               return (
                 <tr key={u.id}>
+                  <td className="u-icon-cell">
+                    <img loading="lazy" className="u-icon"
+                         src={`img/units/${u.id}.png`} alt=""
+                         onError={(e)=>{e.target.style.visibility='hidden';}} />
+                  </td>
                   <td className="num">{u.tier}</td>
                   <td>
                     <span className={`faction-pill faction-${u.faction}`}>
@@ -162,6 +184,11 @@ const UnitsView = () => {
                   <td>
                     <span className={`variant variant-${u.variant}`}>
                       {variantLabel[u.variant] || u.variant}
+                    </span>
+                  </td>
+                  <td>
+                    <span className={`atk-chip atk-${u.attack.toLowerCase()}`}>
+                      <span className="atk-glyph">{atkGlyph}</span>{u.attack}
                     </span>
                   </td>
                   <td className="num">{u.hp ?? '—'}</td>

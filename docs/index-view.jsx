@@ -66,6 +66,9 @@ const IndexView = ({ go }) => {
       <div className="faction-strip">
         {FACTIONS.map(f => (
           <div key={f.id}>
+            <img loading="lazy" className="faction-icon"
+                 src={`img/factions/${f.id}.png`} alt=""
+                 onError={(e)=>{e.target.style.display='none';}} />
             <div className="name">{f.name}</div>
             <div className="skill">{f.skill}</div>
             <div className="classes">

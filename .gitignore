@@ -13,3 +13,6 @@ _site/
 .bundle/
 vendor/
 Gemfile.lock
+
+# Local venv used for image extraction only
+.venv/
