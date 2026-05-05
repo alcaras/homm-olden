@@ -57,7 +57,7 @@ def t(sid: str | None, default: str = "") -> str:
 FACTION_DEFS = [
     ("temple",    "human",    "Temple",     "Righteousness",          "Knight",       "Cleric"),
     ("necropolis","undead",   "Necropolis", "Necromancy",             "Death Knight", "Necromancer"),
-    ("sylvan",    "nature",   "Sylvan",     "Murmuring",              "Warden",       "Druid"),
+    ("sylvan",    "nature",   "Grove",      "Murmuring",              "Warden",       "Druid"),
     ("hive",      "demon",    "Hive",       "Summon Swarm",           "Enforcer",     "Herald"),
     ("schism",    "unfrozen", "Schism",     "Abyssal Communion",      "Oathkeeper",   "Riftspeaker"),
     ("dungeon",   "dungeon",  "Dungeon",    "Triumvirate's Strength", "Overlord",     "Warlock"),

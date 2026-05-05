@@ -80,7 +80,7 @@ const IndexView = ({ go }) => {
       <h2>Notes</h2>
       <ul style={{maxWidth:'56em', color:'var(--ink-2)', paddingLeft:'1.1rem'}}>
         <li style={{marginBottom:'0.4em'}}>
-          Six playable factions: Temple (human), Necropolis (undead), Sylvan (nature),
+          Six playable factions: Temple (human), Necropolis (undead), Grove (nature),
           Hive (demon), Schism (unfrozen), Dungeon. Each has 18 heroes split into two
           classes — Might and Magic.
         </li>
