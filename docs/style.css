@@ -1002,3 +1002,251 @@ table.units td.u-name-cell { position: relative; overflow: visible; }
   .h-portrait { width: 36px; height: 36px; }
   .u-icon { width: 28px; height: 28px; }
 }
+
+/* ---------- tier list view ---------- */
+.tier-scale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin: 0.4rem 0 1.6rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.tier-scale b {
+  color: var(--ink);
+  font-weight: 700;
+  display: inline-block;
+  min-width: 1em;
+  text-align: center;
+  margin-right: 0.4em;
+}
+.tier-scale .tier-derived-key { font-style: italic; opacity: 0.85; }
+.tier-scale .tier-derived-key em {
+  font-style: normal;
+  background: var(--bg-warm);
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--rule);
+  margin-right: 0.4em;
+  font-size: 0.9em;
+}
+
+/* bans table */
+.bans-wrap {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  margin: 0.4rem 0 1.6rem;
+}
+table.bans {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+table.bans thead th {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-align: left;
+  font-weight: 600;
+  padding: 0.55rem 0.7rem;
+  background: var(--bg-warm);
+  border-bottom: 1px solid var(--rule-bold);
+}
+table.bans thead th.num { text-align: right; width: 36px; }
+table.bans td {
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: middle;
+  font-size: 0.92rem;
+}
+table.bans td.num {
+  text-align: right;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+  width: 36px;
+}
+table.bans tr:last-child td { border-bottom: 0; }
+table.bans tr:hover td { background: var(--hover); }
+table.bans .b-hero {
+  display: flex; align-items: center; gap: 0.55rem;
+  white-space: nowrap;
+  width: 220px;
+}
+table.bans .b-portrait {
+  width: 32px; height: 32px;
+  border: 1px solid var(--rule);
+  background: var(--bg-warm);
+  border-radius: 2px;
+  object-fit: cover;
+}
+table.bans .b-name { font-weight: 600; color: var(--ink); }
+table.bans .b-why { color: var(--ink-2); }
+
+/* archetype cards */
+.archetypes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 0.4rem 0 1.6rem;
+}
+@media (max-width: 760px) { .archetypes { grid-template-columns: 1fr; } }
+.archetype {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.85rem 1rem;
+}
+.archetype-title {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+.archetype-body {
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* faction sections */
+.faction-section { margin-bottom: 2.4rem; }
+.faction-summary {
+  font-size: 0.96rem;
+  color: var(--ink-2);
+  max-width: 56em;
+  margin: 0.6rem 0 0.4rem;
+}
+.faction-tip {
+  font-size: 0.88rem;
+  color: var(--muted);
+  border-left: 2px solid var(--rule);
+  padding: 0.1rem 0 0.1rem 0.7rem;
+  max-width: 52em;
+  margin: 0 0 1rem;
+}
+
+/* tier blocks */
+.tier-block { margin: 0.7rem 0 0.4rem; }
+.tier-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.4rem 0 0.5rem;
+}
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7em;
+  height: 1.7em;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  color: var(--paper);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.tier-badge.tier-S { background: #9a4818; }
+.tier-badge.tier-A { background: #b8861b; }
+.tier-badge.tier-B { background: #2c5d83; color: #fffdf6; }
+.tier-badge.tier-C { background: var(--muted); }
+
+.tier-label {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.tier-count {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  color: var(--faint);
+  margin-left: auto;
+  padding: 0.05em 0.45em;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+/* tier hero rows */
+.tier-heroes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.tier-hero {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.tier-hero:hover { background: var(--hover); }
+.th-portrait {
+  width: 44px; height: 44px;
+  border: 1px solid var(--rule);
+  background: var(--bg-warm);
+  border-radius: 2px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.th-body { flex: 1; min-width: 0; }
+.th-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.15rem;
+}
+.th-name { font-weight: 600; font-size: 1.02rem; color: var(--ink); }
+.th-class {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.th-specialty {
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+}
+.th-derived {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 0.05em 0.4em;
+  border-radius: 2px;
+  background: var(--bg-warm);
+}
+.th-army {
+  color: var(--ink-2);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 0.2rem;
+}
+.th-note {
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  max-width: 60em;
+}
+
+/* tier filter buttons retain segmented control look but accent by tier */
+.seg.multi button.tier-S.active { background: #9a4818; border-color: #9a4818; }
+.seg.multi button.tier-A.active { background: #b8861b; border-color: #b8861b; }
+.seg.multi button.tier-B.active { background: #2c5d83; border-color: #2c5d83; }
+.seg.multi button.tier-C.active { background: var(--muted); border-color: var(--muted); }

@@ -1,7 +1,7 @@
 /* Olden Era reference — main app */
 
 const App = () => {
-  const VIEWS = ['index', 'subclasses', 'heroes', 'units'];
+  const VIEWS = ['index', 'subclasses', 'heroes', 'units', 'tier'];
   const initial = (window.location.hash || '#index').slice(1);
   const [view, setView] = React.useState(
     VIEWS.includes(initial) ? initial : 'index'
@@ -40,12 +40,14 @@ const App = () => {
         <button className={view==='subclasses'?'active':''} onClick={()=>go('subclasses')}>Subclasses</button>
         <button className={view==='heroes'?'active':''} onClick={()=>go('heroes')}>Heroes</button>
         <button className={view==='units'?'active':''} onClick={()=>go('units')}>Units</button>
+        <button className={view==='tier'?'active':''} onClick={()=>go('tier')}>Tier list</button>
       </nav>
 
       {view==='index'      && <window.IndexView go={go} />}
       {view==='subclasses' && <window.SubclassesView />}
       {view==='heroes'     && <window.HeroesView />}
       {view==='units'      && <window.UnitsView />}
+      {view==='tier'       && <window.TierView />}
 
       <footer className="sitefoot">
         {window.OE_DATA?.META && (
