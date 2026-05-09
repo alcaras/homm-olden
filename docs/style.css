@@ -1250,3 +1250,144 @@ table.bans .b-why { color: var(--ink-2); }
 .seg.multi button.tier-A.active { background: #b8861b; border-color: #b8861b; }
 .seg.multi button.tier-B.active { background: #2c5d83; border-color: #2c5d83; }
 .seg.multi button.tier-C.active { background: var(--muted); border-color: var(--muted); }
+
+/* ---------- guides view ---------- */
+.tips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin: 0.4rem 0 1.4rem;
+}
+@media (max-width: 760px) { .tips { grid-template-columns: 1fr; } }
+.tip {
+  border-left: 3px solid var(--rule);
+  padding: 0.4rem 0.9rem;
+  background: var(--paper);
+}
+.tip-title {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.tip-body {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+.faction-guide { margin-top: 0.6rem; }
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  margin-top: 1rem;
+}
+@media (max-width: 1080px) { .guide-grid { grid-template-columns: 1fr; } }
+
+.guide-col h3 {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+table.guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+table.guide-table th {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-align: left;
+  font-weight: 600;
+  padding: 0.45rem 0.5rem;
+  background: var(--bg-warm);
+  border-bottom: 1px solid var(--rule-bold);
+  white-space: nowrap;
+}
+table.guide-table th.num-col, table.guide-table td.num-col {
+  text-align: right;
+  width: 32px;
+  padding-right: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+table.guide-table th.phase-col, table.guide-table td.phase-col { width: 96px; }
+table.guide-table th.prio-col, table.guide-table td.prio-col { width: 64px; text-align: center; }
+table.guide-table td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  font-size: 0.92rem;
+}
+table.guide-table tr:hover td { background: var(--hover); }
+table.guide-table tr.traps-divider td {
+  background: var(--bg-warm);
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  padding: 0.35rem 0.5rem;
+  border-top: 1px solid var(--rule-bold);
+}
+table.guide-table tr.trap-row td { color: var(--muted); }
+table.guide-table tr.trap-row .b-name { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--rule); }
+
+.phase {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.phase-skip { color: var(--faint); }
+
+.b-name { font-weight: 600; color: var(--ink); }
+.b-id {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--faint);
+  margin-top: 1px;
+}
+.l-desc {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  margin-top: 1px;
+}
+.note-col { color: var(--ink-2); line-height: 1.45; }
+
+.prio-badge {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.12em 0.5em;
+  border-radius: 2px;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--muted);
+  white-space: nowrap;
+}
+.prio-badge.prio-S { background: #9a4818; }
+.prio-badge.prio-A { background: #b8861b; }
+.prio-badge.prio-B { background: #2c5d83; }
+.prio-badge.prio-trap {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--rule-bold);
+}
