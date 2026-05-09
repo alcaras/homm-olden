@@ -60,6 +60,53 @@ const IndexView = ({ go }) => {
             <span><b>{FACTIONS.length + 1}</b>factions + neutral</span>
           </div>
         </a>
+
+        <a className="card" href="#tier" onClick={(e)=>{e.preventDefault();go('tier');}}>
+          <div className="card-eyebrow">Tournament meta</div>
+          <div className="card-title">Tier list — Tournament Heroes</div>
+          <p className="card-desc">
+            Single-hero PvP rankings (S/A/B/C) for all {HEROES.length} heroes,
+            grouped by faction. Synthesized from creator commentary plus extracted
+            data; uncited verdicts are tagged so you can tell meta consensus from
+            inference. Includes top-10 ban list and opening-pick archetypes.
+          </p>
+          <div className="card-stats">
+            <span><b>{HEROES.length}</b>ranked</span>
+            <span><b>10</b>top bans</span>
+            <span><b>5</b>archetypes</span>
+          </div>
+        </a>
+
+        <a className="card" href="#guides" onClick={(e)=>{e.preventDefault();go('guides');}}>
+          <div className="card-eyebrow">Tournament prep</div>
+          <div className="card-title">Faction Guides — Buildings & Laws</div>
+          <p className="card-desc">
+            Per-faction tournament gameplan: turn-by-turn build order with priority
+            tiers and traps to avoid, plus law-priority lists with full in-game
+            effect text. Building names and law numbers cross-referenced against
+            extracted game data.
+          </p>
+          <div className="card-stats">
+            <span><b>{FACTIONS.length}</b>factions</span>
+            <span><b>5</b>universal tips</span>
+            <span><b>S/A/B</b>priorities</span>
+          </div>
+        </a>
+
+        <a className="card" href="#draft" onClick={(e)=>{e.preventDefault();go('draft');}}>
+          <div className="card-eyebrow">Pick / ban</div>
+          <div className="card-title">Draft — Quick Reference</div>
+          <p className="card-desc">
+            Tournament/Exodus draft cheat sheet: faction ban + pick priority, going
+            first vs going second playbooks, faction counter-pick matrix, and the
+            top-5 hero bans for each opponent faction. Use during a draft.
+          </p>
+          <div className="card-stats">
+            <span><b>6×6</b>counter-matrix</span>
+            <span><b>30</b>hero bans</span>
+            <span><b>2</b>playbooks</span>
+          </div>
+        </a>
       </div>
 
       <h2>Factions</h2>
