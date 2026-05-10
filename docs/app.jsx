@@ -1,11 +1,14 @@
 /* Olden Era reference — main app */
 
-const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'subclasses', 'heroes', 'units', 'tier', 'guides', 'draft'];
+const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'calc', 'subclasses', 'heroes', 'units', 'tier', 'guides', 'draft'];
 
 const parseHash = () => {
   const raw = (window.location.hash || '#index').slice(1);
   if (raw.startsWith('faction/')) {
     return { view: 'faction', factionId: raw.slice('faction/'.length) };
+  }
+  if (raw.startsWith('calc/')) {
+    return { view: 'calc-faction', factionId: raw.slice('calc/'.length) };
   }
   if (SIMPLE_VIEWS.includes(raw)) return { view: raw, factionId: null };
   return { view: 'index', factionId: null };
@@ -15,9 +18,14 @@ const App = () => {
   const [route, setRoute] = React.useState(parseHash);
 
   const go = (target) => {
-    const next = (typeof target === 'string' && target.startsWith('faction/'))
-      ? { view: 'faction', factionId: target.slice('faction/'.length) }
-      : { view: target, factionId: null };
+    let next;
+    if (typeof target === 'string' && target.startsWith('faction/')) {
+      next = { view: 'faction', factionId: target.slice('faction/'.length) };
+    } else if (typeof target === 'string' && target.startsWith('calc/')) {
+      next = { view: 'calc-faction', factionId: target.slice('calc/'.length) };
+    } else {
+      next = { view: target, factionId: null };
+    }
     setRoute(next);
     window.location.hash = target;
     window.scrollTo({top: 0});
@@ -49,6 +57,8 @@ const App = () => {
         <button className={tabActive('mechanics')}  onClick={()=>go('mechanics')}>Mechanics</button>
         <button className={tabActive('factions') || (route.view==='faction'?'active':'')}
                 onClick={()=>go('factions')}>Factions</button>
+        <button className={tabActive('calc') || (route.view==='calc-faction'?'active':'')}
+                onClick={()=>go('calc')}>Calculator</button>
         <button className={tabActive('subclasses')} onClick={()=>go('subclasses')}>Subclasses</button>
         <button className={tabActive('heroes')}     onClick={()=>go('heroes')}>Heroes</button>
         <button className={tabActive('units')}      onClick={()=>go('units')}>Units</button>
@@ -57,10 +67,12 @@ const App = () => {
         <button className={tabActive('draft')}      onClick={()=>go('draft')}>Draft</button>
       </nav>
 
-      {route.view==='index'      && <window.IndexView go={go} />}
-      {route.view==='mechanics'  && <window.MechanicsView go={go} />}
-      {route.view==='factions'   && <window.FactionsHubView go={go} />}
-      {route.view==='faction'    && <window.FactionView factionId={route.factionId} go={go} />}
+      {route.view==='index'         && <window.IndexView go={go} />}
+      {route.view==='mechanics'     && <window.MechanicsView go={go} />}
+      {route.view==='factions'      && <window.FactionsHubView go={go} />}
+      {route.view==='faction'       && <window.FactionView factionId={route.factionId} go={go} />}
+      {route.view==='calc'          && <window.CalcHubView go={go} />}
+      {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} go={go} />}
       {route.view==='subclasses' && <window.SubclassesView />}
       {route.view==='heroes'     && <window.HeroesView />}
       {route.view==='units'      && <window.UnitsView />}

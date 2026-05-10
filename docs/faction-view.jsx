@@ -65,6 +65,14 @@ const FactionView = ({ factionId, go }) => {
     <>
       <FactionSwitcher current={factionId} factions={FACTIONS} go={go} />
 
+      <p className="faction-page-actions">
+        <a href={`#calc/${factionId}`}
+           onClick={e=>{e.preventDefault();go(`calc/${factionId}`);}}
+           className="faction-page-cta">
+          Open the {fmeta.name} calculator →
+        </a>
+      </p>
+
       <div className="faction-hero">
         <img className="faction-hero-icon" loading="lazy"
              src={`img/factions/fraction_${fmeta.unitKey || ''}.png`} alt=""

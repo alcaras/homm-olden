@@ -31,6 +31,22 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
+        <a className="card" href="#calc" onClick={(e)=>{e.preventDefault();go('calc');}}>
+          <div className="card-eyebrow">Interactive tool</div>
+          <div className="card-title">Calculator — Laws &amp; Buildings</div>
+          <p className="card-desc">
+            Pick a faction's laws and buildings to enact. Running totals of all
+            7 resources (gold / wood / ore / gem / crystal / mercury / graal) and
+            of law points spent. Prerequisites auto-enforced. Costs pulled from
+            the actual game JSON files, not editorial.
+          </p>
+          <div className="card-stats">
+            <span><b>{FACTIONS.length}</b>factions</span>
+            <span><b>~30</b>buildings each</span>
+            <span><b>30+</b>laws each</span>
+          </div>
+        </a>
+
         <a className="card" href="#factions" onClick={(e)=>{e.preventDefault();go('factions');}}>
           <div className="card-eyebrow">Tournament playbook</div>
           <div className="card-title">Factions — Per-Faction Pages</div>

@@ -2026,6 +2026,279 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
 }
 
+/* faction-page CTA (e.g. open calculator) */
+.faction-page-actions { margin: 0 0 1rem; }
+.faction-page-cta {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  text-transform: uppercase;
+}
+.faction-page-cta:hover { color: var(--accent-2); border-bottom-color: var(--accent-2); }
+
+/* ---------- calculator view ---------- */
+.calc-totals {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 1.2rem;
+  align-items: center;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule-bold);
+  padding: 0.7rem 1rem;
+  margin: 0.4rem 0 1.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+@media (max-width: 900px) {
+  .calc-totals { grid-template-columns: 1fr; }
+}
+.calc-totals-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+.calc-resources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  align-items: center;
+}
+.calc-res {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+}
+.calc-res.empty { color: var(--faint); }
+.calc-res.has   { color: var(--ink); font-weight: 600; }
+.calc-res-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.calc-res.has .calc-res-label { color: var(--ink-2); }
+.calc-res-value { min-width: 1ch; text-align: left; }
+
+.calc-lp {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.calc-lp-value {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.calc-lp-label {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.calc-totals-actions button {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--ink-2);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.calc-totals-actions button:hover { border-color: var(--rule-bold); color: var(--ink); }
+
+.calc-cat { margin: 1.2rem 0; }
+.calc-cat h3 {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.7rem;
+}
+.calc-buildings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.7rem;
+}
+.calc-building {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.55rem 0.7rem;
+  border-radius: 2px;
+}
+.calc-building-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px dotted var(--rule);
+  padding-bottom: 0.3rem;
+}
+.calc-building-name {
+  font-family: Charter, Georgia, serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.calc-building-name.tight { font-size: 0.85rem; }
+.calc-building-id {
+  font-size: 0.66rem;
+  color: var(--faint);
+}
+.calc-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.calc-level-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.55rem;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  cursor: pointer;
+  text-align: left;
+  border-radius: 2px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+  font-size: 0.78rem;
+}
+.calc-level-btn:hover { border-color: var(--rule-bold); color: var(--ink); }
+.calc-level-btn.active {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+.calc-level-btn.active.calc-level-law {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+}
+.calc-level-num {
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+.calc-level-cost {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  justify-content: flex-end;
+  font-size: 0.74rem;
+}
+.calc-cost {
+  white-space: nowrap;
+}
+.calc-cost-gold      { color: inherit; }
+.calc-cost-wood      { color: inherit; }
+.calc-cost-ore       { color: inherit; }
+.calc-cost-gemstones { color: inherit; }
+.calc-cost-crystals  { color: inherit; }
+.calc-cost-mercury   { color: inherit; }
+
+/* ----- laws ----- */
+.calc-law-row {
+  margin: 1.2rem 0;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  border-left: 3px solid var(--accent-2);
+  padding: 0.7rem 0.9rem;
+}
+.calc-law-row.locked {
+  opacity: 0.65;
+  border-left-color: var(--faint);
+}
+.calc-law-row-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  border-bottom: 1px dotted var(--rule);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.calc-law-row-num {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+}
+.calc-law-row-unlock {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  color: var(--ink-2);
+}
+.calc-law-row-unlock b { color: var(--ink); font-weight: 600; }
+.calc-law-locked-note { color: var(--faint); margin-left: 0.4em; }
+
+.calc-law-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+@media (max-width: 900px) { .calc-law-groups { grid-template-columns: 1fr; } }
+.calc-law-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.calc-law {
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  padding: 0.5rem 0.7rem;
+  border-radius: 2px;
+}
+.calc-law-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+.calc-law-name {
+  font-family: Charter, Georgia, serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.calc-law-num {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  color: var(--faint);
+}
+.calc-law-desc {
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin: 0.25rem 0 0.5rem;
+}
+
 /* ---------- dark mode ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -2111,4 +2384,10 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 
   /* lighten footer slightly */
   footer.sitefoot { color: var(--muted); }
+
+  /* calculator: dark mode polish for active button states */
+  .calc-level-btn.active { background: #c46124; color: #1a1611; border-color: #c46124; }
+  .calc-level-btn.active.calc-level-law { background: #4a89b8; color: #1a1611; border-color: #4a89b8; }
+  .calc-totals { background: #1d1812; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+  .calc-lp-value { color: #d68b4a; }
 }
