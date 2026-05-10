@@ -244,12 +244,24 @@ zoran, the self-founded (waurum specialists)
 
 meh:
 nor
+niev (basic attack, offense)
+oriax (masterful blink; but starts with avatar)
+
+bad:
 curson, duke of range (heroic strike)
 tavi (fire larva)
 lo (locust specialist)
+mila (expert haste)
+goldentongue (morale specialist)
+abigor, duke of battle (initiative)
+fleu (logistics specialist)
+xirr (resistance)
+bathym (economy)
+leira (hornets specialist)
+groo (hive queen specialists)
+khariseth (primal specialist)
+pauper (speed but starts with battle magic)
 
-bad:
-niev (basic attack, offense)
 
 ## units
 
@@ -258,6 +270,7 @@ good:
 meh:
 
 bad:
+1 parasite {reaver}
 
 
 ## laws
@@ -290,10 +303,10 @@ good:
 # skills
 
 good skills:
-basic offense good (archery)
-logistics good
-insight good (civic innovation)
-avatar (amazing, pump spellcraft)
+basic offense  (archery)
+logistics 
+insight (civic innovation)
+summon avatar (amazing, pump spellcraft)
 combat (excellent starting skill)
 leadership (morale is great)
 

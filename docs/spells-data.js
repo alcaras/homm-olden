@@ -10,6 +10,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature deals +{0}% Damage with basic attacks. \nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature deals +20% Damage with basic attacks. \nDuration: 1 round(s).",
       "manaCost": [
         7,
         7,
@@ -41,6 +42,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature gains +{0} Speed.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature gains +2 Speed.\nDuration: 1 round(s).",
       "manaCost": [
         6,
         6,
@@ -72,6 +74,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "Recovery",
       "desc": "Target friendly creature restores {0} HP.\nCannot revive fallen units.",
+      "descResolved": "Target friendly creature restores 25 HP.\nCannot revive fallen units.",
       "manaCost": [
         5,
         5,
@@ -103,6 +106,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature loses {0} Attack and Defense.\nDuration: {1} round(s).",
+      "descResolved": "Target enemy creature loses -2 Attack and Defense.\nDuration: 1 round(s).",
       "manaCost": [
         6,
         6,
@@ -134,6 +138,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature deals +{0}% Damage with Ranged and Long Reach attacks.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature deals +20% Damage with Ranged and Long Reach attacks.\nDuration: 1 round(s).",
       "manaCost": [
         10,
         10,
@@ -165,6 +170,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Reveals the borders of all areas, including those hidden by the fog of war.",
+      "descResolved": "Reveals the borders of all areas, including those hidden by the fog of war.",
       "manaCost": [
         10,
         6,
@@ -196,6 +202,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Reduces the duration of all negative effects applied to the target friendly creature by {0}.",
+      "descResolved": "Reduces the duration of all negative effects applied to the target friendly creature by -2.",
       "manaCost": [
         8,
         8,
@@ -227,6 +234,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Removes {0} counterattack charge(s) from the target enemy for this round.",
+      "descResolved": "Removes 1 counterattack charge(s) from the target enemy for this round.",
       "manaCost": [
         10,
         6,
@@ -258,6 +266,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature gains {0} Initiative and {1}% maximum HP.\nDuration: {2} round(s).",
+      "descResolved": "Target friendly creature gains 1 Initiative and 1% maximum HP.\nDuration: ? round(s).",
       "manaCost": [
         14,
         14,
@@ -289,6 +298,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature counterattacks before enemy attack lands.\nDuration: {0} round(s).",
+      "descResolved": "Target friendly creature counterattacks before enemy attack lands.\nDuration: 1 round(s).",
       "manaCost": [
         15,
         15,
@@ -320,6 +330,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Resets the cooldowns of the target friendly creature.",
+      "descResolved": "Resets the cooldowns of the target friendly creature.",
       "manaCost": [
         6,
         6,
@@ -351,6 +362,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "All enemies within {0} hexes from the target friendly creature can only target that creature. Each instance of Damage makes the effect last {2} round(s) shorter.\nDuration: {1} round(s).",
+      "descResolved": "All enemies within 2 hexes from the target friendly creature can only target that creature. Each instance of Damage makes the effect last ? round(s) shorter.\nDuration: 1 round(s).",
       "manaCost": [
         11,
         11,
@@ -382,6 +394,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Reveals {0} squares around the selected space on the global map up to {1} square(s) away from the hero. Usable {2} time(s) per day.",
+      "descResolved": "Reveals ? squares around the selected space on the global map up to ? square(s) away from the hero. Usable ? time(s) per day.",
       "manaCost": [
         14,
         14,
@@ -413,6 +426,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature deals +{0} Pure Damage with each basic attack and restores the same amount of HP. Cannot revive fallen units.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature deals +1 Pure Damage with each basic attack and restores the same amount of HP. Cannot revive fallen units.\nDuration: ? round(s).",
       "manaCost": [
         21,
         21,
@@ -444,6 +458,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature takes –{0}% Damage from all sources.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature takes –-20% Damage from all sources.\nDuration: 1 round(s).",
       "manaCost": [
         18,
         18,
@@ -475,6 +490,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Whenever an enemy attacks target friendly creature in Melee, that enemy takes {0} Magic Damage. \nDuration: {1} round(s).",
+      "descResolved": "Whenever an enemy attacks target friendly creature in Melee, that enemy takes 1 Magic Damage. \nDuration: ? round(s).",
       "manaCost": [
         16,
         16,
@@ -506,6 +522,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature cannot have less than {0}% of their current units. Taking Damage reduces the duration of the effect by {2} round(s).\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature cannot have less than 20% of their current units. Taking Damage reduces the duration of the effect by ? round(s).\nDuration: 2 round(s).",
       "manaCost": [
         18,
         18,
@@ -537,6 +554,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Strikes target enemy four times, dealing a total of {0} Magic Damage.",
+      "descResolved": "Strikes target enemy four times, dealing a total of 200 Magic Damage.",
       "manaCost": [
         35,
         35,
@@ -568,6 +586,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Curses the target enemy. Cursed creatures take {0} Pure Damage at the start of their turn. This effect is stackable. \nDuration: {1} round(s).",
+      "descResolved": "Curses the target enemy. Cursed creatures take 1 Pure Damage at the start of their turn. This effect is stackable. \nDuration: ? round(s).",
       "manaCost": [
         9,
         9,
@@ -599,6 +618,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature gains {0} Attack and Defense.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature gains 2 Attack and Defense.\nDuration: 1 round(s).",
       "manaCost": [
         7,
         7,
@@ -630,6 +650,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature cannot restore HP. This effect remains after the creature’s death.\nDuration: {0} round(s).",
+      "descResolved": "Target enemy creature cannot restore HP. This effect remains after the creature’s death.\nDuration: 1 round(s).",
       "manaCost": [
         4,
         4,
@@ -661,6 +682,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy deals –{0}% Damage with basic attacks. \nDuration: {1} round(s).",
+      "descResolved": "Target enemy deals –-15% Damage with basic attacks. \nDuration: 1 round(s).",
       "manaCost": [
         6,
         6,
@@ -692,6 +714,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Reveals the precise number and intentions of all neutral squads within {0} squares of the hero.",
+      "descResolved": "Reveals the precise number and intentions of all neutral squads within ? squares of the hero.",
       "manaCost": [
         10,
         7,
@@ -723,6 +746,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature cannot be targeted. Effect ends when the unit takes any action or at the end of the round.",
+      "descResolved": "Target friendly creature cannot be targeted. Effect ends when the unit takes any action or at the end of the round.",
       "manaCost": [
         7,
         7,
@@ -754,6 +778,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Pure Damage to the target enemy. This Damage cannot be modified in any way.",
+      "descResolved": "Deals 40 Pure Damage to the target enemy. This Damage cannot be modified in any way.",
       "manaCost": [
         10,
         10,
@@ -785,6 +810,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature loses {0} Speed\nDuration: {1} round(s).",
+      "descResolved": "Target enemy creature loses -2 Speed\nDuration: 1 round(s).",
       "manaCost": [
         11,
         11,
@@ -816,6 +842,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Renews the fog of war in a {0}‑square radius around the hero, concealing them from opponents until the fog is re‑cleared. Usable {1} time(s) per day.",
+      "descResolved": "Renews the fog of war in a ?‑square radius around the hero, concealing them from opponents until the fog is re‑cleared. Usable ? time(s) per day.",
       "manaCost": [
         16,
         12,
@@ -847,6 +874,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature is prevented from using abilities or generating Focus Points.\nDuration: {0} round(s).",
+      "descResolved": "Target enemy creature is prevented from using abilities or generating Focus Points.\nDuration: 1 round(s).",
       "manaCost": [
         5,
         5,
@@ -878,6 +906,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature falls asleep and cannot take any actions. Dispelled upon taking Damage. After awakening, the same creature cannot fall asleep again until the end of the battle. \nDuration: {0} round(s).",
+      "descResolved": "Target enemy creature falls asleep and cannot take any actions. Dispelled upon taking Damage. After awakening, the same creature cannot fall asleep again until the end of the battle. \nDuration: 1 round(s).",
       "manaCost": [
         13,
         13,
@@ -909,6 +938,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature is prevented from using Ranged attacks.\nDuration: {0} round(s).",
+      "descResolved": "Target enemy creature is prevented from using Ranged attacks.\nDuration: 1 round(s).",
       "manaCost": [
         16,
         16,
@@ -940,6 +970,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target creature immediately and uncontrollably attacks the closest target within its attack radius, whether it is a friendly or enemy creature.",
+      "descResolved": "Target creature immediately and uncontrollably attacks the closest target within its attack radius, whether it is a friendly or enemy creature.",
       "manaCost": [
         16,
         16,
@@ -971,6 +1002,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons a stack of {0} Starchildren on an adjacent free hex. They will disappear at the end of the battle.",
+      "descResolved": "Summons a stack of 4 Starchildren on an adjacent free hex. They will disappear at the end of the battle.",
       "manaCost": [
         20,
         20,
@@ -1002,6 +1034,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature takes +{0}% Damage from all sources.\nDuration: {1} round(s).",
+      "descResolved": "Target enemy creature takes +20% Damage from all sources.\nDuration: 1 round(s).",
       "manaCost": [
         11,
         11,
@@ -1033,6 +1066,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature will die after taking any Damage if its stack size is lower than or equal to {0}% of its original number.\nDuration: {1} round(s).",
+      "descResolved": "Target enemy creature will die after taking any Damage if its stack size is lower than or equal to 1% of its original number.\nDuration: ? round(s).",
       "manaCost": [
         24,
         24,
@@ -1064,6 +1098,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Marks the target enemy creature. Marked creatures take {1} Magic Damage whenever they perform any action.\nDuration: {0} round(s).",
+      "descResolved": "Marks the target enemy creature. Marked creatures take ? Magic Damage whenever they perform any action.\nDuration: 1 round(s).",
       "manaCost": [
         18,
         14,
@@ -1095,6 +1130,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Increases the number of units in the target friendly stack by {0}%. These units are temporary and cannot exceed {1}% of the current number of permanent units in the stack.",
+      "descResolved": "Increases the number of units in the target friendly stack by 15%. These units are temporary and cannot exceed 0.5% of the current number of permanent units in the stack.",
       "manaCost": [
         35,
         35,
@@ -1126,6 +1162,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature gains +{0} Initiative.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature gains +3 Initiative.\nDuration: 1 round(s).",
       "manaCost": [
         6,
         6,
@@ -1157,6 +1194,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Immediately generates {0} Focus Charge(s).",
+      "descResolved": "Immediately generates 1 Focus Charge(s).",
       "manaCost": [
         11,
         8,
@@ -1188,6 +1226,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0}% of target enemy creature’s maximum HP as Magic Damage. Each time this spell is re‑cast on the same target, it deals +{1}% more Damage. This effect is stackable.",
+      "descResolved": "Deals 1% of target enemy creature’s maximum HP as Magic Damage. Each time this spell is re‑cast on the same target, it deals +1% more Damage. This effect is stackable.",
       "manaCost": [
         7,
         7,
@@ -1219,6 +1258,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature takes –{0}% Ranged Damage.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature takes –-25% Ranged Damage.\nDuration: 1 round(s).",
       "manaCost": [
         8,
         8,
@@ -1250,6 +1290,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Teleports a target friendly creature up to {0} hexes from its current hex.",
+      "descResolved": "Teleports a target friendly creature up to 2 hexes from its current hex.",
       "manaCost": [
         10,
         10,
@@ -1281,6 +1322,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Shields a target friendly creature with a barrier that blocks the next instance of Damage.\nDuration: {0} round(s).",
+      "descResolved": "Shields a target friendly creature with a barrier that blocks the next instance of Damage.\nDuration: 1 round(s).",
       "manaCost": [
         14,
         11,
@@ -1312,6 +1354,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage per Focus Charge to all creatures in one‑hex radius.",
+      "descResolved": "Deals ? Magic Damage per Focus Charge to all creatures in one‑hex radius.",
       "manaCost": [
         8,
         8,
@@ -1343,6 +1386,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "The casting hero immediately interacts with any external dwelling you control within {0} squares. Usable {1} times per day.",
+      "descResolved": "The casting hero immediately interacts with any external dwelling you control within ? squares. Usable ? times per day.",
       "manaCost": [
         18,
         18,
@@ -1374,6 +1418,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "The casting hero immediately interacts with any allied hero within {0} squares. Usable {1} times per day.",
+      "descResolved": "The casting hero immediately interacts with any allied hero within ? squares. Usable ? times per day.",
       "manaCost": [
         12,
         12,
@@ -1405,6 +1450,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals Damage to all enemies. Each stack takes {0} Magic Damage per its creature tier",
+      "descResolved": "Deals Damage to all enemies. Each stack takes ? Magic Damage per its creature tier",
       "manaCost": [
         13,
         13,
@@ -1436,6 +1482,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target enemy creature cannot counterattack.\nDuration: {0} round(s).",
+      "descResolved": "Target enemy creature cannot counterattack.\nDuration: 1 round(s).",
       "manaCost": [
         9,
         9,
@@ -1467,6 +1514,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Place up to {1} invisible traps on free hexes. Traps trigger when stepped on by a ground creature, dealing Pure Damage to the creature and adjacent ones before disappearing. The Damage equals {0}% of one unit’s maximum HP.\nDuration: {2} round(s).",
+      "descResolved": "Place up to 1 invisible traps on free hexes. Traps trigger when stepped on by a ground creature, dealing Pure Damage to the creature and adjacent ones before disappearing. The Damage equals 2% of one unit’s maximum HP.\nDuration: 5 round(s).",
       "manaCost": [
         9,
         9,
@@ -1498,6 +1546,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons a copy of a target friendly creature. The copy deals –{0}% and takes +{1}% Damage and can’t use special abilities.\nDuration: {2} round(s).",
+      "descResolved": "Summons a copy of a target friendly creature. The copy deals –2% and takes +1% Damage and can’t use special abilities.\nDuration: 1 round(s).",
       "manaCost": [
         24,
         24,
@@ -1529,6 +1578,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Restore {0} HP to a target friendly creature.\nThis can revive fallen units.",
+      "descResolved": "Restore 50 HP to a target friendly creature.\nThis can revive fallen units.",
       "manaCost": [
         17,
         17,
@@ -1560,6 +1610,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Place up to {1} invisible trap(s) on free hexes. Traps trigger when a ground creature moves through them, halting the creature’s movement, ending its current turn and cancelling its next turn. After triggering, the trap disappears. If the trapped hex is the creature’s <b>final destination</b>, the trap <b>does not</b> trigger.\nDuration: {0} round(s).",
+      "descResolved": "Place up to 1 invisible trap(s) on free hexes. Traps trigger when a ground creature moves through them, halting the creature’s movement, ending its current turn and cancelling its next turn. After triggering, the trap disappears. If the trapped hex is the creature’s <b>final destination</b>, the trap <b>does not</b> trigger.\nDuration: 2 round(s).",
       "manaCost": [
         10,
         5,
@@ -1591,6 +1642,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to all creatures on the target hex and up to 2 hexes away in every direction. Pulls the furthest affected targets towards the center if possible.",
+      "descResolved": "Deals 80 Magic Damage to all creatures on the target hex and up to 2 hexes away in every direction. Pulls the furthest affected targets towards the center if possible.",
       "manaCost": [
         30,
         30,
@@ -1622,6 +1674,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "All friendly creatures gain {0} Speed and Initiative. All enemies lose {0} Speed and Initiative.\nDuration: {1} round(s).",
+      "descResolved": "All friendly creatures gain 1 Speed and Initiative. All enemies lose 1 Speed and Initiative.\nDuration: 1 round(s).",
       "manaCost": [
         23,
         23,
@@ -1653,6 +1706,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Selected target takes no Damage from any source. Instead, at the start of each round, it takes all Damage that it would have taken in the previous round as Pure Damage. \nDuration: {0} round(s).",
+      "descResolved": "Selected target takes no Damage from any source. Instead, at the start of each round, it takes all Damage that it would have taken in the previous round as Pure Damage. \nDuration: 1 round(s).",
       "manaCost": [
         21,
         21,
@@ -1684,6 +1738,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Reveals the location of all neutral squads on the global map (including those in the fog of war).",
+      "descResolved": "Reveals the location of all neutral squads on the global map (including those in the fog of war).",
       "manaCost": [
         10,
         6,
@@ -1715,6 +1770,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to target enemy creature.",
+      "descResolved": "Deals 25 Magic Damage to target enemy creature.",
       "manaCost": [
         6,
         6,
@@ -1746,6 +1802,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature takes –{0}% Damage from Melee attacks.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature takes –-15% Damage from Melee attacks.\nDuration: 1 round(s).",
       "manaCost": [
         6,
         6,
@@ -1777,6 +1834,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Place up to {1} crystal obstacles. An obstacle is destroyed upon taking {0} hit(s) from attacks.\nDuration: {2} round(s).",
+      "descResolved": "Place up to 1 crystal obstacles. An obstacle is destroyed upon taking 2 hit(s) from attacks.\nDuration: ? round(s).",
       "manaCost": [
         8,
         8,
@@ -1808,6 +1866,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to all creatures in a 1‑hex radius.",
+      "descResolved": "Deals 50 Magic Damage to all creatures in a 1‑hex radius.",
       "manaCost": [
         13,
         13,
@@ -1839,6 +1898,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to target enemy creature and reduces their Initiative by {1}.\nDuration: {2} round(s).",
+      "descResolved": "Deals 75 Magic Damage to target enemy creature and reduces their Initiative by 75.\nDuration: 10 round(s).",
       "manaCost": [
         10,
         10,
@@ -1870,6 +1930,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Reduces the duration of all positive effects applied to the target by {0}.",
+      "descResolved": "Reduces the duration of all positive effects applied to the target by -1.",
       "manaCost": [
         8,
         8,
@@ -1901,6 +1962,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to the target enemy. All adjacent empty hexes are filled with rock obstacles. An obstacle is destroyed upon taking {2} hit(s) from attacks.\nDuration: {1} round(s).",
+      "descResolved": "Deals 50 Magic Damage to the target enemy. All adjacent empty hexes are filled with rock obstacles. An obstacle is destroyed upon taking 15 hit(s) from attacks.\nDuration: 50 round(s).",
       "manaCost": [
         10,
         10,
@@ -1932,6 +1994,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Damage to all defensive structures on the battlefield. Also deals {1} Damage to all creatures within castle walls.",
+      "descResolved": "Deals 100 Damage to all defensive structures on the battlefield. Also deals 15 Damage to all creatures within castle walls.",
       "manaCost": [
         16,
         16,
@@ -1963,6 +2026,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Burns {2} selected hexes. A ground creature that steps onto a burning hex takes {0} Magic Damage.\nDuration: {1} round(s).",
+      "descResolved": "Burns 1 selected hexes. A ground creature that steps onto a burning hex takes 2 Magic Damage.\nDuration: 2 round(s).",
       "manaCost": [
         12,
         9,
@@ -1994,6 +2058,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to up to {1} different target enemies.",
+      "descResolved": "Deals 50 Magic Damage to up to 50 different target enemies.",
       "manaCost": [
         18,
         18,
@@ -2025,6 +2090,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Any chosen target becomes immune to spells of tier {1} and lower. This effect cannot be dispelled. If the target is a summoned creature or contains temporary units in its stack, those are destroyed. \nDuration: {0} round(s).",
+      "descResolved": "Any chosen target becomes immune to spells of tier ? and lower. This effect cannot be dispelled. If the target is a summoned creature or contains temporary units in its stack, those are destroyed. \nDuration: 1 round(s).",
       "manaCost": [
         18,
         18,
@@ -2056,6 +2122,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to the target enemy creature. The lightning then jumps {2} time(s) to a random target within {3} hex(es), dealing –{1}% Damage with each jump.",
+      "descResolved": "Deals 100 Magic Damage to the target enemy creature. The lightning then jumps 20 time(s) to a random target within 20 hex(es), dealing –100% Damage with each jump.",
       "manaCost": [
         24,
         24,
@@ -2087,6 +2154,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to all creatures adjacent to target hex. All affected stacks are pushed away from the center if possible.",
+      "descResolved": "Deals 75 Magic Damage to all creatures adjacent to target hex. All affected stacks are pushed away from the center if possible.",
       "manaCost": [
         19,
         19,
@@ -2118,6 +2186,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Affects a neutral squad in a {0}‑square radius. Transforms it into a different squad of the same strength. Usable {1} time(s) per day.",
+      "descResolved": "Affects a neutral squad in a ?‑square radius. Transforms it into a different squad of the same strength. Usable ? time(s) per day.",
       "manaCost": [
         17,
         17,
@@ -2149,6 +2218,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to all creatures on the battlefield.",
+      "descResolved": "Deals 100 Magic Damage to all creatures on the battlefield.",
       "manaCost": [
         40,
         40,
@@ -2180,6 +2250,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Target friendly creature gains Double Strike and deals <i>and takes</i> +{0}% Damage.\nDuration: {1} round(s).",
+      "descResolved": "Target friendly creature gains Double Strike and deals <i>and takes</i> +10% Damage.\nDuration: 1 round(s).",
       "manaCost": [
         28,
         28,
@@ -2211,6 +2282,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons a stack of {0} Primal Remnants. They will disappear at the end of the battle.",
+      "descResolved": "Summons a stack of 6 Primal Remnants. They will disappear at the end of the battle.",
       "manaCost": [
         20,
         20,
@@ -2242,6 +2314,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Teleports the casting hero to a selected Remote Foothold you control. Usable {0} time(s) per day.",
+      "descResolved": "Teleports the casting hero to a selected Remote Foothold you control. Usable ? time(s) per day.",
       "manaCost": [
         10,
         10,
@@ -2260,6 +2333,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Teleports the casting hero to the nearest city you control within {0} squares. All remaining movement points are lost. Usable {1} time(s) per day.",
+      "descResolved": "Teleports the casting hero to the nearest city you control within ? squares. All remaining movement points are lost. Usable ? time(s) per day.",
       "manaCost": [
         10,
         10,
@@ -2278,6 +2352,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Immediately dispels target enemy summoned creature.",
+      "descResolved": "Immediately dispels target enemy summoned creature.",
       "manaCost": [
         10,
         10,
@@ -2296,6 +2371,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "The enemy hero’s next spell costs +{0}% mana and gains a –{0}% Spell Power malus.",
+      "descResolved": "The enemy hero’s next spell costs +?% mana and gains a –?% Spell Power malus.",
       "manaCost": [
         10,
         10,
@@ -2314,6 +2390,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Deals {0} Magic Damage to a target enemy creature.",
+      "descResolved": "Deals 25 Magic Damage to a target enemy creature.",
       "manaCost": [
         0,
         0,
@@ -2332,6 +2409,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Restores the casting hero’s mana based on their remaining movement points: {0}% of mana per {1}% of remaining points. All movement points are lost.",
+      "descResolved": "Restores the casting hero’s mana based on their remaining movement points: ?% of mana per ?% of remaining points. All movement points are lost.",
       "manaCost": [
         0,
         0,
@@ -2350,6 +2428,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Removes {2} mana from the casting hero to restore {3} mana to any allied hero within {0} squares. Usable {1} time(s) per day.",
+      "descResolved": "Removes ? mana from the casting hero to restore ? mana to any allied hero within ? squares. Usable ? time(s) per day.",
       "manaCost": [
         10,
         10,
@@ -2368,6 +2447,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Allows raising Undead to be toggled on or off. When it is off, the hero restores Necromantic Energy after winning a battle instead of raising friendly Undead.",
+      "descResolved": "Allows raising Undead to be toggled on or off. When it is off, the hero restores Necromantic Energy after winning a battle instead of raising friendly Undead.",
       "manaCost": [
         0
       ],
@@ -2383,6 +2463,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "The casting hero immediately interacts with any controlled city, enabling the transfer of creatures to or from that city. Usable {0} time per day.",
+      "descResolved": "The casting hero immediately interacts with any controlled city, enabling the transfer of creatures to or from that city. Usable ? time per day.",
       "manaCost": [
         12,
         12,
@@ -2401,6 +2482,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "The casting hero’s next spell costs –{0}% mana and gains a +{0}% Spell Power bonus.",
+      "descResolved": "The casting hero’s next spell costs –?% mana and gains a +?% Spell Power bonus.",
       "manaCost": [
         10,
         10,
@@ -2419,6 +2501,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Creates an entrance to a Foothold on an adjacent space that lasts until the end of the day, allowing any allied hero to leave creatures and artifacts there. If an enemy hero interacts with the entrance, it disappears. Usable {0} time(s) per day.",
+      "descResolved": "Creates an entrance to a Foothold on an adjacent space that lasts until the end of the day, allowing any allied hero to leave creatures and artifacts there. If an enemy hero interacts with the entrance, it disappears. Usable ? time(s) per day.",
       "manaCost": [
         14,
         10,
@@ -2442,6 +2525,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Immediately restores {0} Movement points to the hero. Usable {1} time(s) per day.",
+      "descResolved": "Immediately restores ? Movement points to the hero. Usable ? time(s) per day.",
       "manaCost": [
         17,
         13,
@@ -2465,6 +2549,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Grants the hero the ability to fly, moving freely through any obstacles on the global map. Flying above obstacles costs +{0}% Movement points.",
+      "descResolved": "Grants the hero the ability to fly, moving freely through any obstacles on the global map. Flying above obstacles costs +?% Movement points.",
       "manaCost": [
         20,
         14,
@@ -2488,6 +2573,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Teleports the casting hero to a selected city you control. Usable {0} times per day.",
+      "descResolved": "Teleports the casting hero to a selected city you control. Usable ? times per day.",
       "manaCost": [
         24,
         18,
@@ -2511,6 +2597,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2529,6 +2616,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2547,6 +2635,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2565,6 +2654,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2583,6 +2673,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2601,6 +2692,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2619,6 +2711,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2637,6 +2730,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2655,6 +2749,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2673,6 +2768,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2691,6 +2787,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2709,6 +2806,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2727,6 +2825,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2745,6 +2844,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2763,6 +2863,7 @@ window.OE_SPELLS_DATA = {
       "scope": "battle",
       "magicType": "",
       "desc": "Summons an Avatar. It has {0} HP and deals {1} base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
+      "descResolved": "Summons an Avatar. It has 1 HP and deals 0 base Damage. It gains Attack and Defense equivalent to the hero’s Spell Power and Knowledge. Each side of the battle can have only one Avatar at a time.",
       "manaCost": [
         0,
         0,
@@ -2781,6 +2882,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Teleports the hero to target location within {0} squares. Usable {1} times per day.",
+      "descResolved": "Teleports the hero to target location within ? squares. Usable ? times per day.",
       "manaCost": [
         22,
         14,
@@ -2804,6 +2906,7 @@ window.OE_SPELLS_DATA = {
       "scope": "world",
       "magicType": "",
       "desc": "Creates a portal until the end of the day, allowing any hero to travel through it. Entry is from any free adjacent space, and exit is to any free space within {0} square(s) of the hero. {1} time(s) per day.",
+      "descResolved": "Creates a portal until the end of the day, allowing any hero to travel through it. Entry is from any free adjacent space, and exit is to any free space within ? square(s) of the hero. ? time(s) per day.",
       "manaCost": [
         28,
         20,
@@ -2841,5 +2944,5 @@ window.OE_SPELLS_DATA = {
       "name": "Neutral"
     }
   ],
-  "GENERATED_AT": "2026-05-10 07:50 UTC"
+  "GENERATED_AT": "2026-05-10 17:17 UTC"
 };

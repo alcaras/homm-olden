@@ -48,7 +48,127 @@ def load_tokens(path: Path) -> dict[str, str]:
     return {t["sid"]: t["text"] for t in load_json_strip(path).get("tokens", [])}
 
 
-def collect_spells(tokens: dict[str, str]) -> list[dict]:
+def load_buffs() -> dict[str, dict]:
+    """Index every magic-buff entry by its sid so spell-buff descriptions can
+    surface the actual magnitude (e.g. magic_haste_effect_0 → +1 Speed).
+    Each entry's data.stats block holds the relevant numeric value."""
+    out = {}
+    for p in (RAW / "DB" / "buffs").glob("buffs_*_magics.json"):
+        for b in load_json_strip(p).get("array", []):
+            if isinstance(b, dict) and b.get("id"):
+                out[b["id"]] = b
+    return out
+
+
+def buff_magnitude(buff_def: dict) -> float | None:
+    """Best-effort: pull the leading numeric magnitude out of a buff's data
+    block. Buffs typically encode a single stat change (e.g. outDmgMods +0.2,
+    speed +1) — we surface that one."""
+    if not buff_def:
+        return None
+    data = buff_def.get("data") or {}
+    stats = data.get("stats") or {}
+    # Walk all stat groups and look for either a single numeric value or a
+    # list of {t, v} pairs. Return the first numeric we find.
+    def walk(obj):
+        if isinstance(obj, dict):
+            if "v" in obj and isinstance(obj.get("v"), (int, float)):
+                return obj["v"]
+            for v in obj.values():
+                r = walk(v)
+                if r is not None:
+                    return r
+        elif isinstance(obj, list):
+            for v in obj:
+                r = walk(v)
+                if r is not None:
+                    return r
+        elif isinstance(obj, (int, float)):
+            return obj
+        return None
+    return walk(stats)
+
+
+def spell_values(sp: dict, buffs: dict[str, dict]) -> list[float | str]:
+    """Flatten the user-visible numeric values used to fill {N} placeholders.
+    Order matters: descriptions index by position. Heuristic priority:
+      1. dealer-level damage fields (minBaseDmg, maxBaseDmg, numTargets,
+         minStackDmg, maxStackDmg)
+      2. buff magnitude (from data.stats), then buff duration
+      3. targetMechanics values (numeric only)
+    Falls back to None for missing positions; the caller renders those as '?'.
+    """
+    bm = sp.get("battleMagic") or sp.get("battleMagic_") or {}
+    dealers = bm.get("magicDealers") or []
+    if not dealers:
+        return []
+    d = dealers[0]
+    values: list[float | None] = []
+
+    # Damage spell fields
+    for k in ("minBaseDmg", "maxBaseDmg", "minStackDmg", "maxStackDmg", "numTargets"):
+        if k in d:
+            try:
+                values.append(float(d[k]))
+            except (TypeError, ValueError):
+                pass
+
+    # Buff magnitude + duration
+    buff_field = d.get("buff") or {}
+    if buff_field:
+        mag = buff_magnitude(buffs.get(buff_field.get("sid", "")))
+        if mag is not None:
+            values.append(float(mag))
+        if "duration" in buff_field:
+            try:
+                values.append(float(buff_field["duration"]))
+            except (TypeError, ValueError):
+                pass
+
+    # targetMechanics values (heal/damage/dispel/etc)
+    for m in d.get("targetMechanics", []) or []:
+        for v in m.get("values", []) or []:
+            try:
+                values.append(float(v))
+            except (TypeError, ValueError):
+                continue
+    return values
+
+
+def fmt_int_if_int(v: float) -> str:
+    return str(int(v)) if v == int(v) else f"{v:g}"
+
+
+def resolve_spell_desc(desc: str, values: list[float | None]) -> str:
+    """Substitute {N} placeholders in `desc` with values[N]. Same context-aware
+    formatting as the law/building resolver:
+      "{0}%" → percent (×100 if fractional)
+      "{0} times"/"fold" → multiplier-delta (1+v)
+      otherwise → raw integer / float
+    """
+    if not desc:
+        return desc
+
+    def repl(m):
+        idx = int(m.group(1))
+        if idx >= len(values) or values[idx] is None:
+            return "?"
+        v = values[idx]
+        tail = desc[m.end():m.end() + 24].lower()
+        if tail.startswith("%"):
+            if 0 < abs(v) < 1:
+                v = v * 100
+            return fmt_int_if_int(v)
+        # Multiplier-delta only for "times more" / "times the" / "fold"
+        # — avoids over-applying to plain "{N} time(s)" (count).
+        if " times more" in tail or " times the" in tail or "fold" in tail:
+            return fmt_int_if_int(1 + v)
+        return fmt_int_if_int(v)
+
+    return re.sub(r"\{(\d+)\}", repl, desc)
+
+
+def collect_spells(tokens: dict[str, str], buffs: dict[str, dict]) -> list[dict]:
     """Walk every magics/*.json file, normalize each spell into a flat dict."""
     out = []
     for p in sorted((RAW / "DB" / "magics").glob("*.json")):
@@ -75,26 +195,32 @@ def collect_spells(tokens: dict[str, str]) -> list[dict]:
             # against the wiki: tier 1 = 2 rounds, +1 per tier.
             tier = sp.get("rank") or 0
             cooldown = (tier + 1) if tier else None
+            # Resolve {N} placeholders from spell data + linked buff definitions
+            raw_desc = (tokens.get(desc_sid, "") or "").strip()
+            values = spell_values(sp, buffs)
+            desc_resolved = resolve_spell_desc(raw_desc, values)
 
             out.append({
-                "id":         sid,
-                "name":       tokens.get(name_sid, sid),
-                "icon":       sp.get("icon") or sid,
-                "school":     sp.get("school_") or "neutral",
-                "tier":       tier,
-                "scope":      scope,                      # 'battle' or 'world'
-                "magicType":  magic_type,
-                "desc":       (tokens.get(desc_sid, "") or "").strip(),
-                "manaCost":   list(mana_per_level),
-                "cooldown":   cooldown,
-                "learnCost":  sp.get("learnCost") or [],
+                "id":           sid,
+                "name":         tokens.get(name_sid, sid),
+                "icon":         sp.get("icon") or sid,
+                "school":       sp.get("school_") or "neutral",
+                "tier":         tier,
+                "scope":        scope,                      # 'battle' or 'world'
+                "magicType":    magic_type,
+                "desc":         raw_desc,
+                "descResolved": desc_resolved,
+                "manaCost":     list(mana_per_level),
+                "cooldown":     cooldown,
+                "learnCost":    sp.get("learnCost") or [],
             })
     return out
 
 
 def build():
     tokens = load_tokens(MAGIC_TOKENS)
-    spells = collect_spells(tokens)
+    buffs = load_buffs()
+    spells = collect_spells(tokens, buffs)
     # Sort: school order, then tier, then name
     school_idx = {s: i for i, s in enumerate(SCHOOL_ORDER)}
     spells.sort(key=lambda s: (school_idx.get(s["school"], 99), s["tier"], s["name"]))

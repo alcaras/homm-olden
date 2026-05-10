@@ -131,7 +131,7 @@ const SpellCard = ({sp}) => {
       </header>
       {sp.desc && (
         <p className="spell-desc">
-          {sp.desc.replace(/\{[0-9]+\}/g, '?')}
+          {sp.descResolved || sp.desc.replace(/\{[0-9]+\}/g, '?')}
         </p>
       )}
     </article>
