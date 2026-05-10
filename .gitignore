@@ -26,3 +26,6 @@ discord-top5-and-faction-tier.md
 
 # esbuild gets installed via npx; cache lives in node_modules
 node_modules/
+
+# Editor backup files
+*~
