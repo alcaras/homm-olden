@@ -206,9 +206,11 @@ const HeroesView = ({ go }) => {
                   <td><SkillChips skills={h.skills} /></td>
                   <td>
                     {(h.spells || []).map((s) => (
-                      <span key={s.id}
-                            className={'spell-chip' + (s.masterful ? ' spell-chip-masterful' : '')}
-                            title={(s.masterful ? 'Masterful ' : '') + `${s.name} (L${s.level})`}>
+                      <a key={s.id}
+                         className={'spell-chip' + (s.masterful ? ' spell-chip-masterful' : '')}
+                         href={window.OE_routeToUrl(`spell/${s.id}`)}
+                         onClick={(e)=>{ if (go) { e.preventDefault(); go(`spell/${s.id}`); } }}
+                         title={(s.masterful ? 'Masterful ' : '') + `${s.name} (L${s.level})`}>
                         <img loading="lazy" className="spell-chip-icon"
                              src={`img/spells/${s.id}.png`} alt=""
                              onError={(e)=>{e.target.style.visibility='hidden';}} />
@@ -216,10 +218,25 @@ const HeroesView = ({ go }) => {
                         <span className="spell-chip-name">
                           {s.masterful ? <em>Masterful </em> : null}{s.name}
                         </span>
-                      </span>
+                      </a>
                     ))}
                   </td>
-                  <td><Army army={h.army} /></td>
+                  <td>
+                    <span className="army">
+                      {(h.armySegs || []).length > 0
+                        ? h.armySegs.map((seg, i) => (
+                            <React.Fragment key={i}>
+                              <a className="stack stack-link"
+                                 href={window.OE_routeToUrl(`unit/${seg.id}`)}
+                                 onClick={(e)=>{ if (go) { e.preventDefault(); go(`unit/${seg.id}`); } }}>
+                                {seg.min}-{seg.max} {seg.name}
+                              </a>
+                              {i < h.armySegs.length - 1 && <span className="sep"> · </span>}
+                            </React.Fragment>
+                          ))
+                        : <Army army={h.army} />}
+                    </span>
+                  </td>
                   <td className="num army-score">{h.armyScore?.toLocaleString() ?? '—'}</td>
                 </tr>
               );

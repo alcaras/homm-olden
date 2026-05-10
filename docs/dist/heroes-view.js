@@ -160,10 +160,17 @@ const HeroesView = ({ go }) => {
         }
       }
     ), /* @__PURE__ */ React.createElement("div", { className: "spec-text" }, /* @__PURE__ */ React.createElement("div", { className: "spec-name" }, h.specialty), h.specDesc && /* @__PURE__ */ React.createElement("div", { className: "spec-desc" }, h.specDesc)))), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.A)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.D)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.P)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.K)), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement(SkillChips, { skills: h.skills })), /* @__PURE__ */ React.createElement("td", null, (h.spells || []).map((s) => /* @__PURE__ */ React.createElement(
-      "span",
+      "a",
       {
         key: s.id,
         className: "spell-chip" + (s.masterful ? " spell-chip-masterful" : ""),
+        href: window.OE_routeToUrl(`spell/${s.id}`),
+        onClick: (e) => {
+          if (go) {
+            e.preventDefault();
+            go(`spell/${s.id}`);
+          }
+        },
         title: (s.masterful ? "Masterful " : "") + `${s.name} (L${s.level})`
       },
       /* @__PURE__ */ React.createElement(
@@ -180,7 +187,24 @@ const HeroesView = ({ go }) => {
       ),
       s.masterful && /* @__PURE__ */ React.createElement("span", { className: "spell-chip-master" }, "\u2605"),
       /* @__PURE__ */ React.createElement("span", { className: "spell-chip-name" }, s.masterful ? /* @__PURE__ */ React.createElement("em", null, "Masterful ") : null, s.name)
-    ))), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement(Army, { army: h.army })), /* @__PURE__ */ React.createElement("td", { className: "num army-score" }, h.armyScore?.toLocaleString() ?? "\u2014"));
+    ))), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("span", { className: "army" }, (h.armySegs || []).length > 0 ? h.armySegs.map((seg, i) => /* @__PURE__ */ React.createElement(React.Fragment, { key: i }, /* @__PURE__ */ React.createElement(
+      "a",
+      {
+        className: "stack stack-link",
+        href: window.OE_routeToUrl(`unit/${seg.id}`),
+        onClick: (e) => {
+          if (go) {
+            e.preventDefault();
+            go(`unit/${seg.id}`);
+          }
+        }
+      },
+      seg.min,
+      "-",
+      seg.max,
+      " ",
+      seg.name
+    ), i < h.armySegs.length - 1 && /* @__PURE__ */ React.createElement("span", { className: "sep" }, " \xB7 "))) : /* @__PURE__ */ React.createElement(Army, { army: h.army }))), /* @__PURE__ */ React.createElement("td", { className: "num army-score" }, h.armyScore?.toLocaleString() ?? "\u2014"));
   })))), sorted.length === 0 && /* @__PURE__ */ React.createElement("p", { style: { color: "var(--muted)", fontStyle: "italic", marginTop: "2rem" } }, "No heroes match those filters."));
 };
 window.HeroesView = HeroesView;

@@ -279,14 +279,17 @@ for ukey in [u for _, u, *_ in FACTION_DEFS]:
                 "learned":   bool(sp.get("isLearned")),
                 "masterful": is_masterful,
             })
-        # Army
+        # Army — keep both the rendered string AND a structured array so the
+        # heroes table can render each unit as a link.
         squad_parts: list[str] = []
+        squad_segs: list[dict] = []
         for st in h.get("startSquad") or []:
             mn = st.get("min") or 0
             mx = st.get("max") or 0
             uid = st.get("sid") or ""
             uname = t(f"{uid}_name", default=uid.replace("_", " ").title())
             squad_parts.append(f"{mn}–{mx} {uname}")
+            squad_segs.append({"min": mn, "max": mx, "id": uid, "name": uname})
         army = " · ".join(squad_parts) or "—"
 
         spec_id = h.get("specialization") or ""
@@ -316,6 +319,7 @@ for ukey in [u for _, u, *_ in FACTION_DEFS]:
             "skills": skill_strs,
             "spells": start_spells,
             "army": army,
+            "armySegs": squad_segs,
         })
 
 

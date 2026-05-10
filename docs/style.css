@@ -49,7 +49,7 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 /* ---------- shell ---------- */
 .shell {
-  max-width: 1280px;
+  max-width: min(100vw - 2rem, 1600px);
   margin: 0 auto;
   padding: 2.5rem 2rem 4rem;
 }
@@ -3396,3 +3396,25 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 
 .hero-spell-masterful { border: 2px solid var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
 .hero-spell-master { color: var(--gold); font-weight: 800; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 0.4em; }
+
+/* clickable army-stack segment */
+.stack-link {
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--rule);
+  cursor: pointer;
+}
+.stack-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* clickable spell chip = inherits hero/spell chip styles, just becomes a link */
+a.spell-chip { text-decoration: none; cursor: pointer; }
+a.spell-chip:hover { border-color: var(--accent); }
+a.spell-chip.spell-chip-masterful:hover { box-shadow: 0 0 0 1px var(--accent) inset; }
+
+/* single-spell page */
+.spell-page-head { display: flex; gap: 1.2rem; align-items: center; margin: 0.5rem 0 1.4rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--rule-bold); }
+.spell-page-icon { width: 80px; height: 80px; object-fit: contain; background: var(--bg-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 4px; flex-shrink: 0; }
+.spell-page-name { margin: 0; font-size: 2rem; font-family: Charter, Georgia, serif; font-weight: 600; letter-spacing: -0.015em; line-height: 1.05; text-transform: none; }
+.spell-page-meta { margin-top: 0.4rem; display: flex; gap: 0.3rem; flex-wrap: wrap; }
+.spell-page-id { font-size: 0.7rem; color: var(--faint); margin-top: 0.4rem; }
+.spell-page-desc { font-size: 1.02rem; color: var(--ink-2); line-height: 1.6; max-width: 50em; }

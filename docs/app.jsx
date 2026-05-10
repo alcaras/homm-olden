@@ -48,6 +48,12 @@ const parsePath = () => {
   if (path.startsWith('hero/')) {
     return { view: 'hero', heroId: path.slice('hero/'.length), query: search };
   }
+  if (path.startsWith('spell/')) {
+    return { view: 'spell', spellId: path.slice('spell/'.length), query: search };
+  }
+  if (path.startsWith('unit/')) {
+    return { view: 'unit', unitId: path.slice('unit/'.length), query: search };
+  }
   // Back-compat: old #-fragment hash routes — recover from window.location.hash.
   const hashRaw = (window.location.hash || '').replace(/^#/, '');
   if (hashRaw) {
@@ -99,6 +105,14 @@ const titleFor = (route) => {
       const h = window.OE_DATA?.HEROES?.find(x => x.id === route.heroId);
       return t(h?.name || 'Hero');
     }
+    case 'spell': {
+      const s = window.OE_SPELLS_DATA?.SPELLS?.find(x => x.id === route.spellId);
+      return t(s?.name || 'Spell');
+    }
+    case 'unit': {
+      const u = window.OE_DATA?.UNITS?.find(x => x.id === route.unitId);
+      return t(u?.name || 'Unit');
+    }
     case 'calc-faction':
       return t(`${factionName(route.factionId)} ${route.kind === 'laws' ? 'Laws' : 'Buildings'}`);
     case 'subclasses':    return t('Subclasses');
@@ -138,6 +152,10 @@ const App = () => {
       next = { view: 'units-faction', factionId: path.slice('units/'.length), query };
     } else if (typeof path === 'string' && path.startsWith('hero/')) {
       next = { view: 'hero', heroId: path.slice('hero/'.length), query };
+    } else if (typeof path === 'string' && path.startsWith('spell/')) {
+      next = { view: 'spell', spellId: path.slice('spell/'.length), query };
+    } else if (typeof path === 'string' && path.startsWith('unit/')) {
+      next = { view: 'unit', unitId: path.slice('unit/'.length), query };
     } else {
       next = { view: path, factionId: null, query };
     }
@@ -223,6 +241,8 @@ const App = () => {
       {route.view==='units'         && <window.UnitsView go={go} />}
       {route.view==='units-faction' && <window.FactionUnitsView factionId={route.factionId} go={go} />}
       {route.view==='hero'          && <window.HeroView heroId={route.heroId} go={go} />}
+      {route.view==='spell'         && <window.SpellView spellId={route.spellId} go={go} />}
+      {route.view==='unit'          && <window.UnitView unitId={route.unitId} go={go} />}
       {route.view==='tier'       && <window.TierView />}
       {route.view==='guides'     && <window.GuidesView />}
       {route.view==='draft'      && <window.DraftView />}

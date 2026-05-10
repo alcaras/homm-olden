@@ -44,6 +44,12 @@ const parsePath = () => {
   if (path.startsWith("hero/")) {
     return { view: "hero", heroId: path.slice("hero/".length), query: search };
   }
+  if (path.startsWith("spell/")) {
+    return { view: "spell", spellId: path.slice("spell/".length), query: search };
+  }
+  if (path.startsWith("unit/")) {
+    return { view: "unit", unitId: path.slice("unit/".length), query: search };
+  }
   const hashRaw = (window.location.hash || "").replace(/^#/, "");
   if (hashRaw) {
     const newRoute = parseHashLegacy(hashRaw);
@@ -89,6 +95,14 @@ const titleFor = (route) => {
     case "hero": {
       const h = window.OE_DATA?.HEROES?.find((x) => x.id === route.heroId);
       return t(h?.name || "Hero");
+    }
+    case "spell": {
+      const s = window.OE_SPELLS_DATA?.SPELLS?.find((x) => x.id === route.spellId);
+      return t(s?.name || "Spell");
+    }
+    case "unit": {
+      const u = window.OE_DATA?.UNITS?.find((x) => x.id === route.unitId);
+      return t(u?.name || "Unit");
     }
     case "calc-faction":
       return t(`${factionName(route.factionId)} ${route.kind === "laws" ? "Laws" : "Buildings"}`);
@@ -141,6 +155,10 @@ const App = () => {
       next = { view: "units-faction", factionId: path.slice("units/".length), query };
     } else if (typeof path === "string" && path.startsWith("hero/")) {
       next = { view: "hero", heroId: path.slice("hero/".length), query };
+    } else if (typeof path === "string" && path.startsWith("spell/")) {
+      next = { view: "spell", spellId: path.slice("spell/".length), query };
+    } else if (typeof path === "string" && path.startsWith("unit/")) {
+      next = { view: "unit", unitId: path.slice("unit/".length), query };
     } else {
       next = { view: path, factionId: null, query };
     }
@@ -244,7 +262,7 @@ const App = () => {
   } }, "Guides"), /* @__PURE__ */ React.createElement("a", { className: tabActive("draft"), href: url("draft"), onClick: (e) => {
     e.preventDefault();
     go("draft");
-  } }, "Draft")), route.view === "index" && /* @__PURE__ */ React.createElement(window.IndexView, { go }), route.view === "mechanics" && /* @__PURE__ */ React.createElement(window.MechanicsView, { go }), route.view === "factions" && /* @__PURE__ */ React.createElement(window.FactionsHubView, { go }), route.view === "faction" && /* @__PURE__ */ React.createElement(window.FactionView, { factionId: route.factionId, go }), route.view === "calc-faction" && /* @__PURE__ */ React.createElement(window.CalcView, { factionId: route.factionId, kind: route.kind, initialQuery: route.query, go }), route.view === "subclasses" && /* @__PURE__ */ React.createElement(window.SubclassesView, null), route.view === "skills" && /* @__PURE__ */ React.createElement(window.SkillsView, null), route.view === "spells" && /* @__PURE__ */ React.createElement(window.SpellsView, null), route.view === "map-objects" && /* @__PURE__ */ React.createElement(window.MapObjectsView, null), route.view === "map-templates" && /* @__PURE__ */ React.createElement(window.MapTemplatesView, null), route.view === "resources" && /* @__PURE__ */ React.createElement(window.ResourcesView, null), route.view === "artifacts" && /* @__PURE__ */ React.createElement(window.ArtifactsView, null), route.view === "heroes" && /* @__PURE__ */ React.createElement(window.HeroesView, { go }), route.view === "units" && /* @__PURE__ */ React.createElement(window.UnitsView, { go }), route.view === "units-faction" && /* @__PURE__ */ React.createElement(window.FactionUnitsView, { factionId: route.factionId, go }), route.view === "hero" && /* @__PURE__ */ React.createElement(window.HeroView, { heroId: route.heroId, go }), route.view === "tier" && /* @__PURE__ */ React.createElement(window.TierView, null), route.view === "guides" && /* @__PURE__ */ React.createElement(window.GuidesView, null), route.view === "draft" && /* @__PURE__ */ React.createElement(window.DraftView, null), /* @__PURE__ */ React.createElement("footer", { className: "sitefoot" }, window.OE_DATA?.META && /* @__PURE__ */ React.createElement("span", null, "Game build ", /* @__PURE__ */ React.createElement("code", null, window.OE_DATA.META.buildGuid.slice(0, 8) || "\u2014"), window.OE_DATA.META.coreDate && /* @__PURE__ */ React.createElement(React.Fragment, null, " \xB7 ", /* @__PURE__ */ React.createElement("code", null, "Core.zip"), " dated ", window.OE_DATA.META.coreDate), " \xB7 ", "generated ", window.OE_DATA.META.generatedAt)));
+  } }, "Draft")), route.view === "index" && /* @__PURE__ */ React.createElement(window.IndexView, { go }), route.view === "mechanics" && /* @__PURE__ */ React.createElement(window.MechanicsView, { go }), route.view === "factions" && /* @__PURE__ */ React.createElement(window.FactionsHubView, { go }), route.view === "faction" && /* @__PURE__ */ React.createElement(window.FactionView, { factionId: route.factionId, go }), route.view === "calc-faction" && /* @__PURE__ */ React.createElement(window.CalcView, { factionId: route.factionId, kind: route.kind, initialQuery: route.query, go }), route.view === "subclasses" && /* @__PURE__ */ React.createElement(window.SubclassesView, null), route.view === "skills" && /* @__PURE__ */ React.createElement(window.SkillsView, null), route.view === "spells" && /* @__PURE__ */ React.createElement(window.SpellsView, null), route.view === "map-objects" && /* @__PURE__ */ React.createElement(window.MapObjectsView, null), route.view === "map-templates" && /* @__PURE__ */ React.createElement(window.MapTemplatesView, null), route.view === "resources" && /* @__PURE__ */ React.createElement(window.ResourcesView, null), route.view === "artifacts" && /* @__PURE__ */ React.createElement(window.ArtifactsView, null), route.view === "heroes" && /* @__PURE__ */ React.createElement(window.HeroesView, { go }), route.view === "units" && /* @__PURE__ */ React.createElement(window.UnitsView, { go }), route.view === "units-faction" && /* @__PURE__ */ React.createElement(window.FactionUnitsView, { factionId: route.factionId, go }), route.view === "hero" && /* @__PURE__ */ React.createElement(window.HeroView, { heroId: route.heroId, go }), route.view === "spell" && /* @__PURE__ */ React.createElement(window.SpellView, { spellId: route.spellId, go }), route.view === "unit" && /* @__PURE__ */ React.createElement(window.UnitView, { unitId: route.unitId, go }), route.view === "tier" && /* @__PURE__ */ React.createElement(window.TierView, null), route.view === "guides" && /* @__PURE__ */ React.createElement(window.GuidesView, null), route.view === "draft" && /* @__PURE__ */ React.createElement(window.DraftView, null), /* @__PURE__ */ React.createElement("footer", { className: "sitefoot" }, window.OE_DATA?.META && /* @__PURE__ */ React.createElement("span", null, "Game build ", /* @__PURE__ */ React.createElement("code", null, window.OE_DATA.META.buildGuid.slice(0, 8) || "\u2014"), window.OE_DATA.META.coreDate && /* @__PURE__ */ React.createElement(React.Fragment, null, " \xB7 ", /* @__PURE__ */ React.createElement("code", null, "Core.zip"), " dated ", window.OE_DATA.META.coreDate), " \xB7 ", "generated ", window.OE_DATA.META.generatedAt)));
 };
 window.OE_routeToUrl = routeToUrl;
 const root = ReactDOM.createRoot(document.getElementById("root"));
