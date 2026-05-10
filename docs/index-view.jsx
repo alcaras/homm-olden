@@ -6,24 +6,11 @@ const IndexView = ({ go }) => {
   return (
     <div>
       <h1>HOMM Olden Era — Reference</h1>
-      <p className="lede">
-        Hero classes, subclasses, and starting loadouts for{' '}
-        <em>Heroes of Might and Magic: Olden Era</em>. Datamined from the game's JSON
-        files; updated to match the current build.
-      </p>
-
       <h2>Pages</h2>
       <div className="card-grid">
         <a className="card" href={window.OE_routeToUrl("mechanics")} onClick={(e)=>{e.preventDefault();go('mechanics');}}>
           <div className="card-eyebrow">Beginner primer</div>
           <div className="card-title">Mechanics 101</div>
-          <p className="card-desc">
-            New to the game — or coming from HOMM3? Combat (Initiative vs
-            Speed, Wait, Defend, Long Reach), Focus &amp; Heroic Strike, the
-            redesigned Magic system (Mage Guild networking, Wisdom gating,
-            Thaumaturgy), Astrology &amp; world spells, zone control,
-            morale/luck math, and a per-faction signature-mechanic explainer.
-          </p>
           <div className="card-stats">
             <span><b>7</b>sections</span>
             <span><b>6</b>faction signatures</span>
@@ -34,12 +21,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("buildings/temple")} onClick={(e)=>{e.preventDefault();go('buildings/temple');}}>
           <div className="card-eyebrow">Interactive tool</div>
           <div className="card-title">Buildings — Per-Faction Calculator</div>
-          <p className="card-desc">
-            Pick the buildings you intend to construct. Running totals of all 7
-            resources (gold / wood / ore / gem / crystal / mercury / graal),
-            prerequisites auto-enforced, per-level effect descriptions resolved
-            from the game's bonus block. Costs pulled directly from the JSON.
-          </p>
           <div className="card-stats">
             <span><b>{FACTIONS.length}</b>factions</span>
             <span><b>~30</b>buildings each</span>
@@ -50,12 +31,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("laws/temple")} onClick={(e)=>{e.preventDefault();go('laws/temple');}}>
           <div className="card-eyebrow">Interactive tool</div>
           <div className="card-title">Laws — Per-Faction Calculator</div>
-          <p className="card-desc">
-            Plan a law-tree investment. Running total of law points spent, with
-            row unlock thresholds enforced (each row gates on cumulative LP from
-            earlier rows). Per-level effects show the actual numeric values
-            resolved from the bonus block.
-          </p>
           <div className="card-stats">
             <span><b>{FACTIONS.length}</b>factions</span>
             <span><b>30+</b>laws each</span>
@@ -66,12 +41,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("factions")} onClick={(e)=>{e.preventDefault();go('factions');}}>
           <div className="card-eyebrow">Tournament playbook</div>
           <div className="card-title">Factions — Per-Faction Pages</div>
-          <p className="card-desc">
-            One combined page per faction with the full playbook: hero tier list,
-            build order, law priorities, army composition, the heroes opponents
-            will ban from you, and the matchup counter-pick map. Single-hero
-            Exodus PvP, grounded in creator commentary and game data.
-          </p>
           <div className="card-stats">
             <span><b>{FACTIONS.length}</b>pages</span>
             <span><b>1</b>combined view</span>
@@ -81,12 +50,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("artifacts")} onClick={(e)=>{e.preventDefault();go('artifacts');}}>
           <div className="card-eyebrow">Bestiary</div>
           <div className="card-title">Artifacts</div>
-          <p className="card-desc">
-            117 artifacts across 9 equipment slots — Head, Armor, Belt,
-            Boots, Back, Left/Right hand, Ring, Unique. Plus 24 item sets
-            granting bonus effects when you equip multiple pieces. Filter by
-            slot, rarity, or set membership.
-          </p>
           <div className="card-stats">
             <span><b>117</b>artifacts</span>
             <span><b>9</b>slots</span>
@@ -97,12 +60,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("resources")} onClick={(e)=>{e.preventDefault();go('resources');}}>
           <div className="card-eyebrow">Reference</div>
           <div className="card-title">Resources</div>
-          <p className="card-desc">
-            The eight resources the game tracks — Gold / Wood / Ore /
-            Gems / Crystal / Mercury / Dust / Graal — with in-game
-            icons, in-game flavor text, and tactical notes for
-            tournament/Exodus play.
-          </p>
           <div className="card-stats">
             <span><b>8</b>resources</span>
             <span><b>3</b>tiers</span>
@@ -112,12 +69,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("map-objects")} onClick={(e)=>{e.preventDefault();go('map-objects');}}>
           <div className="card-eyebrow">Bestiary</div>
           <div className="card-title">Map Objects</div>
-          <p className="card-desc">
-            Every interactable thing on the adventure map — mines, chests,
-            shrines, dwellings, banks, teleports, special structures —
-            with the in-game icon, name, what-it-does description, and flavor
-            text. Filter by category.
-          </p>
           <div className="card-stats">
             <span><b>145</b>objects</span>
             <span><b>9</b>categories</span>
@@ -127,12 +78,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("map-templates")} onClick={(e)=>{e.preventDefault();go('map-templates');}}>
           <div className="card-eyebrow">Multiplayer</div>
           <div className="card-title">Map Templates</div>
-          <p className="card-desc">
-            All generated multiplayer templates with their official
-            descriptions. Filterable by mode (Classic, Single-hero, PvE,
-            Scenario) and inferred size. Player counts pulled from the
-            description text where available.
-          </p>
           <div className="card-stats">
             <span><b>56</b>templates</span>
             <span><b>2</b>modes</span>
@@ -143,12 +88,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("spells")} onClick={(e)=>{e.preventDefault();go('spells');}}>
           <div className="card-eyebrow">Reference</div>
           <div className="card-title">Spells</div>
-          <p className="card-desc">
-            Every spell — battle and world — across the four schools (Daylight,
-            Nightshade, Arcane, Primal) plus Neutral. Grouped by school and
-            tier; mana costs and cooldowns inline. Pulled directly from the
-            game's magics JSONs.
-          </p>
           <div className="card-stats">
             <span><b>103</b>spells</span>
             <span><b>5</b>schools</span>
@@ -159,14 +98,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("skills")} onClick={(e)=>{e.preventDefault();go('skills');}}>
           <div className="card-eyebrow">Reference</div>
           <div className="card-title">Skills — Deep Dive</div>
-          <p className="card-desc">
-            Every hero skill — Combat, Magic, the four Schools, Utility, the
-            class-locked Combat / Thaumaturgy pair, the never-in-subclass
-            Siegecraft / Recruitment, plus the six faction skills. Per-level
-            effects (Basic / Advanced / Expert), the sub-skill rewards offered
-            at each level with icons, and the subclasses that require this skill
-            at Expert.
-          </p>
           <div className="card-stats">
             <span><b>30</b>skills</span>
             <span><b>~200</b>sub-skills</span>
@@ -177,11 +108,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("subclasses")} onClick={(e)=>{e.preventDefault();go('subclasses');}}>
           <div className="card-eyebrow">Reference matrix</div>
           <div className="card-title">Subclasses & Required Skills</div>
-          <p className="card-desc">
-            Every subclass — two per class, twelve classes — and the five skills each needs
-            at level&nbsp;3, plus the unique passive effect. Surfaces the fixed{' '}
-            <em>1 Combat + 1 Magic + 1 School + 2 Utility</em> recipe at a glance.
-          </p>
           <div className="card-stats">
             <span><b>{SUBCLASSES.length}</b>subclasses</span>
             <span><b>20</b>skill columns</span>
@@ -192,12 +118,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("heroes")} onClick={(e)=>{e.preventDefault();go('heroes');}}>
           <div className="card-eyebrow">Roster</div>
           <div className="card-title">Heroes — Stats, Skills & Armies</div>
-          <p className="card-desc">
-            All {HEROES.length} stock heroes by faction, with starting Attack / Defense /
-            Power / Knowledge, starting skills (faction skill plus one other), starting
-            army composition, and the hero's signature specialization. Filterable by
-            faction, class, or any text.
-          </p>
           <div className="card-stats">
             <span><b>{HEROES.length}</b>heroes</span>
             <span><b>{FACTIONS.length}</b>factions</span>
@@ -208,12 +128,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("units")} onClick={(e)=>{e.preventDefault();go('units');}}>
           <div className="card-eyebrow">Bestiary</div>
           <div className="card-title">Units — Creature Stats</div>
-          <p className="card-desc">
-            Every recruitable creature in three variants — base, upgrade, alt
-            upgrade — with HP, attack, defense, damage, initiative, speed, the
-            game's internal squad-value scalar, and gold cost. Sortable on every
-            stat; filter by faction, tier, or variant.
-          </p>
           <div className="card-stats">
             <span><b>{UNITS.length}</b>unit entries</span>
             <span><b>7</b>tiers</span>
@@ -224,12 +138,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("tier")} onClick={(e)=>{e.preventDefault();go('tier');}}>
           <div className="card-eyebrow">Tournament meta</div>
           <div className="card-title">Tier list — Tournament Heroes</div>
-          <p className="card-desc">
-            Single-hero PvP rankings (S/A/B/C) for all {HEROES.length} heroes,
-            grouped by faction. Synthesized from creator commentary plus extracted
-            data; uncited verdicts are tagged so you can tell meta consensus from
-            inference. Includes top-10 ban list and opening-pick archetypes.
-          </p>
           <div className="card-stats">
             <span><b>{HEROES.length}</b>ranked</span>
             <span><b>10</b>top bans</span>
@@ -240,12 +148,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("guides")} onClick={(e)=>{e.preventDefault();go('guides');}}>
           <div className="card-eyebrow">Tournament prep</div>
           <div className="card-title">Faction Guides — Buildings & Laws</div>
-          <p className="card-desc">
-            Per-faction tournament gameplan: turn-by-turn build order with priority
-            tiers and traps to avoid, plus law-priority lists with full in-game
-            effect text. Building names and law numbers cross-referenced against
-            extracted game data.
-          </p>
           <div className="card-stats">
             <span><b>{FACTIONS.length}</b>factions</span>
             <span><b>5</b>universal tips</span>
@@ -256,11 +158,6 @@ const IndexView = ({ go }) => {
         <a className="card" href={window.OE_routeToUrl("draft")} onClick={(e)=>{e.preventDefault();go('draft');}}>
           <div className="card-eyebrow">Pick / ban</div>
           <div className="card-title">Draft — Quick Reference</div>
-          <p className="card-desc">
-            Tournament/Exodus draft cheat sheet: faction ban + pick priority, going
-            first vs going second playbooks, faction counter-pick matrix, and the
-            top-5 hero bans for each opponent faction. Use during a draft.
-          </p>
           <div className="card-stats">
             <span><b>6×6</b>counter-matrix</span>
             <span><b>30</b>hero bans</span>

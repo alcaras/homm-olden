@@ -22,14 +22,6 @@ const SkillsView = () => {
   return (
     <>
       <h1>Skills</h1>
-      <p className="lede">
-        Every hero skill in the game — Combat, Magic, Schools, Utility, the
-        class-locked Combat / Thaumaturgy pair, the never-in-subclass
-        Siegecraft / Recruitment pair, and the six faction skills. Each entry
-        shows the per-level effect, the sub-skill rewards offered at Advanced
-        and Expert, and the subclasses that need this skill at level 3.
-      </p>
-
       <div className="controls">
         <div className="filter-group">
           <label>Group</label>
@@ -65,14 +57,6 @@ const SkillsView = () => {
           </section>
         );
       })}
-
-      <p className="note">
-        Generated {S.GENERATED_AT}. Data extracted by{' '}
-        <code>catalog/scripts/build_skills.py</code> from{' '}
-        <code>DB/heroes_skills/</code> and{' '}
-        <code>Lang/english/texts/heroSkills.json</code>. Subclass mapping derived
-        from <code>SUBCLASSES</code> in <code>data.js</code>.
-      </p>
     </>
   );
 };

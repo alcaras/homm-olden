@@ -51,6 +51,7 @@ EN: dict[str, str] = {}
 for f in [
     "Lang/english/texts/heroSkills.json",
     "Lang/english/texts/heroInfo.json",
+    "Lang/english/texts/magic.json",
     "Lang/english/texts/ui.json",
     "Lang/english/texts/menu.json",
     "Lang/english/texts/unsorted.json",
@@ -252,6 +253,18 @@ for ukey in [u for _, u, *_ in FACTION_DEFS]:
                 name = SKILL_DISPLAY.get(sid) or t(f"{sid}_name", default=sid)
             lvl = sk.get("skillLevel") or 1
             skill_strs.append(f"{name} L{lvl}")
+        # Starting spells — `startMagics: [{sidConfig: spell_id, level, isLearned}]`
+        start_spells = []
+        for sp in h.get("startMagics") or []:
+            sid = sp.get("sidConfig")
+            if not sid:
+                continue
+            start_spells.append({
+                "id":      sid,
+                "name":    t(f"{sid}_name", default=sid.replace("_", " ").title()),
+                "level":   sp.get("level") or 1,
+                "learned": bool(sp.get("isLearned")),
+            })
         # Army
         squad_parts: list[str] = []
         for st in h.get("startSquad") or []:
@@ -287,6 +300,7 @@ for ukey in [u for _, u, *_ in FACTION_DEFS]:
                 "K": stats.get("intelligence"),
             },
             "skills": skill_strs,
+            "spells": start_spells,
             "army": army,
         })
 

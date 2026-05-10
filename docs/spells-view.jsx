@@ -33,13 +33,6 @@ const SpellsView = () => {
   return (
     <>
       <h1>Spells</h1>
-      <p className="lede">
-        Every spell in the game — battle and world — pulled from the magic
-        JSONs. Grouped by school (Daylight / Nightshade / Arcane / Primal /
-        Neutral) and tier. Mana costs are listed per spell-level (L1–L4 of
-        each spell).
-      </p>
-
       <div className="controls">
         <div className="filter-group">
           <label>School</label>
@@ -94,12 +87,6 @@ const SpellsView = () => {
           })}
         </section>
       ))}
-
-      <p className="note">
-        Generated {S.GENERATED_AT}. Data extracted by{' '}
-        <code>catalog/scripts/build_spells.py</code> from{' '}
-        <code>DB/magics/</code> and <code>Lang/english/texts/magic.json</code>.
-      </p>
     </>
   );
 };
@@ -133,6 +120,16 @@ const SpellCard = ({sp}) => {
         <p className="spell-desc">
           {sp.descResolved || sp.desc.replace(/\{[0-9]+\}/g, '?')}
         </p>
+      )}
+      {sp.starters?.length > 0 && (
+        <div className="spell-starters">
+          <span className="spell-starters-label">Starting hero{sp.starters.length === 1 ? '' : 'es'}:</span>
+          {sp.starters.map(h => (
+            <span key={h.id} className={`faction-pill faction-${h.faction}`} title={h.name}>
+              {h.name}
+            </span>
+          ))}
+        </div>
       )}
     </article>
   );

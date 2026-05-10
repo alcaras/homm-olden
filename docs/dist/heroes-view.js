@@ -23,6 +23,7 @@ const HeroesView = () => {
     if (h.specialty.toLowerCase().includes(ql)) return true;
     if ((h.specDesc || "").toLowerCase().includes(ql)) return true;
     if (h.skills.some((s) => s.toLowerCase().includes(ql))) return true;
+    if ((h.spells || []).some((s) => (s.name || "").toLowerCase().includes(ql))) return true;
     if (h.army.toLowerCase().includes(ql)) return true;
     if ((factionMap[h.faction]?.name || "").toLowerCase().includes(ql)) return true;
     return false;
@@ -89,11 +90,11 @@ const HeroesView = () => {
       /* @__PURE__ */ React.createElement("span", { className: "sort-arrow" }, arrow)
     );
   };
-  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Heroes \u2014 Starting Skills, Stats & Armies"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "All 108 stock heroes (six factions \xD7 two classes \xD7 nine heroes), with starting stats, starting skills, starting army composition, and signature specialization."), /* @__PURE__ */ React.createElement("div", { className: "controls" }, /* @__PURE__ */ React.createElement("div", { className: "filter-group" }, /* @__PURE__ */ React.createElement("label", null, "Search"), /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Heroes \u2014 Starting Skills, Stats & Armies"), /* @__PURE__ */ React.createElement("div", { className: "controls" }, /* @__PURE__ */ React.createElement("div", { className: "filter-group" }, /* @__PURE__ */ React.createElement("label", null, "Search"), /* @__PURE__ */ React.createElement(
     "input",
     {
       className: "search",
-      placeholder: "hero, specialty, skill, unit, faction\u2026",
+      placeholder: "hero, specialty, skill, spell, unit, faction\u2026",
       value: q,
       onChange: (e) => setQ(e.target.value)
     }
@@ -112,7 +113,7 @@ const HeroesView = () => {
       onClick: () => toggleFaction(f.id)
     },
     f.name
-  )))), /* @__PURE__ */ React.createElement("span", { className: "count" }, sorted.length, " heroes")), /* @__PURE__ */ React.createElement("p", { className: "note", style: { marginTop: 0 } }, "Click any column header to sort across all heroes. Click multiple faction buttons to combine selections. Stats: ", /* @__PURE__ */ React.createElement("strong", null, "A"), "ttack \xB7", " ", /* @__PURE__ */ React.createElement("strong", null, "D"), "efense \xB7 ", /* @__PURE__ */ React.createElement("strong", null, "P"), "ower \xB7 ", /* @__PURE__ */ React.createElement("strong", null, "K"), "nowledge.", " ", /* @__PURE__ */ React.createElement("strong", null, "Score"), " is the starting-army value (\u03A3 unit squad value \xD7 avg stack count). Faction-skill chips are outlined in burnt orange; doubled border indicates L2 (hero starts with the faction skill at advanced instead of L1 + a second skill)."), /* @__PURE__ */ React.createElement("div", { className: "heroes-wrap" }, /* @__PURE__ */ React.createElement("table", { className: "heroes flat" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement(SortHead, { label: "#", k: "num", num: true }), /* @__PURE__ */ React.createElement("th", null), /* @__PURE__ */ React.createElement(SortHead, { label: "Hero", k: "name" }), /* @__PURE__ */ React.createElement(SortHead, { label: "Class", k: "kind" }), /* @__PURE__ */ React.createElement(SortHead, { label: "Faction", k: "faction" }), /* @__PURE__ */ React.createElement(SortHead, { label: "Specialty", k: "specialty" }), /* @__PURE__ */ React.createElement(SortHead, { label: "A", k: "A", num: true, title: "Attack" }), /* @__PURE__ */ React.createElement(SortHead, { label: "D", k: "D", num: true, title: "Defense" }), /* @__PURE__ */ React.createElement(SortHead, { label: "P", k: "P", num: true, title: "Spell Power" }), /* @__PURE__ */ React.createElement(SortHead, { label: "K", k: "K", num: true, title: "Knowledge" }), /* @__PURE__ */ React.createElement("th", null, "Starting skills"), /* @__PURE__ */ React.createElement("th", null, "Starting army"), /* @__PURE__ */ React.createElement(
+  )))), /* @__PURE__ */ React.createElement("span", { className: "count" }, sorted.length, " heroes")), /* @__PURE__ */ React.createElement("div", { className: "heroes-wrap" }, /* @__PURE__ */ React.createElement("table", { className: "heroes flat" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement(SortHead, { label: "#", k: "num", num: true }), /* @__PURE__ */ React.createElement("th", null), /* @__PURE__ */ React.createElement(SortHead, { label: "Hero", k: "name" }), /* @__PURE__ */ React.createElement(SortHead, { label: "Class", k: "kind" }), /* @__PURE__ */ React.createElement(SortHead, { label: "Faction", k: "faction" }), /* @__PURE__ */ React.createElement(SortHead, { label: "Specialty", k: "specialty" }), /* @__PURE__ */ React.createElement(SortHead, { label: "A", k: "A", num: true, title: "Attack" }), /* @__PURE__ */ React.createElement(SortHead, { label: "D", k: "D", num: true, title: "Defense" }), /* @__PURE__ */ React.createElement(SortHead, { label: "P", k: "P", num: true, title: "Spell Power" }), /* @__PURE__ */ React.createElement(SortHead, { label: "K", k: "K", num: true, title: "Knowledge" }), /* @__PURE__ */ React.createElement("th", null, "Starting skills"), /* @__PURE__ */ React.createElement("th", null, "Starting spells"), /* @__PURE__ */ React.createElement("th", null, "Starting army"), /* @__PURE__ */ React.createElement(
     SortHead,
     {
       label: "Starting army score",
@@ -145,7 +146,27 @@ const HeroesView = () => {
           e.target.style.visibility = "hidden";
         }
       }
-    ), /* @__PURE__ */ React.createElement("div", { className: "spec-text" }, /* @__PURE__ */ React.createElement("div", { className: "spec-name" }, h.specialty), h.specDesc && /* @__PURE__ */ React.createElement("div", { className: "spec-desc" }, h.specDesc)))), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.A)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.D)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.P)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.K)), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement(SkillChips, { skills: h.skills })), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement(Army, { army: h.army })), /* @__PURE__ */ React.createElement("td", { className: "num army-score" }, h.armyScore?.toLocaleString() ?? "\u2014"));
+    ), /* @__PURE__ */ React.createElement("div", { className: "spec-text" }, /* @__PURE__ */ React.createElement("div", { className: "spec-name" }, h.specialty), h.specDesc && /* @__PURE__ */ React.createElement("div", { className: "spec-desc" }, h.specDesc)))), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.A)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.D)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.P)), /* @__PURE__ */ React.createElement("td", { className: "num" }, /* @__PURE__ */ React.createElement("span", { className: "stat-v" }, h.stats.K)), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement(SkillChips, { skills: h.skills })), /* @__PURE__ */ React.createElement("td", null, (h.spells || []).map((s) => /* @__PURE__ */ React.createElement(
+      "span",
+      {
+        key: s.id,
+        className: "spell-chip",
+        title: `${s.name} (L${s.level})`
+      },
+      /* @__PURE__ */ React.createElement(
+        "img",
+        {
+          loading: "lazy",
+          className: "spell-chip-icon",
+          src: `img/spells/${s.id}.png`,
+          alt: "",
+          onError: (e) => {
+            e.target.style.visibility = "hidden";
+          }
+        }
+      ),
+      /* @__PURE__ */ React.createElement("span", { className: "spell-chip-name" }, s.name)
+    ))), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement(Army, { army: h.army })), /* @__PURE__ */ React.createElement("td", { className: "num army-score" }, h.armyScore?.toLocaleString() ?? "\u2014"));
   })))), sorted.length === 0 && /* @__PURE__ */ React.createElement("p", { style: { color: "var(--muted)", fontStyle: "italic", marginTop: "2rem" } }, "No heroes match those filters."));
 };
 window.HeroesView = HeroesView;

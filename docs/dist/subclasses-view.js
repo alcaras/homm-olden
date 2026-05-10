@@ -23,7 +23,7 @@ const CODE_TO_SKILL_ID = {
 const SubclassesView = () => {
   const { FACTIONS, SKILL_COLUMNS, SUBCLASSES } = window.OE_DATA;
   const skillByCode = Object.fromEntries(SKILL_COLUMNS.map((s) => [s.key, s]));
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Subclasses"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Each of the 12 hero classes has two subclasses, unlocked once the hero trains ", /* @__PURE__ */ React.createElement("em", null, "five specific skills to level\xA03 (Expert)"), ". The recipe is structurally identical for every subclass:", /* @__PURE__ */ React.createElement("strong", null, " 1 Combat + 1 Magic + 1 School + 2 Utility"), "."), FACTIONS.map((f) => {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Subclasses"), FACTIONS.map((f) => {
     const subs = SUBCLASSES.filter((s) => s.faction === f.id);
     if (!subs.length) return null;
     return /* @__PURE__ */ React.createElement("section", { key: f.id, className: "sub-faction-block" }, /* @__PURE__ */ React.createElement("div", { className: "faction-band" }, /* @__PURE__ */ React.createElement(
@@ -68,6 +68,6 @@ const SubclassesView = () => {
         }
       )
     ))));
-  }), /* @__PURE__ */ React.createElement("p", { className: "note" }, /* @__PURE__ */ React.createElement("strong", null, "Class-locked skills."), " Two skills never appear in subclass conditions because they are tied to class type:", " ", /* @__PURE__ */ React.createElement("em", null, "Combat"), " (might-only \u2014 Heroic Strike) and", " ", /* @__PURE__ */ React.createElement("em", null, "Thaumaturgy"), " (magic-only \u2014 second spell per round). Both are useful but irrelevant to subclass progression.", " ", /* @__PURE__ */ React.createElement("em", null, "Siegecraft"), " and ", /* @__PURE__ */ React.createElement("em", null, "Recruitment"), " are also never required \u2014 pure side options."));
+  }));
 };
 window.SubclassesView = SubclassesView;

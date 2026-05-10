@@ -24,13 +24,6 @@ const SubclassesView = () => {
   return (
     <>
       <h1>Subclasses</h1>
-      <p className="lede">
-        Each of the 12 hero classes has two subclasses, unlocked once the hero
-        trains <em>five specific skills to level&nbsp;3 (Expert)</em>. The recipe
-        is structurally identical for every subclass:
-        <strong> 1 Combat + 1 Magic + 1 School + 2 Utility</strong>.
-      </p>
-
       {FACTIONS.map(f => {
         const subs = SUBCLASSES.filter(s => s.faction === f.id);
         if (!subs.length) return null;
@@ -78,16 +71,6 @@ const SubclassesView = () => {
           </section>
         );
       })}
-
-      <p className="note">
-        <strong>Class-locked skills.</strong> Two skills never appear in
-        subclass conditions because they are tied to class type:{' '}
-        <em>Combat</em> (might-only — Heroic Strike) and{' '}
-        <em>Thaumaturgy</em> (magic-only — second spell per round). Both are
-        useful but irrelevant to subclass progression.{' '}
-        <em>Siegecraft</em> and <em>Recruitment</em> are also never required
-        — pure side options.
-      </p>
     </>
   );
 };

@@ -13,7 +13,7 @@ const MapTemplatesView = () => {
     if (size !== "all" && t.size !== size) return false;
     return true;
   });
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Map templates"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Every generated multiplayer template the game ships with \u2014 pulled directly from", " ", /* @__PURE__ */ React.createElement("code", null, "StreamingAssets/map_templates/*.rmg.json"), ". Each card has the in-game preview image, the actual map dimensions, the game-mode tag (Classic / Single-hero), the hero-count range, and the localized description from ", /* @__PURE__ */ React.createElement("code", null, "ui.json"), "."), /* @__PURE__ */ React.createElement("div", { className: "controls" }, /* @__PURE__ */ React.createElement("div", { className: "filter-group" }, /* @__PURE__ */ React.createElement("label", null, "Mode"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { className: mode === "all" ? "active" : "", onClick: () => setMode("all") }, "All"), allModes.map((m) => /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Map templates"), /* @__PURE__ */ React.createElement("div", { className: "controls" }, /* @__PURE__ */ React.createElement("div", { className: "filter-group" }, /* @__PURE__ */ React.createElement("label", null, "Mode"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { className: mode === "all" ? "active" : "", onClick: () => setMode("all") }, "All"), allModes.map((m) => /* @__PURE__ */ React.createElement(
     "button",
     {
       key: m,
@@ -29,7 +29,7 @@ const MapTemplatesView = () => {
       onClick: () => setSize(s)
     },
     labelSize(s)
-  )))), /* @__PURE__ */ React.createElement("span", { className: "count" }, filtered.length, " templates")), /* @__PURE__ */ React.createElement("div", { className: "mt-grid" }, filtered.map((t) => /* @__PURE__ */ React.createElement(TemplateCard, { key: t.id, t }))), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Generated ", D.GENERATED_AT, ". Size buckets:", " ", /* @__PURE__ */ React.createElement("em", null, "small"), " \u226496, ", /* @__PURE__ */ React.createElement("em", null, "medium"), " \u2264128, ", /* @__PURE__ */ React.createElement("em", null, "large"), " \u2264176,", " ", /* @__PURE__ */ React.createElement("em", null, "huge"), " >176 (max axis)."));
+  )))), /* @__PURE__ */ React.createElement("span", { className: "count" }, filtered.length, " templates")), /* @__PURE__ */ React.createElement("div", { className: "mt-grid" }, filtered.map((t) => /* @__PURE__ */ React.createElement(TemplateCard, { key: t.id, t }))));
 };
 function labelMode(m) {
   return {

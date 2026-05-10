@@ -25,7 +25,7 @@ const CalcView = ({ factionId, kind, initialQuery, go }) => {
     }
   }, [picked, factionId, factionKey, k]);
   if (!data) {
-    return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(FactionPicker, { current: factionId, factions: FACTIONS, go, kind: k }), /* @__PURE__ */ React.createElement("h1", null, k === "laws" ? "Laws" : "Buildings", " calculator"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Pick a faction above to plan its ", k, "."));
+    return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(FactionPicker, { current: factionId, factions: FACTIONS, go, kind: k }), /* @__PURE__ */ React.createElement("h1", null, k === "laws" ? "Laws" : "Buildings", " calculator"));
   }
   return k === "laws" ? /* @__PURE__ */ React.createElement(LawsCalc, { ...{
     data,
@@ -103,7 +103,7 @@ const BuildingsCalc = ({
       }
     }
   }
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(FactionPicker, { current: factionId, factions: FACTIONS, go, kind: "buildings" }), /* @__PURE__ */ React.createElement(KindSwitcher, { current: "buildings", factionId, go }), /* @__PURE__ */ React.createElement("h1", null, fmeta.name, " \u2014 Buildings"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Pick the buildings you plan to construct. Costs from the actual game files. Selecting a level auto-enacts prerequisites; click a selected level again to step back."), /* @__PURE__ */ React.createElement("div", { className: "calc-totals" }, /* @__PURE__ */ React.createElement("div", { className: "calc-totals-block calc-totals-wide" }, /* @__PURE__ */ React.createElement("div", { className: "calc-totals-eyebrow" }, Object.keys(picked).length, " buildings, ", levelsCount, " levels"), /* @__PURE__ */ React.createElement("div", { className: "calc-resources" }, C.RESOURCE_ORDER.map((r) => {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(FactionPicker, { current: factionId, factions: FACTIONS, go, kind: "buildings" }), /* @__PURE__ */ React.createElement(KindSwitcher, { current: "buildings", factionId, go }), /* @__PURE__ */ React.createElement("h1", null, fmeta.name, " \u2014 Buildings"), /* @__PURE__ */ React.createElement("div", { className: "calc-totals" }, /* @__PURE__ */ React.createElement("div", { className: "calc-totals-block calc-totals-wide" }, /* @__PURE__ */ React.createElement("div", { className: "calc-totals-eyebrow" }, Object.keys(picked).length, " buildings, ", levelsCount, " levels"), /* @__PURE__ */ React.createElement("div", { className: "calc-resources" }, C.RESOURCE_ORDER.map((r) => {
     const v = totals[r] || 0;
     return /* @__PURE__ */ React.createElement("div", { key: r, className: `calc-res calc-res-${r}${v ? " has" : " empty"}` }, /* @__PURE__ */ React.createElement("span", { className: "calc-res-label" }, C.RESOURCE_LABEL[r]), /* @__PURE__ */ React.createElement("span", { className: "calc-res-value" }, v.toLocaleString()));
   }))), /* @__PURE__ */ React.createElement("div", { className: "calc-totals-actions" }, /* @__PURE__ */ React.createElement("button", { onClick: () => copyShareLink(setShareCopied) }, shareCopied ? "\u2713 Copied" : "Copy share link"), /* @__PURE__ */ React.createElement("button", { onClick: () => setPicked({}) }, "Reset all"))), data.buildings.map((cat) => /* @__PURE__ */ React.createElement("section", { key: cat.id, className: "calc-cat" }, /* @__PURE__ */ React.createElement("h3", null, cat.label), /* @__PURE__ */ React.createElement("div", { className: "calc-buildings" }, cat.buildings.map((b) => {
@@ -134,7 +134,7 @@ const BuildingsCalc = ({
         /* @__PURE__ */ React.createElement("span", { className: "calc-level-cost" }, Object.entries(lvl.costs).map(([r, v]) => /* @__PURE__ */ React.createElement("span", { key: r, className: `calc-cost calc-cost-${r}` }, v.toLocaleString(), abbreviateRes(r))))
       ), cleanedDesc && /* @__PURE__ */ React.createElement("div", { className: "calc-level-effect" + (active ? " active" : "") }, lvl.level > 1 && b.levels[0]?.name !== lvl.name && /* @__PURE__ */ React.createElement("span", { className: "calc-level-effect-name" }, lvl.name, ": "), cleanedDesc));
     })));
-  })))), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Generated ", C.GENERATED_AT, ". Data extracted by", " ", /* @__PURE__ */ React.createElement("code", null, "catalog/scripts/build_calc.py"), " from the game's JSON files."));
+  })))));
 };
 const LawsCalc = ({
   data,
@@ -170,7 +170,7 @@ const LawsCalc = ({
       lpTotal += l.levels[i]?.cost || 0;
     }
   }
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(FactionPicker, { current: factionId, factions: FACTIONS, go, kind: "laws" }), /* @__PURE__ */ React.createElement(KindSwitcher, { current: "laws", factionId, go }), /* @__PURE__ */ React.createElement("h1", null, fmeta.name, " \u2014 Laws"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Pick the laws you plan to enact. Each row unlocks once you've spent the threshold of law points on earlier rows."), /* @__PURE__ */ React.createElement("div", { className: "calc-totals" }, /* @__PURE__ */ React.createElement("div", { className: "calc-totals-block calc-totals-wide" }, /* @__PURE__ */ React.createElement("div", { className: "calc-totals-eyebrow" }, Object.keys(picked).length, " laws, ", levelsCount, " levels enacted"), /* @__PURE__ */ React.createElement("div", { className: "calc-lp" }, /* @__PURE__ */ React.createElement("span", { className: "calc-lp-value" }, lpTotal), /* @__PURE__ */ React.createElement("span", { className: "calc-lp-label" }, "law points spent"))), /* @__PURE__ */ React.createElement("div", { className: "calc-totals-actions" }, /* @__PURE__ */ React.createElement("button", { onClick: () => copyShareLink(setShareCopied) }, shareCopied ? "\u2713 Copied" : "Copy share link"), /* @__PURE__ */ React.createElement("button", { onClick: () => setPicked({}) }, "Reset all"))), data.laws.map((row) => {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(FactionPicker, { current: factionId, factions: FACTIONS, go, kind: "laws" }), /* @__PURE__ */ React.createElement(KindSwitcher, { current: "laws", factionId, go }), /* @__PURE__ */ React.createElement("h1", null, fmeta.name, " \u2014 Laws"), /* @__PURE__ */ React.createElement("div", { className: "calc-totals" }, /* @__PURE__ */ React.createElement("div", { className: "calc-totals-block calc-totals-wide" }, /* @__PURE__ */ React.createElement("div", { className: "calc-totals-eyebrow" }, Object.keys(picked).length, " laws, ", levelsCount, " levels enacted"), /* @__PURE__ */ React.createElement("div", { className: "calc-lp" }, /* @__PURE__ */ React.createElement("span", { className: "calc-lp-value" }, lpTotal), /* @__PURE__ */ React.createElement("span", { className: "calc-lp-label" }, "law points spent"))), /* @__PURE__ */ React.createElement("div", { className: "calc-totals-actions" }, /* @__PURE__ */ React.createElement("button", { onClick: () => copyShareLink(setShareCopied) }, shareCopied ? "\u2713 Copied" : "Copy share link"), /* @__PURE__ */ React.createElement("button", { onClick: () => setPicked({}) }, "Reset all"))), data.laws.map((row) => {
     let priorLp = 0;
     for (const r2 of data.laws) {
       if (r2.rowIndex >= row.rowIndex) break;
@@ -206,7 +206,7 @@ const LawsCalc = ({
         ), lvl.descResolved && /* @__PURE__ */ React.createElement("div", { className: "calc-level-effect" + (active ? " active" : "") }, lvl.descResolved));
       })));
     })))));
-  }), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Data from ", /* @__PURE__ */ React.createElement("code", null, "catalog/scripts/build_calc.py"), ". Cumulative-LP unlock thresholds extracted from ", /* @__PURE__ */ React.createElement("code", null, "fractions/*.json"), "."));
+  }));
 };
 function copyShareLink(setShareCopied) {
   navigator.clipboard?.writeText(window.location.href).then(
@@ -338,7 +338,7 @@ const KindSwitcher = ({ current, factionId, go }) => /* @__PURE__ */ React.creat
 ));
 const CalcHubView = ({ go }) => {
   const FACTIONS = window.OE_DATA?.FACTIONS || window.OE_CALC_DATA?.FACTIONS || [];
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Calculator"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Plan your faction's law tree and building order against actual game-data costs. Two pages per faction \u2014 Buildings (resource totals + prerequisite chains) and Laws (LP totals + row unlocks)."), /* @__PURE__ */ React.createElement("div", { className: "card-grid" }, FACTIONS.map((f) => /* @__PURE__ */ React.createElement("div", { key: f.id, className: "card faction-card calc-hub-card" }, /* @__PURE__ */ React.createElement("div", { className: "faction-card-head" }, /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Calculator"), /* @__PURE__ */ React.createElement("div", { className: "card-grid" }, FACTIONS.map((f) => /* @__PURE__ */ React.createElement("div", { key: f.id, className: "card faction-card calc-hub-card" }, /* @__PURE__ */ React.createElement("div", { className: "faction-card-head" }, /* @__PURE__ */ React.createElement(
     "img",
     {
       loading: "lazy",

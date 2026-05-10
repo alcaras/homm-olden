@@ -43,11 +43,6 @@ const TierView = () => {
   return (
     <>
       <h1>Tournament tier list</h1>
-      <p className="lede">
-        Single-hero PvP, Exodus-flavored. Rankings synthesized from creator commentary
-        in <code>notes-from-videos.md</code> plus extracted hero/spec/army data.
-      </p>
-
       <div className="tier-scale">
         <span><b>S</b> perma-pick / perma-ban</span>
         <span><b>A</b> strong contested</span>
@@ -171,11 +166,6 @@ const TierView = () => {
           </section>
         );
       })}
-
-      <p className="note">
-        Generated {T.GENERATED_AT}. Edit <code>catalog/scripts/build_tier_list.py</code>
-        and rerun to refresh.
-      </p>
     </>
   );
 };

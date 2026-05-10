@@ -9,14 +9,6 @@ const MechanicsView = ({go}) => {
   return (
     <>
       <h1>Mechanics 101</h1>
-      <p className="lede">
-        New to Olden Era — or coming from HOMM3? This page covers the systems
-        every player needs to internalize before the tournament strategy on the
-        rest of the site makes sense. Synthesized from the Hooded Horse wiki,
-        Steam community guides, and creator commentary; each numeric claim was
-        triangulated against at least two sources.
-      </p>
-
       <nav className="mech-toc">
         {M.SECTIONS.map(s => (
           <a key={s.id} href={`#mech-${s.id}`}
@@ -144,11 +136,6 @@ const MechanicsView = ({go}) => {
           ))}
         </div>
       </section>
-
-      <p className="note">
-        Generated {M.GENERATED_AT}. Edit{' '}
-        <code>catalog/scripts/build_mechanics.py</code> and rerun to refresh.
-      </p>
     </>
   );
 };

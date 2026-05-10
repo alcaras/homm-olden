@@ -88,18 +88,7 @@ const UnitsView = ({ go }) => {
   return (
     <div>
       <h1>Units — Creature Stats</h1>
-      <p className="lede">
-        Every recruitable creature in the game — six factions plus neutral, in
-        three variants per stack: <em>base</em> (recruited from the dwelling),{' '}
-        <em>upgrade</em> (the standard improvement), and <em>alt upgrade</em>{' '}
-        (the alternate option).
-      </p>
-
       <h2>Browse by faction</h2>
-      <p className="note">
-        Per-faction page: all 7 tiers stacked, each tier showing base / upgrade /
-        alt as 3 cards with stats, passives, and abilities side by side.
-      </p>
       <div className="faction-strip">
         {FACTIONS.map(f => (
           <a key={f.id}
@@ -175,13 +164,6 @@ const UnitsView = ({ go }) => {
 
         <span className="count">{sorted.length} units</span>
       </div>
-
-      <p className="note" style={{marginTop:0}}>
-        Click any column header to sort; click again to reverse. <strong>SV</strong>{' '}
-        is squad value — the game's internal balance scalar; <strong>SV/g</strong>{' '}
-        is value per gold (higher is more cost-efficient at face value).
-      </p>
-
       <div className="units-wrap">
         <table className="units">
           <thead>

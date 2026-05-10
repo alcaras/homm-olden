@@ -23,15 +23,6 @@ const MapTemplatesView = () => {
   return (
     <>
       <h1>Map templates</h1>
-      <p className="lede">
-        Every generated multiplayer template the game ships with — pulled
-        directly from{' '}
-        <code>StreamingAssets/map_templates/*.rmg.json</code>. Each card has
-        the in-game preview image, the actual map dimensions, the game-mode
-        tag (Classic / Single-hero), the hero-count range, and the
-        localized description from <code>ui.json</code>.
-      </p>
-
       <div className="controls">
         <div className="filter-group">
           <label>Mode</label>
@@ -61,12 +52,6 @@ const MapTemplatesView = () => {
       <div className="mt-grid">
         {filtered.map(t => <TemplateCard key={t.id} t={t} />)}
       </div>
-
-      <p className="note">
-        Generated {D.GENERATED_AT}. Size buckets:{' '}
-        <em>small</em> ≤96, <em>medium</em> ≤128, <em>large</em> ≤176,{' '}
-        <em>huge</em> &gt;176 (max axis).
-      </p>
     </>
   );
 };

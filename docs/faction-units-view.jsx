@@ -80,14 +80,6 @@ const FactionUnitsView = ({ factionId, go }) => {
           </section>
         );
       })}
-
-      <p className="note">
-        Generated alongside <code>data.js</code> by{' '}
-        <code>build_data_js.py</code>. Stats, passives, and abilities pulled
-        directly from the game's JSON files; effect descriptions still contain
-        runtime placeholders (rendered as <code>?</code>) until the bonus-arg
-        resolver is wired up.
-      </p>
     </>
   );
 };

@@ -27,6 +27,7 @@ const HeroesView = () => {
     if (h.specialty.toLowerCase().includes(ql)) return true;
     if ((h.specDesc || '').toLowerCase().includes(ql)) return true;
     if (h.skills.some(s => s.toLowerCase().includes(ql))) return true;
+    if ((h.spells || []).some(s => (s.name || '').toLowerCase().includes(ql))) return true;
     if (h.army.toLowerCase().includes(ql)) return true;
     if ((factionMap[h.faction]?.name || '').toLowerCase().includes(ql)) return true;
     return false;
@@ -99,15 +100,10 @@ const HeroesView = () => {
   return (
     <div>
       <h1>Heroes — Starting Skills, Stats & Armies</h1>
-      <p className="lede">
-        All 108 stock heroes (six factions × two classes × nine heroes), with starting
-        stats, starting skills, starting army composition, and signature specialization.
-      </p>
-
       <div className="controls">
         <div className="filter-group">
           <label>Search</label>
-          <input className="search" placeholder="hero, specialty, skill, unit, faction…"
+          <input className="search" placeholder="hero, specialty, skill, spell, unit, faction…"
                  value={q} onChange={e => setQ(e.target.value)} />
         </div>
 
@@ -135,17 +131,6 @@ const HeroesView = () => {
 
         <span className="count">{sorted.length} heroes</span>
       </div>
-
-      <p className="note" style={{marginTop:0}}>
-        Click any column header to sort across all heroes. Click multiple faction
-        buttons to combine selections. Stats: <strong>A</strong>ttack ·{' '}
-        <strong>D</strong>efense · <strong>P</strong>ower · <strong>K</strong>nowledge.{' '}
-        <strong>Score</strong> is the starting-army value (Σ unit squad value × avg
-        stack count). Faction-skill chips are outlined in burnt orange; doubled border
-        indicates L2 (hero starts with the faction skill at advanced instead of L1 + a
-        second skill).
-      </p>
-
       <div className="heroes-wrap">
         <table className="heroes flat">
           <thead>
@@ -161,6 +146,7 @@ const HeroesView = () => {
               <SortHead label="P" k="P" num title="Spell Power" />
               <SortHead label="K" k="K" num title="Knowledge" />
               <th>Starting skills</th>
+              <th>Starting spells</th>
               <th>Starting army</th>
               <SortHead label="Starting army score" k="armyScore" num
                         title="Σ unit squadValue × avg stack count" />
@@ -214,6 +200,17 @@ const HeroesView = () => {
                   <td className="num"><span className="stat-v">{h.stats.P}</span></td>
                   <td className="num"><span className="stat-v">{h.stats.K}</span></td>
                   <td><SkillChips skills={h.skills} /></td>
+                  <td>
+                    {(h.spells || []).map((s) => (
+                      <span key={s.id} className="spell-chip"
+                            title={`${s.name} (L${s.level})`}>
+                        <img loading="lazy" className="spell-chip-icon"
+                             src={`img/spells/${s.id}.png`} alt=""
+                             onError={(e)=>{e.target.style.visibility='hidden';}} />
+                        <span className="spell-chip-name">{s.name}</span>
+                      </span>
+                    ))}
+                  </td>
                   <td><Army army={h.army} /></td>
                   <td className="num army-score">{h.armyScore?.toLocaleString() ?? '—'}</td>
                 </tr>

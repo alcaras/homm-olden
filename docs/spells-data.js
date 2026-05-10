@@ -31,6 +31,22 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 2
         }
+      ],
+      "starters": [
+        {
+          "id": "unfrozen_hero_10",
+          "name": "Grellekh the Betrayer",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_15",
+          "name": "Vesper",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -62,6 +78,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 2
+        }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_15",
+          "name": "Mila",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -95,6 +120,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 2
         }
+      ],
+      "starters": [
+        {
+          "id": "human_hero_14",
+          "name": "Julius",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -127,7 +161,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 2
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "day_4_magic_favorable_wind",
@@ -158,6 +193,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 4
+        }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_1",
+          "name": "Niev",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
         }
       ]
     },
@@ -191,6 +235,29 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 4
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_10",
+          "name": "Kelarr, son of Navarr",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_1",
+          "name": "Eith",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_13",
+          "name": "Lia the Untethered One",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -222,6 +289,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 4
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_17",
+          "name": "Sunny Rauktol",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -255,6 +331,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 4
         }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_17",
+          "name": "Sullie",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -286,6 +371,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 6
+        }
+      ],
+      "starters": [
+        {
+          "id": "human_hero_16",
+          "name": "Anastasia the Meek",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -319,7 +413,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "day_10_magic_second_song",
@@ -350,6 +445,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 6
+        }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_11",
+          "name": "Elder Tss’kish",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -383,6 +487,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_16",
+          "name": "Typhona",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -415,7 +528,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 8
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "day_13_magic_holy_arms",
@@ -446,6 +560,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 8
+        }
+      ],
+      "starters": [
+        {
+          "id": "human_hero_12",
+          "name": "Zenith",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -479,7 +602,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 8
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "day_14_magic_vengeance",
@@ -510,6 +634,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 8
+        }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_11",
+          "name": "Xirr",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -543,6 +676,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_12",
+          "name": "Sister Deira",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -575,7 +717,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "night_4_magic_despair",
@@ -606,6 +749,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 2
+        }
+      ],
+      "starters": [
+        {
+          "id": "necro_hero_15",
+          "name": "Laura",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -639,7 +791,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 2
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "night_7_magic_fatal_decay",
@@ -670,6 +823,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 2
+        }
+      ],
+      "starters": [
+        {
+          "id": "necro_hero_18",
+          "name": "Milossa the Golden",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -703,6 +865,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 2
         }
+      ],
+      "starters": [
+        {
+          "id": "unfrozen_hero_15",
+          "name": "Ulkuth",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -734,6 +905,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 4
+        }
+      ],
+      "starters": [
+        {
+          "id": "necro_hero_13",
+          "name": "Guildmaster Klastor",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -767,6 +947,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 4
         }
+      ],
+      "starters": [
+        {
+          "id": "necro_hero_12",
+          "name": "Ethric",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -798,6 +987,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 4
+        }
+      ],
+      "starters": [
+        {
+          "id": "unfrozen_hero_17",
+          "name": "Sister Keiri",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -831,6 +1029,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 4
         }
+      ],
+      "starters": [
+        {
+          "id": "necro_hero_7",
+          "name": "Marl",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -863,7 +1070,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "night_10_magic_silence",
@@ -894,6 +1102,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 6
+        }
+      ],
+      "starters": [
+        {
+          "id": "necro_hero_11",
+          "name": "Adahn",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -927,6 +1144,29 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_18",
+          "name": "Lodos",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_14",
+          "name": "Groo",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_14",
+          "name": "Shadespinner Oona",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -958,6 +1198,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 6
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_13",
+          "name": "Motley",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -991,6 +1240,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 8
         }
+      ],
+      "starters": [
+        {
+          "id": "necro_hero_6",
+          "name": "Artorius Veritas",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -1023,7 +1281,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 8
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "night_11_magic_vulnerability",
@@ -1054,6 +1313,22 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 8
+        }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_13",
+          "name": "Leira",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_17",
+          "name": "Nadir",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1087,7 +1362,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "night_14_magic_nairas_kiss",
@@ -1119,7 +1395,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "night_16_magic_shadow_army",
@@ -1151,7 +1428,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "space_1_magic_early_start",
@@ -1182,6 +1460,22 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 2
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_2",
+          "name": "Tellaris the Betrayed",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_11",
+          "name": "Pip",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1215,6 +1509,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 2
         }
+      ],
+      "starters": [
+        {
+          "id": "human_hero_18",
+          "name": "Clarissa",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1246,6 +1549,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 2
+        }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_4",
+          "name": "Old Pilgrim",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
         }
       ]
     },
@@ -1279,7 +1591,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 2
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "space_6_magic_blink",
@@ -1310,6 +1623,22 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 4
+        }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_16",
+          "name": "Oriax",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_18",
+          "name": "Dhüvri",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1343,6 +1672,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 4
         }
+      ],
+      "starters": [
+        {
+          "id": "unfrozen_hero_16",
+          "name": "Ra’Davok",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1374,6 +1712,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 4
+        }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_18",
+          "name": "The Minstrel",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1407,6 +1754,22 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 4
         }
+      ],
+      "starters": [
+        {
+          "id": "unfrozen_hero_14",
+          "name": "Tölketh",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_10",
+          "name": "Merry Elias",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1438,6 +1801,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 6
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_14",
+          "name": "Ylwari",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1471,6 +1843,22 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_3",
+          "name": "Nor",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_10",
+          "name": "Mag",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1502,6 +1890,22 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 6
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_9",
+          "name": "Gleard the Grey",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_17",
+          "name": "Funerella",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1535,7 +1939,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "space_10_magic_mirror_copy",
@@ -1566,6 +1971,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 8
+        }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_16",
+          "name": "Echolily",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1599,6 +2013,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 8
         }
+      ],
+      "starters": [
+        {
+          "id": "necro_hero_16",
+          "name": "Lord Rufus",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1631,7 +2054,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 8
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "space_13_magic_black_hole",
@@ -1663,7 +2087,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "space_14_magic_doreaths_tide",
@@ -1694,6 +2119,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 10
+        }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_10",
+          "name": "Fleu",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1727,7 +2161,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "primal_17_magic_groundsight",
@@ -1758,6 +2193,29 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 2
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_7",
+          "name": "Creta, daughter of Navarr",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_12",
+          "name": "Bathym, Duke of Jewels",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_12",
+          "name": "Kwinri",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1791,6 +2249,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 2
         }
+      ],
+      "starters": [
+        {
+          "id": "unfrozen_hero_7",
+          "name": "Wal’kha",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -1822,6 +2289,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 2
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_15",
+          "name": "Glastor",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1855,7 +2331,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 4
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "primal_4_magic_fire_globe",
@@ -1886,6 +2363,22 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 4
+        }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_7",
+          "name": "Faleor",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_18",
+          "name": "Pauper",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1919,6 +2412,22 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 4
         }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_13",
+          "name": "Glacia",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_11",
+          "name": "Icequeen Hel’Ghat",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1950,6 +2459,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 4
+        }
+      ],
+      "starters": [
+        {
+          "id": "unfrozen_hero_13",
+          "name": "The Eye Collective",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1983,6 +2501,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_14",
+          "name": "Vim",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -2015,7 +2542,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "primal_7_magic_wall_of_flame",
@@ -2046,6 +2574,22 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 6
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_11",
+          "name": "Zakron the Great",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_12",
+          "name": "Aeliniel",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -2079,7 +2623,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 6
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "primal_10_magic_primordial_purity",
@@ -2110,6 +2655,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 8
+        }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_17",
+          "name": "Khariseth",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -2143,6 +2697,15 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 8
         }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_15",
+          "name": "Halon",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -2175,7 +2738,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 8
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "primal_18_magic_primordial_chaos",
@@ -2206,6 +2770,15 @@ window.OE_SPELLS_DATA = {
         {
           "name": "mercury",
           "cost": 8
+        }
+      ],
+      "starters": [
+        {
+          "id": "nature_hero_10",
+          "name": "Vatawna",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -2239,7 +2812,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "primal_14_magic_hksmillas_rampage",
@@ -2271,7 +2845,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "primal_15_magic_summon_primal_remnant",
@@ -2303,7 +2878,8 @@ window.OE_SPELLS_DATA = {
           "name": "mercury",
           "cost": 10
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "neutral_1_magic_back_to_garrison",
@@ -2322,7 +2898,8 @@ window.OE_SPELLS_DATA = {
         10
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "neutral_1_magic_back_to_city",
@@ -2341,7 +2918,8 @@ window.OE_SPELLS_DATA = {
         10
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_kill_summon",
@@ -2360,7 +2938,8 @@ window.OE_SPELLS_DATA = {
         10
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "night_bonus_magic_1_magic",
@@ -2379,7 +2958,8 @@ window.OE_SPELLS_DATA = {
         10
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_pure_bolt",
@@ -2398,7 +2978,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "neutral_1_magic_mana_restore",
@@ -2417,7 +2998,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "neutral_1_magic_mana_transfer",
@@ -2436,7 +3018,8 @@ window.OE_SPELLS_DATA = {
         10
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "change_use_necromancy",
@@ -2452,7 +3035,135 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": [
+        {
+          "id": "necro_hero_11",
+          "name": "Adahn",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_6",
+          "name": "Artorius Veritas",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_1",
+          "name": "Bulwark",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_12",
+          "name": "Ethric",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_17",
+          "name": "Funerella",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_13",
+          "name": "Guildmaster Klastor",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_4",
+          "name": "Kel’Ghul",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_2",
+          "name": "King‑of‑Kings",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_15",
+          "name": "Laura",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_16",
+          "name": "Lord Rufus",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_10",
+          "name": "Mag",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_7",
+          "name": "Marl",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_18",
+          "name": "Milossa the Golden",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_5",
+          "name": "Natalida",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_3",
+          "name": "Onkos",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_14",
+          "name": "Shadespinner Oona",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_8",
+          "name": "Tarius",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_9",
+          "name": "Zam",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "neutral_1_magic_units_replace",
@@ -2471,7 +3182,8 @@ window.OE_SPELLS_DATA = {
         12
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "primal_bonus_magic_1_magic",
@@ -2490,7 +3202,8 @@ window.OE_SPELLS_DATA = {
         10
       ],
       "cooldown": 2,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "neutral_magic_pocket_dimension",
@@ -2514,7 +3227,8 @@ window.OE_SPELLS_DATA = {
           "name": "starDust",
           "cost": 2
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "neutral_magic_second_sight",
@@ -2538,7 +3252,8 @@ window.OE_SPELLS_DATA = {
           "name": "starDust",
           "cost": 2
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "neutral_magic_shadow_form",
@@ -2562,7 +3277,8 @@ window.OE_SPELLS_DATA = {
           "name": "starDust",
           "cost": 3
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "neutral_magic_town_portal",
@@ -2586,7 +3302,8 @@ window.OE_SPELLS_DATA = {
           "name": "starDust",
           "cost": 3
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_1",
@@ -2605,7 +3322,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_2",
@@ -2624,7 +3342,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_3",
@@ -2643,7 +3362,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_4",
@@ -2662,7 +3382,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_5",
@@ -2681,7 +3402,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_nature_1",
@@ -2700,7 +3422,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_nature_2",
@@ -2719,7 +3442,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_nature_3",
@@ -2738,7 +3462,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_nature_4",
@@ -2757,7 +3482,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_nature_5",
@@ -2776,7 +3502,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_unfrozen_1",
@@ -2795,7 +3522,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_unfrozen_2",
@@ -2814,7 +3542,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_unfrozen_3",
@@ -2833,7 +3562,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_unfrozen_4",
@@ -2852,7 +3582,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "bonus_magic_astral_summon_unfrozen_5",
@@ -2871,7 +3602,8 @@ window.OE_SPELLS_DATA = {
         0
       ],
       "cooldown": 4,
-      "learnCost": []
+      "learnCost": [],
+      "starters": []
     },
     {
       "id": "neutral_magic_dimension_door",
@@ -2895,7 +3627,8 @@ window.OE_SPELLS_DATA = {
           "name": "starDust",
           "cost": 4
         }
-      ]
+      ],
+      "starters": []
     },
     {
       "id": "neutral_magic_light_gate",
@@ -2919,7 +3652,8 @@ window.OE_SPELLS_DATA = {
           "name": "starDust",
           "cost": 4
         }
-      ]
+      ],
+      "starters": []
     }
   ],
   "SCHOOLS": [
@@ -2944,5 +3678,5 @@ window.OE_SPELLS_DATA = {
       "name": "Neutral"
     }
   ],
-  "GENERATED_AT": "2026-05-10 17:17 UTC"
+  "GENERATED_AT": "2026-05-10 19:59 UTC"
 };

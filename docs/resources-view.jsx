@@ -11,13 +11,6 @@ const ResourcesView = () => {
   return (
     <>
       <h1>Resources</h1>
-      <p className="lede">
-        The eight resources the game tracks — primary (Gold / Wood / Ore),
-        rare (Gems / Crystal / Mercury), plus Alchemical Dust and Graal.
-        Icons pulled from <code>resources.assets</code>; tactical notes
-        synthesized for tournament/Exodus play.
-      </p>
-
       {Object.keys(R.CATEGORY_LABEL).map(catKey => {
         const items = byCat[catKey] || [];
         if (!items.length) return null;
@@ -30,10 +23,6 @@ const ResourcesView = () => {
           </section>
         );
       })}
-
-      <p className="note">
-        Generated {R.GENERATED_AT}.
-      </p>
     </>
   );
 };

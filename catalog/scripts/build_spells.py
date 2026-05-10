@@ -217,10 +217,38 @@ def collect_spells(tokens: dict[str, str], buffs: dict[str, dict]) -> list[dict]
     return out
 
 
+def load_heroes_with_starting_spells() -> dict[str, list[dict]]:
+    """Build spell_id → list of heroes who start with that spell, by reading
+    docs/data.js's HEROES array (which build_data_js.py emits)."""
+    p = ROOT / "docs" / "data.js"
+    if not p.exists():
+        return {}
+    text = p.read_text(encoding="utf-8")
+    m = re.search(r"const HEROES = (\[.*?\]);", text, re.DOTALL)
+    if not m:
+        return {}
+    out = {}
+    for h in json.loads(m.group(1)):
+        for sp in (h.get("spells") or []):
+            out.setdefault(sp["id"], []).append({
+                "id":      h["id"],
+                "name":    h["name"],
+                "faction": h["faction"],
+                "kind":    h["kind"],
+                "level":   sp.get("level") or 1,
+            })
+    for sid in out:
+        out[sid].sort(key=lambda r: (-r["level"], r["faction"], r["name"]))
+    return out
+
+
 def build():
     tokens = load_tokens(MAGIC_TOKENS)
     buffs = load_buffs()
     spells = collect_spells(tokens, buffs)
+    starters = load_heroes_with_starting_spells()
+    for sp in spells:
+        sp["starters"] = starters.get(sp["id"], [])
     # Sort: school order, then tier, then name
     school_idx = {s: i for i, s in enumerate(SCHOOL_ORDER)}
     spells.sort(key=lambda s: (school_idx.get(s["school"], 99), s["tier"], s["name"]))

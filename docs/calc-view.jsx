@@ -45,7 +45,6 @@ const CalcView = ({ factionId, kind, initialQuery, go }) => {
       <>
         <FactionPicker current={factionId} factions={FACTIONS} go={go} kind={k} />
         <h1>{k === 'laws' ? 'Laws' : 'Buildings'} calculator</h1>
-        <p className="lede">Pick a faction above to plan its {k}.</p>
       </>
     );
   }
@@ -109,12 +108,6 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
       <KindSwitcher current="buildings" factionId={factionId} go={go} />
 
       <h1>{fmeta.name} — Buildings</h1>
-      <p className="lede">
-        Pick the buildings you plan to construct. Costs from the actual game files.
-        Selecting a level auto-enacts prerequisites; click a selected level again to
-        step back.
-      </p>
-
       <div className="calc-totals">
         <div className="calc-totals-block calc-totals-wide">
           <div className="calc-totals-eyebrow">
@@ -202,11 +195,6 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
           </div>
         </section>
       ))}
-
-      <p className="note">
-        Generated {C.GENERATED_AT}. Data extracted by{' '}
-        <code>catalog/scripts/build_calc.py</code> from the game's JSON files.
-      </p>
     </>
   );
 };
@@ -245,11 +233,6 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
       <KindSwitcher current="laws" factionId={factionId} go={go} />
 
       <h1>{fmeta.name} — Laws</h1>
-      <p className="lede">
-        Pick the laws you plan to enact. Each row unlocks once you've spent the
-        threshold of law points on earlier rows.
-      </p>
-
       <div className="calc-totals">
         <div className="calc-totals-block calc-totals-wide">
           <div className="calc-totals-eyebrow">
@@ -336,11 +319,6 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
           </section>
         );
       })}
-
-      <p className="note">
-        Data from <code>catalog/scripts/build_calc.py</code>. Cumulative-LP unlock
-        thresholds extracted from <code>fractions/*.json</code>.
-      </p>
     </>
   );
 };
@@ -462,11 +440,6 @@ const CalcHubView = ({go}) => {
   return (
     <>
       <h1>Calculator</h1>
-      <p className="lede">
-        Plan your faction's law tree and building order against actual game-data
-        costs. Two pages per faction — Buildings (resource totals + prerequisite
-        chains) and Laws (LP totals + row unlocks).
-      </p>
       <div className="card-grid">
         {FACTIONS.map(f => (
           <div key={f.id} className="card faction-card calc-hub-card">

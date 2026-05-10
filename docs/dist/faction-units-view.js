@@ -59,7 +59,7 @@ const FactionUnitsView = ({ factionId, go }) => {
     const inTier = units.filter((u) => u.tier === tier);
     const ordered = ["base", "upg", "alt"].map((v) => inTier.find((u) => u.variant === v)).filter(Boolean);
     return /* @__PURE__ */ React.createElement("section", { key: tier, className: "ftier-block" }, /* @__PURE__ */ React.createElement("div", { className: "ftier-head" }, /* @__PURE__ */ React.createElement("span", { className: "ftier-num" }, "Tier ", tier), /* @__PURE__ */ React.createElement("span", { className: "ftier-count" }, ordered.map((u) => u.name).join(" / "))), /* @__PURE__ */ React.createElement("div", { className: "ftier-grid" }, ordered.map((u) => /* @__PURE__ */ React.createElement(UnitCard, { key: u.id, u, fmeta }))));
-  }), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Generated alongside ", /* @__PURE__ */ React.createElement("code", null, "data.js"), " by", " ", /* @__PURE__ */ React.createElement("code", null, "build_data_js.py"), ". Stats, passives, and abilities pulled directly from the game's JSON files; effect descriptions still contain runtime placeholders (rendered as ", /* @__PURE__ */ React.createElement("code", null, "?"), ") until the bonus-arg resolver is wired up."));
+  }));
 };
 const UnitCard = ({ u, fmeta }) => {
   const atk = u.attack || "Melee";

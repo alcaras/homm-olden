@@ -21,11 +21,6 @@ const GuidesView = () => {
   return (
     <>
       <h1>Faction guides</h1>
-      <p className="lede">
-        Tournament/Exodus single-hero PvP. Per-faction build-order priorities and law priority lists,
-        synthesized from creator commentary and cross-referenced against game data.
-      </p>
-
       {/* universal tips */}
       <h2>Universal tips</h2>
       <div className="tips">
@@ -155,10 +150,6 @@ const GuidesView = () => {
           </div>
         </section>
       )}
-
-      <p className="note">
-        Generated {G.GENERATED_AT}. Edit <code>catalog/scripts/build_faction_guides.py</code> and rerun to refresh.
-      </p>
     </>
   );
 };

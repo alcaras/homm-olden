@@ -26,14 +26,6 @@ const ArtifactsView = () => {
   return (
     <>
       <h1>Artifacts</h1>
-      <p className="lede">
-        117 artifacts across 9 equipment slots, plus 24 item sets that grant
-        bonus effects when you equip multiple pieces. Stats, rarity, and set
-        membership pulled from <code>DB/items/items/</code> and{' '}
-        <code>DB/items/item_sets/</code>; icons from{' '}
-        <code>resources.assets</code>.
-      </p>
-
       <div className="controls">
         <div className="filter-group">
           <label>Slot</label>
@@ -77,12 +69,6 @@ const ArtifactsView = () => {
           </div>
         </section>
       ))}
-
-      <p className="note">
-        Generated {A.GENERATED_AT}. Stats are bonuses *per artifact level*;
-        most artifacts have <code>maxLevel: 2</code> and gain extra magnitude
-        per level.
-      </p>
     </>
   );
 };

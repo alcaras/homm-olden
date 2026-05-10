@@ -15,13 +15,6 @@ const MapObjectsView = () => {
   return (
     <>
       <h1>Map objects</h1>
-      <p className="lede">
-        Every interactable thing you'll find on the adventure map — mines,
-        chests, shrines, dwellings, banks, teleports, and special structures.
-        Pulled directly from <code>mapObjects.json</code>; icons from{' '}
-        <code>resources.assets</code>.
-      </p>
-
       <div className="controls">
         <div className="filter-group">
           <label>Category</label>
@@ -48,12 +41,6 @@ const MapObjectsView = () => {
           </div>
         </section>
       ))}
-
-      <p className="note">
-        Generated {M.GENERATED_AT}. Edit{' '}
-        <code>catalog/scripts/build_map_objects.py</code> to refine
-        categorization.
-      </p>
     </>
   );
 };

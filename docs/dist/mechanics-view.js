@@ -2,7 +2,7 @@ const MechanicsView = ({ go }) => {
   const M = window.OE_MECHANICS_DATA;
   if (!M) return /* @__PURE__ */ React.createElement("p", null, "Mechanics data not loaded.");
   const FACTIONS = window.OE_DATA?.FACTIONS || [];
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Mechanics 101"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "New to Olden Era \u2014 or coming from HOMM3? This page covers the systems every player needs to internalize before the tournament strategy on the rest of the site makes sense. Synthesized from the Hooded Horse wiki, Steam community guides, and creator commentary; each numeric claim was triangulated against at least two sources."), /* @__PURE__ */ React.createElement("nav", { className: "mech-toc" }, M.SECTIONS.map((s) => /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Mechanics 101"), /* @__PURE__ */ React.createElement("nav", { className: "mech-toc" }, M.SECTIONS.map((s) => /* @__PURE__ */ React.createElement(
     "a",
     {
       key: s.id,
@@ -80,7 +80,7 @@ const MechanicsView = ({ go }) => {
     },
     /* @__PURE__ */ React.createElement("div", { className: "mech-resource-title" }, r.title, " \u2197"),
     /* @__PURE__ */ React.createElement("div", { className: "mech-resource-desc" }, r.desc)
-  )))), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Generated ", M.GENERATED_AT, ". Edit", " ", /* @__PURE__ */ React.createElement("code", null, "catalog/scripts/build_mechanics.py"), " and rerun to refresh."));
+  )))));
 };
 function markdownInlineToHtml(s) {
   const escape = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

@@ -49,6 +49,8 @@ creature laws are decent
 
 terra mortis -- always native terrain [combines nicely with gravesoil from adv nec]
 
+## subclasses
+
 # grove 
 
 ## heroes
@@ -108,6 +110,8 @@ sanctuary for awkwaening
 
 child of the wild (more movement)
 focus (more focus)
+
+## subclasses
 
 # dungeon
 
@@ -172,6 +176,8 @@ jadame maps (movement points)
 meh:
 saturation (your focus charge limit increases by 1)
 
+## subclasses
+
 # temple
 
 daylight magic
@@ -233,6 +239,7 @@ sun's grace (daylight spells gain 1 level)
 hero's blessing
 vengeful strike (counterattacks more damage -- riposte)
 
+## subclasses
 
 # hive
 
@@ -299,6 +306,8 @@ bad:
 ## laws
 
 good:
+
+## subclasses
 
 # skills
 

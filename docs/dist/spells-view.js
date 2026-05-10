@@ -24,7 +24,7 @@ const SpellsView = () => {
     bySchool[k] = bySchool[k] || {};
     (bySchool[k][sp.tier] = bySchool[k][sp.tier] || []).push(sp);
   }
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Spells"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Every spell in the game \u2014 battle and world \u2014 pulled from the magic JSONs. Grouped by school (Daylight / Nightshade / Arcane / Primal / Neutral) and tier. Mana costs are listed per spell-level (L1\u2013L4 of each spell)."), /* @__PURE__ */ React.createElement("div", { className: "controls" }, /* @__PURE__ */ React.createElement("div", { className: "filter-group" }, /* @__PURE__ */ React.createElement("label", null, "School"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { className: school === "all" ? "active" : "", onClick: () => setSchool("all") }, "All"), S.SCHOOLS.map((sk) => /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Spells"), /* @__PURE__ */ React.createElement("div", { className: "controls" }, /* @__PURE__ */ React.createElement("div", { className: "filter-group" }, /* @__PURE__ */ React.createElement("label", null, "School"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { className: school === "all" ? "active" : "", onClick: () => setSchool("all") }, "All"), S.SCHOOLS.map((sk) => /* @__PURE__ */ React.createElement(
     "button",
     {
       key: sk.id,
@@ -45,7 +45,7 @@ const SpellsView = () => {
     const list = bySchool[sk.id]?.[t] || [];
     if (list.length === 0) return null;
     return /* @__PURE__ */ React.createElement("div", { key: t, className: "spell-tier-block" }, /* @__PURE__ */ React.createElement("div", { className: "spell-tier-head" }, t === 0 ? "Untiered / passive" : `Tier ${t}`, t > 0 && /* @__PURE__ */ React.createElement("span", { className: "spell-tier-cd" }, " \xB7 cooldown ", t + 1, " rounds")), /* @__PURE__ */ React.createElement("div", { className: "spell-grid" }, list.map((sp) => /* @__PURE__ */ React.createElement(SpellCard, { key: sp.id, sp }))));
-  }))), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Generated ", S.GENERATED_AT, ". Data extracted by", " ", /* @__PURE__ */ React.createElement("code", null, "catalog/scripts/build_spells.py"), " from", " ", /* @__PURE__ */ React.createElement("code", null, "DB/magics/"), " and ", /* @__PURE__ */ React.createElement("code", null, "Lang/english/texts/magic.json"), "."));
+  }))));
 };
 const SpellCard = ({ sp }) => {
   const manaUniq = Array.from(new Set(sp.manaCost));
@@ -61,6 +61,6 @@ const SpellCard = ({ sp }) => {
         e.target.style.visibility = "hidden";
       }
     }
-  ), /* @__PURE__ */ React.createElement("div", { className: "spell-head-body" }, /* @__PURE__ */ React.createElement("div", { className: "spell-name-row" }, /* @__PURE__ */ React.createElement("h3", { className: "spell-name" }, sp.name), sp.scope === "world" && /* @__PURE__ */ React.createElement("span", { className: "spell-scope" }, "World")), /* @__PURE__ */ React.createElement("div", { className: "spell-meta" }, sp.magicType && /* @__PURE__ */ React.createElement("span", { className: "spell-magic-type" }, sp.magicType), /* @__PURE__ */ React.createElement("span", { className: "spell-mana" }, manaText)))), sp.desc && /* @__PURE__ */ React.createElement("p", { className: "spell-desc" }, sp.descResolved || sp.desc.replace(/\{[0-9]+\}/g, "?")));
+  ), /* @__PURE__ */ React.createElement("div", { className: "spell-head-body" }, /* @__PURE__ */ React.createElement("div", { className: "spell-name-row" }, /* @__PURE__ */ React.createElement("h3", { className: "spell-name" }, sp.name), sp.scope === "world" && /* @__PURE__ */ React.createElement("span", { className: "spell-scope" }, "World")), /* @__PURE__ */ React.createElement("div", { className: "spell-meta" }, sp.magicType && /* @__PURE__ */ React.createElement("span", { className: "spell-magic-type" }, sp.magicType), /* @__PURE__ */ React.createElement("span", { className: "spell-mana" }, manaText)))), sp.desc && /* @__PURE__ */ React.createElement("p", { className: "spell-desc" }, sp.descResolved || sp.desc.replace(/\{[0-9]+\}/g, "?")), sp.starters?.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "spell-starters" }, /* @__PURE__ */ React.createElement("span", { className: "spell-starters-label" }, "Starting hero", sp.starters.length === 1 ? "" : "es", ":"), sp.starters.map((h) => /* @__PURE__ */ React.createElement("span", { key: h.id, className: `faction-pill faction-${h.faction}`, title: h.name }, h.name))));
 };
 window.SpellsView = SpellsView;

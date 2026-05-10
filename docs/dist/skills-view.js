@@ -9,7 +9,7 @@ const SkillsView = () => {
     (skillsByGroup[sk.group] = skillsByGroup[sk.group] || []).push(sk);
   }
   const visibleGroups = filter === "all" ? S.GROUPS : S.GROUPS.filter((g) => g.id === filter);
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Skills"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Every hero skill in the game \u2014 Combat, Magic, Schools, Utility, the class-locked Combat / Thaumaturgy pair, the never-in-subclass Siegecraft / Recruitment pair, and the six faction skills. Each entry shows the per-level effect, the sub-skill rewards offered at Advanced and Expert, and the subclasses that need this skill at level 3."), /* @__PURE__ */ React.createElement("div", { className: "controls" }, /* @__PURE__ */ React.createElement("div", { className: "filter-group" }, /* @__PURE__ */ React.createElement("label", null, "Group"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { className: filter === "all" ? "active" : "", onClick: () => setFilter("all") }, "All"), S.GROUPS.map((g) => {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Skills"), /* @__PURE__ */ React.createElement("div", { className: "controls" }, /* @__PURE__ */ React.createElement("div", { className: "filter-group" }, /* @__PURE__ */ React.createElement("label", null, "Group"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { className: filter === "all" ? "active" : "", onClick: () => setFilter("all") }, "All"), S.GROUPS.map((g) => {
     const n = (skillsByGroup[g.id] || []).length;
     if (!n) return null;
     return /* @__PURE__ */ React.createElement(
@@ -28,7 +28,7 @@ const SkillsView = () => {
     const group = skillsByGroup[g.id] || [];
     if (group.length === 0) return null;
     return /* @__PURE__ */ React.createElement("section", { key: g.id, className: "skill-group" }, /* @__PURE__ */ React.createElement("h2", null, g.label), /* @__PURE__ */ React.createElement("div", { className: "skill-list" }, group.map((sk) => /* @__PURE__ */ React.createElement(SkillCard, { key: sk.id, sk, factionById }))));
-  }), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Generated ", S.GENERATED_AT, ". Data extracted by", " ", /* @__PURE__ */ React.createElement("code", null, "catalog/scripts/build_skills.py"), " from", " ", /* @__PURE__ */ React.createElement("code", null, "DB/heroes_skills/"), " and", " ", /* @__PURE__ */ React.createElement("code", null, "Lang/english/texts/heroSkills.json"), ". Subclass mapping derived from ", /* @__PURE__ */ React.createElement("code", null, "SUBCLASSES"), " in ", /* @__PURE__ */ React.createElement("code", null, "data.js"), "."));
+  }));
 };
 function shortGroupLabel(id) {
   return {

@@ -21,10 +21,6 @@ const DraftView = () => {
   return (
     <>
       <h1>Draft strategy</h1>
-      <p className="lede">
-        Quick reference for tournament/Exodus pick-ban. Use this during a draft.
-      </p>
-
       <h2>Format</h2>
       <ul className="format-list">
         {D.FORMAT.map((f, i) => <li key={i}>{f}</li>)}
@@ -102,10 +98,6 @@ const DraftView = () => {
       </table>
 
       <h2>Top 5 hero bans by opponent faction</h2>
-      <p className="note">
-        Your 3 hero bans come from your opponent's faction. Pick the top 3
-        rows from the relevant card.
-      </p>
       <div className="ban-grid">
         {Object.entries(D.HERO_BANS).map(([fid, items]) => {
           const f = factionMeta[fid];
@@ -134,10 +126,6 @@ const DraftView = () => {
           );
         })}
       </div>
-
-      <p className="note">
-        Generated {D.GENERATED_AT}. Edit <code>catalog/scripts/build_draft_guide.py</code> and rerun.
-      </p>
     </>
   );
 };
