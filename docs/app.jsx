@@ -14,6 +14,9 @@ const parseHash = () => {
   if (path.startsWith('calc/')) {
     return { view: 'calc-faction', factionId: path.slice('calc/'.length), query };
   }
+  if (path.startsWith('units/')) {
+    return { view: 'units-faction', factionId: path.slice('units/'.length), query };
+  }
   if (SIMPLE_VIEWS.includes(path)) return { view: path, factionId: null, query };
   return { view: 'index', factionId: null, query: '' };
 };
@@ -30,6 +33,8 @@ const App = () => {
       next = { view: 'faction', factionId: path.slice('faction/'.length), query };
     } else if (typeof path === 'string' && path.startsWith('calc/')) {
       next = { view: 'calc-faction', factionId: path.slice('calc/'.length), query };
+    } else if (typeof path === 'string' && path.startsWith('units/')) {
+      next = { view: 'units-faction', factionId: path.slice('units/'.length), query };
     } else {
       next = { view: path, factionId: null, query };
     }
@@ -84,7 +89,8 @@ const App = () => {
       {route.view==='subclasses' && <window.SubclassesView />}
       {route.view==='skills'     && <window.SkillsView />}
       {route.view==='heroes'     && <window.HeroesView />}
-      {route.view==='units'      && <window.UnitsView />}
+      {route.view==='units'         && <window.UnitsView go={go} />}
+      {route.view==='units-faction' && <window.FactionUnitsView factionId={route.factionId} go={go} />}
       {route.view==='tier'       && <window.TierView />}
       {route.view==='guides'     && <window.GuidesView />}
       {route.view==='draft'      && <window.DraftView />}

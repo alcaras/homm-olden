@@ -2327,6 +2327,165 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   margin: 0.25rem 0 0.5rem;
 }
 
+/* ---------- per-faction unit browser ---------- */
+.ftier-block { margin: 1.4rem 0 1.8rem; }
+.ftier-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  border-bottom: 2px solid var(--rule-bold);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.7rem;
+}
+.ftier-num {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ftier-count {
+  font-family: Charter, Georgia, serif;
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+.ftier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+@media (max-width: 1080px) { .ftier-grid { grid-template-columns: 1fr; } }
+
+.ucard {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.85rem 1rem;
+  border-radius: 2px;
+  border-top: 3px solid var(--rule-bold);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.ucard-base { border-top-color: var(--muted); }
+.ucard-upg  { border-top-color: var(--accent); }
+.ucard-alt  { border-top-color: var(--accent-2); border-top-style: dashed; }
+
+.ucard-head {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.ucard-icon {
+  width: 56px; height: 56px;
+  object-fit: cover;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.ucard-head-body { flex: 1; min-width: 0; }
+.ucard-variant-row {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+.ucard-name {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-transform: none;
+}
+.ucard-id {
+  font-size: 0.7rem;
+  color: var(--faint);
+  margin-top: 1px;
+}
+
+.ucard-narr {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted var(--rule);
+}
+
+.ucard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem 0.6rem;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+.ucard-stats > div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  font-size: 0.85rem;
+}
+.ucard-stats .lbl {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+  min-width: 2.6em;
+}
+.ucard-stats b {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.ucard-effects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.55rem;
+}
+.ucard-effect-block {}
+.ucard-effect-head {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.ucard-effect-list {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: disc;
+}
+.ucard-effect-list li {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+  margin-bottom: 0.2rem;
+}
+.ucard-effect-name { font-weight: 600; color: var(--ink); }
+.ucard-effect-desc { font-style: italic; color: var(--ink-2); }
+
+.ucard-no-effects {
+  font-size: 0.78rem;
+  color: var(--faint);
+  font-style: italic;
+  border-top: 1px dotted var(--rule);
+  padding-top: 0.5rem;
+}
+
 /* ---------- skills view ---------- */
 .skill-group { margin: 1.6rem 0; }
 .skill-group h2 { margin-top: 1.4rem; }

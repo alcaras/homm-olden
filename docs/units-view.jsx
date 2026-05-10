@@ -1,6 +1,6 @@
 /* Units view — sortable / searchable creature stat table */
 
-const UnitsView = () => {
+const UnitsView = ({ go }) => {
   const { FACTIONS, UNITS } = window.OE_DATA;
   const [q, setQ] = React.useState('');
   // 'all' (everything) | 'factions' (any non-neutral) | Set of explicit ids
@@ -94,6 +94,27 @@ const UnitsView = () => {
         <em>upgrade</em> (the standard improvement), and <em>alt upgrade</em>{' '}
         (the alternate option).
       </p>
+
+      <h2>Browse by faction</h2>
+      <p className="note">
+        Per-faction page: all 7 tiers stacked, each tier showing base / upgrade /
+        alt as 3 cards with stats, passives, and abilities side by side.
+      </p>
+      <div className="faction-strip">
+        {FACTIONS.map(f => (
+          <a key={f.id}
+             href={`#units/${f.id}`}
+             onClick={e => { if (go) { e.preventDefault(); go(`units/${f.id}`); } }}>
+            <img loading="lazy" className="faction-icon"
+                 src={`img/factions/${f.id}.png`} alt=""
+                 onError={(e)=>{e.target.style.display='none';}} />
+            <div className="name">{f.name}</div>
+            <div className="skill">{f.might} / {f.magic}</div>
+          </a>
+        ))}
+      </div>
+
+      <h2>All units (sortable table)</h2>
 
       <div className="controls">
         <div className="filter-group">
