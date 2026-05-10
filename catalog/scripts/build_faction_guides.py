@@ -153,7 +153,7 @@ GUIDES = {
             ("Day 4-5",    "Magic_Guild", "S", "Mage Guild L1 — fish for Avatar / Fireball / Slow. Critical for the spellbook combo. Build *before* secondary economy."),
             ("Week 1-2",   "Bank",        "A", "Bank goes in *after* Resource Riches lands — the law gives you a burst of resources that pivots straight into a Bank."),
             ("Week 2",     "Tier_1",      "B", "Faun Huts upgrade if you skipped on day 1. Faun Archers are still relevant late if not running Gingertail."),
-            ("Week 2-3",   "Unic_2",      "B", "Mother Nature (+2 spell power). Strong only with caster heroes (Halon, Sullie, Tss'kish)."),
+            ("Week 2-3",   "Unic_2",      "B", "Mother Nature (+2 spell power). Strong only with caster heroes (Halon, Sullie, Faleor)."),
         ],
         "building_traps": [
             ("Tier_3",  "trap", "Menhir Circle (Iriyads/Naiads). The Qilin build path is 'horrendous' (Mage Guild → Iriyads → useless Naiads → Qilins). Skip and run Avatar Vomit instead."),

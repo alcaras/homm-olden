@@ -16,10 +16,10 @@ Quick-ref guide for drafting in single-hero PvP. Synthesized from creator commen
 
 | Rank | Faction | Why |
 |---|---|---|
-| 1 | **Necropolis** | Deepest pool in the game — even after spending all 3 hero bans on Kel'Ghul + Bulwark + Onkos, they still have Marl, Tarius, Lord Rufus, Oona, Artorius, Laura, Funerella as picks. The Undead Transformer is unique to this faction. You cannot ban-around Necropolis at the hero phase. |
-| 2 | **Grove** | 4 perma-ban-tier heroes (Halon, Sullie, Aunt Daliar, Elder Tss'kish) — you can only ban 3, so one always slips through. Avatar Vomit + Thaumaturgy is the strongest archetype in the game. |
-| 3 | **Dungeon** | 4 perma-ban-tier heroes (Motley, Stinger, Typhona, Lodos). Lodos's starting Sleep spell still wins fights even if you ban the other three. Strongest single-hero unit roster. |
-| (skip) | **Temple** | Reliable but not broken — fewer S-tier heroes than Necro/Grove/Dungeon. Don't waste your faction ban here. |
+| 1 | **Necropolis** | Deepest pool per lexiav — 6 S-tier heroes (Onkos, Kel'Ghul, Marl, Laura, Lord Rufus, Tarius). 3 hero bans only carve off half. The Undead Transformer is unique to this faction. You cannot ban-around Necropolis at the hero phase. |
+| 2 | **Grove** | 6 S-tier heroes per lexiav (Halon, Sullie, Gingertail, Gorel Spearhead, Faleor, Aunt Daliar). Halon and Sullie are 'great' tier (Masterful Chain Lightning + magic-immune Avatar). 3 bans always leave at least 3 strong picks open. |
+| 3 | **Dungeon** | 5 S-tier heroes per lexiav (Stinger, Kelarr, Typhona, Enatee, Devir). Stinger's Heroic Strike + poison is the standout creep engine. Note: lexiav rates Motley and Lodos lower than older guides did — banning them is no longer mandatory. |
+| (skip) | **Temple** | 3 S-tier heroes per lexiav (Pip, Old Lord Mandall, Kestrel) — solid but a smaller S-pool than Necro/Grove/Dungeon. Don't waste the faction ban here. |
 | (skip) | **Schism** | Expensive and tech-tree-brutal. Easy to outpace with proper draft discipline; don't burn your ban here. |
 | (anti) | **Hive** | **Anti-pattern.** Hive has the worst early game in the roster — banning it removes your opponent's *losing* option. Hive bans only make sense if you specifically know your opponent prefers Hive. |
 
@@ -27,10 +27,10 @@ Quick-ref guide for drafting in single-hero PvP. Synthesized from creator commen
 
 | Rank | Faction | Why |
 |---:|---|---|
-| 1 | **Necropolis** | Deepest pool; ban-resistant. First-pick instantly if open. |
-| 2 | **Grove** | Avatar Vomit + Thaumaturgy meta. Even after Halon/Sullie bans, Tss'kish/Daliar/Faleor/Minstrel are strong. |
-| 3 | **Dungeon** | Strongest single-hero unit roster. Lodos still S-tier after Motley/Stinger/Typhona bans. |
-| 4 | **Temple** | Reliable script-faction: Crossbowman → Austringer + Daylight buffs + Angel double-build. |
+| 1 | **Necropolis** | Deepest S-pool (6 per lexiav); ban-resistant. First-pick instantly if open. |
+| 2 | **Grove** | Halon + Sullie 'great' tier; 4 more S picks (Gingertail, Gorel, Faleor, Daliar). |
+| 3 | **Dungeon** | 5 S-tier heroes (Stinger, Kelarr, Typhona, Enatee, Devir). Strong unit roster + Fighting Style laws. |
+| 4 | **Temple** | Reliable script-faction with 3 S-tier heroes (Pip, Mandall, Kestrel). Crossbowman → Austringer + Daylight buff stack. |
 | 5 | **Schism** | Only if you've practiced the brutal tech tree. Bloated Arbitrators are arguably the best T6 in the game. |
 | 6 | **Hive** | Only if you got Maelstrom. Otherwise the early game is unplayable. |
 
@@ -38,7 +38,7 @@ Quick-ref guide for drafting in single-hero PvP. Synthesized from creator commen
 
 You ban first but pick last. **You see your opponent's faction pick before committing your own**, which is a major counter-pick advantage. Use the faction ban to remove the most ban-resistant faction (Necropolis), then react to their blind pick with the matchup-favored counter.
 
-- **Your faction ban (1st).** Default: **ban Necropolis**. Most ban-resistant pool, Undead Transformer is unique. Removing it forces opponent into a less-deep faction. Alternative: ban Grove (kills Halon/Sullie/Daliar/Tss'kish) or Dungeon (kills Motley/Stinger/Typhona/Lodos) if you're confident the matchup-counter math works for you.
+- **Your faction ban (1st).** Default: **ban Necropolis**. Most ban-resistant pool, Undead Transformer is unique. Removing it forces opponent into a less-deep faction. Alternative: ban Grove (kills Halon/Sullie/Daliar/Gingertail/Faleor/Gorel) or Dungeon (kills Stinger/Typhona/Enatee/Devir/Kelarr) if you're confident the matchup-counter math works for you.
 - **Their faction ban (2nd).** They ban one of the remaining S-tier factions — usually whichever you'd most likely play. They'll try to deny YOUR best counter-pick options.
 - **Their faction pick (BLIND, 3rd).** They commit faction without knowing what you'll take. They have to anticipate your counter-pick. Expect them to take whatever's strongest of {Grove, Dungeon, Temple}.
 - **Your faction pick (LAST, 4th — counter-pick).** Now you have full information. Pick the faction that *beats their faction* — see the counter-pick matrix below. **This is your leverage**: take the matchup-favored counter, not the highest-tier faction. Grove > Dungeon vs Temple. Necropolis > anything if open.
@@ -64,8 +64,8 @@ If your opponent picks faction X, your best response is:
 
 | Opponent picked | Primary counter | Why | Alt counter | Why |
 |---|---|---|---|---|
-| **Necropolis** | Grove (Halon) | Chain Lightning shreds T1 Skeleton Archer doom-stacks; Despair-immune. Avatar Vomit out-tempos the Necropolis snowball before it compounds. | Dungeon (Motley) | Twilight shuts down Skeleton Archers; Black Dragons immune to Despair / Decay; Onyx Dancer 1-stacks shred squishy Liches before they sustain. |
-| **Grove** | Dungeon (Motley) | Mley's Twilight shuts down ranged + Halon's spell combos; Black Dragons immune to all magic damage; Onyx Dancer 1-stacks shred squishy Hoplites/Fauns. | Necropolis | Liches resurrect through Grove's burst spells; Magic Absorption law caps their spell power. |
+| **Necropolis** | Grove (Halon) | Chain Lightning shreds T1 Skeleton Archer doom-stacks; Despair-immune. Avatar Vomit out-tempos the Necropolis snowball before it compounds. | Dungeon (Stinger) | Heroic Strike + poison out-creeps Necropolis early; Black Dragons immune to Despair / Decay; Onyx Dancer 1-stacks shred squishy Liches before they sustain. |
+| **Grove** | Dungeon (Stinger) | Heroic Strike + poison races Grove's mid-game setup; Black Dragons immune to Halon's Chain Lightning; Onyx Dancer 1-stacks shred squishy Hoplites/Fauns. | Necropolis | Liches resurrect through Grove's burst spells; Magic Absorption law caps their spell power. |
 | **Dungeon** | Necropolis | Liches resurrect units killed by Onyx Dancer 1-stacks; Vampire Lord retaliation loop drains Hydras; Magic Absorption law strips Black Dragon synergy spells. | Grove (Halon) | Chain Lightning through Onyx Dancer stacks + Avatar absorbs Black Dragon hits. |
 | **Temple** | Necropolis | Marl's Web + Skeleton Archer volume out-shoots Crossbowmen; Daylight buffs neutralized by Death's Presence law. | Grove | Halon's chain lightning AoE + Avatar tank > Temple's slow blob. |
 | **Schism** | Grove (Halon) | Chain Lightning clears Rashoth volumes faster than they can demon-farm; Avatar Vomit out-tempos Communion-based scaling. | Necropolis | Animate Dead snowball outpaces Schism's expensive economy; Skeleton volume counters demon-farmed Grand Shoths. |
@@ -75,35 +75,35 @@ If your opponent picks faction X, your best response is:
 
 ### vs Necropolis
 
-1. **Kel'Ghul** — T6 Dread Knights at start; only +2-growth tier specialist in the game
-2. **Bulwark** — King of Tanks; nearly unbleedable early game
-3. **Onkos** — Skeleton specialist; +2 growth + buffs make Skeleton Archers the strongest T1 ranged stack
-4. **Marl** — Masterful Web slows the entire enemy army; S-tier on Sprint, A everywhere
-5. **Artorius Veritas** — Masterful Berserk hits a radius — punishes corner-camping ranged blob meta
+1. **Kel'Ghul** — Dread Knight specialist; +2 growth on T6, 2-3 Dread Knights at start
+2. **Onkos** — Skeleton unit specialist; +2 growth + buffs = strongest T1 ranged stack
+3. **Marl** — Masterful Web slows the entire enemy army; counters fast factions
+4. **Laura** — Masterful Despair (AoE, very efficient) — bypasses Despair immunity in PvP
+5. **Lord Rufus** — Rewind Life — temporary resurrection lets him creep with zero permanent losses
 
 ### vs Grove
 
-1. **Halon** — Masterful Chain Lightning loses only 25% per bounce (vs 50%); insane early tempo
-2. **Sullie** — Avatar specialist; her Avatar is immune to magic damage
-3. **Aunt Daliar** — Insight + Civic Innovation = blast through the law tree
-4. **Elder Tss'kish** — Thaumaturgy + Herbomancer buffs; late-game double/triple-cast
-5. **Gingertail** — Faun tempo; 3 Faun stacks + Init/HP buff
+1. **Halon** — Masterful Chain Lightning loses only 25% per bounce; lexiav 'great' tier
+2. **Sullie** — Avatar specialist; Avatar immune to magic damage; lexiav 'great' tier
+3. **Aunt Daliar** — Insight start; blasts through the law tree
+4. **Gingertail** — Faun specialist; 3 Faun stacks + Init/HP buffs at start
+5. **Faleor** — Master Fireball; Murmuring + Child of the Woods for mana — early-map nuke
 
 ### vs Dungeon
 
-1. **Motley** — Onyx Dancers + Twilight; shuts down all enemy ranged units
-2. **Stinger** — Poisoned Heroic Strike with +10 damage; toxic creep speed
-3. **Typhona** — 2 Tier 6 Hydras on day 1
-4. **Lodos** — Starts with Sleep; one cast on a 180-archer stack ends the fight
-5. **Devir, son of Devir** — Minotaur specialist; Day 1 Minotaur doom build
+1. **Stinger** — Heroic Strike specialist; devastating early creep with stacking poison
+2. **Typhona** — Hydra (T6) specialist Warlock — Tier 6 power on day 1
+3. **Enatee** — Medusa specialist; Sculptor petrification is one of the faction's best units
+4. **Devir, son of Devir** — Minotaur specialist + Leadership; Day 1 Minotaur doom build
+5. **Kelarr, son of Navarr** — Insight specialist; flexible scaling, hard to ban-around
 
 ### vs Temple
 
-1. **Pip** — Most picked/banned Temple hero; Insight + flexible attribute scaling
-2. **Old Lord Mandall** — Heroic Strike specialist with +10% damage-amp debuff
-3. **Kestrel** — Offense start enables Austringer doom-stack
-4. **Lord Edgar** — Tazar-style 20% A/D to units; best on slow templates
-5. **Lia the Untethered One** — Daylight specialist; can lock you out of Daylight in mirror
+1. **Pip** — Insight start; lexiav top pick — flexible canvas for any build
+2. **Old Lord Mandall** — Heroic Strike specialist (Combat + Leadership); damage carries late
+3. **Kestrel** — Crossbow specialist (Offense start); drives the Austringer doom-stack
+4. **Merry Elias** — +1 spell cap for global map spells (top hero on Vendetta; meh on Exodus)
+5. **Lord Edgar** — Lots of stats; late-game scaler. Worth banning vs slow templates.
 
 ### vs Schism
 
@@ -123,4 +123,4 @@ If your opponent picks faction X, your best response is:
 
 ---
 
-*Generated 2026-05-10 06:41 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*
+*Generated 2026-05-10 08:01 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*

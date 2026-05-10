@@ -30,39 +30,34 @@ Strong T1/T2 ranged base (Crossbowman → Austringer double-shot, then Lightweav
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Old Lord Mandall** | Knight (might) | Heroic Smite | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Heroic Strike specialist, +10% damage amp debuff on hit. Self-sufficient: even if the army bleeds out, his damage carries late game. Pairs with Inspiring Strike for chain-resets. |
-| **Pip** | Cleric (magic) | Wish to Learn | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Most picked/banned Temple hero. Insight + extra attribute every 2 levels makes him a flexible canvas: pivot to Avatar summoner, Daylight caster, or Might/Offense based on map roll. He is *the* stock-standard Temple hero. |
-
-#### Tier A
-
-| Hero | Class | Specialty | Starting army | Note |
-|---|---|---|---|---|
-| **Kestrel** | Knight (might) | Jaeger | 8–11 Crossbowman · 8–11 Crossbowman · 8–11 Crossbowman | Strong early tempo. Offense start unlocks Archery sub-skill quickly; doubles down on a dominant T2 Crossbowman → Austringer (double-shot) ranged stack. Targets Swashbuckler subclass. |
-| **Lord Edgar** | Knight (might) | True Lord | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Tazar-style: gives 20% of his Attack/Defense to your units. Best on slow templates going for late-game doom-stacks; weaker on shorter Exodus. |
+| **Kestrel** | Knight (might) | Jaeger | 8–11 Crossbowman · 8–11 Crossbowman · 8–11 Crossbowman | Crossbow specialist; Offense start. Lexiav top pick. Drives the Austringer doom-stack opener. |
+| **Old Lord Mandall** | Knight (might) | Heroic Smite | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Heroic Strike specialist (Combat + Leadership). Lexiav top pick. Damage carries late even after army bleeds out. |
+| **Pip** | Cleric (magic) | Wish to Learn | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Insight start. Lexiav top pick. Flexible canvas: pivot to Avatar summoner, Daylight caster, or Might/Offense based on map roll. |
 
 #### Tier B
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Ister** | Knight (might) | Wayfarer | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Logistics specialist. Strong only on the Sprint template (road-movement bonuses); outshined by Pip/Mandall everywhere else. |
-| **Leon Sticky‑Fingers** | Knight (might) | Pathfinder | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Pathfinder/Scouting. Solid utility might hero, no creator endorsement. *(data)* |
-| **John Johnson** | Knight (might) | Salt of the Earth | 11–16 Swordsman · 11–16 Swordsman · 11–16 Swordsman | Videos disagree: one creator calls him a feared 'swordsman spam' steamroller, the dedicated Temple guide labels him a 'newbie trap'. Probably playable but nothing special; lean situational. |
-| **Aeos the Exalted** | Knight (might) | Rousing Presence | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Leadership start (Swashbuckler subclass head-start). Generic might hero with no spec hook called out by creators. *(data)* |
-| **Merry Elias** | Cleric (magic) | Spiritual Vigor | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | +1 spell cap for global map spells, huge mana pool. *Top hero in the game* on Vendetta (double Dimension Door day 1) but middle-of-pack on standard Exodus where early control matters more. |
-| **Lia the Untethered One** | Cleric (magic) | Radiating Knowledge | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Daylight specialist; can cast Daylight without locking out other schools and prevents the enemy from casting Daylight at all. Niche counter-pick into Temple mirror. |
-| **Vesper** | Cleric (magic) | Blessing | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Daylight Magic start, 'Blessing' specialty. Bless is the T1 +35% damage spell; a Bless specialist scales the entire army. Underrated but uncited. *(data)* |
-| **Anastasia the Meek** | Cleric (magic) | Hymn to Arina | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Thaumaturgy start (the double-cast school). Universal upside for any caster build, but no specific video coverage. *(data)* |
-| **Nadir** | Cleric (magic) | Heart of Hearts | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Nightshade Magic start, 'Heart of Hearts'. Could lock enemy from Nightshade in Necro/Dungeon matchups (similar pattern to Lia for Daylight). No video corroboration. *(data)* |
+| **Ister** | Knight (might) | Wayfarer | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Logistics specialist. Lexiav meh — best on Sprint (road movement); outshined elsewhere. |
+| **Aeos the Exalted** | Knight (might) | Rousing Presence | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Morale specialist. Lexiav meh — late-game dream pick, slow to come online. |
+| **Keandra** | Knight (might) | Jouster | 14–20 Swordsman · 2–3 Cavalry | Cavalry specialist. Lexiav meh — cavalry is awkward in single-hero. |
+| **Lord Edgar** | Knight (might) | True Lord | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Lots of stats; late-game scaler. Lexiav meh — best for slow templates. |
+| **Merry Elias** | Cleric (magic) | Spiritual Vigor | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | +1 spell cap for global map spells. Lexiav meh on Exodus; *top hero on Vendetta*. |
+| **Zenith** | Cleric (magic) | Weaving the Light | 12–17 Swordsman · 3–5 Lightweaver · 3–5 Lightweaver | Lightweaver specialist (Heavenly Blades). Lexiav meh. |
+| **Lia the Untethered One** | Cleric (magic) | Radiating Knowledge | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Daylight specialist. Lexiav meh — niche school-locking pick. |
+| **Vesper** | Cleric (magic) | Blessing | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Masterful Blessing. Lexiav meh. |
 
 #### Tier C
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Heretic Avis** | Knight (might) | Gem Seeker | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Explicitly called 'filler' in the Temple roundup; no clear plan. |
-| **Keandra** | Knight (might) | Jouster | 14–20 Swordsman · 2–3 Cavalry | Cavalry start; cavalry is widely called 'too clunky to spawn with' for single-hero Exodus. |
-| **Zenith** | Cleric (magic) | Weaving the Light | 12–17 Swordsman · 3–5 Lightweaver · 3–5 Lightweaver | Lightweaver specialist. The Hive draft-bans video flags 'auto-ban the lightweaver hero' as a format trap (RNG-heavy buff cycling). Picking her into a competent opponent is risky. |
-| **Julius** | Cleric (magic) | Compassionate Healer | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Resistance + 'Compassionate Healer'. Heads toward Ascendant subclass but no creator buzz; Resistance start is unusually defensive for tournament tempo. *(data)* |
-| **Clarissa** | Cleric (magic) | Wealthy | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Explicitly called 'weak economy' pick; her gold spec doesn't compensate for the lost combat tempo. |
+| **Leon Sticky‑Fingers** | Knight (might) | Pathfinder | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Pathfinder / Scouting. Lexiav bad. |
+| **John Johnson** | Knight (might) | Salt of the Earth | 11–16 Swordsman · 11–16 Swordsman · 11–16 Swordsman | T1 Swordsman specialist. Lexiav bad. |
+| **Heretic Avis** | Knight (might) | Gem Seeker | 14–20 Swordsman · 10–14 Crossbowman · 5–7 Griffin | Gem spec. Lexiav bad. |
+| **Julius** | Cleric (magic) | Compassionate Healer | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Masterful Healing Water. Lexiav bad — Resistance start, defensive without payoff. |
+| **Anastasia the Meek** | Cleric (magic) | Hymn to Arina | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Arina's Touch (init + HP). Lexiav bad. |
+| **Nadir** | Cleric (magic) | Heart of Hearts | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Vulnerability spec. Lexiav bad. |
+| **Clarissa** | Cleric (magic) | Wealthy | 12–17 Swordsman · 8–12 Crossbowman · 4–6 Griffin | Economy. Lexiav bad — gold spec doesn't compensate for lost combat tempo. |
 
 ### Necropolis (Death Knight / Necromancer)
 
@@ -74,39 +69,34 @@ Deepest hero roster in the game — even after 3 bans you'll still get an S/A pi
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Bulwark** | Death Knight (might) | Built Different | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | 'King of Tanks'. Armor specialty + units take less damage = nearly unbleedable creep early. Often straight-up banned in drafts. |
-| **Onkos** | Death Knight (might) | Perfect Puppets | 19–26 Skeleton · 19–26 Skeleton · 19–26 Skeleton | Skeleton specialist: +2 growth, +Speed/Init/HP on Skeletons. Upgrade to Skeleton Archers and you have the strongest T1 ranged power-stack in the game very early. Starts with Offense for Archery sub-skill. |
-| **Kel’Ghul** | Death Knight (might) | Dreadful War | 2–3 Dread Knight | Kel'Ghul — 'best Necropolis hero for strict 1v1 PvP'. Dread Knight specialist with rare +2 growth (most tier specialists give +1). Starts with 2-3 Dread Knights — clears early biomes with zero losses. |
+| **Onkos** | Death Knight (might) | Perfect Puppets | 19–26 Skeleton · 19–26 Skeleton · 19–26 Skeleton | Skeleton unit specialist. Lexiav top pick. +2 growth + Skeleton Archer buffs = strongest T1 ranged stack. |
+| **Kel’Ghul** | Death Knight (might) | Dreadful War | 2–3 Dread Knight | Kel'Ghul — Dread Knight specialist. Lexiav top pick. +2 growth on T6 + 2-3 Dread Knights at start. |
+| **Marl** | Death Knight (might) | Languid Soil | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Masterful Web (slows entire enemy army), Logistics. Lexiav top pick. Trivializes ranged trades. |
+| **Tarius** | Death Knight (might) | Undead Legion | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Necromancy specialist. Lexiav top pick — better in slower formats (Necromancy compounds late). |
+| **Laura** | Necromancer (magic) | Moldering | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Masterful Despair (AoE, very efficient). Lexiav top pick. Bypasses Despair immunity in PvP. |
+| **Lord Rufus** | Necromancer (magic) | Wistful Nostalgia | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Rewind Life. Lexiav top pick. Temporary resurrection lets you creep with zero permanent losses (Thaumaturgy is meh per lexiav). |
 
 #### Tier A
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Artorius Veritas** | Death Knight (might) | Drive ’em Crazy | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Masterful Berserk in a radius. Punishes the corner-camping ranged 'blob' meta — forces experienced players off their best deployment. Frequent ban. |
-| **Marl** | Death Knight (might) | Languid Soil | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Masterful Web slows the *entire* enemy army (HoMM3 Expert Slow). S-tier on Sprint, A everywhere. Trivializes ranged-vs-ranged trades and counters fast factions like Hive. |
-| **Tarius** | Death Knight (might) | Undead Legion | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Necromancy power scales with hero level. Best for slow tournament formats like Exodus where the game runs long enough to compound the necromancy snowball. |
-| **Shadespinner Oona** | Necromancer (magic) | Shadowmastery | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Nightshade caster who can double-cast Nightshade *and* prevents the enemy hero from casting it. Locks one of the strongest schools out of the opposing draft. |
-| **Laura** | Necromancer (magic) | Moldering | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Sorcery + Masterful Despair. Bypasses Despair's normal immunity (undead/constructs/embodiments), so the AoE damage spell hits everything in PvP — massive utility. |
-| **Lord Rufus** | Necromancer (magic) | Wistful Nostalgia | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | 'Rewind Life' is busted: temporarily resurrects fallen units as meatshields, letting you creep with effectively zero permanent losses. Combine with Avatar summon for an unkillable rush. |
-| **Funerella** | Necromancer (magic) | Undead Legion | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Necromancer answer to Tarius. Starts with Necromancy L2 and is the go-to when you need more Knowledge in the build. |
+| **Bulwark** | Death Knight (might) | Built Different | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Armor specialty. Lexiav A tier — durable but explicitly below the 'good' Necro group. |
 
 #### Tier B
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Natalida** | Death Knight (might) | Part of a Pack | 8–10 Undead Pet · 8–10 Undead Pet · 8–10 Undead Pet | Pet/Barghest specialist with 30 starting Pets. T3 unit specialization is weaker than T1 archer or T6 specs but useful for early creeping. *(data)* |
-| **Mag** | Necromancer (magic) | Arcane Dominion | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Arcane Magic start. Arcane gives access to Blink and other utility spells. *(data)* |
-| **Ethric** | Necromancer (magic) | Tomb‑bound Will | 20–27 Skeleton · 10–13 Wight · 3–4 Lich | Wisdom start, ships with 3-4 Liches in starting army. Liches are the faction sustain carry — starting with them is unusually strong (data, not video-cited). *(data)* |
-| **Guildmaster Klastor** | Necromancer (magic) | Bones Guild | 20–27 Skeleton · 5–7 Graverobber · 5–7 Graverobber | Luck on a magic hero (unusual). Starts with 2 stacks of Graverobbers. *(data)* |
-| **Milossa the Golden** | Necromancer (magic) | Wealthy | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Passive gold generation for tight tournament economies. Lets you build greedier and afford the full week's recruits before the duel. |
-
-#### Tier C
-
-| Hero | Class | Specialty | Starting army | Note |
-|---|---|---|---|---|
-| **King‑of‑Kings** | Death Knight (might) | Charismatic | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | King-of-Kings — Diplomacy start. Diplomacy's 'Assemble' is built for multi-hero shuffling — same trap that disqualifies Ilwara from single-hero play (data, by analogy). *(data)* |
-| **Zam** | Death Knight (might) | Alchemist | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Generic Battlecraft 'Alchemist'. No spec hook for tournament. *(data)* |
-| **Adahn** | Necromancer (magic) | Amnesiac | 8–10 Wight · 8–10 Wight · 8–10 Wight | Recruitment-locked spec, low impact. *(data)* |
+| **King‑of‑Kings** | Death Knight (might) | Charismatic | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | King-of-Kings — Diplomacy. Lexiav meh. |
+| **Natalida** | Death Knight (might) | Part of a Pack | 8–10 Undead Pet · 8–10 Undead Pet · 8–10 Undead Pet | Pet/Barghest specialist. Lexiav middle tier. |
+| **Artorius Veritas** | Death Knight (might) | Drive ’em Crazy | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Masterful Berserk in radius. Lexiav meh. |
+| **Zam** | Death Knight (might) | Alchemist | 24–33 Skeleton · 12–16 Wight · 10–13 Undead Pet | Resource generation Alchemist. Lexiav meh. |
+| **Mag** | Necromancer (magic) | Arcane Dominion | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Arcane Magic start. Lexiav meh — 'arcane sucks'. |
+| **Adahn** | Necromancer (magic) | Amnesiac | 8–10 Wight · 8–10 Wight · 8–10 Wight | Recruitment-locked. Lexiav meh — 'recruitment sucks'. |
+| **Ethric** | Necromancer (magic) | Tomb‑bound Will | 20–27 Skeleton · 10–13 Wight · 3–4 Lich | Wisdom start, ships with Liches. Lexiav middle tier. |
+| **Guildmaster Klastor** | Necromancer (magic) | Bones Guild | 20–27 Skeleton · 5–7 Graverobber · 5–7 Graverobber | Graverobbers spec. Lexiav meh. |
+| **Shadespinner Oona** | Necromancer (magic) | Shadowmastery | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Nightshade caster. Lexiav meh — Nightshade access doesn't carry hard. |
+| **Funerella** | Necromancer (magic) | Undead Legion | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Necromancer caster, similar to Tarius. Lexiav middle tier. |
+| **Milossa the Golden** | Necromancer (magic) | Wealthy | 20–27 Skeleton · 10–13 Wight · 8–10 Undead Pet | Passive gold generation. Lexiav meh. |
 
 ### Grove (Warden / Druid)
 
@@ -118,39 +108,29 @@ Grove (formerly Grove). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Aunt Daliar** | Warden (might) | Wish to Learn | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Insight start + Civic Innovation law combo blasts you down the law tree faster than any opponent. Heavily prioritized in drafts. |
-| **Elder Tss’kish** | Druid (magic) | Oldest Known Tree | 8–11 Faun · 2–3 Herbomancer | Thaumaturgy + Herbomancer buff specialty. Late-game double/triple-cast engine; clears Pandora boxes with ease via Bee + spell stacking. |
-| **Halon** | Druid (magic) | Thunder and Lightning | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Instant ban. Starts with Chain Lightning (T4 Primal); his Masterful spec means it loses only 25% per bounce instead of 50%. Insane early tempo and map-clear. |
-| **Sullie** | Druid (magic) | Murmurwood Native | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Avatar specialist; her Avatar is immune to magic damage. The 0-mana Avatar drop is the current meta absorber/damage-dealer. Broken early-to-mid game. |
-
-#### Tier A
-
-| Hero | Class | Specialty | Starting army | Note |
-|---|---|---|---|---|
-| **Gorel Spearhead** | Warden (might) | Shooter | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Offense specialist. Ranged/melee/long-reach attacks all scale with level. The reliable fallback when S-tier is banned out. |
-| **Gingertail** | Warden (might) | Faunsong | 7–11 Faun · 7–11 Faun · 7–11 Faun | Ultimate Faun tempo hero. Starts with 3 Faun stacks + Init/HP buff; in Exodus you can amass 100+ Faun Warriors and curb-stomp the early map. |
-| **Faleor** | Warden (might) | Hksmilla’s Step | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Master Fireball specialist (sleeper pick). Advanced Murmuring start gives free Child of the Woods (+30 mana cap) — Dusk Hoplite combo nukes the early map. |
-| **Vatawna** | Druid (magic) | Spiritual Vigor | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | *S-tier on Vendetta* (DD twice on day 1) but middle-of-pack on Exodus. Ranking reflects Exodus. |
-| **The Minstrel** | Druid (magic) | Wandering Musician | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Top morale-focused pick. Innate focus charges + crowd control; thrives in fast tournament formats. |
+| **Gorel Spearhead** | Warden (might) | Shooter | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Offense specialist. Lexiav top pick — more attack and ranged scaling with level. |
+| **Gingertail** | Warden (might) | Faunsong | 7–11 Faun · 7–11 Faun · 7–11 Faun | Faun specialist. Lexiav top pick — 3 Faun stacks + Init/HP buffs at start. |
+| **Faleor** | Warden (might) | Hksmilla’s Step | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Master Fireball. Lexiav top pick — Murmuring subskill, Child of the Woods for mana. |
+| **Aunt Daliar** | Warden (might) | Wish to Learn | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Insight start. Lexiav top pick — blasts down the law tree. |
+| **Halon** | Druid (magic) | Thunder and Lightning | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Masterful Chain Lightning. Lexiav 'great' — only 25% loss per bounce instead of 50%. |
+| **Sullie** | Druid (magic) | Murmurwood Native | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Avatar specialist; Avatar is immune to magic damage. Lexiav 'great'. |
 
 #### Tier B
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Old Pilgrim** | Warden (might) | Natural Selection | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Best as a late-game elite-killer with magic damage. Slow start hurts in Exodus. |
-| **Octavia** | Warden (might) | Four‑Leaf Horseshoe | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Luck specialist; pairs with Nature's Wildness + Luck of the Fittest law combo for crit-heavy damage builds. |
-| **Aeliniel** | Druid (magic) | Tempered Embers | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Primal Magic 'Tempered Embers'. Likely fire/ember caster, similar to Faleor archetype but uncited. *(data)* |
-| **Glacia** | Druid (magic) | Ice Bolt | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Primal 'Ice Bolt' spec. Single-target primal damage, no creator endorsement. *(data)* |
-| **Vim** | Druid (magic) | Rock It up! | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Chain-lightning attack pattern, 2-turn cooldown. Solid utility, not a centerpiece pick. |
-| **Echolily** | Druid (magic) | Murmuring Copy | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Arcane Magic + 'Murmuring Copy'. Could enable Murmurmancer combos but no video hook. *(data)* |
-
-#### Tier C
-
-| Hero | Class | Specialty | Starting army | Note |
-|---|---|---|---|---|
-| **Eith** | Warden (might) | Pathfinder | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Generic Pathfinder/Scouting. No spec edge in tournament tempo. *(data)* |
-| **Mreowa** | Warden (might) | Charming Shine | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Sorcery on a might/Beastmaster hero. Hybrid that doesn't lean into Grove's main archetypes. *(data)* |
-| **Alluring Sh’a** | Warden (might) | Charismatic | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Diplomacy/Charismatic. Same Assemble-trap concern as Ilwara/King-of-Kings for single hero. *(data)* |
+| **Eith** | Warden (might) | Pathfinder | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Scouting. Lexiav meh. |
+| **Old Pilgrim** | Warden (might) | Natural Selection | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Lexiav meh — super slow. |
+| **Octavia** | Warden (might) | Four‑Leaf Horseshoe | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Luck specialist. Lexiav meh. |
+| **Mreowa** | Warden (might) | Charming Shine | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Economy. Lexiav meh. |
+| **Alluring Sh’a** | Warden (might) | Charismatic | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Diplomacy/Charismatic. Lexiav meh — Assemble doesn't fit single-hero. |
+| **Vatawna** | Druid (magic) | Spiritual Vigor | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Global-map spell specialist (DD/Vendetta). Lexiav middle on Exodus — strong on Vendetta. |
+| **Elder Tss’kish** | Druid (magic) | Oldest Known Tree | 8–11 Faun · 2–3 Herbomancer | Herbomancer buff specialty. Lexiav meh. |
+| **Aeliniel** | Druid (magic) | Tempered Embers | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Masterful Firewall. Lexiav meh — OK vs AI but not great vs players. |
+| **Glacia** | Druid (magic) | Ice Bolt | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Masterful Ice Bolt. Lexiav meh. |
+| **Vim** | Druid (magic) | Rock It up! | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Masterful Cave-In. Lexiav meh — bad damage/mana. |
+| **Echolily** | Druid (magic) | Murmuring Copy | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Murmuring Copy. Lexiav meh — clones enemies, not very good. |
+| **The Minstrel** | Druid (magic) | Wandering Musician | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Focus point specialist. Lexiav meh. |
 
 ### Hive (Enforcer / Herald)
 
@@ -250,40 +230,35 @@ Phenomenally strong in single-hero PvP — top picks are 'perma-ban or perma-pic
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Stinger** | Overlord (might) | Venomous Strike | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Combat starter; heroic strikes hit +10 damage AND apply stacking poison. Devastating for early creep, scales late. Heavily banned. |
-| **Motley** | Warlock (magic) | Danse Macabre | 4–6 Onyx Dancer · 4–6 Onyx Dancer · 4–6 Onyx Dancer | Top-3 hero in the entire game. Onyx Dancer specialist + starts with Twilight (Nightshade) = shuts down ranged units completely. Auto-ban in PvP. |
-| **Typhona** | Warlock (magic) | Alvarian Hydra | 2–2 Hydra | Hydra (T6) specialist with 2 Hydras at start. Tier 6 power on day 1 = trivializes early biomes. Top ban/pick. |
-| **Lodos** | Warlock (magic) | Shadowmastery | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Top-tier; starts with Sleep. One sleep on a 180-strong archer stack week 2 ends the fight. Also denies the opponent Nightshade. Frequent ban. |
-
-#### Tier A
-
-| Hero | Class | Specialty | Starting army | Note |
-|---|---|---|---|---|
-| **Enatee** | Overlord (might) | Slithering Menace | 22–30 Troglodyte · 3–4 Medusa | Medusa specialist with +1 town growth and 3-4 Medusas at start. Medusa Sculptor is arguably the strongest unit in the faction; less reliant on map RNG to scale. |
-| **Kieran** | Overlord (might) | The Blind Folk | 18–24 Troglodyte · 18–24 Troglodyte · 18–24 Troglodyte | Troglodyte specialist with 3 stacks of Trogls (54-72 total). T1 trogl carry build; falls off late but in tournament you may not need late. |
-| **Devir, son of Devir** | Overlord (might) | Balthazar’s Lair | 22–30 Troglodyte · 3–5 Minotaur · 3–5 Minotaur | Minotaur specialist. Leadership start + 2 Minotaur stacks = Day 1 Minotaur doom build. Highly contested. |
-| **Kelarr, son of Navarr** | Warlock (magic) | Wish to Learn | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Insight/Learning specialist; gains bonus attributes and XP. Flexible 'react to what you find' pick when the elites are banned. |
-| **Zakron the Great** | Warlock (magic) | Spellweaver | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Sorcery; reduces enemy spell damage, boosts own. Dragon Stance synergy — 200+ damage Fireballs by day 1-2 is the gem-in-the-rough call. |
+| **Enatee** | Overlord (might) | Slithering Menace | 22–30 Troglodyte · 3–4 Medusa | Medusa specialist. Lexiav top pick — Medusa Sculptor is one of the faction's best units. |
+| **Stinger** | Overlord (might) | Venomous Strike | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Heroic Strike specialist. Lexiav top pick — devastating early creep with stacking poison. |
+| **Devir, son of Devir** | Overlord (might) | Balthazar’s Lair | 22–30 Troglodyte · 3–5 Minotaur · 3–5 Minotaur | Minotaur specialist + Leadership. Lexiav top pick — Day 1 Minotaur doom build. |
+| **Kelarr, son of Navarr** | Warlock (magic) | Wish to Learn | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Insight specialist. Lexiav top pick — flexible scaling. |
+| **Typhona** | Warlock (magic) | Alvarian Hydra | 2–2 Hydra | Hydra (T6) specialist Warlock. Lexiav top pick — Tier 6 power on day 1. |
 
 #### Tier B
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Tellaris the Betrayed** | Overlord (might) | With One Eye Open | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Battlecraft start. Heads toward Paragon-equivalent subclass. *(data)* |
-| **Mouaren** | Overlord (might) | Spy | 8–10 Infiltrator · 8–10 Infiltrator · 8–10 Infiltrator | Scouting start, 3 stacks of Infiltrators. Infiltrator 1-stacks remove enemy retaliation; starting with three is unusually flexible. *(data)* |
-| **Creta, daughter of Navarr** | Overlord (might) | Gem Seeker | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Economy/Gem Seeker. Greedy pick for long Exodus games. *(data)* |
-| **Rhea** | Overlord (might) | Four‑Leaf Horseshoe | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Luck spec on might. Solid filler if S/A all banned. *(data)* |
-| **Gleard the Grey** | Overlord (might) | Arcane Dominion | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Arcane Magic on a might hero. Hybrid. *(data)* |
-| **Sister Deira** | Warlock (magic) | Mask of the Sun | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Thaumaturgy starter (the double-cast school). Universal upside for any caster build. *(data)* |
-| **Sunny Rauktol** | Warlock (magic) | Radiating Knowledge | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Daylight Magic specialist. Like Lia for Temple, can lock enemy out of Daylight. *(data)* |
+| **Zakron the Great** | Warlock (magic) | Spellweaver | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Sorcery, Firewall, spell stance. Lexiav meh. |
+| **Motley** | Warlock (magic) | Danse Macabre | 4–6 Onyx Dancer · 4–6 Onyx Dancer · 4–6 Onyx Dancer | Onyx Dancer specialist (Luck, Twilight). Lexiav meh — was widely considered top, lexiav less impressed. |
 
 #### Tier C
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Ylwari** | Warlock (magic) | Charismatic | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Diplomacy/Assemble kit. Explicitly called 'practically useless in single hero mode' — her abilities shuffle armies between heroes. |
-| **Glastor** | Warlock (magic) | Wealthy | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Economy mage, generic. *(data)* |
+| **Tellaris the Betrayed** | Overlord (might) | With One Eye Open | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Battlecraft start. Lexiav bad. |
+| **Kieran** | Overlord (might) | The Blind Folk | 18–24 Troglodyte · 18–24 Troglodyte · 18–24 Troglodyte | Trog specialist. Lexiav bad — fighting style not worth on T1. |
+| **Mouaren** | Overlord (might) | Spy | 8–10 Infiltrator · 8–10 Infiltrator · 8–10 Infiltrator | Infiltrator specialist; Scouting. Lexiav bad. |
+| **Creta, daughter of Navarr** | Overlord (might) | Gem Seeker | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Gem and gold spec. Lexiav bad. |
+| **Rhea** | Overlord (might) | Four‑Leaf Horseshoe | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Luck spec. Lexiav bad. |
+| **Gleard the Grey** | Overlord (might) | Arcane Dominion | 22–30 Troglodyte · 10–13 Infiltrator · 6–8 Onyx Dancer | Arcane specialist. Lexiav bad. |
+| **Sister Deira** | Warlock (magic) | Mask of the Sun | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Arina's Chosen (Thaumaturgy). Lexiav bad. |
+| **Ylwari** | Warlock (magic) | Charismatic | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Diplomacy. Lexiav bad — Assemble doesn't fit single-hero. |
+| **Glastor** | Warlock (magic) | Wealthy | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Economy mage. Lexiav bad. |
+| **Sunny Rauktol** | Warlock (magic) | Radiating Knowledge | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Daylight specialist. Lexiav bad. |
+| **Lodos** | Warlock (magic) | Shadowmastery | 18–25 Troglodyte · 8–11 Infiltrator · 5–7 Onyx Dancer | Nightshade specialist (Sleep). Lexiav bad — was widely considered S, lexiav rates poorly. |
 
 ---
 
-*Generated 2026-05-10 06:41 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*
+*Generated 2026-05-10 08:01 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*

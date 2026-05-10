@@ -363,7 +363,7 @@ window.OE_GUIDES_DATA = {
           "shortId": "Unic_2",
           "name": "Mother Nature",
           "priority": "B",
-          "note": "Mother Nature (+2 spell power). Strong only with caster heroes (Halon, Sullie, Tss'kish)."
+          "note": "Mother Nature (+2 spell power). Strong only with caster heroes (Halon, Sullie, Faleor)."
         }
       ],
       "buildingTraps": [
@@ -920,5 +920,5 @@ window.OE_GUIDES_DATA = {
       "body": "Several factions (notably Temple) gate the elite training building behind Mage Guild. Always check the dependency tree before queuing your week."
     }
   ],
-  "GENERATED_AT": "2026-05-10 06:41 UTC"
+  "GENERATED_AT": "2026-05-10 08:01 UTC"
 };

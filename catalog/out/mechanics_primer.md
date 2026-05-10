@@ -243,7 +243,7 @@ Necromancy raises a fraction of HP killed (4 / 6 / 8% at Basic / Advanced / Expe
 
 ### Grove — Focus economy + Bloom spell power
 
-Grove leans on a self-sustaining **Focus engine**: Hoplets (no-retal Swift Strike) split into 1-stacks generate Focus turn after turn; Sporomancers/Murmurmancers spend it to re-cast and amplify. Their key passive is **Bloom**: Dusk Hoplites give the hero +3 spell power *per cast*, scaling caster damage every round. Combine with the **Avatar Vomit** archetype (Sullie / Halon / Tss'kish hero specs) for the strongest mid-game tempo in the format. The entire tech tree is built around skipping mid-tier dwellings to reach this loop.
+Grove leans on a self-sustaining **Focus engine**: Hoplets (no-retal Swift Strike) split into 1-stacks generate Focus turn after turn; Sporomancers/Murmurmancers spend it to re-cast and amplify. Their key passive is **Bloom**: Dusk Hoplites give the hero +3 spell power *per cast*, scaling caster damage every round. Combine with the **Avatar Vomit** archetype (Sullie / Halon / Faleor hero specs) for the strongest mid-game tempo in the format. The entire tech tree is built around skipping mid-tier dwellings to reach this loop.
 
 ### Hive — Egg / Larva summoning + Apex tier-skip
 
@@ -270,4 +270,4 @@ Dungeon's signature is its **Fighting Style laws** — for every attack pattern 
 
 ---
 
-*Generated 2026-05-10 06:41 UTC by `catalog/scripts/build_mechanics.py`. Edit the script's `SECTIONS` / `FACTION_SIGNATURE_MECHANICS` / `TOP_RESOURCES` to update.*
+*Generated 2026-05-10 08:01 UTC by `catalog/scripts/build_mechanics.py`. Edit the script's `SECTIONS` / `FACTION_SIGNATURE_MECHANICS` / `TOP_RESOURCES` to update.*

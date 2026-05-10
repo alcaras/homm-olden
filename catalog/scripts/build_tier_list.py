@@ -251,157 +251,124 @@ FACTION_META = {
 
 HEROES_TIERS = [
     # ---------------- TEMPLE ---------------- #
+    # Tiers per lexiav's notes (advice/lexiav.md). Mapping: great/good → S
+    # (with explicit 'A tier' → A); middle → B; meh → B; bad → C.
     ("human_hero_11", "S", False,
-     "Pip — most picked/banned Temple hero. Insight + extra attribute every 2 levels makes him a "
-     "flexible canvas: pivot to Avatar summoner, Daylight caster, or Might/Offense based on map roll. "
-     "He is *the* stock-standard Temple hero."),
+     "Pip — Insight start. Lexiav top pick. Flexible canvas: pivot to Avatar summoner, Daylight caster, or Might/Offense based on map roll."),
     ("human_hero_9", "S", False,
-     "Old Lord Mandall — Heroic Strike specialist, +10% damage amp debuff on hit. Self-sufficient: "
-     "even if the army bleeds out, his damage carries late game. Pairs with Inspiring Strike for chain-resets."),
-    ("human_hero_4", "A", False,
-     "Kestrel — strong early tempo. Offense start unlocks Archery sub-skill quickly; doubles down on a "
-     "dominant T2 Crossbowman → Austringer (double-shot) ranged stack. Targets Swashbuckler subclass."),
-    ("human_hero_8", "A", False,
-     "Lord Edgar — Tazar-style: gives 20% of his Attack/Defense to your units. Best on slow templates "
-     "going for late-game doom-stacks; weaker on shorter Exodus."),
-    ("human_hero_10", "B", False,
-     "Merry Elias — +1 spell cap for global map spells, huge mana pool. *Top hero in the game* on Vendetta "
-     "(double Dimension Door day 1) but middle-of-pack on standard Exodus where early control matters more."),
-    ("human_hero_13", "B", False,
-     "Lia the Untethered One — Daylight specialist; can cast Daylight without locking out other schools "
-     "and prevents the enemy from casting Daylight at all. Niche counter-pick into Temple mirror."),
+     "Old Lord Mandall — Heroic Strike specialist (Combat + Leadership). Lexiav top pick. Damage carries late even after army bleeds out."),
+    ("human_hero_4", "S", False,
+     "Kestrel — Crossbow specialist; Offense start. Lexiav top pick. Drives the Austringer doom-stack opener."),
+    ("human_hero_8", "B", False,
+     "Lord Edgar — Lots of stats; late-game scaler. Lexiav meh — best for slow templates."),
     ("human_hero_1", "B", False,
-     "Ister — Logistics specialist. Strong only on the Sprint template (road-movement bonuses); "
-     "outshined by Pip/Mandall everywhere else."),
-    ("human_hero_3", "B", False,
-     "John Johnson — videos disagree: one creator calls him a feared 'swordsman spam' steamroller, the "
-     "dedicated Temple guide labels him a 'newbie trap'. Probably playable but nothing special; lean situational."),
-    ("human_hero_15", "B", True,
-     "Vesper — Daylight Magic start, 'Blessing' specialty. Bless is the T1 +35% damage spell; a Bless "
-     "specialist scales the entire army. Underrated but uncited (data)."),
-    ("human_hero_17", "B", True,
-     "Nadir — Nightshade Magic start, 'Heart of Hearts'. Could lock enemy from Nightshade in Necro/Dungeon "
-     "matchups (similar pattern to Lia for Daylight). No video corroboration (data)."),
-    ("human_hero_5", "B", True,
-     "Aeos the Exalted — Leadership start (Swashbuckler subclass head-start). Generic might hero with no "
-     "spec hook called out by creators (data)."),
-    ("human_hero_2", "B", True,
-     "Leon Sticky-Fingers — Pathfinder/Scouting. Solid utility might hero, no creator endorsement (data)."),
-    ("human_hero_16", "B", True,
-     "Anastasia the Meek — Thaumaturgy start (the double-cast school). Universal upside for any caster "
-     "build, but no specific video coverage (data)."),
-    ("human_hero_14", "C", True,
-     "Julius — Resistance + 'Compassionate Healer'. Heads toward Ascendant subclass but no creator buzz; "
-     "Resistance start is unusually defensive for tournament tempo (data)."),
-    ("human_hero_12", "C", False,
-     "Zenith — Lightweaver specialist. The Hive draft-bans video flags 'auto-ban the lightweaver hero' as a "
-     "format trap (RNG-heavy buff cycling). Picking her into a competent opponent is risky."),
-    ("human_hero_7", "C", False,
-     "Keandra — Cavalry start; cavalry is widely called 'too clunky to spawn with' for single-hero Exodus."),
+     "Ister — Logistics specialist. Lexiav meh — best on Sprint (road movement); outshined elsewhere."),
+    ("human_hero_5", "B", False,
+     "Aeos the Exalted — Morale specialist. Lexiav meh — late-game dream pick, slow to come online."),
+    ("human_hero_7", "B", False,
+     "Keandra — Cavalry specialist. Lexiav meh — cavalry is awkward in single-hero."),
+    ("human_hero_10", "B", False,
+     "Merry Elias — +1 spell cap for global map spells. Lexiav meh on Exodus; *top hero on Vendetta*."),
+    ("human_hero_12", "B", False,
+     "Zenith — Lightweaver specialist (Heavenly Blades). Lexiav meh."),
+    ("human_hero_13", "B", False,
+     "Lia the Untethered One — Daylight specialist. Lexiav meh — niche school-locking pick."),
+    ("human_hero_15", "B", False,
+     "Vesper — Masterful Blessing. Lexiav meh."),
+    ("human_hero_2", "C", False,
+     "Leon Sticky-Fingers — Pathfinder / Scouting. Lexiav bad."),
+    ("human_hero_3", "C", False,
+     "John Johnson — T1 Swordsman specialist. Lexiav bad."),
     ("human_hero_6", "C", False,
-     "Heretic Avis — explicitly called 'filler' in the Temple roundup; no clear plan."),
+     "Heretic Avis — Gem spec. Lexiav bad."),
+    ("human_hero_14", "C", False,
+     "Julius — Masterful Healing Water. Lexiav bad — Resistance start, defensive without payoff."),
+    ("human_hero_16", "C", False,
+     "Anastasia the Meek — Arina's Touch (init + HP). Lexiav bad."),
+    ("human_hero_17", "C", False,
+     "Nadir — Vulnerability spec. Lexiav bad."),
     ("human_hero_18", "C", False,
-     "Clarissa — explicitly called 'weak economy' pick; her gold spec doesn't compensate for the lost combat tempo."),
+     "Clarissa — Economy. Lexiav bad — gold spec doesn't compensate for lost combat tempo."),
 
     # ---------------- NECROPOLIS ---------------- #
-    ("necro_hero_1", "S", False,
-     "Bulwark — 'King of Tanks'. Armor specialty + units take less damage = nearly unbleedable creep early. "
-     "Often straight-up banned in drafts."),
+    # Tiers per lexiav. Note: Bulwark explicitly downgraded to A tier; Oona,
+    # Artorius, Funerella demoted from prior S/A to B.
     ("necro_hero_3", "S", False,
-     "Onkos — Skeleton specialist: +2 growth, +Speed/Init/HP on Skeletons. Upgrade to Skeleton Archers and "
-     "you have the strongest T1 ranged power-stack in the game very early. Starts with Offense for Archery sub-skill."),
+     "Onkos — Skeleton unit specialist. Lexiav top pick. +2 growth + Skeleton Archer buffs = strongest T1 ranged stack."),
     ("necro_hero_4", "S", False,
-     "Kel'Ghul — 'best Necropolis hero for strict 1v1 PvP'. Dread Knight specialist with rare +2 growth (most "
-     "tier specialists give +1). Starts with 2-3 Dread Knights — clears early biomes with zero losses."),
-    ("necro_hero_7", "A", False,
-     "Marl — Masterful Web slows the *entire* enemy army (HoMM3 Expert Slow). S-tier on Sprint, A everywhere. "
-     "Trivializes ranged-vs-ranged trades and counters fast factions like Hive."),
-    ("necro_hero_8", "A", False,
-     "Tarius — Necromancy power scales with hero level. Best for slow tournament formats like Exodus where "
-     "the game runs long enough to compound the necromancy snowball."),
-    ("necro_hero_15", "A", False,
-     "Laura — Sorcery + Masterful Despair. Bypasses Despair's normal immunity (undead/constructs/embodiments), "
-     "so the AoE damage spell hits everything in PvP — massive utility."),
-    ("necro_hero_16", "A", False,
-     "Lord Rufus — 'Rewind Life' is busted: temporarily resurrects fallen units as meatshields, letting you "
-     "creep with effectively zero permanent losses. Combine with Avatar summon for an unkillable rush."),
-    ("necro_hero_14", "A", False,
-     "Shadespinner Oona — Nightshade caster who can double-cast Nightshade *and* prevents the enemy hero from "
-     "casting it. Locks one of the strongest schools out of the opposing draft."),
-    ("necro_hero_6", "A", False,
-     "Artorius Veritas — Masterful Berserk in a radius. Punishes the corner-camping ranged 'blob' meta — "
-     "forces experienced players off their best deployment. Frequent ban."),
-    ("necro_hero_17", "A", False,
-     "Funerella — Necromancer answer to Tarius. Starts with Necromancy L2 and is the go-to when you need "
-     "more Knowledge in the build."),
+     "Kel'Ghul — Dread Knight specialist. Lexiav top pick. +2 growth on T6 + 2-3 Dread Knights at start."),
+    ("necro_hero_7", "S", False,
+     "Marl — Masterful Web (slows entire enemy army), Logistics. Lexiav top pick. Trivializes ranged trades."),
+    ("necro_hero_15", "S", False,
+     "Laura — Masterful Despair (AoE, very efficient). Lexiav top pick. Bypasses Despair immunity in PvP."),
+    ("necro_hero_16", "S", False,
+     "Lord Rufus — Rewind Life. Lexiav top pick. Temporary resurrection lets you creep with zero permanent losses (Thaumaturgy is meh per lexiav)."),
+    ("necro_hero_8", "S", False,
+     "Tarius — Necromancy specialist. Lexiav top pick — better in slower formats (Necromancy compounds late)."),
+    ("necro_hero_1", "A", False,
+     "Bulwark — Armor specialty. Lexiav A tier — durable but explicitly below the 'good' Necro group."),
+    ("necro_hero_17", "B", False,
+     "Funerella — Necromancer caster, similar to Tarius. Lexiav middle tier."),
+    ("necro_hero_5", "B", False,
+     "Natalida — Pet/Barghest specialist. Lexiav middle tier."),
+    ("necro_hero_12", "B", False,
+     "Ethric — Wisdom start, ships with Liches. Lexiav middle tier."),
+    ("necro_hero_2", "B", False,
+     "King-of-Kings — Diplomacy. Lexiav meh."),
+    ("necro_hero_6", "B", False,
+     "Artorius Veritas — Masterful Berserk in radius. Lexiav meh."),
+    ("necro_hero_9", "B", False,
+     "Zam — Resource generation Alchemist. Lexiav meh."),
+    ("necro_hero_10", "B", False,
+     "Mag — Arcane Magic start. Lexiav meh — 'arcane sucks'."),
+    ("necro_hero_11", "B", False,
+     "Adahn — Recruitment-locked. Lexiav meh — 'recruitment sucks'."),
+    ("necro_hero_13", "B", False,
+     "Guildmaster Klastor — Graverobbers spec. Lexiav meh."),
+    ("necro_hero_14", "B", False,
+     "Shadespinner Oona — Nightshade caster. Lexiav meh — Nightshade access doesn't carry hard."),
     ("necro_hero_18", "B", False,
-     "Milossa the Golden — passive gold generation for tight tournament economies. Lets you build greedier "
-     "and afford the full week's recruits before the duel."),
-    ("necro_hero_12", "B", True,
-     "Ethric — Wisdom start, ships with 3-4 Liches in starting army. Liches are the faction sustain "
-     "carry — starting with them is unusually strong (data, not video-cited)."),
-    ("necro_hero_5", "B", True,
-     "Natalida — Pet/Barghest specialist with 30 starting Pets. T3 unit specialization is weaker than T1 archer "
-     "or T6 specs but useful for early creeping (data)."),
-    ("necro_hero_10", "B", True,
-     "Mag — Arcane Magic start. Arcane gives access to Blink and other utility spells (data)."),
-    ("necro_hero_13", "B", True,
-     "Guildmaster Klastor — Luck on a magic hero (unusual). Starts with 2 stacks of Graverobbers (data)."),
-    ("necro_hero_2", "C", True,
-     "King-of-Kings — Diplomacy start. Diplomacy's 'Assemble' is built for multi-hero shuffling — same trap "
-     "that disqualifies Ilwara from single-hero play (data, by analogy)."),
-    ("necro_hero_9", "C", True,
-     "Zam — generic Battlecraft 'Alchemist'. No spec hook for tournament. (data)."),
-    ("necro_hero_11", "C", True,
-     "Adahn — Recruitment-locked spec, low impact (data)."),
+     "Milossa the Golden — Passive gold generation. Lexiav meh."),
 
-    # ---------------- GROVE / SYLVAN ---------------- #
+    # ---------------- GROVE ---------------- #
+    # Tiers per lexiav. Note: Tss'kish demoted from prior S → B (lexiav meh
+    # on Herbomancer). Minstrel demoted from A → B.
     ("nature_hero_15", "S", False,
-     "Halon — instant ban. Starts with Chain Lightning (T4 Primal); his Masterful spec means it loses only "
-     "25% per bounce instead of 50%. Insane early tempo and map-clear."),
+     "Halon — Masterful Chain Lightning. Lexiav 'great' — only 25% loss per bounce instead of 50%."),
     ("nature_hero_17", "S", False,
-     "Sullie — Avatar specialist; her Avatar is immune to magic damage. The 0-mana Avatar drop is the "
-     "current meta absorber/damage-dealer. Broken early-to-mid game."),
+     "Sullie — Avatar specialist; Avatar is immune to magic damage. Lexiav 'great'."),
+    ("nature_hero_3", "S", False,
+     "Gingertail — Faun specialist. Lexiav top pick — 3 Faun stacks + Init/HP buffs at start."),
+    ("nature_hero_2", "S", False,
+     "Gorel Spearhead — Offense specialist. Lexiav top pick — more attack and ranged scaling with level."),
+    ("nature_hero_7", "S", False,
+     "Faleor — Master Fireball. Lexiav top pick — Murmuring subskill, Child of the Woods for mana."),
     ("nature_hero_9", "S", False,
-     "Aunt Daliar — Insight start + Civic Innovation law combo blasts you down the law tree faster than "
-     "any opponent. Heavily prioritized in drafts."),
-    ("nature_hero_11", "S", False,
-     "Elder Tss'kish ('Tree Pimp') — Thaumaturgy + Herbomancer buff specialty. Late-game double/triple-cast "
-     "engine; clears Pandora boxes with ease via Bee + spell stacking."),
-    ("nature_hero_2", "A", False,
-     "Gorel Spearhead — Offense specialist. Ranged/melee/long-reach attacks all scale with level. The "
-     "reliable fallback when S-tier is banned out."),
-    ("nature_hero_3", "A", False,
-     "Gingertail — ultimate Faun tempo hero. Starts with 3 Faun stacks + Init/HP buff; in Exodus you can "
-     "amass 100+ Faun Warriors and curb-stomp the early map."),
-    ("nature_hero_7", "A", False,
-     "Faleor — Master Fireball specialist (sleeper pick). Advanced Murmuring start gives free Child of the "
-     "Woods (+30 mana cap) — Dusk Hoplite combo nukes the early map."),
-    ("nature_hero_18", "A", False,
-     "The Minstrel — top morale-focused pick. Innate focus charges + crowd control; thrives in fast tournament "
-     "formats."),
-    ("nature_hero_10", "A", False,
-     "Vatawna — *S-tier on Vendetta* (DD twice on day 1) but middle-of-pack on Exodus. Ranking reflects Exodus."),
-    ("nature_hero_5", "B", False,
-     "Octavia — Luck specialist; pairs with Nature's Wildness + Luck of the Fittest law combo for crit-heavy "
-     "damage builds."),
+     "Aunt Daliar — Insight start. Lexiav top pick — blasts down the law tree."),
+    ("nature_hero_10", "B", False,
+     "Vatawna — Global-map spell specialist (DD/Vendetta). Lexiav middle on Exodus — strong on Vendetta."),
+    ("nature_hero_11", "B", False,
+     "Elder Tss'kish — Herbomancer buff specialty. Lexiav meh."),
+    ("nature_hero_18", "B", False,
+     "The Minstrel — Focus point specialist. Lexiav meh."),
+    ("nature_hero_12", "B", False,
+     "Aeliniel — Masterful Firewall. Lexiav meh — OK vs AI but not great vs players."),
+    ("nature_hero_13", "B", False,
+     "Glacia — Masterful Ice Bolt. Lexiav meh."),
     ("nature_hero_14", "B", False,
-     "Vim — chain-lightning attack pattern, 2-turn cooldown. Solid utility, not a centerpiece pick."),
+     "Vim — Masterful Cave-In. Lexiav meh — bad damage/mana."),
+    ("nature_hero_1", "B", False,
+     "Eith — Scouting. Lexiav meh."),
     ("nature_hero_4", "B", False,
-     "Old Pilgrim — best as a late-game elite-killer with magic damage. Slow start hurts in Exodus."),
-    ("nature_hero_12", "B", True,
-     "Aeliniel — Primal Magic 'Tempered Embers'. Likely fire/ember caster, similar to Faleor archetype but "
-     "uncited (data)."),
-    ("nature_hero_13", "B", True,
-     "Glacia — Primal 'Ice Bolt' spec. Single-target primal damage, no creator endorsement (data)."),
-    ("nature_hero_16", "B", True,
-     "Echolily — Arcane Magic + 'Murmuring Copy'. Could enable Murmurmancer combos but no video hook (data)."),
-    ("nature_hero_1", "C", True,
-     "Eith — generic Pathfinder/Scouting. No spec edge in tournament tempo (data)."),
-    ("nature_hero_6", "C", True,
-     "Mreowa — Sorcery on a might/Beastmaster hero. Hybrid that doesn't lean into Grove's main archetypes (data)."),
-    ("nature_hero_8", "C", True,
-     "Alluring Sh'a — Diplomacy/Charismatic. Same Assemble-trap concern as Ilwara/King-of-Kings for single hero (data)."),
+     "Old Pilgrim — Lexiav meh — super slow."),
+    ("nature_hero_5", "B", False,
+     "Octavia — Luck specialist. Lexiav meh."),
+    ("nature_hero_6", "B", False,
+     "Mreowa — Economy. Lexiav meh."),
+    ("nature_hero_8", "B", False,
+     "Alluring Sh'a — Diplomacy/Charismatic. Lexiav meh — Assemble doesn't fit single-hero."),
+    ("nature_hero_16", "B", False,
+     "Echolily — Murmuring Copy. Lexiav meh — clones enemies, not very good."),
 
     # ---------------- HIVE ---------------- #
     ("demon_hero_2", "S", False,
@@ -503,53 +470,44 @@ HEROES_TIERS = [
      "Kwinri — Recruitment-locked spec, low ceiling (data)."),
 
     # ---------------- DUNGEON ---------------- #
-    ("dungeon_hero_13", "S", False,
-     "Motley ('Mley') — top-3 hero in the entire game. Onyx Dancer specialist + starts with Twilight (Nightshade) "
-     "= shuts down ranged units completely. Auto-ban in PvP."),
-    ("dungeon_hero_18", "S", False,
-     "Lodos — top-tier; starts with Sleep. One sleep on a 180-strong archer stack week 2 ends the fight. "
-     "Also denies the opponent Nightshade. Frequent ban."),
+    # Tiers per lexiav. Big shifts: Motley + Lodos demoted from S → B/C
+    # (lexiav's 'meh'/'bad'). Stinger/Typhona/Devir/Enatee/Kelarr stay top.
     ("dungeon_hero_3", "S", False,
-     "Stinger — Combat starter; heroic strikes hit +10 damage AND apply stacking poison. Devastating for "
-     "early creep, scales late. Heavily banned."),
+     "Stinger — Heroic Strike specialist. Lexiav top pick — devastating early creep with stacking poison."),
+    ("dungeon_hero_10", "S", False,
+     "Kelarr, son of Navarr — Insight specialist. Lexiav top pick — flexible scaling."),
     ("dungeon_hero_16", "S", False,
-     "Typhona — Hydra (T6) specialist with 2 Hydras at start. Tier 6 power on day 1 = trivializes early biomes. "
-     "Top ban/pick."),
-    ("dungeon_hero_6", "A", False,
-     "Devir, son of Devir ('D'vir') — Minotaur specialist. Leadership start + 2 Minotaur stacks = Day 1 Minotaur "
-     "doom build. Highly contested."),
-    ("dungeon_hero_4", "A", False,
-     "Kieran — Troglodyte specialist with 3 stacks of Trogls (54-72 total). T1 trogl carry build; falls off late "
-     "but in tournament you may not need late."),
-    ("dungeon_hero_1", "A", False,
-     "Enatee ('Enati') — Medusa specialist with +1 town growth and 3-4 Medusas at start. Medusa Sculptor is "
-     "arguably the strongest unit in the faction; less reliant on map RNG to scale."),
-    ("dungeon_hero_10", "A", False,
-     "Kelarr, son of Navarr — Insight/Learning specialist; gains bonus attributes and XP. Flexible 'react to "
-     "what you find' pick when the elites are banned."),
-    ("dungeon_hero_11", "A", False,
-     "Zakron the Great — Sorcery; reduces enemy spell damage, boosts own. Dragon Stance synergy — 200+ damage "
-     "Fireballs by day 1-2 is the gem-in-the-rough call."),
-    ("dungeon_hero_12", "B", True,
-     "Sister Deira — Thaumaturgy starter (the double-cast school). Universal upside for any caster build (data)."),
-    ("dungeon_hero_17", "B", True,
-     "Sunny Rauktol — Daylight Magic specialist. Like Lia for Temple, can lock enemy out of Daylight (data)."),
-    ("dungeon_hero_5", "B", True,
-     "Mouaren — Scouting start, 3 stacks of Infiltrators. Infiltrator 1-stacks remove enemy retaliation; "
-     "starting with three is unusually flexible (data)."),
-    ("dungeon_hero_2", "B", True,
-     "Tellaris the Betrayed — Battlecraft start. Heads toward Paragon-equivalent subclass (data)."),
-    ("dungeon_hero_8", "B", True,
-     "Rhea — Luck spec on might. Solid filler if S/A all banned (data)."),
-    ("dungeon_hero_7", "B", True,
-     "Creta, daughter of Navarr — Economy/Gem Seeker. Greedy pick for long Exodus games (data)."),
-    ("dungeon_hero_9", "B", True,
-     "Gleard the Grey — Arcane Magic on a might hero. Hybrid (data)."),
-    ("dungeon_hero_15", "C", True,
-     "Glastor — Economy mage, generic (data)."),
+     "Typhona — Hydra (T6) specialist Warlock. Lexiav top pick — Tier 6 power on day 1."),
+    ("dungeon_hero_1", "S", False,
+     "Enatee — Medusa specialist. Lexiav top pick — Medusa Sculptor is one of the faction's best units."),
+    ("dungeon_hero_6", "S", False,
+     "Devir, son of Devir — Minotaur specialist + Leadership. Lexiav top pick — Day 1 Minotaur doom build."),
+    ("dungeon_hero_11", "B", False,
+     "Zakron the Great — Sorcery, Firewall, spell stance. Lexiav meh."),
+    ("dungeon_hero_13", "B", False,
+     "Motley — Onyx Dancer specialist (Luck, Twilight). Lexiav meh — was widely considered top, lexiav less impressed."),
+    ("dungeon_hero_2", "C", False,
+     "Tellaris the Betrayed — Battlecraft start. Lexiav bad."),
+    ("dungeon_hero_4", "C", False,
+     "Kieran — Trog specialist. Lexiav bad — fighting style not worth on T1."),
+    ("dungeon_hero_5", "C", False,
+     "Mouaren — Infiltrator specialist; Scouting. Lexiav bad."),
+    ("dungeon_hero_7", "C", False,
+     "Creta, daughter of Navarr — Gem and gold spec. Lexiav bad."),
+    ("dungeon_hero_8", "C", False,
+     "Rhea — Luck spec. Lexiav bad."),
+    ("dungeon_hero_9", "C", False,
+     "Gleard the Grey — Arcane specialist. Lexiav bad."),
+    ("dungeon_hero_12", "C", False,
+     "Sister Deira — Arina's Chosen (Thaumaturgy). Lexiav bad."),
     ("dungeon_hero_14", "C", False,
-     "Ylwari ('Ilwara') — Diplomacy/Assemble kit. Explicitly called 'practically useless in single hero mode' — "
-     "her abilities shuffle armies between heroes."),
+     "Ylwari ('Ilwara') — Diplomacy. Lexiav bad — Assemble doesn't fit single-hero."),
+    ("dungeon_hero_15", "C", False,
+     "Glastor — Economy mage. Lexiav bad."),
+    ("dungeon_hero_17", "C", False,
+     "Sunny Rauktol — Daylight specialist. Lexiav bad."),
+    ("dungeon_hero_18", "C", False,
+     "Lodos — Nightshade specialist (Sleep). Lexiav bad — was widely considered S, lexiav rates poorly."),
 ]
 
 

@@ -42,27 +42,26 @@ DRAFT_FORMAT = [
 FACTION_BAN_ORDER = [
     {
         "rank": 1, "faction": "necropolis", "name": "Necropolis",
-        "why": ("Deepest pool in the game — even after spending all 3 hero bans on Kel'Ghul + "
-                "Bulwark + Onkos, they still have Marl, Tarius, Lord Rufus, Oona, Artorius, Laura, "
-                "Funerella as picks. The Undead Transformer is unique to this faction. You cannot "
-                "ban-around Necropolis at the hero phase."),
+        "why": ("Deepest pool per lexiav — 6 S-tier heroes (Onkos, Kel'Ghul, Marl, Laura, Lord Rufus, "
+                "Tarius). 3 hero bans only carve off half. The Undead Transformer is unique to "
+                "this faction. You cannot ban-around Necropolis at the hero phase."),
     },
     {
         "rank": 2, "faction": "grove", "name": "Grove",
-        "why": ("4 perma-ban-tier heroes (Halon, Sullie, Aunt Daliar, Elder Tss'kish) — you can "
-                "only ban 3, so one always slips through. Avatar Vomit + Thaumaturgy is the "
-                "strongest archetype in the game."),
+        "why": ("6 S-tier heroes per lexiav (Halon, Sullie, Gingertail, Gorel Spearhead, Faleor, "
+                "Aunt Daliar). Halon and Sullie are 'great' tier (Masterful Chain Lightning + "
+                "magic-immune Avatar). 3 bans always leave at least 3 strong picks open."),
     },
     {
         "rank": 3, "faction": "dungeon", "name": "Dungeon",
-        "why": ("4 perma-ban-tier heroes (Motley, Stinger, Typhona, Lodos). Lodos's starting Sleep "
-                "spell still wins fights even if you ban the other three. Strongest single-hero "
-                "unit roster."),
+        "why": ("5 S-tier heroes per lexiav (Stinger, Kelarr, Typhona, Enatee, Devir). Stinger's "
+                "Heroic Strike + poison is the standout creep engine. Note: lexiav rates Motley "
+                "and Lodos lower than older guides did — banning them is no longer mandatory."),
     },
     {
         "rank": "skip", "faction": "temple", "name": "Temple",
-        "why": ("Reliable but not broken — fewer S-tier heroes than Necro/Grove/Dungeon. Don't "
-                "waste your faction ban here."),
+        "why": ("3 S-tier heroes per lexiav (Pip, Old Lord Mandall, Kestrel) — solid but a smaller "
+                "S-pool than Necro/Grove/Dungeon. Don't waste the faction ban here."),
     },
     {
         "rank": "skip", "faction": "schism", "name": "Schism",
@@ -79,13 +78,13 @@ FACTION_BAN_ORDER = [
 
 FACTION_PICK_ORDER = [
     {"faction": "necropolis", "name": "Necropolis",
-     "why": "Deepest pool; ban-resistant. First-pick instantly if open."},
+     "why": "Deepest S-pool (6 per lexiav); ban-resistant. First-pick instantly if open."},
     {"faction": "grove", "name": "Grove",
-     "why": "Avatar Vomit + Thaumaturgy meta. Even after Halon/Sullie bans, Tss'kish/Daliar/Faleor/Minstrel are strong."},
+     "why": "Halon + Sullie 'great' tier; 4 more S picks (Gingertail, Gorel, Faleor, Daliar)."},
     {"faction": "dungeon", "name": "Dungeon",
-     "why": "Strongest single-hero unit roster. Lodos still S-tier after Motley/Stinger/Typhona bans."},
+     "why": "5 S-tier heroes (Stinger, Kelarr, Typhona, Enatee, Devir). Strong unit roster + Fighting Style laws."},
     {"faction": "temple", "name": "Temple",
-     "why": "Reliable script-faction: Crossbowman → Austringer + Daylight buffs + Angel double-build."},
+     "why": "Reliable script-faction with 3 S-tier heroes (Pip, Mandall, Kestrel). Crossbowman → Austringer + Daylight buff stack."},
     {"faction": "schism", "name": "Schism",
      "why": "Only if you've practiced the brutal tech tree. Bloated Arbitrators are arguably the best T6 in the game."},
     {"faction": "hive", "name": "Hive",
@@ -103,7 +102,7 @@ GOING_FIRST = {
         ("Your faction ban (1st)",
          "Default: **ban Necropolis**. Most ban-resistant pool, Undead Transformer is unique. "
          "Removing it forces opponent into a less-deep faction. Alternative: ban Grove (kills "
-         "Halon/Sullie/Daliar/Tss'kish) or Dungeon (kills Motley/Stinger/Typhona/Lodos) if "
+         "Halon/Sullie/Daliar/Gingertail/Faleor/Gorel) or Dungeon (kills Stinger/Typhona/Enatee/Devir/Kelarr) if "
          "you're confident the matchup-counter math works for you."),
         ("Their faction ban (2nd)",
          "They ban one of the remaining S-tier factions — usually whichever you'd most likely "
@@ -169,14 +168,14 @@ COUNTERS = {
         "primary": ("grove", "Grove (Halon)",
                     "Chain Lightning shreds T1 Skeleton Archer doom-stacks; Despair-immune. "
                     "Avatar Vomit out-tempos the Necropolis snowball before it compounds."),
-        "alt":     ("dungeon", "Dungeon (Motley)",
-                    "Twilight shuts down Skeleton Archers; Black Dragons immune to Despair / "
-                    "Decay; Onyx Dancer 1-stacks shred squishy Liches before they sustain."),
+        "alt":     ("dungeon", "Dungeon (Stinger)",
+                    "Heroic Strike + poison out-creeps Necropolis early; Black Dragons immune to "
+                    "Despair / Decay; Onyx Dancer 1-stacks shred squishy Liches before they sustain."),
     },
     "grove": {
-        "primary": ("dungeon", "Dungeon (Motley)",
-                    "Mley's Twilight shuts down ranged + Halon's spell combos; Black Dragons "
-                    "immune to all magic damage; Onyx Dancer 1-stacks shred squishy Hoplites/Fauns."),
+        "primary": ("dungeon", "Dungeon (Stinger)",
+                    "Heroic Strike + poison races Grove's mid-game setup; Black Dragons immune to "
+                    "Halon's Chain Lightning; Onyx Dancer 1-stacks shred squishy Hoplites/Fauns."),
         "alt":     ("necropolis", "Necropolis",
                     "Liches resurrect through Grove's burst spells; Magic Absorption law caps "
                     "their spell power."),
@@ -214,35 +213,36 @@ COUNTERS = {
 }
 
 
-# Top-5 hero ban targets per opponent faction
+# Top-5 hero ban targets per opponent faction (per lexiav.md for the four
+# factions covered there; Hive/Schism still based on the original notes).
 HERO_BANS = {
     "necropolis": [
-        ("necro_hero_4",  "Kel'Ghul",          "T6 Dread Knights at start; only +2-growth tier specialist in the game"),
-        ("necro_hero_1",  "Bulwark",           "King of Tanks; nearly unbleedable early game"),
-        ("necro_hero_3",  "Onkos",             "Skeleton specialist; +2 growth + buffs make Skeleton Archers the strongest T1 ranged stack"),
-        ("necro_hero_7",  "Marl",              "Masterful Web slows the entire enemy army; S-tier on Sprint, A everywhere"),
-        ("necro_hero_6",  "Artorius Veritas",  "Masterful Berserk hits a radius — punishes corner-camping ranged blob meta"),
+        ("necro_hero_4",  "Kel'Ghul",      "Dread Knight specialist; +2 growth on T6, 2-3 Dread Knights at start"),
+        ("necro_hero_3",  "Onkos",         "Skeleton unit specialist; +2 growth + buffs = strongest T1 ranged stack"),
+        ("necro_hero_7",  "Marl",          "Masterful Web slows the entire enemy army; counters fast factions"),
+        ("necro_hero_15", "Laura",         "Masterful Despair (AoE, very efficient) — bypasses Despair immunity in PvP"),
+        ("necro_hero_16", "Lord Rufus",    "Rewind Life — temporary resurrection lets him creep with zero permanent losses"),
     ],
     "grove": [
-        ("nature_hero_15", "Halon",            "Masterful Chain Lightning loses only 25% per bounce (vs 50%); insane early tempo"),
-        ("nature_hero_17", "Sullie",           "Avatar specialist; her Avatar is immune to magic damage"),
-        ("nature_hero_9",  "Aunt Daliar",      "Insight + Civic Innovation = blast through the law tree"),
-        ("nature_hero_11", "Elder Tss'kish",   "Thaumaturgy + Herbomancer buffs; late-game double/triple-cast"),
-        ("nature_hero_3",  "Gingertail",       "Faun tempo; 3 Faun stacks + Init/HP buff"),
+        ("nature_hero_15", "Halon",            "Masterful Chain Lightning loses only 25% per bounce; lexiav 'great' tier"),
+        ("nature_hero_17", "Sullie",           "Avatar specialist; Avatar immune to magic damage; lexiav 'great' tier"),
+        ("nature_hero_9",  "Aunt Daliar",      "Insight start; blasts through the law tree"),
+        ("nature_hero_3",  "Gingertail",       "Faun specialist; 3 Faun stacks + Init/HP buffs at start"),
+        ("nature_hero_7",  "Faleor",           "Master Fireball; Murmuring + Child of the Woods for mana — early-map nuke"),
     ],
     "dungeon": [
-        ("dungeon_hero_13", "Motley",          "Onyx Dancers + Twilight; shuts down all enemy ranged units"),
-        ("dungeon_hero_3",  "Stinger",         "Poisoned Heroic Strike with +10 damage; toxic creep speed"),
-        ("dungeon_hero_16", "Typhona",         "2 Tier 6 Hydras on day 1"),
-        ("dungeon_hero_18", "Lodos",           "Starts with Sleep; one cast on a 180-archer stack ends the fight"),
-        ("dungeon_hero_6",  "Devir, son of Devir", "Minotaur specialist; Day 1 Minotaur doom build"),
+        ("dungeon_hero_3",  "Stinger",        "Heroic Strike specialist; devastating early creep with stacking poison"),
+        ("dungeon_hero_16", "Typhona",        "Hydra (T6) specialist Warlock — Tier 6 power on day 1"),
+        ("dungeon_hero_1",  "Enatee",         "Medusa specialist; Sculptor petrification is one of the faction's best units"),
+        ("dungeon_hero_6",  "Devir, son of Devir", "Minotaur specialist + Leadership; Day 1 Minotaur doom build"),
+        ("dungeon_hero_10", "Kelarr, son of Navarr", "Insight specialist; flexible scaling, hard to ban-around"),
     ],
     "temple": [
-        ("human_hero_11", "Pip",                "Most picked/banned Temple hero; Insight + flexible attribute scaling"),
-        ("human_hero_9",  "Old Lord Mandall",   "Heroic Strike specialist with +10% damage-amp debuff"),
-        ("human_hero_4",  "Kestrel",            "Offense start enables Austringer doom-stack"),
-        ("human_hero_8",  "Lord Edgar",         "Tazar-style 20% A/D to units; best on slow templates"),
-        ("human_hero_13", "Lia the Untethered One", "Daylight specialist; can lock you out of Daylight in mirror"),
+        ("human_hero_11", "Pip",                "Insight start; lexiav top pick — flexible canvas for any build"),
+        ("human_hero_9",  "Old Lord Mandall",   "Heroic Strike specialist (Combat + Leadership); damage carries late"),
+        ("human_hero_4",  "Kestrel",            "Crossbow specialist (Offense start); drives the Austringer doom-stack"),
+        ("human_hero_10", "Merry Elias",        "+1 spell cap for global map spells (top hero on Vendetta; meh on Exodus)"),
+        ("human_hero_8",  "Lord Edgar",         "Lots of stats; late-game scaler. Worth banning vs slow templates."),
     ],
     "schism": [
         ("unfrozen_hero_13", "The Eye Collective",   "2 Grand Shoth stacks + Avatar Summon = huge early tempo"),

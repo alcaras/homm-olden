@@ -1,0 +1,300 @@
+# necro
+
+nightshade spells
+
+## heroes
+
+good:
+onkos -- skeleton unit specialist
+kel'gul -- dread knight specialist
+marl -- masterful well, logistics
+laura -- masterful despair (aoe, very efficient)
+bul'wark -- A tier
+lord rufus -- rewind life (thaumatugy meh)
+tarius -- better for slower format because of necro
+
+middle tier:
+funerella -- similar to tarius just caster
+natalida
+ethric
+
+meh:
+king of kings
+artorius veritas
+zam - generating resources
+mag - arcane sucks
+adahn -- recruitment sucks
+guildmaster klastor -- graverobbers meh
+shadespinner oona -- nightshade
+milossa the golden
+
+## units
+
+good units:
+1 skeleton archer [go base damage [+1 dmg], shadow blades]
+5 lich [rewind death] {sanguine lich has better rewind}
+6 dread knight {avatar of war} [double strike]
+
+meh units:
+2 wight (very squishy, convert damage to hp) {wraith}
+3 undead pet {armored hound}
+4 graverobbers (you want to use focus on lich) {kennelmaster} hard to use
+7 vampire {vampire scholar} 
+
+bad units:
+
+## laws
+animate dead -- necromancy improvemetns
+creature laws are decent
+
+terra mortis -- always native terrain [combines nicely with gravesoil from adv nec]
+
+# grove 
+
+## heroes
+
+great:
+halon (masterful chain lightning)
+sullie (avatar immune to magic)
+
+good:
+gingertail (faun specialist)
+gorel spearhead (more attack and more ranged)
+faelor (master fireball -- murmuring subskill, child of the woods for mana)
+aunt dailar (insight)
+
+middle:
+vatawana (global map specialist -- vendetta, dim door; ok on exodus)
+
+meh:
+aeliniel (masterful firewall, good ok vs ai but not great vs players)
+glacia (masterful ice bolt)
+vim - (masterful cavein -- not good dmg/mana)
+elder tss'kish (herbomancer)
+eith (scouting)
+old pilgrim (super slow)
+octavia (luck specialist)
+mreowa (economy)
+alluring sh'a
+echolilly (can clone enemies... not very good)
+ministrel (focus point specialist)
+
+## units
+
+good units:
+1 faun archers (warriors with gingertail? pary)
+2 hoplet (dawn gives you more focus; dusk hoplet -- bloom gives you spellpower!)
+3 iriyad (crystal -- thorns) -- tanky
+
+meh units
+6 qilians (long build path, effort) {thunder qilin -- focus}
+7 phoenix {energy phoenix, more consistent}
+
+bad units
+4 naiads
+5 herbomancer (awkward, but accessible; murmurancer -- spellbook again)
+
+## laws
+
+elite fauns are only for faun warriors
+elite hoplets deal more damage
+elite iryads -- more hp, good
+
+luck:
+nature's widlness
+luck of the fittest
+
+sanctuary for awkwaening
+
+child of the wild (more movement)
+focus (more focus)
+
+# dungeon
+
+basic triumvirates -- stance -- pick flow for focus pts for stance
+
+primal spells
+
+## heroes
+
+good:
+stinger (heroic strike)
+kelarr, son of navarr (insight)
+typhona (hydra specialist warlock)
+enatee (medusa specialist)
+devir, son of devir (minotaur, leadership)
+
+meh:
+zakron the great (sorcery specialist, firewall, spell stance)
+motley (onyx dancer specialist, luck, twilight)
+
+bad:
+tellaris the betrayed
+kieran (trog spec)
+mouaren (infiltrator; scouting)
+creta (gem and gold)
+rhea (luck)
+gleard the grey (arcane specialist)
+sister deira (arina's chosen)
+ylwari (diplomacy)
+glastor (economy)
+sunny rauktol (daylight specialist)
+lodos (nightshade specialist)
+
+## units
+
+fighting style
+
+good:
+3 onyx dancer (reduce defense per attack) [fighting style worth split -- small stacks] -- {aureate/jasper}
+4 minotaur {minotaur lord/vanguard also good} [fighting style for line damage, hard to damage]
+5 medusa {scupltor, petrification} (sharpshooter, slither away, arrow barrage fighting style)
+6 hydra {chthonic hydra} (sweeping strike) [meh fighting style]
+7 cave dragon {black} [meh fighting style]
+
+meh:
+1 trog {infernal for power stack more spd/init} [fighting style not worth]
+2 infiltrator {guile infil} [fighting style not worth until guile}
+
+bad:
+
+## laws
+
+fighting styles become 50% more damage -- impornant to get laws
+
+good:
+tactical advantage
+merchants guild (interchangeable resources)
+alchemists code i / ii (75 and 150 dust)
+magical education (spells of your heroes gain 1 level)
+jadame maps (movement points)
+
+meh:
+saturation (your focus charge limit increases by 1)
+
+# temple
+
+daylight magic
+1 bless
+3 riposte
+4 radiant armor
+
+## heroes
+
+good:
+pip (insight)
+old lord mandall (heroic strike specialist) (combat+leadership)
+kestrel (crossbow specialist, offense) [austringer stack]
+
+meh:
+lord edgar (lots of stats) (late game)
+ister (logistics) (best for sprint)
+aeos the exalted (morale) (super late game dream)
+keandra (cavalry specialist)
+merry elias (+1 spell cap for each global map spell) (vendetta)
+zenith (lightweaver specialist, heavenly blades)
+lia the untethered one (daylight specialist)
+vesper (masterful blessing)
+
+bad:
+leon sticky-fingers (pathfinder, scouting)
+john johnson (t1 specialist)
+heretic avis (gems)
+julius (masterful healing water)
+anastaisa the meek (arina's touch -- init and hp)
+nadir (vulnerability)
+clarissa (economy)
+
+## units
+
+good:
+2 crossbowman {austringer -- dbl shot} {marksman also option}
+7 angel (echos buff) {archangel/apotheosis}
+
+meh:
+1 swordsman {guard captain better} {sun's aegis -- aegis to protect range}
+4 lightweaver {sun herald for power stack; hierophant for 1 stack} (inner glow good buff)
+5 cavalry {sunspear cavalary for power stack} (anoited for attack)
+
+bad:
+3 griffin {temple griffin}
+6 inquisitor {mother superior} (super tanky)
+
+## laws
+
+good:
+faith in magic
+scouting radius
+unit laws pretty good (elite angels)
+execute eexcellence (all positive buffs last a longer time)
+swift reflexes (1 init)
+encouragement (morale)
+sun's grace (daylight spells gain 1 level)
+hero's blessing
+vengeful strike (counterattacks more damage -- riposte)
+
+
+# hive
+
+## heroes
+
+good:
+niev (attack
+
+meh:
+
+bad:
+
+## units
+
+good:
+
+meh:
+
+bad:
+
+
+## laws
+
+good:
+
+# schism
+
+## heroes
+
+good:
+
+meh:
+
+bad:
+
+## units
+
+good:
+
+meh:
+
+bad:
+
+
+## laws
+
+good:
+
+# skills
+
+good skills:
+basic offense good (archery)
+logistics good
+insight good (civic innovation)
+avatar (amazing, pump spellcraft)
+combat (excellent starting skill)
+leadership (morale is great)
+
+meh:
+battlecraft
+luck (good for grove, thanks to nature's wildness laws + luck of the fittest laws)
+
+bad skills:
+recruitment
+scouting
