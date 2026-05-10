@@ -1,26 +1,27 @@
-"""Map templates data — generated multiplayer templates with descriptions
-and inferred mode (single-hero / classic / PVE / scenario). The game ships
-no per-template preview images in resources.assets, so the page renders
-descriptions only (with a generic placeholder icon).
+"""Map templates — multiplayer template browser.
 
-Inputs:
-  catalog/raw/Lang/english/texts/ui.json    (templates_description_<id>)
-  catalog/raw/DB/quickStart.json            (classicMaps + singleHeroMaps + scenarios)
+Source: HeroesOldenEra_Data/StreamingAssets/map_templates/*.rmg.json — each
+template has its own RMG config with name, gameMode, sizeX/Z, hero count
+limits, and a description localization sid. The matching <Name>.png file
+in the same directory is the in-game preview image.
 
-Output:
-  docs/map-templates-data.js  (window.OE_MAP_TEMPLATES_DATA)
+We copy each .png to docs/img/templates/<id>.png and emit
+docs/map-templates-data.js with the metadata.
 """
 
 from __future__ import annotations
 
 import json
 import re
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+GAME = ROOT / "HeroesOldenEra_Data" / "StreamingAssets" / "map_templates"
 RAW = ROOT / "catalog" / "raw"
 OUT_JS = ROOT / "docs" / "map-templates-data.js"
+IMG_OUT = ROOT / "docs" / "img" / "templates"
 
 
 def load_json_strip(path: Path):
@@ -34,84 +35,90 @@ def load_tokens(path: Path) -> dict[str, str]:
     return {t["sid"]: t["text"] for t in load_json_strip(path).get("tokens", [])}
 
 
-def title_case_id(tid: str) -> str:
-    """Convert e.g. 'jebus_cross' → 'Jebus Cross'."""
-    parts = tid.split("_")
-    return " ".join(w.capitalize() if w not in ("of", "and", "the") else w for w in parts)
+def slug(name: str) -> str:
+    """Filename-safe id from a display name."""
+    return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
 
 
-def normalize(s: str) -> str:
-    """Normalize a name (lowercased, no spaces/underscores) for matching against quickStart."""
-    return re.sub(r"[^a-z0-9]", "", s.lower())
+def size_label(x: int, z: int) -> str:
+    """Map sizeX×sizeZ to a Small/Medium/Large/Huge bucket using the
+    in-game scheme: ≤96 small, ≤128 medium, ≤176 large, larger huge."""
+    n = max(x or 0, z or 0)
+    if n <= 96:  return "small"
+    if n <= 128: return "medium"
+    if n <= 176: return "large"
+    return "huge"
+
+
+def mode_label(game_mode: str) -> str:
+    """Normalize gameMode strings to display labels."""
+    m = (game_mode or "").lower()
+    if "singlehero" in m or "single_hero" in m: return "single-hero"
+    if "classic" in m: return "classic"
+    if "scenario" in m: return "scenario"
+    if "pve" in m: return "pve"
+    return m or "multiplayer"
 
 
 def build():
+    if not GAME.exists():
+        raise SystemExit(f"missing game dir: {GAME}")
     ui_tokens = load_tokens(RAW / "Lang" / "english" / "texts" / "ui.json")
-    quickStart = load_json_strip(RAW / "DB" / "quickStart.json")
 
-    classic_norms = {normalize(n) for n in quickStart.get("classicMaps", [])}
-    single_hero_norms = {normalize(n) for n in quickStart.get("singleHeroMaps", [])}
-    scenario_norms = {normalize(n) for n in quickStart.get("scenarios", [])}
+    IMG_OUT.mkdir(parents=True, exist_ok=True)
 
     templates = []
-    for sid, text in ui_tokens.items():
-        m = re.match(r"^templates_description_(.+)$", sid)
-        if not m:
+    for cfg in sorted(GAME.glob("*.rmg.json")):
+        try:
+            d = json.load(cfg.open(encoding="utf-8-sig"))
+        except Exception:
             continue
-        tid = m.group(1)
-        name = title_case_id(tid)
-        norm_id = normalize(tid)
-        # Strip leading <b>...</b> "Best for singleplayer." marker — we surface
-        # mode separately. Keep the rest of the description.
-        clean_desc = re.sub(r"^<b>[^<]*</b>\s*", "", text).strip()
+        name = d.get("name") or cfg.stem
+        png = cfg.with_suffix("").with_suffix(".png")  # strip .rmg → .png
+        # Some files are like "All Around.rmg.json" → with_suffix("") gives "All Around.rmg"
+        # then with_suffix(".png") gives "All Around.png" — works.
+        png_alt = GAME / f"{name}.png"
+        png_path = png if png.exists() else (png_alt if png_alt.exists() else None)
+        sid = slug(name)
 
-        # Determine mode tags
-        modes = []
-        if tid.startswith("pve_"):
-            modes.append("pve")
-        if norm_id in classic_norms:
-            modes.append("classic")
-        if norm_id in single_hero_norms:
-            modes.append("single-hero")
-        if norm_id in scenario_norms:
-            modes.append("scenario")
-        # Heuristics for tags not already covered
-        if not modes:
-            # Heuristic: descriptions mentioning "single hero" / "tournament"
-            # → tournament-style multiplayer; everything else → multiplayer
-            if "tournament" in clean_desc.lower() or "single hero" in clean_desc.lower():
-                modes = ["tournament"]
-            else:
-                modes = ["multiplayer"]
+        # Copy PNG to docs/img/templates/<slug>.png
+        img_url = None
+        if png_path and png_path.exists():
+            dst = IMG_OUT / f"{sid}.png"
+            try:
+                shutil.copy2(png_path, dst)
+                img_url = f"img/templates/{sid}.png"
+            except Exception:
+                pass
 
-        # Size heuristic: "scarce" → small, "rich" / "huge" → large, otherwise medium
-        d_low = clean_desc.lower()
-        if "scarce" in d_low or "small" in d_low or "limited" in d_low or "tiny" in d_low:
-            size = "small"
-        elif "huge" in d_low or "enormous" in d_low or "massive" in d_low:
-            size = "large"
-        elif "rich" in d_low or "many areas" in d_low or "multiple" in d_low or "8-player" in d_low:
-            size = "large"
-        else:
-            size = "medium"
+        rules = d.get("gameRules") or {}
+        hero_min = rules.get("heroCountMin")
+        hero_max = rules.get("heroCountMax")
 
-        # Player count heuristic: pull "N-player" or "N players"
-        players = None
-        m_p = re.search(r"(\d+)[-–]?\s*player", clean_desc, re.I)
-        if m_p:
-            players = int(m_p.group(1))
-        elif "two opponents" in d_low or "two enemies" in d_low:
-            players = 3
-        elif "seven opponents" in d_low:
-            players = 8
+        # Description: localized via ui.json. Strip leading <b>...</b> markers.
+        desc_sid = d.get("description") or ""
+        desc = (ui_tokens.get(desc_sid, "") or "").strip()
+        desc = re.sub(r"^<b>[^<]*</b>\s*", "", desc).strip()
+
+        size_x = d.get("sizeX") or 0
+        size_z = d.get("sizeZ") or 0
+
+        mode = mode_label(d.get("gameMode") or "")
+        # Heuristic secondary tag: PVE vs PvP from filename
+        if sid.startswith("pve_"):
+            mode = "pve"
 
         templates.append({
-            "id":     tid,
-            "name":   name,
-            "desc":   clean_desc,
-            "modes":  modes,
-            "size":   size,
-            "playerCount": players,
+            "id":       sid,
+            "name":     name,
+            "desc":     desc,
+            "image":    img_url,
+            "mode":     mode,
+            "size":     size_label(size_x, size_z),
+            "sizeX":    size_x,
+            "sizeZ":    size_z,
+            "heroMin":  hero_min,
+            "heroMax":  hero_max,
         })
     templates.sort(key=lambda t: t["name"])
 
@@ -125,11 +132,14 @@ def build():
     print(f"wrote {OUT_JS}  ({len(js):,} bytes)")
     print(f"  {len(templates)} templates")
     by_mode = {}
+    by_size = {}
+    with_img = sum(1 for t in templates if t["image"])
     for t in templates:
-        for m in t["modes"]:
-            by_mode[m] = by_mode.get(m, 0) + 1
-    for m, n in sorted(by_mode.items()):
-        print(f"  mode={m:14s} {n}")
+        by_mode[t["mode"]] = by_mode.get(t["mode"], 0) + 1
+        by_size[t["size"]] = by_size.get(t["size"], 0) + 1
+    print(f"  with image: {with_img}/{len(templates)}")
+    for m, n in sorted(by_mode.items()): print(f"  mode={m:14s} {n}")
+    for s, n in sorted(by_size.items()): print(f"  size={s:14s} {n}")
 
 
 if __name__ == "__main__":

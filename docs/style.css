@@ -2635,7 +2635,7 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   border-radius: 2px;
 }
 .mt-img {
-  width: 96px; height: 96px;
+  width: 200px; height: 200px;
   object-fit: contain;
   background: var(--bg-warm);
   border: 1px solid var(--rule);
@@ -2643,6 +2643,7 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   padding: 4px;
   flex-shrink: 0;
 }
+@media (max-width: 760px) { .mt-img { width: 140px; height: 140px; } }
 .mt-body { flex: 1; min-width: 0; }
 .mt-head {
   display: flex;

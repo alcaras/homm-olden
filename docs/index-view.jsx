@@ -103,8 +103,9 @@ const IndexView = ({ go }) => {
             description text where available.
           </p>
           <div className="card-stats">
-            <span><b>58</b>templates</span>
-            <span><b>5</b>modes</span>
+            <span><b>56</b>templates</span>
+            <span><b>2</b>modes</span>
+            <span><b>4</b>sizes</span>
           </div>
         </a>
 

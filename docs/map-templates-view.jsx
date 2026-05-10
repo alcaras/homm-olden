@@ -7,12 +7,11 @@ const MapTemplatesView = () => {
   const [mode, setMode] = React.useState('all');
   const [size, setSize] = React.useState('all');
 
-  // Collect all unique modes + sizes for filter UI
-  const allModes = Array.from(new Set(D.TEMPLATES.flatMap(t => t.modes))).sort();
-  const allSizes = Array.from(new Set(D.TEMPLATES.map(t => t.size))).sort();
+  const allModes = Array.from(new Set(D.TEMPLATES.map(t => t.mode))).sort();
+  const allSizes = ['small', 'medium', 'large', 'huge'];
 
   const filtered = D.TEMPLATES.filter(t => {
-    if (mode !== 'all' && !t.modes.includes(mode)) return false;
+    if (mode !== 'all' && t.mode !== mode) return false;
     if (size !== 'all' && t.size !== size) return false;
     return true;
   });
@@ -21,12 +20,12 @@ const MapTemplatesView = () => {
     <>
       <h1>Map templates</h1>
       <p className="lede">
-        Every generated multiplayer template the game ships with. Names and
-        descriptions are pulled from <code>ui.json</code>; mode tags
-        cross-reference <code>quickStart.json</code>'s classic /
-        single-hero / scenario lists. The game doesn't ship per-template
-        preview images — each template shows a placeholder icon until we
-        have a source for those.
+        Every generated multiplayer template the game ships with — pulled
+        directly from{' '}
+        <code>StreamingAssets/map_templates/*.rmg.json</code>. Each card has
+        the in-game preview image, the actual map dimensions, the game-mode
+        tag (Classic / Single-hero), the hero-count range, and the
+        localized description from <code>ui.json</code>.
       </p>
 
       <div className="controls">
@@ -60,8 +59,9 @@ const MapTemplatesView = () => {
       </div>
 
       <p className="note">
-        Generated {D.GENERATED_AT}. Size is heuristic from description text;
-        flag wrong inferences in <code>build_map_templates.py</code>.
+        Generated {D.GENERATED_AT}. Size buckets:{' '}
+        <em>small</em> ≤96, <em>medium</em> ≤128, <em>large</em> ≤176,{' '}
+        <em>huge</em> &gt;176 (max axis).
       </p>
     </>
   );
@@ -74,26 +74,35 @@ function labelMode(m) {
   })[m] || m;
 }
 function labelSize(s) {
-  return ({small: 'Small', medium: 'Medium', large: 'Large'})[s] || s;
+  return ({small: 'Small', medium: 'Medium', large: 'Large', huge: 'Huge'})[s] || s;
 }
 
-const TemplateCard = ({t}) => (
-  <article className="mt-card">
-    <img loading="lazy" className="mt-img"
-         src={`img/map_objects/${t.id}.png`} alt=""
-         onError={(e)=>{e.target.src = 'img/factions/temple.png'; e.target.style.opacity = 0.15;}} />
-    <div className="mt-body">
-      <header className="mt-head">
-        <h3 className="mt-name">{t.name}</h3>
-        <div className="mt-tags">
-          {t.modes.map(m => <span key={m} className={`mt-tag mt-tag-${m}`}>{labelMode(m)}</span>)}
-          <span className={`mt-tag mt-tag-size mt-tag-size-${t.size}`}>{labelSize(t.size)}</span>
-          {t.playerCount && <span className="mt-tag mt-tag-players">{t.playerCount}p</span>}
-        </div>
-      </header>
-      <p className="mt-desc">{t.desc}</p>
-    </div>
-  </article>
-);
+const TemplateCard = ({t}) => {
+  const heroes = t.heroMin && t.heroMax
+    ? (t.heroMin === t.heroMax ? `${t.heroMin}` : `${t.heroMin}–${t.heroMax}`)
+    : null;
+  return (
+    <article className="mt-card">
+      {t.image && (
+        <img loading="lazy" className="mt-img"
+             src={t.image} alt={t.name}
+             onError={(e)=>{e.target.style.visibility='hidden';}} />
+      )}
+      <div className="mt-body">
+        <header className="mt-head">
+          <h3 className="mt-name">{t.name}</h3>
+          <div className="mt-tags">
+            <span className={`mt-tag mt-tag-${t.mode}`}>{labelMode(t.mode)}</span>
+            <span className={`mt-tag mt-tag-size mt-tag-size-${t.size}`}>
+              {labelSize(t.size)} ({t.sizeX}×{t.sizeZ})
+            </span>
+            {heroes && <span className="mt-tag mt-tag-players">{heroes} hero{heroes==='1'?'':'es'}</span>}
+          </div>
+        </header>
+        <p className="mt-desc">{t.desc}</p>
+      </div>
+    </article>
+  );
+};
 
 window.MapTemplatesView = MapTemplatesView;
