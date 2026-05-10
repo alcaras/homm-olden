@@ -31,7 +31,7 @@ RESOURCES_ASSETS = ROOT / "HeroesOldenEra_Data" / "resources.assets"
 IMG = ROOT / "docs" / "img"
 IMG.mkdir(parents=True, exist_ok=True)
 for sub in ("heroes", "specs", "factions", "units", "skills", "subskills",
-            "spells", "buildings", "laws", "map_objects", "resources"):
+            "spells", "buildings", "laws", "map_objects", "resources", "artifacts"):
     (IMG / sub).mkdir(exist_ok=True)
 # Per-faction subdirs for buildings + laws (icon names are faction-specific).
 for fkey in ("human", "undead", "nature", "demon", "unfrozen", "dungeon"):
@@ -223,6 +223,16 @@ if mo_path.exists():
 for rid in ("gold", "wood", "ore", "gemstones", "crystals", "mercury", "dust", "graal"):
     wanted.append((IMG / "resources" / rid,
                    [rid, f"resource_{rid}", f"Resource_{rid}", rid.capitalize()]))
+
+# Artifacts — JSON `icon` field per artifact entry. Walk the per-slot files.
+for p in (RAW / "DB" / "items" / "items").glob("*.json"):
+    if any(skip in p.name for skip in ("magic_scroll", "mythic_scroll", "item_slot")):
+        continue
+    for a in load_array(p):
+        if not isinstance(a, dict): continue
+        aid = a.get("id"); ico = a.get("icon")
+        if aid and ico:
+            wanted.append((IMG / "artifacts" / aid, ico))
 
 
 # Laws — one icon per law entry, keyed by faction key + law number.

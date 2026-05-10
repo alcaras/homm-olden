@@ -78,6 +78,22 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
+        <a className="card" href={window.OE_routeToUrl("artifacts")} onClick={(e)=>{e.preventDefault();go('artifacts');}}>
+          <div className="card-eyebrow">Bestiary</div>
+          <div className="card-title">Artifacts</div>
+          <p className="card-desc">
+            117 artifacts across 9 equipment slots — Head, Armor, Belt,
+            Boots, Back, Left/Right hand, Ring, Unique. Plus 24 item sets
+            granting bonus effects when you equip multiple pieces. Filter by
+            slot, rarity, or set membership.
+          </p>
+          <div className="card-stats">
+            <span><b>117</b>artifacts</span>
+            <span><b>9</b>slots</span>
+            <span><b>24</b>sets</span>
+          </div>
+        </a>
+
         <a className="card" href={window.OE_routeToUrl("resources")} onClick={(e)=>{e.preventDefault();go('resources');}}>
           <div className="card-eyebrow">Reference</div>
           <div className="card-title">Resources</div>
