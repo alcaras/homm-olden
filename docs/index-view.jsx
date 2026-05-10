@@ -78,6 +78,22 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
+        <a className="card" href={window.OE_routeToUrl("spells")} onClick={(e)=>{e.preventDefault();go('spells');}}>
+          <div className="card-eyebrow">Reference</div>
+          <div className="card-title">Spells</div>
+          <p className="card-desc">
+            Every spell — battle and world — across the four schools (Daylight,
+            Nightshade, Arcane, Primal) plus Neutral. Grouped by school and
+            tier; mana costs and cooldowns inline. Pulled directly from the
+            game's magics JSONs.
+          </p>
+          <div className="card-stats">
+            <span><b>103</b>spells</span>
+            <span><b>5</b>schools</span>
+            <span><b>5</b>tiers</span>
+          </div>
+        </a>
+
         <a className="card" href={window.OE_routeToUrl("skills")} onClick={(e)=>{e.preventDefault();go('skills');}}>
           <div className="card-eyebrow">Reference</div>
           <div className="card-title">Skills — Deep Dive</div>

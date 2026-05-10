@@ -144,14 +144,24 @@ def resolve_placeholders(desc: str, bonuses: list[dict]) -> str:
     values = []
     for b in bonuses or []:
         params = b.get("parameters") or []
-        v = None
+        # Pick the parameter with the largest absolute magnitude. Bonus
+        # parameter ordering is type-specific:
+        #   sideRes ['gold', 500]                       → take 500
+        #   citySideExp ['500', '0.0']                  → take 500 (max-mag,
+        #                                                    not last)
+        #   heroStat ['magicSchoolSet','day','0','1']   → take 1
+        #   unitStat ['heroOffenceModifier','0.25']     → take 0.25
+        # First-numeric gets citySideExp/magicSchoolSet wrong; last-numeric
+        # gets citySideExp wrong. Max-magnitude handles both.
+        best = None
         for p in params:
             try:
-                v = float(p)
-                break
+                f = float(p)
             except (TypeError, ValueError):
                 continue
-        values.append(v)
+            if best is None or abs(f) > abs(best):
+                best = f
+        values.append(best)
 
     def fmt_int_if_int(x):
         return str(int(x)) if x == int(x) else f"{x:g}"

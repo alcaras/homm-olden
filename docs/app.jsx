@@ -7,9 +7,9 @@
    Deep links work because docs/404.html runs the spa-github-pages fallback
    that replays the path through index.html via a query param.                */
 
-const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'laws', 'buildings',
+const SIMPLE_VIEWS = ['index', 'mechanics', 'factions',
                       'subclasses', 'skills', 'heroes', 'units',
-                      'tier', 'guides', 'draft'];
+                      'tier', 'guides', 'draft', 'spells'];
 
 // Detect the base path. On GitHub Pages this is '/homm-olden/'; locally '/'.
 const BASE = (() => {
@@ -55,6 +55,9 @@ const parsePath = () => {
       return parsePath();
     }
   }
+  // Bare /laws and /buildings → default to the lead faction so the calc renders.
+  if (path === 'laws')      return { view: 'calc-faction', factionId: 'temple', kind: 'laws', query: search };
+  if (path === 'buildings') return { view: 'calc-faction', factionId: 'temple', kind: 'buildings', query: search };
   if (SIMPLE_VIEWS.includes(path)) return { view: path, factionId: null, query: search };
   return { view: 'index', factionId: null, query: '' };
 };
@@ -70,7 +73,7 @@ const parseHashLegacy = (hashRaw) => {
   if (hpath.startsWith('calc/laws/')) return { path: 'laws/' + hpath.slice('calc/laws/'.length), query: hquery };
   if (hpath.startsWith('calc/buildings/')) return { path: 'buildings/' + hpath.slice('calc/buildings/'.length), query: hquery };
   if (hpath.startsWith('calc/')) return { path: 'buildings/' + hpath.slice('calc/'.length), query: hquery };
-  if (hpath === 'calc') return { path: 'buildings', query: hquery };
+  if (hpath === 'calc') return { path: 'buildings/temple', query: hquery };
   if (hpath === 'index' || hpath === '') return { path: '', query: hquery };
   return { path: hpath, query: hquery };
 };
@@ -92,6 +95,7 @@ const titleFor = (route) => {
       return t(`${factionName(route.factionId)} ${route.kind === 'laws' ? 'Laws' : 'Buildings'}`);
     case 'subclasses':    return t('Subclasses');
     case 'skills':        return t('Skills');
+    case 'spells':        return t('Spells');
     case 'heroes':        return t('Heroes');
     case 'units':         return t('Units');
     case 'tier':          return t('Tier list');
@@ -177,6 +181,7 @@ const App = () => {
            href={url('laws/temple')} onClick={(e)=>{e.preventDefault();go('laws/temple');}}>Laws</a>
         <a className={tabActive('subclasses')} href={url('subclasses')}  onClick={(e)=>{e.preventDefault();go('subclasses');}}>Subclasses</a>
         <a className={tabActive('skills')}     href={url('skills')}      onClick={(e)=>{e.preventDefault();go('skills');}}>Skills</a>
+        <a className={tabActive('spells')}     href={url('spells')}      onClick={(e)=>{e.preventDefault();go('spells');}}>Spells</a>
         <a className={tabActive('heroes')}     href={url('heroes')}      onClick={(e)=>{e.preventDefault();go('heroes');}}>Heroes</a>
         <a className={tabActive('units')}      href={url('units')}       onClick={(e)=>{e.preventDefault();go('units');}}>Units</a>
         <a className={tabActive('tier')}       href={url('tier')}        onClick={(e)=>{e.preventDefault();go('tier');}}>Tier list</a>
@@ -191,6 +196,7 @@ const App = () => {
       {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} kind={route.kind} initialQuery={route.query} go={go} />}
       {route.view==='subclasses' && <window.SubclassesView />}
       {route.view==='skills'     && <window.SkillsView />}
+      {route.view==='spells'     && <window.SpellsView />}
       {route.view==='heroes'     && <window.HeroesView />}
       {route.view==='units'         && <window.UnitsView go={go} />}
       {route.view==='units-faction' && <window.FactionUnitsView factionId={route.factionId} go={go} />}

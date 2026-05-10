@@ -1,73 +1,73 @@
+const CODE_TO_SKILL_ID = {
+  OFF: "skill_assault",
+  DEF: "skill_protection",
+  RES: "skill_resistance",
+  BAT: "skill_formation",
+  SOR: "skill_sorcery",
+  WIS: "skill_mastery",
+  SUM: "skill_summoner",
+  BMG: "skill_battlemage",
+  DAY: "skill_magic_day",
+  NGT: "skill_magic_night",
+  ARC: "skill_magic_space",
+  PRI: "skill_magic_primal",
+  LD: "skill_leadership",
+  LK: "skill_luck",
+  INS: "skill_enlightenment",
+  DPL: "skill_diplomacy",
+  LOG: "skill_logistic",
+  SCT: "skill_scouting",
+  EC: "skill_economy",
+  TAC: "skill_tactics"
+};
 const SubclassesView = () => {
   const { FACTIONS, SKILL_COLUMNS, SUBCLASSES } = window.OE_DATA;
-  const [hoverCol, setHoverCol] = React.useState(null);
-  const groupOf = {};
-  SKILL_COLUMNS.forEach((s) => groupOf[s.key] = s.group);
-  const groupBoundary = (i) => {
-    if (i === 0) return true;
-    return SKILL_COLUMNS[i].group !== SKILL_COLUMNS[i - 1].group;
-  };
-  const groupRunStart = (i) => groupBoundary(i);
-  const groupSpan = (g) => SKILL_COLUMNS.filter((s) => s.group === g).length;
-  const rows = [];
-  FACTIONS.forEach((f) => {
-    rows.push({ kind: "faction", faction: f });
-    SUBCLASSES.filter((s) => s.faction === f.id).forEach((s) => {
-      rows.push({ kind: "sub", sub: s });
-    });
-  });
-  const groups = [
-    { id: "combat", label: "Combat (1)", span: groupSpan("combat") },
-    { id: "magic", label: "Magic (1)", span: groupSpan("magic") },
-    { id: "school", label: "School (1)", span: groupSpan("school") },
-    { id: "utility", label: "Utility (2)", span: groupSpan("utility") }
-  ];
-  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Subclasses & Required Skills"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Each of the 12 hero classes has two subclasses, unlocked by training five specific skills to level\xA03 (Expert). The matrix below lays out all 24 recipes \u2014 read across a row to see what one subclass needs; read down a column to see who needs that skill."), /* @__PURE__ */ React.createElement("div", { className: "legend" }, /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement("span", { className: "swatch combat" }), "Combat"), /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement("span", { className: "swatch magic" }), "Magic"), /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement("span", { className: "swatch school" }), "School"), /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement("span", { className: "swatch utility" }), "Utility"), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--faint)" } }, "Hover a column header for the full skill name.")), /* @__PURE__ */ React.createElement("div", { className: "matrix-wrap" }, /* @__PURE__ */ React.createElement("table", { className: "matrix" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("th", { className: "row-glyph", rowSpan: "2" }), /* @__PURE__ */ React.createElement("th", { className: "row-head", rowSpan: "2" }, "Subclass"), groups.map((g, i) => /* @__PURE__ */ React.createElement(
-    "th",
-    {
-      key: g.id,
-      colSpan: g.span,
-      className: `group-cap ${g.id} ${i > 0 ? "group-edge" : ""}`
-    },
-    g.label
-  )), /* @__PURE__ */ React.createElement("th", { className: "col-effect group-edge", rowSpan: "2" }, "Subclass effect")), /* @__PURE__ */ React.createElement("tr", null, SKILL_COLUMNS.map((s, i) => /* @__PURE__ */ React.createElement(
-    "th",
-    {
-      key: s.key,
-      className: `${groupRunStart(i) && i > 0 ? "group-edge" : ""} ${hoverCol === i ? "col-hl" : ""}`,
-      title: s.name,
-      onMouseEnter: () => setHoverCol(i),
-      onMouseLeave: () => setHoverCol(null)
-    },
-    s.key
-  )))), /* @__PURE__ */ React.createElement("tbody", null, rows.map((row, ri) => {
-    if (row.kind === "faction") {
-      return /* @__PURE__ */ React.createElement("tr", { key: "f" + row.faction.id, className: "faction-row" }, /* @__PURE__ */ React.createElement("td", { colSpan: 2 + SKILL_COLUMNS.length + 1 }, row.faction.name, /* @__PURE__ */ React.createElement("span", { className: "fac-skill" }, "faction skill: ", row.faction.skill)));
-    }
-    const s = row.sub;
-    const set = new Set(s.skills);
-    return /* @__PURE__ */ React.createElement("tr", { key: s.faction + s.name }, /* @__PURE__ */ React.createElement("td", { className: "row-glyph" }, /* @__PURE__ */ React.createElement("span", { className: s.kind === "might" ? "glyph glyph-might" : "glyph glyph-magic" }, s.kind === "might" ? "\u2694" : "\u2726")), /* @__PURE__ */ React.createElement("td", { className: "row-head" }, s.name, /* @__PURE__ */ React.createElement("span", { className: "row-class" }, s.class)), SKILL_COLUMNS.map((col, i) => {
-      const on = set.has(col.key);
-      const cls = ["skill-cell", col.group, on ? "on" : ""];
-      if (groupRunStart(i) && i > 0) cls.push("group-edge");
-      if (hoverCol === i) cls.push("col-hl");
-      return /* @__PURE__ */ React.createElement(
-        "td",
-        {
-          key: col.key,
-          className: cls.join(" "),
-          onMouseEnter: () => setHoverCol(i),
-          onMouseLeave: () => setHoverCol(null)
-        },
-        on ? /* @__PURE__ */ React.createElement("span", { className: "dot", "aria-label": col.name }) : ""
-      );
-    }), /* @__PURE__ */ React.createElement(
-      "td",
+  const skillByCode = Object.fromEntries(SKILL_COLUMNS.map((s) => [s.key, s]));
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Subclasses"), /* @__PURE__ */ React.createElement("p", { className: "lede" }, "Each of the 12 hero classes has two subclasses, unlocked once the hero trains ", /* @__PURE__ */ React.createElement("em", null, "five specific skills to level\xA03 (Expert)"), ". The recipe is structurally identical for every subclass:", /* @__PURE__ */ React.createElement("strong", null, " 1 Combat + 1 Magic + 1 School + 2 Utility"), "."), FACTIONS.map((f) => {
+    const subs = SUBCLASSES.filter((s) => s.faction === f.id);
+    if (!subs.length) return null;
+    return /* @__PURE__ */ React.createElement("section", { key: f.id, className: "sub-faction-block" }, /* @__PURE__ */ React.createElement("div", { className: "faction-band" }, /* @__PURE__ */ React.createElement(
+      "img",
       {
-        className: "col-effect group-edge",
-        dangerouslySetInnerHTML: { __html: s.effect }
+        className: "faction-band-icon",
+        loading: "lazy",
+        src: `img/factions/fraction_${f.unitKey || ""}.png`,
+        alt: "",
+        onError: (e) => {
+          e.target.style.visibility = "hidden";
+        }
       }
-    ));
-  })))), /* @__PURE__ */ React.createElement("p", { className: "note" }, /* @__PURE__ */ React.createElement("strong", null, "Structural pattern."), " Every subclass requires exactly", " ", /* @__PURE__ */ React.createElement("strong", null, "1 Combat + 1 Magic + 1 School + 2 Utility"), " \u2014 the recipe is fixed. Of the four magic schools, only one is required per subclass. Of the ten utility skills, only eight ever appear in any subclass requirement: ", /* @__PURE__ */ React.createElement("em", null, "Siegecraft"), " ", "and ", /* @__PURE__ */ React.createElement("em", null, "Recruitment"), " are never required, making them pure side-options."), /* @__PURE__ */ React.createElement("p", { className: "note" }, /* @__PURE__ */ React.createElement("strong", null, "Class-locked skills."), " Two skills are tied to class type and never appear in subclass conditions: ", /* @__PURE__ */ React.createElement("em", null, "Combat"), " (might-only, Heroic Strike cooldown) and ", /* @__PURE__ */ React.createElement("em", null, "Thaumaturgy"), " (magic-only, second spell per round). Both are useful but unrelated to subclass progression."));
+    ), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "name" }, f.name), /* @__PURE__ */ React.createElement("div", { className: "skill" }, f.might, " / ", f.magic, " \xB7 faction skill: ", f.skill))), /* @__PURE__ */ React.createElement("div", { className: "sub-grid" }, subs.map((s) => /* @__PURE__ */ React.createElement(
+      "article",
+      {
+        key: s.faction + s.name,
+        className: `sub-card sub-${s.kind}`
+      },
+      /* @__PURE__ */ React.createElement("header", { className: "sub-card-head" }, /* @__PURE__ */ React.createElement("span", { className: s.kind === "might" ? "glyph glyph-might" : "glyph glyph-magic" }, s.kind === "might" ? "\u2694" : "\u2726"), /* @__PURE__ */ React.createElement("span", { className: "sub-name" }, s.name), /* @__PURE__ */ React.createElement("span", { className: "sub-class" }, s.class)),
+      /* @__PURE__ */ React.createElement("div", { className: "sub-skills" }, s.skills.map((code) => {
+        const skill = skillByCode[code];
+        const sid = CODE_TO_SKILL_ID[code];
+        return /* @__PURE__ */ React.createElement("div", { key: code, className: `sub-skill sub-skill-${skill?.group || ""}` }, /* @__PURE__ */ React.createElement(
+          "img",
+          {
+            loading: "lazy",
+            className: "sub-skill-icon",
+            src: `img/skills/${sid}.png`,
+            alt: "",
+            onError: (e) => {
+              e.target.style.visibility = "hidden";
+            }
+          }
+        ), /* @__PURE__ */ React.createElement("span", { className: "sub-skill-name" }, skill?.name || code));
+      })),
+      /* @__PURE__ */ React.createElement(
+        "div",
+        {
+          className: "sub-effect",
+          dangerouslySetInnerHTML: { __html: s.effect }
+        }
+      )
+    ))));
+  }), /* @__PURE__ */ React.createElement("p", { className: "note" }, /* @__PURE__ */ React.createElement("strong", null, "Class-locked skills."), " Two skills never appear in subclass conditions because they are tied to class type:", " ", /* @__PURE__ */ React.createElement("em", null, "Combat"), " (might-only \u2014 Heroic Strike) and", " ", /* @__PURE__ */ React.createElement("em", null, "Thaumaturgy"), " (magic-only \u2014 second spell per round). Both are useful but irrelevant to subclass progression.", " ", /* @__PURE__ */ React.createElement("em", null, "Siegecraft"), " and ", /* @__PURE__ */ React.createElement("em", null, "Recruitment"), " are also never required \u2014 pure side options."));
 };
 window.SubclassesView = SubclassesView;

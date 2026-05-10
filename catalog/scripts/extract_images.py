@@ -30,7 +30,7 @@ RAW = ROOT / "catalog" / "raw"
 RESOURCES_ASSETS = ROOT / "HeroesOldenEra_Data" / "resources.assets"
 IMG = ROOT / "docs" / "img"
 IMG.mkdir(parents=True, exist_ok=True)
-for sub in ("heroes", "specs", "factions", "units", "skills", "subskills"):
+for sub in ("heroes", "specs", "factions", "units", "skills", "subskills", "spells"):
     (IMG / sub).mkdir(exist_ok=True)
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -136,6 +136,18 @@ for p in (RAW / "DB" / "heroes_skills" / "sub_skills").glob("sub_skills.json"):
         ico = sk.get("icon")
         if sid and ico:
             wanted.append((IMG / "subskills" / sid, ico))
+
+# Spells — JSON `icon` field per spell entry.
+for p in (RAW / "DB" / "magics").glob("*.json"):
+    if any(x in p.name for x in ("test_", "_special", "punishment_")):
+        continue
+    for sp in load_array(p):
+        if not isinstance(sp, dict):
+            continue
+        sid = sp.get("id")
+        ico = sp.get("icon")
+        if sid and ico:
+            wanted.append((IMG / "spells" / sid, ico))
 
 
 # ---------- Index resources.assets by name ----------

@@ -1056,7 +1056,7 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Daylight spells of your heroes gain 0 level(s)."
+                      "descResolved": "Daylight spells of your heroes gain 1 level(s)."
                     }
                   ]
                 },
@@ -2234,7 +2234,7 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your heroes gain 0% Necromancy Power."
+                      "descResolved": "Your heroes gain 250% Necromancy Power."
                     }
                   ]
                 },
@@ -2346,7 +2346,7 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Nightshade spells of your heroes gain 0 level(s)."
+                      "descResolved": "Nightshade spells of your heroes gain 1 level(s)."
                     }
                   ]
                 },
@@ -2499,7 +2499,7 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your heroes gain 0% Necromancy Power."
+                      "descResolved": "Your heroes gain 250% Necromancy Power."
                     }
                   ]
                 }
@@ -2593,7 +2593,7 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 6,
-                      "descResolved": "The enemy loses 0 level(s) on all Magic School spells."
+                      "descResolved": "The enemy loses -1 level(s) on all Magic School spells."
                     }
                   ]
                 },
@@ -4943,7 +4943,7 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Primal spells of your heroes gain 0 level(s)."
+                      "descResolved": "Primal spells of your heroes gain 1 level(s)."
                     }
                   ]
                 }
@@ -6244,7 +6244,7 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Arcane spells of your heroes gain 0 level."
+                      "descResolved": "Arcane spells of your heroes gain 1 level."
                     }
                   ]
                 },
@@ -7845,7 +7845,7 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 5,
-                      "descResolved": "Spells of your heroes gain 0 level(s)."
+                      "descResolved": "Spells of your heroes gain 1 level(s)."
                     }
                   ]
                 },
@@ -7922,5 +7922,5 @@ window.OE_CALC_DATA = {
     "mercury": "Mercury",
     "graal": "Graal"
   },
-  "GENERATED_AT": "2026-05-10 07:14 UTC"
+  "GENERATED_AT": "2026-05-10 07:49 UTC"
 };

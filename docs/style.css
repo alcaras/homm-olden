@@ -89,7 +89,7 @@ nav.tabs {
   border-bottom: 1px solid var(--rule);
   margin-bottom: 2rem;
 }
-nav.tabs button {
+nav.tabs button, nav.tabs a {
   font-family: inherit;
   background: none;
   border: 0;
@@ -102,14 +102,19 @@ nav.tabs button {
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
   transition: color 0.15s;
+  text-decoration: none;
+  display: inline-block;
 }
-nav.tabs button:hover { color: var(--ink); }
-nav.tabs button.active {
+nav.tabs button:hover, nav.tabs a:hover { color: var(--ink); }
+nav.tabs button.active, nav.tabs a.active {
   color: var(--ink);
   border-bottom-color: var(--rule-bold);
   font-weight: 600;
 }
 nav.tabs .grow { flex: 1; }
+/* The masthead brand is now an anchor — undo the global a { border-bottom } */
+.masthead .brand { text-decoration: none; border-bottom: 0; color: inherit; }
+.masthead .brand:hover { color: var(--accent); border-bottom: 0; }
 
 /* ---------- typography ---------- */
 h1, h2, h3, h4 {
@@ -2542,6 +2547,203 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   font-style: italic;
   border-top: 1px dotted var(--rule);
   padding-top: 0.5rem;
+}
+
+/* ---------- subclasses view (simplified card list) ---------- */
+.sub-faction-block { margin: 1.4rem 0 1.8rem; }
+.sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+@media (max-width: 760px) { .sub-grid { grid-template-columns: 1fr; } }
+.sub-card {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.85rem 1rem;
+  border-radius: 2px;
+  border-left: 3px solid var(--rule-bold);
+}
+.sub-card.sub-might { border-left-color: var(--accent); }
+.sub-card.sub-magic { border-left-color: var(--accent-2); }
+.sub-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.sub-name {
+  font-family: Charter, Georgia, serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.sub-class {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.sub-skills {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+@media (max-width: 540px) { .sub-skills { grid-template-columns: repeat(3, 1fr); } }
+.sub-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  padding: 0.3rem;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  border-radius: 2px;
+  border-top: 2px solid var(--rule-bold);
+}
+.sub-skill.sub-skill-combat  { border-top-color: var(--combat); }
+.sub-skill.sub-skill-magic   { border-top-color: var(--magic); }
+.sub-skill.sub-skill-school  { border-top-color: var(--school); }
+.sub-skill.sub-skill-utility { border-top-color: var(--utility); }
+.sub-skill-icon {
+  width: 32px; height: 32px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px;
+}
+.sub-skill-name {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ink-2);
+  line-height: 1.2;
+}
+.sub-effect {
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  border-top: 1px dotted var(--rule);
+  padding-top: 0.5rem;
+}
+.sub-effect b { color: var(--ink); font-weight: 600; }
+
+/* ---------- spells view ---------- */
+.spell-school { margin: 1.4rem 0 1.8rem; }
+.spell-school h2 {
+  border-bottom-color: var(--accent-2);
+}
+.spell-school-day h2     { border-bottom-color: oklch(0.62 0.14 80); }
+.spell-school-night h2   { border-bottom-color: oklch(0.45 0.10 295); }
+.spell-school-space h2   { border-bottom-color: oklch(0.55 0.12 245); }
+.spell-school-primal h2  { border-bottom-color: oklch(0.55 0.16 30); }
+.spell-school-neutral h2 { border-bottom-color: var(--rule-bold); }
+
+.spell-tier-block { margin: 0.8rem 0 1.2rem; }
+.spell-tier-head {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dotted var(--rule);
+}
+.spell-tier-cd {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.92em;
+}
+
+.spell-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.7rem;
+}
+.spell-card {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.6rem 0.8rem;
+  border-radius: 2px;
+}
+.spell-head {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dotted var(--rule);
+}
+.spell-icon {
+  width: 40px; height: 40px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px;
+  flex-shrink: 0;
+}
+.spell-head-body { flex: 1; min-width: 0; }
+.spell-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.spell-name {
+  font-family: Charter, Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+  text-transform: none;
+  line-height: 1.15;
+}
+.spell-scope {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.05em 0.4em;
+  border-radius: 2px;
+}
+.spell-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 1px;
+}
+.spell-magic-type {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.spell-mana { font-variant-numeric: tabular-nums; }
+.spell-desc {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+  margin: 0;
+  font-style: italic;
 }
 
 /* ---------- skills view ---------- */
