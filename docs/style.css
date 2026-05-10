@@ -2176,7 +2176,29 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .calc-levels {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.45rem;
+}
+.calc-level-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.calc-level-effect {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--rule);
+}
+.calc-level-effect.active {
+  color: var(--ink-2);
+  border-left-color: var(--accent);
+}
+.calc-level-effect-name {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
 }
 .calc-level-btn {
   display: flex;

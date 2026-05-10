@@ -4,27 +4,34 @@ const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'calc', 'subclasses', 'h
 
 const parseHash = () => {
   const raw = (window.location.hash || '#index').slice(1);
-  if (raw.startsWith('faction/')) {
-    return { view: 'faction', factionId: raw.slice('faction/'.length) };
+  // Optional query string after the route path: '#calc/temple?b=Main:2,Wall:3&l=3:1'
+  const qIdx = raw.indexOf('?');
+  const path = qIdx === -1 ? raw : raw.slice(0, qIdx);
+  const query = qIdx === -1 ? '' : raw.slice(qIdx + 1);
+  if (path.startsWith('faction/')) {
+    return { view: 'faction', factionId: path.slice('faction/'.length), query };
   }
-  if (raw.startsWith('calc/')) {
-    return { view: 'calc-faction', factionId: raw.slice('calc/'.length) };
+  if (path.startsWith('calc/')) {
+    return { view: 'calc-faction', factionId: path.slice('calc/'.length), query };
   }
-  if (SIMPLE_VIEWS.includes(raw)) return { view: raw, factionId: null };
-  return { view: 'index', factionId: null };
+  if (SIMPLE_VIEWS.includes(path)) return { view: path, factionId: null, query };
+  return { view: 'index', factionId: null, query: '' };
 };
 
 const App = () => {
   const [route, setRoute] = React.useState(parseHash);
 
   const go = (target) => {
+    const qIdx = typeof target === 'string' ? target.indexOf('?') : -1;
+    const path = qIdx === -1 ? target : target.slice(0, qIdx);
+    const query = qIdx === -1 ? '' : target.slice(qIdx + 1);
     let next;
-    if (typeof target === 'string' && target.startsWith('faction/')) {
-      next = { view: 'faction', factionId: target.slice('faction/'.length) };
-    } else if (typeof target === 'string' && target.startsWith('calc/')) {
-      next = { view: 'calc-faction', factionId: target.slice('calc/'.length) };
+    if (typeof path === 'string' && path.startsWith('faction/')) {
+      next = { view: 'faction', factionId: path.slice('faction/'.length), query };
+    } else if (typeof path === 'string' && path.startsWith('calc/')) {
+      next = { view: 'calc-faction', factionId: path.slice('calc/'.length), query };
     } else {
-      next = { view: target, factionId: null };
+      next = { view: path, factionId: null, query };
     }
     setRoute(next);
     window.location.hash = target;
@@ -72,7 +79,7 @@ const App = () => {
       {route.view==='factions'      && <window.FactionsHubView go={go} />}
       {route.view==='faction'       && <window.FactionView factionId={route.factionId} go={go} />}
       {route.view==='calc'          && <window.CalcHubView go={go} />}
-      {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} go={go} />}
+      {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} initialQuery={route.query} go={go} />}
       {route.view==='subclasses' && <window.SubclassesView />}
       {route.view==='heroes'     && <window.HeroesView />}
       {route.view==='units'      && <window.UnitsView />}

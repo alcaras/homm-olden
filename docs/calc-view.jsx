@@ -1,22 +1,40 @@
-/* Per-faction Law + Building calculator. Pick what you want, see running totals. */
+/* Per-faction Law + Building calculator. Pick what you want, see running totals.
+   State is encoded into the URL hash so links are shareable:
+     #calc/temple?b=Main:2,Wall:3,Magic_Guild:4&l=3:1,30:1                  */
 
-const CalcView = ({ factionId, go }) => {
+const CalcView = ({ factionId, initialQuery, go }) => {
   const C = window.OE_CALC_DATA;
   if (!C) return <p>Calculator data not loaded.</p>;
 
   const FACTIONS = window.OE_DATA?.FACTIONS || C.FACTIONS;
   const fmeta = FACTIONS.find(f => f.id === factionId);
   const data = factionId ? C.BY_FACTION[factionId] : null;
+  // Resolve in-game faction key (e.g. 'human') for law-id reconstruction.
+  // OE_DATA.FACTIONS uses `unitKey`; OE_CALC_DATA.FACTIONS uses `unitKey` too.
+  const factionKey = fmeta?.unitKey || (C.FACTIONS.find(f => f.id === factionId)?.unitKey);
 
-  // ----- state: maps from sid/law_id → selected level (0 = not enacted) -----
-  const [pickedBuildings, setPickedBuildings] = React.useState({});
-  const [pickedLaws,      setPickedLaws]      = React.useState({});
+  // ----- initial state from URL (re-derived only when faction changes) -----
+  const initial = React.useMemo(() => parseCalcQuery(initialQuery, factionKey),
+                                [factionId]);
+  const [pickedBuildings, setPickedBuildings] = React.useState(initial.buildings);
+  const [pickedLaws,      setPickedLaws]      = React.useState(initial.laws);
+  const [shareCopied,     setShareCopied]     = React.useState(false);
 
-  // Reset selections when switching faction
+  // Re-seed state when faction changes (different `initial`)
   React.useEffect(() => {
-    setPickedBuildings({});
-    setPickedLaws({});
-  }, [factionId]);
+    setPickedBuildings(initial.buildings);
+    setPickedLaws(initial.laws);
+  }, [factionId, initial]);
+
+  // Sync state → URL via replaceState so we don't pollute history or fire
+  // hashchange (which would re-mount the view)
+  React.useEffect(() => {
+    if (!factionId || !factionKey) return;
+    const newHash = '#' + buildCalcHash(factionId, factionKey, pickedBuildings, pickedLaws);
+    if (window.location.hash !== newHash) {
+      history.replaceState(null, '', newHash);
+    }
+  }, [pickedBuildings, pickedLaws, factionId, factionKey]);
 
   if (!data) {
     return (
@@ -144,6 +162,12 @@ const CalcView = ({ factionId, go }) => {
           </div>
         </div>
         <div className="calc-totals-actions">
+          <button onClick={() => {
+            navigator.clipboard?.writeText(window.location.href).then(
+              () => { setShareCopied(true); setTimeout(()=>setShareCopied(false), 1800); },
+              () => {}
+            );
+          }}>{shareCopied ? '✓ Copied' : 'Copy share link'}</button>
           <button onClick={() => { setPickedBuildings({}); setPickedLaws({}); }}>Reset all</button>
         </div>
       </div>
@@ -172,21 +196,31 @@ const CalcView = ({ factionId, go }) => {
                   <div className="calc-levels">
                     {b.levels.map(lvl => {
                       const active = cur >= lvl.level;
+                      const cleanedDesc = (lvl.desc || '').replace(/\{[0-9]+\}/g, '?');
                       return (
-                        <button
-                          key={lvl.level}
-                          className={'calc-level-btn' + (active ? ' active' : '')}
-                          onClick={() => setBuildingLevel(b.sid, lvl.level)}
-                          title={lvl.name + (lvl.desc ? '\n\n' + lvl.desc.replace(/{[0-9]+}/g, '?') : '')}>
-                          <span className="calc-level-num">L{lvl.level}</span>
-                          <span className="calc-level-cost">
-                            {Object.entries(lvl.costs).map(([r, v], i) => (
-                              <span key={r} className={`calc-cost calc-cost-${r}`}>
-                                {v.toLocaleString()}{abbreviateRes(r)}
-                              </span>
-                            ))}
-                          </span>
-                        </button>
+                        <div key={lvl.level} className="calc-level-row">
+                          <button
+                            className={'calc-level-btn' + (active ? ' active' : '')}
+                            onClick={() => setBuildingLevel(b.sid, lvl.level)}
+                            title={lvl.name + (cleanedDesc ? '\n\n' + cleanedDesc : '')}>
+                            <span className="calc-level-num">L{lvl.level}</span>
+                            <span className="calc-level-cost">
+                              {Object.entries(lvl.costs).map(([r, v]) => (
+                                <span key={r} className={`calc-cost calc-cost-${r}`}>
+                                  {v.toLocaleString()}{abbreviateRes(r)}
+                                </span>
+                              ))}
+                            </span>
+                          </button>
+                          {cleanedDesc && (
+                            <div className={'calc-level-effect' + (active ? ' active' : '')}>
+                              {lvl.level > 1 && b.levels[0]?.name !== lvl.name && (
+                                <span className="calc-level-effect-name">{lvl.name}: </span>
+                              )}
+                              {cleanedDesc}
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </div>
@@ -283,6 +317,73 @@ function abbreviateRes(r) {
     gold: 'g', wood: 'w', ore: 'o', gemstones: 'gem',
     crystals: 'cr', mercury: 'me', graal: 'graal',
   }[r] || r;
+}
+
+// ---------- URL state encoding (#calc/<id>?b=...&l=...) ----------
+function encodeBuildings(picked) {
+  const out = [];
+  for (const [sid, lvl] of Object.entries(picked)) {
+    if (!lvl) continue;
+    // Strip "Build_" prefix to keep the URL short.
+    const short = sid.startsWith('Build_') ? sid.slice('Build_'.length) : sid;
+    out.push(`${short}:${lvl}`);
+  }
+  return out.join(',');
+}
+
+function encodeLaws(picked, factionKey) {
+  const out = [];
+  const prefix = `fraction_law_${factionKey}_`;
+  for (const [lid, lvl] of Object.entries(picked)) {
+    if (!lvl) continue;
+    // Strip "fraction_law_<key>_" — store just the law number.
+    const num = lid.startsWith(prefix) ? lid.slice(prefix.length) : lid;
+    out.push(`${num}:${lvl}`);
+  }
+  return out.join(',');
+}
+
+function decodeBuildings(s) {
+  if (!s) return {};
+  const out = {};
+  for (const part of s.split(',')) {
+    const [short, lvlStr] = part.split(':');
+    const lvl = parseInt(lvlStr, 10);
+    if (!short || !lvl) continue;
+    out[short.startsWith('Build_') ? short : `Build_${short}`] = lvl;
+  }
+  return out;
+}
+
+function decodeLaws(s, factionKey) {
+  if (!s || !factionKey) return {};
+  const out = {};
+  for (const part of s.split(',')) {
+    const [num, lvlStr] = part.split(':');
+    const lvl = parseInt(lvlStr, 10);
+    if (!num || !lvl) continue;
+    const key = num.startsWith('fraction_law_') ? num : `fraction_law_${factionKey}_${num}`;
+    out[key] = lvl;
+  }
+  return out;
+}
+
+function parseCalcQuery(query, factionKey) {
+  const sp = new URLSearchParams(query || '');
+  return {
+    buildings: decodeBuildings(sp.get('b') || ''),
+    laws:      decodeLaws(sp.get('l') || '', factionKey),
+  };
+}
+
+function buildCalcHash(factionId, factionKey, pickedBuildings, pickedLaws) {
+  const parts = [];
+  const b = encodeBuildings(pickedBuildings);
+  const l = encodeLaws(pickedLaws, factionKey);
+  if (b) parts.push(`b=${b}`);
+  if (l) parts.push(`l=${l}`);
+  const qs = parts.length ? '?' + parts.join('&') : '';
+  return `calc/${factionId}${qs}`;
 }
 
 const FactionPicker = ({current, factions, go, prefix}) => (
