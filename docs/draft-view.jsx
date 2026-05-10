@@ -101,29 +101,38 @@ const DraftView = () => {
         </tbody>
       </table>
 
-      <h2>Hero bans</h2>
+      <h2>Top 5 hero bans by opponent faction</h2>
       <p className="note">
-        Once your opponent has committed their faction, your 3 hero bans come
-        from <em>that</em> faction's roster — never your own. Each per-faction
-        page lists the top heroes you'll want to ban first against that
-        opponent.
+        Your 3 hero bans come from your opponent's faction. Pick the top 3
+        rows from the relevant card.
       </p>
-      <div className="card-grid">
-        {SITE_FACTIONS.map(f => (
-          <a key={f.id} className="card faction-card"
-             href={`#faction/${f.id}`}
-             onClick={e=>{e.preventDefault();window.location.hash = `faction/${f.id}`;window.scrollTo({top:0});}}>
-            <div className="faction-card-head">
-              <img loading="lazy" className="faction-card-icon"
-                   src={`img/factions/fraction_${f.unitKey || ''}.png`} alt=""
-                   onError={(e)=>{e.target.style.display='none';}} />
-              <div>
-                <div className="card-eyebrow">vs {f.name}</div>
-                <div className="card-title">Bans + counter-pick →</div>
+      <div className="ban-grid">
+        {Object.entries(D.HERO_BANS).map(([fid, items]) => {
+          const f = factionMeta[fid];
+          return (
+            <section key={fid} className="ban-section">
+              <div className="ban-head">
+                <img loading="lazy" className="ban-head-icon"
+                     src={`img/factions/fraction_${f?.unitKey || ''}.png`} alt=""
+                     onError={(e)=>{e.target.style.display='none';}} />
+                <span className="ban-head-label">{f?.name || fid}</span>
               </div>
-            </div>
-          </a>
-        ))}
+              <ol className="ban-list">
+                {items.map((h) => (
+                  <li key={h.id}>
+                    <img loading="lazy" className="ban-portrait"
+                         src={`img/heroes/${h.id}.png`} alt=""
+                         onError={(e)=>{e.target.style.visibility='hidden';}} />
+                    <div className="ban-body">
+                      <div className="ban-name">{h.name}</div>
+                      <div className="ban-why">{h.why}</div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          );
+        })}
       </div>
 
       <p className="note">

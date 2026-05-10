@@ -1495,11 +1495,17 @@ table.guide-table tr.trap-row .b-name { color: var(--muted); text-decoration: li
 }
 .ban-head-label {
   font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
+}
+.ban-head-icon {
+  width: 28px; height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
 }
 .ban-list {
   list-style: none;
