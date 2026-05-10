@@ -3301,3 +3301,68 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .art-set-label { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-right: 0.4em; }
 .art-set-name { color: var(--accent); font-weight: 600; }
 .art-set-pieces { color: var(--faint); margin-left: 0.4em; }
+
+/* spell chips in the heroes table */
+.spell-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  padding: 0.05em 0.4em;
+  margin-right: 0.3em;
+  margin-bottom: 0.15em;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  border-radius: 2px;
+  font-size: 0.74rem;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.spell-chip-icon {
+  width: 18px; height: 18px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border-radius: 1px;
+}
+.spell-chip-name {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+}
+
+/* hero-page link in the heroes table */
+.h-name-link { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); font-weight: 600; }
+.h-name-link:hover { color: var(--accent-2); border-bottom-color: var(--accent-2); }
+
+/* ---------- single-hero page ---------- */
+.hero-page-head { display: flex; gap: 1.2rem; align-items: center; margin: 0.5rem 0 1.4rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--rule-bold); }
+.hero-page-portrait { width: 96px; height: 96px; object-fit: cover; background: var(--bg-warm); border: 1px solid var(--rule); border-radius: 2px; flex-shrink: 0; }
+.hero-page-titles { flex: 1; }
+.hero-page-name { margin: 0; font-size: 2rem; font-family: Charter, Georgia, serif; font-weight: 600; letter-spacing: -0.015em; line-height: 1.05; text-transform: none; }
+.hero-page-class { margin-top: 0.3rem; font-family: -apple-system, Inter, sans-serif; font-size: 0.92rem; color: var(--ink-2); }
+.hero-page-id { font-size: 0.7rem; color: var(--faint); margin-top: 0.3rem; }
+.hero-section { margin: 1.4rem 0; }
+.hero-section h2 { margin-bottom: 0.6rem; }
+.hero-spec { display: flex; gap: 0.8rem; align-items: flex-start; }
+.hero-spec-icon { width: 56px; height: 56px; object-fit: contain; background: var(--bg-warm); border: 1px solid var(--rule); border-radius: 50%; padding: 2px; flex-shrink: 0; }
+.hero-spec-name { font-family: Charter, Georgia, serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+.hero-spec-desc { font-size: 0.92rem; color: var(--ink-2); line-height: 1.5; margin: 0.3rem 0 0; max-width: 56em; font-style: italic; }
+.hero-stats { display: flex; gap: 1.6rem; flex-wrap: wrap; font-family: -apple-system, Inter, sans-serif; font-variant-numeric: tabular-nums; }
+.hero-stats > div { display: flex; flex-direction: column; gap: 0.15rem; }
+.hero-stats .lbl { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; }
+.hero-stats b { font-family: Charter, Georgia, serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1; }
+.hero-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.hero-spell-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.hero-spell-row { display: flex; gap: 0.6rem; align-items: center; padding: 0.4rem; border: 1px solid var(--rule); background: var(--paper); border-radius: 2px; max-width: 32em; }
+.hero-spell-icon { width: 36px; height: 36px; object-fit: contain; background: var(--bg-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 1px; flex-shrink: 0; }
+.hero-spell-name { font-weight: 600; color: var(--ink); }
+.hero-spell-meta { font-size: 0.72rem; color: var(--muted); margin-top: 1px; }
+.hero-army { font-style: italic; color: var(--ink-2); margin: 0; }
+.hero-army-score { font-family: -apple-system, Inter, sans-serif; font-size: 0.85rem; color: var(--muted); margin: 0.3rem 0 0; }
+.hero-tier-row { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.7rem; border: 1px solid var(--rule); background: var(--paper); border-radius: 2px; max-width: 60em; }
+.hero-tier-note { color: var(--ink-2); line-height: 1.5; }
+.hero-roster { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; }
+.hero-roster-card { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 0.5rem; border: 1px solid var(--rule); background: var(--paper); border-radius: 2px; text-align: center; text-decoration: none; color: inherit; }
+.hero-roster-card:hover { border-color: var(--accent); }
+.hero-roster-card.current { border-color: var(--accent); background: var(--bg-warm); }
+.hero-roster-portrait { width: 56px; height: 56px; object-fit: cover; background: var(--bg-warm); border: 1px solid var(--rule); border-radius: 2px; }
+.hero-roster-name { font-weight: 600; font-size: 0.85rem; color: var(--ink); }
+.hero-roster-spec { font-size: 0.7rem; color: var(--muted); font-style: italic; }

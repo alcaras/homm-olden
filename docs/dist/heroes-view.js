@@ -1,4 +1,4 @@
-const HeroesView = () => {
+const HeroesView = ({ go }) => {
   const { FACTIONS, HEROES } = window.OE_DATA;
   const [q, setQ] = React.useState("");
   const [kind, setKind] = React.useState("all");
@@ -134,7 +134,20 @@ const HeroesView = () => {
           e.target.style.visibility = "hidden";
         }
       }
-    )), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("div", { className: "h-name" }, h.name), /* @__PURE__ */ React.createElement("div", { className: "h-class-line" }, f && (h.kind === "might" ? f.might : f.magic))), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("span", { className: h.kind === "might" ? "glyph glyph-might" : "glyph glyph-magic" }, h.kind === "might" ? "\u2694" : "\u2726")), /* @__PURE__ */ React.createElement("td", null, f && /* @__PURE__ */ React.createElement("span", { className: `faction-pill faction-${h.faction}` }, f.name)), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("div", { className: "spec-cell", title: h.specDesc || "" }, h.specId && /* @__PURE__ */ React.createElement(
+    )), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement(
+      "a",
+      {
+        className: "h-name h-name-link",
+        href: window.OE_routeToUrl(`hero/${h.id}`),
+        onClick: (e) => {
+          if (go) {
+            e.preventDefault();
+            go(`hero/${h.id}`);
+          }
+        }
+      },
+      h.name
+    ), /* @__PURE__ */ React.createElement("div", { className: "h-class-line" }, f && (h.kind === "might" ? f.might : f.magic))), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("span", { className: h.kind === "might" ? "glyph glyph-might" : "glyph glyph-magic" }, h.kind === "might" ? "\u2694" : "\u2726")), /* @__PURE__ */ React.createElement("td", null, f && /* @__PURE__ */ React.createElement("span", { className: `faction-pill faction-${h.faction}` }, f.name)), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("div", { className: "spec-cell", title: h.specDesc || "" }, h.specId && /* @__PURE__ */ React.createElement(
       "img",
       {
         loading: "lazy",

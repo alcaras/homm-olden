@@ -45,6 +45,9 @@ const parsePath = () => {
   if (path.startsWith('units/')) {
     return { view: 'units-faction', factionId: path.slice('units/'.length), query: search };
   }
+  if (path.startsWith('hero/')) {
+    return { view: 'hero', heroId: path.slice('hero/'.length), query: search };
+  }
   // Back-compat: old #-fragment hash routes — recover from window.location.hash.
   const hashRaw = (window.location.hash || '').replace(/^#/, '');
   if (hashRaw) {
@@ -92,6 +95,10 @@ const titleFor = (route) => {
     case 'factions':      return t('Factions');
     case 'faction':       return t(`${factionName(route.factionId)} Faction`);
     case 'units-faction': return t(`${factionName(route.factionId)} Units`);
+    case 'hero': {
+      const h = window.OE_DATA?.HEROES?.find(x => x.id === route.heroId);
+      return t(h?.name || 'Hero');
+    }
     case 'calc-faction':
       return t(`${factionName(route.factionId)} ${route.kind === 'laws' ? 'Laws' : 'Buildings'}`);
     case 'subclasses':    return t('Subclasses');
@@ -129,6 +136,8 @@ const App = () => {
       next = { view: 'calc-faction', factionId: path.slice('buildings/'.length), kind: 'buildings', query };
     } else if (typeof path === 'string' && path.startsWith('units/')) {
       next = { view: 'units-faction', factionId: path.slice('units/'.length), query };
+    } else if (typeof path === 'string' && path.startsWith('hero/')) {
+      next = { view: 'hero', heroId: path.slice('hero/'.length), query };
     } else {
       next = { view: path, factionId: null, query };
     }
@@ -210,9 +219,10 @@ const App = () => {
       {route.view==='map-templates' && <window.MapTemplatesView />}
       {route.view==='resources'     && <window.ResourcesView />}
       {route.view==='artifacts'     && <window.ArtifactsView />}
-      {route.view==='heroes'     && <window.HeroesView />}
+      {route.view==='heroes'     && <window.HeroesView go={go} />}
       {route.view==='units'         && <window.UnitsView go={go} />}
       {route.view==='units-faction' && <window.FactionUnitsView factionId={route.factionId} go={go} />}
+      {route.view==='hero'          && <window.HeroView heroId={route.heroId} go={go} />}
       {route.view==='tier'       && <window.TierView />}
       {route.view==='guides'     && <window.GuidesView />}
       {route.view==='draft'      && <window.DraftView />}

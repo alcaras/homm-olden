@@ -1,6 +1,6 @@
 /* Heroes view — single flat sortable table across all heroes */
 
-const HeroesView = () => {
+const HeroesView = ({ go }) => {
   const { FACTIONS, HEROES } = window.OE_DATA;
   const [q, setQ] = React.useState('');
   const [kind, setKind] = React.useState('all');                 // all | might | magic
@@ -164,7 +164,11 @@ const HeroesView = () => {
                          onError={(e)=>{e.target.style.visibility='hidden';}} />
                   </td>
                   <td>
-                    <div className="h-name">{h.name}</div>
+                    <a className="h-name h-name-link"
+                       href={window.OE_routeToUrl(`hero/${h.id}`)}
+                       onClick={(e)=>{ if (go) { e.preventDefault(); go(`hero/${h.id}`); } }}>
+                      {h.name}
+                    </a>
                     <div className="h-class-line">
                       {f && (h.kind === 'might' ? f.might : f.magic)}
                     </div>
