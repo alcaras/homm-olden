@@ -56,33 +56,6 @@ const TierView = () => {
         <span className="tier-derived-key"><em>(data)</em> uncited — derived from extracted data only</span>
       </div>
 
-      {/* ------- Top 10 ban list ------- */}
-      <h2>Top 10 ban list</h2>
-      <p className="note">
-        Heroes you should expect to see banned (or want to ban) before any draft.
-        Most are perma-pick if not banned.
-      </p>
-      <div className="bans-wrap">
-        <table className="bans">
-          <thead><tr><th className="num">#</th><th>Hero</th><th>Faction</th><th>Why ban</th></tr></thead>
-          <tbody>
-            {T.TOP_BANS.map((b, i) => (
-              <tr key={b.id}>
-                <td className="num">{i+1}</td>
-                <td className="b-hero">
-                  <img loading="lazy" className="b-portrait"
-                       src={`img/heroes/${b.id}.png`} alt=""
-                       onError={(e)=>{e.target.style.visibility='hidden';}} />
-                  <span className="b-name">{b.name}</span>
-                </td>
-                <td><span className={`faction-pill faction-${b.faction}`}>{b.factionName}</span></td>
-                <td className="b-why">{b.why}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
       {/* ------- Opening picks ------- */}
       <h2>Opening-pick archetypes</h2>
       <div className="archetypes">

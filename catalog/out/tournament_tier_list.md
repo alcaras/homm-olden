@@ -10,21 +10,6 @@ Per-faction tier list for single-hero PvP on tournament templates (Exodus-flavor
 
 ## Draft strategy
 
-### Top 10 ban list
-
-| # | Hero | Faction | Why ban |
-|---:|---|---|---|
-| 1 | **Motley** | Dungeon | Motley shuts down all ranged units via Twilight. Single-handedly invalidates 4 of 6 factions' early plans. |
-| 2 | **Halon** | Grove | Halon's Masterful Chain Lightning loses only 25%/bounce — early-game tempo bomb you cannot keep up with. |
-| 3 | **Kel’Ghul** | Necropolis | Kel'Ghul starts with T6 Dread Knights and the only +2-growth tier specialty in the game. |
-| 4 | **Sullie** | Grove | Sullie's magic-immune Avatar is the dominant absorber/dealer in the current Avatar meta. |
-| 5 | **Stinger** | Dungeon | Stinger's poisoned heroic strikes are toxic to fight; she creeps faster than any other might hero. |
-| 6 | **Typhona** | Dungeon | Typhona's 2 starting Hydras (T6) clear early biomes flawlessly. |
-| 7 | **Bulwark** | Necropolis | Bulwark's defensive specialty makes Necropolis nearly unbleedable early. |
-| 8 | **Artorius Veritas** | Necropolis | Artorius Veritas's Masterful Berserk dismantles the corner-camping ranged blob meta. |
-| 9 | **Abigor, Duke of Battle** | Hive | Abigor's +1 hex deploy + scaling init lets him alpha-strike the opponent's back line by L18. |
-| 10 | **Lodos** | Dungeon | Lodos's starting Sleep ends week-2 fights instantly. |
-
 ### Opening-pick archetypes
 
 - **Avatar + Thaumaturgy.** Any hero that can pair Summon Avatar with Thaumaturgy double-cast is a top-tier build. The Avatar tanks retaliation, ties up enemy ranged units, and bait-baits the AI. Sullie (Grove), Changeling Urgo (Schism), Oriax (Hive), and Pip (Temple, by drafting into it) all enable this archetype.
@@ -301,4 +286,4 @@ Phenomenally strong in single-hero PvP — top picks are 'perma-ban or perma-pic
 
 ---
 
-*Generated 2026-05-10 03:03 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*
+*Generated 2026-05-10 03:12 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*

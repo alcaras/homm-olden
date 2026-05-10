@@ -578,19 +578,10 @@ OPENING_PICKS = [
      "Kel'Ghul (Dread Knights, T6), Typhona (Hydras, T6). Big advantage in week 1."),
 ]
 
-TOP_BANS = [
-    # (hero_id, why-it-gets-banned)
-    ("dungeon_hero_13", "Motley shuts down all ranged units via Twilight. Single-handedly invalidates 4 of 6 factions' early plans."),
-    ("nature_hero_15",  "Halon's Masterful Chain Lightning loses only 25%/bounce — early-game tempo bomb you cannot keep up with."),
-    ("necro_hero_4",    "Kel'Ghul starts with T6 Dread Knights and the only +2-growth tier specialty in the game."),
-    ("nature_hero_17",  "Sullie's magic-immune Avatar is the dominant absorber/dealer in the current Avatar meta."),
-    ("dungeon_hero_3",  "Stinger's poisoned heroic strikes are toxic to fight; she creeps faster than any other might hero."),
-    ("dungeon_hero_16", "Typhona's 2 starting Hydras (T6) clear early biomes flawlessly."),
-    ("necro_hero_1",    "Bulwark's defensive specialty makes Necropolis nearly unbleedable early."),
-    ("necro_hero_6",    "Artorius Veritas's Masterful Berserk dismantles the corner-camping ranged blob meta."),
-    ("demon_hero_9",    "Abigor's +1 hex deploy + scaling init lets him alpha-strike the opponent's back line by L18."),
-    ("dungeon_hero_18", "Lodos's starting Sleep ends week-2 fights instantly."),
-]
+# Note: a cross-faction "top 10 ban list" was removed because the format only
+# allows banning 3 heroes from the opponent's chosen faction — a global list
+# implies a draft action you never take. The actionable per-opponent ban
+# tables live on the per-faction pages (HERO_BANS in build_draft_guide.py).
 
 
 # --------------------------------------------------------------------------- #
@@ -679,15 +670,6 @@ def build():
 
     # Draft guide
     md_lines.append("## Draft strategy\n")
-    md_lines.append("### Top 10 ban list\n")
-    md_lines.append("| # | Hero | Faction | Why ban |")
-    md_lines.append("|---:|---|---|---|")
-    for idx, (hid, why) in enumerate(TOP_BANS, 1):
-        h = heroes[hid]
-        fac_name = faction_by_id[h["faction"]]["name"]
-        md_lines.append(f"| {idx} | **{h['name']}** | {fac_name} | {why} |")
-    md_lines.append("")
-
     md_lines.append("### Opening-pick archetypes\n")
     for title, body in OPENING_PICKS:
         md_lines.append(f"- **{title}.** {body}")
@@ -747,16 +729,6 @@ def build():
     js_payload = {
         "FACTIONS": [{"id": f["id"], "name": f["name"], "might": f["might"], "magic": f["magic"]} for f in factions],
         "FACTION_META": faction_meta_out,
-        "TOP_BANS": [
-            {
-                "id": hid,
-                "name": heroes[hid]["name"],
-                "faction": heroes[hid]["faction"],
-                "factionName": faction_by_id[heroes[hid]["faction"]]["name"],
-                "why": why,
-            }
-            for hid, why in TOP_BANS
-        ],
         "OPENING_PICKS": [{"title": t, "body": b} for t, b in OPENING_PICKS],
         "BY_FACTION": by_faction,
         "GENERATED_AT": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),

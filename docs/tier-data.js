@@ -429,78 +429,6 @@ window.OE_TIER_DATA = {
       }
     }
   },
-  "TOP_BANS": [
-    {
-      "id": "dungeon_hero_13",
-      "name": "Motley",
-      "faction": "dungeon",
-      "factionName": "Dungeon",
-      "why": "Motley shuts down all ranged units via Twilight. Single-handedly invalidates 4 of 6 factions' early plans."
-    },
-    {
-      "id": "nature_hero_15",
-      "name": "Halon",
-      "faction": "sylvan",
-      "factionName": "Grove",
-      "why": "Halon's Masterful Chain Lightning loses only 25%/bounce — early-game tempo bomb you cannot keep up with."
-    },
-    {
-      "id": "necro_hero_4",
-      "name": "Kel’Ghul",
-      "faction": "necropolis",
-      "factionName": "Necropolis",
-      "why": "Kel'Ghul starts with T6 Dread Knights and the only +2-growth tier specialty in the game."
-    },
-    {
-      "id": "nature_hero_17",
-      "name": "Sullie",
-      "faction": "sylvan",
-      "factionName": "Grove",
-      "why": "Sullie's magic-immune Avatar is the dominant absorber/dealer in the current Avatar meta."
-    },
-    {
-      "id": "dungeon_hero_3",
-      "name": "Stinger",
-      "faction": "dungeon",
-      "factionName": "Dungeon",
-      "why": "Stinger's poisoned heroic strikes are toxic to fight; she creeps faster than any other might hero."
-    },
-    {
-      "id": "dungeon_hero_16",
-      "name": "Typhona",
-      "faction": "dungeon",
-      "factionName": "Dungeon",
-      "why": "Typhona's 2 starting Hydras (T6) clear early biomes flawlessly."
-    },
-    {
-      "id": "necro_hero_1",
-      "name": "Bulwark",
-      "faction": "necropolis",
-      "factionName": "Necropolis",
-      "why": "Bulwark's defensive specialty makes Necropolis nearly unbleedable early."
-    },
-    {
-      "id": "necro_hero_6",
-      "name": "Artorius Veritas",
-      "faction": "necropolis",
-      "factionName": "Necropolis",
-      "why": "Artorius Veritas's Masterful Berserk dismantles the corner-camping ranged blob meta."
-    },
-    {
-      "id": "demon_hero_9",
-      "name": "Abigor, Duke of Battle",
-      "faction": "hive",
-      "factionName": "Hive",
-      "why": "Abigor's +1 hex deploy + scaling init lets him alpha-strike the opponent's back line by L18."
-    },
-    {
-      "id": "dungeon_hero_18",
-      "name": "Lodos",
-      "faction": "dungeon",
-      "factionName": "Dungeon",
-      "why": "Lodos's starting Sleep ends week-2 fights instantly."
-    }
-  ],
   "OPENING_PICKS": [
     {
       "title": "Avatar + Thaumaturgy",
@@ -2149,5 +2077,5 @@ window.OE_TIER_DATA = {
       }
     ]
   },
-  "GENERATED_AT": "2026-05-10 03:03 UTC"
+  "GENERATED_AT": "2026-05-10 03:12 UTC"
 };
