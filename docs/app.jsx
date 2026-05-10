@@ -9,7 +9,7 @@
 
 const SIMPLE_VIEWS = ['index', 'mechanics', 'factions',
                       'subclasses', 'skills', 'heroes', 'units',
-                      'tier', 'guides', 'draft', 'spells',
+                      'tier', 'guides', 'draft', 'spells', 'combat',
                       'map-objects', 'map-templates', 'resources', 'artifacts'];
 
 // Detect the base path. On GitHub Pages this is '/homm-olden/'; locally '/'.
@@ -124,6 +124,7 @@ const titleFor = (route) => {
     case 'artifacts':     return t('Artifacts');
     case 'heroes':        return t('Heroes');
     case 'units':         return t('Units');
+    case 'combat':        return t('Combat sim');
     case 'tier':          return t('Tier list');
     case 'guides':        return t('Guides');
     case 'draft':         return t('Draft');
@@ -220,6 +221,7 @@ const App = () => {
         <a className={tabActive('artifacts')}     href={url('artifacts')}     onClick={(e)=>{e.preventDefault();go('artifacts');}}>Artifacts</a>
         <a className={tabActive('heroes')}     href={url('heroes')}      onClick={(e)=>{e.preventDefault();go('heroes');}}>Heroes</a>
         <a className={tabActive('units')}      href={url('units')}       onClick={(e)=>{e.preventDefault();go('units');}}>Units</a>
+        <a className={tabActive('combat')}     href={url('combat')}      onClick={(e)=>{e.preventDefault();go('combat');}}>Combat sim</a>
         <a className={tabActive('tier')}       href={url('tier')}        onClick={(e)=>{e.preventDefault();go('tier');}}>Tier list</a>
         <a className={tabActive('guides')}     href={url('guides')}      onClick={(e)=>{e.preventDefault();go('guides');}}>Guides</a>
         <a className={tabActive('draft')}      href={url('draft')}       onClick={(e)=>{e.preventDefault();go('draft');}}>Draft</a>
@@ -243,6 +245,7 @@ const App = () => {
       {route.view==='hero'          && <window.HeroView heroId={route.heroId} go={go} />}
       {route.view==='spell'         && <window.SpellView spellId={route.spellId} go={go} />}
       {route.view==='unit'          && <window.UnitView unitId={route.unitId} go={go} />}
+      {route.view==='combat'     && <window.CombatView go={go} />}
       {route.view==='tier'       && <window.TierView />}
       {route.view==='guides'     && <window.GuidesView />}
       {route.view==='draft'      && <window.DraftView />}
