@@ -228,7 +228,7 @@ HERO_BANS = {
         ("nature_hero_17", "Sullie",           "Avatar specialist; her Avatar is immune to magic damage"),
         ("nature_hero_9",  "Aunt Daliar",      "Insight + Civic Innovation = blast through the law tree"),
         ("nature_hero_11", "Elder Tss'kish",   "Thaumaturgy + Herbomancer buffs; late-game double/triple-cast"),
-        ("nature_hero_3",  "Gingertail",       "Fawn tempo; 3 Fawn stacks + Init/HP buff"),
+        ("nature_hero_3",  "Gingertail",       "Faun tempo; 3 Faun stacks + Init/HP buff"),
     ],
     "dungeon": [
         ("dungeon_hero_13", "Motley",          "Onyx Dancers + Twilight; shuts down all enemy ranged units"),

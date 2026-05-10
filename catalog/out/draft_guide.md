@@ -87,7 +87,7 @@ If your opponent picks faction X, your best response is:
 2. **Sullie** — Avatar specialist; her Avatar is immune to magic damage
 3. **Aunt Daliar** — Insight + Civic Innovation = blast through the law tree
 4. **Elder Tss'kish** — Thaumaturgy + Herbomancer buffs; late-game double/triple-cast
-5. **Gingertail** — Fawn tempo; 3 Fawn stacks + Init/HP buff
+5. **Gingertail** — Faun tempo; 3 Faun stacks + Init/HP buff
 
 ### vs Dungeon
 
@@ -123,4 +123,4 @@ If your opponent picks faction X, your best response is:
 
 ---
 
-*Generated 2026-05-10 03:03 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*
+*Generated 2026-05-10 04:45 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*

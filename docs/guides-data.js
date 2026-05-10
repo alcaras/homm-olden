@@ -307,7 +307,7 @@ window.OE_GUIDES_DATA = {
     {
       "id": "sylvan",
       "name": "Grove",
-      "summary": "Grove's strategy is 'skip the mid-tier dwellings'. Lean into Fawn Archer + Dusk Hoplite (0-mana +3 spell power per cast) + Murmurmancer (re-cast spellbook) and use Avatar Vomit to cheese mid-tier objectives. The law tree is widely panned ('the most dogshit law tree') — only 3-4 laws are actually worth taking.",
+      "summary": "Grove's strategy is 'skip the mid-tier dwellings'. Lean into Faun Archer + Dusk Hoplite (0-mana +3 spell power per cast) + Murmurmancer (re-cast spellbook) and use Avatar Vomit to cheese mid-tier objectives. The law tree is widely panned ('the most dogshit law tree') — only 3-4 laws are actually worth taking.",
       "buildOrder": [
         {
           "phase": "Day 1",
@@ -356,7 +356,7 @@ window.OE_GUIDES_DATA = {
           "shortId": "Tier_1",
           "name": "Faun Huts",
           "priority": "B",
-          "note": "Faun Huts upgrade if you skipped on day 1. Fawn Archers are still relevant late if not running Gingertail."
+          "note": "Faun Huts upgrade if you skipped on day 1. Faun Archers are still relevant late if not running Gingertail."
         },
         {
           "phase": "Week 2-3",
@@ -920,5 +920,5 @@ window.OE_GUIDES_DATA = {
       "body": "Several factions (notably Temple) gate the elite training building behind Mage Guild. Always check the dependency tree before queuing your week."
     }
   ],
-  "GENERATED_AT": "2026-05-10 03:03 UTC"
+  "GENERATED_AT": "2026-05-10 04:45 UTC"
 };

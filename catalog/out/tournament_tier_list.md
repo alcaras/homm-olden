@@ -13,7 +13,7 @@ Per-faction tier list for single-hero PvP on tournament templates (Exodus-flavor
 ### Opening-pick archetypes
 
 - **Avatar + Thaumaturgy.** Any hero that can pair Summon Avatar with Thaumaturgy double-cast is a top-tier build. The Avatar tanks retaliation, ties up enemy ranged units, and bait-baits the AI. Sullie (Grove), Changeling Urgo (Schism), Oriax (Hive), and Pip (Temple, by drafting into it) all enable this archetype.
-- **T1 archer doom-stack.** Factions that start with strong T1 ranged units — Temple (Crossbowman/Austringer), Necropolis (Skeleton Archer via Onkos), Grove (Fawn Archer), Schism (Stinging Rashoth via Grellekh) — farm Pandora boxes for 100+ archer stacks that trivialize mid-game breakthroughs.
+- **T1 archer doom-stack.** Factions that start with strong T1 ranged units — Temple (Crossbowman/Austringer), Necropolis (Skeleton Archer via Onkos), Grove (Faun Archer), Schism (Stinging Rashoth via Grellekh) — farm Pandora boxes for 100+ archer stacks that trivialize mid-game breakthroughs.
 - **Heroic-strike chains.** Combat → Effortless Strike → Confusing Strike makes Heroic Strike free *and* counter-attack-removing. Curson (Hive), Stinger (Dungeon), Mandall (Temple), Artorius (Necropolis) live on this engine.
 - **Masterful starting spell.** Heroes starting with a Masterful version of a key spell skip 5-10 levels of scaling. Halon (Chain Lightning), Marl (Web), Mila (Haste), Motley (Twilight), Lodos (Sleep), Artorius (Berserk), Lord Rufus (Rewind Life) all qualify.
 - **Tier 6+ on day 1.** Some heroes start with a T6+ unit, letting you clear neutral camps with zero losses immediately: Kel'Ghul (Dread Knights, T6), Typhona (Hydras, T6). Big advantage in week 1.
@@ -110,9 +110,9 @@ Deepest hero roster in the game — even after 3 bans you'll still get an S/A pi
 
 ### Grove (Warden / Druid)
 
-Grove (formerly Sylvan). T1 Fawn Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.
+Grove (formerly Sylvan). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.
 
-*Creature tip:* Fawn Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.
+*Creature tip:* Faun Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.
 
 #### Tier S
 
@@ -128,7 +128,7 @@ Grove (formerly Sylvan). T1 Fawn Archer (Sharpshooter), T2 Dusk Hoplite (free +3
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
 | **Gorel Spearhead** | Warden (might) | Shooter | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Offense specialist. Ranged/melee/long-reach attacks all scale with level. The reliable fallback when S-tier is banned out. |
-| **Gingertail** | Warden (might) | Faunsong | 7–11 Faun · 7–11 Faun · 7–11 Faun | Ultimate Fawn tempo hero. Starts with 3 Fawn stacks + Init/HP buff; in Exodus you can amass 100+ Fawn Warriors and curb-stomp the early map. |
+| **Gingertail** | Warden (might) | Faunsong | 7–11 Faun · 7–11 Faun · 7–11 Faun | Ultimate Faun tempo hero. Starts with 3 Faun stacks + Init/HP buff; in Exodus you can amass 100+ Faun Warriors and curb-stomp the early map. |
 | **Faleor** | Warden (might) | Hksmilla’s Step | 9–14 Faun · 6–8 Hoplet · 4–6 Vine Iriyad | Master Fireball specialist (sleeper pick). Advanced Murmuring start gives free Child of the Woods (+30 mana cap) — Dusk Hoplite combo nukes the early map. |
 | **Vatawna** | Druid (magic) | Spiritual Vigor | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | *S-tier on Vendetta* (DD twice on day 1) but middle-of-pack on Exodus. Ranking reflects Exodus. |
 | **The Minstrel** | Druid (magic) | Wandering Musician | 8–11 Faun · 5–7 Hoplet · 3–5 Vine Iriyad | Top morale-focused pick. Innate focus charges + crowd control; thrives in fast tournament formats. |
@@ -286,4 +286,4 @@ Phenomenally strong in single-hero PvP — top picks are 'perma-ban or perma-pic
 
 ---
 
-*Generated 2026-05-10 03:12 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*
+*Generated 2026-05-10 04:45 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*

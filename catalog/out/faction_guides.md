@@ -83,7 +83,7 @@ Necropolis snowballs through a Skeleton Archer doom-stack + Lich Rewind Death su
 
 ## Grove
 
-Grove's strategy is 'skip the mid-tier dwellings'. Lean into Fawn Archer + Dusk Hoplite (0-mana +3 spell power per cast) + Murmurmancer (re-cast spellbook) and use Avatar Vomit to cheese mid-tier objectives. The law tree is widely panned ('the most dogshit law tree') — only 3-4 laws are actually worth taking.
+Grove's strategy is 'skip the mid-tier dwellings'. Lean into Faun Archer + Dusk Hoplite (0-mana +3 spell power per cast) + Murmurmancer (re-cast spellbook) and use Avatar Vomit to cheese mid-tier objectives. The law tree is widely panned ('the most dogshit law tree') — only 3-4 laws are actually worth taking.
 
 ### Build order
 
@@ -95,7 +95,7 @@ Grove's strategy is 'skip the mid-tier dwellings'. Lean into Fawn Archer + Dusk 
 | Day 3-5 | `Wall` | **Fortifications** | S | Fortifications T1 → T2. Same +50% growth scalar as every other faction — mandatory. |
 | Day 4-5 | `Magic_Guild` | **Mage Guild** | S | Mage Guild L1 — fish for Avatar / Fireball / Slow. Critical for the spellbook combo. Build *before* secondary economy. |
 | Week 1-2 | `Bank` | **Bank** | A | Bank goes in *after* Resource Riches lands — the law gives you a burst of resources that pivots straight into a Bank. |
-| Week 2 | `Tier_1` | **Faun Huts** | B | Faun Huts upgrade if you skipped on day 1. Fawn Archers are still relevant late if not running Gingertail. |
+| Week 2 | `Tier_1` | **Faun Huts** | B | Faun Huts upgrade if you skipped on day 1. Faun Archers are still relevant late if not running Gingertail. |
 | Week 2-3 | `Unic_2` | **Mother Nature** | B | Mother Nature (+2 spell power). Strong only with caster heroes (Halon, Sullie, Tss'kish). |
 | — | `Tier_3` | **Menhir Circle** | trap | Menhir Circle (Iriyads/Naiads). The Qilin build path is 'horrendous' (Mage Guild → Iriyads → useless Naiads → Qilins). Skip and run Avatar Vomit instead. |
 | — | `Tier_6` | **Thunder Lair** | trap | Thunder Lair (Qilins). Only viable if you specifically committed to Naiads. Most Grove builds skip Qilins entirely. |
@@ -217,4 +217,4 @@ Dungeon is one of the strongest tournament factions because of how its laws inte
 
 ---
 
-*Generated 2026-05-10 03:03 UTC by `catalog/scripts/build_faction_guides.py`. Edit the `GUIDES` dict to update.*
+*Generated 2026-05-10 04:45 UTC by `catalog/scripts/build_faction_guides.py`. Edit the `GUIDES` dict to update.*

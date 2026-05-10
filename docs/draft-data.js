@@ -273,7 +273,7 @@ window.OE_DRAFT_DATA = {
       {
         "id": "nature_hero_3",
         "name": "Gingertail",
-        "why": "Fawn tempo; 3 Fawn stacks + Init/HP buff"
+        "why": "Faun tempo; 3 Faun stacks + Init/HP buff"
       }
     ],
     "dungeon": [
@@ -385,5 +385,5 @@ window.OE_DRAFT_DATA = {
       }
     ]
   },
-  "GENERATED_AT": "2026-05-10 03:03 UTC"
+  "GENERATED_AT": "2026-05-10 04:45 UTC"
 };

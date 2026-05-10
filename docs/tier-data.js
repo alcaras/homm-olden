@@ -169,12 +169,12 @@ window.OE_TIER_DATA = {
       }
     },
     "sylvan": {
-      "summary": "Grove (formerly Sylvan). T1 Fawn Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.",
-      "creature_tip": "Fawn Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.",
+      "summary": "Grove (formerly Sylvan). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.",
+      "creature_tip": "Faun Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.",
       "army_comp": [
         [
           "T1",
-          "Fawn Archer",
+          "Faun Archer",
           "Essential T1 ranged for Pandora-box farming. Tuck in a corner during focus-heavy play."
         ],
         [
@@ -209,7 +209,7 @@ window.OE_TIER_DATA = {
         ]
       ],
       "army_tactics": [
-        "Focus-kiting: split Hoplets for turn-1 focus, Sporomancers DoT, Fawns pick from the corner.",
+        "Focus-kiting: split Hoplets for turn-1 focus, Sporomancers DoT, Fauns pick from the corner.",
         "Avatar Vomit + Thaumaturgy double-cast is *the* meta archetype.",
         "Tss'kish buffs Herbomancers (speed/init/HP/atk/def). Advanced Murmuring starts you with +2 focus.",
         "Strong Connection law: every focus spend reduces spell cooldown — combos with the Hoplite focus loop."
@@ -217,15 +217,15 @@ window.OE_TIER_DATA = {
       "army_phases": [
         [
           "Early — 1-2-3 fights (week 1)",
-          "T1 Fawn Archer split into 2-3 stacks (Gingertail start = 3 stacks day 1) + Dusk Hoplite 1-stacks (focus engine) tucked next to the corner. Skip T3 dwellings entirely. Goal: kite from the corner with Fawns while Hoplites generate focus for the hero's spell book."
+          "T1 Faun Archer split into 2-3 stacks (Gingertail start = 3 stacks day 1) + Dusk Hoplite 1-stacks (focus engine) tucked next to the corner. Skip T3 dwellings entirely. Goal: kite from the corner with Fauns while Hoplites generate focus for the hero's spell book."
         ],
         [
           "Mid — 1-3-5 fights (week 2)",
-          "Fawn base + Dusk Hoplite 1-stacks + Sporomancer (T5, your Herbomancer upgrade). Avatar Vomit comes online — Avatar absorbs neutral retaliation while Hoplet focus fuels triple-cast turns from Murmurmancer. Skip the T3/T4 dwelling spend entirely; that gold goes to Mage Guild + walls."
+          "Faun base + Dusk Hoplite 1-stacks + Sporomancer (T5, your Herbomancer upgrade). Avatar Vomit comes online — Avatar absorbs neutral retaliation while Hoplet focus fuels triple-cast turns from Murmurmancer. Skip the T3/T4 dwelling spend entirely; that gold goes to Mage Guild + walls."
         ],
         [
           "Late — 1-4-7 fights (week 3 break / final duel)",
-          "Fawn doom-stack + Sporomancer + Murmurmancer (re-cast spellbook) + Phoenix (T7) if you got it. The Avatar tank + Bee DoT + spell volume from a Tss'kish/Sullie-type hero is the win condition. T6 Qilins are still skipped on most builds."
+          "Faun doom-stack + Sporomancer + Murmurmancer (re-cast spellbook) + Phoenix (T7) if you got it. The Avatar tank + Bee DoT + spell volume from a Tss'kish/Sullie-type hero is the win condition. T6 Qilins are still skipped on most builds."
         ]
       ],
       "signature_mechanic": {
@@ -436,7 +436,7 @@ window.OE_TIER_DATA = {
     },
     {
       "title": "T1 archer doom-stack",
-      "body": "Factions that start with strong T1 ranged units — Temple (Crossbowman/Austringer), Necropolis (Skeleton Archer via Onkos), Grove (Fawn Archer), Schism (Stinging Rashoth via Grellekh) — farm Pandora boxes for 100+ archer stacks that trivialize mid-game breakthroughs."
+      "body": "Factions that start with strong T1 ranged units — Temple (Crossbowman/Austringer), Necropolis (Skeleton Archer via Onkos), Grove (Faun Archer), Schism (Stinging Rashoth via Grellekh) — farm Pandora boxes for 100+ archer stacks that trivialize mid-game breakthroughs."
     },
     {
       "title": "Heroic-strike chains",
@@ -1082,7 +1082,7 @@ window.OE_TIER_DATA = {
         "armyScore": 2268,
         "tier": "A",
         "derived": false,
-        "note": "Gingertail — ultimate Fawn tempo hero. Starts with 3 Fawn stacks + Init/HP buff; in Exodus you can amass 100+ Fawn Warriors and curb-stomp the early map."
+        "note": "Gingertail — ultimate Faun tempo hero. Starts with 3 Faun stacks + Init/HP buff; in Exodus you can amass 100+ Faun Warriors and curb-stomp the early map."
       },
       {
         "id": "nature_hero_7",
@@ -2077,5 +2077,5 @@ window.OE_TIER_DATA = {
       }
     ]
   },
-  "GENERATED_AT": "2026-05-10 03:12 UTC"
+  "GENERATED_AT": "2026-05-10 04:45 UTC"
 };

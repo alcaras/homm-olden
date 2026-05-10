@@ -112,14 +112,14 @@ FACTION_META = {
     },
     "sylvan": {
         "summary": (
-            "Grove (formerly Sylvan). T1 Fawn Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power "
+            "Grove (formerly Sylvan). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power "
             "via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is "
             "the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most "
             "dogshit law tree') outside a handful of unit-specific picks."
         ),
-        "creature_tip": "Fawn Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.",
+        "creature_tip": "Faun Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.",
         "army_comp": [
-            ("T1", "Fawn Archer", "Essential T1 ranged for Pandora-box farming. Tuck in a corner during focus-heavy play."),
+            ("T1", "Faun Archer", "Essential T1 ranged for Pandora-box farming. Tuck in a corner during focus-heavy play."),
             ("T2", "Dusk Hoplite", "Split into 1-stacks for continuous focus generation; Swift Strike = no retaliation. The faction's spell-power engine."),
             ("T3", "(skip)", "Menhir Circle / Iriyad path is widely panned — the Qilin tech route is 'horrendous'. Skip and run Avatar Vomit instead."),
             ("T4", "(skip — go Sporomancer)", "Skip the standard T4 dwelling — instead you want Sporomancer/Murmurmancer below. Mid-tier dwellings are the trap."),
@@ -128,18 +128,18 @@ FACTION_META = {
             ("T7", "Phoenix", "Resurrects on death once per battle. Decent late-game finisher but most plans win before T7 lands."),
         ],
         "army_tactics": [
-            "Focus-kiting: split Hoplets for turn-1 focus, Sporomancers DoT, Fawns pick from the corner.",
+            "Focus-kiting: split Hoplets for turn-1 focus, Sporomancers DoT, Fauns pick from the corner.",
             "Avatar Vomit + Thaumaturgy double-cast is *the* meta archetype.",
             "Tss'kish buffs Herbomancers (speed/init/HP/atk/def). Advanced Murmuring starts you with +2 focus.",
             "Strong Connection law: every focus spend reduces spell cooldown — combos with the Hoplite focus loop.",
         ],
         "army_phases": [
             ("Early — 1-2-3 fights (week 1)",
-             "T1 Fawn Archer split into 2-3 stacks (Gingertail start = 3 stacks day 1) + Dusk Hoplite 1-stacks (focus engine) tucked next to the corner. Skip T3 dwellings entirely. Goal: kite from the corner with Fawns while Hoplites generate focus for the hero's spell book."),
+             "T1 Faun Archer split into 2-3 stacks (Gingertail start = 3 stacks day 1) + Dusk Hoplite 1-stacks (focus engine) tucked next to the corner. Skip T3 dwellings entirely. Goal: kite from the corner with Fauns while Hoplites generate focus for the hero's spell book."),
             ("Mid — 1-3-5 fights (week 2)",
-             "Fawn base + Dusk Hoplite 1-stacks + Sporomancer (T5, your Herbomancer upgrade). Avatar Vomit comes online — Avatar absorbs neutral retaliation while Hoplet focus fuels triple-cast turns from Murmurmancer. Skip the T3/T4 dwelling spend entirely; that gold goes to Mage Guild + walls."),
+             "Faun base + Dusk Hoplite 1-stacks + Sporomancer (T5, your Herbomancer upgrade). Avatar Vomit comes online — Avatar absorbs neutral retaliation while Hoplet focus fuels triple-cast turns from Murmurmancer. Skip the T3/T4 dwelling spend entirely; that gold goes to Mage Guild + walls."),
             ("Late — 1-4-7 fights (week 3 break / final duel)",
-             "Fawn doom-stack + Sporomancer + Murmurmancer (re-cast spellbook) + Phoenix (T7) if you got it. The Avatar tank + Bee DoT + spell volume from a Tss'kish/Sullie-type hero is the win condition. T6 Qilins are still skipped on most builds."),
+             "Faun doom-stack + Sporomancer + Murmurmancer (re-cast spellbook) + Phoenix (T7) if you got it. The Avatar tank + Bee DoT + spell volume from a Tss'kish/Sullie-type hero is the win condition. T6 Qilins are still skipped on most builds."),
         ],
     },
     "hive": {
@@ -372,8 +372,8 @@ HEROES_TIERS = [
      "Gorel Spearhead — Offense specialist. Ranged/melee/long-reach attacks all scale with level. The "
      "reliable fallback when S-tier is banned out."),
     ("nature_hero_3", "A", False,
-     "Gingertail — ultimate Fawn tempo hero. Starts with 3 Fawn stacks + Init/HP buff; in Exodus you can "
-     "amass 100+ Fawn Warriors and curb-stomp the early map."),
+     "Gingertail — ultimate Faun tempo hero. Starts with 3 Faun stacks + Init/HP buff; in Exodus you can "
+     "amass 100+ Faun Warriors and curb-stomp the early map."),
     ("nature_hero_7", "A", False,
      "Faleor — Master Fireball specialist (sleeper pick). Advanced Murmuring start gives free Child of the "
      "Woods (+30 mana cap) — Dusk Hoplite combo nukes the early map."),
@@ -564,7 +564,7 @@ OPENING_PICKS = [
      "Oriax (Hive), and Pip (Temple, by drafting into it) all enable this archetype."),
     ("T1 archer doom-stack",
      "Factions that start with strong T1 ranged units — Temple (Crossbowman/Austringer), Necropolis (Skeleton "
-     "Archer via Onkos), Grove (Fawn Archer), Schism (Stinging Rashoth via Grellekh) — farm Pandora boxes for "
+     "Archer via Onkos), Grove (Faun Archer), Schism (Stinging Rashoth via Grellekh) — farm Pandora boxes for "
      "100+ archer stacks that trivialize mid-game breakthroughs."),
     ("Heroic-strike chains",
      "Combat → Effortless Strike → Confusing Strike makes Heroic Strike free *and* counter-attack-removing. "
