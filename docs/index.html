@@ -4,6 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Olden Era — Reference</title>
+<script>
+  // CRITICAL: insert <base> BEFORE the stylesheet / scripts below so their
+  // relative URLs (style.css, data.js, dist/app.js) always resolve to the
+  // application root — not to wherever history.replaceState moves the URL.
+  // Without this, deep paths like /buildings/necropolis cause every relative
+  // <script src="data.js"> to resolve to /buildings/data.js → 404 → React
+  // never mounts → blank page.
+  (function () {
+    var base = document.createElement('base');
+    base.href = location.pathname.indexOf('/homm-olden/') === 0 ? '/homm-olden/' : '/';
+    document.head.appendChild(base);
+  })();
+</script>
 <link rel="stylesheet" href="style.css">
 <script>
   // SPA single-page-shim: 404.html stuffed the original deep path into a query
