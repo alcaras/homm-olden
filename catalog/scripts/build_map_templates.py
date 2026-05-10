@@ -60,6 +60,27 @@ def mode_label(game_mode: str) -> str:
     return m or "multiplayer"
 
 
+# Curated list of templates used in competitive tournament play. The .rmg.json
+# files don't carry this distinction — gameMode is just Classic / SingleHero —
+# so we maintain it here. Tournament is *additive* on top of the gameplay
+# mode (an Exodus template is BOTH single-hero AND tournament).
+TOURNAMENT_TEMPLATES = {
+    "exodus",          # the canonical Exodus tournament template
+    "exodus_classic",  # classic-mode variant
+    "vendetta",
+    "sprint",
+    "jebus_cross",
+    "jebus_cross_classic",
+    "jebus_outcast",
+    "massacre",
+    "helltide",
+    "hellmonth",
+    "maneuvers",
+    "blitz",
+    "helltime",
+}
+
+
 def build():
     if not GAME.exists():
         raise SystemExit(f"missing game dir: {GAME}")
@@ -109,16 +130,17 @@ def build():
             mode = "pve"
 
         templates.append({
-            "id":       sid,
-            "name":     name,
-            "desc":     desc,
-            "image":    img_url,
-            "mode":     mode,
-            "size":     size_label(size_x, size_z),
-            "sizeX":    size_x,
-            "sizeZ":    size_z,
-            "heroMin":  hero_min,
-            "heroMax":  hero_max,
+            "id":         sid,
+            "name":       name,
+            "desc":       desc,
+            "image":      img_url,
+            "mode":       mode,
+            "tournament": sid in TOURNAMENT_TEMPLATES,
+            "size":       size_label(size_x, size_z),
+            "sizeX":      size_x,
+            "sizeZ":      size_z,
+            "heroMin":    hero_min,
+            "heroMax":    hero_max,
         })
     templates.sort(key=lambda t: t["name"])
 

@@ -78,6 +78,21 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
+        <a className="card" href={window.OE_routeToUrl("resources")} onClick={(e)=>{e.preventDefault();go('resources');}}>
+          <div className="card-eyebrow">Reference</div>
+          <div className="card-title">Resources</div>
+          <p className="card-desc">
+            The eight resources the game tracks — Gold / Wood / Ore /
+            Gems / Crystal / Mercury / Dust / Graal — with in-game
+            icons, in-game flavor text, and tactical notes for
+            tournament/Exodus play.
+          </p>
+          <div className="card-stats">
+            <span><b>8</b>resources</span>
+            <span><b>3</b>tiers</span>
+          </div>
+        </a>
+
         <a className="card" href={window.OE_routeToUrl("map-objects")} onClick={(e)=>{e.preventDefault();go('map-objects');}}>
           <div className="card-eyebrow">Bestiary</div>
           <div className="card-title">Map Objects</div>

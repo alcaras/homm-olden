@@ -7,11 +7,15 @@ const MapTemplatesView = () => {
   const [mode, setMode] = React.useState('all');
   const [size, setSize] = React.useState('all');
 
-  const allModes = Array.from(new Set(D.TEMPLATES.map(t => t.mode))).sort();
   const allSizes = ['small', 'medium', 'large', 'huge'];
+  // Include 'tournament' in the mode filter even though it's a separate flag —
+  // surfaced here so users can scope to "the templates used competitively".
+  const baseModes = Array.from(new Set(D.TEMPLATES.map(t => t.mode))).sort();
+  const allModes = ['tournament', ...baseModes.filter(m => m !== 'tournament')];
 
   const filtered = D.TEMPLATES.filter(t => {
-    if (mode !== 'all' && t.mode !== mode) return false;
+    if (mode === 'tournament') { if (!t.tournament) return false; }
+    else if (mode !== 'all' && t.mode !== mode) return false;
     if (size !== 'all' && t.size !== size) return false;
     return true;
   });
@@ -93,6 +97,7 @@ const TemplateCard = ({t}) => {
           <h3 className="mt-name">{t.name}</h3>
           <div className="mt-tags">
             <span className={`mt-tag mt-tag-${t.mode}`}>{labelMode(t.mode)}</span>
+            {t.tournament && <span className="mt-tag mt-tag-tournament">Tournament</span>}
             <span className={`mt-tag mt-tag-size mt-tag-size-${t.size}`}>
               {labelSize(t.size)} ({t.sizeX}×{t.sizeZ})
             </span>

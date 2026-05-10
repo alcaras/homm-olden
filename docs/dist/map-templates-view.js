@@ -3,10 +3,13 @@ const MapTemplatesView = () => {
   if (!D) return /* @__PURE__ */ React.createElement("p", null, "Template data not loaded.");
   const [mode, setMode] = React.useState("all");
   const [size, setSize] = React.useState("all");
-  const allModes = Array.from(new Set(D.TEMPLATES.map((t) => t.mode))).sort();
   const allSizes = ["small", "medium", "large", "huge"];
+  const baseModes = Array.from(new Set(D.TEMPLATES.map((t) => t.mode))).sort();
+  const allModes = ["tournament", ...baseModes.filter((m) => m !== "tournament")];
   const filtered = D.TEMPLATES.filter((t) => {
-    if (mode !== "all" && t.mode !== mode) return false;
+    if (mode === "tournament") {
+      if (!t.tournament) return false;
+    } else if (mode !== "all" && t.mode !== mode) return false;
     if (size !== "all" && t.size !== size) return false;
     return true;
   });
@@ -54,6 +57,6 @@ const TemplateCard = ({ t }) => {
         e.target.style.visibility = "hidden";
       }
     }
-  ), /* @__PURE__ */ React.createElement("div", { className: "mt-body" }, /* @__PURE__ */ React.createElement("header", { className: "mt-head" }, /* @__PURE__ */ React.createElement("h3", { className: "mt-name" }, t.name), /* @__PURE__ */ React.createElement("div", { className: "mt-tags" }, /* @__PURE__ */ React.createElement("span", { className: `mt-tag mt-tag-${t.mode}` }, labelMode(t.mode)), /* @__PURE__ */ React.createElement("span", { className: `mt-tag mt-tag-size mt-tag-size-${t.size}` }, labelSize(t.size), " (", t.sizeX, "\xD7", t.sizeZ, ")"), heroes && /* @__PURE__ */ React.createElement("span", { className: "mt-tag mt-tag-players" }, heroes, " hero", heroes === "1" ? "" : "es"))), /* @__PURE__ */ React.createElement("p", { className: "mt-desc" }, t.desc)));
+  ), /* @__PURE__ */ React.createElement("div", { className: "mt-body" }, /* @__PURE__ */ React.createElement("header", { className: "mt-head" }, /* @__PURE__ */ React.createElement("h3", { className: "mt-name" }, t.name), /* @__PURE__ */ React.createElement("div", { className: "mt-tags" }, /* @__PURE__ */ React.createElement("span", { className: `mt-tag mt-tag-${t.mode}` }, labelMode(t.mode)), t.tournament && /* @__PURE__ */ React.createElement("span", { className: "mt-tag mt-tag-tournament" }, "Tournament"), /* @__PURE__ */ React.createElement("span", { className: `mt-tag mt-tag-size mt-tag-size-${t.size}` }, labelSize(t.size), " (", t.sizeX, "\xD7", t.sizeZ, ")"), heroes && /* @__PURE__ */ React.createElement("span", { className: "mt-tag mt-tag-players" }, heroes, " hero", heroes === "1" ? "" : "es"))), /* @__PURE__ */ React.createElement("p", { className: "mt-desc" }, t.desc)));
 };
 window.MapTemplatesView = MapTemplatesView;
