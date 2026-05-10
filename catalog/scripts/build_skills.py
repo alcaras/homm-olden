@@ -142,6 +142,12 @@ def load_subclasses_from_data_js() -> list[dict]:
     return json.loads(m.group(1))
 
 
+def load_heroes_from_data_js() -> list[dict]:
+    text = DATA_JS.read_text(encoding="utf-8")
+    m = re.search(r"const HEROES = (\[.*?\]);", text, re.DOTALL)
+    return json.loads(m.group(1))
+
+
 # --------------------------------------------------------------------------- #
 # Bonus → human-readable summary
 # --------------------------------------------------------------------------- #
@@ -200,6 +206,47 @@ def build():
     subskills = {s["id"]: s for s in load_json_strip(SUB_SKILLS_JSON)["array"]}
     tokens    = load_tokens(SKILLS_TOKENS)
     subclasses = load_subclasses_from_data_js()
+    heroes     = load_heroes_from_data_js()
+
+    # English-display-name → skill_id, for resolving the heroes' starting-skill
+    # display strings ("Daylight Magic L1") back to canonical skill ids.
+    # Normalize curly apostrophes vs ASCII apostrophes — game text uses U+2019
+    # but data.js may have ' depending on regen path.
+    def norm(s: str) -> str:
+        return s.replace("’", "'").replace("‘", "'").strip()
+
+    name_to_skill_id: dict[str, str] = {}
+    for sk in skills:
+        nm = tokens.get(sk.get("name") or f"{sk['id']}_name")
+        if nm:
+            name_to_skill_id[norm(nm)] = sk["id"]
+
+    # Build skill_id → list of starting-hero refs (with starting level)
+    skill_to_starters: dict[str, list[dict]] = {}
+    unresolved: set[str] = set()
+    for h in heroes:
+        for s_str in (h.get("skills") or []):
+            # Format: "<Skill Name> L<n>"
+            mm = re.match(r"^(.*) L([1-3])$", s_str)
+            if not mm:
+                continue
+            sname, slvl = norm(mm.group(1)), int(mm.group(2))
+            sid = name_to_skill_id.get(sname)
+            if not sid:
+                unresolved.add(sname)
+                continue
+            skill_to_starters.setdefault(sid, []).append({
+                "id":      h["id"],
+                "name":    h["name"],
+                "faction": h["faction"],
+                "kind":    h["kind"],
+                "level":   slvl,
+            })
+    if unresolved:
+        print(f"  unresolved hero starting-skill names: {sorted(unresolved)}")
+    # Sort each starter list: L2 starters first (rare), then alphabetically
+    for sid in skill_to_starters:
+        skill_to_starters[sid].sort(key=lambda r: (-r["level"], r["faction"], r["name"]))
 
     # Build skill-id → list of subclass refs
     skill_to_subs: dict[str, list[dict]] = {}
@@ -268,6 +315,7 @@ def build():
             "factionId":   faction_display,
             "levels":      levels,
             "subclasses":  skill_to_subs.get(sid, []),
+            "starters":    skill_to_starters.get(sid, []),
         })
 
     payload = {

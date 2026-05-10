@@ -128,6 +128,11 @@ const SkillCard = ({sk, factionById}) => {
             {sk.group === 'never' && (
               <span className="skill-never">never in subclass</span>
             )}
+            {sk.starters.length > 0 && (
+              <span className="skill-starter-count">
+                {sk.starters.length} starting hero{sk.starters.length === 1 ? '' : 'es'}
+              </span>
+            )}
           </div>
           {sk.baseDesc && (
             <p className="skill-base-desc">{sk.baseDesc.replace(/\{[0-9]+\}/g, '?')}</p>
@@ -179,6 +184,34 @@ const SkillCard = ({sk, factionById}) => {
           </div>
         ))}
       </div>
+
+      {sk.starters.length > 0 && (
+        <footer className="skill-foot skill-foot-starters">
+          <div className="skill-foot-head">
+            Heroes who start with {sk.name} ({sk.starters.length})
+          </div>
+          <ul className="skill-starter-list">
+            {sk.starters.map((h, i) => (
+              <li key={i} className="skill-starter">
+                <img loading="lazy" className="skill-starter-portrait"
+                     src={`img/heroes/${h.id}.png`} alt=""
+                     onError={(e)=>{e.target.style.visibility='hidden';}} />
+                <div className="skill-starter-body">
+                  <div className="skill-starter-name">{h.name}</div>
+                  <div className="skill-starter-meta">
+                    <span className={`faction-pill faction-${h.faction}`}>
+                      {factionById[h.faction]?.name || h.faction}
+                    </span>
+                    {h.level > 1 && (
+                      <span className="skill-starter-level">Starts at L{h.level}</span>
+                    )}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </footer>
+      )}
 
       {sk.subclasses.length > 0 && (
         <footer className="skill-foot">

@@ -109,6 +109,43 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "might"
         }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_1",
+          "name": "Niev",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_3",
+          "name": "Onkos",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_10",
+          "name": "Grellekh the Betrayer",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_2",
+          "name": "Gorel Spearhead",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_4",
+          "name": "Kestrel",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -219,6 +256,43 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "might"
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_1",
+          "name": "Enatee",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_7",
+          "name": "Lo",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_1",
+          "name": "Bulwark",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_11",
+          "name": "Icequeen Hel’Ghat",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_3",
+          "name": "John Johnson",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -322,6 +396,29 @@ window.OE_SKILLS_DATA = {
           "class": "Overlord",
           "faction": "dungeon",
           "kind": "might"
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_6",
+          "name": "Devir, son of Devir",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_8",
+          "name": "Goldentongue",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_5",
+          "name": "Aeos the Exalted",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
         }
       ]
     },
@@ -433,6 +530,36 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "might"
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_13",
+          "name": "Motley",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_8",
+          "name": "Rhea",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_13",
+          "name": "Guildmaster Klastor",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_5",
+          "name": "Octavia",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -542,6 +669,36 @@ window.OE_SKILLS_DATA = {
           "class": "Warlock",
           "faction": "dungeon",
           "kind": "magic"
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_7",
+          "name": "Creta, daughter of Navarr",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_15",
+          "name": "Glastor",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_12",
+          "name": "Bathym, Duke of Jewels",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_18",
+          "name": "Clarissa",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -653,6 +810,43 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "magic"
         }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_10",
+          "name": "Fleu",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_7",
+          "name": "Marl",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_1",
+          "name": "Nihil",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_14",
+          "name": "Tölketh",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_1",
+          "name": "Ister",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -763,6 +957,36 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "magic"
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_10",
+          "name": "Kelarr, son of Navarr",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_2",
+          "name": "Maelstrom",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_9",
+          "name": "Aunt Daliar",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_11",
+          "name": "Pip",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -872,6 +1096,43 @@ window.OE_SKILLS_DATA = {
           "class": "Overlord",
           "faction": "dungeon",
           "kind": "might"
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_11",
+          "name": "Zakron the Great",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_15",
+          "name": "Laura",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_2",
+          "name": "Blackhorn",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_6",
+          "name": "Mreowa",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_18",
+          "name": "The Minstrel",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -989,6 +1250,43 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "might"
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_17",
+          "name": "Sunny Rauktol",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_15",
+          "name": "Mila",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_9",
+          "name": "Martyr Tho",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_13",
+          "name": "Lia the Untethered One",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_15",
+          "name": "Vesper",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1104,6 +1402,43 @@ window.OE_SKILLS_DATA = {
           "class": "Overlord",
           "faction": "dungeon",
           "kind": "might"
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_18",
+          "name": "Lodos",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_4",
+          "name": "Zoran, the Self‑Founded",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_14",
+          "name": "Shadespinner Oona",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_17",
+          "name": "Sister Keiri",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_17",
+          "name": "Nadir",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1221,6 +1556,36 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "magic"
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_9",
+          "name": "Gleard the Grey",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_10",
+          "name": "Mag",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_16",
+          "name": "Ra’Davok",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_16",
+          "name": "Echolily",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1337,6 +1702,50 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "magic"
         }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_17",
+          "name": "Khariseth",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_7",
+          "name": "Wal’kha",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_12",
+          "name": "Aeliniel",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_13",
+          "name": "Glacia",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_15",
+          "name": "Halon",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_14",
+          "name": "Vim",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1450,6 +1859,36 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "magic"
         }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_13",
+          "name": "Leira",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_18",
+          "name": "Pauper",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_18",
+          "name": "Milossa the Golden",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_4",
+          "name": "Old Pilgrim",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -1559,6 +1998,36 @@ window.OE_SKILLS_DATA = {
           "class": "Warlock",
           "faction": "dungeon",
           "kind": "magic"
+        }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_11",
+          "name": "Xirr",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_6",
+          "name": "Artorius Veritas",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_6",
+          "name": "The Iron Master",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_14",
+          "name": "Julius",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1672,6 +2141,36 @@ window.OE_SKILLS_DATA = {
           "class": "Overlord",
           "faction": "dungeon",
           "kind": "might"
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_14",
+          "name": "Ylwari",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_2",
+          "name": "King‑of‑Kings",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_8",
+          "name": "Alluring Sh’a",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_10",
+          "name": "Merry Elias",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
         }
       ]
     },
@@ -1792,6 +2291,43 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "might"
         }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_14",
+          "name": "Groo",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_12",
+          "name": "Ethric",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_4",
+          "name": "Jänhei",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_10",
+          "name": "Vatawna",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_12",
+          "name": "Zenith",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -1902,6 +2438,43 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "might"
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_5",
+          "name": "Mouaren",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_5",
+          "name": "Natalida",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_15",
+          "name": "Ulkuth",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_1",
+          "name": "Eith",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_2",
+          "name": "Leon Sticky‑Fingers",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -2011,6 +2584,43 @@ window.OE_SKILLS_DATA = {
           "class": "Warlock",
           "faction": "dungeon",
           "kind": "magic"
+        }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_2",
+          "name": "Tellaris the Betrayed",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_3",
+          "name": "Nor",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_9",
+          "name": "Zam",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_3",
+          "name": "Gingertail",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_7",
+          "name": "Keandra",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
         }
       ]
     },
@@ -2134,6 +2744,36 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "magic"
         }
+      ],
+      "starters": [
+        {
+          "id": "dungeon_hero_4",
+          "name": "Kieran",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_9",
+          "name": "Abigor, Duke of Battle",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_4",
+          "name": "Kel’Ghul",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_3",
+          "name": "Matastala the White",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        }
       ]
     },
     {
@@ -2250,6 +2890,36 @@ window.OE_SKILLS_DATA = {
           "faction": "dungeon",
           "kind": "magic"
         }
+      ],
+      "starters": [
+        {
+          "id": "demon_hero_16",
+          "name": "Oriax",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_8",
+          "name": "Changeling Urgo",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_13",
+          "name": "The Eye Collective",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_17",
+          "name": "Sullie",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        }
       ]
     },
     {
@@ -2326,7 +2996,30 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "necro_hero_11",
+          "name": "Adahn",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_12",
+          "name": "Kwinri",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_6",
+          "name": "Heretic Avis",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "skill_siege",
@@ -2399,7 +3092,8 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": []
     },
     {
       "id": "skill_battle_artistry",
@@ -2472,7 +3166,30 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "dungeon_hero_3",
+          "name": "Stinger",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_5",
+          "name": "Curson, Duke of Rage",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_9",
+          "name": "Old Lord Mandall",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "skill_wisdom",
@@ -2548,7 +3265,37 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "dungeon_hero_12",
+          "name": "Sister Deira",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_16",
+          "name": "Lord Rufus",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_11",
+          "name": "Elder Tss’kish",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_16",
+          "name": "Anastasia the Meek",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "skill_faction_humans",
@@ -2621,7 +3368,135 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "human_hero_8",
+          "name": "Lord Edgar",
+          "faction": "temple",
+          "kind": "might",
+          "level": 2
+        },
+        {
+          "id": "human_hero_5",
+          "name": "Aeos the Exalted",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_16",
+          "name": "Anastasia the Meek",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_18",
+          "name": "Clarissa",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_6",
+          "name": "Heretic Avis",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_1",
+          "name": "Ister",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_3",
+          "name": "John Johnson",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_14",
+          "name": "Julius",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_7",
+          "name": "Keandra",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_4",
+          "name": "Kestrel",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_2",
+          "name": "Leon Sticky‑Fingers",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_13",
+          "name": "Lia the Untethered One",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_10",
+          "name": "Merry Elias",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_17",
+          "name": "Nadir",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_9",
+          "name": "Old Lord Mandall",
+          "faction": "temple",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "human_hero_11",
+          "name": "Pip",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_15",
+          "name": "Vesper",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "human_hero_12",
+          "name": "Zenith",
+          "faction": "temple",
+          "kind": "magic",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "skill_faction_undead",
@@ -2708,7 +3583,135 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "necro_hero_17",
+          "name": "Funerella",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 2
+        },
+        {
+          "id": "necro_hero_8",
+          "name": "Tarius",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 2
+        },
+        {
+          "id": "necro_hero_11",
+          "name": "Adahn",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_6",
+          "name": "Artorius Veritas",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_1",
+          "name": "Bulwark",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_12",
+          "name": "Ethric",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_13",
+          "name": "Guildmaster Klastor",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_4",
+          "name": "Kel’Ghul",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_2",
+          "name": "King‑of‑Kings",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_15",
+          "name": "Laura",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_16",
+          "name": "Lord Rufus",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_10",
+          "name": "Mag",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_7",
+          "name": "Marl",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_18",
+          "name": "Milossa the Golden",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_5",
+          "name": "Natalida",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_3",
+          "name": "Onkos",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_14",
+          "name": "Shadespinner Oona",
+          "faction": "necropolis",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "necro_hero_9",
+          "name": "Zam",
+          "faction": "necropolis",
+          "kind": "might",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "skill_faction_nature",
@@ -2781,7 +3784,135 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "nature_hero_7",
+          "name": "Faleor",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 2
+        },
+        {
+          "id": "nature_hero_12",
+          "name": "Aeliniel",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_8",
+          "name": "Alluring Sh’a",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_9",
+          "name": "Aunt Daliar",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_16",
+          "name": "Echolily",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_1",
+          "name": "Eith",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_11",
+          "name": "Elder Tss’kish",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_3",
+          "name": "Gingertail",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_13",
+          "name": "Glacia",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_2",
+          "name": "Gorel Spearhead",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_15",
+          "name": "Halon",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_6",
+          "name": "Mreowa",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_5",
+          "name": "Octavia",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_4",
+          "name": "Old Pilgrim",
+          "faction": "sylvan",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_17",
+          "name": "Sullie",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_18",
+          "name": "The Minstrel",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_10",
+          "name": "Vatawna",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_14",
+          "name": "Vim",
+          "faction": "sylvan",
+          "kind": "magic",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "skill_faction_unfrozen",
@@ -2860,7 +3991,135 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "unfrozen_hero_18",
+          "name": "Dhüvri",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 2
+        },
+        {
+          "id": "unfrozen_hero_5",
+          "name": "Mara Mat’ha",
+          "faction": "schism",
+          "kind": "might",
+          "level": 2
+        },
+        {
+          "id": "unfrozen_hero_2",
+          "name": "Blackhorn",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_8",
+          "name": "Changeling Urgo",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_10",
+          "name": "Grellekh the Betrayer",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_11",
+          "name": "Icequeen Hel’Ghat",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_4",
+          "name": "Jänhei",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_12",
+          "name": "Kwinri",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_9",
+          "name": "Martyr Tho",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_3",
+          "name": "Matastala the White",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_1",
+          "name": "Nihil",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_16",
+          "name": "Ra’Davok",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_17",
+          "name": "Sister Keiri",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_13",
+          "name": "The Eye Collective",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_6",
+          "name": "The Iron Master",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_14",
+          "name": "Tölketh",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_15",
+          "name": "Ulkuth",
+          "faction": "schism",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "unfrozen_hero_7",
+          "name": "Wal’kha",
+          "faction": "schism",
+          "kind": "might",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "skill_faction_demons",
@@ -2936,7 +4195,135 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "demon_hero_6",
+          "name": "Tavi",
+          "faction": "hive",
+          "kind": "might",
+          "level": 2
+        },
+        {
+          "id": "demon_hero_9",
+          "name": "Abigor, Duke of Battle",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_12",
+          "name": "Bathym, Duke of Jewels",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_5",
+          "name": "Curson, Duke of Rage",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_10",
+          "name": "Fleu",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_8",
+          "name": "Goldentongue",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_14",
+          "name": "Groo",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_17",
+          "name": "Khariseth",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_13",
+          "name": "Leira",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_7",
+          "name": "Lo",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_2",
+          "name": "Maelstrom",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_15",
+          "name": "Mila",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_1",
+          "name": "Niev",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_3",
+          "name": "Nor",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_16",
+          "name": "Oriax",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_18",
+          "name": "Pauper",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_11",
+          "name": "Xirr",
+          "faction": "hive",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "demon_hero_4",
+          "name": "Zoran, the Self‑Founded",
+          "faction": "hive",
+          "kind": "might",
+          "level": 1
+        }
+      ]
     },
     {
       "id": "skill_faction_dungeon",
@@ -3015,7 +4402,135 @@ window.OE_SKILLS_DATA = {
           ]
         }
       ],
-      "subclasses": []
+      "subclasses": [],
+      "starters": [
+        {
+          "id": "dungeon_hero_16",
+          "name": "Typhona",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 2
+        },
+        {
+          "id": "dungeon_hero_7",
+          "name": "Creta, daughter of Navarr",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_6",
+          "name": "Devir, son of Devir",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_1",
+          "name": "Enatee",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_15",
+          "name": "Glastor",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_9",
+          "name": "Gleard the Grey",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_10",
+          "name": "Kelarr, son of Navarr",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_4",
+          "name": "Kieran",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_18",
+          "name": "Lodos",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_13",
+          "name": "Motley",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_5",
+          "name": "Mouaren",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_8",
+          "name": "Rhea",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_12",
+          "name": "Sister Deira",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_3",
+          "name": "Stinger",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_17",
+          "name": "Sunny Rauktol",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_2",
+          "name": "Tellaris the Betrayed",
+          "faction": "dungeon",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_14",
+          "name": "Ylwari",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "dungeon_hero_11",
+          "name": "Zakron the Great",
+          "faction": "dungeon",
+          "kind": "magic",
+          "level": 1
+        }
+      ]
     }
   ],
   "GROUPS": [
@@ -3052,5 +4567,5 @@ window.OE_SKILLS_DATA = {
       "label": "Faction skills (one per faction)"
     }
   ],
-  "GENERATED_AT": "2026-05-10 04:34 UTC"
+  "GENERATED_AT": "2026-05-10 04:40 UTC"
 };

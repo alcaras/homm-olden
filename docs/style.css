@@ -2523,6 +2523,67 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .skill-foot {
   border-top: 1px solid var(--rule);
   padding-top: 0.6rem;
+  margin-top: 0.6rem;
+}
+.skill-foot:first-of-type { margin-top: 0; }
+.skill-foot-starters { margin-bottom: 0.4rem; }
+
+.skill-starter-count {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.skill-starter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.4rem;
+}
+.skill-starter {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.3rem;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  border-radius: 2px;
+}
+.skill-starter-portrait {
+  width: 32px; height: 32px;
+  object-fit: cover;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.skill-starter-body { min-width: 0; flex: 1; }
+.skill-starter-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.skill-starter-meta {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  margin-top: 1px;
+}
+.skill-starter-level {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 .skill-foot-head {
   font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
