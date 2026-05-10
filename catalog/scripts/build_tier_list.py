@@ -44,6 +44,20 @@ FACTION_META = {
             "Daylight buffs (Bless, Riposte, Radiant Armor), aim for double-built Angels by week 1."
         ),
         "creature_tip": "T1 Crossbowman/Austringer is your early-game carrier. Sun's Aegis 1-stacks reduce range damage by 30%.",
+        "army_comp": [
+            ("T1", "Sun's Aegis", "Prefer the Aegis upgrade over Guard Captain. -30% ranged-damage aura adjacent — lets you tank T7 neutrals without losses."),
+            ("T2", "Austringer", "Double Shot beats Marksman sharpshooter. The early power-stack for map clearing."),
+            ("T3", "Guardian Griffin", "Filler. Loyal Protector counterattacks anyone hitting an adjacent friendly — place next to your shooters."),
+            ("T4", "Hierophant 1-stacks / Sun Herald", "Hierophant 1-stacks for spammed speed/init buffs and dispels. Sun Herald upgrade if you want it as a damage stack — passively scales off all friendly buffs."),
+            ("T5", "Sunspear Cavalry", "Jousting bonus +5% per hex moved. Heavy armor pen, scales hard with Daylight buffs. (Cavalry is awkward to spawn early — videos warn against rushing T5.)"),
+            ("T6", "Inquisitor", "Absolute Resistance (immune to magic) + Unyielding (ignores 30% attack). Clunky but a mathematical gigatank vs caster opponents."),
+            ("T7", "Apotheosis", "'Most broken unit in the game.' Insane stats, no melee penalty, aura makes friendlies immune to negative effects. Archangel is the alternate sharpshooter glass-cannon."),
+        ],
+        "army_tactics": [
+            "Daylight buff stack: Bless (+35% dmg) + Riposte (counter before hit) + Radiant Armor (-40% dmg).",
+            "Lightweaver/Hierophant 1-stacks spam buffs/dispels every round; Angels passively absorb all buffs cast on friendly units → buffed Angels nuke.",
+            "Aim for double-built Angels in week 1 — enables zero-loss clears of T7 dwellings.",
+        ],
     },
     "necropolis": {
         "summary": (
@@ -53,6 +67,21 @@ FACTION_META = {
             "Pandora's Box rewards into your own elite units."
         ),
         "creature_tip": "Skeleton Archers split into 1-stacks farm focus; Liches resurrect via Rewind Death; Dread Knights → Avatar of War double-strike.",
+        "army_comp": [
+            ("T1", "Skeleton Archer", "T1 ranged carry. +1 flat damage from Drums of War / Shadow Blades = ~50% damage boost. Mass 100+ from Pandora boxes for steamroll."),
+            ("T2", "Fantasm", "Squishy but applies a DoT curse that enables late-game spell combos. Win-more, weak in auto-resolve."),
+            ("T3", "Barghest", "Fast (-30% melee damage taken). Call of the Pack inflates the stack +25% with temporary units."),
+            ("T4", "Kennelmaster", "Marks enemies for max damage (kills your archer variance). Generates Focus on every kill in radius."),
+            ("T5", "Sanguine Lich", "Best ranged unit on the roster. Rewind Death resurrects high-tier models including Dread Knights — the faction's sustain engine."),
+            ("T6", "Avatar of War (Dread Knight upg)", "Always pick this over Wraith. Double Strike one-shots enemy stacks; permanently steals enemy Attack during combat."),
+            ("T7", "Vampire Lord", "13 Initiative, prevents counterattacks, 40% vampirism resurrects mid-trade. The endgame melee gigachad."),
+        ],
+        "army_tactics": [
+            "Skeleton Archer doom-stack (Pandora-box farmed, 100+) trivializes mid-game breaks.",
+            "Lich Rewind Death sustains the army indefinitely — never skip the T5 build.",
+            "Undead Transformer: drag captured T5/T6/T7 neutrals in, get back Necro equivalents (no morale penalty).",
+            "Vampire Lord + Bloodthirst law + Morituri te Salutant law = retaliation loop that resurrects on every counter.",
+        ],
     },
     "sylvan": {
         "summary": (
@@ -62,6 +91,21 @@ FACTION_META = {
             "dogshit law tree') outside a handful of unit-specific picks."
         ),
         "creature_tip": "Fawn Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.",
+        "army_comp": [
+            ("T1", "Fawn Archer", "Essential T1 ranged for Pandora-box farming. Tuck in a corner during focus-heavy play."),
+            ("T2", "Dusk Hoplite", "Split into 1-stacks for continuous focus generation; Swift Strike = no retaliation. The faction's spell-power engine."),
+            ("T3", "(skip)", "Menhir Circle / Iriyad path is widely panned — the Qilin tech route is 'horrendous'. Skip and run Avatar Vomit instead."),
+            ("T4", "(skip — go Sporomancer)", "Skip the standard T4 dwelling — instead you want Sporomancer/Murmurmancer below. Mid-tier dwellings are the trap."),
+            ("T5", "Sporomancer / Murmurmancer", "Core damage dealer. Bees apply brutal DoT on activation. Murmurmancer can re-cast spellbook (triple-cast turns)."),
+            ("T6", "(skip Qilins)", "Thunder Lair / Qilins only viable if committed to Naiads — most Grove builds skip."),
+            ("T7", "Phoenix", "Resurrects on death once per battle. Decent late-game finisher but most plans win before T7 lands."),
+        ],
+        "army_tactics": [
+            "Focus-kiting: split Hoplets for turn-1 focus, Sporomancers DoT, Fawns pick from the corner.",
+            "Avatar Vomit + Thaumaturgy double-cast is *the* meta archetype.",
+            "Tss'kish buffs Herbomancers (speed/init/HP/atk/def). Advanced Murmuring starts you with +2 focus.",
+            "Strong Connection law: every focus spend reduces spell cooldown — combos with the Hoplite focus loop.",
+        ],
     },
     "hive": {
         "summary": (
@@ -72,6 +116,21 @@ FACTION_META = {
             "stack make swarms hit much harder."
         ),
         "creature_tip": "Reaver Wait-trick stacks two turns at round boundary; Hornet wait-trick is the same at T3; eggs hatch instantly when cast at end-of-round.",
+        "army_comp": [
+            ("T1", "Warden Parasite", "On death generates 2 Focus — sacrifice 1-stacks early to feed focus to your power units."),
+            ("T2", "Ravager Parasite", "Speed 3→5 on the upgrade. Mandatory if you can't reach Reavers fast enough."),
+            ("T3", "Overguard Locust", "Double Strike + Parry → strikes before enemy lands hit. The early dive unit."),
+            ("T4", "(skip in Exodus)", "Scorpion T4 is slow/beefy but won't one-shot — don't sink resources unless you specifically need HP for egg scaling."),
+            ("T5", "Reaver (Maniacal or Menacing)", "The win condition. Apex Predator = +50% damage vs T6/T7. Maniacal gets an extra turn on kill — chain morale procs for triple-attack rounds."),
+            ("T6", "Worm (Pyroboros)", "Pyroboros AoE ranged is the alt win condition. Corpse Eater heals/revives — solves Hive's brutal creep."),
+            ("T7", "Hive Mother", "Soul Assimilator shares enemy faction-diversity penalty with your whole army. Contaminating Blast = 100% AoE magic. Prefer over Hive Queen."),
+        ],
+        "army_tactics": [
+            "Rush Apex (T5 Reavers) by end of week 1 — non-negotiable.",
+            "Reaver Wait-trick: stack two turns at the round boundary for double alpha strike.",
+            "Eggs cast at end-of-round hatch instantly. Pair with Focus Reserves law (turn-1 summons).",
+            "Heroic Strike chains (Curson) trivialize creeping when build path supports it.",
+        ],
     },
     "schism": {
         "summary": (
@@ -81,6 +140,21 @@ FACTION_META = {
             "blocks enemy spellbook). Communion mechanic + 'Abyss Stares Back' law is mandatory in Exodus."
         ),
         "creature_tip": "Stinging Rashoth is the early-game carrier; demon-farm cultists into Grand Shoths; 1-stack a Bewitcher to lock enemy hero out of focus.",
+        "army_comp": [
+            ("T1", "Stinging Rashoth", "Primary early shooter. Communion synergy = rarely lose actual units. Avoid the slow Ferocious upgrade."),
+            ("T2", "Cultist", "Meatshield / demon-farm fuel. Sacrifice via Summoning Rite to spawn Grand Shoths."),
+            ("T3", "Aga'Shoth Rider", "More fast meat for the demon-farm loop. Keep a 1-stack Tamer for Piercing Cold debuff (50% more damage taken on target)."),
+            ("T4", "Unspeakable Shoth (Grand Shoth)", "Mid-late power stack. Fast double-attack brawler. Summoning Rite resurrects T2/T3 corpses as more Grand Shoths."),
+            ("T5", "Mistress of Chains / Bewitcher", "Utility 1-stacks. Chains prevent enemy active abilities; Bewitchers block hero focus generation entirely."),
+            ("T6", "Bloated Arbitrator", "'Toilet Seat Overlords.' Highest pure damage T6 in the game. Paradoxical Shots up to +150% at range. Frozen Pages blocks enemy spellbook. Worth the awkward tech path."),
+            ("T7", "Abyssal Envoy", "Fast magic-immune brawler. Will of the Abyss = immediate double turn. Demon-farmable late game if you've snowballed economy."),
+        ],
+        "army_tactics": [
+            "Summoning Rite loop: sacrifice T2/T3 corpses to mass-produce Grand Shoths.",
+            "Communion shadow army absorbs damage from real units; pair with Hel'Ghat (Armor) for unkillable creep.",
+            "1-stack a Bewitcher to lock enemy hero out of focus charges entirely.",
+            "Mandatory law: 'The Abyss Stares Back' (max Communion daily) — Exodus turn-skip would otherwise halve it.",
+        ],
     },
     "dungeon": {
         "summary": (
@@ -90,6 +164,21 @@ FACTION_META = {
             "1.5×s its damage — those laws are mandatory."
         ),
         "creature_tip": "Onyx Dancer 1-stacks for defense debuffs, Aureate dancer upgrade for 2/hit; Minotaurs love morale; Black Dragon over Ashen for higher initiative.",
+        "army_comp": [
+            ("T1", "Infernal Troglodyte", "Gaping Wound = +25% damage taken on the marked target. Use a single Trog to 'prison-shank' a high-priority enemy stack so the rest of your army melts it."),
+            ("T2", "Guile Infiltrator", "Teleport + no enemy counterattack. High initiative, lucky-strike synergies. Hit-and-run."),
+            ("T3", "Aureate Dancer", "Best unit on the roster. A Thousand Cuts permanently strips -2 defense per hit; Bouncing Glaives hits two targets. Split into 1-stacks turn 1 to peel enemy armor."),
+            ("T4", "Minotaur Lord", "Parry counterattacks *before* the enemy lands. With Riposte spell, gets two counters before taking damage. Mandatory PvP upgrade."),
+            ("T5", "Medusa Queen / Sculptor", "Countershot = retaliates at range with bow. Sculptor variant petrifies. Arguably the strongest unit in the faction."),
+            ("T6", "Chthonic Hydra", "Tankier than Infernal, regenerates HP, Poisonous Blood punishes attackers. Pair with Blink to teleport into enemy backline."),
+            ("T7", "Black Dragon", "*Always* pick over Ashen Dragon — higher Initiative dictates spell-cast order, immune to all spells. Pair with Armageddon to nuke the board while your dragons sit immune."),
+        ],
+        "army_tactics": [
+            "Aureate Dancer 1-stacks turn 1 → strip defense before main exchanges.",
+            "Minotaur Lord + Riposte = double pre-emptive counter on melee opponents.",
+            "Black Dragon + Armageddon = global nuke that doesn't hit you.",
+            "Take every Fighting Style 1.5× law that matches your build — Dungeon's law tree is uniquely loaded with these.",
+        ],
     },
 }
 

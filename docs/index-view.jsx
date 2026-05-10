@@ -14,6 +14,21 @@ const IndexView = ({ go }) => {
 
       <h2>Pages</h2>
       <div className="card-grid">
+        <a className="card" href="#factions" onClick={(e)=>{e.preventDefault();go('factions');}}>
+          <div className="card-eyebrow">Tournament playbook</div>
+          <div className="card-title">Factions — Per-Faction Pages</div>
+          <p className="card-desc">
+            One combined page per faction with the full playbook: hero tier list,
+            build order, law priorities, army composition, the heroes opponents
+            will ban from you, and the matchup counter-pick map. Single-hero
+            Exodus PvP, grounded in creator commentary and game data.
+          </p>
+          <div className="card-stats">
+            <span><b>{FACTIONS.length}</b>pages</span>
+            <span><b>1</b>combined view</span>
+          </div>
+        </a>
+
         <a className="card" href="#subclasses" onClick={(e)=>{e.preventDefault();go('subclasses');}}>
           <div className="card-eyebrow">Reference matrix</div>
           <div className="card-title">Subclasses & Required Skills</div>
@@ -112,7 +127,9 @@ const IndexView = ({ go }) => {
       <h2>Factions</h2>
       <div className="faction-strip">
         {FACTIONS.map(f => (
-          <div key={f.id}>
+          <a key={f.id}
+             href={`#faction/${f.id}`}
+             onClick={(e)=>{e.preventDefault();go(`faction/${f.id}`);}}>
             <img loading="lazy" className="faction-icon"
                  src={`img/factions/${f.id}.png`} alt=""
                  onError={(e)=>{e.target.style.display='none';}} />
@@ -123,7 +140,7 @@ const IndexView = ({ go }) => {
               <br/>
               <span className="glyph glyph-magic">✦</span> {f.magic}
             </div>
-          </div>
+          </a>
         ))}
       </div>
 

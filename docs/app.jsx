@@ -1,23 +1,30 @@
 /* Olden Era reference — main app */
 
-const App = () => {
-  const VIEWS = ['index', 'subclasses', 'heroes', 'units', 'tier', 'guides', 'draft'];
-  const initial = (window.location.hash || '#index').slice(1);
-  const [view, setView] = React.useState(
-    VIEWS.includes(initial) ? initial : 'index'
-  );
+const SIMPLE_VIEWS = ['index', 'factions', 'subclasses', 'heroes', 'units', 'tier', 'guides', 'draft'];
 
-  const go = (v) => {
-    setView(v);
-    window.location.hash = v;
+const parseHash = () => {
+  const raw = (window.location.hash || '#index').slice(1);
+  if (raw.startsWith('faction/')) {
+    return { view: 'faction', factionId: raw.slice('faction/'.length) };
+  }
+  if (SIMPLE_VIEWS.includes(raw)) return { view: raw, factionId: null };
+  return { view: 'index', factionId: null };
+};
+
+const App = () => {
+  const [route, setRoute] = React.useState(parseHash);
+
+  const go = (target) => {
+    const next = (typeof target === 'string' && target.startsWith('faction/'))
+      ? { view: 'faction', factionId: target.slice('faction/'.length) }
+      : { view: target, factionId: null };
+    setRoute(next);
+    window.location.hash = target;
     window.scrollTo({top: 0});
   };
 
   React.useEffect(() => {
-    const onHash = () => {
-      const v = (window.location.hash || '#index').slice(1);
-      if (VIEWS.includes(v)) setView(v);
-    };
+    const onHash = () => setRoute(parseHash());
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
@@ -25,6 +32,8 @@ const App = () => {
   const meta = window.OE_DATA
     ? `${window.OE_DATA.HEROES.length} heroes · ${window.OE_DATA.SUBCLASSES.length} subclasses · ${window.OE_DATA.UNITS.length} units · ${window.OE_DATA.FACTIONS.length} factions`
     : '';
+
+  const tabActive = (v) => route.view === v ? 'active' : '';
 
   return (
     <div className="shell">
@@ -36,22 +45,26 @@ const App = () => {
       </header>
 
       <nav className="tabs">
-        <button className={view==='index'?'active':''} onClick={()=>go('index')}>Index</button>
-        <button className={view==='subclasses'?'active':''} onClick={()=>go('subclasses')}>Subclasses</button>
-        <button className={view==='heroes'?'active':''} onClick={()=>go('heroes')}>Heroes</button>
-        <button className={view==='units'?'active':''} onClick={()=>go('units')}>Units</button>
-        <button className={view==='tier'?'active':''} onClick={()=>go('tier')}>Tier list</button>
-        <button className={view==='guides'?'active':''} onClick={()=>go('guides')}>Guides</button>
-        <button className={view==='draft'?'active':''} onClick={()=>go('draft')}>Draft</button>
+        <button className={tabActive('index')}      onClick={()=>go('index')}>Index</button>
+        <button className={tabActive('factions') || (route.view==='faction'?'active':'')}
+                onClick={()=>go('factions')}>Factions</button>
+        <button className={tabActive('subclasses')} onClick={()=>go('subclasses')}>Subclasses</button>
+        <button className={tabActive('heroes')}     onClick={()=>go('heroes')}>Heroes</button>
+        <button className={tabActive('units')}      onClick={()=>go('units')}>Units</button>
+        <button className={tabActive('tier')}       onClick={()=>go('tier')}>Tier list</button>
+        <button className={tabActive('guides')}     onClick={()=>go('guides')}>Guides</button>
+        <button className={tabActive('draft')}      onClick={()=>go('draft')}>Draft</button>
       </nav>
 
-      {view==='index'      && <window.IndexView go={go} />}
-      {view==='subclasses' && <window.SubclassesView />}
-      {view==='heroes'     && <window.HeroesView />}
-      {view==='units'      && <window.UnitsView />}
-      {view==='tier'       && <window.TierView />}
-      {view==='guides'     && <window.GuidesView />}
-      {view==='draft'      && <window.DraftView />}
+      {route.view==='index'      && <window.IndexView go={go} />}
+      {route.view==='factions'   && <window.FactionsHubView go={go} />}
+      {route.view==='faction'    && <window.FactionView factionId={route.factionId} go={go} />}
+      {route.view==='subclasses' && <window.SubclassesView />}
+      {route.view==='heroes'     && <window.HeroesView />}
+      {route.view==='units'      && <window.UnitsView />}
+      {route.view==='tier'       && <window.TierView />}
+      {route.view==='guides'     && <window.GuidesView />}
+      {route.view==='draft'      && <window.DraftView />}
 
       <footer className="sitefoot">
         {window.OE_DATA?.META && (

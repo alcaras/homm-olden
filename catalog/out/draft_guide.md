@@ -5,10 +5,12 @@ Quick-ref guide for drafting in single-hero PvP. Synthesized from creator commen
 ## Format
 
 - P1 bans faction → P2 bans faction → P2 picks faction → P1 picks faction
+- **No mirrors.** Once a faction is picked, the opponent cannot pick the same one — you remove a faction from your opponent's pool just by taking it.
 - P1 bans 3 heroes from P2's faction → P2 bans 3 heroes from P1's faction
 - Then each player picks 1 hero from their own surviving roster
 - Key wrinkle: whoever bans FIRST picks LAST — P1 has counter-pick advantage on faction
 - P2 commits faction BLIND (before knowing P1's pick) — has to anticipate
+- Exodus map: each player starts with 2 cities of their faction. There is also a third, off-faction city on the map that can be captured (economy annex only — building foreign dwellings inflicts a morale penalty).
 
 ## Faction ban priority
 
@@ -46,12 +48,12 @@ You ban first but pick last. **You see your opponent's faction pick before commi
 
 ## If you are P2 (ban second, pick FIRST) — WEAKER side
 
-You ban with full info on their ban, but you have to commit faction BLIND before they pick. You'll be counter-picked. **Plan your faction pick around what they're most likely to do**, not around any specific known matchup. Pick the faction with the most format-resilient hero pool that wins the *most likely* matchup.
+You ban with full info on their ban, but you have to commit faction BLIND before they pick. **No mirrors:** by picking, you also remove that faction from their pool — but they then counter-pick from the remainder. Plan your blind pick around the *most likely* matchup, not raw power.
 
-- **Their faction ban (1st).** They ban the strongest pool — usually Necropolis. If they ban Grove or Dungeon, that tells you they fear that specific faction; take Necropolis if it's still open.
-- **Your faction ban (2nd).** Ban the faction you'd LEAST want them to pick. Standard lines: (a) They banned Necro → **ban Dungeon** (forces them off the strongest counter to Grove). You'll likely take Grove next. (b) They banned Grove → **ban Dungeon** (forces them onto Temple/Schism). Take Necro if open or Necro mirror was banned... wait, take whichever survives. (c) They banned Dungeon → **ban Grove**. Take Necropolis.
-- **Your faction pick (BLIND, 3rd).** **You commit without knowing their faction.** Don't pick for raw power — pick the faction whose hero pool wins the *most likely* matchup. If Necropolis is gone, Temple is the most-likely opponent pick from {Grove, Dungeon, Temple} → pick Grove (better vs Temple than Dungeon). If you banned Dungeon and Necro is also banned, your blind pick is Grove (anticipating they take Temple).
-- **Their faction pick (4th — knows your pick).** They counter-pick your faction. If you picked Grove → expect Dungeon (banned by you in the example) or Temple. If you picked Necro → expect Grove or Dungeon. Plan the matchup before committing your hero pick.
+- **Their faction ban (1st).** They ban the strongest pool — usually Necropolis. If they ban Grove or Dungeon, that tells you they fear that specific faction; take it yourself if open.
+- **Your faction ban (2nd).** Ban the faction you'd LEAST want them to counter-pick into your blind pick. Standard lines: (a) They banned Necro → **ban Dungeon** (removes their best Grove-counter; you take Grove). (b) They banned Grove → **ban Dungeon** (forces them onto Temple/Schism); take Necropolis. (c) They banned Dungeon → **ban Grove**; take Necropolis.
+- **Your faction pick (BLIND, 3rd).** **You commit without knowing their faction.** Picking removes that faction from their pool (no mirrors), so your pick simultaneously locks in your gameplan and constrains theirs. Don't pick for raw power — pick the faction whose hero pool wins the *most likely* remaining matchup. Examples: if you banned Dungeon and they banned Necro, take Grove (beats Temple, which is what they're most likely to take).
+- **Their faction pick (4th — knows your pick).** They counter-pick from the remaining 3 factions (yours is off the table). If you picked Grove → expect Temple (Dungeon banned by you in the example). If you picked Necro → expect Grove or Dungeon. Plan the matchup before committing your hero pick.
 - **Their hero bans (5th, 3 from your faction).** They burn 3 bans on your top heroes.
 - **Your hero bans (6th, 3 from their faction).** Ban their top 3 — see matchup table.
 - **Hero picks.** Both sides pick from their surviving rosters. P2's blind-pick disadvantage doesn't extend to hero pick (each side picks from their own faction).
@@ -62,7 +64,7 @@ If your opponent picks faction X, your best response is:
 
 | Opponent picked | Primary counter | Why | Alt counter | Why |
 |---|---|---|---|---|
-| **Necropolis** | Necropolis (mirror) | Mirror denies their gameplan; Marl's Web slows their Skeleton Archers; you compete for the same Pandora-box transformer plays. | Grove (Halon) | Chain Lightning shreds T1 Skeleton Archer doom-stacks; Despair-immune. |
+| **Necropolis** | Grove (Halon) | Chain Lightning shreds T1 Skeleton Archer doom-stacks; Despair-immune. Avatar Vomit out-tempos the Necropolis snowball before it compounds. | Dungeon (Motley) | Twilight shuts down Skeleton Archers; Black Dragons immune to Despair / Decay; Onyx Dancer 1-stacks shred squishy Liches before they sustain. |
 | **Grove** | Dungeon (Motley) | Mley's Twilight shuts down ranged + Halon's spell combos; Black Dragons immune to all magic damage; Onyx Dancer 1-stacks shred squishy Hoplites/Fauns. | Necropolis | Liches resurrect through Grove's burst spells; Magic Absorption law caps their spell power. |
 | **Dungeon** | Necropolis | Liches resurrect units killed by Onyx Dancer 1-stacks; Vampire Lord retaliation loop drains Hydras; Magic Absorption law strips Black Dragon synergy spells. | Grove (Halon) | Chain Lightning through Onyx Dancer stacks + Avatar absorbs Black Dragon hits. |
 | **Temple** | Necropolis | Marl's Web + Skeleton Archer volume out-shoots Crossbowmen; Daylight buffs neutralized by Death's Presence law. | Grove | Halon's chain lightning AoE + Avatar tank > Temple's slow blob. |
@@ -121,4 +123,4 @@ If your opponent picks faction X, your best response is:
 
 ---
 
-*Generated 2026-05-10 01:55 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*
+*Generated 2026-05-10 02:45 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*

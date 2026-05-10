@@ -896,6 +896,10 @@ window.OE_GUIDES_DATA = {
   ],
   "UNIVERSAL_TIPS": [
     {
+      "title": "Exodus = 2 home cities + 1 third-faction city",
+      "body": "Each player starts with 2 cities of their own faction and there is a third, off-faction city on the map (capturable). Your home pair is your full-tech engine; the third city is a pure economy annex — Banks/Treasuries/Marketplaces only, no foreign dwellings (morale penalty)."
+    },
+    {
       "title": "Mage Guild in every town",
       "body": "Ending a turn in a city with a Mage Guild fully restores hero mana. This sustains your global-spell rotation (Town Portal, Second Wind, Dimension Door) — neglecting Mage Guilds is the most-cited mistake in tournament play."
     },
@@ -909,12 +913,12 @@ window.OE_GUIDES_DATA = {
     },
     {
       "title": "Side cities = economy, not military",
-      "body": "If you capture a city of a different faction, do *not* invest in its dwellings (morale penalty + bad economy). Build only Town Halls, Banks, Marketplaces, Treasuries. Funnel resources back to your main faction's capital."
+      "body": "If you capture a city of a different faction (e.g. the Exodus third city), do *not* invest in its dwellings — different-faction units inflict a morale penalty. Build only Town Halls, Banks, Marketplaces, Treasuries. Funnel resources back to your main capital."
     },
     {
       "title": "Mage Guild before T7 dwelling",
       "body": "Several factions (notably Temple) gate the elite training building behind Mage Guild. Always check the dependency tree before queuing your week."
     }
   ],
-  "GENERATED_AT": "2026-05-09 23:07 UTC"
+  "GENERATED_AT": "2026-05-10 02:45 UTC"
 };

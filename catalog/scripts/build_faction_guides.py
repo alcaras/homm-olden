@@ -295,6 +295,10 @@ GUIDES = {
 # --------------------------------------------------------------------------- #
 
 UNIVERSAL_TIPS = [
+    ("Exodus = 2 home cities + 1 third-faction city",
+     "Each player starts with 2 cities of their own faction and there is a third, off-faction city on "
+     "the map (capturable). Your home pair is your full-tech engine; the third city is a pure economy "
+     "annex — Banks/Treasuries/Marketplaces only, no foreign dwellings (morale penalty)."),
     ("Mage Guild in every town",
      "Ending a turn in a city with a Mage Guild fully restores hero mana. This sustains your "
      "global-spell rotation (Town Portal, Second Wind, Dimension Door) — neglecting Mage Guilds "
@@ -307,9 +311,9 @@ UNIVERSAL_TIPS = [
      "The universal Exodus mistake is wasting movement points returning to your capital. Stay out, farm "
      "Pandora boxes, and only Town-Portal back when you absolutely need to upgrade and recruit before the duel."),
     ("Side cities = economy, not military",
-     "If you capture a city of a different faction, do *not* invest in its dwellings (morale penalty + "
-     "bad economy). Build only Town Halls, Banks, Marketplaces, Treasuries. Funnel resources back to "
-     "your main faction's capital."),
+     "If you capture a city of a different faction (e.g. the Exodus third city), do *not* invest in its "
+     "dwellings — different-faction units inflict a morale penalty. Build only Town Halls, Banks, "
+     "Marketplaces, Treasuries. Funnel resources back to your main capital."),
     ("Mage Guild before T7 dwelling",
      "Several factions (notably Temple) gate the elite training building behind Mage Guild. Always check "
      "the dependency tree before queuing your week."),

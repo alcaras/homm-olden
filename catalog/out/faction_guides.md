@@ -6,10 +6,11 @@ Single-hero PvP gameplan per faction: turn-by-turn build-order priority and law 
 
 ## Universal tips
 
+- **Exodus = 2 home cities + 1 third-faction city.** Each player starts with 2 cities of their own faction and there is a third, off-faction city on the map (capturable). Your home pair is your full-tech engine; the third city is a pure economy annex — Banks/Treasuries/Marketplaces only, no foreign dwellings (morale penalty).
 - **Mage Guild in every town.** Ending a turn in a city with a Mage Guild fully restores hero mana. This sustains your global-spell rotation (Town Portal, Second Wind, Dimension Door) — neglecting Mage Guilds is the most-cited mistake in tournament play.
 - **Fortifications T2 by end of week 1.** Universal +50% dwelling growth. Every faction that doesn't hit T2 walls by week 1 falls behind in raw army size. Some factions (Dungeon, Hive) need it *more* because their faction-specific growth mechanics are weaker.
 - **Don't go home.** The universal Exodus mistake is wasting movement points returning to your capital. Stay out, farm Pandora boxes, and only Town-Portal back when you absolutely need to upgrade and recruit before the duel.
-- **Side cities = economy, not military.** If you capture a city of a different faction, do *not* invest in its dwellings (morale penalty + bad economy). Build only Town Halls, Banks, Marketplaces, Treasuries. Funnel resources back to your main faction's capital.
+- **Side cities = economy, not military.** If you capture a city of a different faction (e.g. the Exodus third city), do *not* invest in its dwellings — different-faction units inflict a morale penalty. Build only Town Halls, Banks, Marketplaces, Treasuries. Funnel resources back to your main capital.
 - **Mage Guild before T7 dwelling.** Several factions (notably Temple) gate the elite training building behind Mage Guild. Always check the dependency tree before queuing your week.
 
 ## Temple
@@ -216,4 +217,4 @@ Dungeon is one of the strongest tournament factions because of how its laws inte
 
 ---
 
-*Generated 2026-05-09 23:07 UTC by `catalog/scripts/build_faction_guides.py`. Edit the `GUIDES` dict to update.*
+*Generated 2026-05-10 02:45 UTC by `catalog/scripts/build_faction_guides.py`. Edit the `GUIDES` dict to update.*

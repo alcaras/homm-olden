@@ -256,7 +256,7 @@ code, .mono {
   margin: 0.4rem 0 2rem;
 }
 @media (max-width: 760px) { .faction-strip { grid-template-columns: repeat(3, 1fr); } }
-.faction-strip > div {
+.faction-strip > div, .faction-strip > a {
   border: 1px solid var(--rule);
   padding: 0.7rem 0.7rem 0.6rem;
   background: var(--paper);
@@ -858,7 +858,15 @@ table.heroes .spec-desc {
 }
 
 /* ---------- imagery: factions / heroes / units / specs ---------- */
-.faction-strip > div { text-align: center; }
+.faction-strip > div, .faction-strip > a { text-align: center; }
+.faction-strip > a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--rule);
+  display: block;
+  transition: border-color 0.15s, background 0.15s;
+}
+.faction-strip > a:hover { border-color: var(--rule-bold); background: var(--bg-warm); }
 .faction-icon {
   width: 56px; height: 56px;
   display: block;
@@ -1539,4 +1547,236 @@ table.guide-table tr.trap-row .b-name { color: var(--muted); text-decoration: li
   color: var(--ink-2);
   line-height: 1.4;
   margin-top: 1px;
+}
+
+/* ---------- faction view (per-faction combined page) ---------- */
+.faction-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.faction-switcher a {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.faction-switcher a:hover {
+  border-color: var(--rule-bold);
+  color: var(--ink);
+}
+.faction-switcher a.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.faction-switcher a img {
+  width: 22px; height: 22px;
+  object-fit: contain;
+}
+.faction-switcher a.active img { filter: brightness(0) invert(1); opacity: 0.9; }
+
+.faction-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0.4rem 0 0.6rem;
+}
+.faction-hero-icon {
+  width: 64px; height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+  flex-shrink: 0;
+}
+.faction-hero-name {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+.faction-hero-classes {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.86rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.2rem;
+}
+.faction-hero-skill { color: var(--ink-2); text-transform: none; font-style: italic; letter-spacing: 0; }
+.faction-lede { max-width: 56em; }
+
+.faction-meta-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0 1.6rem;
+}
+@media (max-width: 760px) { .faction-meta-cards { grid-template-columns: 1fr; } }
+.meta-card {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.7rem 1rem;
+}
+.meta-card-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.meta-card-body {
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.meta-card-body b { font-weight: 700; color: var(--ink); }
+.meta-card-why {
+  font-size: 0.86rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+/* ban list — taller layout used in faction page */
+.ban-list-tall li { padding: 0.6rem 0; }
+
+/* army composition table */
+.army-comp-table .b-name { font-size: 0.98rem; }
+.tactics-list {
+  margin: 0.4rem 0 1rem;
+  padding-left: 1.2rem;
+  max-width: 60em;
+}
+.tactics-list li {
+  margin-bottom: 0.3rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+/* clickable faction pills (used inside matchup tables) */
+a.faction-pill {
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom-width: 1px;
+}
+a.faction-pill:hover { border-color: var(--rule-bold); }
+
+/* faction-card on the hub */
+.faction-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.faction-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.faction-card-icon {
+  width: 48px; height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+}
+
+/* ---------- dark mode ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #15110d;
+    --bg-warm:   #1d1812;
+    --paper:     #1a1611;
+    --ink:       #ede4cf;
+    --ink-2:     #c8bfa8;
+    --muted:     #8b8474;
+    --faint:     #5b5648;
+    --rule:      #3a342a;
+    --rule-bold: #75694e;
+    --hover:     #25201a;
+    --accent:    #d68b4a;       /* warmer burnt orange for dark */
+    --accent-2:  #6fa6cf;       /* slate blue, lifted */
+    --gold:      #e0a93a;
+    --combat:    oklch(0.72 0.13 35);
+    --magic:     oklch(0.72 0.12 245);
+    --school:    oklch(0.72 0.12 295);
+    --utility:   oklch(0.78 0.06 110);
+  }
+
+  /* tier badges — keep saturated so they pop on dark */
+  .tier-badge.tier-S { background: #c46124; color: #1a1611; }
+  .tier-badge.tier-A { background: #d8a52a; color: #1a1611; }
+  .tier-badge.tier-B { background: #4a89b8; color: #1a1611; }
+  .tier-badge.tier-C { background: #6b6358; color: #1a1611; }
+
+  .prio-badge { color: #1a1611; }
+  .prio-badge.prio-S { background: #c46124; }
+  .prio-badge.prio-A { background: #d8a52a; }
+  .prio-badge.prio-B { background: #4a89b8; }
+  .prio-badge.prio-trap {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--rule-bold);
+  }
+
+  /* faction pills get more contrast against dark paper */
+  .faction-pill { background: var(--bg-warm); color: var(--ink); }
+  .faction-pill.faction-temple     { color: #e2a87a; border-color: #6e4a2c; }
+  .faction-pill.faction-necropolis { color: #b3b6bb; border-color: #50535a; }
+  .faction-pill.faction-sylvan     { color: #82c189; border-color: #355b3a; }
+  .faction-pill.faction-hive       { color: #e08c6e; border-color: #6c3825; }
+  .faction-pill.faction-schism     { color: #92bcd9; border-color: #355170; }
+  .faction-pill.faction-dungeon    { color: #b8a3df; border-color: #4a3970; }
+  .faction-pill.faction-neutral    { color: var(--muted); border-color: var(--rule); }
+
+  .atk-melee   { color: #e08c6e; border-color: #6c3825; }
+  .atk-long    { color: #e0c478; border-color: #6c5825; }
+  .atk-ranged  { color: #92bcd9; border-color: #355170; }
+
+  /* portraits / icons sit on warm dark plate */
+  .h-portrait, .th-portrait, .ban-portrait, .u-icon, .spec-icon {
+    background: #2a2419;
+  }
+
+  /* faction-card icons & glyphs need a bit more punch */
+  .faction-icon, .faction-hero-icon, .faction-card-icon, .faction-band-icon {
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+  }
+
+  /* search input + segmented control inverted */
+  .search { background: var(--paper); color: var(--ink); }
+  .seg button.active { background: var(--ink); color: var(--bg); }
+  .seg.multi button.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .seg.multi button:first-child.active,
+  .seg.multi button:nth-child(2).active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .seg.multi button.tier-S.active { background: #c46124; border-color: #c46124; color: #1a1611; }
+  .seg.multi button.tier-A.active { background: #d8a52a; border-color: #d8a52a; color: #1a1611; }
+  .seg.multi button.tier-B.active { background: #4a89b8; border-color: #4a89b8; color: #1a1611; }
+  .seg.multi button.tier-C.active { background: #6b6358; border-color: #6b6358; color: #1a1611; }
+
+  /* faction-switcher active pill needs to invert against dark bg */
+  .faction-switcher a.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .faction-switcher a.active img { filter: brightness(0) invert(0); opacity: 0.85; }
+
+  /* tooltip readability */
+  .u-tooltip {
+    background: #221d16;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4);
+  }
+
+  /* lighten footer slightly */
+  footer.sitefoot { color: var(--muted); }
 }
