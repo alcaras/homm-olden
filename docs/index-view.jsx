@@ -14,7 +14,7 @@ const IndexView = ({ go }) => {
 
       <h2>Pages</h2>
       <div className="card-grid">
-        <a className="card" href="#mechanics" onClick={(e)=>{e.preventDefault();go('mechanics');}}>
+        <a className="card" href={window.OE_routeToUrl("mechanics")} onClick={(e)=>{e.preventDefault();go('mechanics');}}>
           <div className="card-eyebrow">Beginner primer</div>
           <div className="card-title">Mechanics 101</div>
           <p className="card-desc">
@@ -31,7 +31,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#buildings/temple" onClick={(e)=>{e.preventDefault();go('buildings/temple');}}>
+        <a className="card" href={window.OE_routeToUrl("buildings/temple")} onClick={(e)=>{e.preventDefault();go('buildings/temple');}}>
           <div className="card-eyebrow">Interactive tool</div>
           <div className="card-title">Buildings — Per-Faction Calculator</div>
           <p className="card-desc">
@@ -47,7 +47,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#laws/temple" onClick={(e)=>{e.preventDefault();go('laws/temple');}}>
+        <a className="card" href={window.OE_routeToUrl("laws/temple")} onClick={(e)=>{e.preventDefault();go('laws/temple');}}>
           <div className="card-eyebrow">Interactive tool</div>
           <div className="card-title">Laws — Per-Faction Calculator</div>
           <p className="card-desc">
@@ -63,7 +63,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#factions" onClick={(e)=>{e.preventDefault();go('factions');}}>
+        <a className="card" href={window.OE_routeToUrl("factions")} onClick={(e)=>{e.preventDefault();go('factions');}}>
           <div className="card-eyebrow">Tournament playbook</div>
           <div className="card-title">Factions — Per-Faction Pages</div>
           <p className="card-desc">
@@ -78,7 +78,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#skills" onClick={(e)=>{e.preventDefault();go('skills');}}>
+        <a className="card" href={window.OE_routeToUrl("skills")} onClick={(e)=>{e.preventDefault();go('skills');}}>
           <div className="card-eyebrow">Reference</div>
           <div className="card-title">Skills — Deep Dive</div>
           <p className="card-desc">
@@ -96,7 +96,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#subclasses" onClick={(e)=>{e.preventDefault();go('subclasses');}}>
+        <a className="card" href={window.OE_routeToUrl("subclasses")} onClick={(e)=>{e.preventDefault();go('subclasses');}}>
           <div className="card-eyebrow">Reference matrix</div>
           <div className="card-title">Subclasses & Required Skills</div>
           <p className="card-desc">
@@ -111,7 +111,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#heroes" onClick={(e)=>{e.preventDefault();go('heroes');}}>
+        <a className="card" href={window.OE_routeToUrl("heroes")} onClick={(e)=>{e.preventDefault();go('heroes');}}>
           <div className="card-eyebrow">Roster</div>
           <div className="card-title">Heroes — Stats, Skills & Armies</div>
           <p className="card-desc">
@@ -127,7 +127,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#units" onClick={(e)=>{e.preventDefault();go('units');}}>
+        <a className="card" href={window.OE_routeToUrl("units")} onClick={(e)=>{e.preventDefault();go('units');}}>
           <div className="card-eyebrow">Bestiary</div>
           <div className="card-title">Units — Creature Stats</div>
           <p className="card-desc">
@@ -143,7 +143,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#tier" onClick={(e)=>{e.preventDefault();go('tier');}}>
+        <a className="card" href={window.OE_routeToUrl("tier")} onClick={(e)=>{e.preventDefault();go('tier');}}>
           <div className="card-eyebrow">Tournament meta</div>
           <div className="card-title">Tier list — Tournament Heroes</div>
           <p className="card-desc">
@@ -159,7 +159,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#guides" onClick={(e)=>{e.preventDefault();go('guides');}}>
+        <a className="card" href={window.OE_routeToUrl("guides")} onClick={(e)=>{e.preventDefault();go('guides');}}>
           <div className="card-eyebrow">Tournament prep</div>
           <div className="card-title">Faction Guides — Buildings & Laws</div>
           <p className="card-desc">
@@ -175,7 +175,7 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#draft" onClick={(e)=>{e.preventDefault();go('draft');}}>
+        <a className="card" href={window.OE_routeToUrl("draft")} onClick={(e)=>{e.preventDefault();go('draft');}}>
           <div className="card-eyebrow">Pick / ban</div>
           <div className="card-title">Draft — Quick Reference</div>
           <p className="card-desc">
@@ -195,7 +195,7 @@ const IndexView = ({ go }) => {
       <div className="faction-strip">
         {FACTIONS.map(f => (
           <a key={f.id}
-             href={`#faction/${f.id}`}
+             href={window.OE_routeToUrl(`faction/${f.id}`)}
              onClick={(e)=>{e.preventDefault();go(`faction/${f.id}`);}}>
             <img loading="lazy" className="faction-icon"
                  src={`img/factions/${f.id}.png`} alt=""

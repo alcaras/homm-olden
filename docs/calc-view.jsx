@@ -1,11 +1,11 @@
 /* Per-faction Law / Building calculator. Two separate pages — Buildings
-   (#buildings/<id>) and Laws (#laws/<id>) — sharing one component
-   parameterized by `kind`. State for each kind is encoded into the URL hash
-   so links are shareable.
+   (/buildings/<id>) and Laws (/laws/<id>) — sharing one component
+   parameterized by `kind`. State for each kind is encoded into the URL
+   query string so links are shareable.
 
    URL forms:
-     #buildings/temple?b=Main:2,Wall:3,Magic_Guild:4
-     #laws/temple?l=3:1,30:1                                          */
+     /buildings/temple?b=Main:2,Wall:3,Magic_Guild:4
+     /laws/temple?l=3:1,30:1                                           */
 
 const CalcView = ({ factionId, kind, initialQuery, go }) => {
   const k = kind === 'laws' ? 'laws' : 'buildings';
@@ -29,12 +29,14 @@ const CalcView = ({ factionId, kind, initialQuery, go }) => {
     setPicked(k === 'laws' ? initial.laws : initial.buildings);
   }, [factionId, k, initial]);
 
-  // Sync picked → URL via replaceState
+  // Sync picked → URL search params via replaceState (no popstate, no view re-mount)
   React.useEffect(() => {
     if (!factionId || !factionKey) return;
-    const newHash = '#' + buildCalcHash(k, factionId, factionKey, picked);
-    if (window.location.hash !== newHash) {
-      history.replaceState(null, '', newHash);
+    const route = `${k}/${factionId}`;
+    const queryStr = buildCalcQuery(k, factionKey, picked);
+    const url = window.OE_routeToUrl(route + (queryStr ? '?' + queryStr : ''));
+    if (window.location.pathname + window.location.search !== url) {
+      history.replaceState(null, '', url);
     }
   }, [picked, factionId, factionKey, k]);
 
@@ -402,7 +404,7 @@ function parseCalcQuery(query, factionKey) {
   };
 }
 
-function buildCalcHash(kind, factionId, factionKey, picked) {
+function buildCalcQuery(kind, factionKey, picked) {
   const parts = [];
   if (kind === 'laws') {
     const l = encodeLaws(picked, factionKey);
@@ -411,8 +413,7 @@ function buildCalcHash(kind, factionId, factionKey, picked) {
     const b = encodeBuildings(picked);
     if (b) parts.push(`b=${b}`);
   }
-  const qs = parts.length ? '?' + parts.join('&') : '';
-  return `${kind}/${factionId}${qs}`;
+  return parts.join('&');
 }
 
 
@@ -421,7 +422,7 @@ const FactionPicker = ({current, factions, go, kind}) => (
   <div className="faction-switcher">
     {factions.map(f => (
       <a key={f.id}
-         href={`#calc/${kind}/${f.id}`}
+         href={window.OE_routeToUrl(`calc/${kind}/${f.id}`)}
          onClick={e=>{e.preventDefault();go(`calc/${kind}/${f.id}`);}}
          className={f.id === current ? 'active' : ''}>
         <img loading="lazy" src={`img/factions/fraction_${f.unitKey || ''}.png`} alt=""
@@ -434,10 +435,10 @@ const FactionPicker = ({current, factions, go, kind}) => (
 
 const KindSwitcher = ({current, factionId, go}) => (
   <div className="calc-kind-switcher">
-    <a href={`#buildings/${factionId}`}
+    <a href={window.OE_routeToUrl(`buildings/${factionId}`)}
        onClick={e=>{e.preventDefault();go(`buildings/${factionId}`);}}
        className={current === 'buildings' ? 'active' : ''}>Buildings</a>
-    <a href={`#laws/${factionId}`}
+    <a href={window.OE_routeToUrl(`laws/${factionId}`)}
        onClick={e=>{e.preventDefault();go(`laws/${factionId}`);}}
        className={current === 'laws' ? 'active' : ''}>Laws</a>
   </div>
@@ -467,11 +468,11 @@ const CalcHubView = ({go}) => {
               </div>
             </div>
             <div className="calc-hub-actions">
-              <a href={`#buildings/${f.id}`}
+              <a href={window.OE_routeToUrl(`buildings/${f.id}`)}
                  onClick={e=>{e.preventDefault();go(`buildings/${f.id}`);}}>
                 Buildings →
               </a>
-              <a href={`#laws/${f.id}`}
+              <a href={window.OE_routeToUrl(`laws/${f.id}`)}
                  onClick={e=>{e.preventDefault();go(`laws/${f.id}`);}}>
                 Laws →
               </a>

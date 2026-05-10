@@ -19,7 +19,7 @@ const MechanicsView = ({go}) => {
 
       <nav className="mech-toc">
         {M.SECTIONS.map(s => (
-          <a key={s.id} href={`#mechanics-${s.id}`}
+          <a key={s.id} href={`#mech-${s.id}`}
              onClick={e => {
                e.preventDefault();
                document.getElementById(`mech-${s.id}`)?.scrollIntoView({behavior:'smooth', block:'start'});
@@ -111,7 +111,7 @@ const MechanicsView = ({go}) => {
             if (!sig) return null;
             return (
               <a key={f.id} className="mech-faction-card"
-                 href={`#faction/${f.id}`}
+                 href={window.OE_routeToUrl(`faction/${f.id}`)}
                  onClick={e=>{e.preventDefault();go(`faction/${f.id}`);}}>
                 <div className="mech-faction-head">
                   <img loading="lazy" className="mech-faction-icon"

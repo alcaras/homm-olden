@@ -103,7 +103,7 @@ const UnitsView = ({ go }) => {
       <div className="faction-strip">
         {FACTIONS.map(f => (
           <a key={f.id}
-             href={`#units/${f.id}`}
+             href={window.OE_routeToUrl(`units/${f.id}`)}
              onClick={e => { if (go) { e.preventDefault(); go(`units/${f.id}`); } }}>
             <img loading="lazy" className="faction-icon"
                  src={`img/factions/${f.id}.png`} alt=""

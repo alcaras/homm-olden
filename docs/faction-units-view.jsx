@@ -22,7 +22,7 @@ const FactionUnitsView = ({ factionId, go }) => {
     return (
       <div>
         <p>Unknown faction <code>{factionId}</code>.</p>
-        <p><a href="#units" onClick={e=>{e.preventDefault();go('units');}}>Back to units</a></p>
+        <p><a href={window.OE_routeToUrl("units")} onClick={e=>{e.preventDefault();go('units');}}>Back to units</a></p>
       </div>
     );
   }
@@ -47,13 +47,13 @@ const FactionUnitsView = ({ factionId, go }) => {
       </div>
 
       <p className="faction-page-actions">
-        <a href={`#faction/${factionId}`}
+        <a href={window.OE_routeToUrl(`faction/${factionId}`)}
            onClick={e=>{e.preventDefault();go(`faction/${factionId}`);}}
            className="faction-page-cta">
           ← {fmeta.name} faction page
         </a>
         {' '}
-        <a href="#units"
+        <a href={window.OE_routeToUrl("units")}
            onClick={e=>{e.preventDefault();go('units');}}
            className="faction-page-cta">
           All-units sortable table →
@@ -168,7 +168,7 @@ const FactionUnitsSwitcher = ({current, factions, go}) => (
   <div className="faction-switcher">
     {factions.map(f => (
       <a key={f.id}
-         href={`#units/${f.id}`}
+         href={window.OE_routeToUrl(`units/${f.id}`)}
          onClick={e=>{e.preventDefault();go(`units/${f.id}`);}}
          className={f.id === current ? 'active' : ''}>
         <img loading="lazy" src={`img/factions/fraction_${f.unitKey || ''}.png`} alt=""

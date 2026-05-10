@@ -7375,12 +7375,12 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your Troglodytes deal 50 times more Damage when using their Fighting Style. Their min. Damage increases by 1."
+                      "descResolved": "Your Troglodytes deal 1.5 times more Damage when using their Fighting Style. Their min. Damage increases by 1."
                     },
                     {
                       "level": 2,
                       "cost": 2,
-                      "descResolved": "Your Troglodytes deal 50 times more Damage when using their Fighting Style. Their min. Damage increases by 2."
+                      "descResolved": "Your Troglodytes deal 1.5 times more Damage when using their Fighting Style. Their min. Damage increases by 2."
                     }
                   ]
                 },
@@ -7492,12 +7492,12 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your Infiltrators deal 50 times more Damage when using their Fighting Style. They gain 2 HP."
+                      "descResolved": "Your Infiltrators deal 1.5 times more Damage when using their Fighting Style. They gain 2 HP."
                     },
                     {
                       "level": 2,
                       "cost": 2,
-                      "descResolved": "Your Infiltrators deal 50 times more Damage when using their Fighting Style. They gain 4 HP."
+                      "descResolved": "Your Infiltrators deal 1.5 times more Damage when using their Fighting Style. They gain 4 HP."
                     }
                   ]
                 },
@@ -7510,12 +7510,12 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your Onyx Dancers deal 50 times more Damage when using their Fighting Style. They gain 2 Attack and Defense."
+                      "descResolved": "Your Onyx Dancers deal 1.5 times more Damage when using their Fighting Style. They gain 2 Attack and Defense."
                     },
                     {
                       "level": 2,
                       "cost": 2,
-                      "descResolved": "Your Onyx Dancers deal 50 times more Damage when using their Fighting Style. They gain 4 Attack and Defense."
+                      "descResolved": "Your Onyx Dancers deal 1.5 times more Damage when using their Fighting Style. They gain 4 Attack and Defense."
                     }
                   ]
                 },
@@ -7640,12 +7640,12 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your Minotaurs deal 50 times more Damage when using their Fighting Style. They gain 2 Speed and Initiative and deal +2 Damage."
+                      "descResolved": "Your Minotaurs deal 1.5 times more Damage when using their Fighting Style. They gain 2 Speed and Initiative and deal +2 Damage."
                     },
                     {
                       "level": 2,
                       "cost": 2,
-                      "descResolved": "Your Minotaurs deal 50 times more Damage when using their Fighting Style. They gain 4 Speed and Initiative and deal +4 Damage."
+                      "descResolved": "Your Minotaurs deal 1.5 times more Damage when using their Fighting Style. They gain 4 Speed and Initiative and deal +4 Damage."
                     }
                   ]
                 },
@@ -7658,12 +7658,12 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your Medusae deal 50 times more Damage when using their Fighting Style. They gain 4 Initiative and 4 Attack and Defense."
+                      "descResolved": "Your Medusae deal 1.5 times more Damage when using their Fighting Style. They gain 4 Initiative and 4 Attack and Defense."
                     },
                     {
                       "level": 2,
                       "cost": 2,
-                      "descResolved": "Your Medusae deal 50 times more Damage when using their Fighting Style. They gain 4 Initiative and 4 Attack and Defense."
+                      "descResolved": "Your Medusae deal 1.5 times more Damage when using their Fighting Style. They gain 4 Initiative and 4 Attack and Defense."
                     }
                   ]
                 },
@@ -7778,12 +7778,12 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your Hydras deal 50 times more Damage when using their Fighting Style. They gain 25 Speed and 1 HP."
+                      "descResolved": "Your Hydras deal 1.5 times more Damage when using their Fighting Style. They gain 25 Speed and 1 HP."
                     },
                     {
                       "level": 2,
                       "cost": 2,
-                      "descResolved": "Your Hydras deal 50 times more Damage when using their Fighting Style. They gain 25 Speed and 2 HP."
+                      "descResolved": "Your Hydras deal 1.5 times more Damage when using their Fighting Style. They gain 25 Speed and 2 HP."
                     }
                   ]
                 },
@@ -7875,12 +7875,12 @@ window.OE_CALC_DATA = {
                     {
                       "level": 1,
                       "cost": 3,
-                      "descResolved": "Your Cave Dragons deal 50 times more Damage, when using their Fighting Style. They gain 4 Attack and Defense and 4 Speed and Initiative."
+                      "descResolved": "Your Cave Dragons deal 1.5 times more Damage, when using their Fighting Style. They gain 4 Attack and Defense and 4 Speed and Initiative."
                     },
                     {
                       "level": 2,
                       "cost": 2,
-                      "descResolved": "Your Cave Dragons deal 50 times more Damage, when using their Fighting Style. They gain 8 Attack and Defense and 8 Speed and Initiative."
+                      "descResolved": "Your Cave Dragons deal 1.5 times more Damage, when using their Fighting Style. They gain 8 Attack and Defense and 8 Speed and Initiative."
                     }
                   ]
                 },
@@ -7922,5 +7922,5 @@ window.OE_CALC_DATA = {
     "mercury": "Mercury",
     "graal": "Graal"
   },
-  "GENERATED_AT": "2026-05-10 06:41 UTC"
+  "GENERATED_AT": "2026-05-10 07:14 UTC"
 };

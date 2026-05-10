@@ -23,3 +23,6 @@ new_data/
 # Editorial source notes (kept locally, not part of the published site)
 notes-from-videos.md
 discord-top5-and-faction-tier.md
+
+# esbuild gets installed via npx; cache lives in node_modules
+node_modules/

@@ -21,7 +21,7 @@ const FactionView = ({ factionId, go }) => {
     return (
       <div>
         <p>Unknown faction <code>{factionId}</code>.</p>
-        <p><a href="#factions" onClick={e=>{e.preventDefault();go('factions');}}>Back to factions</a></p>
+        <p><a href={window.OE_routeToUrl("factions")} onClick={e=>{e.preventDefault();go('factions');}}>Back to factions</a></p>
       </div>
     );
   }
@@ -53,7 +53,7 @@ const FactionView = ({ factionId, go }) => {
   const FactionPill = ({fid}) => {
     const f = FACTIONS.find(x => x.id === fid);
     return (
-      <a href={`#faction/${fid}`}
+      <a href={window.OE_routeToUrl(`faction/${fid}`)}
          onClick={e=>{e.preventDefault();go(`faction/${fid}`);}}
          className={`faction-pill faction-${fid}`}>
         {f?.name || fid}
@@ -66,13 +66,13 @@ const FactionView = ({ factionId, go }) => {
       <FactionSwitcher current={factionId} factions={FACTIONS} go={go} />
 
       <p className="faction-page-actions">
-        <a href={`#buildings/${factionId}`}
+        <a href={window.OE_routeToUrl(`buildings/${factionId}`)}
            onClick={e=>{e.preventDefault();go(`buildings/${factionId}`);}}
            className="faction-page-cta">
           {fmeta.name} buildings calc →
         </a>
         {' '}
-        <a href={`#laws/${factionId}`}
+        <a href={window.OE_routeToUrl(`laws/${factionId}`)}
            onClick={e=>{e.preventDefault();go(`laws/${factionId}`);}}
            className="faction-page-cta">
           {fmeta.name} laws calc →
@@ -105,7 +105,7 @@ const FactionView = ({ factionId, go }) => {
           <div className="signature-mechanic-title">{tierMeta.signature_mechanic.title}</div>
           <p className="signature-mechanic-body">{tierMeta.signature_mechanic.body}</p>
           <p className="signature-mechanic-link">
-            <a href="#mechanics" onClick={e=>{e.preventDefault();go('mechanics');}}>
+            <a href={window.OE_routeToUrl("mechanics")} onClick={e=>{e.preventDefault();go('mechanics');}}>
               Mechanics 101 →
             </a>
           </p>
@@ -433,7 +433,7 @@ const FactionSwitcher = ({current, factions, go}) => (
   <div className="faction-switcher">
     {factions.map(f => (
       <a key={f.id}
-         href={`#faction/${f.id}`}
+         href={window.OE_routeToUrl(`faction/${f.id}`)}
          onClick={e=>{e.preventDefault();go(`faction/${f.id}`);}}
          className={f.id === current ? 'active' : ''}>
         <img loading="lazy" src={`img/factions/fraction_${f.unitKey || ''}.png`} alt=""
@@ -465,7 +465,7 @@ const FactionsHubView = ({go}) => {
           const sCount = (T?.BY_FACTION?.[f.id] || []).filter(h => h.tier === 'S').length;
           return (
             <a key={f.id} className="card faction-card"
-               href={`#faction/${f.id}`}
+               href={window.OE_routeToUrl(`faction/${f.id}`)}
                onClick={e=>{e.preventDefault();go(`faction/${f.id}`);}}>
               <div className="faction-card-head">
                 <img loading="lazy" className="faction-card-icon"

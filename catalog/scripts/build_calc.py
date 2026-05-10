@@ -124,20 +124,27 @@ def building_name(faction_key: str, sid: str, level: int, tokens: dict[str, str]
 
 
 def resolve_placeholders(desc: str, bonuses: list[dict]) -> str:
-    """Substitute {N} placeholders in `desc` with the rightmost numeric value of
-    bonuses[N].parameters. Heuristic: a fractional value (0 < |v| < 1) is
-    treated as a percentage and multiplied by 100. Falls back to '?' for any
-    placeholder index that has no resolvable bonus."""
+    """Substitute {N} placeholders in `desc` with values from bonuses[N].
+
+    Each bonus's user-visible numeric is the FIRST numeric in its parameters
+    (citySideExp/astrologyExp use [<value>, <growth=0.0>], so right-to-left
+    extraction would pick the wrong one).
+
+    Format depends on the *context* of the placeholder in the description:
+
+      "{0}%"          → percent: multiply fractional value by 100 (0.25 → "25")
+      "{0} times"     → multiplier-delta: render as (1 + v) (0.5 → "1.5")
+      otherwise       → raw value (integer → integer, fractional → as-is)
+
+    This matches the game's runtime renderer reasonably well — the game has
+    explicit format hints we don't see in the JSON, so we infer from desc text.
+    """
     if not desc:
         return desc
     values = []
     for b in bonuses or []:
         params = b.get("parameters") or []
         v = None
-        # Walk left-to-right, take the FIRST numeric. Bonus parameter ordering
-        # is type-specific: e.g. citySideExp uses [<value>, <growth>], so the
-        # leftmost number is the user-visible value. (Right-to-left fails for
-        # citySideExp/astrologyExp where the trailing growth factor is 0.0.)
         for p in params:
             try:
                 v = float(p)
@@ -146,19 +153,28 @@ def resolve_placeholders(desc: str, bonuses: list[dict]) -> str:
                 continue
         values.append(v)
 
-    def fmt(v) -> str:
-        if v is None:
-            return "?"
-        # Fractional → percent (e.g. 0.25 → "25")
-        if 0 < abs(v) < 1:
-            v = v * 100
-        # Strip trailing .0
-        if v == int(v):
-            return str(int(v))
-        return f"{v:g}"
+    def fmt_int_if_int(x):
+        return str(int(x)) if x == int(x) else f"{x:g}"
 
-    return re.sub(r"\{(\d+)\}", lambda m: fmt(values[int(m.group(1))]
-                                              if int(m.group(1)) < len(values) else None), desc)
+    def repl(m):
+        idx = int(m.group(1))
+        if idx >= len(values) or values[idx] is None:
+            return "?"
+        v = values[idx]
+        # Look ahead at the ~12 chars after the placeholder for a context cue.
+        tail = desc[m.end():m.end() + 12].lower()
+        # Percent cue
+        if tail.startswith("%"):
+            if 0 < abs(v) < 1:
+                v = v * 100
+            return fmt_int_if_int(v)
+        # Multiplier-delta cue ("{0} times more damage" → display as 1+v)
+        if "time" in tail or "fold" in tail:
+            return fmt_int_if_int(1 + v)
+        # Raw
+        return fmt_int_if_int(v)
+
+    return re.sub(r"\{(\d+)\}", repl, desc)
 
 
 def building_desc(faction_key: str, sid: str, level: int, tokens: dict[str, str]) -> str:

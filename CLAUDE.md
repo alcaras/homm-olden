@@ -40,9 +40,15 @@ docs/                        # GitHub Pages root (committed)
   heroes-view.jsx            # Flat sortable hero table, multi-select factions
   units-view.jsx             # Sortable unit table with hover tooltips
   data.js                    # Generated; window.OE_DATA = { FACTIONS, SUBCLASSES, HEROES, UNITS, META }
+  dist/*.js                  # Pre-compiled JSX (esbuild output, committed to git)
   style.css                  # Tufte-inspired (cream paper, charter serif)
-  img/{factions,heroes,units,specs}/  # 388 PNGs
+  img/{factions,heroes,units,specs,skills,subskills}/  # 670+ PNGs
+  404.html                   # GitHub Pages SPA fallback (path routing support)
   .nojekyll
+
+scripts/
+  build_jsx.sh               # Pre-compile docs/*.jsx → docs/dist/*.js via npx esbuild
+  dev_server.py              # Local SPA-aware dev server (path-route fallback)
 ```
 
 ## Reproducing from a clean game install
@@ -50,17 +56,19 @@ docs/                        # GitHub Pages root (committed)
 1. Game install at `~/Library/.../Heroes of Might and Magic Olden Era/HeroesOldenEra_Data` symlinked or copied into the repo root.
 2. `python3 -c "<the unzip snippet from README.md>"` extracts `Core.zip` → `catalog/raw/`.
 3. `python3 catalog/scripts/build_data_js.py` regenerates `docs/data.js`.
-4. `python3 -m venv .venv && .venv/bin/pip install UnityPy` then `.venv/bin/python catalog/scripts/extract_images.py` regenerates `docs/img/`.
-5. Optional: `python3 catalog/scripts/build_catalog.py`, `build_classes_json.py`, `build_specializations_json.py`, `analysis_*.py` for the SQLite catalog and analyses.
+4. Then in dependency order: `build_mechanics.py`, `build_tier_list.py` (imports from mechanics), then `build_calc.py`, `build_skills.py`, `build_faction_guides.py`, `build_draft_guide.py`.
+5. **After ANY `.jsx` change**: `scripts/build_jsx.sh` to regenerate `docs/dist/*.js`. Uses `npx esbuild` (auto-installs on first run; cache at `~/.npm/_npx`). Without this step the site loads the old compiled JS.
+6. `python3 -m venv .venv && .venv/bin/pip install UnityPy` then `.venv/bin/python catalog/scripts/extract_images.py` regenerates `docs/img/`.
 
-Local preview: `cd docs && python3 -m http.server 8000` — no Jekyll/Ruby needed.
+Local preview: `python3 scripts/dev_server.py [port]` — SPA-aware fallback (any unknown path serves `index.html`, required for path routing). Plain `python3 -m http.server` won't work for deep links.
 
 ## Conventions and gotchas
 
 - **JSONs are not strict JSON.** Always go through `load_json.load_array()`. They have BOMs, `//` line comments, occasional trailing commas, and the wrapper `{"array": [...]}`.
 - **Localization wrapper differs.** `Lang/english/texts/*.json` are wrapped as `{"tokens": [...]}` and `Lang/args/*.json` as `{"tokensArgs": [...]}`. Each entry is `{sid, text}`.
-- **Faction id duality.** In-game `fraction` field uses keys `human / undead / nature / demon / unfrozen / dungeon`. Display ids in the site use `temple / necropolis / sylvan / hive / schism / dungeon` (the in-game class titles). `data.js` FACTIONS records map both via `id` (display) and `unitKey` (in-game). Heroes/units in `data.js` use the display id.
-- **Sylvan is renamed Grove** in the UI.
+- **Faction id duality.** In-game `fraction` field uses keys `human / undead / nature / demon / unfrozen / dungeon`. Display ids in the site use `temple / necropolis / grove / hive / schism / dungeon`. `data.js` FACTIONS records map both via `id` (display) and `unitKey` (in-game). Heroes/units in `data.js` use the display id.
+- **Routing.** Path-based SPA: `/units/temple`, `/buildings/temple?b=Main:2`, etc. App detects `/homm-olden/` base path on GitHub Pages. `404.html` runs the spa-github-pages fallback so deep links work. `app.jsx` migrates legacy `#path` URLs once on first load.
+- **JSX → JS pipeline.** `docs/*.jsx` files are pre-compiled to `docs/dist/*.js` via `scripts/build_jsx.sh` (esbuild). The site loads the compiled JS, NOT the JSX. Forgetting to rebuild = stale UI. React + ReactDOM still load via CDN (kept global, not bundled).
 - **Attack-type mapping (verified against unit data, not the field names):**
   - `attackType_ = "melee"` → "Melee"
   - `attackType_ = "shoot"` → "Ranged" (archers, mages — `shoot_attack` damage tag, `range_type` AI). E.g. crossbowman, succubus, **Faun = `elf_tracker`**, lich.
