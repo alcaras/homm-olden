@@ -101,28 +101,28 @@ const DraftView = () => {
         </tbody>
       </table>
 
-      <h2>Top 5 hero bans (by opponent faction)</h2>
-      <div className="ban-grid">
-        {Object.entries(D.HERO_BANS).map(([fid, items]) => (
-          <section key={fid} className="ban-section">
-            <div className="ban-head">
-              <FactionPill fid={fid} />
-              <span className="ban-head-label">vs {factionMeta[fid]?.name || fid}</span>
+      <h2>Hero bans</h2>
+      <p className="note">
+        Once your opponent has committed their faction, your 3 hero bans come
+        from <em>that</em> faction's roster — never your own. Each per-faction
+        page lists the top heroes you'll want to ban first against that
+        opponent.
+      </p>
+      <div className="card-grid">
+        {SITE_FACTIONS.map(f => (
+          <a key={f.id} className="card faction-card"
+             href={`#faction/${f.id}`}
+             onClick={e=>{e.preventDefault();window.location.hash = `faction/${f.id}`;window.scrollTo({top:0});}}>
+            <div className="faction-card-head">
+              <img loading="lazy" className="faction-card-icon"
+                   src={`img/factions/fraction_${f.unitKey || ''}.png`} alt=""
+                   onError={(e)=>{e.target.style.display='none';}} />
+              <div>
+                <div className="card-eyebrow">vs {f.name}</div>
+                <div className="card-title">Bans + counter-pick →</div>
+              </div>
             </div>
-            <ol className="ban-list">
-              {items.map((h, i) => (
-                <li key={h.id}>
-                  <img loading="lazy" className="ban-portrait"
-                       src={`img/heroes/${h.id}.png`} alt=""
-                       onError={(e)=>{e.target.style.visibility='hidden';}} />
-                  <div className="ban-body">
-                    <div className="ban-name">{h.name}</div>
-                    <div className="ban-why">{h.why}</div>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
+          </a>
         ))}
       </div>
 
