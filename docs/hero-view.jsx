@@ -111,12 +111,15 @@ const HeroView = ({ heroId, go }) => {
           <h2>Starting spells</h2>
           <ul className="hero-spell-list">
             {h.spells.map(s => (
-              <li key={s.id} className="hero-spell-row">
+              <li key={s.id} className={'hero-spell-row' + (s.masterful ? ' hero-spell-masterful' : '')}>
                 <img loading="lazy" className="hero-spell-icon"
                      src={`img/spells/${s.id}.png`} alt=""
                      onError={(e)=>{e.target.style.visibility='hidden';}} />
                 <div>
-                  <div className="hero-spell-name">{s.name}</div>
+                  <div className="hero-spell-name">
+                    {s.masterful && <span className="hero-spell-master">★ Masterful</span>}{' '}
+                    {s.name}
+                  </div>
                   <div className="hero-spell-meta">L{s.level} {s.learned ? '· learned' : ''}</div>
                 </div>
               </li>

@@ -206,12 +206,16 @@ const HeroesView = ({ go }) => {
                   <td><SkillChips skills={h.skills} /></td>
                   <td>
                     {(h.spells || []).map((s) => (
-                      <span key={s.id} className="spell-chip"
-                            title={`${s.name} (L${s.level})`}>
+                      <span key={s.id}
+                            className={'spell-chip' + (s.masterful ? ' spell-chip-masterful' : '')}
+                            title={(s.masterful ? 'Masterful ' : '') + `${s.name} (L${s.level})`}>
                         <img loading="lazy" className="spell-chip-icon"
                              src={`img/spells/${s.id}.png`} alt=""
                              onError={(e)=>{e.target.style.visibility='hidden';}} />
-                        <span className="spell-chip-name">{s.name}</span>
+                        {s.masterful && <span className="spell-chip-master">★</span>}
+                        <span className="spell-chip-name">
+                          {s.masterful ? <em>Masterful </em> : null}{s.name}
+                        </span>
                       </span>
                     ))}
                   </td>

@@ -3366,3 +3366,11 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .hero-roster-portrait { width: 56px; height: 56px; object-fit: cover; background: var(--bg-warm); border: 1px solid var(--rule); border-radius: 2px; }
 .hero-roster-name { font-weight: 600; font-size: 0.85rem; color: var(--ink); }
 .hero-roster-spec { font-size: 0.7rem; color: var(--muted); font-style: italic; }
+
+/* masterful spell variant — gold-tinted chip with star */
+.spell-chip-masterful { border-color: var(--gold); background: oklch(0.97 0.04 80 / 0.5); }
+.spell-chip-master { color: var(--gold); font-weight: 700; }
+.spell-chip-masterful .spell-chip-name em { font-style: italic; color: var(--gold); font-weight: 700; }
+
+.hero-spell-masterful { border-color: var(--gold); }
+.hero-spell-master { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 0.3em; }

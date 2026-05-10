@@ -163,8 +163,8 @@ const HeroesView = ({ go }) => {
       "span",
       {
         key: s.id,
-        className: "spell-chip",
-        title: `${s.name} (L${s.level})`
+        className: "spell-chip" + (s.masterful ? " spell-chip-masterful" : ""),
+        title: (s.masterful ? "Masterful " : "") + `${s.name} (L${s.level})`
       },
       /* @__PURE__ */ React.createElement(
         "img",
@@ -178,7 +178,8 @@ const HeroesView = ({ go }) => {
           }
         }
       ),
-      /* @__PURE__ */ React.createElement("span", { className: "spell-chip-name" }, s.name)
+      s.masterful && /* @__PURE__ */ React.createElement("span", { className: "spell-chip-master" }, "\u2605"),
+      /* @__PURE__ */ React.createElement("span", { className: "spell-chip-name" }, s.masterful ? /* @__PURE__ */ React.createElement("em", null, "Masterful ") : null, s.name)
     ))), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement(Army, { army: h.army })), /* @__PURE__ */ React.createElement("td", { className: "num army-score" }, h.armyScore?.toLocaleString() ?? "\u2014"));
   })))), sorted.length === 0 && /* @__PURE__ */ React.createElement("p", { style: { color: "var(--muted)", fontStyle: "italic", marginTop: "2rem" } }, "No heroes match those filters."));
 };

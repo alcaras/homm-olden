@@ -12,6 +12,7 @@ Produces window.OE_DATA = { FACTIONS, SKILL_COLUMNS, SUBCLASSES, HEROES, UNITS }
 from __future__ import annotations
 
 import json
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -254,16 +255,29 @@ for ukey in [u for _, u, *_ in FACTION_DEFS]:
             lvl = sk.get("skillLevel") or 1
             skill_strs.append(f"{name} L{lvl}")
         # Starting spells — `startMagics: [{sidConfig: spell_id, level, isLearned}]`
+        # The spec description may grant a "Masterful X" version of one starting
+        # spell (e.g. Halon → "Masterful Chain Lightning"); mark that spell.
+        # Detect via regex on the spec description, then substring-match the
+        # extracted name against each spell's display name.
+        _spec_info_for_match = spec_lookup.get(h.get("specialization") or "",
+                                               {"name": "", "desc": ""})
+        spec_desc_for_match = (_spec_info_for_match.get("desc") or "")
+        masterful_token_match = re.search(r"Masterful\s+([\w'’\- ]+?)\b", spec_desc_for_match)
+        masterful_token = (masterful_token_match.group(1).strip().lower()
+                           if masterful_token_match else None)
         start_spells = []
         for sp in h.get("startMagics") or []:
             sid = sp.get("sidConfig")
             if not sid:
                 continue
+            sp_name = t(f"{sid}_name", default=sid.replace("_", " ").title())
+            is_masterful = bool(masterful_token and masterful_token in sp_name.lower())
             start_spells.append({
-                "id":      sid,
-                "name":    t(f"{sid}_name", default=sid.replace("_", " ").title()),
-                "level":   sp.get("level") or 1,
-                "learned": bool(sp.get("isLearned")),
+                "id":        sid,
+                "name":      sp_name,
+                "level":     sp.get("level") or 1,
+                "learned":   bool(sp.get("isLearned")),
+                "masterful": is_masterful,
             })
         # Army
         squad_parts: list[str] = []
