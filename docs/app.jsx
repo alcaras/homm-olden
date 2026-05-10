@@ -1,6 +1,6 @@
 /* Olden Era reference — main app */
 
-const SIMPLE_VIEWS = ['index', 'factions', 'subclasses', 'heroes', 'units', 'tier', 'guides', 'draft'];
+const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'subclasses', 'heroes', 'units', 'tier', 'guides', 'draft'];
 
 const parseHash = () => {
   const raw = (window.location.hash || '#index').slice(1);
@@ -46,6 +46,7 @@ const App = () => {
 
       <nav className="tabs">
         <button className={tabActive('index')}      onClick={()=>go('index')}>Index</button>
+        <button className={tabActive('mechanics')}  onClick={()=>go('mechanics')}>Mechanics</button>
         <button className={tabActive('factions') || (route.view==='faction'?'active':'')}
                 onClick={()=>go('factions')}>Factions</button>
         <button className={tabActive('subclasses')} onClick={()=>go('subclasses')}>Subclasses</button>
@@ -57,6 +58,7 @@ const App = () => {
       </nav>
 
       {route.view==='index'      && <window.IndexView go={go} />}
+      {route.view==='mechanics'  && <window.MechanicsView go={go} />}
       {route.view==='factions'   && <window.FactionsHubView go={go} />}
       {route.view==='faction'    && <window.FactionView factionId={route.factionId} go={go} />}
       {route.view==='subclasses' && <window.SubclassesView />}

@@ -920,5 +920,5 @@ window.OE_GUIDES_DATA = {
       "body": "Several factions (notably Temple) gate the elite training building behind Mage Guild. Always check the dependency tree before queuing your week."
     }
   ],
-  "GENERATED_AT": "2026-05-10 02:45 UTC"
+  "GENERATED_AT": "2026-05-10 03:03 UTC"
 };

@@ -14,6 +14,23 @@ const IndexView = ({ go }) => {
 
       <h2>Pages</h2>
       <div className="card-grid">
+        <a className="card" href="#mechanics" onClick={(e)=>{e.preventDefault();go('mechanics');}}>
+          <div className="card-eyebrow">Beginner primer</div>
+          <div className="card-title">Mechanics 101</div>
+          <p className="card-desc">
+            New to the game — or coming from HOMM3? Combat (Initiative vs
+            Speed, Wait, Defend, Long Reach), Focus &amp; Heroic Strike, the
+            redesigned Magic system (Mage Guild networking, Wisdom gating,
+            Thaumaturgy), Astrology &amp; world spells, zone control,
+            morale/luck math, and a per-faction signature-mechanic explainer.
+          </p>
+          <div className="card-stats">
+            <span><b>7</b>sections</span>
+            <span><b>6</b>faction signatures</span>
+            <span><b>20+</b>linked sources</span>
+          </div>
+        </a>
+
         <a className="card" href="#factions" onClick={(e)=>{e.preventDefault();go('factions');}}>
           <div className="card-eyebrow">Tournament playbook</div>
           <div className="card-title">Factions — Per-Faction Pages</div>

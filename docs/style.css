@@ -1675,6 +1675,338 @@ a.faction-pill {
 }
 a.faction-pill:hover { border-color: var(--rule-bold); }
 
+/* signature mechanic block on faction page */
+.signature-mechanic {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.85rem 1.1rem 0.7rem;
+  margin: 1rem 0 1.4rem;
+  border-left: 3px solid var(--accent);
+  max-width: 60em;
+}
+.signature-mechanic-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.signature-mechanic-title {
+  font-family: Charter, Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.signature-mechanic-body {
+  font-size: 0.94rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+  margin: 0 0 0.6rem;
+}
+.signature-mechanic-link {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+.signature-mechanic-link a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  font-weight: 600;
+}
+
+/* tournament-phase grid on faction page */
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0.6rem 0 1.4rem;
+}
+@media (max-width: 1080px) { .phase-grid { grid-template-columns: 1fr; } }
+.phase-card {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.8rem 1rem;
+  border-top: 3px solid var(--accent);
+}
+.phase-card:nth-child(2) { border-top-color: var(--gold); }
+.phase-card:nth-child(3) { border-top-color: var(--accent-2); }
+.phase-card-head {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.4rem;
+}
+.phase-card-body {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* ---------- mechanics primer view ---------- */
+.mech-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.6rem 0;
+  margin: 0.4rem 0 1.6rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.mech-toc a {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mech-toc a:hover { color: var(--ink); border-color: var(--rule-bold); }
+
+.mech-section { margin: 2.4rem 0; scroll-margin-top: 1rem; }
+.mech-section h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  margin: 0.6rem 0 0.8rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: Charter, Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--rule-bold);
+  padding-bottom: 0.5rem;
+}
+.mech-section h2 .mech-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--accent);
+}
+.mech-section h2 .mech-title {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.mech-intro {
+  font-size: 1.04rem;
+  color: var(--ink-2);
+  max-width: 56em;
+  font-style: italic;
+}
+.mech-para {
+  max-width: 60em;
+  color: var(--ink-2);
+  line-height: 1.6;
+  margin: 0.6rem 0;
+}
+.mech-para strong, .mech-callout-body strong { color: var(--ink); font-weight: 600; }
+.mech-para em, .mech-callout-body em { color: var(--ink); font-style: italic; }
+.mech-para code, .mech-callout-body code {
+  font-family: "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--bg-warm);
+  padding: 0.05em 0.35em;
+  border-radius: 2px;
+}
+
+.mech-callout {
+  border: 1px solid var(--rule);
+  background: var(--bg-warm);
+  border-left: 3px solid var(--accent-2);
+  padding: 0.65rem 1rem;
+  margin: 0.9rem 0;
+  max-width: 60em;
+}
+.mech-callout-title {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-2);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.mech-callout-body {
+  font-size: 0.94rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+.mech-facts {
+  border: 1px solid var(--rule);
+  border-collapse: collapse;
+  margin: 0.8rem 0 1.2rem;
+  width: 100%;
+  max-width: 60em;
+  background: var(--paper);
+}
+.mech-facts th {
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.45rem 0.7rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  width: 32%;
+  background: var(--bg-warm);
+}
+.mech-facts td {
+  padding: 0.45rem 0.7rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-2);
+  font-size: 0.94rem;
+}
+.mech-facts tr:last-child th, .mech-facts tr:last-child td { border-bottom: 0; }
+
+.mech-pitfalls {
+  border-left: 3px solid var(--rule-bold);
+  background: var(--bg-warm);
+  padding: 0.55rem 1rem 0.55rem 1rem;
+  margin: 1rem 0;
+  max-width: 60em;
+}
+.mech-pitfalls-head {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.mech-pitfalls ul { margin: 0; padding-left: 1.2rem; }
+.mech-pitfalls li {
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.mech-links {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 1rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px dotted var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  align-items: baseline;
+}
+.mech-links-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-right: 0.4rem;
+}
+.mech-links a {
+  color: var(--accent-2);
+  border-bottom: 1px solid var(--accent-2);
+}
+.mech-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.mech-faction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+@media (max-width: 760px) { .mech-faction-grid { grid-template-columns: 1fr; } }
+.mech-faction-card {
+  display: block;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 0.15s, background 0.15s;
+}
+.mech-faction-card:hover { border-color: var(--rule-bold); }
+.mech-faction-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+.mech-faction-icon {
+  width: 44px; height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+}
+.mech-faction-title {
+  font-family: Charter, Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-top: 0.1rem;
+}
+.mech-faction-body {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+.mech-resources {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+@media (max-width: 760px) { .mech-resources { grid-template-columns: 1fr; } }
+.mech-resource {
+  display: block;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--rule);
+}
+.mech-resource:hover { border-color: var(--rule-bold); }
+.mech-resource-title {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--accent-2);
+  margin-bottom: 0.2rem;
+}
+.mech-resource-desc {
+  color: var(--ink-2);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
 /* faction-card on the hub */
 .faction-card {
   display: flex;

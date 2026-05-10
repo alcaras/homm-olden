@@ -85,6 +85,19 @@ const FactionView = ({ factionId, go }) => {
         <p className="faction-tip"><em>Creature tip:</em> {tierMeta.creature_tip}</p>
       )}
 
+      {tierMeta.signature_mechanic && (
+        <div className="signature-mechanic">
+          <div className="signature-mechanic-eyebrow">Signature mechanic</div>
+          <div className="signature-mechanic-title">{tierMeta.signature_mechanic.title}</div>
+          <p className="signature-mechanic-body">{tierMeta.signature_mechanic.body}</p>
+          <p className="signature-mechanic-link">
+            <a href="#mechanics" onClick={e=>{e.preventDefault();go('mechanics');}}>
+              Mechanics 101 →
+            </a>
+          </p>
+        </div>
+      )}
+
       <div className="faction-meta-cards">
         {factionBan && (
           <div className="meta-card">
@@ -307,6 +320,26 @@ const FactionView = ({ factionId, go }) => {
               <ul className="tactics-list">
                 {tierMeta.army_tactics.map((t, i) => <li key={i}>{t}</li>)}
               </ul>
+            </>
+          )}
+
+          {tierMeta.army_phases && (
+            <>
+              <h3>Ideal army comp by tournament phase</h3>
+              <p className="note">
+                Tournament Pandora-box / camp fights scale across the run:
+                <b> 1-2-3</b> camps in week 1, <b>1-3-5</b> in week 2,
+                <b> 1-4-7</b> by the week-3 breakthrough and final duel. Your
+                army should match.
+              </p>
+              <div className="phase-grid">
+                {tierMeta.army_phases.map((p, i) => (
+                  <div className="phase-card" key={i}>
+                    <div className="phase-card-head">{p[0]}</div>
+                    <div className="phase-card-body">{p[1]}</div>
+                  </div>
+                ))}
+              </div>
             </>
           )}
         </>

@@ -301,4 +301,4 @@ Phenomenally strong in single-hero PvP — top picks are 'perma-ban or perma-pic
 
 ---
 
-*Generated 2026-05-10 02:45 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*
+*Generated 2026-05-10 03:03 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*

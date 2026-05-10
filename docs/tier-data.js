@@ -83,7 +83,25 @@ window.OE_TIER_DATA = {
         "Daylight buff stack: Bless (+35% dmg) + Riposte (counter before hit) + Radiant Armor (-40% dmg).",
         "Lightweaver/Hierophant 1-stacks spam buffs/dispels every round; Angels passively absorb all buffs cast on friendly units → buffed Angels nuke.",
         "Aim for double-built Angels in week 1 — enables zero-loss clears of T7 dwellings."
-      ]
+      ],
+      "army_phases": [
+        [
+          "Early — 1-2-3 fights (week 1)",
+          "T1 Crossbowman (split into 2-3 stacks, ~50-80 each) + Hierophant 1-stack for buffs. Sun's Aegis 1-stack adjacent to your Crossbowmen for the -30% range aura. Goal: clear early Pandora boxes without losing the T2 archer-blob you're scaling."
+        ],
+        [
+          "Mid — 1-3-5 fights (week 2)",
+          "T2 Austringer doom-stack (Double Shot, 100+ from Pandora-farmed boxes) + Hierophant 1-stack + Sun Herald (T4 upgrade) layered with Bless. Add Sunspear Cavalry if your build went Cavalry. Bless + Riposte combo turns the Austringer line into a self-defending wall."
+        ],
+        [
+          "Late — 1-4-7 fights (week 3 break / final duel)",
+          "Apotheosis (T7) is the centerpiece — passively immunizes friendlies to negative effects. Inquisitor (T6) for magic-immune anchor. Austringer base, Sun Herald + Hierophant 1-stack for the Daylight buff cycle (Bless + Radiant Armor + Riposte all up)."
+        ]
+      ],
+      "signature_mechanic": {
+        "title": "Daylight buff stacking + Morale economy",
+        "body": "Temple's identity is the **Daylight buff stack**: Bless (+35% damage), Riposte (counter before being hit), Radiant Armor (-40% damage taken). Pile them on a unit and you get an army that swings first, hits 1.35×, and tanks 0.6× damage. Layered on top: Temple has the deepest **Morale** kit in the game (Encouragement law +trigger chance, Hero's Blessing law +stat scaling, Lightweaver buff cycling). Daylight + Morale + the Crossbowman → Austringer ranged stack is the canonical play. No exotic resource to manage — just buff math."
+      }
     },
     "necropolis": {
       "summary": "Deepest hero roster in the game — even after 3 bans you'll still get an S/A pick. Skeleton Archers + Liches (Rewind Death) + Dread Knights are the core. The Undead Transformer is the strongest single building in tournament play — convert Pandora's Box rewards into your own elite units.",
@@ -130,7 +148,25 @@ window.OE_TIER_DATA = {
         "Lich Rewind Death sustains the army indefinitely — never skip the T5 build.",
         "Undead Transformer: drag captured T5/T6/T7 neutrals in, get back Necro equivalents (no morale penalty).",
         "Vampire Lord + Bloodthirst law + Morituri te Salutant law = retaliation loop that resurrects on every counter."
-      ]
+      ],
+      "army_phases": [
+        [
+          "Early — 1-2-3 fights (week 1)",
+          "T1 Skeleton Archer split into 2-3 stacks (Onkos start = ~30-45 from day 1). Fantasm 1-stack for DoT curse application. Barghest melee chaff for fast positioning. Goal: clear T1+T2+T3 camps with Necromancy-raised Skeleton Archers compounding the stack each fight."
+        ],
+        [
+          "Mid — 1-3-5 fights (week 2)",
+          "Skeleton Archer doom-stack (100+ from Pandora) + Kennelmaster 1-stack to mark targets for max damage + Sanguine Lich (T5) for sustain. Rewind Death starts paying for itself. Add Dread Knight (T6) if running Kel'Ghul. Necromantic Energy fully spent each week into more Skeletons."
+        ],
+        [
+          "Late — 1-4-7 fights (week 3 break / final duel)",
+          "Avatar of War (T6, Dread Knight upgrade — never Wraith) for double-strike + steal-attack. Vampire Lord (T7) for the vampirism + no-counter retaliation loop (combo with Bloodthirst + Morituri te Salutant laws). Liches still in the back for sustain. Skeleton Archer base remains the volume layer."
+        ]
+      ],
+      "signature_mechanic": {
+        "title": "Necromancy + Necromantic Energy",
+        "body": "Necromancy raises a fraction of HP killed (4 / 6 / 8% at Basic / Advanced / Expert) into new Skeletons / Skeleton Archers — but only up to the *highest tier you killed* in that battle, and only if you have a stack of that tier or lower available. **Necromantic Energy** is a weekly resource (cap 1250) consumed per raise — you can't infinitely Necromancy like HOMM3. Doesn't trigger on Undead, Embodiments, or Constructs. Combine with the **Undead Transformer** (week-2 building) to convert captured Pandora-box units into Necropolis equivalents. The Necromancy snowball + Lich Rewind Death sustain is what makes Necropolis the deepest tournament faction."
+      }
     },
     "sylvan": {
       "summary": "Grove (formerly Sylvan). T1 Fawn Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.",
@@ -177,7 +213,25 @@ window.OE_TIER_DATA = {
         "Avatar Vomit + Thaumaturgy double-cast is *the* meta archetype.",
         "Tss'kish buffs Herbomancers (speed/init/HP/atk/def). Advanced Murmuring starts you with +2 focus.",
         "Strong Connection law: every focus spend reduces spell cooldown — combos with the Hoplite focus loop."
-      ]
+      ],
+      "army_phases": [
+        [
+          "Early — 1-2-3 fights (week 1)",
+          "T1 Fawn Archer split into 2-3 stacks (Gingertail start = 3 stacks day 1) + Dusk Hoplite 1-stacks (focus engine) tucked next to the corner. Skip T3 dwellings entirely. Goal: kite from the corner with Fawns while Hoplites generate focus for the hero's spell book."
+        ],
+        [
+          "Mid — 1-3-5 fights (week 2)",
+          "Fawn base + Dusk Hoplite 1-stacks + Sporomancer (T5, your Herbomancer upgrade). Avatar Vomit comes online — Avatar absorbs neutral retaliation while Hoplet focus fuels triple-cast turns from Murmurmancer. Skip the T3/T4 dwelling spend entirely; that gold goes to Mage Guild + walls."
+        ],
+        [
+          "Late — 1-4-7 fights (week 3 break / final duel)",
+          "Fawn doom-stack + Sporomancer + Murmurmancer (re-cast spellbook) + Phoenix (T7) if you got it. The Avatar tank + Bee DoT + spell volume from a Tss'kish/Sullie-type hero is the win condition. T6 Qilins are still skipped on most builds."
+        ]
+      ],
+      "signature_mechanic": {
+        "title": "Focus economy + Bloom spell power",
+        "body": "Grove leans on a self-sustaining **Focus engine**: Hoplets (no-retal Swift Strike) split into 1-stacks generate Focus turn after turn; Sporomancers/Murmurmancers spend it to re-cast and amplify. Their key passive is **Bloom**: Dusk Hoplites give the hero +3 spell power *per cast*, scaling caster damage every round. Combine with the **Avatar Vomit** archetype (Sullie / Halon / Tss'kish hero specs) for the strongest mid-game tempo in the format. The entire tech tree is built around skipping mid-tier dwellings to reach this loop."
+      }
     },
     "hive": {
       "summary": "Worst early game in the game — slow, clunky, no native ranged unit. Win condition lives in Tier 5 Reavers (Maniacal — extra turn on kill) or Tier 6 Worms (corpse-eating revive). Strategy: bypass low-tier dwellings, rush Apex by end of week 1, abuse Heroic Strike or Worm corpse mechanic to survive creeping. Egg/larvae summons scale off total army HP — Rock Lobsters in the stack make swarms hit much harder.",
@@ -224,7 +278,25 @@ window.OE_TIER_DATA = {
         "Reaver Wait-trick: stack two turns at the round boundary for double alpha strike.",
         "Eggs cast at end-of-round hatch instantly. Pair with Focus Reserves law (turn-1 summons).",
         "Heroic Strike chains (Curson) trivialize creeping when build path supports it."
-      ]
+      ],
+      "army_phases": [
+        [
+          "Early — 1-2-3 fights (week 1)",
+          "Hive's brutal phase. T1 Warden Parasite (sacrifice 1-stacks for +2 focus on death) + Ravager Parasite for speed + Locust 1-stack with Double-Strike Parry. Hero spends focus to summon Eggs/Larvae for body count. Survival is the goal — not winning fights cleanly. Lean on Heroic Strike chains (Curson) or Worm corpse-eat (Zoran) if you have those heroes."
+        ],
+        [
+          "Mid — 1-3-5 fights (week 2)",
+          "Apex (T5 Reavers) is online — this is the goal of the rush. Reaver doom-stack + Larva summons + 1-stack Locust dive. Maelstrom hero ships you into this phase faster (starts with 2-3 Reavers). Reaver Wait-trick (chain wait + alpha-strike at round boundary) starts winning bigger camps."
+        ],
+        [
+          "Late — 1-4-7 fights (week 3 break / final duel)",
+          "Reaver core (now Maniacal — extra turn on kill, chains with Murderous Glee morale procs) + Worm/Pyroboros (T6) for AoE ranged + Hive Mother (T7) for the morale-aura share. Egg/Larva spam continues into the duel — eggs cast at end-of-round hatch instantly with Focus Reserves law. Win condition: Reaver chain procs after a single morale roll = the fight ends turn 1-2."
+        ]
+      ],
+      "signature_mechanic": {
+        "title": "Egg / Larva summoning + Apex tier-skip",
+        "body": "Hive's hero spends Focus to **summon Eggs** that hatch into Larvae — letting you field a swarm without recruiting it. Eggs cast at end-of-round hatch instantly. Hive's tournament plan is **Apex tier-skip**: bypass T1-T4 dwellings entirely and rush Tier 5 Reavers (or T6 Worms) by end of week 1. Reavers' Maniacal upgrade gives an extra turn on kill — chain morale procs for triple-attack rounds. The weakness: Hive has the worst T1-T4 in the game; you must survive until Apex lands. Heroic Strike chains (Curson) and Worm corpse-eating (Zoran) are the survival kits."
+      }
     },
     "schism": {
       "summary": "Expensive faction with a brutal tech tree (Arbitrators require Riders → Bewitchers → Arbitrators). Power stack is T4 Grand Shoth + Summoning Rite (sacrifice T2/T3 cultist meatshields to make more Grand Shoths). Bloated Arbitrators are arguably the single best T6 unit in the game (pure damage, blocks enemy spellbook). Communion mechanic + 'Abyss Stares Back' law is mandatory in Exodus.",
@@ -271,7 +343,25 @@ window.OE_TIER_DATA = {
         "Communion shadow army absorbs damage from real units; pair with Hel'Ghat (Armor) for unkillable creep.",
         "1-stack a Bewitcher to lock enemy hero out of focus charges entirely.",
         "Mandatory law: 'The Abyss Stares Back' (max Communion daily) — Exodus turn-skip would otherwise halve it."
-      ]
+      ],
+      "army_phases": [
+        [
+          "Early — 1-2-3 fights (week 1)",
+          "T1 Stinging Rashoth doom-stack (volume primary shooter, Communion absorbs hits) + Cultist + Aga'Shoth Rider stacks as demon-farm fuel for the Summoning Rite loop. Goal: lose Cultists/Riders and gain Grand Shoths from their corpses. Communion shadow army means most 'losses' are not real."
+        ],
+        [
+          "Mid — 1-3-5 fights (week 2)",
+          "Rashoth base + Grand Shoth (T4, Unspeakable Shoth — your mid power stack from the Summoning Rite loop) + Bewitcher 1-stack to shut down enemy hero focus + Mistress of Chains 1-stack for ability lock. Eye Collective hero ships you into this phase with 2 Grand Shoth stacks day 1."
+        ],
+        [
+          "Late — 1-4-7 fights (week 3 break / final duel)",
+          "Bloated Arbitrator (T6, the 'Toilet Seat Overlord' — highest pure damage T6 + spellbook lock) + Abyssal Envoy (T7, magic-immune brawler with Will of the Abyss double-turn) + Grand Shoth core + Bewitcher utility 1-stack. Schism wants the long game; if you survived to here, you almost always win the duel."
+        ]
+      ],
+      "signature_mechanic": {
+        "title": "Communion + Summoning Rite",
+        "body": "Schism enters every battle with a **Communion** shadow army — phantom copies of your real stacks that absorb damage first. Real losses only happen after the shadow pool is depleted. Communion regenerates at the start of each in-game day (and at full daily refill if you take *The Abyss Stares Back* law, which is mandatory for Exodus because the format's turn-skip would otherwise halve it). **Summoning Rite** sacrifices your dead T2/T3 units (Cultists, Riders) to *permanently* summon more Grand Shoth — a demon-farm loop that scales the more you fight. Combine: shadow army eats damage, Summoning Rite repays it in Grand Shoths."
+      }
     },
     "dungeon": {
       "summary": "Phenomenally strong in single-hero PvP — top picks are 'perma-ban or perma-pick' tier. Onyx Dancer 1-stacks strip defense (-2/hit), Minotaur Lord parry, Medusa Sculptor petrification, Chthonic Hydra regen, Black Dragon spell immunity. Every fighting style has a dedicated law that 1.5×s its damage — those laws are mandatory.",
@@ -318,7 +408,25 @@ window.OE_TIER_DATA = {
         "Minotaur Lord + Riposte = double pre-emptive counter on melee opponents.",
         "Black Dragon + Armageddon = global nuke that doesn't hit you.",
         "Take every Fighting Style 1.5× law that matches your build — Dungeon's law tree is uniquely loaded with these."
-      ]
+      ],
+      "army_phases": [
+        [
+          "Early — 1-2-3 fights (week 1)",
+          "T1 Infernal Troglodyte 1-stack (prison-shank target marker) + T2 Guile Infiltrator (no-retal teleport) + T3 Aureate Dancer split into 2-3 stacks turn 1 to strip enemy defense (-2/hit cumulative). Kieran ships you into this phase with 3 Trog stacks (54-72 total). Day-1 dancer + minotaur recruits is the most explosive ladder opener."
+        ],
+        [
+          "Mid — 1-3-5 fights (week 2)",
+          "Aureate Dancer base + Minotaur Lord (T4, Parry — counters before being hit; combo with Riposte spell for double pre-emptive counters) + Medusa Sculptor (T5, Countershot + Petrify) 1-stacked for utility. Onyx Dancer 1-stacks still doing the defense-strip work. Stinger/Motley scaling poison/Twilight makes mid-tier camps trivial."
+        ],
+        [
+          "Late — 1-4-7 fights (week 3 break / final duel)",
+          "Black Dragon (T7, ALWAYS over Ashen — higher initiative + spell-immune) + Chthonic Hydra (T6, regen + Poisonous Blood) + Medusa Sculptor + Minotaur Lord. Cast Armageddon — your Black Dragons sit immune while the board nukes. Aureate Dancer still in the lineup for the turn-1 defense strip."
+        ]
+      ],
+      "signature_mechanic": {
+        "title": "Fighting Style laws + 1-stack defense stripping",
+        "body": "Dungeon's signature is its **Fighting Style laws** — for every attack pattern in the game (Ranged, Melee, Magic, etc.) Dungeon has a dedicated 1.5× damage law. Pick the laws that match your build and your damage scales linearly. Layered on top: **Onyx Dancer 1-stacking** strips -2 enemy defense per A Thousand Cuts hit, so a turn-1 dancer split can completely peel an enemy stack's armor before the main exchange. Other faction-defining levers: **Black Dragon spell immunity** (Armageddon nukes everything but your dragons), **Minotaur Lord parry** (counters before being hit), and the Mage Guild Tier 5 — the highest in the game."
+      }
     }
   },
   "TOP_BANS": [
@@ -2041,5 +2149,5 @@ window.OE_TIER_DATA = {
       }
     ]
   },
-  "GENERATED_AT": "2026-05-10 02:45 UTC"
+  "GENERATED_AT": "2026-05-10 03:03 UTC"
 };
