@@ -2572,6 +2572,124 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   padding-top: 0.5rem;
 }
 
+/* ---------- map objects view ---------- */
+.mo-cat { margin: 1.6rem 0; }
+.mo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.8rem;
+}
+.mo-card {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  border-radius: 2px;
+}
+.mo-img {
+  width: 140px; height: 140px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.mo-body { flex: 1; min-width: 0; }
+.mo-name {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: -0.005em;
+}
+.mo-desc {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+  margin: 0 0 0.4rem;
+}
+.mo-narr {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ---------- map templates view ---------- */
+.mt-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+}
+.mt-card {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  border-radius: 2px;
+}
+.mt-img {
+  width: 96px; height: 96px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.mt-body { flex: 1; min-width: 0; }
+.mt-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+.mt-name {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+  text-transform: none;
+}
+.mt-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.mt-tag {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  padding: 0.1em 0.5em;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink-2);
+  background: var(--bg);
+}
+.mt-tag-classic     { color: var(--accent);   border-color: var(--accent); }
+.mt-tag-single-hero { color: var(--accent-2); border-color: var(--accent-2); }
+.mt-tag-pve         { color: var(--gold);     border-color: var(--gold); }
+.mt-tag-scenario    { color: var(--combat);   border-color: var(--combat); }
+.mt-tag-tournament  { color: var(--magic);    border-color: var(--magic); }
+.mt-tag-size        { color: var(--muted); }
+.mt-tag-players     { color: var(--muted); font-variant-numeric: tabular-nums; }
+.mt-desc {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* ---------- subclasses view (simplified card list) ---------- */
 .sub-faction-block { margin: 1.4rem 0 1.8rem; }
 .sub-grid {

@@ -78,6 +78,36 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
+        <a className="card" href={window.OE_routeToUrl("map-objects")} onClick={(e)=>{e.preventDefault();go('map-objects');}}>
+          <div className="card-eyebrow">Bestiary</div>
+          <div className="card-title">Map Objects</div>
+          <p className="card-desc">
+            Every interactable thing on the adventure map — mines, chests,
+            shrines, dwellings, banks, teleports, special structures —
+            with the in-game icon, name, what-it-does description, and flavor
+            text. Filter by category.
+          </p>
+          <div className="card-stats">
+            <span><b>145</b>objects</span>
+            <span><b>9</b>categories</span>
+          </div>
+        </a>
+
+        <a className="card" href={window.OE_routeToUrl("map-templates")} onClick={(e)=>{e.preventDefault();go('map-templates');}}>
+          <div className="card-eyebrow">Multiplayer</div>
+          <div className="card-title">Map Templates</div>
+          <p className="card-desc">
+            All generated multiplayer templates with their official
+            descriptions. Filterable by mode (Classic, Single-hero, PvE,
+            Scenario) and inferred size. Player counts pulled from the
+            description text where available.
+          </p>
+          <div className="card-stats">
+            <span><b>58</b>templates</span>
+            <span><b>5</b>modes</span>
+          </div>
+        </a>
+
         <a className="card" href={window.OE_routeToUrl("spells")} onClick={(e)=>{e.preventDefault();go('spells');}}>
           <div className="card-eyebrow">Reference</div>
           <div className="card-title">Spells</div>

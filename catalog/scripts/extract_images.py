@@ -31,7 +31,7 @@ RESOURCES_ASSETS = ROOT / "HeroesOldenEra_Data" / "resources.assets"
 IMG = ROOT / "docs" / "img"
 IMG.mkdir(parents=True, exist_ok=True)
 for sub in ("heroes", "specs", "factions", "units", "skills", "subskills",
-            "spells", "buildings", "laws"):
+            "spells", "buildings", "laws", "map_objects"):
     (IMG / sub).mkdir(exist_ok=True)
 # Per-faction subdirs for buildings + laws (icon names are faction-specific).
 for fkey in ("human", "undead", "nature", "demon", "unfrozen", "dungeon"):
@@ -173,6 +173,26 @@ for p in (RAW / "DB" / "objects_logic" / "cities").glob("*_city.json"):
                     # reference 'img/buildings/human/Tier_2_L2.png'.
                     target = IMG / "buildings" / fkey / f"{short}_L{li}"
                     wanted.append((target, asset))
+
+# Map objects — read the names list from mapObjects.json tokens.
+# The Unity asset names match the bare object id (mine_gold, chest, etc.).
+import re as _re
+mo_path = RAW / "Lang" / "english" / "texts" / "mapObjects.json"
+if mo_path.exists():
+    mo_tokens = load_array(mo_path)  # tokens list under "array"? No — under "tokens". Use raw JSON.
+    # Re-load without the array-wrapper helper to access "tokens" field
+    import json as _json
+    mt = mo_path.read_text(encoding="utf-8-sig").lstrip("﻿")
+    mt = _re.sub(r"//[^\n]*", "", mt); mt = _re.sub(r",(\s*[}\]])", r"\1", mt)
+    for t in _json.loads(mt).get("tokens", []):
+        m = _re.match(r"^(.+?)_name$", t.get("sid", ""))
+        if not m: continue
+        base = m.group(1)
+        # Try the base id as the asset name (most common: 'mine_gold', 'chest',
+        # 'altar_of_magic_1' all match), with a few fallback candidates.
+        candidates = [base, base + "_color", base + "_diffuse"]
+        wanted.append((IMG / "map_objects" / base, candidates))
+
 
 # Laws — one icon per law entry, keyed by faction key + law number.
 for p in (RAW / "DB" / "fractions_laws").glob("fractions_laws_table_*.json"):

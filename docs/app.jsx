@@ -9,7 +9,8 @@
 
 const SIMPLE_VIEWS = ['index', 'mechanics', 'factions',
                       'subclasses', 'skills', 'heroes', 'units',
-                      'tier', 'guides', 'draft', 'spells'];
+                      'tier', 'guides', 'draft', 'spells',
+                      'map-objects', 'map-templates'];
 
 // Detect the base path. On GitHub Pages this is '/homm-olden/'; locally '/'.
 const BASE = (() => {
@@ -96,6 +97,8 @@ const titleFor = (route) => {
     case 'subclasses':    return t('Subclasses');
     case 'skills':        return t('Skills');
     case 'spells':        return t('Spells');
+    case 'map-objects':   return t('Map Objects');
+    case 'map-templates': return t('Map Templates');
     case 'heroes':        return t('Heroes');
     case 'units':         return t('Units');
     case 'tier':          return t('Tier list');
@@ -182,6 +185,8 @@ const App = () => {
         <a className={tabActive('subclasses')} href={url('subclasses')}  onClick={(e)=>{e.preventDefault();go('subclasses');}}>Subclasses</a>
         <a className={tabActive('skills')}     href={url('skills')}      onClick={(e)=>{e.preventDefault();go('skills');}}>Skills</a>
         <a className={tabActive('spells')}     href={url('spells')}      onClick={(e)=>{e.preventDefault();go('spells');}}>Spells</a>
+        <a className={tabActive('map-objects')}   href={url('map-objects')}   onClick={(e)=>{e.preventDefault();go('map-objects');}}>Map objects</a>
+        <a className={tabActive('map-templates')} href={url('map-templates')} onClick={(e)=>{e.preventDefault();go('map-templates');}}>Templates</a>
         <a className={tabActive('heroes')}     href={url('heroes')}      onClick={(e)=>{e.preventDefault();go('heroes');}}>Heroes</a>
         <a className={tabActive('units')}      href={url('units')}       onClick={(e)=>{e.preventDefault();go('units');}}>Units</a>
         <a className={tabActive('tier')}       href={url('tier')}        onClick={(e)=>{e.preventDefault();go('tier');}}>Tier list</a>
@@ -196,7 +201,9 @@ const App = () => {
       {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} kind={route.kind} initialQuery={route.query} go={go} />}
       {route.view==='subclasses' && <window.SubclassesView />}
       {route.view==='skills'     && <window.SkillsView />}
-      {route.view==='spells'     && <window.SpellsView />}
+      {route.view==='spells'        && <window.SpellsView />}
+      {route.view==='map-objects'   && <window.MapObjectsView />}
+      {route.view==='map-templates' && <window.MapTemplatesView />}
       {route.view==='heroes'     && <window.HeroesView />}
       {route.view==='units'         && <window.UnitsView go={go} />}
       {route.view==='units-faction' && <window.FactionUnitsView factionId={route.factionId} go={go} />}
