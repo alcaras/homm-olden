@@ -1,6 +1,6 @@
 /* Olden Era reference — main app */
 
-const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'calc', 'subclasses', 'heroes', 'units', 'tier', 'guides', 'draft'];
+const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'calc', 'subclasses', 'skills', 'heroes', 'units', 'tier', 'guides', 'draft'];
 
 const parseHash = () => {
   const raw = (window.location.hash || '#index').slice(1);
@@ -67,6 +67,7 @@ const App = () => {
         <button className={tabActive('calc') || (route.view==='calc-faction'?'active':'')}
                 onClick={()=>go('calc')}>Calculator</button>
         <button className={tabActive('subclasses')} onClick={()=>go('subclasses')}>Subclasses</button>
+        <button className={tabActive('skills')}     onClick={()=>go('skills')}>Skills</button>
         <button className={tabActive('heroes')}     onClick={()=>go('heroes')}>Heroes</button>
         <button className={tabActive('units')}      onClick={()=>go('units')}>Units</button>
         <button className={tabActive('tier')}       onClick={()=>go('tier')}>Tier list</button>
@@ -81,6 +82,7 @@ const App = () => {
       {route.view==='calc'          && <window.CalcHubView go={go} />}
       {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} initialQuery={route.query} go={go} />}
       {route.view==='subclasses' && <window.SubclassesView />}
+      {route.view==='skills'     && <window.SkillsView />}
       {route.view==='heroes'     && <window.HeroesView />}
       {route.view==='units'      && <window.UnitsView />}
       {route.view==='tier'       && <window.TierView />}

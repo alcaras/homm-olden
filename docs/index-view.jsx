@@ -62,6 +62,24 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
+        <a className="card" href="#skills" onClick={(e)=>{e.preventDefault();go('skills');}}>
+          <div className="card-eyebrow">Reference</div>
+          <div className="card-title">Skills — Deep Dive</div>
+          <p className="card-desc">
+            Every hero skill — Combat, Magic, the four Schools, Utility, the
+            class-locked Combat / Thaumaturgy pair, the never-in-subclass
+            Siegecraft / Recruitment, plus the six faction skills. Per-level
+            effects (Basic / Advanced / Expert), the sub-skill rewards offered
+            at each level with icons, and the subclasses that require this skill
+            at Expert.
+          </p>
+          <div className="card-stats">
+            <span><b>30</b>skills</span>
+            <span><b>~200</b>sub-skills</span>
+            <span><b>Basic / Adv / Expert</b></span>
+          </div>
+        </a>
+
         <a className="card" href="#subclasses" onClick={(e)=>{e.preventDefault();go('subclasses');}}>
           <div className="card-eyebrow">Reference matrix</div>
           <div className="card-title">Subclasses & Required Skills</div>

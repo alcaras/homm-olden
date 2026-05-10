@@ -30,7 +30,7 @@ RAW = ROOT / "catalog" / "raw"
 RESOURCES_ASSETS = ROOT / "HeroesOldenEra_Data" / "resources.assets"
 IMG = ROOT / "docs" / "img"
 IMG.mkdir(parents=True, exist_ok=True)
-for sub in ("heroes", "specs", "factions", "units"):
+for sub in ("heroes", "specs", "factions", "units", "skills", "subskills"):
     (IMG / sub).mkdir(exist_ok=True)
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -109,6 +109,33 @@ def unit_icon_candidates(uid: str) -> list[str]:
 
 for uid in sorted(unit_ids):
     wanted.append((IMG / "units" / uid, unit_icon_candidates(uid)))
+
+# Skills — JSON `parametersPerLevel[i].icon` per level.
+# Save the level-1 icon under <skill_id>.png and per-level under <skill_id>_<lvl>.png.
+for p in (RAW / "DB" / "heroes_skills" / "skills").glob("skills.json"):
+    for sk in load_array(p):
+        if not isinstance(sk, dict):
+            continue
+        sid = sk.get("id")
+        if not sid:
+            continue
+        for li, lvl in enumerate(sk.get("parametersPerLevel", []), 1):
+            ico = lvl.get("icon")
+            if not ico:
+                continue
+            # Save the L1 icon under the bare skill id; subsequent levels append _L<n>
+            target = IMG / "skills" / (sid if li == 1 else f"{sid}_L{li}")
+            wanted.append((target, ico))
+
+# Sub-skills (a.k.a. skill rewards picked at L2/L3)
+for p in (RAW / "DB" / "heroes_skills" / "sub_skills").glob("sub_skills.json"):
+    for sk in load_array(p):
+        if not isinstance(sk, dict):
+            continue
+        sid = sk.get("id")
+        ico = sk.get("icon")
+        if sid and ico:
+            wanted.append((IMG / "subskills" / sid, ico))
 
 
 # ---------- Index resources.assets by name ----------

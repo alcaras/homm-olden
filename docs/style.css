@@ -2327,6 +2327,235 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   margin: 0.25rem 0 0.5rem;
 }
 
+/* ---------- skills view ---------- */
+.skill-group { margin: 1.6rem 0; }
+.skill-group h2 { margin-top: 1.4rem; }
+.skill-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.skill-card {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 1rem 1.2rem;
+  border-radius: 2px;
+}
+.skill-head {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.skill-icon {
+  width: 56px; height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 2px;
+}
+.skill-head-body { flex: 1; min-width: 0; }
+.skill-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+.skill-name {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ink);
+  text-transform: none;
+}
+.skill-type-chip {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  padding: 0.12em 0.5em;
+  border: 1px solid var(--rule-bold);
+  border-radius: 2px;
+  color: var(--ink-2);
+}
+.skill-sc-count, .skill-never {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.skill-never { color: var(--faint); font-style: italic; }
+.skill-base-desc {
+  margin: 0;
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.skill-levels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+@media (max-width: 1080px) { .skill-levels { grid-template-columns: 1fr; } }
+.skill-level {
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  padding: 0.6rem 0.8rem;
+  border-top: 3px solid var(--rule-bold);
+  border-radius: 2px;
+}
+.skill-level-1 { border-top-color: var(--accent); }
+.skill-level-2 { border-top-color: var(--gold); }
+.skill-level-3 { border-top-color: var(--accent-2); }
+.skill-level-head {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.skill-level-icon {
+  width: 32px; height: 32px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px;
+  flex-shrink: 0;
+}
+.skill-level-tier {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.1rem;
+}
+.skill-level-num {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+.skill-level-tier-name {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.skill-level-name {
+  font-family: Charter, Georgia, serif;
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.skill-level-desc {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+.skill-subskills {
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px dotted var(--rule);
+}
+.skill-subskills-head {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.skill-subskills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.skill-subskill {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.skill-subskill-icon {
+  width: 26px; height: 26px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px;
+  flex-shrink: 0;
+}
+.skill-subskill-name {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.skill-subskill-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.35;
+  margin-top: 1px;
+}
+
+.skill-foot {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.6rem;
+}
+.skill-foot-head {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.skill-foot-subs { display: flex; flex-direction: column; gap: 0.35rem; }
+.skill-foot-fac {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.skill-foot-sub-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+.skill-foot-sub.might { color: var(--accent); font-weight: 600; }
+.skill-foot-sub.magic { color: var(--accent-2); font-weight: 600; }
+.skill-foot-sub em.skill-foot-class {
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.85em;
+}
+
 /* ---------- dark mode ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
