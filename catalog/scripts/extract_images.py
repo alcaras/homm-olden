@@ -30,8 +30,13 @@ RAW = ROOT / "catalog" / "raw"
 RESOURCES_ASSETS = ROOT / "HeroesOldenEra_Data" / "resources.assets"
 IMG = ROOT / "docs" / "img"
 IMG.mkdir(parents=True, exist_ok=True)
-for sub in ("heroes", "specs", "factions", "units", "skills", "subskills", "spells"):
+for sub in ("heroes", "specs", "factions", "units", "skills", "subskills",
+            "spells", "buildings", "laws"):
     (IMG / sub).mkdir(exist_ok=True)
+# Per-faction subdirs for buildings + laws (icon names are faction-specific).
+for fkey in ("human", "undead", "nature", "demon", "unfrozen", "dungeon"):
+    (IMG / "buildings" / fkey).mkdir(exist_ok=True, parents=True)
+    (IMG / "laws" / fkey).mkdir(exist_ok=True, parents=True)
 
 sys.path.insert(0, str(Path(__file__).parent))
 from load_json import load_array
@@ -148,6 +153,42 @@ for p in (RAW / "DB" / "magics").glob("*.json"):
         ico = sp.get("icon")
         if sid and ico:
             wanted.append((IMG / "spells" / sid, ico))
+
+# Buildings — per-faction city files. Each building has an `icons` list with
+# one asset name per level (some single-level buildings have just one).
+for p in (RAW / "DB" / "objects_logic" / "cities").glob("*_city.json"):
+    fkey = p.stem.replace("_city", "")
+    for city in load_array(p):
+        if not isinstance(city, dict):
+            continue
+        for cat in ("mains", "taverns", "markets", "artifactMarkets", "banks",
+                    "magicGuilds", "hires", "walls", "intelligences",
+                    "trainingRanges", "graals", "uniques", "specials", "captures"):
+            for b in (city.get(cat) or []):
+                sid = b.get("sid") or ""
+                short = sid[len("Build_"):] if sid.startswith("Build_") else sid
+                for li, asset in enumerate(b.get("icons") or [], 1):
+                    if not asset: continue
+                    # Save as <faction_key>/<short>_L<n>.png so calc-data can
+                    # reference 'img/buildings/human/Tier_2_L2.png'.
+                    target = IMG / "buildings" / fkey / f"{short}_L{li}"
+                    wanted.append((target, asset))
+
+# Laws — one icon per law entry, keyed by faction key + law number.
+for p in (RAW / "DB" / "fractions_laws").glob("fractions_laws_table_*.json"):
+    fkey = p.stem.replace("fractions_laws_table_", "")
+    for law in load_array(p):
+        if not isinstance(law, dict):
+            continue
+        sid = law.get("id") or ""
+        ico = law.get("icon")
+        # Extract law number from 'fraction_law_<key>_<n>'
+        import re as _re
+        m = _re.match(r"fraction_law_[a-z]+_(\d+)$", sid)
+        if not m or not ico:
+            continue
+        num = m.group(1)
+        wanted.append((IMG / "laws" / fkey / num, ico))
 
 
 # ---------- Index resources.assets by name ----------

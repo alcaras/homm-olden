@@ -51,7 +51,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "gold": 5000
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Main_L1.png"
                 },
                 {
                   "level": 2,
@@ -68,7 +69,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Main_L2.png"
                 },
                 {
                   "level": 3,
@@ -85,7 +87,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Main_L3.png"
                 }
               ]
             }
@@ -108,7 +111,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Wall_L1.png"
                 },
                 {
                   "level": 2,
@@ -124,7 +128,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Wall_L2.png"
                 },
                 {
                   "level": 3,
@@ -140,7 +145,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Wall_L3.png"
                 }
               ]
             }
@@ -163,7 +169,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "wood": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Magic_Guild_L1.png"
                 },
                 {
                   "level": 2,
@@ -181,7 +188,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Magic_Guild_L2.png"
                 },
                 {
                   "level": 3,
@@ -200,7 +208,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Magic_Guild_L3.png"
                 },
                 {
                   "level": 4,
@@ -218,7 +227,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 3
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Magic_Guild_L4.png"
                 }
               ]
             }
@@ -241,7 +251,8 @@ window.OE_CALC_DATA = {
                     "gold": 1250,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Tier_1_L1.png"
                 },
                 {
                   "level": 2,
@@ -258,7 +269,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_1_L2.png"
                 }
               ]
             },
@@ -275,7 +287,8 @@ window.OE_CALC_DATA = {
                     "gold": 2250,
                     "wood": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Tier_2_L1.png"
                 },
                 {
                   "level": 2,
@@ -292,7 +305,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_2_L2.png"
                 }
               ]
             },
@@ -315,7 +329,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_3_L1.png"
                 },
                 {
                   "level": 2,
@@ -333,7 +348,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_3",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_3_L2.png"
                 }
               ]
             },
@@ -357,7 +373,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_3",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_4_L1.png"
                 },
                 {
                   "level": 2,
@@ -374,7 +391,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_4_L2.png"
                 }
               ]
             },
@@ -400,7 +418,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_5_L1.png"
                 },
                 {
                   "level": 2,
@@ -418,7 +437,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_5_L2.png"
                 }
               ]
             },
@@ -441,7 +461,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_6_L1.png"
                 },
                 {
                   "level": 2,
@@ -459,7 +480,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_6",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_6_L2.png"
                 }
               ]
             },
@@ -487,7 +509,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_7_L1.png"
                 },
                 {
                   "level": 2,
@@ -504,7 +527,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_7",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Tier_7_L2.png"
                 }
               ]
             }
@@ -533,7 +557,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Bank_L1.png"
                 }
               ]
             },
@@ -561,7 +586,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Treasury_L1.png"
                 }
               ]
             },
@@ -586,7 +612,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Bank",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Resource_Depot_L1.png"
                 }
               ]
             },
@@ -609,7 +636,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Resource_Depot",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Resource_Depot_level_2_L1.png"
                 }
               ]
             }
@@ -637,7 +665,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tavern",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Market_L1.png"
                 }
               ]
             }
@@ -660,7 +689,8 @@ window.OE_CALC_DATA = {
                     "gold": 500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Tavern_L1.png"
                 }
               ]
             }
@@ -689,7 +719,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Market",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/human/Artifact_Market_L1.png"
                 }
               ]
             }
@@ -716,7 +747,8 @@ window.OE_CALC_DATA = {
                     "crystals": 2,
                     "mercury": 2
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Training_Range_L1.png"
                 }
               ]
             }
@@ -738,7 +770,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "gold": 2500
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Intelligence_Academy_L1.png"
                 }
               ]
             }
@@ -760,7 +793,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "graal": 1
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/human/Golden_Calf_L1.png"
                 }
               ]
             }
@@ -785,7 +819,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/3.png"
                 },
                 {
                   "id": "fraction_law_human_2",
@@ -803,7 +838,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes gain 2 Sight radius."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/2.png"
                 },
                 {
                   "id": "fraction_law_human_34",
@@ -816,7 +852,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 250 Astrology points daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/34.png"
                 }
               ]
             },
@@ -838,7 +875,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Swordsman growth in your cities increases by 4. They gain 4 Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/4.png"
                 },
                 {
                   "id": "fraction_law_human_10",
@@ -856,7 +894,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Crossbowman growth in your cities increases by 4. They gain 4 Attack."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/10.png"
                 },
                 {
                   "id": "fraction_law_human_33",
@@ -869,7 +908,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Friendly creatures deal +25% Damage to summoned enemy creatures."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/33.png"
                 }
               ]
             }
@@ -897,7 +937,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Produces 1000 Gold daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/1.png"
                 },
                 {
                   "id": "fraction_law_human_14",
@@ -915,7 +956,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 2 Gem(s) daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/14.png"
                 },
                 {
                   "id": "fraction_law_human_22",
@@ -933,7 +975,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your heroes gain 2 Morale."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/22.png"
                 }
               ]
             },
@@ -955,7 +998,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Griffin growth in your cities increases by 2. They gain 10 HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/11.png"
                 },
                 {
                   "id": "fraction_law_human_17",
@@ -973,7 +1017,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Lightweaver growth in your cities increases by 2. They deal +4 Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/17.png"
                 },
                 {
                   "id": "fraction_law_human_5",
@@ -991,7 +1036,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "All positive effects on friendly creatures last 2 additional round(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/5.png"
                 },
                 {
                   "id": "fraction_law_human_12",
@@ -1004,7 +1050,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Friendly creatures gain 1 Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/12.png"
                 }
               ]
             }
@@ -1027,7 +1074,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/16.png"
                 },
                 {
                   "id": "fraction_law_human_21",
@@ -1045,7 +1093,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Your sources of Gold produce +20% Gold."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/21.png"
                 },
                 {
                   "id": "fraction_law_human_15",
@@ -1058,7 +1107,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Daylight spells of your heroes gain 1 level(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/15.png"
                 },
                 {
                   "id": "fraction_law_human_28",
@@ -1071,7 +1121,8 @@ window.OE_CALC_DATA = {
                       "cost": 6,
                       "descResolved": "You can construct +1 building(s) daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/28.png"
                 }
               ]
             },
@@ -1093,7 +1144,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Cavalry growth in your cities increases by 1. Their attacks ignore 10% of the target’s Defense and they gain 1 Speed."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/23.png"
                 },
                 {
                   "id": "fraction_law_human_18",
@@ -1111,7 +1163,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Friendly creatures deal +10% and take –10% Melee Damage. This effect is doubled for non‑Temple friendly creatures."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/18.png"
                 },
                 {
                   "id": "fraction_law_human_19",
@@ -1129,7 +1182,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Friendly creatures deal +10% and take –10% Long Reach and Ranged Damage. This effect is doubled for non‑Temple friendly creatures."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/19.png"
                 }
               ]
             }
@@ -1157,7 +1211,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes gain 4 Attack."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/6.png"
                 },
                 {
                   "id": "fraction_law_human_7",
@@ -1175,7 +1230,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes gain 4 Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/7.png"
                 },
                 {
                   "id": "fraction_law_human_8",
@@ -1193,7 +1249,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes gain 4 Spell Power."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/8.png"
                 },
                 {
                   "id": "fraction_law_human_9",
@@ -1211,7 +1268,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes gain 4 Knowledge."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/9.png"
                 }
               ]
             },
@@ -1233,7 +1291,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Inquisitor growth in your cities increases by 1. They ignore 10% of the enemy’s Attack and they gain 1 Speed."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/24.png"
                 },
                 {
                   "id": "fraction_law_human_25",
@@ -1256,7 +1315,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "The chance of Morale triggering for friendly creatures increases by 3% for each point of their Morale."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/25.png"
                 },
                 {
                   "id": "fraction_law_human_13",
@@ -1274,7 +1334,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Friendly creatures’ counterattacks deal +1% Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/13.png"
                 }
               ]
             }
@@ -1297,7 +1358,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/29.png"
                 },
                 {
                   "id": "fraction_law_human_27",
@@ -1310,7 +1372,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "All your Temple heroes can learn any spells of any tier."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/27.png"
                 }
               ]
             },
@@ -1332,7 +1395,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Angel growth in your cities increases by 1. They gain 50% of their hero’s Attack and Defense as Attack and Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/30.png"
                 },
                 {
                   "id": "fraction_law_human_26",
@@ -1345,7 +1409,8 @@ window.OE_CALC_DATA = {
                       "cost": 6,
                       "descResolved": "Friendly creatures gain 25% of their hero’s Spell Power and Knowledge as Attack and Defense respectively."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/26.png"
                 },
                 {
                   "id": "fraction_law_human_32",
@@ -1358,7 +1423,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Friendly creatures are immune to negative effects when fighting on their Native Terrain."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/human/32.png"
                 }
               ]
             }
@@ -1384,7 +1450,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "gold": 5000
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/undead/Main_L1.png"
                 },
                 {
                   "level": 2,
@@ -1401,7 +1468,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Main_L2.png"
                 },
                 {
                   "level": 3,
@@ -1418,7 +1486,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Main_L3.png"
                 }
               ]
             }
@@ -1441,7 +1510,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/undead/Wall_L1.png"
                 },
                 {
                   "level": 2,
@@ -1457,7 +1527,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Wall_L2.png"
                 },
                 {
                   "level": 3,
@@ -1473,7 +1544,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Wall_L3.png"
                 }
               ]
             }
@@ -1496,7 +1568,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "wood": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/undead/Magic_Guild_L1.png"
                 },
                 {
                   "level": 2,
@@ -1514,7 +1587,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Magic_Guild_L2.png"
                 },
                 {
                   "level": 3,
@@ -1533,7 +1607,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Magic_Guild_L3.png"
                 },
                 {
                   "level": 4,
@@ -1551,7 +1626,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 3
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Magic_Guild_L4.png"
                 },
                 {
                   "level": 5,
@@ -1570,7 +1646,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 4
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Magic_Guild_L5.png"
                 }
               ]
             }
@@ -1592,7 +1669,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "gold": 1500
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/undead/Tier_1_L1.png"
                 },
                 {
                   "level": 2,
@@ -1608,7 +1686,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_1_L2.png"
                 }
               ]
             },
@@ -1625,7 +1704,8 @@ window.OE_CALC_DATA = {
                     "gold": 2000,
                     "mercury": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/undead/Tier_2_L1.png"
                 },
                 {
                   "level": 2,
@@ -1642,7 +1722,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_2_L2.png"
                 }
               ]
             },
@@ -1664,7 +1745,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_3_L1.png"
                 },
                 {
                   "level": 2,
@@ -1681,7 +1763,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_3",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_3_L2.png"
                 }
               ]
             },
@@ -1709,7 +1792,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_4_L1.png"
                 },
                 {
                   "level": 2,
@@ -1728,7 +1812,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_4_L2.png"
                 }
               ]
             },
@@ -1752,7 +1837,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_5_L1.png"
                 },
                 {
                   "level": 2,
@@ -1769,7 +1855,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_5_L2.png"
                 }
               ]
             },
@@ -1796,7 +1883,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_6_L1.png"
                 },
                 {
                   "level": 2,
@@ -1814,7 +1902,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_6",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_6_L2.png"
                 }
               ]
             },
@@ -1838,7 +1927,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_7_L1.png"
                 },
                 {
                   "level": 2,
@@ -1857,7 +1947,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_7",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Tier_7_L2.png"
                 }
               ]
             }
@@ -1886,7 +1977,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Bank_L1.png"
                 }
               ]
             },
@@ -1914,7 +2006,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Treasury_L1.png"
                 }
               ]
             },
@@ -1939,7 +2032,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Bank",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Resource_Depot_L1.png"
                 }
               ]
             },
@@ -1962,7 +2056,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Resource_Depot",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Resource_Depot_level_2_L1.png"
                 }
               ]
             }
@@ -1990,7 +2085,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tavern",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/undead/Market_L1.png"
                 }
               ]
             }
@@ -2013,7 +2109,8 @@ window.OE_CALC_DATA = {
                     "gold": 500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/undead/Tavern_L1.png"
                 }
               ]
             }
@@ -2035,7 +2132,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "graal": 1
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/undead/Gaping_Maw_L1.png"
                 }
               ]
             }
@@ -2060,7 +2158,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/3.png"
                 },
                 {
                   "id": "fraction_law_undead_1",
@@ -2078,7 +2177,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 500 Gold daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/1.png"
                 },
                 {
                   "id": "fraction_law_undead_2",
@@ -2091,7 +2191,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes gain 2% Necromancy Power."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/2.png"
                 },
                 {
                   "id": "fraction_law_undead_12",
@@ -2114,7 +2215,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your heroes gain 3 Luck."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/12.png"
                 }
               ]
             },
@@ -2136,7 +2238,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Skeleton growth in your cities increases by 8. They gain 2 Attack and Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/4.png"
                 },
                 {
                   "id": "fraction_law_undead_5",
@@ -2154,7 +2257,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Wight growth in your cities increases by 8. Their minimum Damage increases by 1."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/5.png"
                 },
                 {
                   "id": "fraction_law_undead_26",
@@ -2172,7 +2276,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Enemy creatures take +1% from Damage-over-time effects."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/26.png"
                 }
               ]
             }
@@ -2200,7 +2305,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 2 Mercury daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/13.png"
                 },
                 {
                   "id": "fraction_law_undead_6",
@@ -2223,7 +2329,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your heroes gain 3 Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/6.png"
                 },
                 {
                   "id": "fraction_law_undead_7",
@@ -2236,7 +2343,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes gain 250% Necromancy Power."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/7.png"
                 },
                 {
                   "id": "fraction_law_undead_8",
@@ -2259,7 +2367,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your cities generate +60% Law points."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/8.png"
                 }
               ]
             },
@@ -2281,7 +2390,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Undead Pet growth in your cities increases by 4. They gain 2 Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/10.png"
                 },
                 {
                   "id": "fraction_law_undead_11",
@@ -2299,7 +2409,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Graverobber growth in your cities increases by 4. They summon +50% units."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/11.png"
                 },
                 {
                   "id": "fraction_law_undead_9",
@@ -2312,7 +2423,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Friendly creatures from different factions don’t decrease each other’s Morale."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/9.png"
                 }
               ]
             }
@@ -2335,7 +2447,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/16.png"
                 },
                 {
                   "id": "fraction_law_undead_32",
@@ -2348,7 +2461,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Nightshade spells of your heroes gain 1 level(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/32.png"
                 },
                 {
                   "id": "fraction_law_undead_15",
@@ -2361,7 +2475,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Your heroes gain 3% Necromancy Power."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/15.png"
                 },
                 {
                   "id": "fraction_law_undead_14",
@@ -2384,7 +2499,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Your spell upgrades cost –-40% Alchemical Dust."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/14.png"
                 }
               ]
             },
@@ -2406,7 +2522,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Lich growth in your cities increases by 2. Their healing abilities restore 1% more HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/18.png"
                 },
                 {
                   "id": "fraction_law_undead_19",
@@ -2424,7 +2541,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Dread Knight growth in your cities increases by 2. Their maximum Damage increases by 6."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/19.png"
                 },
                 {
                   "id": "fraction_law_undead_17",
@@ -2442,7 +2560,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Vampirism of friendly creatures increases by 1%."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/17.png"
                 }
               ]
             }
@@ -2475,7 +2594,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Necropolis creatures cost –-20% Gold."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/22.png"
                 },
                 {
                   "id": "fraction_law_undead_20",
@@ -2488,7 +2608,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Your Necropolis heroes always battle on their Native Terrain."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/20.png"
                 },
                 {
                   "id": "fraction_law_undead_21",
@@ -2501,7 +2622,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes gain 250% Necromancy Power."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/21.png"
                 }
               ]
             },
@@ -2523,7 +2645,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Vampire growth in your cities increases by 2. They gain 25 HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/23.png"
                 },
                 {
                   "id": "fraction_law_undead_24",
@@ -2541,7 +2664,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Friendly creatures battling on their Native terrain gain 2 Speed."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/24.png"
                 },
                 {
                   "id": "fraction_law_undead_29",
@@ -2559,7 +2683,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "The chance of Morale or Luck triggering for enemy creatures decreases by -2% for each point of their Morale or Luck, respectively."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/29.png"
                 }
               ]
             }
@@ -2582,7 +2707,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/28.png"
                 },
                 {
                   "id": "fraction_law_undead_34",
@@ -2595,7 +2721,8 @@ window.OE_CALC_DATA = {
                       "cost": 6,
                       "descResolved": "The enemy loses -1 level(s) on all Magic School spells."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/34.png"
                 },
                 {
                   "id": "fraction_law_undead_27",
@@ -2608,7 +2735,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Your heroes gain 4% Necromancy Power."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/27.png"
                 }
               ]
             },
@@ -2625,7 +2753,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Friendly creatures can make +1 counterattacks per round."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/30.png"
                 },
                 {
                   "id": "fraction_law_undead_31",
@@ -2643,7 +2772,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Enemy non‑Necropolis creatures deal –10% and take +10% Damage. Your non‑Necropolis creatures gain the opposite effect."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/undead/31.png"
                 }
               ]
             }
@@ -2669,7 +2799,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "gold": 5000
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/nature/Main_L1.png"
                 },
                 {
                   "level": 2,
@@ -2686,7 +2817,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Main_L2.png"
                 },
                 {
                   "level": 3,
@@ -2703,7 +2835,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Main_L3.png"
                 }
               ]
             }
@@ -2726,7 +2859,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/nature/Wall_L1.png"
                 },
                 {
                   "level": 2,
@@ -2742,7 +2876,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Wall_L2.png"
                 },
                 {
                   "level": 3,
@@ -2758,7 +2893,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Wall_L3.png"
                 }
               ]
             }
@@ -2781,7 +2917,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "wood": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/nature/Magic_Guild_L1.png"
                 },
                 {
                   "level": 2,
@@ -2799,7 +2936,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Magic_Guild_L2.png"
                 },
                 {
                   "level": 3,
@@ -2818,7 +2956,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Magic_Guild_L3.png"
                 },
                 {
                   "level": 4,
@@ -2836,7 +2975,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 3
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Magic_Guild_L4.png"
                 },
                 {
                   "level": 5,
@@ -2855,7 +2995,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 4
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Magic_Guild_L5.png"
                 }
               ]
             }
@@ -2878,7 +3019,8 @@ window.OE_CALC_DATA = {
                     "gold": 1000,
                     "wood": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/nature/Tier_1_L1.png"
                 },
                 {
                   "level": 2,
@@ -2895,7 +3037,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_1_L2.png"
                 }
               ]
             },
@@ -2919,7 +3062,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_2_L1.png"
                 },
                 {
                   "level": 2,
@@ -2936,7 +3080,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_2_L2.png"
                 }
               ]
             },
@@ -2955,7 +3100,8 @@ window.OE_CALC_DATA = {
                     "ore": 5,
                     "crystals": 3
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/nature/Tier_3_L1.png"
                 },
                 {
                   "level": 2,
@@ -2974,7 +3120,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_3",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_3_L2.png"
                 }
               ]
             },
@@ -3001,7 +3148,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_4_L1.png"
                 },
                 {
                   "level": 2,
@@ -3019,7 +3167,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_4_L2.png"
                 }
               ]
             },
@@ -3044,7 +3193,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_5_L1.png"
                 },
                 {
                   "level": 2,
@@ -3062,7 +3212,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_5_L2.png"
                 }
               ]
             },
@@ -3090,7 +3241,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_6_L1.png"
                 },
                 {
                   "level": 2,
@@ -3109,7 +3261,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_6",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_6_L2.png"
                 }
               ]
             },
@@ -3133,7 +3286,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_6",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_7_L1.png"
                 },
                 {
                   "level": 2,
@@ -3152,7 +3306,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_7",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Tier_7_L2.png"
                 }
               ]
             }
@@ -3181,7 +3336,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Bank_L1.png"
                 }
               ]
             },
@@ -3209,7 +3365,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Treasury_L1.png"
                 }
               ]
             },
@@ -3234,7 +3391,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Bank",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Resource_Depot_L1.png"
                 }
               ]
             },
@@ -3257,7 +3415,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Resource_Depot",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Resource_Depot_level_2_L1.png"
                 }
               ]
             }
@@ -3285,7 +3444,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tavern",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Market_L1.png"
                 }
               ]
             }
@@ -3308,7 +3468,8 @@ window.OE_CALC_DATA = {
                     "gold": 500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/nature/Tavern_L1.png"
                 }
               ]
             }
@@ -3337,7 +3498,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Market",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/nature/Artifact_Market_L1.png"
                 }
               ]
             }
@@ -3359,7 +3521,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "graal": 1
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/nature/Spring_of_Life_L1.png"
                 }
               ]
             }
@@ -3384,7 +3547,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/4.png"
                 },
                 {
                   "id": "fraction_law_nature_1",
@@ -3397,7 +3561,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Produces 500 Gold daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/1.png"
                 },
                 {
                   "id": "fraction_law_nature_2",
@@ -3420,7 +3585,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your heroes gain 3 Knowledge."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/2.png"
                 }
               ]
             },
@@ -3447,7 +3613,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Faun growth in your cities increases by 6. They deal +50% Melee Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/5.png"
                 },
                 {
                   "id": "fraction_law_nature_6",
@@ -3470,7 +3637,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Hoplet growth in your cities increases by 6. They always deal maximum Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/6.png"
                 }
               ]
             }
@@ -3498,7 +3666,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 2 Crystal(s) daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/13.png"
                 },
                 {
                   "id": "fraction_law_nature_30",
@@ -3511,7 +3680,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Produces 250 Astrology Points daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/30.png"
                 },
                 {
                   "id": "fraction_law_nature_3",
@@ -3524,7 +3694,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Your heroes cost –-40% Gold."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/3.png"
                 }
               ]
             },
@@ -3551,7 +3722,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Vine Iriyad growth in your cities increases by 2. They gain 15 HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/10.png"
                 },
                 {
                   "id": "fraction_law_nature_11",
@@ -3569,7 +3741,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Friendly creatures deal 50% more Damage with Lucky Strikes."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/11.png"
                 },
                 {
                   "id": "fraction_law_nature_17",
@@ -3592,7 +3765,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "When battling in the area you control, friendly creatures gain 6 Attack and Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/17.png"
                 }
               ]
             }
@@ -3615,7 +3789,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/15.png"
                 },
                 {
                   "id": "fraction_law_nature_8",
@@ -3633,7 +3808,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your buildings cost –-40% Wood to construct."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/8.png"
                 },
                 {
                   "id": "fraction_law_nature_14",
@@ -3651,7 +3827,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Each time your improve a Mage Guild in your Grove cities, +2 spell(s) is unlocked in the Observatory."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/14.png"
                 },
                 {
                   "id": "fraction_law_nature_9",
@@ -3664,7 +3841,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Enemies can’t see detailed information about your armies. (When viewed, it shows random numbers of random Grove units.)"
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/9.png"
                 }
               ]
             },
@@ -3691,7 +3869,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Naiad growth in your cities increases by 2. They gain 3 Speed and Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/16.png"
                 },
                 {
                   "id": "fraction_law_nature_12",
@@ -3704,7 +3883,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "All negative effects on friendly creatures last -1 fewer round(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/12.png"
                 }
               ]
             }
@@ -3732,7 +3912,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Creature growth of your external dwellings increases by +1%."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/20.png"
                 },
                 {
                   "id": "fraction_law_nature_18",
@@ -3755,7 +3936,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "All temporary spells (scrolls, artifacts etc.) available to your heroes gain 3 level(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/18.png"
                 },
                 {
                   "id": "fraction_law_nature_31",
@@ -3768,7 +3950,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "The cooldowns of all the battle spells of your heroes are reduced by -1 round(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/31.png"
                 },
                 {
                   "id": "fraction_law_nature_21",
@@ -3781,7 +3964,8 @@ window.OE_CALC_DATA = {
                       "cost": 6,
                       "descResolved": "Enemy heroes can’t flee or surrender."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/21.png"
                 }
               ]
             },
@@ -3808,7 +3992,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Herbomancer growth in your cities increases by 3. Their abilities cost –-1 Focus Charge(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/22.png"
                 },
                 {
                   "id": "fraction_law_nature_23",
@@ -3831,7 +4016,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Qilin growth in your cities increases by 1. They deal +6 Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/23.png"
                 },
                 {
                   "id": "fraction_law_nature_24",
@@ -3854,7 +4040,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Friendly creatures now have +3% Lucky Strike chance for each point of Luck."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/24.png"
                 }
               ]
             }
@@ -3877,7 +4064,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/26.png"
                 },
                 {
                   "id": "fraction_law_nature_25",
@@ -3890,7 +4078,8 @@ window.OE_CALC_DATA = {
                       "cost": 6,
                       "descResolved": "Your Heroic Strikes deal +? basic Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/25.png"
                 },
                 {
                   "id": "fraction_law_nature_7",
@@ -3908,7 +4097,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Grove heroes gain 2 sight radius and 20 Movement points."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/7.png"
                 },
                 {
                   "id": "fraction_law_nature_19",
@@ -3921,7 +4111,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your Focus Charge limit increases by 1."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/19.png"
                 }
               ]
             },
@@ -3948,7 +4139,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Phoenix growth in your cities increases by 1. Their maximum Damage increases by 20."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/27.png"
                 },
                 {
                   "id": "fraction_law_nature_28",
@@ -3961,7 +4153,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Your Fauns, Hoplets and Herbomancers gain 2 Speed and Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/28.png"
                 },
                 {
                   "id": "fraction_law_nature_29",
@@ -3974,7 +4167,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "The abilities of your Vine Iriyads, Naiads, Qilins and Phoenixes cost –-1 Focus Charge(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/nature/29.png"
                 }
               ]
             }
@@ -4000,7 +4194,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "gold": 5000
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/demon/Main_L1.png"
                 },
                 {
                   "level": 2,
@@ -4017,7 +4212,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Main_L2.png"
                 },
                 {
                   "level": 3,
@@ -4034,7 +4230,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Main_L3.png"
                 }
               ]
             }
@@ -4057,7 +4254,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/demon/Wall_L1.png"
                 },
                 {
                   "level": 2,
@@ -4073,7 +4271,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Wall_L2.png"
                 },
                 {
                   "level": 3,
@@ -4089,7 +4288,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Wall_L3.png"
                 }
               ]
             }
@@ -4112,7 +4312,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "wood": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/demon/Magic_Guild_L1.png"
                 },
                 {
                   "level": 2,
@@ -4130,7 +4331,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Magic_Guild_L2.png"
                 },
                 {
                   "level": 3,
@@ -4149,7 +4351,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Magic_Guild_L3.png"
                 },
                 {
                   "level": 4,
@@ -4167,7 +4370,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 3
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Magic_Guild_L4.png"
                 },
                 {
                   "level": 5,
@@ -4186,7 +4390,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 4
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Magic_Guild_L5.png"
                 }
               ]
             }
@@ -4210,7 +4415,8 @@ window.OE_CALC_DATA = {
                     "wood": 5,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/demon/Tier_1_L1.png"
                 },
                 {
                   "level": 2,
@@ -4227,7 +4433,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_1_L2.png"
                 }
               ]
             },
@@ -4245,7 +4452,8 @@ window.OE_CALC_DATA = {
                     "wood": 5,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/demon/Tier_2_L1.png"
                 },
                 {
                   "level": 2,
@@ -4262,7 +4470,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_2_L2.png"
                 }
               ]
             },
@@ -4284,7 +4493,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_3_L1.png"
                 },
                 {
                   "level": 2,
@@ -4302,7 +4512,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_3",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_3_L2.png"
                 }
               ]
             },
@@ -4324,7 +4535,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_4_L1.png"
                 },
                 {
                   "level": 2,
@@ -4342,7 +4554,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_4_L2.png"
                 }
               ]
             },
@@ -4365,7 +4578,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_5_L1.png"
                 },
                 {
                   "level": 2,
@@ -4383,7 +4597,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_5_L2.png"
                 }
               ]
             },
@@ -4410,7 +4625,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_6_L1.png"
                 },
                 {
                   "level": 2,
@@ -4428,7 +4644,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_6",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_6_L2.png"
                 }
               ]
             },
@@ -4450,7 +4667,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_6",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_7_L1.png"
                 },
                 {
                   "level": 2,
@@ -4467,7 +4685,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_7",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Tier_7_L2.png"
                 }
               ]
             }
@@ -4496,7 +4715,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Bank_L1.png"
                 }
               ]
             },
@@ -4524,7 +4744,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Treasury_L1.png"
                 }
               ]
             },
@@ -4549,7 +4770,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Bank",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Resource_Depot_L1.png"
                 }
               ]
             },
@@ -4572,7 +4794,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Resource_Depot",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Resource_Depot_level_2_L1.png"
                 }
               ]
             }
@@ -4600,7 +4823,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tavern",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/demon/Market_L1.png"
                 }
               ]
             }
@@ -4623,7 +4847,8 @@ window.OE_CALC_DATA = {
                     "gold": 500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/demon/Tavern_L1.png"
                 }
               ]
             }
@@ -4645,7 +4870,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "graal": 1
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/demon/Eternal_Flame_L1.png"
                 }
               ]
             }
@@ -4670,7 +4896,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/3.png"
                 },
                 {
                   "id": "fraction_law_demon_2",
@@ -4688,7 +4915,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Requirements for unlocking higher‑level Laws are reduced by 4."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/2.png"
                 },
                 {
                   "id": "fraction_law_demon_9",
@@ -4711,7 +4939,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your heroes’ spells cost –-3 mana."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/9.png"
                 },
                 {
                   "id": "fraction_law_demon_8",
@@ -4724,7 +4953,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your Hive heroes see exact information about neutral squads within ? squares."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/8.png"
                 }
               ]
             },
@@ -4751,7 +4981,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Friendly creatures gain 3 Attack."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/4.png"
                 },
                 {
                   "id": "fraction_law_demon_5",
@@ -4774,7 +5005,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Friendly creatures gain 3 Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/5.png"
                 },
                 {
                   "id": "fraction_law_demon_6",
@@ -4787,7 +5019,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Summoned Fire Larvae deal +?% Damage on death."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/6.png"
                 }
               ]
             }
@@ -4820,7 +5053,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 750 Gold daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/1.png"
                 },
                 {
                   "id": "fraction_law_demon_13",
@@ -4838,7 +5072,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 2 Crystal(s) daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/13.png"
                 },
                 {
                   "id": "fraction_law_demon_7",
@@ -4851,7 +5086,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "External dwellings increase respective creature growth in the cities by 1%."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/7.png"
                 }
               ]
             },
@@ -4873,7 +5109,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Parasite growth in your cities increases by 4. They gain 2 HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/10.png"
                 },
                 {
                   "id": "fraction_law_demon_11",
@@ -4891,7 +5128,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Locust growth in your cities increases by 4. They gain 2 Speed."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/11.png"
                 },
                 {
                   "id": "fraction_law_demon_12",
@@ -4909,7 +5147,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Hornet growth in your cities increases by 2. They gain 2 Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/12.png"
                 }
               ]
             }
@@ -4932,7 +5171,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/15.png"
                 },
                 {
                   "id": "fraction_law_demon_14",
@@ -4945,7 +5185,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Primal spells of your heroes gain 1 level(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/14.png"
                 }
               ]
             },
@@ -4967,7 +5208,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Scorpion growth in your cities increases by 2. They gain 3 Morale and Luck."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/16.png"
                 },
                 {
                   "id": "fraction_law_demon_17",
@@ -4985,7 +5227,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Reaver growth in your cities increases by 1. They gain 5 Morale and 1 Luck."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/17.png"
                 },
                 {
                   "id": "fraction_law_demon_18",
@@ -5003,7 +5246,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Waurms growth in your cities increases by 1. They gain 1 Morale and 5 Luck."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/18.png"
                 },
                 {
                   "id": "fraction_law_demon_19",
@@ -5016,7 +5260,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Summoned Fire Larvae attack twice."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/19.png"
                 }
               ]
             }
@@ -5044,7 +5289,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Upgrading your Hive creatures costs –-20% Gold. Recruiting upgraded creatures is discounted by the same amount."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/20.png"
                 },
                 {
                   "id": "fraction_law_demon_21",
@@ -5057,7 +5303,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "External dwellings in an area that you control produce upgraded creatures."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/21.png"
                 },
                 {
                   "id": "fraction_law_demon_25",
@@ -5070,7 +5317,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your Hive heroes see exact information about enemy heroes and cities within ? squares."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/25.png"
                 }
               ]
             },
@@ -5092,7 +5340,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Hive Queen growth in your cities increases by 1. They deal +10 Damage and gain 10 HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/23.png"
                 },
                 {
                   "id": "fraction_law_demon_24",
@@ -5115,7 +5364,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "When battling in the area you <b>do not</b> control, friendly creatures gain 6 Attack and Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/24.png"
                 }
               ]
             }
@@ -5138,7 +5388,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/27.png"
                 },
                 {
                   "id": "fraction_law_demon_26",
@@ -5156,7 +5407,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "External dwellings increase respective creature growth in the cities by 1%."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/26.png"
                 },
                 {
                   "id": "fraction_law_demon_22",
@@ -5179,7 +5431,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes deal +30% Magic Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/22.png"
                 }
               ]
             },
@@ -5201,7 +5454,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Friendly creatures deal +2 Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/28.png"
                 },
                 {
                   "id": "fraction_law_demon_29",
@@ -5224,7 +5478,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "The chance of Morale or Luck triggering for friendly creatures increases by 3% for each point of their Morale or Luck, respectively."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/29.png"
                 },
                 {
                   "id": "fraction_law_demon_30",
@@ -5237,7 +5492,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Summoned Fire Larvae provoke adjacent enemies to attack them over other units."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/demon/30.png"
                 }
               ]
             }
@@ -5263,7 +5519,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "gold": 5000
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/unfrozen/Main_L1.png"
                 },
                 {
                   "level": 2,
@@ -5280,7 +5537,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Main_L2.png"
                 },
                 {
                   "level": 3,
@@ -5297,7 +5555,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Main_L3.png"
                 }
               ]
             }
@@ -5320,7 +5579,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/unfrozen/Wall_L1.png"
                 },
                 {
                   "level": 2,
@@ -5336,7 +5596,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Wall_L2.png"
                 },
                 {
                   "level": 3,
@@ -5352,7 +5613,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Wall_L3.png"
                 }
               ]
             }
@@ -5375,7 +5637,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "wood": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/unfrozen/Magic_Guild_L1.png"
                 },
                 {
                   "level": 2,
@@ -5393,7 +5656,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Magic_Guild_L2.png"
                 },
                 {
                   "level": 3,
@@ -5412,7 +5676,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Magic_Guild_L3.png"
                 },
                 {
                   "level": 4,
@@ -5430,7 +5695,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 3
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Magic_Guild_L4.png"
                 }
               ]
             }
@@ -5455,7 +5721,8 @@ window.OE_CALC_DATA = {
                     "crystals": 1,
                     "mercury": 3
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/unfrozen/Tier_1_L1.png"
                 },
                 {
                   "level": 2,
@@ -5472,7 +5739,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_1_L2.png"
                 }
               ]
             },
@@ -5490,7 +5758,8 @@ window.OE_CALC_DATA = {
                     "wood": 5,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/unfrozen/Tier_2_L1.png"
                 },
                 {
                   "level": 2,
@@ -5508,7 +5777,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_2_L2.png"
                 }
               ]
             },
@@ -5531,7 +5801,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_3_L1.png"
                 },
                 {
                   "level": 2,
@@ -5549,7 +5820,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_3",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_3_L2.png"
                 }
               ]
             },
@@ -5577,7 +5849,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_4_L1.png"
                 },
                 {
                   "level": 2,
@@ -5594,7 +5867,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_4_L2.png"
                 }
               ]
             },
@@ -5617,7 +5891,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_3",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_5_L1.png"
                 },
                 {
                   "level": 2,
@@ -5635,7 +5910,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_5_L2.png"
                 }
               ]
             },
@@ -5658,7 +5934,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_6_L1.png"
                 },
                 {
                   "level": 2,
@@ -5676,7 +5953,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_6",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_6_L2.png"
                 }
               ]
             },
@@ -5704,7 +5982,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_7_L1.png"
                 },
                 {
                   "level": 2,
@@ -5721,7 +6000,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_7",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Tier_7_L2.png"
                 }
               ]
             }
@@ -5750,7 +6030,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Bank_L1.png"
                 }
               ]
             },
@@ -5778,7 +6059,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Treasury_L1.png"
                 }
               ]
             },
@@ -5803,7 +6085,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Bank",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Resource_Depot_L1.png"
                 }
               ]
             },
@@ -5826,7 +6109,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Resource_Depot",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Resource_Depot_level_2_L1.png"
                 }
               ]
             }
@@ -5854,7 +6138,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tavern",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Market_L1.png"
                 }
               ]
             }
@@ -5877,7 +6162,8 @@ window.OE_CALC_DATA = {
                     "gold": 500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/unfrozen/Tavern_L1.png"
                 }
               ]
             }
@@ -5906,7 +6192,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Market",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/unfrozen/Artifact_Market_L1.png"
                 }
               ]
             }
@@ -5928,7 +6215,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "graal": 1
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/unfrozen/Frigid_Firmament_L1.png"
                 }
               ]
             }
@@ -5953,7 +6241,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/3.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_23",
@@ -5976,7 +6265,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "When destroying artifacts, you gain +30% Alchemical Dust."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/23.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_9",
@@ -5994,7 +6284,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Your Schism heroes restore +20% mana each morning."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/9.png"
                 }
               ]
             },
@@ -6016,7 +6307,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Ra’Shoth growth in your cities increases by 8. They gain 1 Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/5.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_6",
@@ -6034,7 +6326,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Tier‑1 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/6.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_4",
@@ -6057,7 +6350,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Friendly creatures gain 3 Attack and Defense when they battle on their Native Terrain."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/4.png"
                 }
               ]
             }
@@ -6085,7 +6379,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 500 Gold daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/1.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_14",
@@ -6103,7 +6398,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 2 Mercury daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/14.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_2",
@@ -6121,7 +6417,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Your heroes gain +20% XP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/2.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_7",
@@ -6144,7 +6441,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your heroes gain +3 Spell Power."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/7.png"
                 }
               ]
             },
@@ -6161,7 +6459,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Cultist growth in your cities increases by 4. They deal +1 Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/12.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_13",
@@ -6174,7 +6473,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Aga’Shoth Rider growth in your cities increases by 2. They gain 5 HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/13.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_10",
@@ -6192,7 +6492,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Tier‑2 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/10.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_11",
@@ -6210,7 +6511,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Tier‑3 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/11.png"
                 }
               ]
             }
@@ -6233,7 +6535,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/17.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_15",
@@ -6246,7 +6549,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Arcane spells of your heroes gain 1 level."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/15.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_22",
@@ -6264,7 +6568,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Schism heroes’ spells and friendly creatures’ abilities summon +20% units."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/22.png"
                 }
               ]
             },
@@ -6286,7 +6591,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Grand Shoth growth in your cities increases by 4. They gain 1 Speed."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/19.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_18",
@@ -6304,7 +6610,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Tier‑4 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/18.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_20",
@@ -6322,7 +6629,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "All effects applied by your heroes and friendly creatures last 2 additional round(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/20.png"
                 }
               ]
             }
@@ -6350,7 +6658,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your cities produce +2 Wood and Ore."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/8.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_35",
@@ -6373,7 +6682,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 750 Astrology points daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/35.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_36",
@@ -6386,7 +6696,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "The cooldowns of all the battle spells of enemy heroes are increased by 1 round(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/36.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_16",
@@ -6399,7 +6710,8 @@ window.OE_CALC_DATA = {
                       "cost": 6,
                       "descResolved": "You can use Involuntary Summons in your Schism cities twice per week."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/16.png"
                 }
               ]
             },
@@ -6416,7 +6728,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Concubus growth in your cities increases by 1. They gain 4 Attack and Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/26.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_27",
@@ -6429,7 +6742,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Arbitrator growth in your cities increases by 1. They deal +4 Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/27.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_24",
@@ -6447,7 +6761,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Tier‑5 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/24.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_25",
@@ -6465,7 +6780,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Tier‑6 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/25.png"
                 }
               ]
             }
@@ -6488,7 +6804,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/30.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_28",
@@ -6501,7 +6818,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Each round of battle, the enemy loses -1 Focus Charge(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/28.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_29",
@@ -6514,7 +6832,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Your Schism heroes start each day with maximum Communion level."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/29.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_34",
@@ -6527,7 +6846,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Friendly creatures treat all Terrains as Native."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/34.png"
                 }
               ]
             },
@@ -6549,7 +6869,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Abyssal Envoy growth in your cities increases by 2. They gain 3 Speed and Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/32.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_31",
@@ -6567,7 +6888,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Tier‑7 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/31.png"
                 },
                 {
                   "id": "fraction_law_unfrozen_33",
@@ -6580,7 +6902,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "All enemy creatures lose -1 Speed and Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/unfrozen/33.png"
                 }
               ]
             }
@@ -6606,7 +6929,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "gold": 5000
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/dungeon/Main_L1.png"
                 },
                 {
                   "level": 2,
@@ -6623,7 +6947,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Main_L2.png"
                 },
                 {
                   "level": 3,
@@ -6640,7 +6965,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Main_L3.png"
                 }
               ]
             }
@@ -6663,7 +6989,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/dungeon/Wall_L1.png"
                 },
                 {
                   "level": 2,
@@ -6679,7 +7006,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Wall_L2.png"
                 },
                 {
                   "level": 3,
@@ -6695,7 +7023,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Wall_L3.png"
                 }
               ]
             }
@@ -6718,7 +7047,8 @@ window.OE_CALC_DATA = {
                     "gold": 2500,
                     "wood": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/dungeon/Magic_Guild_L1.png"
                 },
                 {
                   "level": 2,
@@ -6736,7 +7066,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Magic_Guild_L2.png"
                 },
                 {
                   "level": 3,
@@ -6755,7 +7086,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Magic_Guild_L3.png"
                 },
                 {
                   "level": 4,
@@ -6773,7 +7105,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 3
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Magic_Guild_L4.png"
                 },
                 {
                   "level": 5,
@@ -6792,7 +7125,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 4
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Magic_Guild_L5.png"
                 }
               ]
             }
@@ -6815,7 +7149,8 @@ window.OE_CALC_DATA = {
                     "gold": 1250,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/dungeon/Tier_1_L1.png"
                 },
                 {
                   "level": 2,
@@ -6832,7 +7167,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_1",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_1_L2.png"
                 }
               ]
             },
@@ -6852,7 +7188,8 @@ window.OE_CALC_DATA = {
                     "crystals": 1,
                     "mercury": 1
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/dungeon/Tier_2_L1.png"
                 },
                 {
                   "level": 2,
@@ -6870,7 +7207,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_2_L2.png"
                 }
               ]
             },
@@ -6899,7 +7237,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_3_L1.png"
                 },
                 {
                   "level": 2,
@@ -6917,7 +7256,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_3",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_3_L2.png"
                 }
               ]
             },
@@ -6940,7 +7280,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_2",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_4_L1.png"
                 },
                 {
                   "level": 2,
@@ -6958,7 +7299,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_4_L2.png"
                 }
               ]
             },
@@ -6987,7 +7329,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_4",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_5_L1.png"
                 },
                 {
                   "level": 2,
@@ -7005,7 +7348,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_5_L2.png"
                 }
               ]
             },
@@ -7029,7 +7373,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_5",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_6_L1.png"
                 },
                 {
                   "level": 2,
@@ -7048,7 +7393,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tier_6",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_6_L2.png"
                 }
               ]
             },
@@ -7076,7 +7422,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_7_L1.png"
                 },
                 {
                   "level": 2,
@@ -7097,7 +7444,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Magic_Guild",
                       "level": 3
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Tier_7_L2.png"
                 }
               ]
             }
@@ -7126,7 +7474,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Main",
                       "level": 2
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Bank_L1.png"
                 }
               ]
             },
@@ -7154,7 +7503,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Wall",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Treasury_L1.png"
                 }
               ]
             },
@@ -7179,7 +7529,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Bank",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Resource_Depot_L1.png"
                 }
               ]
             },
@@ -7202,7 +7553,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Resource_Depot",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Resource_Depot_level_2_L1.png"
                 }
               ]
             }
@@ -7230,7 +7582,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Tavern",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Market_L1.png"
                 }
               ]
             }
@@ -7253,7 +7606,8 @@ window.OE_CALC_DATA = {
                     "gold": 500,
                     "ore": 5
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/dungeon/Tavern_L1.png"
                 }
               ]
             }
@@ -7282,7 +7636,8 @@ window.OE_CALC_DATA = {
                       "sid": "Build_Market",
                       "level": 1
                     }
-                  ]
+                  ],
+                  "icon": "img/buildings/dungeon/Artifact_Market_L1.png"
                 }
               ]
             }
@@ -7304,7 +7659,8 @@ window.OE_CALC_DATA = {
                   "costs": {
                     "graal": 1
                   },
-                  "prereqs": []
+                  "prereqs": [],
+                  "icon": "img/buildings/dungeon/Spy_Network_L1.png"
                 }
               ]
             }
@@ -7329,7 +7685,8 @@ window.OE_CALC_DATA = {
                       "cost": 1,
                       "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/3.png"
                 },
                 {
                   "id": "fraction_law_dungeon_33",
@@ -7342,7 +7699,8 @@ window.OE_CALC_DATA = {
                       "cost": 6,
                       "descResolved": "Produces 500 Astrology points daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/33.png"
                 },
                 {
                   "id": "fraction_law_dungeon_2",
@@ -7360,7 +7718,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your heroes generate +10% Law points."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/2.png"
                 }
               ]
             },
@@ -7382,7 +7741,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Troglodytes deal 1.5 times more Damage when using their Fighting Style. Their min. Damage increases by 2."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/4.png"
                 },
                 {
                   "id": "fraction_law_dungeon_6",
@@ -7395,7 +7755,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Tier‑1 creature growth in your cities increases by 4."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/6.png"
                 },
                 {
                   "id": "fraction_law_dungeon_5",
@@ -7418,7 +7779,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Friendly creatures take –-15% Magic Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/5.png"
                 }
               ]
             }
@@ -7446,7 +7808,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 500 Gold daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/1.png"
                 },
                 {
                   "id": "fraction_law_dungeon_14",
@@ -7464,7 +7827,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Produces 2 Gem(s) daily."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/14.png"
                 },
                 {
                   "id": "fraction_law_dungeon_9",
@@ -7477,7 +7841,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Provides a one‑time allotment of 75 Alchemical Dust when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/9.png"
                 }
               ]
             },
@@ -7499,7 +7864,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Infiltrators deal 1.5 times more Damage when using their Fighting Style. They gain 4 HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/10.png"
                 },
                 {
                   "id": "fraction_law_dungeon_11",
@@ -7517,7 +7883,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Onyx Dancers deal 1.5 times more Damage when using their Fighting Style. They gain 4 Attack and Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/11.png"
                 },
                 {
                   "id": "fraction_law_dungeon_12",
@@ -7530,7 +7897,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Tier‑2 creature growth in your cities increases by 4."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/12.png"
                 },
                 {
                   "id": "fraction_law_dungeon_13",
@@ -7543,7 +7911,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Tier‑3 creature growth in your cities increases by 2."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/13.png"
                 }
               ]
             }
@@ -7566,7 +7935,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/17.png"
                 },
                 {
                   "id": "fraction_law_dungeon_7",
@@ -7584,7 +7954,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your buildings cost –-40% Ore to construct."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/7.png"
                 },
                 {
                   "id": "fraction_law_dungeon_8",
@@ -7602,7 +7973,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Your heroes gain 20 Movement points."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/8.png"
                 },
                 {
                   "id": "fraction_law_dungeon_15",
@@ -7625,7 +7997,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "All external buildings and structures under your control gain +6 sight radius."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/15.png"
                 }
               ]
             },
@@ -7647,7 +8020,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Minotaurs deal 1.5 times more Damage when using their Fighting Style. They gain 4 Speed and Initiative and deal +4 Damage."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/18.png"
                 },
                 {
                   "id": "fraction_law_dungeon_19",
@@ -7665,7 +8039,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Medusae deal 1.5 times more Damage when using their Fighting Style. They gain 4 Initiative and 4 Attack and Defense."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/19.png"
                 },
                 {
                   "id": "fraction_law_dungeon_20",
@@ -7678,7 +8053,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "All enemy creatures lose -1 Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/20.png"
                 },
                 {
                   "id": "fraction_law_dungeon_21",
@@ -7691,7 +8067,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Tier‑4 creature growth in your cities increases by 2."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/21.png"
                 }
               ]
             }
@@ -7714,7 +8091,8 @@ window.OE_CALC_DATA = {
                       "cost": 6,
                       "descResolved": "Eliminates all price markups in the Marketplace."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/23.png"
                 },
                 {
                   "id": "fraction_law_dungeon_22",
@@ -7732,7 +8110,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Your Dungeon heroes gain 2 to all attributes."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/22.png"
                 },
                 {
                   "id": "fraction_law_dungeon_24",
@@ -7745,7 +8124,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Provides a one‑time allotment of 150 Alchemical Dust when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/24.png"
                 },
                 {
                   "id": "fraction_law_dungeon_16",
@@ -7763,7 +8143,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Your heroes’ Persuasion Power in Diplomacy increases by 20%."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/16.png"
                 }
               ]
             },
@@ -7785,7 +8166,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Hydras deal 1.5 times more Damage when using their Fighting Style. They gain 25 Speed and 2 HP."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/25.png"
                 },
                 {
                   "id": "fraction_law_dungeon_26",
@@ -7798,7 +8180,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Tier‑5 creature growth in your cities increases by 1."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/26.png"
                 },
                 {
                   "id": "fraction_law_dungeon_27",
@@ -7811,7 +8194,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Tier‑6 creature growth in your cities increases by 1."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/27.png"
                 }
               ]
             }
@@ -7834,7 +8218,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/30.png"
                 },
                 {
                   "id": "fraction_law_dungeon_28",
@@ -7847,7 +8232,8 @@ window.OE_CALC_DATA = {
                       "cost": 5,
                       "descResolved": "Spells of your heroes gain 1 level(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/28.png"
                 },
                 {
                   "id": "fraction_law_dungeon_29",
@@ -7860,7 +8246,8 @@ window.OE_CALC_DATA = {
                       "cost": 4,
                       "descResolved": "Each round of battle, you generate 1 Focus Charge(s)."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/29.png"
                 }
               ]
             },
@@ -7882,7 +8269,8 @@ window.OE_CALC_DATA = {
                       "cost": 2,
                       "descResolved": "Your Cave Dragons deal 1.5 times more Damage, when using their Fighting Style. They gain 8 Attack and Defense and 8 Speed and Initiative."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/31.png"
                 },
                 {
                   "id": "fraction_law_dungeon_32",
@@ -7895,7 +8283,8 @@ window.OE_CALC_DATA = {
                       "cost": 3,
                       "descResolved": "Tier‑7 creature growth in your cities increases by 1."
                     }
-                  ]
+                  ],
+                  "icon": "img/laws/dungeon/32.png"
                 }
               ]
             }
@@ -7922,5 +8311,5 @@ window.OE_CALC_DATA = {
     "mercury": "Mercury",
     "graal": "Graal"
   },
-  "GENERATED_AT": "2026-05-10 08:01 UTC"
+  "GENERATED_AT": "2026-05-10 08:30 UTC"
 };

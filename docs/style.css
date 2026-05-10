@@ -2217,12 +2217,26 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 }
 .calc-building-head {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.55rem;
   margin-bottom: 0.4rem;
   border-bottom: 1px dotted var(--rule);
   padding-bottom: 0.3rem;
+}
+.calc-building-icon {
+  width: 36px; height: 36px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px;
+  flex-shrink: 0;
+}
+.calc-building-titles {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 .calc-building-name {
   font-family: Charter, Georgia, serif;
@@ -2367,10 +2381,19 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 }
 .calc-law-head {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.5rem;
 }
+.calc-law-icon {
+  width: 28px; height: 28px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px;
+  flex-shrink: 0;
+}
+.calc-law-head .calc-law-name { flex: 1; }
 .calc-law-name {
   font-family: Charter, Georgia, serif;
   font-weight: 600;

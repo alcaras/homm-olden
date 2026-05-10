@@ -213,6 +213,20 @@ def extract_buildings(faction_id: str, city_obj: dict, tokens: dict[str, str]) -
             sid = b.get("sid")
             levels = []
             bonuses_per_level = b.get("bonusesPerLevel") or []
+            # Per-level icon path on disk: img/buildings/<fkey>/<short>_L<n>.png
+            # (extract_images.py writes those names). Some buildings only have
+            # a single icon in the JSON (single-level buildings like Bank);
+            # they live as L1 only.
+            icon_paths = []
+            icons_field = b.get("icons") or []
+            for li in range(1, max(len(b.get("parametersPerLevel", [])), 1) + 1):
+                # Use Lmin(li, len(icons_field)) so single-icon buildings
+                # surface the same icon for all levels (mostly L1 anyway).
+                icon_idx = min(li, len(icons_field)) if icons_field else 0
+                if icon_idx > 0:
+                    icon_paths.append(f"img/buildings/{fkey}/{short_sid(sid)}_L{icon_idx}.png")
+                else:
+                    icon_paths.append(None)
             for li, lvl in enumerate(b.get("parametersPerLevel", []), 1):
                 costs = {c["name"]: c["cost"] for c in lvl.get("costs", [])}
                 prereqs = [
@@ -231,6 +245,7 @@ def extract_buildings(faction_id: str, city_obj: dict, tokens: dict[str, str]) -
                     "descResolved": desc_resolved,
                     "costs":        costs,
                     "prereqs":      prereqs,
+                    "icon":         icon_paths[li - 1] if li - 1 < len(icon_paths) else None,
                 })
             if not levels:
                 continue
@@ -290,6 +305,7 @@ def extract_laws(faction_id: str, fraction_obj: dict, law_table: dict, tokens: d
                     "name":   name,
                     "desc":   desc,
                     "levels": levels,
+                    "icon":   f"img/laws/{fkey}/{num}.png" if num is not None else None,
                 })
             groups_out.append({"laws": laws_out})
         rows.append({

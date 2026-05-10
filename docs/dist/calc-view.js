@@ -109,7 +109,18 @@ const BuildingsCalc = ({
   }))), /* @__PURE__ */ React.createElement("div", { className: "calc-totals-actions" }, /* @__PURE__ */ React.createElement("button", { onClick: () => copyShareLink(setShareCopied) }, shareCopied ? "\u2713 Copied" : "Copy share link"), /* @__PURE__ */ React.createElement("button", { onClick: () => setPicked({}) }, "Reset all"))), data.buildings.map((cat) => /* @__PURE__ */ React.createElement("section", { key: cat.id, className: "calc-cat" }, /* @__PURE__ */ React.createElement("h3", null, cat.label), /* @__PURE__ */ React.createElement("div", { className: "calc-buildings" }, cat.buildings.map((b) => {
     const cur = picked[b.sid] || 0;
     const isLong = b.shortId.length > 14;
-    return /* @__PURE__ */ React.createElement("div", { key: b.sid, className: "calc-building" }, /* @__PURE__ */ React.createElement("div", { className: "calc-building-head" }, /* @__PURE__ */ React.createElement("span", { className: "calc-building-name" + (isLong ? " tight" : "") }, b.levels[0].name), /* @__PURE__ */ React.createElement("span", { className: "calc-building-id mono" }, b.shortId)), /* @__PURE__ */ React.createElement("div", { className: "calc-levels" }, b.levels.map((lvl) => {
+    return /* @__PURE__ */ React.createElement("div", { key: b.sid, className: "calc-building" }, /* @__PURE__ */ React.createElement("div", { className: "calc-building-head" }, b.levels[0]?.icon && /* @__PURE__ */ React.createElement(
+      "img",
+      {
+        loading: "lazy",
+        className: "calc-building-icon",
+        src: b.levels[0].icon,
+        alt: "",
+        onError: (e) => {
+          e.target.style.display = "none";
+        }
+      }
+    ), /* @__PURE__ */ React.createElement("div", { className: "calc-building-titles" }, /* @__PURE__ */ React.createElement("span", { className: "calc-building-name" + (isLong ? " tight" : "") }, b.levels[0].name), /* @__PURE__ */ React.createElement("span", { className: "calc-building-id mono" }, b.shortId))), /* @__PURE__ */ React.createElement("div", { className: "calc-levels" }, b.levels.map((lvl) => {
       const active = cur >= lvl.level;
       const cleanedDesc = lvl.descResolved || (lvl.desc || "").replace(/\{[0-9]+\}/g, "?");
       return /* @__PURE__ */ React.createElement("div", { key: lvl.level, className: "calc-level-row" }, /* @__PURE__ */ React.createElement(
@@ -171,7 +182,18 @@ const LawsCalc = ({
     const unlocked = priorLp >= row.countToUnlock;
     return /* @__PURE__ */ React.createElement("section", { key: row.rowIndex, className: "calc-law-row" + (unlocked ? " unlocked" : " locked") }, /* @__PURE__ */ React.createElement("div", { className: "calc-law-row-head" }, /* @__PURE__ */ React.createElement("span", { className: "calc-law-row-num" }, "Row ", row.rowIndex), /* @__PURE__ */ React.createElement("span", { className: "calc-law-row-unlock" }, row.countToUnlock === 0 ? "Unlocked from start" : /* @__PURE__ */ React.createElement(React.Fragment, null, "Unlocks at ", /* @__PURE__ */ React.createElement("b", null, row.countToUnlock, " LP"), " spent on earlier rows", " ", "\u2014 you have ", /* @__PURE__ */ React.createElement("b", null, priorLp), !unlocked && /* @__PURE__ */ React.createElement("span", { className: "calc-law-locked-note" }, " (locked)")))), /* @__PURE__ */ React.createElement("div", { className: "calc-law-groups" }, row.groups.map((g, gi) => /* @__PURE__ */ React.createElement("div", { key: gi, className: "calc-law-group" }, g.laws.map((law) => {
       const cur = picked[law.id] || 0;
-      return /* @__PURE__ */ React.createElement("div", { key: law.id, className: "calc-law" }, /* @__PURE__ */ React.createElement("div", { className: "calc-law-head" }, /* @__PURE__ */ React.createElement("span", { className: "calc-law-name" }, law.name), /* @__PURE__ */ React.createElement("span", { className: "calc-law-num" }, "#", law.num)), /* @__PURE__ */ React.createElement("div", { className: "calc-levels" }, law.levels.map((lvl) => {
+      return /* @__PURE__ */ React.createElement("div", { key: law.id, className: "calc-law" }, /* @__PURE__ */ React.createElement("div", { className: "calc-law-head" }, law.icon && /* @__PURE__ */ React.createElement(
+        "img",
+        {
+          loading: "lazy",
+          className: "calc-law-icon",
+          src: law.icon,
+          alt: "",
+          onError: (e) => {
+            e.target.style.display = "none";
+          }
+        }
+      ), /* @__PURE__ */ React.createElement("span", { className: "calc-law-name" }, law.name), /* @__PURE__ */ React.createElement("span", { className: "calc-law-num" }, "#", law.num)), /* @__PURE__ */ React.createElement("div", { className: "calc-levels" }, law.levels.map((lvl) => {
         const active = cur >= lvl.level;
         return /* @__PURE__ */ React.createElement("div", { key: lvl.level, className: "calc-level-row" }, /* @__PURE__ */ React.createElement(
           "button",

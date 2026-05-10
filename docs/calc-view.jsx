@@ -150,10 +150,17 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
               return (
                 <div key={b.sid} className="calc-building">
                   <div className="calc-building-head">
-                    <span className={'calc-building-name' + (isLong ? ' tight' : '')}>
-                      {b.levels[0].name}
-                    </span>
-                    <span className="calc-building-id mono">{b.shortId}</span>
+                    {b.levels[0]?.icon && (
+                      <img loading="lazy" className="calc-building-icon"
+                           src={b.levels[0].icon} alt=""
+                           onError={(e)=>{e.target.style.display='none';}} />
+                    )}
+                    <div className="calc-building-titles">
+                      <span className={'calc-building-name' + (isLong ? ' tight' : '')}>
+                        {b.levels[0].name}
+                      </span>
+                      <span className="calc-building-id mono">{b.shortId}</span>
+                    </div>
                   </div>
                   <div className="calc-levels">
                     {b.levels.map(lvl => {
@@ -292,6 +299,11 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
                     return (
                       <div key={law.id} className="calc-law">
                         <div className="calc-law-head">
+                          {law.icon && (
+                            <img loading="lazy" className="calc-law-icon"
+                                 src={law.icon} alt=""
+                                 onError={(e)=>{e.target.style.display='none';}} />
+                          )}
                           <span className="calc-law-name">{law.name}</span>
                           <span className="calc-law-num">#{law.num}</span>
                         </div>
