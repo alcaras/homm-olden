@@ -3433,120 +3433,216 @@ a.spell-chip.spell-chip-masterful:hover { box-shadow: 0 0 0 1px var(--accent) in
   line-height: 1;
 }
 
-/* === Combat simulator === */
-.combat-grid {
+/* === Combat simulator ===
+   Uses --paper / --bg-warm / --rule / --ink / --muted so it tracks both light
+   and dark themes from the existing token system. */
+.cs-grid {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: 1.25rem;
-  align-items: start;
-  margin: 1rem 0 1.5rem;
+  gap: 1rem;
+  align-items: stretch;
+  margin: 1rem 0 1.25rem;
 }
-.combat-side {
-  background: var(--paper-2, #f4ede0);
-  border: 1px solid var(--rule, #d8cfb8);
+.cs-side {
+  background: var(--paper);
+  border: 1px solid var(--rule);
   border-radius: 6px;
   padding: 0.75rem 0.9rem;
 }
-.combat-side-h { margin: 0 0 0.5rem; font-size: 1.05rem; }
-.combat-row { display: flex; align-items: center; gap: 0.5rem; margin: 0.4rem 0; }
-.combat-row-pair { gap: 0.75rem; }
-.combat-row-pair > span { display: flex; flex-direction: column; flex: 1; }
-.combat-row-pair > span .combat-lbl { margin-bottom: 0.15rem; }
-.combat-lbl {
-  flex: 0 0 7em; color: var(--ink-muted, #6b6357);
-  font-size: 0.85rem;
+.cs-side-h {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted);
 }
-.combat-num, .combat-select {
-  font-family: inherit;
-  font-size: 0.95rem;
-  padding: 0.25rem 0.45rem;
-  border: 1px solid var(--rule, #c9bfa6);
-  background: white;
-  border-radius: 3px;
-  flex: 1;
-  min-width: 0;
+.cs-field { margin: 0.5rem 0 0.6rem; }
+.cs-lbl {
+  font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
 }
-.combat-num { max-width: 6em; }
-.combat-unit-card {
-  display: flex; gap: 0.6rem; align-items: center;
-  padding: 0.5rem; margin: 0.5rem 0;
-  background: white; border-radius: 4px;
-  border: 1px solid var(--rule, #d8cfb8);
+.cs-sub { text-transform: none; letter-spacing: 0; color: var(--ink-2); font-size: 0.85rem; }
+
+/* Faction picker — pill row */
+.cs-fac-row {
+  display: flex; flex-wrap: wrap; gap: 0.3rem;
 }
-.combat-unit-icon { width: 56px; height: 56px; object-fit: contain; flex-shrink: 0; }
-.combat-unit-stats {
-  display: grid; grid-template-columns: repeat(3, auto);
-  gap: 0.15rem 0.6rem;
-  font-size: 0.85rem;
-}
-.combat-unit-stats > div { display: flex; gap: 0.25rem; }
-.combat-unit-stats span { color: var(--ink-muted, #6b6357); min-width: 2.2em; }
-.combat-unit-stats b { font-variant-numeric: tabular-nums; }
-.combat-vs {
-  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
-  padding-top: 0.4rem; align-self: stretch; justify-content: center;
-}
-.combat-vs-text {
-  font-family: var(--serif, Charter, Georgia, serif);
-  font-size: 1.4rem; color: var(--ink-muted, #6b6357);
-}
-.combat-swap {
-  border: 1px solid var(--rule, #c9bfa6);
-  background: white; border-radius: 50%;
-  width: 2rem; height: 2rem;
+.cs-fac-pill {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.25rem 0.55rem 0.25rem 0.35rem;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
   cursor: pointer;
-  font-size: 1.1rem; line-height: 1;
+  font-family: inherit; font-size: 0.78rem;
+  color: var(--ink-2);
+  line-height: 1;
 }
-.combat-swap:hover { background: var(--paper-2, #f4ede0); }
-.combat-lucky {
+.cs-fac-pill:hover { background: var(--hover); color: var(--ink); }
+.cs-fac-pill img { width: 18px; height: 18px; object-fit: contain; }
+.cs-fac-pill.selected {
+  border-color: var(--rule-bold);
+  color: var(--ink); font-weight: 600;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--rule-bold);
+}
+
+/* Hero / unit icon grids */
+.cs-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
+  gap: 4px;
+}
+.cs-icon-btn {
+  position: relative;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 2px;
+  cursor: pointer;
+  aspect-ratio: 1;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.cs-icon-btn:hover { border-color: var(--rule-bold); background: var(--hover); }
+.cs-icon-btn.selected {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold) inset;
+  background: var(--paper);
+}
+.cs-icon-btn img {
+  width: 100%; height: 100%; object-fit: contain;
+  display: block;
+}
+.cs-icon-none {
+  font-family: var(--serif, Charter, Georgia, serif);
+  font-size: 1.2rem; color: var(--muted);
+}
+.cs-variant-tag {
+  position: absolute; top: 1px; right: 2px;
+  background: rgba(0,0,0,0.55); color: #fff7e0;
+  font-size: 0.62rem; font-weight: 700;
+  padding: 0 3px; border-radius: 2px;
+  line-height: 1.2;
+  text-shadow: 0 0 2px rgba(0,0,0,0.8);
+}
+
+/* Stat strip under the unit picker */
+.cs-statline {
+  display: flex; flex-wrap: wrap; gap: 0.15rem 0.9rem;
+  font-size: 0.85rem; color: var(--ink-2);
+  margin: 0.4rem 0 0.6rem;
+  padding: 0.3rem 0.5rem;
+  background: var(--bg-warm);
+  border-radius: 3px;
+}
+.cs-statline b {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.78em; text-transform: uppercase; letter-spacing: 0.04em;
+  margin-right: 0.2rem;
+}
+
+/* Inline label/input rows */
+.cs-inline-row {
+  display: flex; flex-wrap: wrap; gap: 0.6rem 1rem;
+  margin: 0.45rem 0;
+  align-items: end;
+}
+.cs-inline-row label {
+  display: flex; flex-direction: column; gap: 0.15rem;
+  font-size: 0.78rem; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--muted);
+}
+.cs-inline-row label.cs-skill { flex: 1; min-width: 12em; }
+.cs-num, .cs-select {
+  font-family: inherit; font-size: 0.92rem;
+  padding: 0.25rem 0.45rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 3px;
+  text-transform: none; letter-spacing: 0;
+}
+.cs-num { width: 5em; }
+.cs-select { width: 100%; }
+
+/* VS rail */
+.cs-vs {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.7rem;
+  padding: 0 0.25rem;
+  align-self: stretch;
+}
+.cs-vs-text {
+  font-family: var(--serif, Charter, Georgia, serif);
+  font-size: 1.4rem; color: var(--muted);
+}
+.cs-swap {
+  border: 1px solid var(--rule); background: var(--paper);
+  color: var(--ink);
+  border-radius: 50%;
+  width: 2.1rem; height: 2.1rem;
+  cursor: pointer; font-size: 1.1rem; line-height: 1;
+}
+.cs-swap:hover { background: var(--hover); border-color: var(--rule-bold); }
+.cs-lucky {
   display: flex; align-items: center; gap: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem; color: var(--ink-2);
   white-space: nowrap;
 }
-.combat-mul-tag {
-  background: oklch(0.62 0.18 75 / 0.18);
-  border: 1px solid var(--gold, #b78f3a);
+.cs-mul {
+  background: color-mix(in oklch, var(--gold) 20%, transparent);
+  border: 1px solid var(--gold);
   border-radius: 3px;
   padding: 0 0.3em;
-  font-size: 0.78em; color: var(--gold, #8c6c1f); font-weight: 700;
+  font-size: 0.78em; color: var(--gold); font-weight: 700;
 }
-.combat-result { background: var(--paper-2, #f4ede0); padding: 1rem 1.25rem; border-radius: 6px; }
-.combat-breakdown {
+
+/* Result panel */
+.cs-result {
+  background: var(--paper);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+}
+.cs-breakdown {
   border-collapse: collapse;
-  width: 100%; max-width: 36rem;
+  width: 100%; max-width: 38rem;
   margin: 0.5rem 0 1rem;
   font-size: 0.92rem;
+  color: var(--ink);
 }
-.combat-breakdown td { padding: 0.2rem 0.5rem; }
-.combat-breakdown td:first-child { color: var(--ink-muted, #6b6357); }
-.combat-breakdown .combat-total-row td {
-  border-top: 1px solid var(--rule, #d8cfb8);
+.cs-breakdown td { padding: 0.2rem 0.5rem; }
+.cs-breakdown td:first-child { color: var(--muted); }
+.cs-breakdown .cs-total-row td {
+  border-top: 1px solid var(--rule);
   padding-top: 0.4rem; font-weight: 600;
 }
-.combat-final {
+.cs-final {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1rem; margin-top: 1rem;
 }
-.combat-final-block {
-  background: white;
+.cs-final-block {
+  background: var(--bg-warm);
   padding: 0.75rem 1rem;
-  border: 1px solid var(--rule, #d8cfb8);
+  border: 1px solid var(--rule);
   border-radius: 4px;
 }
-.combat-final-lbl { color: var(--ink-muted, #6b6357); font-size: 0.85rem; }
-.combat-final-val {
+.cs-final-lbl { color: var(--muted); font-size: 0.85rem; }
+.cs-final-val {
   font-size: 1.6rem; font-weight: 700;
   font-variant-numeric: tabular-nums;
   margin: 0.15rem 0;
+  color: var(--ink);
 }
-.combat-final-sub { color: var(--ink-muted, #6b6357); font-size: 0.82rem; }
-.combat-caveat {
-  font-size: 0.85rem; color: var(--ink-muted, #6b6357);
-  margin-top: 1rem; max-width: 50em;
+.cs-final-sub { color: var(--muted); font-size: 0.82rem; }
+.cs-caveat {
+  font-size: 0.85rem; color: var(--muted);
+  margin-top: 1rem; max-width: 52em;
 }
 
-@media (max-width: 900px) {
-  .combat-grid { grid-template-columns: 1fr; }
-  .combat-vs { flex-direction: row; padding: 0.5rem 0; }
-  .combat-final { grid-template-columns: 1fr; }
+@media (max-width: 980px) {
+  .cs-grid { grid-template-columns: 1fr; }
+  .cs-vs { flex-direction: row; padding: 0.4rem 0; }
+  .cs-final { grid-template-columns: 1fr; }
 }
