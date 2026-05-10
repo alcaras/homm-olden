@@ -758,7 +758,7 @@ table.units .variant-alt  { color: var(--accent-2); border-color: var(--accent-2
 /* Faction pills inside units table — colored borders */
 .faction-pill.faction-temple     { color: #8a4218; border-color: #d6b69b; }
 .faction-pill.faction-necropolis { color: #555a5e; border-color: #c8c8cf; }
-.faction-pill.faction-sylvan     { color: #2f6d3a; border-color: #b9d2bb; }
+.faction-pill.faction-grove     { color: #2f6d3a; border-color: #b9d2bb; }
 .faction-pill.faction-hive       { color: #8a3018; border-color: #e0b59f; }
 .faction-pill.faction-schism     { color: #2c5d83; border-color: #b6cad8; }
 .faction-pill.faction-dungeon    { color: #4a2c70; border-color: #c1b3d4; }
@@ -2876,7 +2876,7 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   .faction-pill { background: var(--bg-warm); color: var(--ink); }
   .faction-pill.faction-temple     { color: #e2a87a; border-color: #6e4a2c; }
   .faction-pill.faction-necropolis { color: #b3b6bb; border-color: #50535a; }
-  .faction-pill.faction-sylvan     { color: #82c189; border-color: #355b3a; }
+  .faction-pill.faction-grove     { color: #82c189; border-color: #355b3a; }
   .faction-pill.faction-hive       { color: #e08c6e; border-color: #6c3825; }
   .faction-pill.faction-schism     { color: #92bcd9; border-color: #355170; }
   .faction-pill.faction-dungeon    { color: #b8a3df; border-color: #4a3970; }

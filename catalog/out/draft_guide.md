@@ -123,4 +123,4 @@ If your opponent picks faction X, your best response is:
 
 ---
 
-*Generated 2026-05-10 04:45 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*
+*Generated 2026-05-10 06:41 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*

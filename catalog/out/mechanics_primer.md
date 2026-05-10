@@ -241,7 +241,7 @@ Temple's identity is the **Daylight buff stack**: Bless (+35% damage), Riposte (
 
 Necromancy raises a fraction of HP killed (4 / 6 / 8% at Basic / Advanced / Expert) into new Skeletons / Skeleton Archers — but only up to the *highest tier you killed* in that battle, and only if you have a stack of that tier or lower available. **Necromantic Energy** is a weekly resource (cap 1250) consumed per raise — you can't infinitely Necromancy like HOMM3. Doesn't trigger on Undead, Embodiments, or Constructs. Combine with the **Undead Transformer** (week-2 building) to convert captured Pandora-box units into Necropolis equivalents. The Necromancy snowball + Lich Rewind Death sustain is what makes Necropolis the deepest tournament faction.
 
-### Sylvan — Focus economy + Bloom spell power
+### Grove — Focus economy + Bloom spell power
 
 Grove leans on a self-sustaining **Focus engine**: Hoplets (no-retal Swift Strike) split into 1-stacks generate Focus turn after turn; Sporomancers/Murmurmancers spend it to re-cast and amplify. Their key passive is **Bloom**: Dusk Hoplites give the hero +3 spell power *per cast*, scaling caster damage every round. Combine with the **Avatar Vomit** archetype (Sullie / Halon / Tss'kish hero specs) for the strongest mid-game tempo in the format. The entire tech tree is built around skipping mid-tier dwellings to reach this loop.
 
@@ -270,4 +270,4 @@ Dungeon's signature is its **Fighting Style laws** — for every attack pattern 
 
 ---
 
-*Generated 2026-05-10 03:03 UTC by `catalog/scripts/build_mechanics.py`. Edit the script's `SECTIONS` / `FACTION_SIGNATURE_MECHANICS` / `TOP_RESOURCES` to update.*
+*Generated 2026-05-10 06:41 UTC by `catalog/scripts/build_mechanics.py`. Edit the script's `SECTIONS` / `FACTION_SIGNATURE_MECHANICS` / `TOP_RESOURCES` to update.*

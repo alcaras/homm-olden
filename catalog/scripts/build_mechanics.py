@@ -391,7 +391,7 @@ FACTION_SIGNATURE_MECHANICS = {
             "Lich Rewind Death sustain is what makes Necropolis the deepest tournament faction."
         ),
     },
-    "sylvan": {
+    "grove": {
         "title": "Focus economy + Bloom spell power",
         "body": (
             "Grove leans on a self-sustaining **Focus engine**: Hoplets (no-retal Swift Strike) "

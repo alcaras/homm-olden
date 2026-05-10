@@ -14,7 +14,7 @@ window.OE_TIER_DATA = {
       "magic": "Necromancer"
     },
     {
-      "id": "sylvan",
+      "id": "grove",
       "name": "Grove",
       "might": "Warden",
       "magic": "Druid"
@@ -168,8 +168,8 @@ window.OE_TIER_DATA = {
         "body": "Necromancy raises a fraction of HP killed (4 / 6 / 8% at Basic / Advanced / Expert) into new Skeletons / Skeleton Archers — but only up to the *highest tier you killed* in that battle, and only if you have a stack of that tier or lower available. **Necromantic Energy** is a weekly resource (cap 1250) consumed per raise — you can't infinitely Necromancy like HOMM3. Doesn't trigger on Undead, Embodiments, or Constructs. Combine with the **Undead Transformer** (week-2 building) to convert captured Pandora-box units into Necropolis equivalents. The Necromancy snowball + Lich Rewind Death sustain is what makes Necropolis the deepest tournament faction."
       }
     },
-    "sylvan": {
-      "summary": "Grove (formerly Sylvan). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.",
+    "grove": {
+      "summary": "Grove (formerly Grove). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.",
       "creature_tip": "Faun Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.",
       "army_comp": [
         [
@@ -993,7 +993,7 @@ window.OE_TIER_DATA = {
         "note": "Adahn — Recruitment-locked spec, low impact (data)."
       }
     ],
-    "sylvan": [
+    "grove": [
       {
         "id": "nature_hero_9",
         "name": "Aunt Daliar",
@@ -2077,5 +2077,5 @@ window.OE_TIER_DATA = {
       }
     ]
   },
-  "GENERATED_AT": "2026-05-10 04:45 UTC"
+  "GENERATED_AT": "2026-05-10 06:41 UTC"
 };

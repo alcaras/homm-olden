@@ -1,6 +1,6 @@
 /* Olden Era reference — main app */
 
-const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'calc', 'subclasses', 'skills', 'heroes', 'units', 'tier', 'guides', 'draft'];
+const SIMPLE_VIEWS = ['index', 'mechanics', 'factions', 'laws', 'buildings', 'subclasses', 'skills', 'heroes', 'units', 'tier', 'guides', 'draft'];
 
 const parseHash = () => {
   const raw = (window.location.hash || '#index').slice(1);
@@ -11,6 +11,13 @@ const parseHash = () => {
   if (path.startsWith('faction/')) {
     return { view: 'faction', factionId: path.slice('faction/'.length), query };
   }
+  if (path.startsWith('laws/')) {
+    return { view: 'calc-faction', factionId: path.slice('laws/'.length), kind: 'laws', query };
+  }
+  if (path.startsWith('buildings/')) {
+    return { view: 'calc-faction', factionId: path.slice('buildings/'.length), kind: 'buildings', query };
+  }
+  // Back-compat: old #calc/* URLs redirect to the new top-level routes.
   if (path.startsWith('calc/laws/')) {
     return { view: 'calc-faction', factionId: path.slice('calc/laws/'.length), kind: 'laws', query };
   }
@@ -18,8 +25,10 @@ const parseHash = () => {
     return { view: 'calc-faction', factionId: path.slice('calc/buildings/'.length), kind: 'buildings', query };
   }
   if (path.startsWith('calc/')) {
-    // Back-compat: old #calc/<id> URLs default to the Buildings page.
     return { view: 'calc-faction', factionId: path.slice('calc/'.length), kind: 'buildings', query };
+  }
+  if (path === 'calc') {
+    return { view: 'buildings', factionId: null, query };
   }
   if (path.startsWith('units/')) {
     return { view: 'units-faction', factionId: path.slice('units/'.length), query };
@@ -38,12 +47,10 @@ const App = () => {
     let next;
     if (typeof path === 'string' && path.startsWith('faction/')) {
       next = { view: 'faction', factionId: path.slice('faction/'.length), query };
-    } else if (typeof path === 'string' && path.startsWith('calc/laws/')) {
-      next = { view: 'calc-faction', factionId: path.slice('calc/laws/'.length), kind: 'laws', query };
-    } else if (typeof path === 'string' && path.startsWith('calc/buildings/')) {
-      next = { view: 'calc-faction', factionId: path.slice('calc/buildings/'.length), kind: 'buildings', query };
-    } else if (typeof path === 'string' && path.startsWith('calc/')) {
-      next = { view: 'calc-faction', factionId: path.slice('calc/'.length), kind: 'buildings', query };
+    } else if (typeof path === 'string' && path.startsWith('laws/')) {
+      next = { view: 'calc-faction', factionId: path.slice('laws/'.length), kind: 'laws', query };
+    } else if (typeof path === 'string' && path.startsWith('buildings/')) {
+      next = { view: 'calc-faction', factionId: path.slice('buildings/'.length), kind: 'buildings', query };
     } else if (typeof path === 'string' && path.startsWith('units/')) {
       next = { view: 'units-faction', factionId: path.slice('units/'.length), query };
     } else {
@@ -80,8 +87,10 @@ const App = () => {
         <button className={tabActive('mechanics')}  onClick={()=>go('mechanics')}>Mechanics</button>
         <button className={tabActive('factions') || (route.view==='faction'?'active':'')}
                 onClick={()=>go('factions')}>Factions</button>
-        <button className={tabActive('calc') || (route.view==='calc-faction'?'active':'')}
-                onClick={()=>go('calc')}>Calculator</button>
+        <button className={tabActive('buildings') || (route.view==='calc-faction' && route.kind==='buildings'?'active':'')}
+                onClick={()=>go('buildings/temple')}>Buildings</button>
+        <button className={tabActive('laws') || (route.view==='calc-faction' && route.kind==='laws'?'active':'')}
+                onClick={()=>go('laws/temple')}>Laws</button>
         <button className={tabActive('subclasses')} onClick={()=>go('subclasses')}>Subclasses</button>
         <button className={tabActive('skills')}     onClick={()=>go('skills')}>Skills</button>
         <button className={tabActive('heroes')}     onClick={()=>go('heroes')}>Heroes</button>
@@ -95,7 +104,6 @@ const App = () => {
       {route.view==='mechanics'     && <window.MechanicsView go={go} />}
       {route.view==='factions'      && <window.FactionsHubView go={go} />}
       {route.view==='faction'       && <window.FactionView factionId={route.factionId} go={go} />}
-      {route.view==='calc'          && <window.CalcHubView go={go} />}
       {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} kind={route.kind} initialQuery={route.query} go={go} />}
       {route.view==='subclasses' && <window.SubclassesView />}
       {route.view==='skills'     && <window.SkillsView />}

@@ -12,7 +12,7 @@ window.OE_CALC_DATA = {
       "name": "Necropolis"
     },
     {
-      "id": "sylvan",
+      "id": "grove",
       "unitKey": "nature",
       "name": "Grove"
     },
@@ -47,6 +47,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Solar Temple",
                   "desc": "Grants the city {0} Gold and {1} Law points daily. +{2} hero cap.",
+                  "descResolved": "Grants the city 500 Gold and 500 Law points daily. +500 hero cap.",
                   "costs": {
                     "gold": 5000
                   },
@@ -56,6 +57,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Solar Temple II",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 750 Gold and 750 Law points daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -72,6 +74,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Solar Temple III",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 1000 Gold and 1000 Law points daily.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -100,6 +103,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Fortifications",
                   "desc": "Provides walls during sieges. Allows the builder to pick one level‑1 defensive upgrade.",
+                  "descResolved": "Provides walls during sieges. Allows the builder to pick one level‑1 defensive upgrade.",
                   "costs": {
                     "gold": 2500,
                     "ore": 5
@@ -110,6 +114,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Fortifications II",
                   "desc": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level‑2 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level‑2 defensive upgrade. City dwellings produce +50% units.",
                   "costs": {
                     "gold": 2500,
                     "ore": 10
@@ -125,6 +130,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Fortifications III",
                   "desc": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +1% units.",
                   "costs": {
                     "gold": 5000,
                     "ore": 15
@@ -152,6 +158,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Mage Guild",
                   "desc": "Unlocks {1} random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5
@@ -162,6 +169,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Mage Guild II",
                   "desc": "Unlocks {2} random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 2,
@@ -179,6 +187,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Mage Guild III",
                   "desc": "Unlocks {2} random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -197,6 +206,7 @@ window.OE_CALC_DATA = {
                   "level": 4,
                   "name": "Mage Guild IV",
                   "desc": "Unlocks {2} random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 5,
@@ -226,6 +236,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Garrison",
                   "desc": "Allows the recruitment of Swordsmen.",
+                  "descResolved": "Allows the recruitment of Swordsmen.",
                   "costs": {
                     "gold": 1250,
                     "ore": 5
@@ -236,6 +247,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Garrison II",
                   "desc": "Allows the recruitment of Guard Captains and Sun’s Aegises.",
+                  "descResolved": "Allows the recruitment of Guard Captains and Sun’s Aegises.",
                   "costs": {
                     "gold": 1000,
                     "ore": 5,
@@ -258,6 +270,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Mews",
                   "desc": "Allows the recruitment of Crossbowmen.",
+                  "descResolved": "Allows the recruitment of Crossbowmen.",
                   "costs": {
                     "gold": 2250,
                     "wood": 5
@@ -268,6 +281,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Mews II",
                   "desc": "Allows the recruitment of Austringers and Marksmen.",
+                  "descResolved": "Allows the recruitment of Austringers and Marksmen.",
                   "costs": {
                     "gold": 1500,
                     "wood": 5,
@@ -290,6 +304,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Griffin Rookery",
                   "desc": "Allows the recruitment of Griffins.",
+                  "descResolved": "Allows the recruitment of Griffins.",
                   "costs": {
                     "gold": 3250,
                     "wood": 5,
@@ -306,6 +321,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Griffin Rookery II",
                   "desc": "Allows the recruitment of Temple Griffins and Guardian Griffins.",
+                  "descResolved": "Allows the recruitment of Temple Griffins and Guardian Griffins.",
                   "costs": {
                     "gold": 2250,
                     "wood": 5,
@@ -329,6 +345,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Sundrop Chapel",
                   "desc": "Allows the recruitment of Lightweavers.",
+                  "descResolved": "Allows the recruitment of Lightweavers.",
                   "costs": {
                     "gold": 3000,
                     "gemstones": 3,
@@ -346,6 +363,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Sundrop Chapel II",
                   "desc": "Allows the recruitment of Hierophants and Sun Heralds.",
+                  "descResolved": "Allows the recruitment of Hierophants and Sun Heralds.",
                   "costs": {
                     "gold": 3000,
                     "gemstones": 6,
@@ -368,6 +386,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Hippodrome",
                   "desc": "Allows the recruitment of Cavalry.",
+                  "descResolved": "Allows the recruitment of Cavalry.",
                   "costs": {
                     "gold": 6500,
                     "wood": 15
@@ -387,6 +406,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Hippodrome II",
                   "desc": "Allows the recruitment of Noble Cavalry and Sunspear Cavalry.",
+                  "descResolved": "Allows the recruitment of Noble Cavalry and Sunspear Cavalry.",
                   "costs": {
                     "gold": 5000,
                     "wood": 20,
@@ -410,6 +430,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Threshold Basilica",
                   "desc": "Allows the recruitment of Inquisitors.",
+                  "descResolved": "Allows the recruitment of Inquisitors.",
                   "costs": {
                     "gold": 4000,
                     "ore": 10,
@@ -426,6 +447,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Threshold Basilica II",
                   "desc": "Allows the recruitment of Mothers Superior and Excommunicators.",
+                  "descResolved": "Allows the recruitment of Mothers Superior and Excommunicators.",
                   "costs": {
                     "gold": 2000,
                     "ore": 10,
@@ -449,6 +471,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Radiant Forge",
                   "desc": "Allows the recruitment of Angels.",
+                  "descResolved": "Allows the recruitment of Angels.",
                   "costs": {
                     "gold": 15000,
                     "gemstones": 10,
@@ -470,6 +493,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Radiant Forge II",
                   "desc": "Allows the recruitment of Archangels and Apotheoses.",
+                  "descResolved": "Allows the recruitment of Archangels and Apotheoses.",
                   "costs": {
                     "gold": 17500,
                     "gemstones": 20,
@@ -498,6 +522,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Bank",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -520,6 +545,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Treasury",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 5000,
                     "gemstones": 5,
@@ -547,6 +573,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource Depot",
                   "desc": "Produces {0} Gems daily.",
+                  "descResolved": "Produces ? Gems daily.",
                   "costs": {
                     "gold": 2000
                   },
@@ -571,6 +598,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource_Depot_level_2",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "gemstones": 3,
                     "crystals": 3,
@@ -599,6 +627,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Marketplace",
                   "desc": "Allows resources to be traded.",
+                  "descResolved": "Allows resources to be traded.",
                   "costs": {
                     "gold": 500,
                     "wood": 5
@@ -626,6 +655,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Tavern",
                   "desc": "Allows the hiring of new heroes.",
+                  "descResolved": "Allows the hiring of new heroes.",
                   "costs": {
                     "gold": 500,
                     "ore": 5
@@ -648,6 +678,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Artifact Merchant",
                   "desc": "Allows artifacts to be traded.",
+                  "descResolved": "Allows artifacts to be traded.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -676,6 +707,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Guild of Six Winds",
                   "desc": "Allows a selected hero to spend a day learning. They will be unavailable until the next day and receive a permanent increase to an attribute of their choice.",
+                  "descResolved": "Allows a selected hero to spend a day learning. They will be unavailable until the next day and receive a permanent increase to an attribute of their choice.",
                   "costs": {
                     "gold": 2500,
                     "ore": 5,
@@ -702,6 +734,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Scouting Skyship",
                   "desc": "Removes the fog of war within {0} squares around the city.",
+                  "descResolved": "Removes the fog of war within ? squares around the city.",
                   "costs": {
                     "gold": 2500
                   },
@@ -723,6 +756,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Golden_Calf",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "graal": 1
                   },
@@ -748,7 +782,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
                   ]
                 },
@@ -760,11 +795,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 1 Sight radius."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 2 Sight radius."
                     }
                   ]
                 },
@@ -776,7 +813,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 250 Astrology points daily."
                     }
                   ]
                 }
@@ -792,11 +830,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Swordsman growth in your cities increases by 4. They gain 2 Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Swordsman growth in your cities increases by 4. They gain 4 Defense."
                     }
                   ]
                 },
@@ -808,11 +848,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Crossbowman growth in your cities increases by 4. They gain 2 Attack."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Crossbowman growth in your cities increases by 4. They gain 4 Attack."
                     }
                   ]
                 },
@@ -824,7 +866,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Friendly creatures deal +25% Damage to summoned enemy creatures."
                     }
                   ]
                 }
@@ -846,11 +889,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Produces 500 Gold daily."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Produces 1000 Gold daily."
                     }
                   ]
                 },
@@ -862,11 +907,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 1 Gem(s) daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 2 Gem(s) daily."
                     }
                   ]
                 },
@@ -878,11 +925,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 1 Morale."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 2 Morale."
                     }
                   ]
                 }
@@ -898,11 +947,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Griffin growth in your cities increases by 2. They gain 5 HP."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Griffin growth in your cities increases by 2. They gain 10 HP."
                     }
                   ]
                 },
@@ -914,11 +965,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Lightweaver growth in your cities increases by 2. They deal +2 Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Lightweaver growth in your cities increases by 2. They deal +4 Damage."
                     }
                   ]
                 },
@@ -930,11 +983,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "All positive effects on friendly creatures last 1 additional round(s)."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "All positive effects on friendly creatures last 2 additional round(s)."
                     }
                   ]
                 },
@@ -946,7 +1001,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Friendly creatures gain 1 Initiative."
                     }
                   ]
                 }
@@ -968,7 +1024,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
                   ]
                 },
@@ -980,11 +1037,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Your sources of Gold produce +10% Gold."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Your sources of Gold produce +20% Gold."
                     }
                   ]
                 },
@@ -996,7 +1055,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Daylight spells of your heroes gain 0 level(s)."
                     }
                   ]
                 },
@@ -1008,7 +1068,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 6
+                      "cost": 6,
+                      "descResolved": "You can construct +1 building(s) daily."
                     }
                   ]
                 }
@@ -1024,11 +1085,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Cavalry growth in your cities increases by 1. Their attacks ignore 5% of the target’s Defense and they gain 1 Speed."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Cavalry growth in your cities increases by 1. Their attacks ignore 10% of the target’s Defense and they gain 1 Speed."
                     }
                   ]
                 },
@@ -1040,11 +1103,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures deal +5% and take –5% Melee Damage. This effect is doubled for non‑Temple friendly creatures."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures deal +10% and take –10% Melee Damage. This effect is doubled for non‑Temple friendly creatures."
                     }
                   ]
                 },
@@ -1056,11 +1121,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures deal +5% and take –5% Long Reach and Ranged Damage. This effect is doubled for non‑Temple friendly creatures."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures deal +10% and take –10% Long Reach and Ranged Damage. This effect is doubled for non‑Temple friendly creatures."
                     }
                   ]
                 }
@@ -1082,11 +1149,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 2 Attack."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 4 Attack."
                     }
                   ]
                 },
@@ -1098,11 +1167,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 2 Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 4 Defense."
                     }
                   ]
                 },
@@ -1114,11 +1185,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 2 Spell Power."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 4 Spell Power."
                     }
                   ]
                 },
@@ -1130,11 +1203,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 2 Knowledge."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 4 Knowledge."
                     }
                   ]
                 }
@@ -1150,11 +1225,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Inquisitor growth in your cities increases by 1. They ignore 5% of the enemy’s Attack and they gain 1 Speed."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Inquisitor growth in your cities increases by 1. They ignore 10% of the enemy’s Attack and they gain 1 Speed."
                     }
                   ]
                 },
@@ -1166,15 +1243,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "The chance of Morale triggering for friendly creatures increases by 1% for each point of their Morale."
                     },
                     {
                       "level": 2,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "The chance of Morale triggering for friendly creatures increases by 2% for each point of their Morale."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "The chance of Morale triggering for friendly creatures increases by 3% for each point of their Morale."
                     }
                   ]
                 },
@@ -1186,11 +1266,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures’ counterattacks deal +50% Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures’ counterattacks deal +1% Damage."
                     }
                   ]
                 }
@@ -1212,7 +1294,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
                   ]
                 },
@@ -1224,7 +1307,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "All your Temple heroes can learn any spells of any tier."
                     }
                   ]
                 }
@@ -1240,11 +1324,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Angel growth in your cities increases by 1. They gain 25% of their hero’s Attack and Defense as Attack and Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Angel growth in your cities increases by 1. They gain 50% of their hero’s Attack and Defense as Attack and Defense."
                     }
                   ]
                 },
@@ -1256,7 +1342,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 6
+                      "cost": 6,
+                      "descResolved": "Friendly creatures gain 25% of their hero’s Spell Power and Knowledge as Attack and Defense respectively."
                     }
                   ]
                 },
@@ -1268,7 +1355,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures are immune to negative effects when fighting on their Native Terrain."
                     }
                   ]
                 }
@@ -1292,6 +1380,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Eternal Visage",
                   "desc": "Grants the city {0} Gold and {1} Law points daily. +{2} hero cap.",
+                  "descResolved": "Grants the city 500 Gold and 500 Law points daily. +500 hero cap.",
                   "costs": {
                     "gold": 5000
                   },
@@ -1301,6 +1390,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Eternal Visage II",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 750 Gold and 750 Law points daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -1317,6 +1407,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Eternal Visage III",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 1000 Gold and 1000 Law points daily.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -1345,6 +1436,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Fortifications",
                   "desc": "Provides walls during sieges. Allows the builder to pick one level‑1 defensive upgrade.",
+                  "descResolved": "Provides walls during sieges. Allows the builder to pick one level‑1 defensive upgrade.",
                   "costs": {
                     "gold": 2500,
                     "ore": 5
@@ -1355,6 +1447,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Fortifications II",
                   "desc": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level‑2 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level‑2 defensive upgrade. City dwellings produce +50% units.",
                   "costs": {
                     "gold": 2500,
                     "ore": 10
@@ -1370,6 +1463,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Fortifications III",
                   "desc": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level‑3 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level‑3 defensive upgrade. City dwellings produce +1% units.",
                   "costs": {
                     "gold": 5000,
                     "ore": 15
@@ -1397,6 +1491,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Mage Guild",
                   "desc": "Unlocks {1} random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5
@@ -1407,6 +1502,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Mage Guild II",
                   "desc": "Unlocks {2} random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 2,
@@ -1424,6 +1520,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Mage Guild III",
                   "desc": "Unlocks {2} random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -1442,6 +1539,7 @@ window.OE_CALC_DATA = {
                   "level": 4,
                   "name": "Mage Guild IV",
                   "desc": "Unlocks {2} random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 5,
@@ -1459,6 +1557,7 @@ window.OE_CALC_DATA = {
                   "level": 5,
                   "name": "Mage Guild V",
                   "desc": "Unlocks {2} random tier‑5 spells in the Magic Observatory and the ability to spend dust to upgrade tier-5 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑5 spells in the Magic Observatory and the ability to spend dust to upgrade tier-5 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -1489,6 +1588,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Crypts and Graves",
                   "desc": "Allows the recruitment of Skeletons.",
+                  "descResolved": "Allows the recruitment of Skeletons.",
                   "costs": {
                     "gold": 1500
                   },
@@ -1498,6 +1598,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Crypts and Graves II",
                   "desc": "Allows the recruitment of Skeleton Warriors and Skeleton Archers.",
+                  "descResolved": "Allows the recruitment of Skeleton Warriors and Skeleton Archers.",
                   "costs": {
                     "gold": 1000,
                     "dust": 10
@@ -1519,6 +1620,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Quiet Pavilion",
                   "desc": "Allows the recruitment of Wights.",
+                  "descResolved": "Allows the recruitment of Wights.",
                   "costs": {
                     "gold": 2000,
                     "mercury": 5
@@ -1529,6 +1631,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Quiet Pavilion II",
                   "desc": "Allows the recruitment of Wraiths and Phantasms.",
+                  "descResolved": "Allows the recruitment of Wraiths and Phantasms.",
                   "costs": {
                     "gold": 1250,
                     "mercury": 5,
@@ -1551,6 +1654,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Kennel",
                   "desc": "Allows the recruitment of Undead Pets.",
+                  "descResolved": "Allows the recruitment of Undead Pets.",
                   "costs": {
                     "gold": 2750,
                     "wood": 10
@@ -1566,6 +1670,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Kennel II",
                   "desc": "Allows the recruitment of Barghests and Armored Hounds.",
+                  "descResolved": "Allows the recruitment of Barghests and Armored Hounds.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -1588,6 +1693,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Bone Exchange",
                   "desc": "Allows the recruitment of Graverobbers.",
+                  "descResolved": "Allows the recruitment of Graverobbers.",
                   "costs": {
                     "gold": 4500,
                     "wood": 5,
@@ -1609,6 +1715,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Bone Exchange II",
                   "desc": "Allows the recruitment of Merchants of Death and Kennelmasters.",
+                  "descResolved": "Allows the recruitment of Merchants of Death and Kennelmasters.",
                   "costs": {
                     "gold": 3750,
                     "wood": 5,
@@ -1633,6 +1740,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Timeless Mansion",
                   "desc": "Allows the recruitment of Liches.",
+                  "descResolved": "Allows the recruitment of Liches.",
                   "costs": {
                     "gold": 3500,
                     "wood": 5,
@@ -1650,6 +1758,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Timeless Mansion II",
                   "desc": "Allows the recruitment of Pestilent Liches and Sanguine Liches.",
+                  "descResolved": "Allows the recruitment of Pestilent Liches and Sanguine Liches.",
                   "costs": {
                     "gold": 2000,
                     "mercury": 10,
@@ -1672,6 +1781,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Tomb of Warriors",
                   "desc": "Allows the recruitment of Dread Knights.",
+                  "descResolved": "Allows the recruitment of Dread Knights.",
                   "costs": {
                     "gold": 7000,
                     "wood": 5,
@@ -1692,6 +1802,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Tomb of Warriors II",
                   "desc": "Allows the recruitment of Avatars of War and Hollow Reapers.",
+                  "descResolved": "Allows the recruitment of Avatars of War and Hollow Reapers.",
                   "costs": {
                     "gold": 5000,
                     "ore": 15,
@@ -1715,6 +1826,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Chateau of Feasts",
                   "desc": "Allows the recruitment of Vampires.",
+                  "descResolved": "Allows the recruitment of Vampires.",
                   "costs": {
                     "gold": 12500,
                     "wood": 15,
@@ -1732,6 +1844,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Chateau of Feasts II",
                   "desc": "Allows the recruitment of Vampire Lords and Vampire Scholars.",
+                  "descResolved": "Allows the recruitment of Vampire Lords and Vampire Scholars.",
                   "costs": {
                     "gold": 17500,
                     "wood": 5,
@@ -1762,6 +1875,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Bank",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -1784,6 +1898,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Treasury",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 5000,
                     "gemstones": 5,
@@ -1811,6 +1926,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource Depot",
                   "desc": "Produces {0} Mercury daily.",
+                  "descResolved": "Produces ? Mercury daily.",
                   "costs": {
                     "gold": 2000
                   },
@@ -1835,6 +1951,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource_Depot_level_2",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "gemstones": 3,
                     "crystals": 3,
@@ -1863,6 +1980,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Marketplace",
                   "desc": "Allows you to trade your resources for different ones.",
+                  "descResolved": "Allows you to trade your resources for different ones.",
                   "costs": {
                     "gold": 500,
                     "wood": 5
@@ -1890,6 +2008,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Tavern",
                   "desc": "Allows the hiring of new heroes.",
+                  "descResolved": "Allows the hiring of new heroes.",
                   "costs": {
                     "gold": 500,
                     "ore": 5
@@ -1912,6 +2031,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Gaping_Maw",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "graal": 1
                   },
@@ -1937,7 +2057,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
                   ]
                 },
@@ -1949,11 +2070,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 250 Gold daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 500 Gold daily."
                     }
                   ]
                 },
@@ -1965,7 +2088,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 2% Necromancy Power."
                     }
                   ]
                 },
@@ -1977,15 +2101,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 1 Luck."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 2 Luck."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 3 Luck."
                     }
                   ]
                 }
@@ -2001,11 +2128,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Skeleton growth in your cities increases by 4. They gain 2 Attack and Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Skeleton growth in your cities increases by 8. They gain 2 Attack and Defense."
                     }
                   ]
                 },
@@ -2017,11 +2146,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Wight growth in your cities increases by 4. Their minimum Damage increases by 1."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Wight growth in your cities increases by 8. Their minimum Damage increases by 1."
                     }
                   ]
                 },
@@ -2033,11 +2164,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Enemy creatures take +50% from Damage-over-time effects."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Enemy creatures take +1% from Damage-over-time effects."
                     }
                   ]
                 }
@@ -2059,11 +2192,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 1 Mercury daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 2 Mercury daily."
                     }
                   ]
                 },
@@ -2075,15 +2210,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 1 Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 2 Defense."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 3 Defense."
                     }
                   ]
                 },
@@ -2095,7 +2233,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 0% Necromancy Power."
                     }
                   ]
                 },
@@ -2107,15 +2246,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your cities generate +20% Law points."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your cities generate +40% Law points."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your cities generate +60% Law points."
                     }
                   ]
                 }
@@ -2131,11 +2273,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Undead Pet growth in your cities increases by 2. They gain 2 Initiative."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Undead Pet growth in your cities increases by 4. They gain 2 Initiative."
                     }
                   ]
                 },
@@ -2147,11 +2291,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Graverobber growth in your cities increases by 2. They summon +50% units."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Graverobber growth in your cities increases by 4. They summon +50% units."
                     }
                   ]
                 },
@@ -2163,7 +2309,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Friendly creatures from different factions don’t decrease each other’s Morale."
                     }
                   ]
                 }
@@ -2185,7 +2332,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
                   ]
                 },
@@ -2197,7 +2345,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Nightshade spells of your heroes gain 0 level(s)."
                     }
                   ]
                 },
@@ -2209,7 +2358,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Your heroes gain 3% Necromancy Power."
                     }
                   ]
                 },
@@ -2221,15 +2371,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your spell upgrades cost –-20% Alchemical Dust."
                     },
                     {
                       "level": 2,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Your spell upgrades cost –-30% Alchemical Dust."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Your spell upgrades cost –-40% Alchemical Dust."
                     }
                   ]
                 }
@@ -2245,11 +2398,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Lich growth in your cities increases by 1. Their healing abilities restore 1% more HP."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Lich growth in your cities increases by 2. Their healing abilities restore 1% more HP."
                     }
                   ]
                 },
@@ -2261,11 +2416,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Dread Knight growth in your cities increases by 1. Their maximum Damage increases by 6."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Dread Knight growth in your cities increases by 2. Their maximum Damage increases by 6."
                     }
                   ]
                 },
@@ -2277,11 +2434,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Vampirism of friendly creatures increases by 50%."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Vampirism of friendly creatures increases by 1%."
                     }
                   ]
                 }
@@ -2303,15 +2462,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Necropolis creatures cost –-10% Gold."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Necropolis creatures cost –-15% Gold."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Necropolis creatures cost –-20% Gold."
                     }
                   ]
                 },
@@ -2323,7 +2485,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Your Necropolis heroes always battle on their Native Terrain."
                     }
                   ]
                 },
@@ -2335,7 +2498,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes gain 0% Necromancy Power."
                     }
                   ]
                 }
@@ -2351,11 +2515,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Vampire growth in your cities increases by 1. They gain 25 HP."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Vampire growth in your cities increases by 2. They gain 25 HP."
                     }
                   ]
                 },
@@ -2367,11 +2533,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Friendly creatures battling on their Native terrain gain 1 Speed."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Friendly creatures battling on their Native terrain gain 2 Speed."
                     }
                   ]
                 },
@@ -2383,11 +2551,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "The chance of Morale or Luck triggering for enemy creatures decreases by -1% for each point of their Morale or Luck, respectively."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "The chance of Morale or Luck triggering for enemy creatures decreases by -2% for each point of their Morale or Luck, respectively."
                     }
                   ]
                 }
@@ -2409,7 +2579,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
                   ]
                 },
@@ -2421,7 +2592,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 6
+                      "cost": 6,
+                      "descResolved": "The enemy loses 0 level(s) on all Magic School spells."
                     }
                   ]
                 },
@@ -2433,7 +2605,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Your heroes gain 4% Necromancy Power."
                     }
                   ]
                 }
@@ -2449,7 +2622,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Friendly creatures can make +1 counterattacks per round."
                     }
                   ]
                 },
@@ -2461,11 +2635,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Enemy non‑Necropolis creatures deal –5% and take +5% Damage. Your non‑Necropolis creatures gain the opposite effect."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Enemy non‑Necropolis creatures deal –10% and take +10% Damage. Your non‑Necropolis creatures gain the opposite effect."
                     }
                   ]
                 }
@@ -2475,7 +2651,7 @@ window.OE_CALC_DATA = {
         }
       ]
     },
-    "sylvan": {
+    "grove": {
       "buildings": [
         {
           "id": "mains",
@@ -2489,6 +2665,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Grove Palace",
                   "desc": "Grants the city {0} Gold and {1} Law points daily. +{2} hero cap.",
+                  "descResolved": "Grants the city 500 Gold and 500 Law points daily. +500 hero cap.",
                   "costs": {
                     "gold": 5000
                   },
@@ -2498,6 +2675,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Grove Palace II",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 750 Gold and 750 Law points daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -2514,6 +2692,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Grove Palace III",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 1000 Gold and 1000 Law points daily.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -2542,6 +2721,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Fortifications",
                   "desc": "Provides walls during sieges. Allows the builder to pick one level-1 defensive upgrade.",
+                  "descResolved": "Provides walls during sieges. Allows the builder to pick one level-1 defensive upgrade.",
                   "costs": {
                     "gold": 2500,
                     "ore": 5
@@ -2552,6 +2732,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Fortifications II",
                   "desc": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level-2 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level-2 defensive upgrade. City dwellings produce +50% units.",
                   "costs": {
                     "gold": 2500,
                     "ore": 10
@@ -2567,6 +2748,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Fortifications III",
                   "desc": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +1% units.",
                   "costs": {
                     "gold": 5000,
                     "ore": 15
@@ -2594,6 +2776,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Mage Guild",
                   "desc": "Unlocks {1} random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5
@@ -2604,6 +2787,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Mage Guild II",
                   "desc": "Unlocks {2} random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 2,
@@ -2621,6 +2805,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Mage Guild III",
                   "desc": "Unlocks {2} random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -2639,6 +2824,7 @@ window.OE_CALC_DATA = {
                   "level": 4,
                   "name": "Mage Guild IV",
                   "desc": "Unlocks {2} random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 5,
@@ -2656,6 +2842,7 @@ window.OE_CALC_DATA = {
                   "level": 5,
                   "name": "Mage Guild V",
                   "desc": "Unlocks {2} random tier‑5 spells in the Magic Observatory and the ability to spend dust to upgrade tier-5 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑5 spells in the Magic Observatory and the ability to spend dust to upgrade tier-5 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -2686,6 +2873,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Faun Huts",
                   "desc": "Allows the recruitment of Fauns.",
+                  "descResolved": "Allows the recruitment of Fauns.",
                   "costs": {
                     "gold": 1000,
                     "wood": 5
@@ -2696,6 +2884,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Faun Huts II",
                   "desc": "Allows the recruitment of Faun Archers and Faun Warriors.",
+                  "descResolved": "Allows the recruitment of Faun Archers and Faun Warriors.",
                   "costs": {
                     "gold": 750,
                     "wood": 5,
@@ -2718,6 +2907,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Hop Patch",
                   "desc": "Allows the recruitment of Hoplets.",
+                  "descResolved": "Allows the recruitment of Hoplets.",
                   "costs": {
                     "gold": 1000,
                     "gemstones": 2,
@@ -2735,6 +2925,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Hop Patch II",
                   "desc": "Allows the recruitment of Dawn Hoplets and Dusk Hoplets.",
+                  "descResolved": "Allows the recruitment of Dawn Hoplets and Dusk Hoplets.",
                   "costs": {
                     "gold": 1250,
                     "crystals": 2,
@@ -2757,6 +2948,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Menhir Circle",
                   "desc": "Allows the recruitment of Vine Iriyads.",
+                  "descResolved": "Allows the recruitment of Vine Iriyads.",
                   "costs": {
                     "gold": 2000,
                     "wood": 5,
@@ -2769,6 +2961,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Menhir Circle II",
                   "desc": "Allows the recruitment of Fungal Iriyads and Crystal Iriyads.",
+                  "descResolved": "Allows the recruitment of Fungal Iriyads and Crystal Iriyads.",
                   "costs": {
                     "gold": 1000,
                     "wood": 5,
@@ -2793,6 +2986,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Blooming Pond",
                   "desc": "Allows the recruitment of Naiads.",
+                  "descResolved": "Allows the recruitment of Naiads.",
                   "costs": {
                     "gold": 2500,
                     "ore": 5,
@@ -2813,6 +3007,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Blooming Pond II",
                   "desc": "Allows the recruitment of Vernal Naiads and Brumal Naiads.",
+                  "descResolved": "Allows the recruitment of Vernal Naiads and Brumal Naiads.",
                   "costs": {
                     "gold": 1500,
                     "ore": 5,
@@ -2836,6 +3031,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Shroomwood Shack",
                   "desc": "Allows the recruitment of Herbomancers.",
+                  "descResolved": "Allows the recruitment of Herbomancers.",
                   "costs": {
                     "gold": 2750,
                     "wood": 10,
@@ -2854,6 +3050,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Shroomwood Shack II",
                   "desc": "Allows the recruitment of Sporemancers and Murmurmancers",
+                  "descResolved": "Allows the recruitment of Sporemancers and Murmurmancers",
                   "costs": {
                     "gold": 3250,
                     "wood": 20,
@@ -2877,6 +3074,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Thunder Lair",
                   "desc": "Allows the recruitment of Qilins.",
+                  "descResolved": "Allows the recruitment of Qilins.",
                   "costs": {
                     "gold": 6500,
                     "wood": 5,
@@ -2898,6 +3096,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Thunder Lair II",
                   "desc": "Allows the recruitment of Thunder Qilins and Mist Qilins.",
+                  "descResolved": "Allows the recruitment of Thunder Qilins and Mist Qilins.",
                   "costs": {
                     "gold": 3500,
                     "wood": 10,
@@ -2922,6 +3121,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Pyre",
                   "desc": "Allows the recruitment of Phoenixes.",
+                  "descResolved": "Allows the recruitment of Phoenixes.",
                   "costs": {
                     "gold": 12500,
                     "wood": 5,
@@ -2939,6 +3139,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Pyre II",
                   "desc": "Allows the recruitment of Flaming Phoenixes and Energy Phoenixes.",
+                  "descResolved": "Allows the recruitment of Flaming Phoenixes and Energy Phoenixes.",
                   "costs": {
                     "gold": 20000,
                     "wood": 5,
@@ -2969,6 +3170,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Bank",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -2991,6 +3193,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Treasury",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 5000,
                     "gemstones": 5,
@@ -3018,6 +3221,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource Depot",
                   "desc": "Produces {0} Crystals daily.",
+                  "descResolved": "Produces ? Crystals daily.",
                   "costs": {
                     "gold": 2000
                   },
@@ -3042,6 +3246,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource_Depot_level_2",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "gemstones": 3,
                     "crystals": 3,
@@ -3070,6 +3275,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Marketplace",
                   "desc": "Allows resources to be traded.",
+                  "descResolved": "Allows resources to be traded.",
                   "costs": {
                     "gold": 500,
                     "wood": 5
@@ -3097,6 +3303,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Tavern",
                   "desc": "Allows the hiring of new heroes.",
+                  "descResolved": "Allows the hiring of new heroes.",
                   "costs": {
                     "gold": 500,
                     "ore": 5
@@ -3119,6 +3326,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Artifact Merchant",
                   "desc": "Allows artifacts to be traded.",
+                  "descResolved": "Allows artifacts to be traded.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -3147,6 +3355,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Spring_of_Life",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "graal": 1
                   },
@@ -3172,7 +3381,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
                   ]
                 },
@@ -3184,7 +3394,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Produces 500 Gold daily."
                     }
                   ]
                 },
@@ -3196,15 +3407,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 1 Knowledge."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 2 Knowledge."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain 3 Knowledge."
                     }
                   ]
                 }
@@ -3220,15 +3434,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Faun growth in your cities increases by 2. They deal +50% Melee Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Faun growth in your cities increases by 4. They deal +50% Melee Damage."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Faun growth in your cities increases by 6. They deal +50% Melee Damage."
                     }
                   ]
                 },
@@ -3240,15 +3457,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Hoplet growth in your cities increases by 2. They always deal maximum Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Hoplet growth in your cities increases by 4. They always deal maximum Damage."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Hoplet growth in your cities increases by 6. They always deal maximum Damage."
                     }
                   ]
                 }
@@ -3270,11 +3490,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 1 Crystal(s) daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 2 Crystal(s) daily."
                     }
                   ]
                 },
@@ -3286,7 +3508,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Produces 250 Astrology Points daily."
                     }
                   ]
                 },
@@ -3298,7 +3521,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Your heroes cost –-40% Gold."
                     }
                   ]
                 }
@@ -3314,15 +3538,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Vine Iriyad growth in your cities increases by 2. They gain 5 HP."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Vine Iriyad growth in your cities increases by 2. They gain 10 HP."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Vine Iriyad growth in your cities increases by 2. They gain 15 HP."
                     }
                   ]
                 },
@@ -3334,11 +3561,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures deal 25% more Damage with Lucky Strikes."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures deal 50% more Damage with Lucky Strikes."
                     }
                   ]
                 },
@@ -3350,15 +3579,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When battling in the area you control, friendly creatures gain 2 Attack and Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When battling in the area you control, friendly creatures gain 4 Attack and Defense."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When battling in the area you control, friendly creatures gain 6 Attack and Defense."
                     }
                   ]
                 }
@@ -3380,7 +3612,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
                   ]
                 },
@@ -3392,11 +3625,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your buildings cost –-20% Wood to construct."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your buildings cost –-40% Wood to construct."
                     }
                   ]
                 },
@@ -3408,11 +3643,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Each time your improve a Mage Guild in your Grove cities, +1 spell(s) is unlocked in the Observatory."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Each time your improve a Mage Guild in your Grove cities, +2 spell(s) is unlocked in the Observatory."
                     }
                   ]
                 },
@@ -3424,7 +3661,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Enemies can’t see detailed information about your armies. (When viewed, it shows random numbers of random Grove units.)"
                     }
                   ]
                 }
@@ -3440,15 +3678,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Naiad growth in your cities increases by 2. They gain 1 Speed and Initiative."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Naiad growth in your cities increases by 2. They gain 2 Speed and Initiative."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Naiad growth in your cities increases by 2. They gain 3 Speed and Initiative."
                     }
                   ]
                 },
@@ -3460,7 +3701,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "All negative effects on friendly creatures last -1 fewer round(s)."
                     }
                   ]
                 }
@@ -3482,11 +3724,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Creature growth of your external dwellings increases by +50%."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Creature growth of your external dwellings increases by +1%."
                     }
                   ]
                 },
@@ -3498,15 +3742,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "All temporary spells (scrolls, artifacts etc.) available to your heroes gain 1 level(s)."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "All temporary spells (scrolls, artifacts etc.) available to your heroes gain 2 level(s)."
                     },
                     {
                       "level": 3,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "All temporary spells (scrolls, artifacts etc.) available to your heroes gain 3 level(s)."
                     }
                   ]
                 },
@@ -3518,7 +3765,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "The cooldowns of all the battle spells of your heroes are reduced by -1 round(s)."
                     }
                   ]
                 },
@@ -3530,7 +3778,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 6
+                      "cost": 6,
+                      "descResolved": "Enemy heroes can’t flee or surrender."
                     }
                   ]
                 }
@@ -3546,15 +3795,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Herbomancer growth in your cities increases by 1. Their abilities cost –-1 Focus Charge(s)."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Herbomancer growth in your cities increases by 2. Their abilities cost –-1 Focus Charge(s)."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Herbomancer growth in your cities increases by 3. Their abilities cost –-1 Focus Charge(s)."
                     }
                   ]
                 },
@@ -3566,15 +3818,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Qilin growth in your cities increases by 1. They deal +2 Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Qilin growth in your cities increases by 1. They deal +4 Damage."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Qilin growth in your cities increases by 1. They deal +6 Damage."
                     }
                   ]
                 },
@@ -3586,15 +3841,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures now have +1% Lucky Strike chance for each point of Luck."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures now have +2% Lucky Strike chance for each point of Luck."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures now have +3% Lucky Strike chance for each point of Luck."
                     }
                   ]
                 }
@@ -3616,7 +3874,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
                   ]
                 },
@@ -3628,7 +3887,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 6
+                      "cost": 6,
+                      "descResolved": "Your Heroic Strikes deal +? basic Damage."
                     }
                   ]
                 },
@@ -3640,11 +3900,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Grove heroes gain 1 sight radius and 10 Movement points."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Grove heroes gain 2 sight radius and 20 Movement points."
                     }
                   ]
                 },
@@ -3656,7 +3918,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Focus Charge limit increases by 1."
                     }
                   ]
                 }
@@ -3672,15 +3935,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Phoenix growth in your cities increases by 1. Their maximum Damage increases by 10."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Phoenix growth in your cities increases by 1. Their maximum Damage increases by 15."
                     },
                     {
                       "level": 3,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Phoenix growth in your cities increases by 1. Their maximum Damage increases by 20."
                     }
                   ]
                 },
@@ -3692,7 +3958,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Your Fauns, Hoplets and Herbomancers gain 2 Speed and Initiative."
                     }
                   ]
                 },
@@ -3704,7 +3971,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "The abilities of your Vine Iriyads, Naiads, Qilins and Phoenixes cost –-1 Focus Charge(s)."
                     }
                   ]
                 }
@@ -3728,6 +3996,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Apiary’s Heart",
                   "desc": "Grants the city {0} Gold and {1} Law points daily. +{2} hero cap.",
+                  "descResolved": "Grants the city 500 Gold and 500 Law points daily. +500 hero cap.",
                   "costs": {
                     "gold": 5000
                   },
@@ -3737,6 +4006,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Apiary’s Heart II",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 750 Gold and 750 Law points daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -3753,6 +4023,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Apiary’s Heart III",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 1000 Gold and 1000 Law points daily.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -3781,6 +4052,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Fortifications",
                   "desc": "Provides walls during sieges. Allows the builder to pick one level-1 defensive upgrade.",
+                  "descResolved": "Provides walls during sieges. Allows the builder to pick one level-1 defensive upgrade.",
                   "costs": {
                     "gold": 2500,
                     "ore": 5
@@ -3791,6 +4063,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Fortifications II",
                   "desc": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level-2 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level-2 defensive upgrade. City dwellings produce +50% units.",
                   "costs": {
                     "gold": 2500,
                     "ore": 10
@@ -3806,6 +4079,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Fortifications III",
                   "desc": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +1% units.",
                   "costs": {
                     "gold": 5000,
                     "ore": 15
@@ -3833,6 +4107,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Mage Guild",
                   "desc": "Unlocks {1} random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5
@@ -3843,6 +4118,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Mage Guild II",
                   "desc": "Unlocks {2} random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 2,
@@ -3860,6 +4136,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Mage Guild III",
                   "desc": "Unlocks {2} random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -3878,6 +4155,7 @@ window.OE_CALC_DATA = {
                   "level": 4,
                   "name": "Mage Guild IV",
                   "desc": "Unlocks {2} random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 5,
@@ -3895,6 +4173,7 @@ window.OE_CALC_DATA = {
                   "level": 5,
                   "name": "Mage Guild V",
                   "desc": "Unlocks {2} random tier‑5 spells in the Magic Observatory and the ability to spend dust to upgrade tier-5 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑5 spells in the Magic Observatory and the ability to spend dust to upgrade tier-5 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -3925,6 +4204,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Neglected Housing",
                   "desc": "Allows the recruitment of Parasites.",
+                  "descResolved": "Allows the recruitment of Parasites.",
                   "costs": {
                     "gold": 750,
                     "wood": 5,
@@ -3936,6 +4216,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Neglected Housing II",
                   "desc": "Allows the recruitment of Warden Parasites and Ravager Parasites.",
+                  "descResolved": "Allows the recruitment of Warden Parasites and Ravager Parasites.",
                   "costs": {
                     "gold": 500,
                     "crystals": 5,
@@ -3958,6 +4239,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Carrion Lair",
                   "desc": "Allows the recruitment of Locusts.",
+                  "descResolved": "Allows the recruitment of Locusts.",
                   "costs": {
                     "gold": 2000,
                     "wood": 5,
@@ -3969,6 +4251,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Carrion Lair II",
                   "desc": "Allows the recruitment of Overgrown Locusts and Harvester Locusts.",
+                  "descResolved": "Allows the recruitment of Overgrown Locusts and Harvester Locusts.",
                   "costs": {
                     "gold": 1250,
                     "crystals": 5,
@@ -3991,6 +4274,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Paper Nest",
                   "desc": "Allows the recruitment of Hornets.",
+                  "descResolved": "Allows the recruitment of Hornets.",
                   "costs": {
                     "gold": 3000,
                     "wood": 10
@@ -4006,6 +4290,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Paper Nest II",
                   "desc": "Allows the recruitment of Chanters and Stingers.",
+                  "descResolved": "Allows the recruitment of Chanters and Stingers.",
                   "costs": {
                     "gold": 750,
                     "wood": 10,
@@ -4029,6 +4314,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Chitinous Ziggurat",
                   "desc": "Allows the recruitment of Scorpions.",
+                  "descResolved": "Allows the recruitment of Scorpions.",
                   "costs": {
                     "gold": 3750,
                     "ore": 10
@@ -4044,6 +4330,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Chitinous Ziggurat II",
                   "desc": "Allows the recruitment of Volcanic Scorpions and Spelaean Scorpions.",
+                  "descResolved": "Allows the recruitment of Volcanic Scorpions and Spelaean Scorpions.",
                   "costs": {
                     "gold": 1500,
                     "ore": 10,
@@ -4067,6 +4354,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Apex",
                   "desc": "Allows the recruitment of Reavers.",
+                  "descResolved": "Allows the recruitment of Reavers.",
                   "costs": {
                     "gold": 5500,
                     "wood": 10,
@@ -4083,6 +4371,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Apex II",
                   "desc": "Allows the recruitment of Menacing Reavers and Maniacal Reavers.",
+                  "descResolved": "Allows the recruitment of Menacing Reavers and Maniacal Reavers.",
                   "costs": {
                     "gold": 4000,
                     "wood": 5,
@@ -4106,6 +4395,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Burning Soul Burrows",
                   "desc": "Allows the recruitment of Waurmos.",
+                  "descResolved": "Allows the recruitment of Waurmos.",
                   "costs": {
                     "gold": 6000,
                     "ore": 10,
@@ -4126,6 +4416,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Burning Soul Burrows II",
                   "desc": "Allows the recruitment of Devourers and Pyroboroses.",
+                  "descResolved": "Allows the recruitment of Devourers and Pyroboroses.",
                   "costs": {
                     "gold": 4000,
                     "ore": 5,
@@ -4149,6 +4440,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Tower of Love",
                   "desc": "Allows the recruitment of Hive Queens.",
+                  "descResolved": "Allows the recruitment of Hive Queens.",
                   "costs": {
                     "gold": 15000,
                     "crystals": 15
@@ -4164,6 +4456,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Tower of Love II",
                   "desc": "Allows the recruitment of Hive Mothers and Hive Huntresses.",
+                  "descResolved": "Allows the recruitment of Hive Mothers and Hive Huntresses.",
                   "costs": {
                     "gold": 15000,
                     "crystals": 25,
@@ -4192,6 +4485,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Bank",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -4214,6 +4508,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Treasury",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 5000,
                     "gemstones": 5,
@@ -4241,6 +4536,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource Depot",
                   "desc": "Produces {0} Crystals daily.",
+                  "descResolved": "Produces ? Crystals daily.",
                   "costs": {
                     "gold": 2000
                   },
@@ -4265,6 +4561,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource_Depot_level_2",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "gemstones": 3,
                     "crystals": 3,
@@ -4293,6 +4590,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Marketplace",
                   "desc": "Allows resources to be traded.",
+                  "descResolved": "Allows resources to be traded.",
                   "costs": {
                     "gold": 500,
                     "wood": 5
@@ -4320,6 +4618,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Tavern",
                   "desc": "Allows the hiring of new heroes.",
+                  "descResolved": "Allows the hiring of new heroes.",
                   "costs": {
                     "gold": 500,
                     "ore": 5
@@ -4342,6 +4641,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Eternal_Flame",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "graal": 1
                   },
@@ -4367,7 +4667,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
                   ]
                 },
@@ -4379,11 +4680,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Requirements for unlocking higher‑level Laws are reduced by 2."
                     },
                     {
                       "level": 2,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Requirements for unlocking higher‑level Laws are reduced by 4."
                     }
                   ]
                 },
@@ -4395,15 +4698,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes’ spells cost –-1 mana."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes’ spells cost –-2 mana."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes’ spells cost –-3 mana."
                     }
                   ]
                 },
@@ -4415,7 +4721,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Hive heroes see exact information about neutral squads within ? squares."
                     }
                   ]
                 }
@@ -4431,15 +4738,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures gain 1 Attack."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures gain 2 Attack."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures gain 3 Attack."
                     }
                   ]
                 },
@@ -4451,15 +4761,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures gain 1 Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures gain 2 Defense."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures gain 3 Defense."
                     }
                   ]
                 },
@@ -4471,7 +4784,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Summoned Fire Larvae deal +?% Damage on death."
                     }
                   ]
                 }
@@ -4493,15 +4807,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 250 Gold daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 500 Gold daily."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 750 Gold daily."
                     }
                   ]
                 },
@@ -4513,11 +4830,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 1 Crystal(s) daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 2 Crystal(s) daily."
                     }
                   ]
                 },
@@ -4529,7 +4848,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "External dwellings increase respective creature growth in the cities by 1%."
                     }
                   ]
                 }
@@ -4545,11 +4865,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Parasite growth in your cities increases by 4. They gain 1 HP."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Parasite growth in your cities increases by 4. They gain 2 HP."
                     }
                   ]
                 },
@@ -4561,11 +4883,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Locust growth in your cities increases by 4. They gain 1 Speed."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Locust growth in your cities increases by 4. They gain 2 Speed."
                     }
                   ]
                 },
@@ -4577,11 +4901,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Hornet growth in your cities increases by 2. They gain 1 Initiative."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Hornet growth in your cities increases by 2. They gain 2 Initiative."
                     }
                   ]
                 }
@@ -4603,7 +4929,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
                   ]
                 },
@@ -4615,7 +4942,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Primal spells of your heroes gain 0 level(s)."
                     }
                   ]
                 }
@@ -4631,11 +4959,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Scorpion growth in your cities increases by 2. They gain 1 Morale and Luck."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Scorpion growth in your cities increases by 2. They gain 3 Morale and Luck."
                     }
                   ]
                 },
@@ -4647,11 +4977,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Reaver growth in your cities increases by 1. They gain 1 Morale and 1 Luck."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Reaver growth in your cities increases by 1. They gain 5 Morale and 1 Luck."
                     }
                   ]
                 },
@@ -4663,11 +4995,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Waurms growth in your cities increases by 1. They gain 1 Morale and 1 Luck."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Waurms growth in your cities increases by 1. They gain 1 Morale and 5 Luck."
                     }
                   ]
                 },
@@ -4679,7 +5013,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Summoned Fire Larvae attack twice."
                     }
                   ]
                 }
@@ -4701,11 +5036,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Upgrading your Hive creatures costs –-10% Gold. Recruiting upgraded creatures is discounted by the same amount."
                     },
                     {
                       "level": 2,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Upgrading your Hive creatures costs –-20% Gold. Recruiting upgraded creatures is discounted by the same amount."
                     }
                   ]
                 },
@@ -4717,7 +5054,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "External dwellings in an area that you control produce upgraded creatures."
                     }
                   ]
                 },
@@ -4729,7 +5067,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Hive heroes see exact information about enemy heroes and cities within ? squares."
                     }
                   ]
                 }
@@ -4745,11 +5084,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Hive Queen growth in your cities increases by 1. They deal +5 Damage and gain 5 HP."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Hive Queen growth in your cities increases by 1. They deal +10 Damage and gain 10 HP."
                     }
                   ]
                 },
@@ -4761,15 +5102,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When battling in the area you <b>do not</b> control, friendly creatures gain 2 Attack and Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When battling in the area you <b>do not</b> control, friendly creatures gain 4 Attack and Defense."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When battling in the area you <b>do not</b> control, friendly creatures gain 6 Attack and Defense."
                     }
                   ]
                 }
@@ -4791,7 +5135,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
                   ]
                 },
@@ -4803,11 +5148,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "External dwellings increase respective creature growth in the cities by 50%."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "External dwellings increase respective creature growth in the cities by 1%."
                     }
                   ]
                 },
@@ -4819,15 +5166,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes deal +10% Magic Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes deal +20% Magic Damage."
                     },
                     {
                       "level": 3,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes deal +30% Magic Damage."
                     }
                   ]
                 }
@@ -4843,11 +5193,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Friendly creatures deal +1 Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Friendly creatures deal +2 Damage."
                     }
                   ]
                 },
@@ -4859,15 +5211,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "The chance of Morale or Luck triggering for friendly creatures increases by 1% for each point of their Morale or Luck, respectively."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "The chance of Morale or Luck triggering for friendly creatures increases by 2% for each point of their Morale or Luck, respectively."
                     },
                     {
                       "level": 3,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "The chance of Morale or Luck triggering for friendly creatures increases by 3% for each point of their Morale or Luck, respectively."
                     }
                   ]
                 },
@@ -4879,7 +5234,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Summoned Fire Larvae provoke adjacent enemies to attack them over other units."
                     }
                   ]
                 }
@@ -4903,6 +5259,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Abyssal Remnant",
                   "desc": "Grants the city {0} Gold and {1} Law points daily. +{2} hero cap.",
+                  "descResolved": "Grants the city 500 Gold and 500 Law points daily. +500 hero cap.",
                   "costs": {
                     "gold": 5000
                   },
@@ -4912,6 +5269,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Abyssal Remnant II",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 750 Gold and 750 Law points daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -4928,6 +5286,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Abyssal Remnant III",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 1000 Gold and 1000 Law points daily.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -4956,6 +5315,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Fortifications",
                   "desc": "Provides walls during sieges. Allows the builder to pick one level-1 defensive upgrade.",
+                  "descResolved": "Provides walls during sieges. Allows the builder to pick one level-1 defensive upgrade.",
                   "costs": {
                     "gold": 2500,
                     "ore": 5
@@ -4966,6 +5326,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Fortifications II",
                   "desc": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level-2 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level-2 defensive upgrade. City dwellings produce +50% units.",
                   "costs": {
                     "gold": 2500,
                     "ore": 10
@@ -4981,6 +5342,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Fortifications III",
                   "desc": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +1% units.",
                   "costs": {
                     "gold": 5000,
                     "ore": 15
@@ -5008,6 +5370,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Mage Guild",
                   "desc": "Unlocks {1} random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5
@@ -5018,6 +5381,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Mage Guild II",
                   "desc": "Unlocks {2} random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 2,
@@ -5035,6 +5399,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Mage Guild III",
                   "desc": "Unlocks {2} random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -5053,6 +5418,7 @@ window.OE_CALC_DATA = {
                   "level": 4,
                   "name": "Mage Guild IV",
                   "desc": "Unlocks {2} random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 5,
@@ -5082,6 +5448,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Lesser Summoning Rite",
                   "desc": "Allows the recruitment of Ra’Shoth.",
+                  "descResolved": "Allows the recruitment of Ra’Shoth.",
                   "costs": {
                     "gold": 500,
                     "gemstones": 1,
@@ -5094,6 +5461,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Lesser Summoning Rite II",
                   "desc": "Allows the recruitment of Stinging Ra’Shoth and Ferocious Ra’Shoth.",
+                  "descResolved": "Allows the recruitment of Stinging Ra’Shoth and Ferocious Ra’Shoth.",
                   "costs": {
                     "gold": 250,
                     "mercury": 5,
@@ -5116,6 +5484,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Cultist Spire",
                   "desc": "Allows the recruitment of Cultists.",
+                  "descResolved": "Allows the recruitment of Cultists.",
                   "costs": {
                     "gold": 2750,
                     "wood": 5,
@@ -5127,6 +5496,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Cultist Spire II",
                   "desc": "Allows the recruitment of Binders and Votaries.",
+                  "descResolved": "Allows the recruitment of Binders and Votaries.",
                   "costs": {
                     "gold": 1750,
                     "wood": 5,
@@ -5150,6 +5520,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Aga’Shoth Stables",
                   "desc": "Allows the recruitment of Aga’Shoth Riders.",
+                  "descResolved": "Allows the recruitment of Aga’Shoth Riders.",
                   "costs": {
                     "gold": 3000,
                     "wood": 5,
@@ -5166,6 +5537,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Aga’Shoth Stables II",
                   "desc": "Allows the recruitment of Aga’Shoth Tamers and Aga’Shoth Matha.",
+                  "descResolved": "Allows the recruitment of Aga’Shoth Tamers and Aga’Shoth Matha.",
                   "costs": {
                     "gold": 750,
                     "wood": 10,
@@ -5189,6 +5561,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Disturbing Summoning Rite",
                   "desc": "Allows the recruitment of Grand Shoth.",
+                  "descResolved": "Allows the recruitment of Grand Shoth.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 3,
@@ -5210,6 +5583,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Disturbing Summoning Rite II",
                   "desc": "Allows the recruitment of Unspeakable Shoth and Unthinkable Shoth.",
+                  "descResolved": "Allows the recruitment of Unspeakable Shoth and Unthinkable Shoth.",
                   "costs": {
                     "gold": 2250,
                     "mercury": 10,
@@ -5232,6 +5606,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "House of Chains",
                   "desc": "Allows the recruitment of Concubi.",
+                  "descResolved": "Allows the recruitment of Concubi.",
                   "costs": {
                     "gold": 4750,
                     "wood": 5,
@@ -5248,6 +5623,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "House of Chains II",
                   "desc": "Allows the recruitment of Mistresses of Chains and Bewitchers.",
+                  "descResolved": "Allows the recruitment of Mistresses of Chains and Bewitchers.",
                   "costs": {
                     "gold": 1500,
                     "wood": 15,
@@ -5271,6 +5647,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Bloated Mansion",
                   "desc": "Allows the recruitment of Arbitrators.",
+                  "descResolved": "Allows the recruitment of Arbitrators.",
                   "costs": {
                     "gold": 7750,
                     "wood": 5,
@@ -5287,6 +5664,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Bloated Mansion II",
                   "desc": "Allows the recruitment of Rift Arbitrators and Bloated Arbitrators.",
+                  "descResolved": "Allows the recruitment of Rift Arbitrators and Bloated Arbitrators.",
                   "costs": {
                     "gold": 3750,
                     "wood": 20,
@@ -5310,6 +5688,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Eerie Summoning Rite",
                   "desc": "Allows the recruitment of Abyssal Envoys.",
+                  "descResolved": "Allows the recruitment of Abyssal Envoys.",
                   "costs": {
                     "gold": 12500,
                     "gemstones": 5,
@@ -5331,6 +5710,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Eerie Summoning Rite II",
                   "desc": "Allows the recruitment of Abyssal Overseers and Abyssal Executors.",
+                  "descResolved": "Allows the recruitment of Abyssal Overseers and Abyssal Executors.",
                   "costs": {
                     "gold": 17500,
                     "mercury": 25,
@@ -5359,6 +5739,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Bank",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -5381,6 +5762,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Treasury",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 5000,
                     "gemstones": 5,
@@ -5408,6 +5790,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource Depot",
                   "desc": "Produces {0} Mercury daily.",
+                  "descResolved": "Produces ? Mercury daily.",
                   "costs": {
                     "gold": 2000
                   },
@@ -5432,6 +5815,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource_Depot_level_2",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "gemstones": 3,
                     "crystals": 3,
@@ -5460,6 +5844,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Marketplace",
                   "desc": "Allows resources to be traded.",
+                  "descResolved": "Allows resources to be traded.",
                   "costs": {
                     "gold": 500,
                     "wood": 5
@@ -5487,6 +5872,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Tavern",
                   "desc": "Allows the hiring of new heroes.",
+                  "descResolved": "Allows the hiring of new heroes.",
                   "costs": {
                     "gold": 500,
                     "ore": 5
@@ -5509,6 +5895,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Artifact Merchant",
                   "desc": "Allows artifacts to be traded.",
+                  "descResolved": "Allows artifacts to be traded.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -5537,6 +5924,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Frigid_Firmament",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "graal": 1
                   },
@@ -5562,7 +5950,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
                   ]
                 },
@@ -5574,15 +5963,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When destroying artifacts, you gain +10% Alchemical Dust."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When destroying artifacts, you gain +20% Alchemical Dust."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "When destroying artifacts, you gain +30% Alchemical Dust."
                     }
                   ]
                 },
@@ -5594,11 +5986,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Your Schism heroes restore +10% mana each morning."
                     },
                     {
                       "level": 2,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Your Schism heroes restore +20% mana each morning."
                     }
                   ]
                 }
@@ -5614,11 +6008,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Ra’Shoth growth in your cities increases by 4. They gain 1 Initiative."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Ra’Shoth growth in your cities increases by 8. They gain 1 Initiative."
                     }
                   ]
                 },
@@ -5630,11 +6026,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑1 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑1 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
                   ]
                 },
@@ -5646,15 +6044,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures gain 1 Attack and Defense when they battle on their Native Terrain."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures gain 2 Attack and Defense when they battle on their Native Terrain."
                     },
                     {
                       "level": 3,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures gain 3 Attack and Defense when they battle on their Native Terrain."
                     }
                   ]
                 }
@@ -5676,11 +6077,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 250 Gold daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 500 Gold daily."
                     }
                   ]
                 },
@@ -5692,11 +6095,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 1 Mercury daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 2 Mercury daily."
                     }
                   ]
                 },
@@ -5708,11 +6113,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Your heroes gain +10% XP."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Your heroes gain +20% XP."
                     }
                   ]
                 },
@@ -5724,15 +6131,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain +1 Spell Power."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain +2 Spell Power."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes gain +3 Spell Power."
                     }
                   ]
                 }
@@ -5748,7 +6158,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Cultist growth in your cities increases by 4. They deal +1 Damage."
                     }
                   ]
                 },
@@ -5760,7 +6171,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Aga’Shoth Rider growth in your cities increases by 2. They gain 5 HP."
                     }
                   ]
                 },
@@ -5772,11 +6184,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑2 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑2 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
                   ]
                 },
@@ -5788,11 +6202,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑3 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑3 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
                   ]
                 }
@@ -5814,7 +6230,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
                   ]
                 },
@@ -5826,7 +6243,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Arcane spells of your heroes gain 0 level."
                     }
                   ]
                 },
@@ -5838,11 +6256,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Schism heroes’ spells and friendly creatures’ abilities summon +10% units."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Schism heroes’ spells and friendly creatures’ abilities summon +20% units."
                     }
                   ]
                 }
@@ -5858,11 +6278,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Grand Shoth growth in your cities increases by 2. They gain 1 Speed."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Grand Shoth growth in your cities increases by 4. They gain 1 Speed."
                     }
                   ]
                 },
@@ -5874,11 +6296,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑4 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑4 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
                   ]
                 },
@@ -5890,11 +6314,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "All effects applied by your heroes and friendly creatures last 1 additional round(s)."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "All effects applied by your heroes and friendly creatures last 2 additional round(s)."
                     }
                   ]
                 }
@@ -5916,11 +6342,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your cities produce +1 Wood and Ore."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your cities produce +2 Wood and Ore."
                     }
                   ]
                 },
@@ -5932,15 +6360,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 250 Astrology points daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 500 Astrology points daily."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 750 Astrology points daily."
                     }
                   ]
                 },
@@ -5952,7 +6383,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "The cooldowns of all the battle spells of enemy heroes are increased by 1 round(s)."
                     }
                   ]
                 },
@@ -5964,7 +6396,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 6
+                      "cost": 6,
+                      "descResolved": "You can use Involuntary Summons in your Schism cities twice per week."
                     }
                   ]
                 }
@@ -5980,7 +6413,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Concubus growth in your cities increases by 1. They gain 4 Attack and Defense."
                     }
                   ]
                 },
@@ -5992,7 +6426,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Arbitrator growth in your cities increases by 1. They deal +4 Damage."
                     }
                   ]
                 },
@@ -6004,11 +6439,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑5 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑5 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
                   ]
                 },
@@ -6020,11 +6457,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑6 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑6 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
                   ]
                 }
@@ -6046,7 +6485,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
                   ]
                 },
@@ -6058,7 +6498,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Each round of battle, the enemy loses -1 Focus Charge(s)."
                     }
                   ]
                 },
@@ -6070,7 +6511,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Your Schism heroes start each day with maximum Communion level."
                     }
                   ]
                 },
@@ -6082,7 +6524,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Friendly creatures treat all Terrains as Native."
                     }
                   ]
                 }
@@ -6098,11 +6541,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Abyssal Envoy growth in your cities increases by 1. They gain 3 Speed and Initiative."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Abyssal Envoy growth in your cities increases by 2. They gain 3 Speed and Initiative."
                     }
                   ]
                 },
@@ -6114,11 +6559,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑7 friendly creatures gain 10% of their hero’s Attack and Spell Power as Attack, 10% of their Defense and Knowledge as Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Tier‑7 friendly creatures gain 20% of their hero’s Attack and Spell Power as Attack, 20% of their Defense and Knowledge as Defense."
                     }
                   ]
                 },
@@ -6130,7 +6577,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "All enemy creatures lose -1 Speed and Initiative."
                     }
                   ]
                 }
@@ -6154,6 +6602,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Byzantine Palace",
                   "desc": "Grants the city {0} Gold and {1} Law points daily. +{2} hero cap.",
+                  "descResolved": "Grants the city 500 Gold and 500 Law points daily. +500 hero cap.",
                   "costs": {
                     "gold": 5000
                   },
@@ -6163,6 +6612,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Byzantine Palace II",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 750 Gold and 750 Law points daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -6179,6 +6629,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Byzantine Palace III",
                   "desc": "Grants the city {0} Gold and {1} Law points daily.",
+                  "descResolved": "Grants the city 1000 Gold and 1000 Law points daily.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -6207,6 +6658,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Fortifications",
                   "desc": "Provides walls during sieges. Allows the builder to pick one level-1 defensive upgrade.",
+                  "descResolved": "Provides walls during sieges. Allows the builder to pick one level-1 defensive upgrade.",
                   "costs": {
                     "gold": 2500,
                     "ore": 5
@@ -6217,6 +6669,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Fortifications II",
                   "desc": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level-2 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds two towers to the battlements that shoot at attackers during sieges. Allows the builder to pick one level-2 defensive upgrade. City dwellings produce +50% units.",
                   "costs": {
                     "gold": 2500,
                     "ore": 10
@@ -6232,6 +6685,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Fortifications III",
                   "desc": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +{0}% units.",
+                  "descResolved": "Adds one more grand tower to the battlements that shoots at attackers during sieges and spikes by the walls. Allows the builder to pick one level-3 defensive upgrade. City dwellings produce +1% units.",
                   "costs": {
                     "gold": 5000,
                     "ore": 15
@@ -6259,6 +6713,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Mage Guild",
                   "desc": "Unlocks {1} random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑1 spells in the Magic Observatory and the ability to spend dust to upgrade tier-1 spells or unlock additional ones. When heroes visit the city, all unlocked tier-? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5
@@ -6269,6 +6724,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Mage Guild II",
                   "desc": "Unlocks {2} random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑2 spells in the Magic Observatory and the ability to spend dust to upgrade tier-2 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 2,
@@ -6286,6 +6742,7 @@ window.OE_CALC_DATA = {
                   "level": 3,
                   "name": "Mage Guild III",
                   "desc": "Unlocks {2} random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑3 spells in the Magic Observatory and the ability to spend dust to upgrade tier-3 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -6304,6 +6761,7 @@ window.OE_CALC_DATA = {
                   "level": 4,
                   "name": "Mage Guild IV",
                   "desc": "Unlocks {2} random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑4 spells in the Magic Observatory and the ability to spend dust to upgrade tier-4 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 2500,
                     "gemstones": 5,
@@ -6321,6 +6779,7 @@ window.OE_CALC_DATA = {
                   "level": 5,
                   "name": "Mage Guild V",
                   "desc": "Unlocks {2} random tier‑5 spells in the Magic Observatory and the ability to spend dust to upgrade tier-5 spells or unlock additional ones. When heroes visit the city, all unlocked tier-{0}–{1} spells are added to their Spellbook.",
+                  "descResolved": "Unlocks ? random tier‑5 spells in the Magic Observatory and the ability to spend dust to upgrade tier-5 spells or unlock additional ones. When heroes visit the city, all unlocked tier-?–? spells are added to their Spellbook.",
                   "costs": {
                     "gold": 5000,
                     "wood": 10,
@@ -6351,6 +6810,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Warren",
                   "desc": "Allows the recruitment of Troglodytes.",
+                  "descResolved": "Allows the recruitment of Troglodytes.",
                   "costs": {
                     "gold": 1250,
                     "ore": 5
@@ -6361,6 +6821,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Warren II",
                   "desc": "Allows the recruitment of Infernal Troglodytes and Toxic Troglodytes.",
+                  "descResolved": "Allows the recruitment of Infernal Troglodytes and Toxic Troglodytes.",
                   "costs": {
                     "gold": 750,
                     "ore": 5,
@@ -6383,6 +6844,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Safe House",
                   "desc": "Allows the recruitment of Infiltrators.",
+                  "descResolved": "Allows the recruitment of Infiltrators.",
                   "costs": {
                     "gold": 1500,
                     "wood": 5,
@@ -6396,6 +6858,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Safe House II",
                   "desc": "Allows the recruitment of Guile Infiltrators and Bleak Infiltrators.",
+                  "descResolved": "Allows the recruitment of Guile Infiltrators and Bleak Infiltrators.",
                   "costs": {
                     "gold": 1250,
                     "wood": 5,
@@ -6419,6 +6882,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Amphitheater",
                   "desc": "Allows the recruitment of Onyx Dancers.",
+                  "descResolved": "Allows the recruitment of Onyx Dancers.",
                   "costs": {
                     "gold": 1000,
                     "ore": 5,
@@ -6441,6 +6905,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Amphitheater II",
                   "desc": "Allows the recruitment of Jasper Dancers and Aureate Dancers.",
+                  "descResolved": "Allows the recruitment of Jasper Dancers and Aureate Dancers.",
                   "costs": {
                     "gold": 1250,
                     "ore": 5,
@@ -6464,6 +6929,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Labyrinth",
                   "desc": "Allows the recruitment of Minotaurs.",
+                  "descResolved": "Allows the recruitment of Minotaurs.",
                   "costs": {
                     "gold": 4000,
                     "wood": 5,
@@ -6480,6 +6946,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Labyrinth II",
                   "desc": "Allows the recruitment of Minotaur Lords and Minotaur Vanguards.",
+                  "descResolved": "Allows the recruitment of Minotaur Lords and Minotaur Vanguards.",
                   "costs": {
                     "gold": 3250,
                     "wood": 5,
@@ -6503,6 +6970,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Stilled Voices",
                   "desc": "Allows the recruitment of Medusae.",
+                  "descResolved": "Allows the recruitment of Medusae.",
                   "costs": {
                     "gold": 2250,
                     "wood": 5,
@@ -6525,6 +6993,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Stilled Voices II",
                   "desc": "Allows the recruitment of Medusa Sculptors and Medusa Queens.",
+                  "descResolved": "Allows the recruitment of Medusa Sculptors and Medusa Queens.",
                   "costs": {
                     "gold": 2250,
                     "wood": 5,
@@ -6548,6 +7017,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Chthonic Home",
                   "desc": "Allows the recruitment of Hydras.",
+                  "descResolved": "Allows the recruitment of Hydras.",
                   "costs": {
                     "gold": 4000,
                     "wood": 10,
@@ -6565,6 +7035,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Chthonic Home II",
                   "desc": "Allows the recruitment of Chthonic Hydras and Infernal Hydras.",
+                  "descResolved": "Allows the recruitment of Chthonic Hydras and Infernal Hydras.",
                   "costs": {
                     "gold": 2500,
                     "wood": 15,
@@ -6589,6 +7060,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Cave Palace",
                   "desc": "Allows the recruitment of Cave Dragons.",
+                  "descResolved": "Allows the recruitment of Cave Dragons.",
                   "costs": {
                     "gold": 17500,
                     "wood": 5,
@@ -6610,6 +7082,7 @@ window.OE_CALC_DATA = {
                   "level": 2,
                   "name": "Cave Palace II",
                   "desc": "Allows the recruitment of Black Dragons and Ashen Dragons.",
+                  "descResolved": "Allows the recruitment of Black Dragons and Ashen Dragons.",
                   "costs": {
                     "gold": 22500,
                     "gemstones": 25,
@@ -6642,6 +7115,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Bank",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -6664,6 +7138,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Treasury",
                   "desc": "Produces {0} Gold daily.",
+                  "descResolved": "Produces ? Gold daily.",
                   "costs": {
                     "gold": 5000,
                     "gemstones": 5,
@@ -6691,6 +7166,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource Depot",
                   "desc": "Produces {0} Gems daily.",
+                  "descResolved": "Produces ? Gems daily.",
                   "costs": {
                     "gold": 2000
                   },
@@ -6715,6 +7191,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Resource_Depot_level_2",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "gemstones": 3,
                     "crystals": 3,
@@ -6743,6 +7220,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Marketplace",
                   "desc": "Allows resources to be traded.",
+                  "descResolved": "Allows resources to be traded.",
                   "costs": {
                     "gold": 500,
                     "wood": 5
@@ -6770,6 +7248,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Tavern",
                   "desc": "Allows the hiring of new heroes.",
+                  "descResolved": "Allows the hiring of new heroes.",
                   "costs": {
                     "gold": 500,
                     "ore": 5
@@ -6792,6 +7271,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Artifact Merchant",
                   "desc": "Allows artifacts to be traded.",
+                  "descResolved": "Allows artifacts to be traded.",
                   "costs": {
                     "gold": 2500,
                     "wood": 5,
@@ -6820,6 +7300,7 @@ window.OE_CALC_DATA = {
                   "level": 1,
                   "name": "Spy_Network",
                   "desc": "",
+                  "descResolved": "",
                   "costs": {
                     "graal": 1
                   },
@@ -6845,7 +7326,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 1
+                      "cost": 1,
+                      "descResolved": "Provides a one‑time allotment of 2500 Gold, 5 Wood, and 5 Ore when enacted."
                     }
                   ]
                 },
@@ -6857,7 +7339,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 6
+                      "cost": 6,
+                      "descResolved": "Produces 500 Astrology points daily."
                     }
                   ]
                 },
@@ -6869,11 +7352,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes generate +10% Law points."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your heroes generate +10% Law points."
                     }
                   ]
                 }
@@ -6889,11 +7374,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Troglodytes deal 50 times more Damage when using their Fighting Style. Their min. Damage increases by 1."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Troglodytes deal 50 times more Damage when using their Fighting Style. Their min. Damage increases by 2."
                     }
                   ]
                 },
@@ -6905,7 +7392,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Tier‑1 creature growth in your cities increases by 4."
                     }
                   ]
                 },
@@ -6917,15 +7405,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures take –-5% Magic Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures take –-10% Magic Damage."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Friendly creatures take –-15% Magic Damage."
                     }
                   ]
                 }
@@ -6947,11 +7438,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 250 Gold daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 500 Gold daily."
                     }
                   ]
                 },
@@ -6963,11 +7456,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 1 Gem(s) daily."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Produces 2 Gem(s) daily."
                     }
                   ]
                 },
@@ -6979,7 +7474,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Provides a one‑time allotment of 75 Alchemical Dust when enacted."
                     }
                   ]
                 }
@@ -6995,11 +7491,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Infiltrators deal 50 times more Damage when using their Fighting Style. They gain 2 HP."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Infiltrators deal 50 times more Damage when using their Fighting Style. They gain 4 HP."
                     }
                   ]
                 },
@@ -7011,11 +7509,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Onyx Dancers deal 50 times more Damage when using their Fighting Style. They gain 2 Attack and Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Onyx Dancers deal 50 times more Damage when using their Fighting Style. They gain 4 Attack and Defense."
                     }
                   ]
                 },
@@ -7027,7 +7527,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Tier‑2 creature growth in your cities increases by 4."
                     }
                   ]
                 },
@@ -7039,7 +7540,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Tier‑3 creature growth in your cities increases by 2."
                     }
                   ]
                 }
@@ -7061,7 +7563,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Provides a one‑time allotment of 5000 Gold, 10 Wood, and 10 Ore when enacted."
                     }
                   ]
                 },
@@ -7073,11 +7576,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your buildings cost –-20% Ore to construct."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your buildings cost –-40% Ore to construct."
                     }
                   ]
                 },
@@ -7089,11 +7594,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Your heroes gain 10 Movement points."
                     },
                     {
                       "level": 2,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Your heroes gain 20 Movement points."
                     }
                   ]
                 },
@@ -7105,15 +7612,18 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "All external buildings and structures under your control gain +2 sight radius."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "All external buildings and structures under your control gain +4 sight radius."
                     },
                     {
                       "level": 3,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "All external buildings and structures under your control gain +6 sight radius."
                     }
                   ]
                 }
@@ -7129,11 +7639,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Minotaurs deal 50 times more Damage when using their Fighting Style. They gain 2 Speed and Initiative and deal +2 Damage."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Minotaurs deal 50 times more Damage when using their Fighting Style. They gain 4 Speed and Initiative and deal +4 Damage."
                     }
                   ]
                 },
@@ -7145,11 +7657,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Medusae deal 50 times more Damage when using their Fighting Style. They gain 4 Initiative and 4 Attack and Defense."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Medusae deal 50 times more Damage when using their Fighting Style. They gain 4 Initiative and 4 Attack and Defense."
                     }
                   ]
                 },
@@ -7161,7 +7675,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "All enemy creatures lose -1 Initiative."
                     }
                   ]
                 },
@@ -7173,7 +7688,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Tier‑4 creature growth in your cities increases by 2."
                     }
                   ]
                 }
@@ -7195,7 +7711,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 6
+                      "cost": 6,
+                      "descResolved": "Eliminates all price markups in the Marketplace."
                     }
                   ]
                 },
@@ -7207,11 +7724,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Your Dungeon heroes gain 1 to all attributes."
                     },
                     {
                       "level": 2,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Your Dungeon heroes gain 2 to all attributes."
                     }
                   ]
                 },
@@ -7223,7 +7742,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Provides a one‑time allotment of 150 Alchemical Dust when enacted."
                     }
                   ]
                 },
@@ -7235,11 +7755,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes’ Persuasion Power in Diplomacy increases by 10%."
                     },
                     {
                       "level": 2,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your heroes’ Persuasion Power in Diplomacy increases by 20%."
                     }
                   ]
                 }
@@ -7255,11 +7777,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Hydras deal 50 times more Damage when using their Fighting Style. They gain 25 Speed and 1 HP."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Hydras deal 50 times more Damage when using their Fighting Style. They gain 25 Speed and 2 HP."
                     }
                   ]
                 },
@@ -7271,7 +7795,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Tier‑5 creature growth in your cities increases by 1."
                     }
                   ]
                 },
@@ -7283,7 +7808,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Tier‑6 creature growth in your cities increases by 1."
                     }
                   ]
                 }
@@ -7305,7 +7831,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Provides a one‑time allotment of 7500 Gold, 15 Wood, and 15 Ore when enacted."
                     }
                   ]
                 },
@@ -7317,7 +7844,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 5
+                      "cost": 5,
+                      "descResolved": "Spells of your heroes gain 0 level(s)."
                     }
                   ]
                 },
@@ -7329,7 +7857,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 4
+                      "cost": 4,
+                      "descResolved": "Each round of battle, you generate 1 Focus Charge(s)."
                     }
                   ]
                 }
@@ -7345,11 +7874,13 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Your Cave Dragons deal 50 times more Damage, when using their Fighting Style. They gain 4 Attack and Defense and 4 Speed and Initiative."
                     },
                     {
                       "level": 2,
-                      "cost": 2
+                      "cost": 2,
+                      "descResolved": "Your Cave Dragons deal 50 times more Damage, when using their Fighting Style. They gain 8 Attack and Defense and 8 Speed and Initiative."
                     }
                   ]
                 },
@@ -7361,7 +7892,8 @@ window.OE_CALC_DATA = {
                   "levels": [
                     {
                       "level": 1,
-                      "cost": 3
+                      "cost": 3,
+                      "descResolved": "Tier‑7 creature growth in your cities increases by 1."
                     }
                   ]
                 }
@@ -7390,5 +7922,5 @@ window.OE_CALC_DATA = {
     "mercury": "Mercury",
     "graal": "Graal"
   },
-  "GENERATED_AT": "2026-05-10 03:14 UTC"
+  "GENERATED_AT": "2026-05-10 06:41 UTC"
 };

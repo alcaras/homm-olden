@@ -88,7 +88,7 @@ GROUP_ORDER = [
 FACTION_KEY_TO_DISPLAY = {
     "humans":   "temple",
     "undead":   "necropolis",
-    "nature":   "sylvan",
+    "nature":   "grove",
     "demons":   "hive",
     "unfrozen": "schism",
     "dungeon":  "dungeon",

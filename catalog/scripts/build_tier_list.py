@@ -110,9 +110,9 @@ FACTION_META = {
              "Avatar of War (T6, Dread Knight upgrade — never Wraith) for double-strike + steal-attack. Vampire Lord (T7) for the vampirism + no-counter retaliation loop (combo with Bloodthirst + Morituri te Salutant laws). Liches still in the back for sustain. Skeleton Archer base remains the volume layer."),
         ],
     },
-    "sylvan": {
+    "grove": {
         "summary": (
-            "Grove (formerly Sylvan). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power "
+            "Grove (formerly Grove). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power "
             "via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is "
             "the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most "
             "dogshit law tree') outside a handful of unit-specific picks."

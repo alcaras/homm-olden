@@ -66,14 +66,14 @@ const FactionView = ({ factionId, go }) => {
       <FactionSwitcher current={factionId} factions={FACTIONS} go={go} />
 
       <p className="faction-page-actions">
-        <a href={`#calc/buildings/${factionId}`}
-           onClick={e=>{e.preventDefault();go(`calc/buildings/${factionId}`);}}
+        <a href={`#buildings/${factionId}`}
+           onClick={e=>{e.preventDefault();go(`buildings/${factionId}`);}}
            className="faction-page-cta">
           {fmeta.name} buildings calc →
         </a>
         {' '}
-        <a href={`#calc/laws/${factionId}`}
-           onClick={e=>{e.preventDefault();go(`calc/laws/${factionId}`);}}
+        <a href={`#laws/${factionId}`}
+           onClick={e=>{e.preventDefault();go(`laws/${factionId}`);}}
            className="faction-page-cta">
           {fmeta.name} laws calc →
         </a>

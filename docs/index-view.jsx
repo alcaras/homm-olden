@@ -31,19 +31,35 @@ const IndexView = ({ go }) => {
           </div>
         </a>
 
-        <a className="card" href="#calc" onClick={(e)=>{e.preventDefault();go('calc');}}>
+        <a className="card" href="#buildings/temple" onClick={(e)=>{e.preventDefault();go('buildings/temple');}}>
           <div className="card-eyebrow">Interactive tool</div>
-          <div className="card-title">Calculator — Laws &amp; Buildings</div>
+          <div className="card-title">Buildings — Per-Faction Calculator</div>
           <p className="card-desc">
-            Pick a faction's laws and buildings to enact. Running totals of all
-            7 resources (gold / wood / ore / gem / crystal / mercury / graal) and
-            of law points spent. Prerequisites auto-enforced. Costs pulled from
-            the actual game JSON files, not editorial.
+            Pick the buildings you intend to construct. Running totals of all 7
+            resources (gold / wood / ore / gem / crystal / mercury / graal),
+            prerequisites auto-enforced, per-level effect descriptions resolved
+            from the game's bonus block. Costs pulled directly from the JSON.
           </p>
           <div className="card-stats">
             <span><b>{FACTIONS.length}</b>factions</span>
             <span><b>~30</b>buildings each</span>
+            <span><b>7</b>resources tracked</span>
+          </div>
+        </a>
+
+        <a className="card" href="#laws/temple" onClick={(e)=>{e.preventDefault();go('laws/temple');}}>
+          <div className="card-eyebrow">Interactive tool</div>
+          <div className="card-title">Laws — Per-Faction Calculator</div>
+          <p className="card-desc">
+            Plan a law-tree investment. Running total of law points spent, with
+            row unlock thresholds enforced (each row gates on cumulative LP from
+            earlier rows). Per-level effects show the actual numeric values
+            resolved from the bonus block.
+          </p>
+          <div className="card-stats">
+            <span><b>{FACTIONS.length}</b>factions</span>
             <span><b>30+</b>laws each</span>
+            <span><b>5</b>unlock rows</span>
           </div>
         </a>
 

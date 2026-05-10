@@ -30,17 +30,17 @@ OUT_JS = ROOT / "docs" / "calc-data.js"
 KEY_TO_ID = {
     "human":    "temple",
     "undead":   "necropolis",
-    "nature":   "sylvan",
+    "nature":   "grove",
     "demon":    "hive",
     "unfrozen": "schism",
     "dungeon":  "dungeon",
 }
 ID_TO_KEY = {v: k for k, v in KEY_TO_ID.items()}
-FACTION_ORDER = ["temple", "necropolis", "sylvan", "hive", "schism", "dungeon"]
+FACTION_ORDER = ["temple", "necropolis", "grove", "hive", "schism", "dungeon"]
 FACTION_DISPLAY = {
     "temple":     ("Temple",     "human"),
     "necropolis": ("Necropolis", "undead"),
-    "sylvan":     ("Grove",      "nature"),
+    "grove":     ("Grove",      "nature"),
     "hive":       ("Hive",       "demon"),
     "schism":     ("Schism",     "unfrozen"),
     "dungeon":    ("Dungeon",    "dungeon"),
@@ -123,6 +123,44 @@ def building_name(faction_key: str, sid: str, level: int, tokens: dict[str, str]
     return short
 
 
+def resolve_placeholders(desc: str, bonuses: list[dict]) -> str:
+    """Substitute {N} placeholders in `desc` with the rightmost numeric value of
+    bonuses[N].parameters. Heuristic: a fractional value (0 < |v| < 1) is
+    treated as a percentage and multiplied by 100. Falls back to '?' for any
+    placeholder index that has no resolvable bonus."""
+    if not desc:
+        return desc
+    values = []
+    for b in bonuses or []:
+        params = b.get("parameters") or []
+        v = None
+        # Walk left-to-right, take the FIRST numeric. Bonus parameter ordering
+        # is type-specific: e.g. citySideExp uses [<value>, <growth>], so the
+        # leftmost number is the user-visible value. (Right-to-left fails for
+        # citySideExp/astrologyExp where the trailing growth factor is 0.0.)
+        for p in params:
+            try:
+                v = float(p)
+                break
+            except (TypeError, ValueError):
+                continue
+        values.append(v)
+
+    def fmt(v) -> str:
+        if v is None:
+            return "?"
+        # Fractional → percent (e.g. 0.25 → "25")
+        if 0 < abs(v) < 1:
+            v = v * 100
+        # Strip trailing .0
+        if v == int(v):
+            return str(int(v))
+        return f"{v:g}"
+
+    return re.sub(r"\{(\d+)\}", lambda m: fmt(values[int(m.group(1))]
+                                              if int(m.group(1)) < len(values) else None), desc)
+
+
 def building_desc(faction_key: str, sid: str, level: int, tokens: dict[str, str]) -> str:
     pref = faction_key.capitalize()
     short = short_sid(sid)
@@ -148,18 +186,25 @@ def extract_buildings(faction_id: str, city_obj: dict, tokens: dict[str, str]) -
         for b in items:
             sid = b.get("sid")
             levels = []
+            bonuses_per_level = b.get("bonusesPerLevel") or []
             for li, lvl in enumerate(b.get("parametersPerLevel", []), 1):
                 costs = {c["name"]: c["cost"] for c in lvl.get("costs", [])}
                 prereqs = [
                     {"sid": p["sid"], "level": p["level"]}
                     for p in lvl.get("prevBuildings", [])
                 ]
+                desc = building_desc(fkey, sid, li, tokens)
+                # Resolve {N} placeholders from this level's bonus block
+                bonuses_for_level = (bonuses_per_level[li-1].get("bonuses") or []
+                                     if li-1 < len(bonuses_per_level) else [])
+                desc_resolved = resolve_placeholders(desc, bonuses_for_level)
                 levels.append({
-                    "level":   li,
-                    "name":    building_name(fkey, sid, li, tokens),
-                    "desc":    building_desc(fkey, sid, li, tokens),
-                    "costs":   costs,
-                    "prereqs": prereqs,
+                    "level":        li,
+                    "name":         building_name(fkey, sid, li, tokens),
+                    "desc":         desc,
+                    "descResolved": desc_resolved,
+                    "costs":        costs,
+                    "prereqs":      prereqs,
                 })
             if not levels:
                 continue
@@ -193,10 +238,16 @@ def extract_laws(faction_id: str, fraction_obj: dict, law_table: dict, tokens: d
                 if law is None:
                     continue
                 levels = []
+                m = re.match(r"fraction_law_[a-z]+_(\d+)$", law_id)
+                law_num = int(m.group(1)) if m else None
+                fkey = ID_TO_KEY[faction_id]
+                desc = tokens.get(f"fraction_law_{fkey}_{law_num}_desc", "").split("\n", 1)[0].strip()
                 for li, lvl in enumerate(law.get("parametersPerLevel", []), 1):
+                    bonuses = lvl.get("bonuses") or []
                     levels.append({
-                        "level": li,
-                        "cost":  lvl.get("cost", 0),
+                        "level":        li,
+                        "cost":         lvl.get("cost", 0),
+                        "descResolved": resolve_placeholders(desc, bonuses),
                     })
                 # Match the law to a 1-based ordinal that matches factionLaws.json tokens
                 # (tokens are keyed `fraction_law_<key>_<n>_name`, where n is 1..)

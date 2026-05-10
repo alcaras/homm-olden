@@ -18,7 +18,7 @@ window.OE_DRAFT_DATA = {
     },
     {
       "rank": 2,
-      "faction": "sylvan",
+      "faction": "grove",
       "name": "Grove",
       "why": "4 perma-ban-tier heroes (Halon, Sullie, Aunt Daliar, Elder Tss'kish) — you can only ban 3, so one always slips through. Avatar Vomit + Thaumaturgy is the strongest archetype in the game."
     },
@@ -54,7 +54,7 @@ window.OE_DRAFT_DATA = {
       "why": "Deepest pool; ban-resistant. First-pick instantly if open."
     },
     {
-      "faction": "sylvan",
+      "faction": "grove",
       "name": "Grove",
       "why": "Avatar Vomit + Thaumaturgy meta. Even after Halon/Sullie bans, Tss'kish/Daliar/Faleor/Minstrel are strong."
     },
@@ -150,7 +150,7 @@ window.OE_DRAFT_DATA = {
   "COUNTERS": {
     "necropolis": {
       "primary": {
-        "factionId": "sylvan",
+        "factionId": "grove",
         "name": "Grove (Halon)",
         "why": "Chain Lightning shreds T1 Skeleton Archer doom-stacks; Despair-immune. Avatar Vomit out-tempos the Necropolis snowball before it compounds."
       },
@@ -160,7 +160,7 @@ window.OE_DRAFT_DATA = {
         "why": "Twilight shuts down Skeleton Archers; Black Dragons immune to Despair / Decay; Onyx Dancer 1-stacks shred squishy Liches before they sustain."
       }
     },
-    "sylvan": {
+    "grove": {
       "primary": {
         "factionId": "dungeon",
         "name": "Dungeon (Motley)",
@@ -179,7 +179,7 @@ window.OE_DRAFT_DATA = {
         "why": "Liches resurrect units killed by Onyx Dancer 1-stacks; Vampire Lord retaliation loop drains Hydras; Magic Absorption law strips Black Dragon synergy spells."
       },
       "alt": {
-        "factionId": "sylvan",
+        "factionId": "grove",
         "name": "Grove (Halon)",
         "why": "Chain Lightning through Onyx Dancer stacks + Avatar absorbs Black Dragon hits."
       }
@@ -191,14 +191,14 @@ window.OE_DRAFT_DATA = {
         "why": "Marl's Web + Skeleton Archer volume out-shoots Crossbowmen; Daylight buffs neutralized by Death's Presence law."
       },
       "alt": {
-        "factionId": "sylvan",
+        "factionId": "grove",
         "name": "Grove",
         "why": "Halon's chain lightning AoE + Avatar tank > Temple's slow blob."
       }
     },
     "schism": {
       "primary": {
-        "factionId": "sylvan",
+        "factionId": "grove",
         "name": "Grove (Halon)",
         "why": "Chain Lightning clears Rashoth volumes faster than they can demon-farm; Avatar Vomit out-tempos Communion-based scaling."
       },
@@ -249,7 +249,7 @@ window.OE_DRAFT_DATA = {
         "why": "Masterful Berserk hits a radius — punishes corner-camping ranged blob meta"
       }
     ],
-    "sylvan": [
+    "grove": [
       {
         "id": "nature_hero_15",
         "name": "Halon",
@@ -385,5 +385,5 @@ window.OE_DRAFT_DATA = {
       }
     ]
   },
-  "GENERATED_AT": "2026-05-10 04:45 UTC"
+  "GENERATED_AT": "2026-05-10 06:41 UTC"
 };

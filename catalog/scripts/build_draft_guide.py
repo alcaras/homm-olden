@@ -48,7 +48,7 @@ FACTION_BAN_ORDER = [
                 "ban-around Necropolis at the hero phase."),
     },
     {
-        "rank": 2, "faction": "sylvan", "name": "Grove",
+        "rank": 2, "faction": "grove", "name": "Grove",
         "why": ("4 perma-ban-tier heroes (Halon, Sullie, Aunt Daliar, Elder Tss'kish) — you can "
                 "only ban 3, so one always slips through. Avatar Vomit + Thaumaturgy is the "
                 "strongest archetype in the game."),
@@ -80,7 +80,7 @@ FACTION_BAN_ORDER = [
 FACTION_PICK_ORDER = [
     {"faction": "necropolis", "name": "Necropolis",
      "why": "Deepest pool; ban-resistant. First-pick instantly if open."},
-    {"faction": "sylvan", "name": "Grove",
+    {"faction": "grove", "name": "Grove",
      "why": "Avatar Vomit + Thaumaturgy meta. Even after Halon/Sullie bans, Tss'kish/Daliar/Faleor/Minstrel are strong."},
     {"faction": "dungeon", "name": "Dungeon",
      "why": "Strongest single-hero unit roster. Lodos still S-tier after Motley/Stinger/Typhona bans."},
@@ -166,14 +166,14 @@ COUNTERS = {
     # opponent faction → your best counter pick + reason
     # NOTE: format disallows mirrors — the opponent's faction is removed from your pool.
     "necropolis": {
-        "primary": ("sylvan", "Grove (Halon)",
+        "primary": ("grove", "Grove (Halon)",
                     "Chain Lightning shreds T1 Skeleton Archer doom-stacks; Despair-immune. "
                     "Avatar Vomit out-tempos the Necropolis snowball before it compounds."),
         "alt":     ("dungeon", "Dungeon (Motley)",
                     "Twilight shuts down Skeleton Archers; Black Dragons immune to Despair / "
                     "Decay; Onyx Dancer 1-stacks shred squishy Liches before they sustain."),
     },
-    "sylvan": {
+    "grove": {
         "primary": ("dungeon", "Dungeon (Motley)",
                     "Mley's Twilight shuts down ranged + Halon's spell combos; Black Dragons "
                     "immune to all magic damage; Onyx Dancer 1-stacks shred squishy Hoplites/Fauns."),
@@ -185,18 +185,18 @@ COUNTERS = {
         "primary": ("necropolis", "Necropolis",
                     "Liches resurrect units killed by Onyx Dancer 1-stacks; Vampire Lord retaliation "
                     "loop drains Hydras; Magic Absorption law strips Black Dragon synergy spells."),
-        "alt":     ("sylvan", "Grove (Halon)",
+        "alt":     ("grove", "Grove (Halon)",
                     "Chain Lightning through Onyx Dancer stacks + Avatar absorbs Black Dragon hits."),
     },
     "temple": {
         "primary": ("necropolis", "Necropolis",
                     "Marl's Web + Skeleton Archer volume out-shoots Crossbowmen; Daylight buffs "
                     "neutralized by Death's Presence law."),
-        "alt":     ("sylvan", "Grove",
+        "alt":     ("grove", "Grove",
                     "Halon's chain lightning AoE + Avatar tank > Temple's slow blob."),
     },
     "schism": {
-        "primary": ("sylvan", "Grove (Halon)",
+        "primary": ("grove", "Grove (Halon)",
                     "Chain Lightning clears Rashoth volumes faster than they can demon-farm; "
                     "Avatar Vomit out-tempos Communion-based scaling."),
         "alt":     ("necropolis", "Necropolis",
@@ -223,7 +223,7 @@ HERO_BANS = {
         ("necro_hero_7",  "Marl",              "Masterful Web slows the entire enemy army; S-tier on Sprint, A everywhere"),
         ("necro_hero_6",  "Artorius Veritas",  "Masterful Berserk hits a radius — punishes corner-camping ranged blob meta"),
     ],
-    "sylvan": [
+    "grove": [
         ("nature_hero_15", "Halon",            "Masterful Chain Lightning loses only 25% per bounce (vs 50%); insane early tempo"),
         ("nature_hero_17", "Sullie",           "Avatar specialist; her Avatar is immune to magic damage"),
         ("nature_hero_9",  "Aunt Daliar",      "Insight + Civic Innovation = blast through the law tree"),
@@ -345,7 +345,7 @@ def build():
     md.append("")
 
     md.append("## Top 5 heroes to ban (per opponent faction)\n")
-    for fid in ["necropolis", "sylvan", "dungeon", "temple", "schism", "hive"]:
+    for fid in ["necropolis", "grove", "dungeon", "temple", "schism", "hive"]:
         if fid not in HERO_BANS: continue
         md.append(f"### vs {fac_by_id[fid]['name']}\n")
         for i, (hid, name, why) in enumerate(HERO_BANS[fid], 1):

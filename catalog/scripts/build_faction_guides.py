@@ -35,7 +35,7 @@ OUT_JS = ROOT / "docs" / "guides-data.js"
 KEY_TO_ID = {
     "human": "temple",
     "undead": "necropolis",
-    "nature": "sylvan",
+    "nature": "grove",
     "demon": "hive",
     "unfrozen": "schism",
     "dungeon": "dungeon",
@@ -43,12 +43,12 @@ KEY_TO_ID = {
 ID_TO_KEY = {v: k for k, v in KEY_TO_ID.items()}
 
 # Display order on the page
-FACTION_ORDER = ["temple", "necropolis", "sylvan", "hive", "schism", "dungeon"]
+FACTION_ORDER = ["temple", "necropolis", "grove", "hive", "schism", "dungeon"]
 
 FACTION_DISPLAY = {
     "temple":     "Temple",
     "necropolis": "Necropolis",
-    "sylvan":     "Grove",
+    "grove":     "Grove",
     "hive":       "Hive",
     "schism":     "Schism",
     "dungeon":    "Dungeon",
@@ -138,7 +138,7 @@ GUIDES = {
         ],
     },
 
-    "sylvan": {
+    "grove": {
         "summary": (
             "Grove's strategy is 'skip the mid-tier dwellings'. Lean into Faun Archer + Dusk Hoplite "
             "(0-mana +3 spell power per cast) + Murmurmancer (re-cast spellbook) and use Avatar Vomit "

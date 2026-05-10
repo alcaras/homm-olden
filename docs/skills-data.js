@@ -88,7 +88,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Fortune’s Favored",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -112,6 +112,13 @@ window.OE_SKILLS_DATA = {
       ],
       "starters": [
         {
+          "id": "nature_hero_2",
+          "name": "Gorel Spearhead",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
+        },
+        {
           "id": "demon_hero_1",
           "name": "Niev",
           "faction": "hive",
@@ -130,13 +137,6 @@ window.OE_SKILLS_DATA = {
           "name": "Grellekh the Betrayer",
           "faction": "schism",
           "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_2",
-          "name": "Gorel Spearhead",
-          "faction": "sylvan",
-          "kind": "might",
           "level": 1
         },
         {
@@ -235,7 +235,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Celestial Envoy",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -376,7 +376,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Wellspring of Vigor",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -509,7 +509,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Fortune’s Favored",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -547,17 +547,17 @@ window.OE_SKILLS_DATA = {
           "level": 1
         },
         {
+          "id": "nature_hero_5",
+          "name": "Octavia",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
+        },
+        {
           "id": "necro_hero_13",
           "name": "Guildmaster Klastor",
           "faction": "necropolis",
           "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_5",
-          "name": "Octavia",
-          "faction": "sylvan",
-          "kind": "might",
           "level": 1
         }
       ]
@@ -649,7 +649,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Celestial Envoy",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -789,7 +789,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Heaven’s Fury",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -936,7 +936,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Wellspring of Vigor",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -967,16 +967,16 @@ window.OE_SKILLS_DATA = {
           "level": 1
         },
         {
-          "id": "demon_hero_2",
-          "name": "Maelstrom",
-          "faction": "hive",
+          "id": "nature_hero_9",
+          "name": "Aunt Daliar",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
-          "id": "nature_hero_9",
-          "name": "Aunt Daliar",
-          "faction": "sylvan",
+          "id": "demon_hero_2",
+          "name": "Maelstrom",
+          "faction": "hive",
           "kind": "might",
           "level": 1
         },
@@ -1076,7 +1076,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Heaven’s Fury",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -1107,6 +1107,20 @@ window.OE_SKILLS_DATA = {
           "level": 1
         },
         {
+          "id": "nature_hero_6",
+          "name": "Mreowa",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_18",
+          "name": "The Minstrel",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
           "id": "necro_hero_15",
           "name": "Laura",
           "faction": "necropolis",
@@ -1118,20 +1132,6 @@ window.OE_SKILLS_DATA = {
           "name": "Blackhorn",
           "faction": "schism",
           "kind": "might",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_6",
-          "name": "Mreowa",
-          "faction": "sylvan",
-          "kind": "might",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_18",
-          "name": "The Minstrel",
-          "faction": "sylvan",
-          "kind": "magic",
           "level": 1
         }
       ]
@@ -1229,7 +1229,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Wellspring of Vigor",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -1382,7 +1382,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Heaven’s Fury",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -1535,7 +1535,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Celestial Envoy",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -1566,6 +1566,13 @@ window.OE_SKILLS_DATA = {
           "level": 1
         },
         {
+          "id": "nature_hero_16",
+          "name": "Echolily",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
           "id": "necro_hero_10",
           "name": "Mag",
           "faction": "necropolis",
@@ -1576,13 +1583,6 @@ window.OE_SKILLS_DATA = {
           "id": "unfrozen_hero_16",
           "name": "Ra’Davok",
           "faction": "schism",
-          "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_16",
-          "name": "Echolily",
-          "faction": "sylvan",
           "kind": "magic",
           "level": 1
         }
@@ -1681,7 +1681,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Fortune’s Favored",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -1705,6 +1705,34 @@ window.OE_SKILLS_DATA = {
       ],
       "starters": [
         {
+          "id": "nature_hero_12",
+          "name": "Aeliniel",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_13",
+          "name": "Glacia",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_15",
+          "name": "Halon",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
+          "id": "nature_hero_14",
+          "name": "Vim",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
           "id": "demon_hero_17",
           "name": "Khariseth",
           "faction": "hive",
@@ -1716,34 +1744,6 @@ window.OE_SKILLS_DATA = {
           "name": "Wal’kha",
           "faction": "schism",
           "kind": "might",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_12",
-          "name": "Aeliniel",
-          "faction": "sylvan",
-          "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_13",
-          "name": "Glacia",
-          "faction": "sylvan",
-          "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_15",
-          "name": "Halon",
-          "faction": "sylvan",
-          "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_14",
-          "name": "Vim",
-          "faction": "sylvan",
-          "kind": "magic",
           "level": 1
         }
       ]
@@ -1838,7 +1838,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Wellspring of Vigor",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -1862,6 +1862,13 @@ window.OE_SKILLS_DATA = {
       ],
       "starters": [
         {
+          "id": "nature_hero_4",
+          "name": "Old Pilgrim",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
+        },
+        {
           "id": "demon_hero_13",
           "name": "Leira",
           "faction": "hive",
@@ -1880,13 +1887,6 @@ window.OE_SKILLS_DATA = {
           "name": "Milossa the Golden",
           "faction": "necropolis",
           "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_4",
-          "name": "Old Pilgrim",
-          "faction": "sylvan",
-          "kind": "might",
           "level": 1
         }
       ]
@@ -1978,7 +1978,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Wellspring of Vigor",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -2121,7 +2121,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Fortune’s Favored",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -2152,16 +2152,16 @@ window.OE_SKILLS_DATA = {
           "level": 1
         },
         {
-          "id": "necro_hero_2",
-          "name": "King‑of‑Kings",
-          "faction": "necropolis",
+          "id": "nature_hero_8",
+          "name": "Alluring Sh’a",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
-          "id": "nature_hero_8",
-          "name": "Alluring Sh’a",
-          "faction": "sylvan",
+          "id": "necro_hero_2",
+          "name": "King‑of‑Kings",
+          "faction": "necropolis",
           "kind": "might",
           "level": 1
         },
@@ -2270,7 +2270,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Fortune’s Favored",
           "class": "Warden",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might"
         },
         {
@@ -2294,6 +2294,13 @@ window.OE_SKILLS_DATA = {
       ],
       "starters": [
         {
+          "id": "nature_hero_10",
+          "name": "Vatawna",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
           "id": "demon_hero_14",
           "name": "Groo",
           "faction": "hive",
@@ -2312,13 +2319,6 @@ window.OE_SKILLS_DATA = {
           "name": "Jänhei",
           "faction": "schism",
           "kind": "might",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_10",
-          "name": "Vatawna",
-          "faction": "sylvan",
-          "kind": "magic",
           "level": 1
         },
         {
@@ -2417,7 +2417,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Celestial Envoy",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -2448,6 +2448,13 @@ window.OE_SKILLS_DATA = {
           "level": 1
         },
         {
+          "id": "nature_hero_1",
+          "name": "Eith",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
+        },
+        {
           "id": "necro_hero_5",
           "name": "Natalida",
           "faction": "necropolis",
@@ -2459,13 +2466,6 @@ window.OE_SKILLS_DATA = {
           "name": "Ulkuth",
           "faction": "schism",
           "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_1",
-          "name": "Eith",
-          "faction": "sylvan",
-          "kind": "might",
           "level": 1
         },
         {
@@ -2564,7 +2564,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Heaven’s Fury",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -2595,6 +2595,13 @@ window.OE_SKILLS_DATA = {
           "level": 1
         },
         {
+          "id": "nature_hero_3",
+          "name": "Gingertail",
+          "faction": "grove",
+          "kind": "might",
+          "level": 1
+        },
+        {
           "id": "demon_hero_3",
           "name": "Nor",
           "faction": "hive",
@@ -2605,13 +2612,6 @@ window.OE_SKILLS_DATA = {
           "id": "necro_hero_9",
           "name": "Zam",
           "faction": "necropolis",
-          "kind": "might",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_3",
-          "name": "Gingertail",
-          "faction": "sylvan",
           "kind": "might",
           "level": 1
         },
@@ -2723,7 +2723,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Heaven’s Fury",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -2869,7 +2869,7 @@ window.OE_SKILLS_DATA = {
         {
           "name": "Celestial Envoy",
           "class": "Druid",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic"
         },
         {
@@ -2893,6 +2893,13 @@ window.OE_SKILLS_DATA = {
       ],
       "starters": [
         {
+          "id": "nature_hero_17",
+          "name": "Sullie",
+          "faction": "grove",
+          "kind": "magic",
+          "level": 1
+        },
+        {
           "id": "demon_hero_16",
           "name": "Oriax",
           "faction": "hive",
@@ -2910,13 +2917,6 @@ window.OE_SKILLS_DATA = {
           "id": "unfrozen_hero_13",
           "name": "The Eye Collective",
           "faction": "schism",
-          "kind": "magic",
-          "level": 1
-        },
-        {
-          "id": "nature_hero_17",
-          "name": "Sullie",
-          "faction": "sylvan",
           "kind": "magic",
           "level": 1
         }
@@ -3275,16 +3275,16 @@ window.OE_SKILLS_DATA = {
           "level": 1
         },
         {
-          "id": "necro_hero_16",
-          "name": "Lord Rufus",
-          "faction": "necropolis",
+          "id": "nature_hero_11",
+          "name": "Elder Tss’kish",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
-          "id": "nature_hero_11",
-          "name": "Elder Tss’kish",
-          "faction": "sylvan",
+          "id": "necro_hero_16",
+          "name": "Lord Rufus",
+          "faction": "necropolis",
           "kind": "magic",
           "level": 1
         },
@@ -3719,7 +3719,7 @@ window.OE_SKILLS_DATA = {
       "baseDesc": "Generates {0} Focus Charge(s) at the start of every battle.",
       "group": "faction",
       "skillType": "Faction",
-      "factionId": "sylvan",
+      "factionId": "grove",
       "levels": [
         {
           "level": 1,
@@ -3789,126 +3789,126 @@ window.OE_SKILLS_DATA = {
         {
           "id": "nature_hero_7",
           "name": "Faleor",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 2
         },
         {
           "id": "nature_hero_12",
           "name": "Aeliniel",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
           "id": "nature_hero_8",
           "name": "Alluring Sh’a",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
           "id": "nature_hero_9",
           "name": "Aunt Daliar",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
           "id": "nature_hero_16",
           "name": "Echolily",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
           "id": "nature_hero_1",
           "name": "Eith",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
           "id": "nature_hero_11",
           "name": "Elder Tss’kish",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
           "id": "nature_hero_3",
           "name": "Gingertail",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
           "id": "nature_hero_13",
           "name": "Glacia",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
           "id": "nature_hero_2",
           "name": "Gorel Spearhead",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
           "id": "nature_hero_15",
           "name": "Halon",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
           "id": "nature_hero_6",
           "name": "Mreowa",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
           "id": "nature_hero_5",
           "name": "Octavia",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
           "id": "nature_hero_4",
           "name": "Old Pilgrim",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "might",
           "level": 1
         },
         {
           "id": "nature_hero_17",
           "name": "Sullie",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
           "id": "nature_hero_18",
           "name": "The Minstrel",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
           "id": "nature_hero_10",
           "name": "Vatawna",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         },
         {
           "id": "nature_hero_14",
           "name": "Vim",
-          "faction": "sylvan",
+          "faction": "grove",
           "kind": "magic",
           "level": 1
         }
@@ -4567,5 +4567,5 @@ window.OE_SKILLS_DATA = {
       "label": "Faction skills (one per faction)"
     }
   ],
-  "GENERATED_AT": "2026-05-10 04:40 UTC"
+  "GENERATED_AT": "2026-05-10 06:41 UTC"
 };

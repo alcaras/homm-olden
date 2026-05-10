@@ -12,7 +12,7 @@ Source naming conventions (verified from the game data):
 Output layout:
   docs/img/heroes/<hero_id>.png
   docs/img/specs/<spec_id>.png
-  docs/img/factions/<faction_display_id>.png   ('temple', 'sylvan', ...)
+  docs/img/factions/<faction_display_id>.png   ('temple', 'grove', ...)
   docs/img/units/<unit_id>.png
 
 Skips entries that can't be found (missing icons in the bundle).
@@ -67,7 +67,7 @@ for p in (RAW / "DB" / "heroes_specializations").glob("specializations_*.json"):
 FACTIONS = [
     ("temple",     "human"),
     ("necropolis", "undead"),
-    ("sylvan",     "nature"),
+    ("grove",     "nature"),
     ("hive",       "demon"),
     ("schism",     "unfrozen"),
     ("dungeon",    "dungeon"),

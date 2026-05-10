@@ -217,4 +217,4 @@ Dungeon is one of the strongest tournament factions because of how its laws inte
 
 ---
 
-*Generated 2026-05-10 04:45 UTC by `catalog/scripts/build_faction_guides.py`. Edit the `GUIDES` dict to update.*
+*Generated 2026-05-10 06:41 UTC by `catalog/scripts/build_faction_guides.py`. Edit the `GUIDES` dict to update.*

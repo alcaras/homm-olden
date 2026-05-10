@@ -110,7 +110,7 @@ Deepest hero roster in the game — even after 3 bans you'll still get an S/A pi
 
 ### Grove (Warden / Druid)
 
-Grove (formerly Sylvan). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.
+Grove (formerly Grove). T1 Faun Archer (Sharpshooter), T2 Dusk Hoplite (free +3 spell power via Bloom), T4 Murmurmancer (re-cast spellbook). Avatar Vomit + Thaumaturgy double-cast is the bread-and-butter late-game combo. The Grove law tree is widely panned ('the most dogshit law tree') outside a handful of unit-specific picks.
 
 *Creature tip:* Faun Archer doom-stacks clear maps; Dusk Hoplite 1-stacks generate infinite spell power; Murmurmancer enables triple-cast turns.
 
@@ -286,4 +286,4 @@ Phenomenally strong in single-hero PvP — top picks are 'perma-ban or perma-pic
 
 ---
 
-*Generated 2026-05-10 04:45 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*
+*Generated 2026-05-10 06:41 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*

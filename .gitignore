@@ -16,3 +16,10 @@ Gemfile.lock
 
 # Local venv used for image extraction only
 .venv/
+
+# Local-only patch staging (raw Core.zip drops; extract into catalog/raw)
+new_data/
+
+# Editorial source notes (kept locally, not part of the published site)
+notes-from-videos.md
+discord-top5-and-faction-tier.md

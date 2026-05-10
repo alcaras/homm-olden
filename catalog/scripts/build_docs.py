@@ -121,7 +121,7 @@ CLASS_NAME = {
 FACTION_TITLE = {
     "human":    "Temple",
     "undead":   "Necropolis",
-    "nature":   "Sylvan",
+    "nature":   "Grove",
     "demon":    "Hive",
     "unfrozen": "Schism",
     "dungeon":  "Dungeon",
@@ -453,7 +453,7 @@ JSON files; updated to match the current build.</p>
 
 ## Notes
 
-- Six playable factions: Temple (human), Necropolis (undead), Sylvan
+- Six playable factions: Temple (human), Necropolis (undead), Grove
   (nature), Hive (demon), Schism (unfrozen), Dungeon. Each has 18 heroes
   split into two classes (Might / Magic).
 - Two skills are class-locked and never appear in subclass conditions:

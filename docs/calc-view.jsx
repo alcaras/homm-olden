@@ -1,11 +1,11 @@
 /* Per-faction Law / Building calculator. Two separate pages — Buildings
-   (#calc/buildings/<id>) and Laws (#calc/laws/<id>) — sharing one component
+   (#buildings/<id>) and Laws (#laws/<id>) — sharing one component
    parameterized by `kind`. State for each kind is encoded into the URL hash
    so links are shareable.
 
    URL forms:
-     #calc/buildings/temple?b=Main:2,Wall:3,Magic_Guild:4
-     #calc/laws/temple?l=3:1,30:1                                          */
+     #buildings/temple?b=Main:2,Wall:3,Magic_Guild:4
+     #laws/temple?l=3:1,30:1                                          */
 
 const CalcView = ({ factionId, kind, initialQuery, go }) => {
   const k = kind === 'laws' ? 'laws' : 'buildings';
@@ -156,7 +156,10 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
                   <div className="calc-levels">
                     {b.levels.map(lvl => {
                       const active = cur >= lvl.level;
-                      const cleanedDesc = (lvl.desc || '').replace(/\{[0-9]+\}/g, '?');
+                      // Prefer the placeholder-resolved desc (numbers from the
+                      // game's bonus block); fall back to '?'-rendered raw text.
+                      const cleanedDesc = lvl.descResolved
+                        || (lvl.desc || '').replace(/\{[0-9]+\}/g, '?');
                       return (
                         <div key={lvl.level} className="calc-level-row">
                           <button
@@ -290,22 +293,23 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
                           <span className="calc-law-name">{law.name}</span>
                           <span className="calc-law-num">#{law.num}</span>
                         </div>
-                        {law.desc && (
-                          <div className="calc-law-desc">
-                            {law.desc.replace(/\{[0-9]+\}/g, '?')}
-                          </div>
-                        )}
                         <div className="calc-levels">
                           {law.levels.map(lvl => {
                             const active = cur >= lvl.level;
                             return (
-                              <button
-                                key={lvl.level}
-                                className={'calc-level-btn calc-level-law' + (active ? ' active' : '')}
-                                onClick={() => setLawLevel(law.id, lvl.level)}>
-                                <span className="calc-level-num">L{lvl.level}</span>
-                                <span className="calc-level-cost">{lvl.cost} LP</span>
-                              </button>
+                              <div key={lvl.level} className="calc-level-row">
+                                <button
+                                  className={'calc-level-btn calc-level-law' + (active ? ' active' : '')}
+                                  onClick={() => setLawLevel(law.id, lvl.level)}>
+                                  <span className="calc-level-num">L{lvl.level}</span>
+                                  <span className="calc-level-cost">{lvl.cost} LP</span>
+                                </button>
+                                {lvl.descResolved && (
+                                  <div className={'calc-level-effect' + (active ? ' active' : '')}>
+                                    {lvl.descResolved}
+                                  </div>
+                                )}
+                              </div>
                             );
                           })}
                         </div>
@@ -408,7 +412,7 @@ function buildCalcHash(kind, factionId, factionKey, picked) {
     if (b) parts.push(`b=${b}`);
   }
   const qs = parts.length ? '?' + parts.join('&') : '';
-  return `calc/${kind}/${factionId}${qs}`;
+  return `${kind}/${factionId}${qs}`;
 }
 
 
@@ -430,11 +434,11 @@ const FactionPicker = ({current, factions, go, kind}) => (
 
 const KindSwitcher = ({current, factionId, go}) => (
   <div className="calc-kind-switcher">
-    <a href={`#calc/buildings/${factionId}`}
-       onClick={e=>{e.preventDefault();go(`calc/buildings/${factionId}`);}}
+    <a href={`#buildings/${factionId}`}
+       onClick={e=>{e.preventDefault();go(`buildings/${factionId}`);}}
        className={current === 'buildings' ? 'active' : ''}>Buildings</a>
-    <a href={`#calc/laws/${factionId}`}
-       onClick={e=>{e.preventDefault();go(`calc/laws/${factionId}`);}}
+    <a href={`#laws/${factionId}`}
+       onClick={e=>{e.preventDefault();go(`laws/${factionId}`);}}
        className={current === 'laws' ? 'active' : ''}>Laws</a>
   </div>
 );
@@ -463,12 +467,12 @@ const CalcHubView = ({go}) => {
               </div>
             </div>
             <div className="calc-hub-actions">
-              <a href={`#calc/buildings/${f.id}`}
-                 onClick={e=>{e.preventDefault();go(`calc/buildings/${f.id}`);}}>
+              <a href={`#buildings/${f.id}`}
+                 onClick={e=>{e.preventDefault();go(`buildings/${f.id}`);}}>
                 Buildings →
               </a>
-              <a href={`#calc/laws/${f.id}`}
-                 onClick={e=>{e.preventDefault();go(`calc/laws/${f.id}`);}}>
+              <a href={`#laws/${f.id}`}
+                 onClick={e=>{e.preventDefault();go(`laws/${f.id}`);}}>
                 Laws →
               </a>
             </div>
