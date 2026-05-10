@@ -48,8 +48,8 @@ You set the agenda but lose first pick. Banning forces them off their preferred 
 You react on bans but get first pick. This is the stronger draft side — you have full information when banning the second faction AND get the best surviving faction. Use the ban to remove a faction you don't want to mirror, then grab the strongest remaining S-tier.
 
 - **Their faction ban (first ban).** They ban the faction they least want to face — usually Necropolis (most likely), Grove, or Dungeon.
-- **Your faction ban.** Now you have full information. Three good lines: (a) If they banned Necro, ban Grove → you take Dungeon. (b) If they banned Grove, ban Dungeon → you take Necropolis. (c) If they banned Dungeon, ban Grove → you take Necropolis. Always leave Necropolis available if it's there. If they didn't ban Necro, **ban Necro yourself** only if you don't want to play it; otherwise leave it open and ban their #2.
-- **Your faction pick (first pick).** Grab the strongest surviving faction. Necropolis if open. Then Grove. Then Dungeon. Then Temple. **Don't pick a counter-faction here — there's no information yet.** Just take the strongest pool.
+- **Your faction ban.** Now you have full information AND first pick. Ban the faction whose matchup counter you'd LESS want to play. Standard lines: (a) They banned Necro → **ban Dungeon, pick Grove** (Halon/Sullie + Avatar Vomit > Onyx Dancer grind vs Temple's likely counter-pick). (b) They banned Grove → **ban Dungeon, pick Necropolis** (Necro's deep pool > Dungeon's hero-ban-vulnerable top 4). (c) They banned Dungeon → **ban Grove, pick Necropolis** (or Grove if Sullie/Halon still alive). If they didn't ban Necro, ban Grove or Dungeon and take Necropolis.
+- **Your faction pick (first pick).** Pick the strongest *matchup-favored* faction. Default order: Necropolis > Grove > Dungeon > Temple. **Important**: don't reflexively pick the 'strongest' faction — consult the counter-pick matrix. Dungeon is a great pure-power pick but is a *worse* counter to Temple than Grove.
 - **Their faction pick (second pick).** They will counter-pick your faction. Expect them to pick the strongest counter from the counter-pick matrix below — plan for that matchup.
 - **Their hero bans (first ban, 3 of them).** They'll burn bans on YOUR top 3. Plan to lose Kel'Ghul + Bulwark + Onkos (if Necropolis) etc.
 - **Your hero bans.** Ban their top 3 — see matchup table.
@@ -121,4 +121,4 @@ If your opponent picks faction X, your best response is:
 
 ---
 
-*Generated 2026-05-10 01:50 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*
+*Generated 2026-05-10 01:52 UTC by `catalog/scripts/build_draft_guide.py`. Edit the script to update.*
