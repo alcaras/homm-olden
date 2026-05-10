@@ -33,7 +33,12 @@ const CombatView = ({ go }) => {
   const unitsByFac = React.useMemo(() => {
     const g = {};
     const variantOrder = { base: 0, upg: 1, alt: 2 };
-    for (const u of D.UNITS) (g[u.faction] = g[u.faction] || []).push(u);
+    // Skip summoned units (Fire Larva etc.) — they share a tier with the
+    // real recruited unit and would clutter the picker.
+    for (const u of D.UNITS) {
+      if (u.summoned) continue;
+      (g[u.faction] = g[u.faction] || []).push(u);
+    }
     for (const k of Object.keys(g)) {
       g[k].sort((a, b) =>
         (a.tier - b.tier)

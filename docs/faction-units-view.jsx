@@ -27,7 +27,10 @@ const FactionUnitsView = ({ factionId, go }) => {
     );
   }
 
-  const units = D.UNITS.filter(u => u.faction === factionId);
+  // Drop summoned/disposable creatures (Fire Larva, etc.) — they share a
+  // faction+tier with the real recruited unit and would mask it from the
+  // tier ladder if shown.
+  const units = D.UNITS.filter(u => u.faction === factionId && !u.summoned);
   const tiers = Array.from(new Set(units.map(u => u.tier))).sort((a, b) => a - b);
 
   return (

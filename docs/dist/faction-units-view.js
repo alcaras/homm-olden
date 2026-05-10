@@ -18,7 +18,7 @@ const FactionUnitsView = ({ factionId, go }) => {
       go("units");
     } }, "Back to units")));
   }
-  const units = D.UNITS.filter((u) => u.faction === factionId);
+  const units = D.UNITS.filter((u) => u.faction === factionId && !u.summoned);
   const tiers = Array.from(new Set(units.map((u) => u.tier))).sort((a, b) => a - b);
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(FactionUnitsSwitcher, { current: factionId, factions: D.FACTIONS, go }), /* @__PURE__ */ React.createElement("div", { className: "faction-hero" }, /* @__PURE__ */ React.createElement(
     "img",

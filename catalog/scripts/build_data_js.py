@@ -367,6 +367,14 @@ for p in unit_files:
         is_upg = (not is_alt) and (uid.endswith("_upg") or "_upg_" in uid)
         variant = "alt" if is_alt else ("upg" if is_upg else "base")
         ukey = u.get("fraction") or "neutral"
+        # Summoned / disposable creatures (Fire Larva, undead peasant, etc.)
+        # share a tier+faction with the actual recruited unit but are spawned
+        # by abilities, not built. Signature: base variant with no upgradeSid
+        # and no expBonus. Faction tier ladders + combat-sim picker filter
+        # these out so the real tier 4 unit (Scorpion, etc.) isn't masked.
+        summoned = (variant == "base"
+                    and not u.get("upgradeSid")
+                    and not u.get("expBonus"))
         # Map in-game faction key to our display id; neutrals stay 'neutral'
         fid = DID_BY_UKEY.get(ukey, "neutral")
 
@@ -424,6 +432,7 @@ for p in unit_files:
             "narrative": narrative,
             "passives": passives,
             "abilities": abilities,
+            "summoned": summoned,
         })
 
 # Sort units: tier asc, faction order, name
