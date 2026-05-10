@@ -292,6 +292,32 @@ for ukey in [u for _, u, *_ in FACTION_DEFS]:
 
 
 # ---------- UNITS ----------
+# Pre-index per-variant ability/passive token sids from units_views/.
+# units_logics/ has the raw stat / mechanic data; units_views/ has the
+# correctly-attributed list of which named passive/ability shows on each
+# variant (e.g. Bloom is on twinkle_upg_alt only, NOT on base twinkle).
+UNIT_VIEW_FX: dict[str, dict] = {}  # uid -> {"passives": [(name_sid, desc_sid)], "abilities": [...]}
+for p in (RAW / "DB" / "units" / "units_views").rglob("*.json"):
+    for u in load_array(p):
+        if not isinstance(u, dict) or not u.get("id"):
+            continue
+        passives = []
+        for entry in (u.get("passives") or []):
+            n = entry.get("name") or ""
+            d = entry.get("description") or ""
+            # Some passives drop the trailing _name suffix as a stylistic choice;
+            # accept both forms.
+            if n:
+                passives.append((n, d))
+        abilities = []
+        for entry in (u.get("abilities") or []):
+            n = entry.get("name") or ""
+            d = entry.get("description") or ""
+            if n:
+                abilities.append((n, d))
+        UNIT_VIEW_FX[u["id"]] = {"passives": passives, "abilities": abilities}
+
+
 UNITS_OUT: list[dict] = []
 unit_files = sorted((RAW / "DB" / "units" / "units_logics").rglob("*.json"))
 for p in unit_files:
@@ -322,26 +348,27 @@ for p in unit_files:
         # `shoot` = ranged attackers (archers/spellcasters); `range` = long-reach melee.
         atk_label = {"melee": "Melee", "shoot": "Ranged", "range": "Long"}.get(atk_raw, "—")
 
-        # Collect passives + abilities by scanning the EN dictionary.
-        # Format: <id>_passive_<N>_name / _description (and same for ability)
-        import re as _re
-        def collect(kind: str) -> list[dict]:
-            pat = _re.compile(rf"^{_re.escape(uid)}_{kind}_(\d+)_name$")
+        # Resolve passives + abilities from the per-variant units_views/ entry.
+        # The view file lists exactly the named passives/abilities that appear
+        # on this variant in-game, with their localization token sids — so the
+        # mapping is unambiguous (unlike scanning EN tokens by uid prefix,
+        # which collapses all variants into the base).
+        def _resolve_fx(items):
             out = []
-            for sid, text in EN.items():
-                m = pat.match(sid)
-                if not m:
-                    continue
-                num = int(m.group(1))
-                desc = EN.get(f"{uid}_{kind}_{num}_description", "")
-                out.append({"name": text, "desc": desc, "_n": num})
-            out.sort(key=lambda x: x["_n"])
-            for x in out:
-                x.pop("_n", None)
+            for name_sid, desc_sid in items:
+                # Some sids end in _name; resolve as-is. Tokens for descriptions
+                # follow the same pattern but suffix _description.
+                name = EN.get(name_sid, "")
+                desc = EN.get(desc_sid, "")
+                if not name:
+                    # Fall back: strip trailing _name and lookup the bare key.
+                    name = EN.get(name_sid.removesuffix("_name"), "") or name_sid
+                out.append({"name": name, "desc": desc})
             return out
 
-        passives = collect("passive")
-        abilities = collect("ability")
+        view_fx = UNIT_VIEW_FX.get(uid, {"passives": [], "abilities": []})
+        passives  = _resolve_fx(view_fx["passives"])
+        abilities = _resolve_fx(view_fx["abilities"])
         narrative = EN.get(f"{uid}_narrativeDescription", "")
 
         UNITS_OUT.append({
