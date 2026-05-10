@@ -27,10 +27,10 @@ OUT_JS = ROOT / "docs" / "draft-data.js"
 # --------------------------------------------------------------------------- #
 
 DRAFT_FORMAT = [
-    "1 faction ban per player",
-    "1 faction pick per player",
-    "3 hero bans per player",
-    "1 hero pick per player",
+    "Faction phase: player A bans, player B bans, player B picks, player A picks",
+    "Hero phase:    player A bans 3, player B bans 3, player B picks, player A picks",
+    "Key wrinkle: whoever bans FIRST picks SECOND (and vice versa)",
+    "First-ban = agenda-setter; second-ban = reactive picker with last-pick advantage",
 ]
 
 FACTION_BAN_ORDER = [
@@ -88,34 +88,71 @@ FACTION_PICK_ORDER = [
 
 
 GOING_FIRST = {
-    "title": "If you have first ban / first pick",
-    "summary": ("You set the tempo. Take Necropolis off the board, then grab the best of "
-                "Grove or Dungeon. Spend hero bans on whatever S-tier hero is still standing "
-                "in your opponent's faction."),
+    "title": "If you ban FIRST (and therefore pick SECOND)",
+    "summary": ("You set the agenda but lose first pick. Banning forces them off their preferred "
+                "faction; picking second forces YOU off yours. Your ban should remove the faction "
+                "you most fear them playing — not necessarily the strongest faction overall."),
     "steps": [
-        ("Faction ban", "Ban Necropolis. Always. Removes the deepest pool from contention."),
-        ("Faction pick", "Pick Grove (if Halon/Sullie are likely to clear hero-ban) or Dungeon. "
-                         "If both are likely to be hero-banned out, pick Temple for reliability."),
-        ("Hero bans", "Spend bans on your opponent's top-3 — see the matchup table below."),
-        ("Hero pick", "Your faction's S-tier hero that survived their bans."),
+        ("Faction ban",
+         "Ban the faction you least want to face. Default: **Necropolis** (deepest pool, "
+         "Undead Transformer, Skeleton Archer doom-stack). If you specifically dread Avatar Vomit, "
+         "ban **Grove** instead. If you dread Twilight + Onyx Dancer 1-stacks, ban **Dungeon**."),
+        ("Their faction ban",
+         "They will ban one of the remaining S-tier factions, usually whichever you'd prefer to "
+         "play. Expect Necro/Grove/Dungeon — whichever you didn't ban. They want to deny YOUR "
+         "best pick since you'll pick second."),
+        ("Their faction pick (first pick)",
+         "They get to grab the best surviving S-tier faction. Plan for this ahead of time — it "
+         "will usually be Necropolis, Grove, or Dungeon (whichever isn't banned)."),
+        ("Your faction pick (second pick)",
+         "Pick the matchup-favored counter to their faction. See the counter-pick matrix below. "
+         "Don't pick blindly for raw power — pick what *beats them*."),
+        ("Hero bans (you ban first)",
+         "Ban their top 3 heroes — see matchup table below. Since you saw their faction pick, "
+         "this part is easy."),
+        ("Their hero pick (first pick)",
+         "They'll pick their best surviving hero from their faction."),
+        ("Your hero pick (second pick)",
+         "Counter-pick their hero. If they picked a Heroic Strike grinder, take a tanky/sustain "
+         "hero. If they picked an Avatar specialist, take a Twilight/anti-magic hero. **Last "
+         "pick is the leverage you got for losing first pick — use it.**"),
     ],
 }
 
 GOING_SECOND = {
-    "title": "If you have second ban / second pick",
-    "summary": ("You react. Mirror their faction ban (or take Necro yourself if they didn't ban it), "
-                "then counter-pick the matchup. With second pick you know exactly what you're "
-                "playing into — use that information."),
+    "title": "If you ban SECOND (and therefore pick FIRST)",
+    "summary": ("You react on bans but get first pick. This is the stronger draft side — you have "
+                "full information when banning the second faction AND get the best surviving faction. "
+                "Use the ban to remove a faction you don't want to mirror, then grab the strongest "
+                "remaining S-tier."),
     "steps": [
-        ("Faction ban", "If they banned Necro, ban Grove or Dungeon (whichever you'd rather not face). "
-                        "If they did NOT ban Necro, ban Necro yourself."),
-        ("Faction pick", "Counter-pick based on the matchup table — see below. Going Grove into Dungeon "
-                         "is good (Halon clears the ranged stack); Dungeon into Grove is good (Twilight "
-                         "shuts down spell combos)."),
-        ("Hero bans", "React to their faction. Ban their top-3 see matchup table."),
-        ("Hero pick", "Counter-pick their hero. If they took Heroic-Strike (Mandall/Stinger/Curson), "
-                      "consider tanky/sustain heroes. If they took an Avatar specialist, consider "
-                      "Twilight/anti-magic heroes."),
+        ("Their faction ban (first ban)",
+         "They ban the faction they least want to face — usually Necropolis (most likely), Grove, "
+         "or Dungeon."),
+        ("Your faction ban",
+         "Now you have full information. Three good lines: "
+         "(a) If they banned Necro, ban Grove → you take Dungeon. "
+         "(b) If they banned Grove, ban Dungeon → you take Necropolis. "
+         "(c) If they banned Dungeon, ban Grove → you take Necropolis. "
+         "Always leave Necropolis available if it's there. If they didn't ban Necro, **ban Necro "
+         "yourself** only if you don't want to play it; otherwise leave it open and ban their #2."),
+        ("Your faction pick (first pick)",
+         "Grab the strongest surviving faction. Necropolis if open. Then Grove. Then Dungeon. "
+         "Then Temple. **Don't pick a counter-faction here — there's no information yet.** Just "
+         "take the strongest pool."),
+        ("Their faction pick (second pick)",
+         "They will counter-pick your faction. Expect them to pick the strongest counter from the "
+         "counter-pick matrix below — plan for that matchup."),
+        ("Their hero bans (first ban, 3 of them)",
+         "They'll burn bans on YOUR top 3. Plan to lose Kel'Ghul + Bulwark + Onkos "
+         "(if Necropolis) etc."),
+        ("Your hero bans",
+         "Ban their top 3 — see matchup table."),
+        ("Their hero pick (first pick)",
+         "They take their best surviving hero."),
+        ("Your hero pick (last pick)",
+         "Take your faction's best surviving hero. Despite losing 3 to bans, deep faction pools "
+         "still leave you with an S/A pick."),
     ],
 }
 
