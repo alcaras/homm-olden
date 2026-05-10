@@ -2047,6 +2047,64 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .faction-page-cta:hover { color: var(--accent-2); border-bottom-color: var(--accent-2); }
 
 /* ---------- calculator view ---------- */
+.calc-kind-switcher {
+  display: flex;
+  gap: 0;
+  margin: 0.4rem 0 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+.calc-kind-switcher a {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0.55rem 1rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.calc-kind-switcher a:hover { color: var(--ink); }
+.calc-kind-switcher a.active {
+  color: var(--ink);
+  border-bottom-color: var(--rule-bold);
+  font-weight: 700;
+}
+
+/* hub cards */
+.calc-hub-card { display: flex; flex-direction: column; gap: 0.6rem; }
+.calc-hub-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+.calc-hub-actions a {
+  flex: 1;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--rule);
+  border-bottom-color: var(--accent);
+  padding: 0.45rem 0.6rem;
+  text-decoration: none;
+  border-radius: 2px;
+  background: var(--bg);
+}
+.calc-hub-actions a:hover {
+  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.calc-totals-wide { grid-column: span 2; }
+
 .calc-totals {
   position: sticky;
   top: 0;

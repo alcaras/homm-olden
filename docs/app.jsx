@@ -11,8 +11,15 @@ const parseHash = () => {
   if (path.startsWith('faction/')) {
     return { view: 'faction', factionId: path.slice('faction/'.length), query };
   }
+  if (path.startsWith('calc/laws/')) {
+    return { view: 'calc-faction', factionId: path.slice('calc/laws/'.length), kind: 'laws', query };
+  }
+  if (path.startsWith('calc/buildings/')) {
+    return { view: 'calc-faction', factionId: path.slice('calc/buildings/'.length), kind: 'buildings', query };
+  }
   if (path.startsWith('calc/')) {
-    return { view: 'calc-faction', factionId: path.slice('calc/'.length), query };
+    // Back-compat: old #calc/<id> URLs default to the Buildings page.
+    return { view: 'calc-faction', factionId: path.slice('calc/'.length), kind: 'buildings', query };
   }
   if (path.startsWith('units/')) {
     return { view: 'units-faction', factionId: path.slice('units/'.length), query };
@@ -31,8 +38,12 @@ const App = () => {
     let next;
     if (typeof path === 'string' && path.startsWith('faction/')) {
       next = { view: 'faction', factionId: path.slice('faction/'.length), query };
+    } else if (typeof path === 'string' && path.startsWith('calc/laws/')) {
+      next = { view: 'calc-faction', factionId: path.slice('calc/laws/'.length), kind: 'laws', query };
+    } else if (typeof path === 'string' && path.startsWith('calc/buildings/')) {
+      next = { view: 'calc-faction', factionId: path.slice('calc/buildings/'.length), kind: 'buildings', query };
     } else if (typeof path === 'string' && path.startsWith('calc/')) {
-      next = { view: 'calc-faction', factionId: path.slice('calc/'.length), query };
+      next = { view: 'calc-faction', factionId: path.slice('calc/'.length), kind: 'buildings', query };
     } else if (typeof path === 'string' && path.startsWith('units/')) {
       next = { view: 'units-faction', factionId: path.slice('units/'.length), query };
     } else {
@@ -85,7 +96,7 @@ const App = () => {
       {route.view==='factions'      && <window.FactionsHubView go={go} />}
       {route.view==='faction'       && <window.FactionView factionId={route.factionId} go={go} />}
       {route.view==='calc'          && <window.CalcHubView go={go} />}
-      {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} initialQuery={route.query} go={go} />}
+      {route.view==='calc-faction'  && <window.CalcView factionId={route.factionId} kind={route.kind} initialQuery={route.query} go={go} />}
       {route.view==='subclasses' && <window.SubclassesView />}
       {route.view==='skills'     && <window.SkillsView />}
       {route.view==='heroes'     && <window.HeroesView />}

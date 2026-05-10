@@ -1,75 +1,77 @@
-/* Per-faction Law + Building calculator. Pick what you want, see running totals.
-   State is encoded into the URL hash so links are shareable:
-     #calc/temple?b=Main:2,Wall:3,Magic_Guild:4&l=3:1,30:1                  */
+/* Per-faction Law / Building calculator. Two separate pages — Buildings
+   (#calc/buildings/<id>) and Laws (#calc/laws/<id>) — sharing one component
+   parameterized by `kind`. State for each kind is encoded into the URL hash
+   so links are shareable.
 
-const CalcView = ({ factionId, initialQuery, go }) => {
+   URL forms:
+     #calc/buildings/temple?b=Main:2,Wall:3,Magic_Guild:4
+     #calc/laws/temple?l=3:1,30:1                                          */
+
+const CalcView = ({ factionId, kind, initialQuery, go }) => {
+  const k = kind === 'laws' ? 'laws' : 'buildings';
+
   const C = window.OE_CALC_DATA;
   if (!C) return <p>Calculator data not loaded.</p>;
 
   const FACTIONS = window.OE_DATA?.FACTIONS || C.FACTIONS;
   const fmeta = FACTIONS.find(f => f.id === factionId);
   const data = factionId ? C.BY_FACTION[factionId] : null;
-  // Resolve in-game faction key (e.g. 'human') for law-id reconstruction.
-  // OE_DATA.FACTIONS uses `unitKey`; OE_CALC_DATA.FACTIONS uses `unitKey` too.
   const factionKey = fmeta?.unitKey || (C.FACTIONS.find(f => f.id === factionId)?.unitKey);
 
   // ----- initial state from URL (re-derived only when faction changes) -----
   const initial = React.useMemo(() => parseCalcQuery(initialQuery, factionKey),
                                 [factionId]);
-  const [pickedBuildings, setPickedBuildings] = React.useState(initial.buildings);
-  const [pickedLaws,      setPickedLaws]      = React.useState(initial.laws);
-  const [shareCopied,     setShareCopied]     = React.useState(false);
+  const [picked, setPicked] = React.useState(k === 'laws' ? initial.laws : initial.buildings);
+  const [shareCopied, setShareCopied] = React.useState(false);
 
-  // Re-seed state when faction changes (different `initial`)
+  // Re-seed when faction or kind changes
   React.useEffect(() => {
-    setPickedBuildings(initial.buildings);
-    setPickedLaws(initial.laws);
-  }, [factionId, initial]);
+    setPicked(k === 'laws' ? initial.laws : initial.buildings);
+  }, [factionId, k, initial]);
 
-  // Sync state → URL via replaceState so we don't pollute history or fire
-  // hashchange (which would re-mount the view)
+  // Sync picked → URL via replaceState
   React.useEffect(() => {
     if (!factionId || !factionKey) return;
-    const newHash = '#' + buildCalcHash(factionId, factionKey, pickedBuildings, pickedLaws);
+    const newHash = '#' + buildCalcHash(k, factionId, factionKey, picked);
     if (window.location.hash !== newHash) {
       history.replaceState(null, '', newHash);
     }
-  }, [pickedBuildings, pickedLaws, factionId, factionKey]);
+  }, [picked, factionId, factionKey, k]);
 
   if (!data) {
     return (
       <>
-        <FactionPicker current={factionId} factions={FACTIONS} go={go} prefix="calc" />
-        <h1>Faction calculator</h1>
-        <p className="lede">
-          Pick a faction above to plan its build order and law tree against the actual
-          in-game costs and prerequisites.
-        </p>
+        <FactionPicker current={factionId} factions={FACTIONS} go={go} kind={k} />
+        <h1>{k === 'laws' ? 'Laws' : 'Buildings'} calculator</h1>
+        <p className="lede">Pick a faction above to plan its {k}.</p>
       </>
     );
   }
 
-  // ----- helpers -----
+  return k === 'laws'
+    ? <LawsCalc {...{ data, factionId, factionKey, fmeta, FACTIONS, go,
+                       picked, setPicked, shareCopied, setShareCopied }} />
+    : <BuildingsCalc {...{ data, factionId, factionKey, fmeta, FACTIONS, go,
+                       picked, setPicked, shareCopied, setShareCopied, C }} />;
+};
+
+
+// ---------- BUILDINGS ----------
+const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
+                          picked, setPicked, shareCopied, setShareCopied, C }) => {
   const buildingsBySid = {};
   for (const cat of data.buildings) for (const b of cat.buildings) buildingsBySid[b.sid] = b;
-  const lawsById = {};
-  for (const r of data.laws) for (const g of r.groups) for (const l of g.laws) lawsById[l.id] = l;
 
-  // Toggle a building to the given level. Setting N means: levels 1..N are
-  // included. Clicking the currently-selected level deselects (sets to N-1).
-  // Auto-adds prerequisites at their required levels (or higher if already chosen).
   const setBuildingLevel = (sid, targetLevel) => {
-    setPickedBuildings(prev => {
+    setPicked(prev => {
       const next = {...prev};
       const cur = next[sid] || 0;
       const newLevel = (cur === targetLevel) ? targetLevel - 1 : targetLevel;
       next[sid] = newLevel;
       if (newLevel === 0) {
         delete next[sid];
-        // We don't auto-remove dependents — leave that as user choice.
         return next;
       }
-      // Walk prereq chain: ensure each prereq is at least at the required level.
       const ensure = (s, lvl) => {
         if ((next[s] || 0) >= lvl) return;
         next[s] = lvl;
@@ -84,65 +86,41 @@ const CalcView = ({ factionId, initialQuery, go }) => {
     });
   };
 
-  // Toggle a law to the given level.
-  const setLawLevel = (lawId, targetLevel) => {
-    setPickedLaws(prev => {
-      const cur = prev[lawId] || 0;
-      const newLevel = (cur === targetLevel) ? targetLevel - 1 : targetLevel;
-      const next = {...prev};
-      if (newLevel === 0) delete next[lawId]; else next[lawId] = newLevel;
-      return next;
-    });
-  };
-
-  // ----- totals -----
-  const buildingTotals = {};
-  let buildingLevelsCount = 0;
-  for (const [sid, lvl] of Object.entries(pickedBuildings)) {
+  // Totals
+  const totals = {};
+  let levelsCount = 0;
+  for (const [sid, lvl] of Object.entries(picked)) {
     const b = buildingsBySid[sid];
     if (!b) continue;
     for (let i = 0; i < lvl; i++) {
-      buildingLevelsCount += 1;
+      levelsCount += 1;
       const costs = b.levels[i]?.costs || {};
       for (const [r, v] of Object.entries(costs)) {
-        buildingTotals[r] = (buildingTotals[r] || 0) + v;
+        totals[r] = (totals[r] || 0) + v;
       }
     }
   }
 
-  let lawTotalCost = 0;
-  let lawLevelsCount = 0;
-  for (const [lid, lvl] of Object.entries(pickedLaws)) {
-    const l = lawsById[lid];
-    if (!l) continue;
-    for (let i = 0; i < lvl; i++) {
-      lawLevelsCount += 1;
-      lawTotalCost += l.levels[i]?.cost || 0;
-    }
-  }
-
-  // ----- render -----
   return (
     <>
-      <FactionPicker current={factionId} factions={FACTIONS} go={go} prefix="calc" />
+      <FactionPicker current={factionId} factions={FACTIONS} go={go} kind="buildings" />
+      <KindSwitcher current="buildings" factionId={factionId} go={go} />
 
-      <h1>{fmeta.name} — calculator</h1>
+      <h1>{fmeta.name} — Buildings</h1>
       <p className="lede">
-        Pick the laws and buildings you plan to enact. Costs are pulled from the
-        actual game files (not editorial). Selecting a building level
-        automatically enacts its prerequisites; click a selected level again to
-        step back down.
+        Pick the buildings you plan to construct. Costs from the actual game files.
+        Selecting a level auto-enacts prerequisites; click a selected level again to
+        step back.
       </p>
 
-      {/* ============== TOTALS (sticky) ============== */}
       <div className="calc-totals">
-        <div className="calc-totals-block">
+        <div className="calc-totals-block calc-totals-wide">
           <div className="calc-totals-eyebrow">
-            Buildings — {Object.keys(pickedBuildings).length} buildings, {buildingLevelsCount} levels
+            {Object.keys(picked).length} buildings, {levelsCount} levels
           </div>
           <div className="calc-resources">
             {C.RESOURCE_ORDER.map(r => {
-              const v = buildingTotals[r] || 0;
+              const v = totals[r] || 0;
               return (
                 <div key={r} className={`calc-res calc-res-${r}${v ? ' has' : ' empty'}`}>
                   <span className="calc-res-label">{C.RESOURCE_LABEL[r]}</span>
@@ -152,43 +130,25 @@ const CalcView = ({ factionId, initialQuery, go }) => {
             })}
           </div>
         </div>
-        <div className="calc-totals-block">
-          <div className="calc-totals-eyebrow">
-            Laws — {Object.keys(pickedLaws).length} laws, {lawLevelsCount} levels enacted
-          </div>
-          <div className="calc-lp">
-            <span className="calc-lp-value">{lawTotalCost}</span>
-            <span className="calc-lp-label">law points spent</span>
-          </div>
-        </div>
         <div className="calc-totals-actions">
-          <button onClick={() => {
-            navigator.clipboard?.writeText(window.location.href).then(
-              () => { setShareCopied(true); setTimeout(()=>setShareCopied(false), 1800); },
-              () => {}
-            );
-          }}>{shareCopied ? '✓ Copied' : 'Copy share link'}</button>
-          <button onClick={() => { setPickedBuildings({}); setPickedLaws({}); }}>Reset all</button>
+          <button onClick={() => copyShareLink(setShareCopied)}>
+            {shareCopied ? '✓ Copied' : 'Copy share link'}
+          </button>
+          <button onClick={() => setPicked({})}>Reset all</button>
         </div>
       </div>
 
-      {/* ============== BUILDINGS ============== */}
-      <h2>Buildings</h2>
-      <p className="note">
-        Click a level to select it. Selecting auto-enacts prerequisite buildings.
-        Click an already-selected level to step back. Costs are per-level (not cumulative).
-      </p>
       {data.buildings.map(cat => (
         <section key={cat.id} className="calc-cat">
           <h3>{cat.label}</h3>
           <div className="calc-buildings">
             {cat.buildings.map(b => {
-              const cur = pickedBuildings[b.sid] || 0;
-              const isFortishLong = b.shortId.length > 14;
+              const cur = picked[b.sid] || 0;
+              const isLong = b.shortId.length > 14;
               return (
                 <div key={b.sid} className="calc-building">
                   <div className="calc-building-head">
-                    <span className={'calc-building-name' + (isFortishLong ? ' tight' : '')}>
+                    <span className={'calc-building-name' + (isLong ? ' tight' : '')}>
                       {b.levels[0].name}
                     </span>
                     <span className="calc-building-id mono">{b.shortId}</span>
@@ -231,20 +191,77 @@ const CalcView = ({ factionId, initialQuery, go }) => {
         </section>
       ))}
 
-      {/* ============== LAWS ============== */}
-      <h2>Laws</h2>
       <p className="note">
-        Laws are organized into 5 rows. Each row unlocks once you've spent the cumulative
-        threshold of law points on earlier-row laws. Click a level to enact; click again to step back.
+        Generated {C.GENERATED_AT}. Data extracted by{' '}
+        <code>catalog/scripts/build_calc.py</code> from the game's JSON files.
+      </p>
+    </>
+  );
+};
+
+
+// ---------- LAWS ----------
+const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
+                     picked, setPicked, shareCopied, setShareCopied }) => {
+  const lawsById = {};
+  for (const r of data.laws) for (const g of r.groups) for (const l of g.laws) lawsById[l.id] = l;
+
+  const setLawLevel = (lawId, targetLevel) => {
+    setPicked(prev => {
+      const cur = prev[lawId] || 0;
+      const newLevel = (cur === targetLevel) ? targetLevel - 1 : targetLevel;
+      const next = {...prev};
+      if (newLevel === 0) delete next[lawId]; else next[lawId] = newLevel;
+      return next;
+    });
+  };
+
+  let lpTotal = 0;
+  let levelsCount = 0;
+  for (const [lid, lvl] of Object.entries(picked)) {
+    const l = lawsById[lid];
+    if (!l) continue;
+    for (let i = 0; i < lvl; i++) {
+      levelsCount += 1;
+      lpTotal += l.levels[i]?.cost || 0;
+    }
+  }
+
+  return (
+    <>
+      <FactionPicker current={factionId} factions={FACTIONS} go={go} kind="laws" />
+      <KindSwitcher current="laws" factionId={factionId} go={go} />
+
+      <h1>{fmeta.name} — Laws</h1>
+      <p className="lede">
+        Pick the laws you plan to enact. Each row unlocks once you've spent the
+        threshold of law points on earlier rows.
       </p>
 
+      <div className="calc-totals">
+        <div className="calc-totals-block calc-totals-wide">
+          <div className="calc-totals-eyebrow">
+            {Object.keys(picked).length} laws, {levelsCount} levels enacted
+          </div>
+          <div className="calc-lp">
+            <span className="calc-lp-value">{lpTotal}</span>
+            <span className="calc-lp-label">law points spent</span>
+          </div>
+        </div>
+        <div className="calc-totals-actions">
+          <button onClick={() => copyShareLink(setShareCopied)}>
+            {shareCopied ? '✓ Copied' : 'Copy share link'}
+          </button>
+          <button onClick={() => setPicked({})}>Reset all</button>
+        </div>
+      </div>
+
       {data.laws.map(row => {
-        // cumulative LP spent on rows BEFORE this one — used to gate unlock display
         let priorLp = 0;
         for (const r2 of data.laws) {
           if (r2.rowIndex >= row.rowIndex) break;
           for (const g of r2.groups) for (const l of g.laws) {
-            const cur = pickedLaws[l.id] || 0;
+            const cur = picked[l.id] || 0;
             for (let i = 0; i < cur; i++) priorLp += l.levels[i]?.cost || 0;
           }
         }
@@ -266,7 +283,7 @@ const CalcView = ({ factionId, initialQuery, go }) => {
               {row.groups.map((g, gi) => (
                 <div key={gi} className="calc-law-group">
                   {g.laws.map(law => {
-                    const cur = pickedLaws[law.id] || 0;
+                    const cur = picked[law.id] || 0;
                     return (
                       <div key={law.id} className="calc-law">
                         <div className="calc-law-head">
@@ -287,9 +304,7 @@ const CalcView = ({ factionId, initialQuery, go }) => {
                                 className={'calc-level-btn calc-level-law' + (active ? ' active' : '')}
                                 onClick={() => setLawLevel(law.id, lvl.level)}>
                                 <span className="calc-level-num">L{lvl.level}</span>
-                                <span className="calc-level-cost">
-                                  {lvl.cost} LP
-                                </span>
+                                <span className="calc-level-cost">{lvl.cost} LP</span>
                               </button>
                             );
                           })}
@@ -305,12 +320,21 @@ const CalcView = ({ factionId, initialQuery, go }) => {
       })}
 
       <p className="note">
-        Generated {C.GENERATED_AT}. Data extracted by{' '}
-        <code>catalog/scripts/build_calc.py</code> from the game's JSON files.
+        Data from <code>catalog/scripts/build_calc.py</code>. Cumulative-LP unlock
+        thresholds extracted from <code>fractions/*.json</code>.
       </p>
     </>
   );
 };
+
+
+// ---------- helpers ----------
+function copyShareLink(setShareCopied) {
+  navigator.clipboard?.writeText(window.location.href).then(
+    () => { setShareCopied(true); setTimeout(()=>setShareCopied(false), 1800); },
+    () => {}
+  );
+}
 
 function abbreviateRes(r) {
   return {
@@ -319,12 +343,11 @@ function abbreviateRes(r) {
   }[r] || r;
 }
 
-// ---------- URL state encoding (#calc/<id>?b=...&l=...) ----------
+// ---------- URL state encoding ----------
 function encodeBuildings(picked) {
   const out = [];
   for (const [sid, lvl] of Object.entries(picked)) {
     if (!lvl) continue;
-    // Strip "Build_" prefix to keep the URL short.
     const short = sid.startsWith('Build_') ? sid.slice('Build_'.length) : sid;
     out.push(`${short}:${lvl}`);
   }
@@ -336,7 +359,6 @@ function encodeLaws(picked, factionKey) {
   const prefix = `fraction_law_${factionKey}_`;
   for (const [lid, lvl] of Object.entries(picked)) {
     if (!lvl) continue;
-    // Strip "fraction_law_<key>_" — store just the law number.
     const num = lid.startsWith(prefix) ? lid.slice(prefix.length) : lid;
     out.push(`${num}:${lvl}`);
   }
@@ -376,22 +398,27 @@ function parseCalcQuery(query, factionKey) {
   };
 }
 
-function buildCalcHash(factionId, factionKey, pickedBuildings, pickedLaws) {
+function buildCalcHash(kind, factionId, factionKey, picked) {
   const parts = [];
-  const b = encodeBuildings(pickedBuildings);
-  const l = encodeLaws(pickedLaws, factionKey);
-  if (b) parts.push(`b=${b}`);
-  if (l) parts.push(`l=${l}`);
+  if (kind === 'laws') {
+    const l = encodeLaws(picked, factionKey);
+    if (l) parts.push(`l=${l}`);
+  } else {
+    const b = encodeBuildings(picked);
+    if (b) parts.push(`b=${b}`);
+  }
   const qs = parts.length ? '?' + parts.join('&') : '';
-  return `calc/${factionId}${qs}`;
+  return `calc/${kind}/${factionId}${qs}`;
 }
 
-const FactionPicker = ({current, factions, go, prefix}) => (
+
+// ---------- shared UI ----------
+const FactionPicker = ({current, factions, go, kind}) => (
   <div className="faction-switcher">
     {factions.map(f => (
       <a key={f.id}
-         href={`#${prefix}/${f.id}`}
-         onClick={e=>{e.preventDefault();go(`${prefix}/${f.id}`);}}
+         href={`#calc/${kind}/${f.id}`}
+         onClick={e=>{e.preventDefault();go(`calc/${kind}/${f.id}`);}}
          className={f.id === current ? 'active' : ''}>
         <img loading="lazy" src={`img/factions/fraction_${f.unitKey || ''}.png`} alt=""
              onError={(e)=>{e.target.style.display='none';}} />
@@ -401,6 +428,18 @@ const FactionPicker = ({current, factions, go, prefix}) => (
   </div>
 );
 
+const KindSwitcher = ({current, factionId, go}) => (
+  <div className="calc-kind-switcher">
+    <a href={`#calc/buildings/${factionId}`}
+       onClick={e=>{e.preventDefault();go(`calc/buildings/${factionId}`);}}
+       className={current === 'buildings' ? 'active' : ''}>Buildings</a>
+    <a href={`#calc/laws/${factionId}`}
+       onClick={e=>{e.preventDefault();go(`calc/laws/${factionId}`);}}
+       className={current === 'laws' ? 'active' : ''}>Laws</a>
+  </div>
+);
+
+
 const CalcHubView = ({go}) => {
   const FACTIONS = window.OE_DATA?.FACTIONS || (window.OE_CALC_DATA?.FACTIONS) || [];
   return (
@@ -408,15 +447,12 @@ const CalcHubView = ({go}) => {
       <h1>Calculator</h1>
       <p className="lede">
         Plan your faction's law tree and building order against actual game-data
-        costs. Pick the laws and buildings you intend to enact, see running
-        totals of resources spent and law points used, with prerequisites
-        auto-enforced.
+        costs. Two pages per faction — Buildings (resource totals + prerequisite
+        chains) and Laws (LP totals + row unlocks).
       </p>
       <div className="card-grid">
         {FACTIONS.map(f => (
-          <a key={f.id} className="card faction-card"
-             href={`#calc/${f.id}`}
-             onClick={e=>{e.preventDefault();go(`calc/${f.id}`);}}>
+          <div key={f.id} className="card faction-card calc-hub-card">
             <div className="faction-card-head">
               <img loading="lazy" className="faction-card-icon"
                    src={`img/factions/fraction_${f.unitKey || ''}.png`} alt=""
@@ -426,8 +462,17 @@ const CalcHubView = ({go}) => {
                 <div className="card-title">{f.name}</div>
               </div>
             </div>
-            <p className="card-desc">Plan {f.name}'s tech tree.</p>
-          </a>
+            <div className="calc-hub-actions">
+              <a href={`#calc/buildings/${f.id}`}
+                 onClick={e=>{e.preventDefault();go(`calc/buildings/${f.id}`);}}>
+                Buildings →
+              </a>
+              <a href={`#calc/laws/${f.id}`}
+                 onClick={e=>{e.preventDefault();go(`calc/laws/${f.id}`);}}>
+                Laws →
+              </a>
+            </div>
+          </div>
         ))}
       </div>
     </>
