@@ -434,8 +434,8 @@ const FactionPicker = ({current, factions, go, kind}) => (
   <div className="faction-switcher">
     {factions.map(f => (
       <a key={f.id}
-         href={window.OE_routeToUrl(`calc/${kind}/${f.id}`)}
-         onClick={e=>{e.preventDefault();go(`calc/${kind}/${f.id}`);}}
+         href={window.OE_routeToUrl(`${kind}/${f.id}`)}
+         onClick={e=>{e.preventDefault();go(`${kind}/${f.id}`);}}
          className={f.id === current ? 'active' : ''}>
         <img loading="lazy" src={`img/factions/fraction_${f.unitKey || ''}.png`} alt=""
              onError={(e)=>{e.target.style.display='none';}} />

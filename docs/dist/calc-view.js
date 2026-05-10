@@ -293,10 +293,10 @@ const FactionPicker = ({ current, factions, go, kind }) => /* @__PURE__ */ React
   "a",
   {
     key: f.id,
-    href: window.OE_routeToUrl(`calc/${kind}/${f.id}`),
+    href: window.OE_routeToUrl(`${kind}/${f.id}`),
     onClick: (e) => {
       e.preventDefault();
-      go(`calc/${kind}/${f.id}`);
+      go(`${kind}/${f.id}`);
     },
     className: f.id === current ? "active" : ""
   },
