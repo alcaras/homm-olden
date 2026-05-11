@@ -129,6 +129,7 @@ for _i in range(1, 16):
 
 # Modifier sort order — Ctrl < Alt < Shift < everything else
 _MOD_ORDER = {"Ctrl": 0, "Alt": 1, "Shift": 2}
+_MODIFIERS = set(_MOD_ORDER) | {"Cmd", "Win"}
 
 
 def _tr(token: str) -> str:
@@ -138,10 +139,23 @@ def _tr(token: str) -> str:
 
 
 def _format_combo(combo: list[str]) -> str:
-    """Translate + sort a single chord (list of KeyCode tokens) → 'Ctrl + B'."""
+    """Translate one Combo/AltCombo array → display string.
+
+    A Combo with at most one non-modifier key is a chord ('Ctrl + B'). A Combo
+    with two or more non-modifier keys is a *set of alternatives* (any arrow
+    key for HeroArrow; any digit 1-4 for SelectReward) and is joined with ' / '
+    instead. Modifiers, when present, prefix every alternative.
+    """
     parts = [_tr(c) for c in combo if c]
-    parts.sort(key=lambda p: (_MOD_ORDER.get(p, 99), p))
-    return " + ".join(parts)
+    mods = [p for p in parts if p in _MODIFIERS]
+    keys = [p for p in parts if p not in _MODIFIERS]
+    mods.sort(key=lambda p: _MOD_ORDER[p])
+    if len(keys) <= 1:
+        return " + ".join(mods + keys)
+    if mods:
+        prefix = " + ".join(mods) + " + "
+        return " / ".join(prefix + k for k in keys)
+    return " / ".join(keys)
 
 
 def _format_entry(entry: dict) -> str:

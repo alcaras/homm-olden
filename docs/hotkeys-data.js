@@ -98,12 +98,12 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_world_HeroArrow",
           "name": "Move Hero",
-          "key": "← + ↑ + → + ↓"
+          "key": "← / → / ↑ / ↓"
         },
         {
           "sid": "hotkeys_world_HeroArrowNum",
           "name": "Move Hero (Diagonals Allowed)",
-          "key": "Num 1 + Num 2 + Num 3 + Num 4 + Num 6 + Num 7 + Num 8 + Num 9"
+          "key": "Num 1 / Num 4 / Num 6 / Num 8 / Num 2 / Num 3 / Num 7 / Num 9"
         },
         {
           "sid": "hotkeys_world_Tab",
@@ -153,12 +153,12 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_world_SelectReward",
           "name": "Select Reward",
-          "key": "1 + 2 + 3 + 4"
+          "key": "1 / 2 / 3 / 4"
         },
         {
           "sid": "hotkeys_world_SelectSkill",
           "name": "Select Skill/Subskill on Level Up",
-          "key": "1 + 2 + 3"
+          "key": "1 / 2 / 3"
         },
         {
           "sid": "hotkeys_world_GismoZ",
@@ -340,12 +340,12 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_battle_UnitAbility",
           "name": "Select Creature Ability",
-          "key": "1 + 2 + 3 + 4 + 5"
+          "key": "1 / 2 / 3 / 4 / 5"
         },
         {
           "sid": "hotkeys_battle_HeroAbility",
           "name": "Select Hero Ability",
-          "key": "0 + 6 + 7 + 8 + 9"
+          "key": "6 / 7 / 8 / 9 / 0"
         },
         {
           "sid": "hotkeys_battle_UnitSkipTurn",
@@ -498,7 +498,7 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_arena_Select",
           "name": "Select Skill, Spell, Artifact or Creature",
-          "key": "1 + 2 + 3"
+          "key": "1 / 2 / 3"
         }
       ]
     },
@@ -534,7 +534,7 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_dialogs_and_tutorial_DalogAnswer",
           "name": "Select Answer",
-          "key": "1 + 2 + 3 + 4 + 5"
+          "key": "1 / 2 / 3 / 4 / 5"
         },
         {
           "sid": "hotkeys_dialogs_and_tutorial_DialogSkip",
