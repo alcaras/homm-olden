@@ -425,7 +425,7 @@ const HeroPicker = ({ D, go }) => {
                           .sort((a, b) => a.name.localeCompare(b.name));
   return (
     <>
-      <h1>Hero builder</h1>
+      <h1>Hero Level-Up Simulator</h1>
       <p className="hero-army" style={{maxWidth:'62em'}}>
         Pick a hero, then simulate their level-ups: each click rolls a stat
         increase + 2 skill offers, and you pick one. Undo + reset any time.

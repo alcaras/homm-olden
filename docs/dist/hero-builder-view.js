@@ -257,7 +257,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
 const HeroPicker = ({ D, go }) => {
   const [faction, setFaction] = React.useState("temple");
   const heroes = D.HEROES.filter((h) => h.faction === faction).sort((a, b) => a.name.localeCompare(b.name));
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Hero builder"), /* @__PURE__ */ React.createElement("p", { className: "hero-army", style: { maxWidth: "62em" } }, "Pick a hero, then simulate their level-ups: each click rolls a stat increase + 2 skill offers, and you pick one. Undo + reset any time."), /* @__PURE__ */ React.createElement("div", { className: "hb-fac-row" }, D.FACTIONS.map((f) => /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Hero Level-Up Simulator"), /* @__PURE__ */ React.createElement("p", { className: "hero-army", style: { maxWidth: "62em" } }, "Pick a hero, then simulate their level-ups: each click rolls a stat increase + 2 skill offers, and you pick one. Undo + reset any time."), /* @__PURE__ */ React.createElement("div", { className: "hb-fac-row" }, D.FACTIONS.map((f) => /* @__PURE__ */ React.createElement(
     "button",
     {
       key: f.id,

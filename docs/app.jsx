@@ -130,9 +130,9 @@ const titleFor = (route) => {
     case 'combat':        return t('Combat sim');
     case 'hotkeys':       return t('Hotkeys');
     case 'builder': {
-      if (!route.heroId) return t('Hero builder');
+      if (!route.heroId) return t('Hero Level-Up Simulator');
       const h = window.OE_DATA?.HEROES?.find(x => x.id === route.heroId);
-      return t(`${h?.name || 'Hero'} — Builder`);
+      return t(`${h?.name || 'Hero'} — Level-Up Sim`);
     }
     case 'tier':          return t('Tier list');
     case 'guides':        return t('Guides');
@@ -238,7 +238,7 @@ const App = () => {
         <a className={tabActive('units')}      href={url('units')}       onClick={(e)=>{e.preventDefault();go('units');}}>Units</a>
         <a className={tabActive('combat')}     href={url('combat')}      onClick={(e)=>{e.preventDefault();go('combat');}}>Combat sim</a>
         <a className={tabActive('hotkeys')}    href={url('hotkeys')}     onClick={(e)=>{e.preventDefault();go('hotkeys');}}>Hotkeys</a>
-        <a className={tabActive('builder')}    href={url('builder')}     onClick={(e)=>{e.preventDefault();go('builder');}}>Hero builder</a>
+        <a className={tabActive('builder')}    href={url('builder')}     onClick={(e)=>{e.preventDefault();go('builder');}}>Hero Level-Up Simulator</a>
         <a className={tabActive('tier')}       href={url('tier')}        onClick={(e)=>{e.preventDefault();go('tier');}}>Tier list</a>
         <a className={tabActive('guides')}     href={url('guides')}      onClick={(e)=>{e.preventDefault();go('guides');}}>Guides</a>
         <a className={tabActive('draft')}      href={url('draft')}       onClick={(e)=>{e.preventDefault();go('draft');}}>Draft</a>

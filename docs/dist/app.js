@@ -135,9 +135,9 @@ const titleFor = (route) => {
     case "hotkeys":
       return t("Hotkeys");
     case "builder": {
-      if (!route.heroId) return t("Hero builder");
+      if (!route.heroId) return t("Hero Level-Up Simulator");
       const h = window.OE_DATA?.HEROES?.find((x) => x.id === route.heroId);
-      return t(`${h?.name || "Hero"} \u2014 Builder`);
+      return t(`${h?.name || "Hero"} \u2014 Level-Up Sim`);
     }
     case "tier":
       return t("Tier list");
@@ -282,7 +282,7 @@ const App = () => {
   } }, "Hotkeys"), /* @__PURE__ */ React.createElement("a", { className: tabActive("builder"), href: url("builder"), onClick: (e) => {
     e.preventDefault();
     go("builder");
-  } }, "Hero builder"), /* @__PURE__ */ React.createElement("a", { className: tabActive("tier"), href: url("tier"), onClick: (e) => {
+  } }, "Hero Level-Up Simulator"), /* @__PURE__ */ React.createElement("a", { className: tabActive("tier"), href: url("tier"), onClick: (e) => {
     e.preventDefault();
     go("tier");
   } }, "Tier list"), /* @__PURE__ */ React.createElement("a", { className: tabActive("guides"), href: url("guides"), onClick: (e) => {
