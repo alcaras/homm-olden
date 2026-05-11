@@ -1,4 +1,35 @@
 const SKILL_LVL_LABEL = { 1: "Basic", 2: "Advanced", 3: "Expert" };
+const SKILL_ICON_ID = {
+  offence: "skill_assault",
+  defence: "skill_protection",
+  resistance: "skill_resistance",
+  battlecraft: "skill_formation",
+  combat: "skill_battle_artistry",
+  sorcery: "skill_sorcery",
+  intelligence: "skill_mastery",
+  summonAvatar: "skill_summoner",
+  battleMagic: "skill_battlemage",
+  thaumaturgy: "skill_wisdom",
+  daylight: "skill_magic_day",
+  nightshade: "skill_magic_night",
+  arcane: "skill_magic_space",
+  primal: "skill_magic_primal",
+  leadership: "skill_leadership",
+  luck: "skill_luck",
+  insight: "skill_enlightenment",
+  diplomacy: "skill_diplomacy",
+  logistics: "skill_logistic",
+  scouting: "skill_scouting",
+  economy: "skill_economy",
+  tactics: "skill_tactics",
+  siegecraft: "skill_siege",
+  recruitment: "skill_trainer"
+};
+const _skillIcon = (skill, level) => {
+  const base = skill.isFaction ? skill.sid || "" : SKILL_ICON_ID[skill.key] || "";
+  if (!base) return null;
+  return level >= 3 ? `img/skills/${base}_L3.png` : level >= 2 ? `img/skills/${base}_L2.png` : `img/skills/${base}.png`;
+};
 const _weightedPick = (pool) => {
   const tot = pool.reduce((a, s) => a + s.chance, 0);
   if (tot <= 0) return null;
@@ -47,7 +78,8 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
         name: cls.factionSkill.name,
         group: "utility",
         chance: cls.factionSkill.chance,
-        isFaction: true
+        isFaction: true,
+        sid: cls.factionSkill.sid
       });
     }
     return out;
@@ -95,7 +127,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     const stat = _weightedPick(tableEntries)?.key || "K";
     let pool = [...eligible];
     const offered = [];
-    for (let i = 0; i < 2 && pool.length > 0; i++) {
+    for (let i = 0; i < 3 && pool.length > 0; i++) {
       const pick = _weightedPick(pool);
       if (!pick) break;
       offered.push(pick);
@@ -128,7 +160,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     if (!sim.pending) return;
     let pool = [...eligible];
     const offered = [];
-    for (let i = 0; i < 2 && pool.length > 0; i++) {
+    for (let i = 0; i < 3 && pool.length > 0; i++) {
       const pick = _weightedPick(pool);
       if (!pick) break;
       offered.push(pick);
@@ -227,17 +259,29 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
   })), /* @__PURE__ */ React.createElement("p", { className: "hb-foot mono" }, "Next-level stat-roll weights:", " ", "A ", Math.round(100 * (rollTable.A || 0)), "%", " \xB7 ", "D ", Math.round(100 * (rollTable.D || 0)), "%", " \xB7 ", "P ", Math.round(100 * (rollTable.P || 0)), "%", " \xB7 ", "K ", Math.round(100 * (rollTable.K || 0)), "%")), sim.pending && /* @__PURE__ */ React.createElement("section", { className: "hb-section hb-prompt" }, /* @__PURE__ */ React.createElement("h2", null, "L", sim.pending.levelTarget, " \u2014 pick a skill"), /* @__PURE__ */ React.createElement("p", { className: "hb-note" }, "Stat roll: ", /* @__PURE__ */ React.createElement("b", null, "+1 ", STAT_LABEL[sim.pending.stat]), ". Choose one of the offered skills:"), sim.pending.offered.length === 0 ? /* @__PURE__ */ React.createElement("p", { className: "hb-foot" }, "All skills at Expert \u2014 no offers remaining.") : /* @__PURE__ */ React.createElement("div", { className: "hb-offers" }, sim.pending.offered.map((s) => {
     const cur = sim.skills[s.name] || 0;
     const nextLvl = cur + 1;
+    const icon = _skillIcon(s, nextLvl);
     return /* @__PURE__ */ React.createElement(
       "button",
       {
         key: s.name,
-        className: `hb-offer hb-offer-${s.group}`,
+        className: `hb-offer hb-offer-${s.group}` + (cur > 0 ? " upgrade" : " new"),
         onClick: () => pickSkill(s)
       },
-      /* @__PURE__ */ React.createElement("span", { className: `hb-skill-dot hb-skill-${s.group}` }),
+      icon && /* @__PURE__ */ React.createElement(
+        "img",
+        {
+          loading: "lazy",
+          className: "hb-offer-icon",
+          src: icon,
+          alt: "",
+          onError: (e) => {
+            e.target.style.visibility = "hidden";
+          }
+        }
+      ),
       /* @__PURE__ */ React.createElement("span", { className: "hb-offer-name" }, s.name),
-      /* @__PURE__ */ React.createElement("span", { className: "hb-offer-lvl" }, cur === 0 ? "New" : `L${cur} \u2192`, " ", SKILL_LVL_LABEL[nextLvl]),
-      /* @__PURE__ */ React.createElement("span", { className: "hb-offer-chance mono" }, (100 * s.chance / skillTotal).toFixed(1), "% weight")
+      /* @__PURE__ */ React.createElement("span", { className: "hb-offer-state" }, cur === 0 ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("b", null, "Learn"), " \xB7 ", SKILL_LVL_LABEL[nextLvl]) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("b", null, "Advance"), " \xB7 ", SKILL_LVL_LABEL[cur], " \u2192 ", SKILL_LVL_LABEL[nextLvl])),
+      /* @__PURE__ */ React.createElement("span", { className: "hb-offer-chance mono" }, (100 * s.chance / skillTotal).toFixed(1), "%")
     );
   })), /* @__PURE__ */ React.createElement("button", { className: "hb-btn hb-btn-sm", onClick: reroll }, "Reroll offers")), A && /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Items (", Object.keys(sim.items).length, "/", A.SLOT_ORDER.length, ")"), /* @__PURE__ */ React.createElement("div", { className: "hb-slots" }, A.SLOT_ORDER.map((slot) => {
     const equipped = sim.items[slot] ? artifactById[sim.items[slot]] : null;
@@ -273,10 +317,38 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
       onClose: () => setSim((prev) => ({ ...prev, pickerSlot: null }))
     }
   ), Object.keys(sim.items).length > 0 && /* @__PURE__ */ React.createElement("div", { className: "hb-item-bonuses" }, /* @__PURE__ */ React.createElement("div", { className: "hb-base-eyebrow" }, "Bonuses from equipped items"), /* @__PURE__ */ React.createElement("ul", { className: "hb-bonus-list" }, Object.values(sim.items).map((id) => artifactById[id]).filter(Boolean).flatMap((a) => (a.bonuses || []).map((b, i) => ({ a, b, key: `${a.id}-${i}` }))).map(({ a, b, key }) => /* @__PURE__ */ React.createElement("li", { key }, /* @__PURE__ */ React.createElement("span", { className: `hb-rarity-${a.rarity}` }, a.name), /* @__PURE__ */ React.createElement("span", { className: "hb-bonus-sep" }, " \xB7 "), /* @__PURE__ */ React.createElement("span", null, b)))))), /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Skills (", Object.keys(sim.skills).length, ")"), Object.keys(sim.skills).length === 0 ? /* @__PURE__ */ React.createElement("p", { className: "hb-foot" }, "No skills yet \u2014 level up to acquire.") : /* @__PURE__ */ React.createElement("div", { className: "hb-chips" }, Object.entries(sim.skills).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([name, lvl]) => {
-    const grp = fullSkillPool.find((s) => s.name === name)?.group || "utility";
+    const skill = fullSkillPool.find((s) => s.name === name);
+    const grp = skill?.group || "utility";
+    const icon = skill ? _skillIcon(skill, lvl) : null;
     const isStarting = (initialSkills[name] || 0) > 0;
-    return /* @__PURE__ */ React.createElement("span", { key: name, className: `hb-skill-chip hb-skill-${grp}` }, /* @__PURE__ */ React.createElement("span", { className: `hb-skill-dot hb-skill-${grp}` }), name, " ", /* @__PURE__ */ React.createElement("b", null, "L", lvl), isStarting && /* @__PURE__ */ React.createElement("span", { className: "hb-skill-tag" }, "starting"));
-  }))), sim.log.length > 0 && /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Level-up log"), /* @__PURE__ */ React.createElement("table", { className: "hb-log-table" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("th", null, "Lvl"), /* @__PURE__ */ React.createElement("th", null, "Stat"), /* @__PURE__ */ React.createElement("th", null, "Skill picked"))), /* @__PURE__ */ React.createElement("tbody", null, sim.log.slice().reverse().map((row, i) => /* @__PURE__ */ React.createElement("tr", { key: sim.log.length - i }, /* @__PURE__ */ React.createElement("td", { className: "mono" }, "L", row.level), /* @__PURE__ */ React.createElement("td", null, "+1 ", STAT_LABEL[row.stat]), /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("span", { className: `hb-skill-dot hb-skill-${row.skillGroup}` }), row.skillName, " \u2192 L", row.skillLvlAfter, " (", SKILL_LVL_LABEL[row.skillLvlAfter], ")")))))), /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Starting baseline"), /* @__PURE__ */ React.createElement("div", { className: "hb-base-grid" }, hero.spells?.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "hb-base-block" }, /* @__PURE__ */ React.createElement("div", { className: "hb-base-eyebrow" }, "Spells"), /* @__PURE__ */ React.createElement("div", { className: "hb-chips" }, hero.spells.map((sp) => /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement("span", { key: name, className: `hb-skill-chip hb-skill-${grp}` }, icon && /* @__PURE__ */ React.createElement(
+      "img",
+      {
+        loading: "lazy",
+        className: "hb-skill-chip-icon",
+        src: icon,
+        alt: "",
+        onError: (e) => {
+          e.target.style.visibility = "hidden";
+        }
+      }
+    ), name, " ", /* @__PURE__ */ React.createElement("b", null, "L", lvl), isStarting && /* @__PURE__ */ React.createElement("span", { className: "hb-skill-tag" }, "starting"));
+  }))), sim.log.length > 0 && /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Level-up log"), /* @__PURE__ */ React.createElement("table", { className: "hb-log-table" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("th", null, "Lvl"), /* @__PURE__ */ React.createElement("th", null, "Stat"), /* @__PURE__ */ React.createElement("th", null, "Skill picked"))), /* @__PURE__ */ React.createElement("tbody", null, sim.log.slice().reverse().map((row, i) => {
+    const skill = fullSkillPool.find((s) => s.name === row.skillName);
+    const icon = skill ? _skillIcon(skill, row.skillLvlAfter) : null;
+    return /* @__PURE__ */ React.createElement("tr", { key: sim.log.length - i }, /* @__PURE__ */ React.createElement("td", { className: "mono" }, "L", row.level), /* @__PURE__ */ React.createElement("td", null, "+1 ", STAT_LABEL[row.stat]), /* @__PURE__ */ React.createElement("td", { className: "hb-log-skill" }, icon && /* @__PURE__ */ React.createElement(
+      "img",
+      {
+        loading: "lazy",
+        className: "hb-log-icon",
+        src: icon,
+        alt: "",
+        onError: (e) => {
+          e.target.style.visibility = "hidden";
+        }
+      }
+    ), /* @__PURE__ */ React.createElement("span", null, row.skillName, " \u2192 L", row.skillLvlAfter, " (", SKILL_LVL_LABEL[row.skillLvlAfter], ")")));
+  })))), /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Starting baseline"), /* @__PURE__ */ React.createElement("div", { className: "hb-base-grid" }, hero.spells?.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "hb-base-block" }, /* @__PURE__ */ React.createElement("div", { className: "hb-base-eyebrow" }, "Spells"), /* @__PURE__ */ React.createElement("div", { className: "hb-chips" }, hero.spells.map((sp) => /* @__PURE__ */ React.createElement(
     "a",
     {
       key: sp.id,
@@ -306,13 +378,25 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
   ))))), hero.specDesc && /* @__PURE__ */ React.createElement("p", { className: "hb-spec mono" }, /* @__PURE__ */ React.createElement("b", null, hero.specialty, "."), " ", hero.specDesc.replace(/\{[0-9]+\}/g, "?"))), /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Skill roll table (reference)"), /* @__PURE__ */ React.createElement("p", { className: "hb-note" }, "Single-roll probability over the full class skill pool. Picked skills that reach L3 (Expert) drop out and the others re-normalize."), /* @__PURE__ */ React.createElement("table", { className: "hb-skill-table" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("th", null, "Skill"), /* @__PURE__ */ React.createElement("th", null, "Group"), /* @__PURE__ */ React.createElement("th", { className: "hb-num" }, "Weight"), /* @__PURE__ */ React.createElement("th", { className: "hb-num" }, "P(roll)"))), /* @__PURE__ */ React.createElement("tbody", null, [...fullSkillPool].sort((a, b) => b.chance - a.chance).map((s) => {
     const cur = sim.skills[s.name] || 0;
     const isStarting = (initialSkills[s.name] || 0) > 0;
+    const icon = _skillIcon(s, Math.max(1, cur));
     return /* @__PURE__ */ React.createElement(
       "tr",
       {
         key: s.key || s.name,
         className: cur >= 3 ? "hb-skill-maxed" : isStarting ? "hb-skill-starting" : ""
       },
-      /* @__PURE__ */ React.createElement("td", null, /* @__PURE__ */ React.createElement("span", { className: `hb-skill-dot hb-skill-${s.group}` }), s.name, cur > 0 && /* @__PURE__ */ React.createElement("span", { className: "hb-skill-cur" }, " L", cur), cur >= 3 && /* @__PURE__ */ React.createElement("span", { className: "hb-skill-tag hb-skill-tag-max" }, "maxed")),
+      /* @__PURE__ */ React.createElement("td", { className: "hb-skill-cell" }, icon && /* @__PURE__ */ React.createElement(
+        "img",
+        {
+          loading: "lazy",
+          className: "hb-skill-row-icon",
+          src: icon,
+          alt: "",
+          onError: (e) => {
+            e.target.style.visibility = "hidden";
+          }
+        }
+      ), /* @__PURE__ */ React.createElement("span", null, s.name), cur > 0 && /* @__PURE__ */ React.createElement("span", { className: "hb-skill-cur" }, " L", cur), cur >= 3 && /* @__PURE__ */ React.createElement("span", { className: "hb-skill-tag hb-skill-tag-max" }, "maxed")),
       /* @__PURE__ */ React.createElement("td", { className: "hb-skill-group" }, s.group),
       /* @__PURE__ */ React.createElement("td", { className: "hb-num mono" }, s.chance),
       /* @__PURE__ */ React.createElement("td", { className: "hb-num mono" }, (100 * s.chance / skillTotal).toFixed(1), "%")

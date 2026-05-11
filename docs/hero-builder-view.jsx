@@ -16,6 +16,43 @@
 
 const SKILL_LVL_LABEL = { 1: 'Basic', 2: 'Advanced', 3: 'Expert' };
 
+// class.skills[].key → in-game skill_id (matches docs/img/skills/<id>.png).
+// Faction skills carry their own `sid` field, used directly.
+const SKILL_ICON_ID = {
+  offence:      'skill_assault',
+  defence:      'skill_protection',
+  resistance:   'skill_resistance',
+  battlecraft:  'skill_formation',
+  combat:       'skill_battle_artistry',
+  sorcery:      'skill_sorcery',
+  intelligence: 'skill_mastery',
+  summonAvatar: 'skill_summoner',
+  battleMagic:  'skill_battlemage',
+  thaumaturgy:  'skill_wisdom',
+  daylight:     'skill_magic_day',
+  nightshade:   'skill_magic_night',
+  arcane:       'skill_magic_space',
+  primal:       'skill_magic_primal',
+  leadership:   'skill_leadership',
+  luck:         'skill_luck',
+  insight:      'skill_enlightenment',
+  diplomacy:    'skill_diplomacy',
+  logistics:    'skill_logistic',
+  scouting:     'skill_scouting',
+  economy:      'skill_economy',
+  tactics:      'skill_tactics',
+  siegecraft:   'skill_siege',
+  recruitment:  'skill_trainer',
+};
+// Resolve a skill icon path for a given level (1=base, 2=L2 png, 3=L3 png).
+const _skillIcon = (skill, level) => {
+  const base = skill.isFaction ? (skill.sid || '') : (SKILL_ICON_ID[skill.key] || '');
+  if (!base) return null;
+  return level >= 3 ? `img/skills/${base}_L3.png`
+       : level >= 2 ? `img/skills/${base}_L2.png`
+       : `img/skills/${base}.png`;
+};
+
 // Weighted pick from a list of {chance, ...} entries.
 const _weightedPick = (pool) => {
   const tot = pool.reduce((a, s) => a + s.chance, 0);
@@ -60,7 +97,8 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     if (cls.factionSkill?.chance > 0) {
       out.push({
         key: 'faction', name: cls.factionSkill.name,
-        group: 'utility', chance: cls.factionSkill.chance, isFaction: true,
+        group: 'utility', chance: cls.factionSkill.chance,
+        isFaction: true, sid: cls.factionSkill.sid,
       });
     }
     return out;
@@ -116,7 +154,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     // Skill offers — 2 distinct skills from eligible pool weighted by chance
     let pool = [...eligible];
     const offered = [];
-    for (let i = 0; i < 2 && pool.length > 0; i++) {
+    for (let i = 0; i < 3 && pool.length > 0; i++) {
       const pick = _weightedPick(pool);
       if (!pick) break;
       offered.push(pick);
@@ -148,7 +186,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     if (!sim.pending) return;
     let pool = [...eligible];
     const offered = [];
-    for (let i = 0; i < 2 && pool.length > 0; i++) {
+    for (let i = 0; i < 3 && pool.length > 0; i++) {
       const pick = _weightedPick(pool);
       if (!pick) break;
       offered.push(pick);
@@ -307,17 +345,24 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
               {sim.pending.offered.map(s => {
                 const cur = sim.skills[s.name] || 0;
                 const nextLvl = cur + 1;
+                const icon = _skillIcon(s, nextLvl);
                 return (
                   <button key={s.name}
-                          className={`hb-offer hb-offer-${s.group}`}
+                          className={`hb-offer hb-offer-${s.group}` + (cur > 0 ? ' upgrade' : ' new')}
                           onClick={() => pickSkill(s)}>
-                    <span className={`hb-skill-dot hb-skill-${s.group}`} />
+                    {icon && (
+                      <img loading="lazy" className="hb-offer-icon"
+                           src={icon} alt=""
+                           onError={(e)=>{e.target.style.visibility='hidden';}} />
+                    )}
                     <span className="hb-offer-name">{s.name}</span>
-                    <span className="hb-offer-lvl">
-                      {cur === 0 ? 'New' : `L${cur} →`} {SKILL_LVL_LABEL[nextLvl]}
+                    <span className="hb-offer-state">
+                      {cur === 0
+                        ? <><b>Learn</b> · {SKILL_LVL_LABEL[nextLvl]}</>
+                        : <><b>Advance</b> · {SKILL_LVL_LABEL[cur]} → {SKILL_LVL_LABEL[nextLvl]}</>}
                     </span>
                     <span className="hb-offer-chance mono">
-                      {(100 * s.chance / skillTotal).toFixed(1)}% weight
+                      {(100 * s.chance / skillTotal).toFixed(1)}%
                     </span>
                   </button>
                 );
@@ -404,11 +449,17 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
             {Object.entries(sim.skills)
               .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
               .map(([name, lvl]) => {
-                const grp = fullSkillPool.find(s => s.name === name)?.group || 'utility';
+                const skill = fullSkillPool.find(s => s.name === name);
+                const grp = skill?.group || 'utility';
+                const icon = skill ? _skillIcon(skill, lvl) : null;
                 const isStarting = (initialSkills[name] || 0) > 0;
                 return (
                   <span key={name} className={`hb-skill-chip hb-skill-${grp}`}>
-                    <span className={`hb-skill-dot hb-skill-${grp}`} />
+                    {icon && (
+                      <img loading="lazy" className="hb-skill-chip-icon"
+                           src={icon} alt=""
+                           onError={(e)=>{e.target.style.visibility='hidden';}} />
+                    )}
                     {name} <b>L{lvl}</b>
                     {isStarting && <span className="hb-skill-tag">starting</span>}
                   </span>
@@ -427,16 +478,24 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
               <tr><th>Lvl</th><th>Stat</th><th>Skill picked</th></tr>
             </thead>
             <tbody>
-              {sim.log.slice().reverse().map((row, i) => (
-                <tr key={sim.log.length - i}>
-                  <td className="mono">L{row.level}</td>
-                  <td>+1 {STAT_LABEL[row.stat]}</td>
-                  <td>
-                    <span className={`hb-skill-dot hb-skill-${row.skillGroup}`} />
-                    {row.skillName} → L{row.skillLvlAfter} ({SKILL_LVL_LABEL[row.skillLvlAfter]})
-                  </td>
-                </tr>
-              ))}
+              {sim.log.slice().reverse().map((row, i) => {
+                const skill = fullSkillPool.find(s => s.name === row.skillName);
+                const icon = skill ? _skillIcon(skill, row.skillLvlAfter) : null;
+                return (
+                  <tr key={sim.log.length - i}>
+                    <td className="mono">L{row.level}</td>
+                    <td>+1 {STAT_LABEL[row.stat]}</td>
+                    <td className="hb-log-skill">
+                      {icon && (
+                        <img loading="lazy" className="hb-log-icon"
+                             src={icon} alt=""
+                             onError={(e)=>{e.target.style.visibility='hidden';}} />
+                      )}
+                      <span>{row.skillName} → L{row.skillLvlAfter} ({SKILL_LVL_LABEL[row.skillLvlAfter]})</span>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </section>
@@ -498,12 +557,17 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
             {[...fullSkillPool].sort((a, b) => b.chance - a.chance).map(s => {
               const cur = sim.skills[s.name] || 0;
               const isStarting = (initialSkills[s.name] || 0) > 0;
+              const icon = _skillIcon(s, Math.max(1, cur));
               return (
                 <tr key={s.key || s.name}
                     className={cur >= 3 ? 'hb-skill-maxed' : (isStarting ? 'hb-skill-starting' : '')}>
-                  <td>
-                    <span className={`hb-skill-dot hb-skill-${s.group}`} />
-                    {s.name}
+                  <td className="hb-skill-cell">
+                    {icon && (
+                      <img loading="lazy" className="hb-skill-row-icon"
+                           src={icon} alt=""
+                           onError={(e)=>{e.target.style.visibility='hidden';}} />
+                    )}
+                    <span>{s.name}</span>
                     {cur > 0 && <span className="hb-skill-cur"> L{cur}</span>}
                     {cur >= 3 && <span className="hb-skill-tag hb-skill-tag-max">maxed</span>}
                   </td>
