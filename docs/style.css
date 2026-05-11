@@ -2694,13 +2694,23 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 
 /* ---------- subclasses view (simplified card list) ---------- */
 .sub-faction-block { margin: 1.4rem 0 1.8rem; }
+/* Two columns: might (Knight, etc.) on the left, magic (Cleric, etc.) on
+   the right. Column-first flow so each class's two subclasses stack
+   vertically instead of going across rows. */
 .sub-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
   gap: 0.8rem;
   margin-top: 0.8rem;
 }
-@media (max-width: 760px) { .sub-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .sub-grid {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+  }
+}
 .sub-card {
   border: 1px solid var(--rule);
   background: var(--paper);
