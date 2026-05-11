@@ -63,26 +63,42 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
   const buildingsBySid = {};
   for (const cat of data.buildings) for (const b of cat.buildings) buildingsBySid[b.sid] = b;
 
+  // Cascade prereqs: ensure every required building/level is at least `lvl`.
+  const cascadePrereqs = (next, sid, lvl) => {
+    if ((next[sid] || 0) >= lvl) return;
+    next[sid] = lvl;
+    const b = buildingsBySid[sid];
+    if (!b) return;
+    const lvlSpec = b.levels[lvl - 1];
+    for (const p of (lvlSpec?.prereqs || [])) cascadePrereqs(next, p.sid, p.level);
+  };
+
   const setBuildingLevel = (sid, targetLevel) => {
     setPicked(prev => {
       const next = {...prev};
       const cur = next[sid] || 0;
       const newLevel = (cur === targetLevel) ? targetLevel - 1 : targetLevel;
       next[sid] = newLevel;
-      if (newLevel === 0) {
-        delete next[sid];
-        return next;
-      }
-      const ensure = (s, lvl) => {
-        if ((next[s] || 0) >= lvl) return;
-        next[s] = lvl;
-        const b = buildingsBySid[s];
-        if (!b) return;
-        const lvlSpec = b.levels[lvl - 1];
-        for (const p of (lvlSpec?.prereqs || [])) ensure(p.sid, p.level);
-      };
+      if (newLevel === 0) { delete next[sid]; return next; }
       const lvlSpec = buildingsBySid[sid]?.levels[newLevel - 1];
-      for (const p of (lvlSpec?.prereqs || [])) ensure(p.sid, p.level);
+      for (const p of (lvlSpec?.prereqs || [])) cascadePrereqs(next, p.sid, p.level);
+      return next;
+    });
+  };
+
+  // Cycle: 0 → 1 → 2 → ... → max → 0. Used when the user clicks the card body
+  // (any non-chip area). Direct-pick still works via the level chips.
+  const cycleBuildingLevel = (sid) => {
+    setPicked(prev => {
+      const next = {...prev};
+      const cur = next[sid] || 0;
+      const b = buildingsBySid[sid];
+      const max = b?.levels.length || 1;
+      const newLevel = cur >= max ? 0 : cur + 1;
+      if (newLevel === 0) { delete next[sid]; return next; }
+      next[sid] = newLevel;
+      const lvlSpec = b?.levels[newLevel - 1];
+      for (const p of (lvlSpec?.prereqs || [])) cascadePrereqs(next, p.sid, p.level);
       return next;
     });
   };
@@ -145,8 +161,40 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
               const shownDesc = shownLvl?.descResolved
                 || (shownLvl?.desc || '').replace(/\{[0-9]+\}/g, '?');
               const isLong = b.shortId.length > 14;
+              const maxLevel = b.levels.length;
+              // Prereqs for the currently-shown level (the level we'd display
+              // an effect line for). Each prereq points at another building
+              // by sid + required level; we annotate satisfaction so the
+              // cascade behaviour is transparent.
+              const shownPrereqs = (shownLvl?.prereqs || []).map(p => {
+                const b2 = buildingsBySid[p.sid];
+                const satLvl = picked[p.sid] || 0;
+                return {
+                  sid: p.sid,
+                  level: p.level,
+                  name: b2?.levels[0]?.name || p.sid,
+                  icon: b2?.levels[Math.min(p.level, (b2?.levels.length || 1)) - 1]?.icon
+                         || b2?.levels[0]?.icon,
+                  satisfied: satLvl >= p.level,
+                };
+              });
               return (
-                <div key={b.sid} className={'calc-building' + (cur > 0 ? ' picked' : '')}>
+                <div key={b.sid} className={'calc-building' + (cur > 0 ? ' picked' : '')}
+                     role="button" tabIndex={0}
+                     title={cur < maxLevel
+                       ? `Click to advance to L${cur + 1}`
+                       : 'Click to reset'}
+                     onClick={(e) => {
+                       if (e.target.closest('.calc-level-btn')) return;
+                       cycleBuildingLevel(b.sid);
+                     }}
+                     onKeyDown={(e) => {
+                       if ((e.key === 'Enter' || e.key === ' ')
+                           && !e.target.closest('.calc-level-btn')) {
+                         e.preventDefault();
+                         cycleBuildingLevel(b.sid);
+                       }
+                     }}>
                   <div className="calc-building-head">
                     {b.levels[0]?.icon && (
                       <img loading="lazy" className="calc-building-icon"
@@ -174,8 +222,11 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
                           <span className="calc-level-num">L{lvl.level}</span>
                           <span className="calc-level-cost">
                             {Object.entries(lvl.costs).map(([r, v]) => (
-                              <span key={r} className={`calc-cost calc-cost-${r}`}>
-                                {v.toLocaleString()}{abbreviateRes(r)}
+                              <span key={r} className={`calc-cost calc-cost-${r}`} title={r}>
+                                <img loading="lazy" className="calc-cost-icon"
+                                     src={`img/resources/${r}.png`} alt={r}
+                                     onError={(e)=>{e.target.style.display='none';}} />
+                                {v.toLocaleString()}
                               </span>
                             ))}
                           </span>
@@ -183,6 +234,26 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
                       );
                     })}
                   </div>
+                  {shownPrereqs.length > 0 && (
+                    <div className="calc-prereqs">
+                      <span className="calc-prereqs-label">Needs</span>
+                      {shownPrereqs.map(p => (
+                        <span key={p.sid}
+                              className={'calc-prereq' + (p.satisfied ? ' satisfied' : '')}
+                              title={p.satisfied
+                                ? `${p.name} L${p.level} — already built`
+                                : `${p.name} L${p.level} — will be built when you advance`}>
+                          {p.icon && (
+                            <img loading="lazy" className="calc-prereq-icon"
+                                 src={p.icon} alt=""
+                                 onError={(e)=>{e.target.style.display='none';}} />
+                          )}
+                          <span className="calc-prereq-name">{p.name}</span>
+                          <span className="calc-prereq-lvl">L{p.level}</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   {shownDesc && (
                     <div className={'calc-level-effect' + (cur > 0 ? ' active' : '')}>
                       {shownDesc}

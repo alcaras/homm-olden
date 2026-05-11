@@ -67,6 +67,14 @@ const BuildingsCalc = ({
 }) => {
   const buildingsBySid = {};
   for (const cat of data.buildings) for (const b of cat.buildings) buildingsBySid[b.sid] = b;
+  const cascadePrereqs = (next, sid, lvl) => {
+    if ((next[sid] || 0) >= lvl) return;
+    next[sid] = lvl;
+    const b = buildingsBySid[sid];
+    if (!b) return;
+    const lvlSpec = b.levels[lvl - 1];
+    for (const p of lvlSpec?.prereqs || []) cascadePrereqs(next, p.sid, p.level);
+  };
   const setBuildingLevel = (sid, targetLevel) => {
     setPicked((prev) => {
       const next = { ...prev };
@@ -77,16 +85,25 @@ const BuildingsCalc = ({
         delete next[sid];
         return next;
       }
-      const ensure = (s, lvl) => {
-        if ((next[s] || 0) >= lvl) return;
-        next[s] = lvl;
-        const b = buildingsBySid[s];
-        if (!b) return;
-        const lvlSpec2 = b.levels[lvl - 1];
-        for (const p of lvlSpec2?.prereqs || []) ensure(p.sid, p.level);
-      };
       const lvlSpec = buildingsBySid[sid]?.levels[newLevel - 1];
-      for (const p of lvlSpec?.prereqs || []) ensure(p.sid, p.level);
+      for (const p of lvlSpec?.prereqs || []) cascadePrereqs(next, p.sid, p.level);
+      return next;
+    });
+  };
+  const cycleBuildingLevel = (sid) => {
+    setPicked((prev) => {
+      const next = { ...prev };
+      const cur = next[sid] || 0;
+      const b = buildingsBySid[sid];
+      const max = b?.levels.length || 1;
+      const newLevel = cur >= max ? 0 : cur + 1;
+      if (newLevel === 0) {
+        delete next[sid];
+        return next;
+      }
+      next[sid] = newLevel;
+      const lvlSpec = b?.levels[newLevel - 1];
+      for (const p of lvlSpec?.prereqs || []) cascadePrereqs(next, p.sid, p.level);
       return next;
     });
   };
@@ -111,32 +128,99 @@ const BuildingsCalc = ({
     const shownLvl = cur > 0 ? b.levels[cur - 1] : b.levels[0];
     const shownDesc = shownLvl?.descResolved || (shownLvl?.desc || "").replace(/\{[0-9]+\}/g, "?");
     const isLong = b.shortId.length > 14;
-    return /* @__PURE__ */ React.createElement("div", { key: b.sid, className: "calc-building" + (cur > 0 ? " picked" : "") }, /* @__PURE__ */ React.createElement("div", { className: "calc-building-head" }, b.levels[0]?.icon && /* @__PURE__ */ React.createElement(
-      "img",
+    const maxLevel = b.levels.length;
+    const shownPrereqs = (shownLvl?.prereqs || []).map((p) => {
+      const b2 = buildingsBySid[p.sid];
+      const satLvl = picked[p.sid] || 0;
+      return {
+        sid: p.sid,
+        level: p.level,
+        name: b2?.levels[0]?.name || p.sid,
+        icon: b2?.levels[Math.min(p.level, b2?.levels.length || 1) - 1]?.icon || b2?.levels[0]?.icon,
+        satisfied: satLvl >= p.level
+      };
+    });
+    return /* @__PURE__ */ React.createElement(
+      "div",
       {
-        loading: "lazy",
-        className: "calc-building-icon",
-        src: b.levels[0].icon,
-        alt: "",
-        onError: (e) => {
-          e.target.style.display = "none";
-        }
-      }
-    ), /* @__PURE__ */ React.createElement("div", { className: "calc-building-titles" }, /* @__PURE__ */ React.createElement("span", { className: "calc-building-name" + (isLong ? " tight" : "") }, shownLvl?.name || b.levels[0].name), /* @__PURE__ */ React.createElement("span", { className: "calc-building-id mono" }, b.shortId))), /* @__PURE__ */ React.createElement("div", { className: "calc-level-chips" }, b.levels.map((lvl) => {
-      const active = cur >= lvl.level;
-      const cleanedDesc = lvl.descResolved || (lvl.desc || "").replace(/\{[0-9]+\}/g, "?");
-      return /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          key: lvl.level,
-          className: "calc-level-btn" + (active ? " active" : ""),
-          onClick: () => setBuildingLevel(b.sid, lvl.level),
-          title: lvl.name + (cleanedDesc ? "\n\n" + cleanedDesc : "")
+        key: b.sid,
+        className: "calc-building" + (cur > 0 ? " picked" : ""),
+        role: "button",
+        tabIndex: 0,
+        title: cur < maxLevel ? `Click to advance to L${cur + 1}` : "Click to reset",
+        onClick: (e) => {
+          if (e.target.closest(".calc-level-btn")) return;
+          cycleBuildingLevel(b.sid);
         },
-        /* @__PURE__ */ React.createElement("span", { className: "calc-level-num" }, "L", lvl.level),
-        /* @__PURE__ */ React.createElement("span", { className: "calc-level-cost" }, Object.entries(lvl.costs).map(([r, v]) => /* @__PURE__ */ React.createElement("span", { key: r, className: `calc-cost calc-cost-${r}` }, v.toLocaleString(), abbreviateRes(r))))
-      );
-    })), shownDesc && /* @__PURE__ */ React.createElement("div", { className: "calc-level-effect" + (cur > 0 ? " active" : "") }, shownDesc));
+        onKeyDown: (e) => {
+          if ((e.key === "Enter" || e.key === " ") && !e.target.closest(".calc-level-btn")) {
+            e.preventDefault();
+            cycleBuildingLevel(b.sid);
+          }
+        }
+      },
+      /* @__PURE__ */ React.createElement("div", { className: "calc-building-head" }, b.levels[0]?.icon && /* @__PURE__ */ React.createElement(
+        "img",
+        {
+          loading: "lazy",
+          className: "calc-building-icon",
+          src: b.levels[0].icon,
+          alt: "",
+          onError: (e) => {
+            e.target.style.display = "none";
+          }
+        }
+      ), /* @__PURE__ */ React.createElement("div", { className: "calc-building-titles" }, /* @__PURE__ */ React.createElement("span", { className: "calc-building-name" + (isLong ? " tight" : "") }, shownLvl?.name || b.levels[0].name), /* @__PURE__ */ React.createElement("span", { className: "calc-building-id mono" }, b.shortId))),
+      /* @__PURE__ */ React.createElement("div", { className: "calc-level-chips" }, b.levels.map((lvl) => {
+        const active = cur >= lvl.level;
+        const cleanedDesc = lvl.descResolved || (lvl.desc || "").replace(/\{[0-9]+\}/g, "?");
+        return /* @__PURE__ */ React.createElement(
+          "button",
+          {
+            key: lvl.level,
+            className: "calc-level-btn" + (active ? " active" : ""),
+            onClick: () => setBuildingLevel(b.sid, lvl.level),
+            title: lvl.name + (cleanedDesc ? "\n\n" + cleanedDesc : "")
+          },
+          /* @__PURE__ */ React.createElement("span", { className: "calc-level-num" }, "L", lvl.level),
+          /* @__PURE__ */ React.createElement("span", { className: "calc-level-cost" }, Object.entries(lvl.costs).map(([r, v]) => /* @__PURE__ */ React.createElement("span", { key: r, className: `calc-cost calc-cost-${r}`, title: r }, /* @__PURE__ */ React.createElement(
+            "img",
+            {
+              loading: "lazy",
+              className: "calc-cost-icon",
+              src: `img/resources/${r}.png`,
+              alt: r,
+              onError: (e) => {
+                e.target.style.display = "none";
+              }
+            }
+          ), v.toLocaleString())))
+        );
+      })),
+      shownPrereqs.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "calc-prereqs" }, /* @__PURE__ */ React.createElement("span", { className: "calc-prereqs-label" }, "Needs"), shownPrereqs.map((p) => /* @__PURE__ */ React.createElement(
+        "span",
+        {
+          key: p.sid,
+          className: "calc-prereq" + (p.satisfied ? " satisfied" : ""),
+          title: p.satisfied ? `${p.name} L${p.level} \u2014 already built` : `${p.name} L${p.level} \u2014 will be built when you advance`
+        },
+        p.icon && /* @__PURE__ */ React.createElement(
+          "img",
+          {
+            loading: "lazy",
+            className: "calc-prereq-icon",
+            src: p.icon,
+            alt: "",
+            onError: (e) => {
+              e.target.style.display = "none";
+            }
+          }
+        ),
+        /* @__PURE__ */ React.createElement("span", { className: "calc-prereq-name" }, p.name),
+        /* @__PURE__ */ React.createElement("span", { className: "calc-prereq-lvl" }, "L", p.level)
+      ))),
+      shownDesc && /* @__PURE__ */ React.createElement("div", { className: "calc-level-effect" + (cur > 0 ? " active" : "") }, shownDesc)
+    );
   })))));
 };
 const LawsCalc = ({
