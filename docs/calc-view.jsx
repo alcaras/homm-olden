@@ -345,16 +345,22 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
         const unlocked = priorLp >= row.countToUnlock;
         return (
           <section key={row.rowIndex} className={'calc-law-row' + (unlocked ? ' unlocked' : ' locked')}>
-            <div className="calc-law-row-head">
+            {/* Olden.gg-style threshold band — thin rule + centered pill. */}
+            <div className="calc-law-row-band">
               <span className="calc-law-row-num">Row {row.rowIndex}</span>
-              <span className="calc-law-row-unlock">
-                {row.countToUnlock === 0
-                  ? 'Unlocked from start'
-                  : <>Unlocks at <b>{row.countToUnlock} LP</b> spent on earlier rows
-                      {' '}— you have <b>{priorLp}</b>
-                      {!unlocked && <span className="calc-law-locked-note"> (locked)</span>}
-                    </>}
-              </span>
+              {row.countToUnlock === 0
+                ? <span className="calc-law-row-pill open">Unlocked from start</span>
+                : <span className={'calc-law-row-pill' + (unlocked ? ' open' : '')}>
+                    <span className="calc-law-row-progress mono">
+                      {Math.min(priorLp, row.countToUnlock)} / {row.countToUnlock}
+                    </span>
+                    <span className="calc-law-row-pill-label">LP earlier</span>
+                    {!unlocked && (
+                      <span className="calc-law-row-pill-note">
+                        need {row.countToUnlock - priorLp} more
+                      </span>
+                    )}
+                  </span>}
             </div>
             <div className="calc-law-groups">
               {row.groups.map((g, gi) => (

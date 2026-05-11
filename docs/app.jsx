@@ -9,7 +9,7 @@
 
 const SIMPLE_VIEWS = ['index', 'mechanics', 'factions',
                       'subclasses', 'skills', 'heroes', 'units',
-                      'tier', 'guides', 'draft', 'spells', 'combat', 'hotkeys',
+                      'tier', 'guides', 'draft', 'spells', 'combat', 'hotkeys', 'builder',
                       'map-objects', 'map-templates', 'resources', 'artifacts'];
 
 // Detect the base path. On GitHub Pages this is '/homm-olden/'; locally '/'.
@@ -44,6 +44,9 @@ const parsePath = () => {
   }
   if (path.startsWith('units/')) {
     return { view: 'units-faction', factionId: path.slice('units/'.length), query: search };
+  }
+  if (path.startsWith('builder/')) {
+    return { view: 'builder', heroId: path.slice('builder/'.length), query: search };
   }
   if (path.startsWith('hero/')) {
     return { view: 'hero', heroId: path.slice('hero/'.length), query: search };
@@ -126,6 +129,11 @@ const titleFor = (route) => {
     case 'units':         return t('Units');
     case 'combat':        return t('Combat sim');
     case 'hotkeys':       return t('Hotkeys');
+    case 'builder': {
+      if (!route.heroId) return t('Hero builder');
+      const h = window.OE_DATA?.HEROES?.find(x => x.id === route.heroId);
+      return t(`${h?.name || 'Hero'} — Builder`);
+    }
     case 'tier':          return t('Tier list');
     case 'guides':        return t('Guides');
     case 'draft':         return t('Draft');
@@ -152,6 +160,8 @@ const App = () => {
       next = { view: 'calc-faction', factionId: path.slice('buildings/'.length), kind: 'buildings', query };
     } else if (typeof path === 'string' && path.startsWith('units/')) {
       next = { view: 'units-faction', factionId: path.slice('units/'.length), query };
+    } else if (typeof path === 'string' && path.startsWith('builder/')) {
+      next = { view: 'builder', heroId: path.slice('builder/'.length), query };
     } else if (typeof path === 'string' && path.startsWith('hero/')) {
       next = { view: 'hero', heroId: path.slice('hero/'.length), query };
     } else if (typeof path === 'string' && path.startsWith('spell/')) {
@@ -228,6 +238,7 @@ const App = () => {
         <a className={tabActive('units')}      href={url('units')}       onClick={(e)=>{e.preventDefault();go('units');}}>Units</a>
         <a className={tabActive('combat')}     href={url('combat')}      onClick={(e)=>{e.preventDefault();go('combat');}}>Combat sim</a>
         <a className={tabActive('hotkeys')}    href={url('hotkeys')}     onClick={(e)=>{e.preventDefault();go('hotkeys');}}>Hotkeys</a>
+        <a className={tabActive('builder')}    href={url('builder')}     onClick={(e)=>{e.preventDefault();go('builder');}}>Builder</a>
         <a className={tabActive('tier')}       href={url('tier')}        onClick={(e)=>{e.preventDefault();go('tier');}}>Tier list</a>
         <a className={tabActive('guides')}     href={url('guides')}      onClick={(e)=>{e.preventDefault();go('guides');}}>Guides</a>
         <a className={tabActive('draft')}      href={url('draft')}       onClick={(e)=>{e.preventDefault();go('draft');}}>Draft</a>
@@ -253,6 +264,7 @@ const App = () => {
       {route.view==='unit'          && <window.UnitView unitId={route.unitId} go={go} />}
       {route.view==='combat'     && <window.CombatView go={go} />}
       {route.view==='hotkeys'    && <window.HotkeysView />}
+      {route.view==='builder'    && <window.HeroBuilderView heroId={route.heroId} initialQuery={route.query} go={go} />}
       {route.view==='tier'       && <window.TierView />}
       {route.view==='guides'     && <window.GuidesView />}
       {route.view==='draft'      && <window.DraftView />}

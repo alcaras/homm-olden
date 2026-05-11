@@ -2392,40 +2392,68 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 
 /* ----- laws ----- */
 .calc-law-row {
-  margin: 0.7rem 0;
-  border: 1px solid var(--rule);
-  background: var(--paper);
-  border-left: 3px solid var(--accent-2);
-  padding: 0.5rem 0.7rem;
+  margin: 0.6rem 0;
+  padding: 0;
 }
-.calc-law-row.locked {
-  opacity: 0.65;
-  border-left-color: var(--faint);
-}
-.calc-law-row-head {
+.calc-law-row.locked { opacity: 0.6; }
+
+/* Threshold band — horizontal rule with a centered "X/Y LP" status pill.
+   Replaces the prose row header so the eye lands on the law cards faster.
+   Per-law descriptions stay visible on the cards below — only the row
+   *header* compacted. */
+.calc-law-row-band {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.6rem;
-  flex-wrap: wrap;
-  border-bottom: 1px dotted var(--rule);
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.45rem;
+  margin: 0.5rem 0 0.5rem;
+}
+.calc-law-row-band::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
 }
 .calc-law-row-num {
   font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink);
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  white-space: nowrap;
 }
-.calc-law-row-unlock {
-  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
-  font-size: 0.74rem;
+.calc-law-row-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+.calc-law-row-pill.open {
+  background: color-mix(in oklch, var(--accent-2) 14%, transparent);
+  border-color: var(--accent-2);
   color: var(--ink-2);
 }
-.calc-law-row-unlock b { color: var(--ink); font-weight: 600; }
-.calc-law-locked-note { color: var(--faint); margin-left: 0.4em; }
+.calc-law-row-progress {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.calc-law-row-pill-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.calc-law-row-pill-note {
+  color: var(--faint);
+  font-size: 0.68rem;
+  font-style: italic;
+}
 
 /* Two columns reflect the in-game law-screen layout (A on the left, B on the
    right). Each column is its own group; laws stack vertically within. */
@@ -3947,3 +3975,202 @@ a.spell-chip.spell-chip-masterful:hover { box-shadow: 0 0 0 1px var(--accent) in
   color: var(--ink);
   box-shadow: 0 1px 0 var(--rule-bold);
 }
+
+/* === Hero Builder === */
+.hb-section {
+  margin: 1rem 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.7rem 0.9rem;
+}
+.hb-section h2 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  border-bottom: 1px dotted var(--rule);
+  padding-bottom: 0.3rem;
+}
+.hb-level-head { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.hb-level-val {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.3rem; color: var(--accent); font-weight: 700;
+  margin: 0 0.1em;
+}
+.hb-bp-note {
+  font-size: 0.72rem; color: var(--muted);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.hb-level-control {
+  display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+  margin: 0.5rem 0 0.6rem;
+}
+.hb-slider {
+  flex: 1; min-width: 14em;
+  accent-color: var(--accent);
+}
+.hb-level-ticks { display: inline-flex; gap: 0.25rem; flex-wrap: wrap; }
+.hb-tick {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  font-size: 0.7rem; font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  cursor: pointer;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.hb-tick:hover { border-color: var(--rule-bold); color: var(--ink); }
+.hb-tick.active {
+  background: var(--accent); color: var(--paper); border-color: var(--accent);
+}
+.hb-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin: 0.5rem 0 0.4rem;
+}
+@media (max-width: 600px) { .hb-stats { grid-template-columns: repeat(2, 1fr); } }
+.hb-stat {
+  text-align: center;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.4rem 0.5rem;
+}
+.hb-stat-lbl {
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--muted); font-weight: 700;
+}
+.hb-stat-val {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.5rem; color: var(--ink); font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.hb-stat-base {
+  font-size: 0.66rem; color: var(--faint); font-style: italic;
+}
+.hb-foot {
+  font-size: 0.7rem; color: var(--muted); margin: 0.4rem 0 0;
+}
+
+.hb-base-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem 0.7rem;
+}
+.hb-base-block { min-width: 0; }
+.hb-base-eyebrow {
+  font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--muted); font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.hb-chips { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.hb-chip {
+  display: inline-flex; align-items: center; gap: 0.3em;
+  padding: 0.15rem 0.45rem;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-size: 0.78rem;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+a.hb-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
+.hb-chip-spell.masterful {
+  border-color: var(--gold);
+  background: color-mix(in oklch, var(--gold) 12%, transparent);
+}
+.hb-chip-spell em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  margin-right: 0.3em;
+}
+.hb-army-count {
+  font-size: 0.7rem; color: var(--ink); font-weight: 700;
+}
+.hb-spec {
+  font-size: 0.82rem; color: var(--ink-2);
+  margin: 0.5rem 0 0;
+}
+.hb-spec b { color: var(--ink); font-weight: 600; }
+
+.hb-note { font-size: 0.78rem; color: var(--muted); margin: 0 0 0.5rem; }
+.hb-skill-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.hb-skill-table th {
+  text-align: left;
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 700; color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.2rem 0.4rem;
+}
+.hb-skill-table td {
+  padding: 0.2rem 0.4rem;
+  border-bottom: 1px dotted var(--rule);
+  vertical-align: middle;
+}
+.hb-skill-table tr:last-child td { border-bottom: none; }
+.hb-skill-table .hb-num { text-align: right; font-variant-numeric: tabular-nums; }
+.hb-skill-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+.hb-skill-dot.hb-skill-combat  { background: var(--combat); }
+.hb-skill-dot.hb-skill-magic   { background: var(--magic); }
+.hb-skill-dot.hb-skill-school  { background: var(--school); }
+.hb-skill-dot.hb-skill-utility { background: var(--utility); }
+.hb-skill-group {
+  font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.hb-skill-starting td { background: color-mix(in oklch, var(--accent) 8%, transparent); }
+.hb-skill-tag {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0.02rem 0.35rem;
+  font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 700;
+  background: var(--accent); color: var(--paper);
+  border-radius: 2px;
+}
+
+.hb-fac-row {
+  display: flex; flex-wrap: wrap; gap: 0.3rem;
+  margin: 0.6rem 0 1rem;
+}
+.hb-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+.hb-hero-card {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  transition: border-color 60ms, background 60ms;
+}
+.hb-hero-card:hover { border-color: var(--accent); background: var(--hover); }
+.hb-hero-card.hb-might { border-top: 2px solid var(--accent); }
+.hb-hero-card.hb-magic { border-top: 2px solid var(--accent-2); }
+.hb-hero-portrait {
+  width: 80px; height: 80px;
+  object-fit: cover;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+.hb-hero-name { font-weight: 600; font-size: 0.88rem; color: var(--ink); }
+.hb-hero-spec { font-size: 0.7rem; color: var(--muted); font-style: italic; }
