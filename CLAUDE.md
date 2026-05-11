@@ -140,5 +140,4 @@ Local preview: `python3 scripts/dev_server.py [port]` — SPA-aware fallback (an
 - Don't rename the in-game `fraction` keys; only the display layer renames them. Anything that joins on raw JSONs needs the in-game key.
 - Don't trust the `attackType_` keyword name. Verify mapping against `damageDealer.tags[0]` (`shoot_attack` vs `range_attack`) and the unit's `ai` field.
 - Don't manually edit `docs/data.js`, `docs/<name>-data.js`, or `docs/img/*` — all generated. Edit the source script and rerun.
-- Don't reference external sites or services by name in commits, code comments, or doc files. Use generic phrasing instead.
 - Don't force-push to `main` without an explicit user-confirmed reason; `--force-with-lease` is preferred when force-push is needed.
