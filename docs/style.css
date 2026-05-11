@@ -4460,14 +4460,14 @@ a.hb-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
 }
 .hb-bonus-sep { color: var(--faint); }
 
-/* === Hero sim: offer cards (redesigned with skill icons) === */
+/* === Hero sim: compact offer cards === */
 .hb-offer {
   display: grid;
-  grid-template-columns: 56px 1fr auto;
+  grid-template-columns: 40px 1fr auto;
   grid-template-rows: auto auto;
   align-items: center;
-  gap: 0.15rem 0.6rem;
-  padding: 0.55rem 0.7rem;
+  gap: 0.1rem 0.5rem;
+  padding: 0.4rem 0.55rem;
   background: var(--paper);
   border: 1px solid var(--rule-bold);
   border-radius: 4px;
@@ -4477,12 +4477,13 @@ a.hb-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
   color: var(--ink);
   transition: background 60ms, border-color 60ms;
 }
+.hb-offer:hover { background: var(--hover); }
 .hb-offer.upgrade {
   background: color-mix(in oklch, var(--accent-2) 6%, var(--paper));
 }
 .hb-offer-icon {
   grid-row: 1 / span 2;
-  width: 56px; height: 56px;
+  width: 40px; height: 40px;
   object-fit: contain;
   background: var(--bg-warm);
   border: 1px solid var(--rule);
@@ -4491,25 +4492,25 @@ a.hb-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
 }
 .hb-offer-name {
   grid-column: 2;
-  font-family: Charter, Georgia, serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.88rem;
   color: var(--ink);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 .hb-offer-state {
   grid-column: 2;
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   color: var(--ink-2);
+  line-height: 1.25;
 }
 .hb-offer-state b {
   font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
-  font-size: 0.66rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
-  margin-right: 0.3em;
-  padding: 0.05rem 0.4rem;
+  margin-right: 0.25em;
+  padding: 0.04rem 0.35rem;
   border-radius: 999px;
   color: var(--paper);
 }
@@ -4518,15 +4519,27 @@ a.hb-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
 .hb-offer-chance {
   grid-row: 1 / span 2;
   grid-column: 3;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--muted);
   text-align: right;
   white-space: nowrap;
 }
+/* Sub-skill offer: long descriptive text instead of chance column. */
+.hb-offer-desc {
+  grid-column: 2 / span 2;
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.3;
+  font-style: italic;
+}
+.hb-offer.subskill { grid-template-columns: 40px 1fr; padding: 0.45rem 0.55rem; }
 
-/* 3 columns of offers on wide screens (was 2) */
+/* 3 columns of offers on wide screens */
 .hb-offers {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.4rem;
+  margin: 0.4rem 0;
 }
 
 /* Tiny skill icons in chip list, log, and roll table */
@@ -4549,4 +4562,71 @@ a.hb-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
 }
 .hb-skill-cell {
   display: flex; align-items: center; gap: 0.45em;
+}
+
+/* === Hero sim: current skills (rows with sub-skill chips) === */
+.hb-skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.35rem;
+}
+.hb-skill-row {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.3rem 0.4rem;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-left-width: 3px;
+  border-radius: 3px;
+  align-items: flex-start;
+}
+.hb-skill-row.hb-skill-combat  { border-left-color: var(--combat); }
+.hb-skill-row.hb-skill-magic   { border-left-color: var(--magic); }
+.hb-skill-row.hb-skill-school  { border-left-color: var(--school); }
+.hb-skill-row.hb-skill-utility { border-left-color: var(--utility); }
+.hb-skill-row-img {
+  width: 32px; height: 32px;
+  object-fit: contain;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px;
+  flex-shrink: 0;
+}
+.hb-skill-row-body { flex: 1; min-width: 0; }
+.hb-skill-row-head {
+  display: flex; align-items: baseline; gap: 0.4em;
+  flex-wrap: wrap;
+}
+.hb-skill-row-name { font-weight: 600; font-size: 0.86rem; color: var(--ink); }
+.hb-skill-row-lvl {
+  font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--accent);
+}
+.hb-subskill-chips {
+  display: flex; flex-wrap: wrap; gap: 0.2rem;
+  margin-top: 0.25rem;
+}
+.hb-subskill-chip {
+  display: inline-flex; align-items: center; gap: 0.25em;
+  padding: 0.05rem 0.4rem 0.05rem 0.1rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: var(--ink-2);
+}
+.hb-subskill-chip-icon {
+  width: 18px; height: 18px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border-radius: 50%;
+}
+.hb-log-sub {
+  margin-left: 0.4em;
+  font-size: 0.78em;
+  color: var(--muted);
+  font-style: italic;
 }

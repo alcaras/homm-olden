@@ -119,10 +119,13 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     level: 1,
     stats: { ...hero.stats },
     skills: { ...initialSkills },
-    pending: null,   // { stat, offered: [skill, skill], levelTarget }
-    log: [],         // [{ level, stat, skillName, skillLvlAfter }]
+    subSkills: {},   // { mainSkillName: [subSkillId, subSkillId] }
+    // pending: { stat, offered: [skill,...], levelTarget,
+    //            pickedMain?: skill, subOptions?: [subSkill,...] }
+    pending: null,
+    log: [],         // [{ level, stat, skillName, skillLvlAfter, subSkill? }]
     items: {},       // { slot: artifactId }
-    pickerSlot: null,// which slot's picker is currently open
+    pickerSlot: null,
   }), [hero, initialSkills]);
 
   const [sim, setSim] = React.useState(initialState);
@@ -163,23 +166,65 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     setSim(prev => ({...prev, pending: { stat, offered, levelTarget: prev.level + 1 }}));
   };
 
+  // Resolve the OE_SKILLS_DATA record for one of our class-pool skill objects.
+  const SK = window.OE_SKILLS_DATA;
+  const skillById = React.useMemo(() => {
+    const m = {};
+    for (const s of (SK?.SKILLS || [])) m[s.id] = s;
+    return m;
+  }, [SK]);
+  const skillRecordFor = (s) => {
+    const id = s.isFaction ? s.sid : SKILL_ICON_ID[s.key];
+    return id ? skillById[id] : null;
+  };
+
+  // Stage 1: user clicks one of the offered main skills.
+  // If the new level (L2 or L3) has sub-skills, transition to the sub-skill
+  // pick stage; otherwise finalize the level-up immediately.
   const pickSkill = (s) => {
     if (!sim.pending) return;
+    const newLvl = (sim.skills[s.name] || 0) + 1;
+    const rec = skillRecordFor(s);
+    const subs = rec?.levels?.[newLvl - 1]?.subskills || [];
+    if (subs.length > 0) {
+      setSim(prev => ({
+        ...prev,
+        pending: { ...prev.pending, pickedMain: s, subOptions: subs },
+      }));
+    } else {
+      finalizeLevelUp(s, null);
+    }
+  };
+
+  // Stage 2 (or single-stage if no subskill): commit the level-up.
+  const finalizeLevelUp = (mainSkill, subSkill) => {
     setSim(prev => {
-      const { stat, offered, levelTarget } = prev.pending;
-      const newLvl = (prev.skills[s.name] || 0) + 1;
+      const { stat, levelTarget } = prev.pending;
+      const newLvl = (prev.skills[mainSkill.name] || 0) + 1;
+      const subsForSkill = subSkill
+        ? [ ...(prev.subSkills[mainSkill.name] || []), subSkill.id ]
+        : (prev.subSkills[mainSkill.name] || []);
       return {
         ...prev,
         level: levelTarget,
         stats: { ...prev.stats, [stat]: prev.stats[stat] + 1 },
-        skills: { ...prev.skills, [s.name]: newLvl },
+        skills: { ...prev.skills, [mainSkill.name]: newLvl },
+        subSkills: { ...prev.subSkills, [mainSkill.name]: subsForSkill },
         pending: null,
         log: [...prev.log, {
           level: levelTarget, stat,
-          skillName: s.name, skillLvlAfter: newLvl, skillGroup: s.group,
+          skillName: mainSkill.name, skillLvlAfter: newLvl,
+          skillGroup: mainSkill.group,
+          subSkillId: subSkill?.id || null,
+          subSkillName: subSkill?.name || null,
         }],
       };
     });
+  };
+
+  const pickSubSkill = (sub) => {
+    if (!sim.pending?.pickedMain) return;
+    finalizeLevelUp(sim.pending.pickedMain, sub);
   };
 
   const reroll = () => {
@@ -211,11 +256,21 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
       } else {
         skills[last.skillName] = newLvl;
       }
+      // Also reverse the sub-skill if one was added for this level-up.
+      const subSkills = { ...prev.subSkills };
+      if (last.subSkillId && subSkills[last.skillName]) {
+        const filtered = subSkills[last.skillName].filter((id, idx, a) =>
+          // remove the last occurrence (most recently added)
+          !(id === last.subSkillId && idx === a.lastIndexOf(last.subSkillId)));
+        if (filtered.length === 0) delete subSkills[last.skillName];
+        else subSkills[last.skillName] = filtered;
+      }
       return {
         ...prev,
         level: prev.level - 1,
         stats: { ...prev.stats, [last.stat]: prev.stats[last.stat] - 1 },
         skills,
+        subSkills,
         log: prev.log.slice(0, -1),
         pending: null,
       };
@@ -331,8 +386,8 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
         </p>
       </section>
 
-      {/* === Skill offer prompt === */}
-      {sim.pending && (
+      {/* === Skill offer prompt (stage 1: main skill) === */}
+      {sim.pending && !sim.pending.pickedMain && (
         <section className="hb-section hb-prompt">
           <h2>L{sim.pending.levelTarget} — pick a skill</h2>
           <p className="hb-note">
@@ -358,8 +413,8 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
                     <span className="hb-offer-name">{s.name}</span>
                     <span className="hb-offer-state">
                       {cur === 0
-                        ? <><b>Learn</b> · {SKILL_LVL_LABEL[nextLvl]}</>
-                        : <><b>Advance</b> · {SKILL_LVL_LABEL[cur]} → {SKILL_LVL_LABEL[nextLvl]}</>}
+                        ? <><b>Learn</b> {SKILL_LVL_LABEL[nextLvl]}</>
+                        : <><b>Advance</b> {SKILL_LVL_LABEL[cur]} → {SKILL_LVL_LABEL[nextLvl]}</>}
                     </span>
                     <span className="hb-offer-chance mono">
                       {(100 * s.chance / skillTotal).toFixed(1)}%
@@ -370,6 +425,32 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
             </div>
           )}
           <button className="hb-btn hb-btn-sm" onClick={reroll}>Reroll offers</button>
+        </section>
+      )}
+
+      {/* === Sub-skill prompt (stage 2: after picking a main skill that hit L2/L3) === */}
+      {sim.pending?.pickedMain && (
+        <section className="hb-section hb-prompt">
+          <h2>{sim.pending.pickedMain.name} —
+            pick a {SKILL_LVL_LABEL[(sim.skills[sim.pending.pickedMain.name] || 0) + 1]?.toLowerCase()} bonus</h2>
+          <p className="hb-note">
+            Sub-skill unlocked by advancing {sim.pending.pickedMain.name}. Pick one:
+          </p>
+          <div className="hb-offers">
+            {sim.pending.subOptions.map(sub => (
+              <button key={sub.id}
+                      className={`hb-offer hb-offer-${sim.pending.pickedMain.group} subskill`}
+                      onClick={() => pickSubSkill(sub)}>
+                <img loading="lazy" className="hb-offer-icon"
+                     src={`img/subskills/${sub.id}.png`} alt=""
+                     onError={(e)=>{e.target.style.visibility='hidden';}} />
+                <span className="hb-offer-name">{sub.name}</span>
+                <span className="hb-offer-desc">
+                  {(sub.desc || '').replace(/\{[0-9]+\}/g, '?')}
+                </span>
+              </button>
+            ))}
+          </div>
         </section>
       )}
 
@@ -445,7 +526,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
         {Object.keys(sim.skills).length === 0 ? (
           <p className="hb-foot">No skills yet — level up to acquire.</p>
         ) : (
-          <div className="hb-chips">
+          <div className="hb-skill-list">
             {Object.entries(sim.skills)
               .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
               .map(([name, lvl]) => {
@@ -453,16 +534,38 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
                 const grp = skill?.group || 'utility';
                 const icon = skill ? _skillIcon(skill, lvl) : null;
                 const isStarting = (initialSkills[name] || 0) > 0;
+                const subs = sim.subSkills[name] || [];
                 return (
-                  <span key={name} className={`hb-skill-chip hb-skill-${grp}`}>
+                  <div key={name} className={`hb-skill-row hb-skill-${grp}`}>
                     {icon && (
-                      <img loading="lazy" className="hb-skill-chip-icon"
+                      <img loading="lazy" className="hb-skill-row-img"
                            src={icon} alt=""
                            onError={(e)=>{e.target.style.visibility='hidden';}} />
                     )}
-                    {name} <b>L{lvl}</b>
-                    {isStarting && <span className="hb-skill-tag">starting</span>}
-                  </span>
+                    <div className="hb-skill-row-body">
+                      <div className="hb-skill-row-head">
+                        <span className="hb-skill-row-name">{name}</span>
+                        <span className="hb-skill-row-lvl">{SKILL_LVL_LABEL[lvl] || `L${lvl}`}</span>
+                        {isStarting && <span className="hb-skill-tag">start</span>}
+                      </div>
+                      {subs.length > 0 && (
+                        <div className="hb-subskill-chips">
+                          {subs.map(subId => {
+                            const skillRec = skillRecordFor(skill || {key: 'faction', isFaction: true, sid: name});
+                            const subRec = skillRec?.levels.flatMap(l => l.subskills || []).find(s => s.id === subId);
+                            return (
+                              <span key={subId} className="hb-subskill-chip">
+                                <img loading="lazy" className="hb-subskill-chip-icon"
+                                     src={`img/subskills/${subId}.png`} alt=""
+                                     onError={(e)=>{e.target.style.visibility='hidden';}} />
+                                {subRec?.name || subId}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 );
               })}
           </div>
@@ -491,7 +594,12 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
                              src={icon} alt=""
                              onError={(e)=>{e.target.style.visibility='hidden';}} />
                       )}
-                      <span>{row.skillName} → L{row.skillLvlAfter} ({SKILL_LVL_LABEL[row.skillLvlAfter]})</span>
+                      <span>
+                        {row.skillName} → {SKILL_LVL_LABEL[row.skillLvlAfter]}
+                        {row.subSkillName && (
+                          <span className="hb-log-sub"> · {row.subSkillName}</span>
+                        )}
+                      </span>
                     </td>
                   </tr>
                 );
