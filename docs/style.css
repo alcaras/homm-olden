@@ -2357,11 +2357,18 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .calc-law-row-unlock b { color: var(--ink); font-weight: 600; }
 .calc-law-locked-note { color: var(--faint); margin-left: 0.4em; }
 
-/* Single auto-fill grid — no more A/B group split, more columns on wide screens. */
+/* Two columns reflect the in-game law-screen layout (A on the left, B on the
+   right). Each column is its own group; laws stack vertically within. */
 .calc-law-groups {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 0.7rem;
+}
+@media (max-width: 760px) { .calc-law-groups { grid-template-columns: 1fr; } }
+.calc-law-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 .calc-law {
   border: 1px solid var(--rule);

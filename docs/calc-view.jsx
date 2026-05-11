@@ -286,64 +286,68 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
               </span>
             </div>
             <div className="calc-law-groups">
-              {row.groups.flatMap((g, gi) => g.laws.map(law => {
-                const cur = picked[law.id] || 0;
-                // Show the active level's effect, or L1's as preview.
-                const shownLvl = cur > 0 ? law.levels[cur - 1] : law.levels[0];
-                const shownDesc = shownLvl?.descResolved
-                  || (shownLvl?.desc || '').replace(/\{[0-9]+\}/g, '?');
-                return (
-                  <div key={law.id} className={'calc-law' + (cur > 0 ? ' picked' : '')}
-                       role="button" tabIndex={0}
-                       title={cur < law.levels.length
-                         ? `Click to advance to L${cur + 1}`
-                         : 'Click to reset'}
-                       onClick={(e) => {
-                         // Level-chip clicks handle their own logic — don't double-fire.
-                         if (e.target.closest('.calc-level-btn')) return;
-                         cycleLawLevel(law.id, law.levels.length);
-                       }}
-                       onKeyDown={(e) => {
-                         if ((e.key === 'Enter' || e.key === ' ')
-                             && !e.target.closest('.calc-level-btn')) {
-                           e.preventDefault();
-                           cycleLawLevel(law.id, law.levels.length);
-                         }
-                       }}>
-                    <div className="calc-law-head">
-                      {law.icon && (
-                        <img loading="lazy" className="calc-law-icon"
-                             src={law.icon} alt=""
-                             onError={(e)=>{e.target.style.display='none';}} />
-                      )}
-                      <div className="calc-law-titles">
-                        <span className="calc-law-name">{law.name}</span>
-                        <span className="calc-law-num">#{law.num}</span>
+              {row.groups.map((g, gi) => (
+                <div key={gi} className="calc-law-group">
+                  {g.laws.map(law => {
+                    const cur = picked[law.id] || 0;
+                    // Show the active level's effect, or L1's as preview.
+                    const shownLvl = cur > 0 ? law.levels[cur - 1] : law.levels[0];
+                    const shownDesc = shownLvl?.descResolved
+                      || (shownLvl?.desc || '').replace(/\{[0-9]+\}/g, '?');
+                    return (
+                      <div key={law.id} className={'calc-law' + (cur > 0 ? ' picked' : '')}
+                           role="button" tabIndex={0}
+                           title={cur < law.levels.length
+                             ? `Click to advance to L${cur + 1}`
+                             : 'Click to reset'}
+                           onClick={(e) => {
+                             // Level-chip clicks handle their own logic — don't double-fire.
+                             if (e.target.closest('.calc-level-btn')) return;
+                             cycleLawLevel(law.id, law.levels.length);
+                           }}
+                           onKeyDown={(e) => {
+                             if ((e.key === 'Enter' || e.key === ' ')
+                                 && !e.target.closest('.calc-level-btn')) {
+                               e.preventDefault();
+                               cycleLawLevel(law.id, law.levels.length);
+                             }
+                           }}>
+                        <div className="calc-law-head">
+                          {law.icon && (
+                            <img loading="lazy" className="calc-law-icon"
+                                 src={law.icon} alt=""
+                                 onError={(e)=>{e.target.style.display='none';}} />
+                          )}
+                          <div className="calc-law-titles">
+                            <span className="calc-law-name">{law.name}</span>
+                            <span className="calc-law-num">#{law.num}</span>
+                          </div>
+                        </div>
+                        <div className="calc-level-chips">
+                          {law.levels.map(lvl => {
+                            const active = cur >= lvl.level;
+                            return (
+                              <button
+                                key={lvl.level}
+                                className={'calc-level-btn calc-level-law' + (active ? ' active' : '')}
+                                onClick={() => setLawLevel(law.id, lvl.level)}
+                                title={lvl.descResolved || ''}>
+                                <span className="calc-level-num">L{lvl.level}</span>
+                                <span className="calc-level-cost">{lvl.cost} LP</span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                        {shownDesc && (
+                          <div className={'calc-level-effect' + (cur > 0 ? ' active' : '')}>
+                            {shownDesc}
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="calc-level-chips">
-                      {law.levels.map(lvl => {
-                        const active = cur >= lvl.level;
-                        return (
-                          <button
-                            key={lvl.level}
-                            className={'calc-level-btn calc-level-law' + (active ? ' active' : '')}
-                            onClick={() => setLawLevel(law.id, lvl.level)}
-                            title={lvl.descResolved || ''}>
-                            <span className="calc-level-num">L{lvl.level}</span>
-                            <span className="calc-level-cost">{lvl.cost} LP</span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                    {shownDesc && (
-                      <div className={'calc-level-effect' + (cur > 0 ? ' active' : '')}>
-                        {shownDesc}
-                      </div>
-                    )}
-                  </div>
-                );
-              }))}
+                    );
+                  })}
+                </div>
+              ))}
             </div>
           </section>
         );

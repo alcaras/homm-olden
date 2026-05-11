@@ -193,7 +193,7 @@ const LawsCalc = ({
       }
     }
     const unlocked = priorLp >= row.countToUnlock;
-    return /* @__PURE__ */ React.createElement("section", { key: row.rowIndex, className: "calc-law-row" + (unlocked ? " unlocked" : " locked") }, /* @__PURE__ */ React.createElement("div", { className: "calc-law-row-head" }, /* @__PURE__ */ React.createElement("span", { className: "calc-law-row-num" }, "Row ", row.rowIndex), /* @__PURE__ */ React.createElement("span", { className: "calc-law-row-unlock" }, row.countToUnlock === 0 ? "Unlocked from start" : /* @__PURE__ */ React.createElement(React.Fragment, null, "Unlocks at ", /* @__PURE__ */ React.createElement("b", null, row.countToUnlock, " LP"), " spent on earlier rows", " ", "\u2014 you have ", /* @__PURE__ */ React.createElement("b", null, priorLp), !unlocked && /* @__PURE__ */ React.createElement("span", { className: "calc-law-locked-note" }, " (locked)")))), /* @__PURE__ */ React.createElement("div", { className: "calc-law-groups" }, row.groups.flatMap((g, gi) => g.laws.map((law) => {
+    return /* @__PURE__ */ React.createElement("section", { key: row.rowIndex, className: "calc-law-row" + (unlocked ? " unlocked" : " locked") }, /* @__PURE__ */ React.createElement("div", { className: "calc-law-row-head" }, /* @__PURE__ */ React.createElement("span", { className: "calc-law-row-num" }, "Row ", row.rowIndex), /* @__PURE__ */ React.createElement("span", { className: "calc-law-row-unlock" }, row.countToUnlock === 0 ? "Unlocked from start" : /* @__PURE__ */ React.createElement(React.Fragment, null, "Unlocks at ", /* @__PURE__ */ React.createElement("b", null, row.countToUnlock, " LP"), " spent on earlier rows", " ", "\u2014 you have ", /* @__PURE__ */ React.createElement("b", null, priorLp), !unlocked && /* @__PURE__ */ React.createElement("span", { className: "calc-law-locked-note" }, " (locked)")))), /* @__PURE__ */ React.createElement("div", { className: "calc-law-groups" }, row.groups.map((g, gi) => /* @__PURE__ */ React.createElement("div", { key: gi, className: "calc-law-group" }, g.laws.map((law) => {
       const cur = picked[law.id] || 0;
       const shownLvl = cur > 0 ? law.levels[cur - 1] : law.levels[0];
       const shownDesc = shownLvl?.descResolved || (shownLvl?.desc || "").replace(/\{[0-9]+\}/g, "?");
@@ -244,7 +244,7 @@ const LawsCalc = ({
         })),
         shownDesc && /* @__PURE__ */ React.createElement("div", { className: "calc-level-effect" + (cur > 0 ? " active" : "") }, shownDesc)
       );
-    }))));
+    })))));
   }));
 };
 function copyShareLink(setShareCopied) {
