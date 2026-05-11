@@ -143,6 +143,40 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     return fullSkillPool.filter(s => (sim.skills[s.name] || 0) < 3);
   }, [fullSkillPool, sim.skills]);
 
+  // Build a 3-slot offer following Olden Era's documented composition rule:
+  // one guaranteed UPGRADE (existing skill, cur 1..2), one guaranteed NEW
+  // (cur === 0), and one joker slot that's roughly 50/50 either way.
+  // Each individual pick is weighted by the class's `chance` table.
+  // Falls back gracefully when one of the pools is empty.
+  const buildOffer = (skillsState) => {
+    const eligibleSkills = fullSkillPool.filter(s => (skillsState[s.name] || 0) < 3);
+    const newPool = eligibleSkills.filter(s => !skillsState[s.name]);
+    const upgPool = eligibleSkills.filter(s => (skillsState[s.name] || 0) >= 1);
+
+    const taken = new Set();
+    const pickFrom = (pool) => {
+      const filtered = pool.filter(s => !taken.has(s.name));
+      const p = _weightedPick(filtered);
+      if (p) taken.add(p.name);
+      return p;
+    };
+
+    const offered = [];
+    // Slot 1: guaranteed UPGRADE if possible, else fall back to a new skill.
+    let s = pickFrom(upgPool) || pickFrom(newPool);
+    if (s) offered.push(s);
+    // Slot 2: guaranteed NEW if possible, else fall back to an upgrade.
+    s = pickFrom(newPool) || pickFrom(upgPool);
+    if (s) offered.push(s);
+    // Slot 3 — joker: ~50/50 new vs upgrade; flip preference if first choice
+    // pool is empty.
+    const preferUpg = Math.random() < 0.5;
+    s = pickFrom(preferUpg ? upgPool : newPool) ||
+        pickFrom(preferUpg ? newPool : upgPool);
+    if (s) offered.push(s);
+    return offered;
+  };
+
   // --- actions ---
   const rollLevelUp = () => {
     if (sim.pending) return;
@@ -154,15 +188,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
       {key: 'K', chance: rollTable.K || 0},
     ];
     const stat = _weightedPick(tableEntries)?.key || 'K';
-    // Skill offers — 2 distinct skills from eligible pool weighted by chance
-    let pool = [...eligible];
-    const offered = [];
-    for (let i = 0; i < 3 && pool.length > 0; i++) {
-      const pick = _weightedPick(pool);
-      if (!pick) break;
-      offered.push(pick);
-      pool = pool.filter(s => s.name !== pick.name);
-    }
+    const offered = buildOffer(sim.skills);
     setSim(prev => ({...prev, pending: { stat, offered, levelTarget: prev.level + 1 }}));
   };
 

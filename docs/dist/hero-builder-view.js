@@ -118,6 +118,27 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
   const eligible = React.useMemo(() => {
     return fullSkillPool.filter((s) => (sim.skills[s.name] || 0) < 3);
   }, [fullSkillPool, sim.skills]);
+  const buildOffer = (skillsState) => {
+    const eligibleSkills = fullSkillPool.filter((s2) => (skillsState[s2.name] || 0) < 3);
+    const newPool = eligibleSkills.filter((s2) => !skillsState[s2.name]);
+    const upgPool = eligibleSkills.filter((s2) => (skillsState[s2.name] || 0) >= 1);
+    const taken = /* @__PURE__ */ new Set();
+    const pickFrom = (pool) => {
+      const filtered = pool.filter((s2) => !taken.has(s2.name));
+      const p = _weightedPick(filtered);
+      if (p) taken.add(p.name);
+      return p;
+    };
+    const offered = [];
+    let s = pickFrom(upgPool) || pickFrom(newPool);
+    if (s) offered.push(s);
+    s = pickFrom(newPool) || pickFrom(upgPool);
+    if (s) offered.push(s);
+    const preferUpg = Math.random() < 0.5;
+    s = pickFrom(preferUpg ? upgPool : newPool) || pickFrom(preferUpg ? newPool : upgPool);
+    if (s) offered.push(s);
+    return offered;
+  };
   const rollLevelUp = () => {
     if (sim.pending) return;
     const tableEntries = [
@@ -127,14 +148,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
       { key: "K", chance: rollTable.K || 0 }
     ];
     const stat = _weightedPick(tableEntries)?.key || "K";
-    let pool = [...eligible];
-    const offered = [];
-    for (let i = 0; i < 3 && pool.length > 0; i++) {
-      const pick = _weightedPick(pool);
-      if (!pick) break;
-      offered.push(pick);
-      pool = pool.filter((s) => s.name !== pick.name);
-    }
+    const offered = buildOffer(sim.skills);
     setSim((prev) => ({ ...prev, pending: { stat, offered, levelTarget: prev.level + 1 } }));
   };
   const SK = window.OE_SKILLS_DATA;
