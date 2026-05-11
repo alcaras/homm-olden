@@ -51,6 +51,18 @@ terra mortis -- always native terrain [combines nicely with gravesoil from adv n
 
 ## subclasses
 
+meh:
+harbinger of doom: (defense and luck ok, sorcery and primal and scouting meh) (good payoff) -- only go if university
+
+walking rot (meh diplomacy, tactics, wisdom)  -- all enemies have their minimum morale (meh)
+
+meh:
+soulweaver (logistics, unsught, avatar) - look out for arcane/battlecraft -- whatever payout
+
+bad:
+chronomancer (meh economy) -- no viable
+
+
 # grove 
 
 ## heroes
@@ -112,6 +124,12 @@ child of the wild (more movement)
 focus (more focus)
 
 ## subclasses
+
+great: fortune's favored (offense, luck; wisdom is ok, primal is ok; diplo sob) -- maxium luck and always lucky strike!
+
+meh: wellspring of vigor (good skills) -- focus not really needed
+meh: celstial envoy (meh economy, scouting, arcane) -- can use all spells
+meh: heaven's fury -- aoe heroic strike, but druids don't specialize n int
 
 # dungeon
 
@@ -178,6 +196,17 @@ saturation (your focus charge limit increases by 1)
 
 ## subclasses
 
+good: amelchia's heir (avatar, insight, primal ok for dungeon, meh battlecraft, tactics)  -- double spell power -- university probably needed
+
+solid: silvertongue's envoy (dfense, daylight, luck, meh scouting, sorcery) -- double defense
+
+meh: balthazar's bodyguard (offense, leadership; meh wisdom, nightshade; bad diplo) -- double attack
+bad: great merchant (economy, arcane)  -- gold daily
+
+
+
+
+
 # temple
 
 daylight magic
@@ -241,6 +270,15 @@ vengeful strike (counterattacks more damage -- riposte)
 
 ## subclasses
 
+good:
+swashbuckler (offense, luck, leadership; nightshade meh, wisdom later) -- you'll want combat too -- combat/leadership keep your mind open
+
+bad: 
+paragon (diplomacy and avatar on a knight)
+grand inquisitor (armor and battle magic and insight are good; scouting and arcane magic meh) -- but no payoff
+ascendant -- no payoff, since you'll have enough mana
+
+
 # hive
 
 ## heroes
@@ -273,51 +311,115 @@ pauper (speed but starts with battle magic)
 ## units
 
 good:
+5 reaver {maniacal reaver} (power stack option)
+6 waurms {pyrobroros} (other power stack option)
 
 meh:
+7 hive queen {hive mother} (contaminating blast)
 
 bad:
-1 parasite {reaver}
-
+1 parasite {ravage parasite}
+2 locust {overgrown} (very squishy, double strike)
+3 hornet {stinger}
+4 scorpion {spelaean for power stack}
 
 ## laws
 
 good:
+elite reavers / elite waurams (try to unlock week 1)
+mana devourer
+laws of the hive
+no compromise
+infernal rage (base damage)
+
+## subclasses
+
+good: soul enforcer -- consume target corpse for 
+
+meh: progentior (meh diplo / arcane / tactics) -- meh payoff
+meh: lord of chaos (scouting) -- heroic strike for mage?
+
+meh: broodmother -- double base stats of fire larvae is meh
+
 
 # schism
 
 ## heroes
 
 good:
+grellekh the betrayer (basic attack; offense)
+eye collective (grand shoth specialist; avatar)
+changeling urgo (avatar)
+icequeen hel'ghat (defense)
 
 meh:
+nihil (logistics) (sprint, maybe exodus)
+blackhorn (sorcery)
+mara mat'ha (aga'shoth riders)
+sister keiri (masterful umbral grip)
+dhuvri (sprint specialist)
 
 bad:
+matastala the white (tactics)
+janhei (cultist specialist)
+the iron master (concubus specialist; but resistance)
+wal'kha (primal specialist)
+martyr tho (economy / mecury)
+kwinri (tier 1 specialist; meh recruitment)
+tolketh (heroic strike specialist, but no combat)
+ulkuth (pathfinding/scouting)
+ra'davok (masterful carapace; arcane magic)
 
 ## units
 
+abyssla communion > comphensible depths > celestial abyss
+
 good:
+1 ra'shoth {stinging}
+4 grand shoth {unspeakable} (late game power stack candidate)
+6 arbitrator {bloated} (late game power stack; inverse range)
 
 meh:
+3 aga'shoth rider {tamer} (meat shields)
+5 concubus {bewitcher} (filler; bewitch into passivity anti focus)
+7 abyssal envoy {executor?}
 
 bad:
-
+2 cultist
 
 ## laws
 
 good:
+depths of mind (more mana each turn)
+generational wisdom (more xp)
+ice power (good for spell power heroes)
+survival conditions (good for multi cities)
+the abyss stares back (max communion level needed)
+mind freeze (enemy focus)
+the world is ours (everything is native)
+frozen homeland (native terrain)
+unfrozen strength (super good)
+
 
 ## subclasses
+
+good: unfathomable (defense, avatar, luck, logistics, arcane ok on schism) -- all enemies deal min and max damage
+
+meh: unstoppable -- okayish payoff but hard skills to find
+
+good: unbound (offense, daylight, leadership, meh scouting eh sorcery) -- max hero level spells -- probably ok with university
+bad: unfeeling (diplo + economy, nightshade) -- enemy lose all focus charges at beginning of each round
+
 
 # skills
 
 good skills:
-basic offense  (archery)
+basic offense  (archery; shadowblades: flat dmg)
 logistics 
 insight (civic innovation)
 summon avatar (amazing, pump spellcraft)
 combat (excellent starting skill)
-leadership (morale is great)
+leadership (morale is great; inspiring stirke at expert)
 
 meh:
 battlecraft
@@ -326,3 +428,12 @@ luck (good for grove, thanks to nature's wildness laws + luck of the fittest law
 bad skills:
 recruitment
 scouting
+economy
+arcane
+diplomacy
+
+# notes
+
+for moving around map (astrology!)
+second wind
+dimension door 

@@ -142,39 +142,34 @@ Worst early game in the game — slow, clunky, no native ranged unit. Win condit
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Maelstrom** | Enforcer (might) | Reave Away | 17–24 Parasite · 2–3 Reaver | Undisputed best Hive hero. Reaver specialist with Insight; spawns with 2-3 Reavers, solving Hive's miserable early game. Your Maniacal Reaver chains will close out Exodus. |
-| **Zoran, the Self‑Founded** | Enforcer (might) | Waurmification | 2–2 Waurms | Zoran the Self-Founded — Worm specialist; starts with 2 Worms whose Corpse Eater ability heals & revives. Makes Hive's brutal early creeping survivable. |
-| **Abigor, Duke of Battle** | Enforcer (might) | Chessmaster | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | +1 hex tactics deploy + units gain +1 init per 6 hero levels. By L18 your whole army deploys in the enemy's face with +3 init = alpha-strike their ranged blob. Frequent ban. |
-
-#### Tier A
-
-| Hero | Class | Specialty | Starting army | Note |
-|---|---|---|---|---|
-| **Curson, Duke of Rage** | Enforcer (might) | Intimidating Strike | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Top zero-loss creep with Heroic Strike chains (Effortless Strike makes it free, Confusing Strike removes counter-attack). *Conflicts:* one Hive guide says avoid because Heroic Strike competes with Summon Swarm focus economy. Strong on creeping, dependent on build path. |
-| **Mila** | Herald (magic) | Wingflap | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Masterful Haste lets you haste the whole army turn 1, closing the melee gap that defines Hive's weakness. Solves the 'we can't reach them' problem. |
-| **Oriax** | Herald (magic) | Here and There | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Summon Avatar starter, 'Here and There' (likely Blink) spec. Matches the 'Allesnorn' archetype described in videos: blink enemy units into your blob and feast. Avatar + Blink combo is top-tier. |
+| **Maelstrom** | Enforcer (might) | Reave Away | 17–24 Parasite · 2–3 Reaver | Reaver specialist + Insight start. Lexiav top pick. Spawns with 2-3 Reavers, solving Hive's miserable early game; Maniacal Reaver chains close out Exodus. |
+| **Zoran, the Self‑Founded** | Enforcer (might) | Waurmification | 2–2 Waurms | Zoran the Self-Founded — Worm specialist. Lexiav top pick. Starts with 2 Worms whose Corpse Eater heals & revives, making Hive's brutal early creeping survivable. |
 
 #### Tier B
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Nor** | Enforcer (might) | Wish to Learn | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Battlecraft start, gains extra attribute on level. Fan favorite but Battlecraft start isn't optimal. |
-| **Tavi** | Enforcer (might) | Proliferation | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Larva specialist. Only viable on long, army-heavy templates where the Larva stack scales to self-sufficiency. Format-dependent. |
-| **Lo** | Enforcer (might) | Scavenger | 8–10 Locust · 8–10 Locust · 8–10 Locust | Defense start, ships with 3 Locust stacks. Locusts are the early-game power stack; triple-stacking them gives tactical flexibility. *(data)* |
-| **Bathym, Duke of Jewels** | Herald (magic) | Charming Shine | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Economy/Charming Shine. Solid greedy pick if your map has good gem nodes. *(data)* |
-| **Leira** | Herald (magic) | Stinging | 3–5 Hornet · 3–5 Hornet · 3–5 Hornet | Battle Magic start with 3 stacks of Hornets (3-5 each). Hornet 1-stack init manipulation matches the late-round Wait trick. *(data)* |
-| **Groo** | Herald (magic) | Son of All Mothers | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Wisdom start, 'Son of All Mothers'. Wisdom is universally good for caster development. *(data)* |
-| **Khariseth** | Herald (magic) | Primal Weaving | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Primal Weaving. Primal damage-dealer Hive caster; possible match for the unidentified 'Dro' build mentioned in one Hive guide. *(data)* |
+| **Niev** | Enforcer (might) | Shooter | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Basic Attack / Offense start. Lexiav meh. |
+| **Nor** | Enforcer (might) | Wish to Learn | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Battlecraft start, gains extra attribute on level. Lexiav meh. |
+| **Oriax** | Herald (magic) | Here and There | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Masterful Blink, but starts with Summon Avatar. Lexiav meh. |
 
 #### Tier C
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Niev** | Enforcer (might) | Shooter | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Offense specialty doesn't sustain Hive's fragile early army; explicitly called out as 'doesn't do enough' in the Hive ranking video. |
-| **Goldentongue** | Enforcer (might) | Rousing Presence | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Morale specialist. Morale specialists thrive with shooters; Hive lacks early ranged units, so the kit doesn't fit. |
-| **Fleu** | Herald (magic) | Wayfarer | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Logistics/Wayfarer; generic mage, no spec hook for tournament combat. *(data)* |
-| **Xirr** | Herald (magic) | Resistant to Elements | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Resistance/elements; no spec hook. *(data)* |
-| **Pauper** | Herald (magic) | Flea Bites | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | 'Flea Bites' is a low-impact effect spec; unsupported by creator commentary. *(data)* |
+| **Curson, Duke of Rage** | Enforcer (might) | Intimidating Strike | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Heroic Strike specialist. Lexiav bad — Heroic Strike fights Hive's Summon Swarm focus economy. |
+| **Tavi** | Enforcer (might) | Proliferation | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Fire Larva specialist. Lexiav bad. |
+| **Lo** | Enforcer (might) | Scavenger | 8–10 Locust · 8–10 Locust · 8–10 Locust | Locust specialist. Lexiav bad. |
+| **Goldentongue** | Enforcer (might) | Rousing Presence | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Morale specialist. Lexiav bad — shooter-friendly kit on a faction with no early ranged. |
+| **Abigor, Duke of Battle** | Enforcer (might) | Chessmaster | 17–24 Parasite · 10–13 Locust · 5–7 Hornet | Initiative scaling. Lexiav bad — was widely hyped/banned, lexiav rates poorly. |
+| **Fleu** | Herald (magic) | Wayfarer | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Logistics specialist. Lexiav bad. |
+| **Xirr** | Herald (magic) | Resistant to Elements | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Resistance. Lexiav bad. |
+| **Bathym, Duke of Jewels** | Herald (magic) | Charming Shine | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Economy. Lexiav bad. |
+| **Leira** | Herald (magic) | Stinging | 3–5 Hornet · 3–5 Hornet · 3–5 Hornet | Hornet specialist. Lexiav bad. |
+| **Groo** | Herald (magic) | Son of All Mothers | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Hive Queen specialist. Lexiav bad. |
+| **Mila** | Herald (magic) | Wingflap | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Expert Haste. Lexiav bad. |
+| **Khariseth** | Herald (magic) | Primal Weaving | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Primal specialist. Lexiav bad. |
+| **Pauper** | Herald (magic) | Flea Bites | 14–19 Parasite · 8–11 Locust · 4–6 Hornet | Speed but starts with Battle Magic. Lexiav bad. |
 
 ### Schism (Oathkeeper / Riftspeaker)
 
@@ -186,39 +181,34 @@ Expensive faction with a brutal tech tree (Arbitrators require Riders → Bewitc
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Grellekh the Betrayer** | Riftspeaker (magic) | Fighter | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Incredible offense tempo. Offense start → Shadow Blades adds +1 base damage, which is ~50% damage increase for your weak T1 Rashoth shooters. Perfect Schism opener. |
-| **The Eye Collective** | Riftspeaker (magic) | Rift’s Envoy | 13–18 Ra’Shoth · 2–3 Grand Shoth · 2–3 Grand Shoth | 'one of the absolute best heroes in the faction'. Starts with 2 Grand Shoth stacks (T4 power unit) AND Summon Avatar. Massive early tempo with a clear Grand-Shoth doom-stack target. |
-
-#### Tier A
-
-| Hero | Class | Specialty | Starting army | Note |
-|---|---|---|---|---|
-| **Changeling Urgo** | Oathkeeper (might) | Everchanging Essence | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Summon Avatar specialist. Free 0-mana Avatar with a barrier scales hard with the Schism mage's spell-power-heavy stat distribution. |
-| **Icequeen Hel’Ghat** | Riftspeaker (magic) | Heart of Ice | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Armor specialist; oppressive synergy with Communion (bleed shadow army then absorb what would kill the real one). Durable early game. |
+| **Changeling Urgo** | Oathkeeper (might) | Everchanging Essence | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Summon Avatar specialist. Lexiav top pick — free 0-mana Avatar that scales with the Schism mage's spell-power stats. |
+| **Grellekh the Betrayer** | Riftspeaker (magic) | Fighter | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Basic Attack / Offense start. Lexiav top pick — Shadow Blades adds +1 base damage, ~50% boost on weak T1 Rashoth shooters. |
+| **Icequeen Hel’Ghat** | Riftspeaker (magic) | Heart of Ice | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Defense / Armor specialist. Lexiav top pick — Communion shadow army absorbs damage while the real army stays untouched. |
+| **The Eye Collective** | Riftspeaker (magic) | Rift’s Envoy | 13–18 Ra’Shoth · 2–3 Grand Shoth · 2–3 Grand Shoth | Grand Shoth specialist + Summon Avatar. Lexiav top pick — starts with 2 Grand Shoth stacks (T4 power unit) for massive early tempo. |
 
 #### Tier B
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Nihil** | Oathkeeper (might) | Wayfarer | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Logistics specialist. Pick *only* when the tempo heroes (Eye, Grellekh, Hel'Ghat, Urgo) are all banned out — early clearing is harder without combat stats. |
-| **Blackhorn** | Oathkeeper (might) | Spellweaver | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Sorcery on a might Frostlord. Hybrid build with damage spells; no creator coverage. *(data)* |
-| **Matastala the White** | Oathkeeper (might) | Chessmaster | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Tactics start. Tactics is mediocre on Schism (Communion mechanic dominates), but deploys forward. *(data)* |
-| **Jänhei** | Oathkeeper (might) | Roguish | 7–10 Cultist · 7–10 Cultist · 7–10 Cultist | Wisdom start with 3 Cultist stacks. Wisdom is broadly good; Cultist meatshield volume fuels Summoning Rite demon-farm. *(data)* |
-| **Mara Mat’ha** | Oathkeeper (might) | Coldblood Siblings | 5–6 Aga’Shoth Rider · 5–6 Aga’Shoth Rider · 5–6 Aga’Shoth Rider | Coldblood Siblings, starts with 3 stacks of Aga'Shoth Riders. Riders are mainly demon-farm fuel but the volume helps early creeping. *(data)* |
-| **The Iron Master** | Oathkeeper (might) | Leash of Chains | 16–22 Ra’Shoth · 2–3 Concubus | Resistance + 'Leash of Chains', starts with 2-3 Concubus. Concubus utility (Mistress of Chains, Bewitcher) is huge — having early access matters. *(data)* |
-| **Ra’Davok** | Riftspeaker (magic) | Magic Fortress | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Ra'Davok — Arcane Magic; access to Blink, useful but not signature. *(data)* |
-| **Sister Keiri** | Riftspeaker (magic) | Mask of the Moon | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Nightshade Magic. Schism + Nightshade is potent (Twilight, Naira's Kiss); no specific video endorsement but the archetype is strong. *(data)* |
-| **Dhüvri** | Riftspeaker (magic) | True Believer | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Communion L2 starter. Faction's gimmick from turn 1; quietly strong. *(data)* |
+| **Nihil** | Oathkeeper (might) | Wayfarer | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Logistics specialist. Lexiav meh — best on Sprint, maybe Exodus. |
+| **Blackhorn** | Oathkeeper (might) | Spellweaver | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Sorcery on a might Frostlord. Lexiav meh. |
+| **Mara Mat’ha** | Oathkeeper (might) | Coldblood Siblings | 5–6 Aga’Shoth Rider · 5–6 Aga’Shoth Rider · 5–6 Aga’Shoth Rider | Aga'Shoth Riders specialist. Lexiav meh. |
+| **Sister Keiri** | Riftspeaker (magic) | Mask of the Moon | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Masterful Umbral Grip. Lexiav meh. |
+| **Dhüvri** | Riftspeaker (magic) | True Believer | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Sprint specialist. Lexiav meh. |
 
 #### Tier C
 
 | Hero | Class | Specialty | Starting army | Note |
 |---|---|---|---|---|
-| **Wal’kha** | Oathkeeper (might) | Primal Weaving | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Wal'kha — Primal Magic on a might hero. Hybrid that doesn't lean into Schism's strengths. *(data)* |
-| **Martyr Tho** | Oathkeeper (might) | Alchemist | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Daylight Magic on might. Daylight isn't a Schism strength, and the spec doesn't cover the gap. *(data)* |
-| **Kwinri** | Riftspeaker (magic) | Low Summoning | 10–14 Ra’Shoth · 10–14 Ra’Shoth · 10–14 Ra’Shoth | Recruitment-locked spec, low ceiling. *(data)* |
-| **Tölketh** | Riftspeaker (magic) | Stellar Dilation | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Logistics; generic mage. *(data)* |
-| **Ulkuth** | Riftspeaker (magic) | Pathfinder | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Scouting; generic. *(data)* |
+| **Matastala the White** | Oathkeeper (might) | Chessmaster | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Tactics start. Lexiav bad — Tactics doesn't carry on Schism. |
+| **Jänhei** | Oathkeeper (might) | Roguish | 7–10 Cultist · 7–10 Cultist · 7–10 Cultist | Cultist specialist. Lexiav bad. |
+| **The Iron Master** | Oathkeeper (might) | Leash of Chains | 16–22 Ra’Shoth · 2–3 Concubus | Concubus specialist; Resistance start. Lexiav bad. |
+| **Wal’kha** | Oathkeeper (might) | Primal Weaving | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Wal'kha — Primal specialist. Lexiav bad. |
+| **Martyr Tho** | Oathkeeper (might) | Alchemist | 16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider | Economy / Mercury. Lexiav bad. |
+| **Kwinri** | Riftspeaker (magic) | Low Summoning | 10–14 Ra’Shoth · 10–14 Ra’Shoth · 10–14 Ra’Shoth | Tier 1 specialist; Recruitment. Lexiav bad. |
+| **Tölketh** | Riftspeaker (magic) | Stellar Dilation | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Heroic Strike specialist, but no Combat skill. Lexiav bad. |
+| **Ulkuth** | Riftspeaker (magic) | Pathfinder | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Pathfinding / Scouting. Lexiav bad. |
+| **Ra’Davok** | Riftspeaker (magic) | Magic Fortress | 13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider | Ra'Davok — Masterful Carapace; Arcane Magic. Lexiav bad. |
 
 ### Dungeon (Overlord / Warlock)
 
@@ -261,4 +251,4 @@ Phenomenally strong in single-hero PvP — top picks are 'perma-ban or perma-pic
 
 ---
 
-*Generated 2026-05-10 08:01 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*
+*Generated 2026-05-11 04:59 UTC by `catalog/scripts/build_tier_list.py`. Edit the script's `HEROES_TIERS` list to update.*

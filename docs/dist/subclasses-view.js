@@ -23,6 +23,9 @@ const CODE_TO_SKILL_ID = {
 const SubclassesView = () => {
   const { FACTIONS, SKILL_COLUMNS, SUBCLASSES } = window.OE_DATA;
   const skillByCode = Object.fromEntries(SKILL_COLUMNS.map((s) => [s.key, s]));
+  const verdictBy = Object.fromEntries(
+    (window.OE_TIER_DATA?.SUBCLASS_VERDICTS || []).map((v) => [`${v.faction}|${v.name}`, v])
+  );
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Subclasses"), FACTIONS.map((f) => {
     const subs = SUBCLASSES.filter((s) => s.faction === f.id);
     if (!subs.length) return null;
@@ -37,37 +40,41 @@ const SubclassesView = () => {
           e.target.style.visibility = "hidden";
         }
       }
-    ), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "name" }, f.name), /* @__PURE__ */ React.createElement("div", { className: "skill" }, f.might, " / ", f.magic, " \xB7 faction skill: ", f.skill))), /* @__PURE__ */ React.createElement("div", { className: "sub-grid" }, subs.map((s) => /* @__PURE__ */ React.createElement(
-      "article",
-      {
-        key: s.faction + s.name,
-        className: `sub-card sub-${s.kind}`
-      },
-      /* @__PURE__ */ React.createElement("header", { className: "sub-card-head" }, /* @__PURE__ */ React.createElement("span", { className: s.kind === "might" ? "glyph glyph-might" : "glyph glyph-magic" }, s.kind === "might" ? "\u2694" : "\u2726"), /* @__PURE__ */ React.createElement("span", { className: "sub-name" }, s.name), /* @__PURE__ */ React.createElement("span", { className: "sub-class" }, s.class)),
-      /* @__PURE__ */ React.createElement("div", { className: "sub-skills" }, s.skills.map((code) => {
-        const skill = skillByCode[code];
-        const sid = CODE_TO_SKILL_ID[code];
-        return /* @__PURE__ */ React.createElement("div", { key: code, className: `sub-skill sub-skill-${skill?.group || ""}` }, /* @__PURE__ */ React.createElement(
-          "img",
-          {
-            loading: "lazy",
-            className: "sub-skill-icon",
-            src: `img/skills/${sid}.png`,
-            alt: "",
-            onError: (e) => {
-              e.target.style.visibility = "hidden";
-            }
-          }
-        ), /* @__PURE__ */ React.createElement("span", { className: "sub-skill-name" }, skill?.name || code));
-      })),
-      /* @__PURE__ */ React.createElement(
-        "div",
+    ), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "name" }, f.name), /* @__PURE__ */ React.createElement("div", { className: "skill" }, f.might, " / ", f.magic, " \xB7 faction skill: ", f.skill))), /* @__PURE__ */ React.createElement("div", { className: "sub-grid" }, subs.map((s) => {
+      const v = verdictBy[`${s.faction}|${s.name}`];
+      return /* @__PURE__ */ React.createElement(
+        "article",
         {
-          className: "sub-effect",
-          dangerouslySetInnerHTML: { __html: s.effect }
-        }
-      )
-    ))));
+          key: s.faction + s.name,
+          className: `sub-card sub-${s.kind}`
+        },
+        /* @__PURE__ */ React.createElement("header", { className: "sub-card-head" }, /* @__PURE__ */ React.createElement("span", { className: s.kind === "might" ? "glyph glyph-might" : "glyph glyph-magic" }, s.kind === "might" ? "\u2694" : "\u2726"), /* @__PURE__ */ React.createElement("span", { className: "sub-name" }, s.name), /* @__PURE__ */ React.createElement("span", { className: "sub-class" }, s.class), v && /* @__PURE__ */ React.createElement("span", { className: `tier-badge tier-${v.tier}`, title: `Lexiav: tier ${v.tier}` }, v.tier)),
+        /* @__PURE__ */ React.createElement("div", { className: "sub-skills" }, s.skills.map((code) => {
+          const skill = skillByCode[code];
+          const sid = CODE_TO_SKILL_ID[code];
+          return /* @__PURE__ */ React.createElement("div", { key: code, className: `sub-skill sub-skill-${skill?.group || ""}` }, /* @__PURE__ */ React.createElement(
+            "img",
+            {
+              loading: "lazy",
+              className: "sub-skill-icon",
+              src: `img/skills/${sid}.png`,
+              alt: "",
+              onError: (e) => {
+                e.target.style.visibility = "hidden";
+              }
+            }
+          ), /* @__PURE__ */ React.createElement("span", { className: "sub-skill-name" }, skill?.name || code));
+        })),
+        /* @__PURE__ */ React.createElement(
+          "div",
+          {
+            className: "sub-effect",
+            dangerouslySetInnerHTML: { __html: s.effect }
+          }
+        ),
+        v?.note && /* @__PURE__ */ React.createElement("div", { className: "sub-verdict" }, /* @__PURE__ */ React.createElement("span", { className: "sub-verdict-src" }, "Lexiav"), " ", v.note)
+      );
+    })));
   }));
 };
 window.SubclassesView = SubclassesView;

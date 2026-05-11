@@ -1278,7 +1278,7 @@ window.OE_TIER_DATA = {
         "armyScore": 3395,
         "tier": "S",
         "derived": false,
-        "note": "Maelstrom — undisputed best Hive hero. Reaver specialist with Insight; spawns with 2-3 Reavers, solving Hive's miserable early game. Your Maniacal Reaver chains will close out Exodus."
+        "note": "Maelstrom — Reaver specialist + Insight start. Lexiav top pick. Spawns with 2-3 Reavers, solving Hive's miserable early game; Maniacal Reaver chains close out Exodus."
       },
       {
         "id": "demon_hero_4",
@@ -1293,67 +1293,22 @@ window.OE_TIER_DATA = {
         "armyScore": 2808,
         "tier": "S",
         "derived": false,
-        "note": "Zoran the Self-Founded — Worm specialist; starts with 2 Worms whose Corpse Eater ability heals & revives. Makes Hive's brutal early creeping survivable."
+        "note": "Zoran the Self-Founded — Worm specialist. Lexiav top pick. Starts with 2 Worms whose Corpse Eater heals & revives, making Hive's brutal early creeping survivable."
       },
       {
-        "id": "demon_hero_9",
-        "name": "Abigor, Duke of Battle",
+        "id": "demon_hero_1",
+        "name": "Niev",
         "kind": "might",
-        "specialty": "Chessmaster",
+        "specialty": "Shooter",
         "skills": [
           "Summon Swarm L1",
-          "Tactics L1"
+          "Offense L1"
         ],
         "army": "17–24 Parasite · 10–13 Locust · 5–7 Hornet",
         "armyScore": 3864,
-        "tier": "S",
+        "tier": "B",
         "derived": false,
-        "note": "Abigor, Duke of Battle — +1 hex tactics deploy + units gain +1 init per 6 hero levels. By L18 your whole army deploys in the enemy's face with +3 init = alpha-strike their ranged blob. Frequent ban."
-      },
-      {
-        "id": "demon_hero_5",
-        "name": "Curson, Duke of Rage",
-        "kind": "might",
-        "specialty": "Intimidating Strike",
-        "skills": [
-          "Summon Swarm L1",
-          "Combat L1"
-        ],
-        "army": "17–24 Parasite · 10–13 Locust · 5–7 Hornet",
-        "armyScore": 3864,
-        "tier": "A",
-        "derived": false,
-        "note": "Curson, Duke of Rage — top zero-loss creep with Heroic Strike chains (Effortless Strike makes it free, Confusing Strike removes counter-attack). *Conflicts:* one Hive guide says avoid because Heroic Strike competes with Summon Swarm focus economy. Strong on creeping, dependent on build path."
-      },
-      {
-        "id": "demon_hero_15",
-        "name": "Mila",
-        "kind": "magic",
-        "specialty": "Wingflap",
-        "skills": [
-          "Summon Swarm L1",
-          "Daylight Magic L1"
-        ],
-        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
-        "armyScore": 3174,
-        "tier": "A",
-        "derived": false,
-        "note": "Mila — Masterful Haste lets you haste the whole army turn 1, closing the melee gap that defines Hive's weakness. Solves the 'we can't reach them' problem."
-      },
-      {
-        "id": "demon_hero_16",
-        "name": "Oriax",
-        "kind": "magic",
-        "specialty": "Here and There",
-        "skills": [
-          "Summon Swarm L1",
-          "Summon Avatar L1"
-        ],
-        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
-        "armyScore": 3174,
-        "tier": "A",
-        "derived": false,
-        "note": "Oriax — Summon Avatar starter, 'Here and There' (likely Blink) spec. Matches the 'Allesnorn' archetype described in videos: blink enemy units into your blob and feast. Avatar + Blink combo is top-tier."
+        "note": "Niev — Basic Attack / Offense start. Lexiav meh."
       },
       {
         "id": "demon_hero_3",
@@ -1368,7 +1323,37 @@ window.OE_TIER_DATA = {
         "armyScore": 3864,
         "tier": "B",
         "derived": false,
-        "note": "Nor — Battlecraft start, gains extra attribute on level. Fan favorite but Battlecraft start isn't optimal."
+        "note": "Nor — Battlecraft start, gains extra attribute on level. Lexiav meh."
+      },
+      {
+        "id": "demon_hero_16",
+        "name": "Oriax",
+        "kind": "magic",
+        "specialty": "Here and There",
+        "skills": [
+          "Summon Swarm L1",
+          "Summon Avatar L1"
+        ],
+        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
+        "armyScore": 3174,
+        "tier": "B",
+        "derived": false,
+        "note": "Oriax — Masterful Blink, but starts with Summon Avatar. Lexiav meh."
+      },
+      {
+        "id": "demon_hero_5",
+        "name": "Curson, Duke of Rage",
+        "kind": "might",
+        "specialty": "Intimidating Strike",
+        "skills": [
+          "Summon Swarm L1",
+          "Combat L1"
+        ],
+        "army": "17–24 Parasite · 10–13 Locust · 5–7 Hornet",
+        "armyScore": 3864,
+        "tier": "C",
+        "derived": false,
+        "note": "Curson, Duke of Rage — Heroic Strike specialist. Lexiav bad — Heroic Strike fights Hive's Summon Swarm focus economy."
       },
       {
         "id": "demon_hero_6",
@@ -1380,9 +1365,9 @@ window.OE_TIER_DATA = {
         ],
         "army": "17–24 Parasite · 10–13 Locust · 5–7 Hornet",
         "armyScore": 3864,
-        "tier": "B",
+        "tier": "C",
         "derived": false,
-        "note": "Tavi — Larva specialist. Only viable on long, army-heavy templates where the Larva stack scales to self-sufficiency. Format-dependent."
+        "note": "Tavi — Fire Larva specialist. Lexiav bad."
       },
       {
         "id": "demon_hero_7",
@@ -1395,84 +1380,9 @@ window.OE_TIER_DATA = {
         ],
         "army": "8–10 Locust · 8–10 Locust · 8–10 Locust",
         "armyScore": 2916,
-        "tier": "B",
-        "derived": true,
-        "note": "Lo — Defense start, ships with 3 Locust stacks. Locusts are the early-game power stack; triple-stacking them gives tactical flexibility (data)."
-      },
-      {
-        "id": "demon_hero_12",
-        "name": "Bathym, Duke of Jewels",
-        "kind": "magic",
-        "specialty": "Charming Shine",
-        "skills": [
-          "Summon Swarm L1",
-          "Economy L1"
-        ],
-        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
-        "armyScore": 3174,
-        "tier": "B",
-        "derived": true,
-        "note": "Bathym, Duke of Jewels — Economy/Charming Shine. Solid greedy pick if your map has good gem nodes (data)."
-      },
-      {
-        "id": "demon_hero_13",
-        "name": "Leira",
-        "kind": "magic",
-        "specialty": "Stinging",
-        "skills": [
-          "Summon Swarm L1",
-          "Battle Magic L1"
-        ],
-        "army": "3–5 Hornet · 3–5 Hornet · 3–5 Hornet",
-        "armyScore": 2580,
-        "tier": "B",
-        "derived": true,
-        "note": "Leira — Battle Magic start with 3 stacks of Hornets (3-5 each). Hornet 1-stack init manipulation matches the late-round Wait trick (data)."
-      },
-      {
-        "id": "demon_hero_14",
-        "name": "Groo",
-        "kind": "magic",
-        "specialty": "Son of All Mothers",
-        "skills": [
-          "Summon Swarm L1",
-          "Wisdom L1"
-        ],
-        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
-        "armyScore": 3174,
-        "tier": "B",
-        "derived": true,
-        "note": "Groo — Wisdom start, 'Son of All Mothers'. Wisdom is universally good for caster development (data)."
-      },
-      {
-        "id": "demon_hero_17",
-        "name": "Khariseth",
-        "kind": "magic",
-        "specialty": "Primal Weaving",
-        "skills": [
-          "Summon Swarm L1",
-          "Primal Magic L1"
-        ],
-        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
-        "armyScore": 3174,
-        "tier": "B",
-        "derived": true,
-        "note": "Khariseth — Primal Weaving. Primal damage-dealer Hive caster; possible match for the unidentified 'Dro' build mentioned in one Hive guide (data)."
-      },
-      {
-        "id": "demon_hero_1",
-        "name": "Niev",
-        "kind": "might",
-        "specialty": "Shooter",
-        "skills": [
-          "Summon Swarm L1",
-          "Offense L1"
-        ],
-        "army": "17–24 Parasite · 10–13 Locust · 5–7 Hornet",
-        "armyScore": 3864,
         "tier": "C",
         "derived": false,
-        "note": "Niev ('Naev') — Offense specialty doesn't sustain Hive's fragile early army; explicitly called out as 'doesn't do enough' in the Hive ranking video."
+        "note": "Lo — Locust specialist. Lexiav bad."
       },
       {
         "id": "demon_hero_8",
@@ -1487,7 +1397,22 @@ window.OE_TIER_DATA = {
         "armyScore": 3864,
         "tier": "C",
         "derived": false,
-        "note": "Goldentongue ('Golden Tongue') — Morale specialist. Morale specialists thrive with shooters; Hive lacks early ranged units, so the kit doesn't fit."
+        "note": "Goldentongue — Morale specialist. Lexiav bad — shooter-friendly kit on a faction with no early ranged."
+      },
+      {
+        "id": "demon_hero_9",
+        "name": "Abigor, Duke of Battle",
+        "kind": "might",
+        "specialty": "Chessmaster",
+        "skills": [
+          "Summon Swarm L1",
+          "Tactics L1"
+        ],
+        "army": "17–24 Parasite · 10–13 Locust · 5–7 Hornet",
+        "armyScore": 3864,
+        "tier": "C",
+        "derived": false,
+        "note": "Abigor, Duke of Battle — Initiative scaling. Lexiav bad — was widely hyped/banned, lexiav rates poorly."
       },
       {
         "id": "demon_hero_10",
@@ -1501,8 +1426,8 @@ window.OE_TIER_DATA = {
         "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
         "armyScore": 3174,
         "tier": "C",
-        "derived": true,
-        "note": "Fleu — Logistics/Wayfarer; generic mage, no spec hook for tournament combat (data)."
+        "derived": false,
+        "note": "Fleu — Logistics specialist. Lexiav bad."
       },
       {
         "id": "demon_hero_11",
@@ -1516,8 +1441,83 @@ window.OE_TIER_DATA = {
         "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
         "armyScore": 3174,
         "tier": "C",
-        "derived": true,
-        "note": "Xirr — Resistance/elements; no spec hook (data)."
+        "derived": false,
+        "note": "Xirr — Resistance. Lexiav bad."
+      },
+      {
+        "id": "demon_hero_12",
+        "name": "Bathym, Duke of Jewels",
+        "kind": "magic",
+        "specialty": "Charming Shine",
+        "skills": [
+          "Summon Swarm L1",
+          "Economy L1"
+        ],
+        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
+        "armyScore": 3174,
+        "tier": "C",
+        "derived": false,
+        "note": "Bathym, Duke of Jewels — Economy. Lexiav bad."
+      },
+      {
+        "id": "demon_hero_13",
+        "name": "Leira",
+        "kind": "magic",
+        "specialty": "Stinging",
+        "skills": [
+          "Summon Swarm L1",
+          "Battle Magic L1"
+        ],
+        "army": "3–5 Hornet · 3–5 Hornet · 3–5 Hornet",
+        "armyScore": 2580,
+        "tier": "C",
+        "derived": false,
+        "note": "Leira — Hornet specialist. Lexiav bad."
+      },
+      {
+        "id": "demon_hero_14",
+        "name": "Groo",
+        "kind": "magic",
+        "specialty": "Son of All Mothers",
+        "skills": [
+          "Summon Swarm L1",
+          "Wisdom L1"
+        ],
+        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
+        "armyScore": 3174,
+        "tier": "C",
+        "derived": false,
+        "note": "Groo — Hive Queen specialist. Lexiav bad."
+      },
+      {
+        "id": "demon_hero_15",
+        "name": "Mila",
+        "kind": "magic",
+        "specialty": "Wingflap",
+        "skills": [
+          "Summon Swarm L1",
+          "Daylight Magic L1"
+        ],
+        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
+        "armyScore": 3174,
+        "tier": "C",
+        "derived": false,
+        "note": "Mila — Expert Haste. Lexiav bad."
+      },
+      {
+        "id": "demon_hero_17",
+        "name": "Khariseth",
+        "kind": "magic",
+        "specialty": "Primal Weaving",
+        "skills": [
+          "Summon Swarm L1",
+          "Primal Magic L1"
+        ],
+        "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
+        "armyScore": 3174,
+        "tier": "C",
+        "derived": false,
+        "note": "Khariseth — Primal specialist. Lexiav bad."
       },
       {
         "id": "demon_hero_18",
@@ -1531,11 +1531,26 @@ window.OE_TIER_DATA = {
         "army": "14–19 Parasite · 8–11 Locust · 4–6 Hornet",
         "armyScore": 3174,
         "tier": "C",
-        "derived": true,
-        "note": "Pauper — 'Flea Bites' is a low-impact effect spec; unsupported by creator commentary (data)."
+        "derived": false,
+        "note": "Pauper — Speed but starts with Battle Magic. Lexiav bad."
       }
     ],
     "schism": [
+      {
+        "id": "unfrozen_hero_8",
+        "name": "Changeling Urgo",
+        "kind": "might",
+        "specialty": "Everchanging Essence",
+        "skills": [
+          "Abyssal Communion L1",
+          "Summon Avatar L1"
+        ],
+        "army": "16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider",
+        "armyScore": 3928,
+        "tier": "S",
+        "derived": false,
+        "note": "Changeling Urgo — Summon Avatar specialist. Lexiav top pick — free 0-mana Avatar that scales with the Schism mage's spell-power stats."
+      },
       {
         "id": "unfrozen_hero_10",
         "name": "Grellekh the Betrayer",
@@ -1549,7 +1564,22 @@ window.OE_TIER_DATA = {
         "armyScore": 3252,
         "tier": "S",
         "derived": false,
-        "note": "Grellekh the Betrayer — incredible offense tempo. Offense start → Shadow Blades adds +1 base damage, which is ~50% damage increase for your weak T1 Rashoth shooters. Perfect Schism opener."
+        "note": "Grellekh the Betrayer — Basic Attack / Offense start. Lexiav top pick — Shadow Blades adds +1 base damage, ~50% boost on weak T1 Rashoth shooters."
+      },
+      {
+        "id": "unfrozen_hero_11",
+        "name": "Icequeen Hel’Ghat",
+        "kind": "magic",
+        "specialty": "Heart of Ice",
+        "skills": [
+          "Abyssal Communion L1",
+          "Defense L1"
+        ],
+        "army": "13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider",
+        "armyScore": 3252,
+        "tier": "S",
+        "derived": false,
+        "note": "Icequeen Hel'Ghat — Defense / Armor specialist. Lexiav top pick — Communion shadow army absorbs damage while the real army stays untouched."
       },
       {
         "id": "unfrozen_hero_13",
@@ -1564,37 +1594,7 @@ window.OE_TIER_DATA = {
         "armyScore": 3180,
         "tier": "S",
         "derived": false,
-        "note": "The Eye Collective — 'one of the absolute best heroes in the faction'. Starts with 2 Grand Shoth stacks (T4 power unit) AND Summon Avatar. Massive early tempo with a clear Grand-Shoth doom-stack target."
-      },
-      {
-        "id": "unfrozen_hero_8",
-        "name": "Changeling Urgo",
-        "kind": "might",
-        "specialty": "Everchanging Essence",
-        "skills": [
-          "Abyssal Communion L1",
-          "Summon Avatar L1"
-        ],
-        "army": "16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider",
-        "armyScore": 3928,
-        "tier": "A",
-        "derived": false,
-        "note": "Changeling Urgo — Summon Avatar specialist. Free 0-mana Avatar with a barrier scales hard with the Schism mage's spell-power-heavy stat distribution."
-      },
-      {
-        "id": "unfrozen_hero_11",
-        "name": "Icequeen Hel’Ghat",
-        "kind": "magic",
-        "specialty": "Heart of Ice",
-        "skills": [
-          "Abyssal Communion L1",
-          "Defense L1"
-        ],
-        "army": "13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider",
-        "armyScore": 3252,
-        "tier": "A",
-        "derived": false,
-        "note": "Icequeen Hel'Ghat — Armor specialist; oppressive synergy with Communion (bleed shadow army then absorb what would kill the real one). Durable early game."
+        "note": "The Eye Collective — Grand Shoth specialist + Summon Avatar. Lexiav top pick — starts with 2 Grand Shoth stacks (T4 power unit) for massive early tempo."
       },
       {
         "id": "unfrozen_hero_1",
@@ -1609,7 +1609,7 @@ window.OE_TIER_DATA = {
         "armyScore": 3928,
         "tier": "B",
         "derived": false,
-        "note": "Nihil — Logistics specialist. Pick *only* when the tempo heroes (Eye, Grellekh, Hel'Ghat, Urgo) are all banned out — early clearing is harder without combat stats."
+        "note": "Nihil — Logistics specialist. Lexiav meh — best on Sprint, maybe Exodus."
       },
       {
         "id": "unfrozen_hero_2",
@@ -1623,38 +1623,8 @@ window.OE_TIER_DATA = {
         "army": "16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider",
         "armyScore": 3928,
         "tier": "B",
-        "derived": true,
-        "note": "Blackhorn — Sorcery on a might Frostlord. Hybrid build with damage spells; no creator coverage (data)."
-      },
-      {
-        "id": "unfrozen_hero_3",
-        "name": "Matastala the White",
-        "kind": "might",
-        "specialty": "Chessmaster",
-        "skills": [
-          "Abyssal Communion L1",
-          "Tactics L1"
-        ],
-        "army": "16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider",
-        "armyScore": 3928,
-        "tier": "B",
-        "derived": true,
-        "note": "Matastala the White — Tactics start. Tactics is mediocre on Schism (Communion mechanic dominates), but deploys forward (data)."
-      },
-      {
-        "id": "unfrozen_hero_4",
-        "name": "Jänhei",
-        "kind": "might",
-        "specialty": "Roguish",
-        "skills": [
-          "Abyssal Communion L1",
-          "Wisdom L1"
-        ],
-        "army": "7–10 Cultist · 7–10 Cultist · 7–10 Cultist",
-        "armyScore": 3519,
-        "tier": "B",
-        "derived": true,
-        "note": "Jänhei — Wisdom start with 3 Cultist stacks. Wisdom is broadly good; Cultist meatshield volume fuels Summoning Rite demon-farm (data)."
+        "derived": false,
+        "note": "Blackhorn — Sorcery on a might Frostlord. Lexiav meh."
       },
       {
         "id": "unfrozen_hero_5",
@@ -1667,38 +1637,8 @@ window.OE_TIER_DATA = {
         "army": "5–6 Aga’Shoth Rider · 5–6 Aga’Shoth Rider · 5–6 Aga’Shoth Rider",
         "armyScore": 3201,
         "tier": "B",
-        "derived": true,
-        "note": "Mara Mat'ha — Coldblood Siblings, starts with 3 stacks of Aga'Shoth Riders. Riders are mainly demon-farm fuel but the volume helps early creeping (data)."
-      },
-      {
-        "id": "unfrozen_hero_6",
-        "name": "The Iron Master",
-        "kind": "might",
-        "specialty": "Leash of Chains",
-        "skills": [
-          "Abyssal Communion L1",
-          "Resistance L1"
-        ],
-        "army": "16–22 Ra’Shoth · 2–3 Concubus",
-        "armyScore": 2538,
-        "tier": "B",
-        "derived": true,
-        "note": "The Iron Master — Resistance + 'Leash of Chains', starts with 2-3 Concubus. Concubus utility (Mistress of Chains, Bewitcher) is huge — having early access matters (data)."
-      },
-      {
-        "id": "unfrozen_hero_16",
-        "name": "Ra’Davok",
-        "kind": "magic",
-        "specialty": "Magic Fortress",
-        "skills": [
-          "Abyssal Communion L1",
-          "Arcane Magic L1"
-        ],
-        "army": "13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider",
-        "armyScore": 3252,
-        "tier": "B",
-        "derived": true,
-        "note": "Ra'Davok — Arcane Magic; access to Blink, useful but not signature (data)."
+        "derived": false,
+        "note": "Mara Mat'ha — Aga'Shoth Riders specialist. Lexiav meh."
       },
       {
         "id": "unfrozen_hero_17",
@@ -1712,8 +1652,8 @@ window.OE_TIER_DATA = {
         "army": "13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider",
         "armyScore": 3252,
         "tier": "B",
-        "derived": true,
-        "note": "Sister Keiri — Nightshade Magic. Schism + Nightshade is potent (Twilight, Naira's Kiss); no specific video endorsement but the archetype is strong (data)."
+        "derived": false,
+        "note": "Sister Keiri — Masterful Umbral Grip. Lexiav meh."
       },
       {
         "id": "unfrozen_hero_18",
@@ -1726,8 +1666,53 @@ window.OE_TIER_DATA = {
         "army": "13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider",
         "armyScore": 3252,
         "tier": "B",
-        "derived": true,
-        "note": "Dhüvri — Communion L2 starter. Faction's gimmick from turn 1; quietly strong (data)."
+        "derived": false,
+        "note": "Dhüvri — Sprint specialist. Lexiav meh."
+      },
+      {
+        "id": "unfrozen_hero_3",
+        "name": "Matastala the White",
+        "kind": "might",
+        "specialty": "Chessmaster",
+        "skills": [
+          "Abyssal Communion L1",
+          "Tactics L1"
+        ],
+        "army": "16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider",
+        "armyScore": 3928,
+        "tier": "C",
+        "derived": false,
+        "note": "Matastala the White — Tactics start. Lexiav bad — Tactics doesn't carry on Schism."
+      },
+      {
+        "id": "unfrozen_hero_4",
+        "name": "Jänhei",
+        "kind": "might",
+        "specialty": "Roguish",
+        "skills": [
+          "Abyssal Communion L1",
+          "Wisdom L1"
+        ],
+        "army": "7–10 Cultist · 7–10 Cultist · 7–10 Cultist",
+        "armyScore": 3519,
+        "tier": "C",
+        "derived": false,
+        "note": "Jänhei — Cultist specialist. Lexiav bad."
+      },
+      {
+        "id": "unfrozen_hero_6",
+        "name": "The Iron Master",
+        "kind": "might",
+        "specialty": "Leash of Chains",
+        "skills": [
+          "Abyssal Communion L1",
+          "Resistance L1"
+        ],
+        "army": "16–22 Ra’Shoth · 2–3 Concubus",
+        "armyScore": 2538,
+        "tier": "C",
+        "derived": false,
+        "note": "The Iron Master — Concubus specialist; Resistance start. Lexiav bad."
       },
       {
         "id": "unfrozen_hero_7",
@@ -1741,8 +1726,8 @@ window.OE_TIER_DATA = {
         "army": "16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider",
         "armyScore": 3928,
         "tier": "C",
-        "derived": true,
-        "note": "Wal'kha — Primal Magic on a might hero. Hybrid that doesn't lean into Schism's strengths (data)."
+        "derived": false,
+        "note": "Wal'kha — Primal specialist. Lexiav bad."
       },
       {
         "id": "unfrozen_hero_9",
@@ -1756,8 +1741,8 @@ window.OE_TIER_DATA = {
         "army": "16–22 Ra’Shoth · 9–12 Cultist · 6–8 Aga’Shoth Rider",
         "armyScore": 3928,
         "tier": "C",
-        "derived": true,
-        "note": "Martyr Tho — Daylight Magic on might. Daylight isn't a Schism strength, and the spec doesn't cover the gap (data)."
+        "derived": false,
+        "note": "Martyr Tho — Economy / Mercury. Lexiav bad."
       },
       {
         "id": "unfrozen_hero_12",
@@ -1771,8 +1756,8 @@ window.OE_TIER_DATA = {
         "army": "10–14 Ra’Shoth · 10–14 Ra’Shoth · 10–14 Ra’Shoth",
         "armyScore": 2124,
         "tier": "C",
-        "derived": true,
-        "note": "Kwinri — Recruitment-locked spec, low ceiling (data)."
+        "derived": false,
+        "note": "Kwinri — Tier 1 specialist; Recruitment. Lexiav bad."
       },
       {
         "id": "unfrozen_hero_14",
@@ -1786,8 +1771,8 @@ window.OE_TIER_DATA = {
         "army": "13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider",
         "armyScore": 3252,
         "tier": "C",
-        "derived": true,
-        "note": "Tölketh — Logistics; generic mage (data)."
+        "derived": false,
+        "note": "Tölketh — Heroic Strike specialist, but no Combat skill. Lexiav bad."
       },
       {
         "id": "unfrozen_hero_15",
@@ -1801,8 +1786,23 @@ window.OE_TIER_DATA = {
         "army": "13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider",
         "armyScore": 3252,
         "tier": "C",
-        "derived": true,
-        "note": "Ulkuth — Scouting; generic (data)."
+        "derived": false,
+        "note": "Ulkuth — Pathfinding / Scouting. Lexiav bad."
+      },
+      {
+        "id": "unfrozen_hero_16",
+        "name": "Ra’Davok",
+        "kind": "magic",
+        "specialty": "Magic Fortress",
+        "skills": [
+          "Abyssal Communion L1",
+          "Arcane Magic L1"
+        ],
+        "army": "13–18 Ra’Shoth · 7–10 Cultist · 5–7 Aga’Shoth Rider",
+        "armyScore": 3252,
+        "tier": "C",
+        "derived": false,
+        "note": "Ra'Davok — Masterful Carapace; Arcane Magic. Lexiav bad."
       }
     ],
     "dungeon": [
@@ -2077,5 +2077,151 @@ window.OE_TIER_DATA = {
       }
     ]
   },
-  "GENERATED_AT": "2026-05-10 08:01 UTC"
+  "SUBCLASS_VERDICTS": [
+    {
+      "faction": "temple",
+      "name": "Swashbuckler",
+      "tier": "A",
+      "note": "Offense / Luck / Leadership core; Nightshade meh, Wisdom later. Combat + Leadership keeps you flexible."
+    },
+    {
+      "faction": "temple",
+      "name": "Paragon",
+      "tier": "C",
+      "note": "Diplomacy and Avatar on a Knight — neither fits the kit."
+    },
+    {
+      "faction": "temple",
+      "name": "Grand Inquisitor",
+      "tier": "C",
+      "note": "Armor / Battle Magic / Insight are good, but Scouting + Arcane drag and the payoff doesn't land."
+    },
+    {
+      "faction": "temple",
+      "name": "Ascendant",
+      "tier": "C",
+      "note": "No payoff — you'll have enough mana anyway."
+    },
+    {
+      "faction": "necropolis",
+      "name": "Harbinger of Doom",
+      "tier": "B",
+      "note": "Defense and Luck OK; Sorcery / Primal / Scouting meh. Big payoff but only viable if you find a University."
+    },
+    {
+      "faction": "necropolis",
+      "name": "Walking Rot",
+      "tier": "B",
+      "note": "Diplomacy / Tactics / Wisdom soft. Min-morale enemy debuff is meh."
+    },
+    {
+      "faction": "necropolis",
+      "name": "Soulweaver",
+      "tier": "B",
+      "note": "Logistics / Insight / Avatar work; watch for Arcane and Battlecraft. Whatever payoff."
+    },
+    {
+      "faction": "necropolis",
+      "name": "Chronomancer",
+      "tier": "C",
+      "note": "Economy is meh — not viable."
+    },
+    {
+      "faction": "grove",
+      "name": "Fortune’s Favored",
+      "tier": "S",
+      "note": "Offense and Luck core; Wisdom and Primal usable, Diplo soft. Maximum Luck and always Lucky Strike."
+    },
+    {
+      "faction": "grove",
+      "name": "Wellspring of Vigor",
+      "tier": "B",
+      "note": "Skills are good but the focus payoff isn't really needed."
+    },
+    {
+      "faction": "grove",
+      "name": "Celestial Envoy",
+      "tier": "B",
+      "note": "Economy / Scouting / Arcane drag. Use-all-spells is nice but not worth it."
+    },
+    {
+      "faction": "grove",
+      "name": "Heaven’s Fury",
+      "tier": "B",
+      "note": "AoE Heroic Strike — but Druids don't specialise in Intelligence."
+    },
+    {
+      "faction": "hive",
+      "name": "Soul Eater",
+      "tier": "A",
+      "note": "Consume target corpse for stats. Lexiav 'good'."
+    },
+    {
+      "faction": "hive",
+      "name": "Progenitor",
+      "tier": "B",
+      "note": "Diplomacy / Arcane / Tactics drag. Payoff is meh."
+    },
+    {
+      "faction": "hive",
+      "name": "Lord of Chaos",
+      "tier": "B",
+      "note": "Scouting drag. Heroic Strike on a mage is awkward."
+    },
+    {
+      "faction": "hive",
+      "name": "Broodmother",
+      "tier": "B",
+      "note": "Doubling base stats of Fire Larvae isn't impactful."
+    },
+    {
+      "faction": "schism",
+      "name": "Unfathomable",
+      "tier": "A",
+      "note": "Defense / Avatar / Luck / Logistics; Arcane is OK on Schism. All enemies deal min and you take their max — flat damage cap."
+    },
+    {
+      "faction": "schism",
+      "name": "Unbound",
+      "tier": "A",
+      "note": "Offense / Daylight / Leadership; Scouting and Sorcery meh. Max-level spells; probably wants University."
+    },
+    {
+      "faction": "schism",
+      "name": "Unstoppable",
+      "tier": "B",
+      "note": "Okay-ish payoff but skills are hard to find."
+    },
+    {
+      "faction": "schism",
+      "name": "Unfeeling",
+      "tier": "C",
+      "note": "Diplo / Economy / Nightshade. Stripping enemy focus charges per round isn't worth."
+    },
+    {
+      "faction": "dungeon",
+      "name": "Amelchia’s Heir",
+      "tier": "A",
+      "note": "Avatar / Insight / Primal fit Dungeon; Battlecraft and Tactics meh. Double spell power — needs a University."
+    },
+    {
+      "faction": "dungeon",
+      "name": "Silvertongue’s Envoy",
+      "tier": "A",
+      "note": "Defense / Daylight / Luck core; Scouting and Sorcery meh. Double defense."
+    },
+    {
+      "faction": "dungeon",
+      "name": "Balthazar’s Bodyguard",
+      "tier": "B",
+      "note": "Offense / Leadership work; Wisdom + Nightshade meh, Diplo bad. Double attack payoff."
+    },
+    {
+      "faction": "dungeon",
+      "name": "Great Merchant",
+      "tier": "C",
+      "note": "Economy / Arcane. Daily gold doesn't compete."
+    }
+  ],
+  "GENERATED_AT": "2026-05-11 04:59 UTC"
 };

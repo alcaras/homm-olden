@@ -21,6 +21,13 @@ const SubclassesView = () => {
   // Lookup: skill code → {name, group}
   const skillByCode = Object.fromEntries(SKILL_COLUMNS.map(s => [s.key, s]));
 
+  // Lexiav verdicts keyed by `${faction}|${name}`. Built from tier-data.js;
+  // entries without a verdict simply render no badge / no note.
+  const verdictBy = Object.fromEntries(
+    (window.OE_TIER_DATA?.SUBCLASS_VERDICTS || [])
+      .map(v => [`${v.faction}|${v.name}`, v])
+  );
+
   return (
     <>
       <h1>Subclasses</h1>
@@ -39,7 +46,9 @@ const SubclassesView = () => {
               </div>
             </div>
             <div className="sub-grid">
-              {subs.map(s => (
+              {subs.map(s => {
+                const v = verdictBy[`${s.faction}|${s.name}`];
+                return (
                 <article key={s.faction + s.name}
                          className={`sub-card sub-${s.kind}`}>
                   <header className="sub-card-head">
@@ -48,6 +57,11 @@ const SubclassesView = () => {
                     </span>
                     <span className="sub-name">{s.name}</span>
                     <span className="sub-class">{s.class}</span>
+                    {v && (
+                      <span className={`tier-badge tier-${v.tier}`} title={`Lexiav: tier ${v.tier}`}>
+                        {v.tier}
+                      </span>
+                    )}
                   </header>
                   <div className="sub-skills">
                     {s.skills.map(code => {
@@ -65,8 +79,14 @@ const SubclassesView = () => {
                   </div>
                   <div className="sub-effect"
                        dangerouslySetInnerHTML={{__html: s.effect}} />
+                  {v?.note && (
+                    <div className="sub-verdict">
+                      <span className="sub-verdict-src">Lexiav</span> {v.note}
+                    </div>
+                  )}
                 </article>
-              ))}
+                );
+              })}
             </div>
           </section>
         );

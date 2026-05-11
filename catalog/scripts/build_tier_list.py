@@ -371,103 +371,93 @@ HEROES_TIERS = [
      "Echolily — Murmuring Copy. Lexiav meh — clones enemies, not very good."),
 
     # ---------------- HIVE ---------------- #
+    # Tiers per lexiav. Note: Abigor demoted from S → C, Curson/Mila A → C,
+    # Oriax A → B; Niev C → B (lexiav meh, not bad). All other 'meh' heroes
+    # land at B; everything in lexiav's bad bucket is C.
     ("demon_hero_2", "S", False,
-     "Maelstrom — undisputed best Hive hero. Reaver specialist with Insight; spawns with 2-3 Reavers, solving "
-     "Hive's miserable early game. Your Maniacal Reaver chains will close out Exodus."),
+     "Maelstrom — Reaver specialist + Insight start. Lexiav top pick. Spawns with 2-3 Reavers, solving Hive's "
+     "miserable early game; Maniacal Reaver chains close out Exodus."),
     ("demon_hero_4", "S", False,
-     "Zoran the Self-Founded — Worm specialist; starts with 2 Worms whose Corpse Eater ability heals & revives. "
-     "Makes Hive's brutal early creeping survivable."),
-    ("demon_hero_9", "S", False,
-     "Abigor, Duke of Battle — +1 hex tactics deploy + units gain +1 init per 6 hero levels. By L18 your whole "
-     "army deploys in the enemy's face with +3 init = alpha-strike their ranged blob. Frequent ban."),
-    ("demon_hero_5", "A", False,
-     "Curson, Duke of Rage — top zero-loss creep with Heroic Strike chains (Effortless Strike makes it free, "
-     "Confusing Strike removes counter-attack). *Conflicts:* one Hive guide says avoid because Heroic Strike "
-     "competes with Summon Swarm focus economy. Strong on creeping, dependent on build path."),
-    ("demon_hero_15", "A", False,
-     "Mila — Masterful Haste lets you haste the whole army turn 1, closing the melee gap that defines Hive's "
-     "weakness. Solves the 'we can't reach them' problem."),
-    ("demon_hero_16", "A", False,
-     "Oriax — Summon Avatar starter, 'Here and There' (likely Blink) spec. Matches the 'Allesnorn' archetype "
-     "described in videos: blink enemy units into your blob and feast. Avatar + Blink combo is top-tier."),
+     "Zoran the Self-Founded — Worm specialist. Lexiav top pick. Starts with 2 Worms whose Corpse Eater heals "
+     "& revives, making Hive's brutal early creeping survivable."),
     ("demon_hero_3", "B", False,
-     "Nor — Battlecraft start, gains extra attribute on level. Fan favorite but Battlecraft start isn't optimal."),
-    ("demon_hero_6", "B", False,
-     "Tavi — Larva specialist. Only viable on long, army-heavy templates where the Larva stack scales to "
-     "self-sufficiency. Format-dependent."),
-    ("demon_hero_13", "B", True,
-     "Leira — Battle Magic start with 3 stacks of Hornets (3-5 each). Hornet 1-stack init manipulation matches "
-     "the late-round Wait trick (data)."),
-    ("demon_hero_7", "B", True,
-     "Lo — Defense start, ships with 3 Locust stacks. Locusts are the early-game power stack; triple-stacking "
-     "them gives tactical flexibility (data)."),
-    ("demon_hero_17", "B", True,
-     "Khariseth — Primal Weaving. Primal damage-dealer Hive caster; possible match for the unidentified 'Dro' "
-     "build mentioned in one Hive guide (data)."),
-    ("demon_hero_14", "B", True,
-     "Groo — Wisdom start, 'Son of All Mothers'. Wisdom is universally good for caster development (data)."),
-    ("demon_hero_12", "B", True,
-     "Bathym, Duke of Jewels — Economy/Charming Shine. Solid greedy pick if your map has good gem nodes (data)."),
-    ("demon_hero_1", "C", False,
-     "Niev ('Naev') — Offense specialty doesn't sustain Hive's fragile early army; explicitly called out as "
-     "'doesn't do enough' in the Hive ranking video."),
+     "Nor — Battlecraft start, gains extra attribute on level. Lexiav meh."),
+    ("demon_hero_1", "B", False,
+     "Niev — Basic Attack / Offense start. Lexiav meh."),
+    ("demon_hero_16", "B", False,
+     "Oriax — Masterful Blink, but starts with Summon Avatar. Lexiav meh."),
+    ("demon_hero_5", "C", False,
+     "Curson, Duke of Rage — Heroic Strike specialist. Lexiav bad — Heroic Strike fights Hive's Summon Swarm "
+     "focus economy."),
+    ("demon_hero_6", "C", False,
+     "Tavi — Fire Larva specialist. Lexiav bad."),
+    ("demon_hero_7", "C", False,
+     "Lo — Locust specialist. Lexiav bad."),
+    ("demon_hero_15", "C", False,
+     "Mila — Expert Haste. Lexiav bad."),
     ("demon_hero_8", "C", False,
-     "Goldentongue ('Golden Tongue') — Morale specialist. Morale specialists thrive with shooters; Hive lacks "
-     "early ranged units, so the kit doesn't fit."),
-    ("demon_hero_10", "C", True,
-     "Fleu — Logistics/Wayfarer; generic mage, no spec hook for tournament combat (data)."),
-    ("demon_hero_11", "C", True,
-     "Xirr — Resistance/elements; no spec hook (data)."),
-    ("demon_hero_18", "C", True,
-     "Pauper — 'Flea Bites' is a low-impact effect spec; unsupported by creator commentary (data)."),
+     "Goldentongue — Morale specialist. Lexiav bad — shooter-friendly kit on a faction with no early ranged."),
+    ("demon_hero_9", "C", False,
+     "Abigor, Duke of Battle — Initiative scaling. Lexiav bad — was widely hyped/banned, lexiav rates poorly."),
+    ("demon_hero_10", "C", False,
+     "Fleu — Logistics specialist. Lexiav bad."),
+    ("demon_hero_11", "C", False,
+     "Xirr — Resistance. Lexiav bad."),
+    ("demon_hero_12", "C", False,
+     "Bathym, Duke of Jewels — Economy. Lexiav bad."),
+    ("demon_hero_13", "C", False,
+     "Leira — Hornet specialist. Lexiav bad."),
+    ("demon_hero_14", "C", False,
+     "Groo — Hive Queen specialist. Lexiav bad."),
+    ("demon_hero_17", "C", False,
+     "Khariseth — Primal specialist. Lexiav bad."),
+    ("demon_hero_18", "C", False,
+     "Pauper — Speed but starts with Battle Magic. Lexiav bad."),
 
     # ---------------- SCHISM ---------------- #
+    # Tiers per lexiav. Hel'Ghat + Urgo promoted A → S; Iron Master, Janhei,
+    # Matastala, Ra'Davok demoted B → C. All formerly-derived calls are now
+    # video-grounded.
     ("unfrozen_hero_13", "S", False,
-     "The Eye Collective — 'one of the absolute best heroes in the faction'. Starts with 2 Grand Shoth stacks "
-     "(T4 power unit) AND Summon Avatar. Massive early tempo with a clear Grand-Shoth doom-stack target."),
+     "The Eye Collective — Grand Shoth specialist + Summon Avatar. Lexiav top pick — starts with 2 Grand Shoth "
+     "stacks (T4 power unit) for massive early tempo."),
     ("unfrozen_hero_10", "S", False,
-     "Grellekh the Betrayer — incredible offense tempo. Offense start → Shadow Blades adds +1 base damage, "
-     "which is ~50% damage increase for your weak T1 Rashoth shooters. Perfect Schism opener."),
-    ("unfrozen_hero_11", "A", False,
-     "Icequeen Hel'Ghat — Armor specialist; oppressive synergy with Communion (bleed shadow army then absorb "
-     "what would kill the real one). Durable early game."),
-    ("unfrozen_hero_8", "A", False,
-     "Changeling Urgo — Summon Avatar specialist. Free 0-mana Avatar with a barrier scales hard with the "
-     "Schism mage's spell-power-heavy stat distribution."),
+     "Grellekh the Betrayer — Basic Attack / Offense start. Lexiav top pick — Shadow Blades adds +1 base "
+     "damage, ~50% boost on weak T1 Rashoth shooters."),
+    ("unfrozen_hero_11", "S", False,
+     "Icequeen Hel'Ghat — Defense / Armor specialist. Lexiav top pick — Communion shadow army absorbs damage "
+     "while the real army stays untouched."),
+    ("unfrozen_hero_8", "S", False,
+     "Changeling Urgo — Summon Avatar specialist. Lexiav top pick — free 0-mana Avatar that scales with the "
+     "Schism mage's spell-power stats."),
     ("unfrozen_hero_1", "B", False,
-     "Nihil — Logistics specialist. Pick *only* when the tempo heroes (Eye, Grellekh, Hel'Ghat, Urgo) are all "
-     "banned out — early clearing is harder without combat stats."),
-    ("unfrozen_hero_6", "B", True,
-     "The Iron Master — Resistance + 'Leash of Chains', starts with 2-3 Concubus. Concubus utility (Mistress of "
-     "Chains, Bewitcher) is huge — having early access matters (data)."),
-    ("unfrozen_hero_5", "B", True,
-     "Mara Mat'ha — Coldblood Siblings, starts with 3 stacks of Aga'Shoth Riders. Riders are mainly demon-farm "
-     "fuel but the volume helps early creeping (data)."),
-    ("unfrozen_hero_2", "B", True,
-     "Blackhorn — Sorcery on a might Frostlord. Hybrid build with damage spells; no creator coverage (data)."),
-    ("unfrozen_hero_18", "B", True,
-     "Dhüvri — Communion L2 starter. Faction's gimmick from turn 1; quietly strong (data)."),
-    ("unfrozen_hero_17", "B", True,
-     "Sister Keiri — Nightshade Magic. Schism + Nightshade is potent (Twilight, Naira's Kiss); no specific "
-     "video endorsement but the archetype is strong (data)."),
-    ("unfrozen_hero_4", "B", True,
-     "Jänhei — Wisdom start with 3 Cultist stacks. Wisdom is broadly good; Cultist meatshield volume fuels "
-     "Summoning Rite demon-farm (data)."),
-    ("unfrozen_hero_3", "B", True,
-     "Matastala the White — Tactics start. Tactics is mediocre on Schism (Communion mechanic dominates), but "
-     "deploys forward (data)."),
-    ("unfrozen_hero_16", "B", True,
-     "Ra'Davok — Arcane Magic; access to Blink, useful but not signature (data)."),
-    ("unfrozen_hero_7", "C", True,
-     "Wal'kha — Primal Magic on a might hero. Hybrid that doesn't lean into Schism's strengths (data)."),
-    ("unfrozen_hero_9", "C", True,
-     "Martyr Tho — Daylight Magic on might. Daylight isn't a Schism strength, and the spec doesn't cover the gap (data)."),
-    ("unfrozen_hero_14", "C", True,
-     "Tölketh — Logistics; generic mage (data)."),
-    ("unfrozen_hero_15", "C", True,
-     "Ulkuth — Scouting; generic (data)."),
-    ("unfrozen_hero_12", "C", True,
-     "Kwinri — Recruitment-locked spec, low ceiling (data)."),
+     "Nihil — Logistics specialist. Lexiav meh — best on Sprint, maybe Exodus."),
+    ("unfrozen_hero_2", "B", False,
+     "Blackhorn — Sorcery on a might Frostlord. Lexiav meh."),
+    ("unfrozen_hero_5", "B", False,
+     "Mara Mat'ha — Aga'Shoth Riders specialist. Lexiav meh."),
+    ("unfrozen_hero_17", "B", False,
+     "Sister Keiri — Masterful Umbral Grip. Lexiav meh."),
+    ("unfrozen_hero_18", "B", False,
+     "Dhüvri — Sprint specialist. Lexiav meh."),
+    ("unfrozen_hero_3", "C", False,
+     "Matastala the White — Tactics start. Lexiav bad — Tactics doesn't carry on Schism."),
+    ("unfrozen_hero_4", "C", False,
+     "Jänhei — Cultist specialist. Lexiav bad."),
+    ("unfrozen_hero_6", "C", False,
+     "The Iron Master — Concubus specialist; Resistance start. Lexiav bad."),
+    ("unfrozen_hero_7", "C", False,
+     "Wal'kha — Primal specialist. Lexiav bad."),
+    ("unfrozen_hero_9", "C", False,
+     "Martyr Tho — Economy / Mercury. Lexiav bad."),
+    ("unfrozen_hero_12", "C", False,
+     "Kwinri — Tier 1 specialist; Recruitment. Lexiav bad."),
+    ("unfrozen_hero_14", "C", False,
+     "Tölketh — Heroic Strike specialist, but no Combat skill. Lexiav bad."),
+    ("unfrozen_hero_15", "C", False,
+     "Ulkuth — Pathfinding / Scouting. Lexiav bad."),
+    ("unfrozen_hero_16", "C", False,
+     "Ra'Davok — Masterful Carapace; Arcane Magic. Lexiav bad."),
 
     # ---------------- DUNGEON ---------------- #
     # Tiers per lexiav. Big shifts: Motley + Lodos demoted from S → B/C
@@ -509,6 +499,88 @@ HEROES_TIERS = [
     ("dungeon_hero_18", "C", False,
      "Lodos — Nightshade specialist (Sleep). Lexiav bad — was widely considered S, lexiav rates poorly."),
 ]
+
+
+# --------------------------------------------------------------------------- #
+# Subclass verdicts (per lexiav)
+# --------------------------------------------------------------------------- #
+# Keyed by (faction_id, subclass_name) — name must match docs/data.js exactly,
+# including curly apostrophes. Tier scale matches heroes:
+#   S = great, A = good/solid, B = meh, C = bad.
+
+SUBCLASS_VERDICTS: dict[tuple[str, str], tuple[str, str]] = {
+    # Temple
+    ("temple", "Swashbuckler"):
+        ("A", "Offense / Luck / Leadership core; Nightshade meh, Wisdom later. "
+              "Combat + Leadership keeps you flexible."),
+    ("temple", "Paragon"):
+        ("C", "Diplomacy and Avatar on a Knight — neither fits the kit."),
+    ("temple", "Grand Inquisitor"):
+        ("C", "Armor / Battle Magic / Insight are good, but Scouting + Arcane drag "
+              "and the payoff doesn't land."),
+    ("temple", "Ascendant"):
+        ("C", "No payoff — you'll have enough mana anyway."),
+
+    # Necropolis
+    ("necropolis", "Harbinger of Doom"):
+        ("B", "Defense and Luck OK; Sorcery / Primal / Scouting meh. Big payoff "
+              "but only viable if you find a University."),
+    ("necropolis", "Walking Rot"):
+        ("B", "Diplomacy / Tactics / Wisdom soft. Min-morale enemy debuff is meh."),
+    ("necropolis", "Soulweaver"):
+        ("B", "Logistics / Insight / Avatar work; watch for Arcane and Battlecraft. "
+              "Whatever payoff."),
+    ("necropolis", "Chronomancer"):
+        ("C", "Economy is meh — not viable."),
+
+    # Grove
+    ("grove", "Fortune’s Favored"):
+        ("S", "Offense and Luck core; Wisdom and Primal usable, Diplo soft. "
+              "Maximum Luck and always Lucky Strike."),
+    ("grove", "Wellspring of Vigor"):
+        ("B", "Skills are good but the focus payoff isn't really needed."),
+    ("grove", "Celestial Envoy"):
+        ("B", "Economy / Scouting / Arcane drag. Use-all-spells is nice but not "
+              "worth it."),
+    ("grove", "Heaven’s Fury"):
+        ("B", "AoE Heroic Strike — but Druids don't specialise in Intelligence."),
+
+    # Hive
+    ("hive", "Soul Eater"):
+        ("A", "Consume target corpse for stats. Lexiav 'good'."),
+    ("hive", "Progenitor"):
+        ("B", "Diplomacy / Arcane / Tactics drag. Payoff is meh."),
+    ("hive", "Lord of Chaos"):
+        ("B", "Scouting drag. Heroic Strike on a mage is awkward."),
+    ("hive", "Broodmother"):
+        ("B", "Doubling base stats of Fire Larvae isn't impactful."),
+
+    # Schism
+    ("schism", "Unfathomable"):
+        ("A", "Defense / Avatar / Luck / Logistics; Arcane is OK on Schism. All "
+              "enemies deal min and you take their max — flat damage cap."),
+    ("schism", "Unbound"):
+        ("A", "Offense / Daylight / Leadership; Scouting and Sorcery meh. Max-level "
+              "spells; probably wants University."),
+    ("schism", "Unstoppable"):
+        ("B", "Okay-ish payoff but skills are hard to find."),
+    ("schism", "Unfeeling"):
+        ("C", "Diplo / Economy / Nightshade. Stripping enemy focus charges per "
+              "round isn't worth."),
+
+    # Dungeon
+    ("dungeon", "Amelchia’s Heir"):
+        ("A", "Avatar / Insight / Primal fit Dungeon; Battlecraft and Tactics meh. "
+              "Double spell power — needs a University."),
+    ("dungeon", "Silvertongue’s Envoy"):
+        ("A", "Defense / Daylight / Luck core; Scouting and Sorcery meh. Double "
+              "defense."),
+    ("dungeon", "Balthazar’s Bodyguard"):
+        ("B", "Offense / Leadership work; Wisdom + Nightshade meh, Diplo bad. "
+              "Double attack payoff."),
+    ("dungeon", "Great Merchant"):
+        ("C", "Economy / Arcane. Daily gold doesn't compete."),
+}
 
 
 # --------------------------------------------------------------------------- #
@@ -562,13 +634,26 @@ def load_factions_from_data_js() -> list[dict]:
     return json.loads(m.group(1))
 
 
+def load_subclasses_from_data_js() -> list[dict]:
+    text = DATA_JS.read_text(encoding="utf-8")
+    m = re.search(r"const SUBCLASSES = (\[.*?\]);", text, re.DOTALL)
+    return json.loads(m.group(1))
+
+
 TIER_ORDER = ["S", "A", "B", "C"]
 
 
 def build():
     heroes = load_heroes_from_data_js()
     factions = load_factions_from_data_js()
+    subclasses = load_subclasses_from_data_js()
     faction_by_id = {f["id"]: f for f in factions}
+
+    # Sanity: every subclass verdict must reference a real (faction, name) pair.
+    sub_keys = {(s["faction"], s["name"]) for s in subclasses}
+    for k in SUBCLASS_VERDICTS:
+        if k not in sub_keys:
+            raise RuntimeError(f"unknown subclass in SUBCLASS_VERDICTS: {k}")
 
     # Sanity: every tier entry must reference a known hero
     seen_ids = set()
@@ -684,11 +769,20 @@ def build():
         if fid in faction_meta_out:
             faction_meta_out[fid]["signature_mechanic"] = sig
 
+    # Subclass verdicts as a flat list — keyed by (faction, name) on the JS
+    # side. Missing entries mean "no editorial verdict yet"; views render
+    # those without a tier badge.
+    subclass_verdicts_out = [
+        {"faction": fac, "name": name, "tier": tier, "note": note}
+        for (fac, name), (tier, note) in SUBCLASS_VERDICTS.items()
+    ]
+
     js_payload = {
         "FACTIONS": [{"id": f["id"], "name": f["name"], "might": f["might"], "magic": f["magic"]} for f in factions],
         "FACTION_META": faction_meta_out,
         "OPENING_PICKS": [{"title": t, "body": b} for t, b in OPENING_PICKS],
         "BY_FACTION": by_faction,
+        "SUBCLASS_VERDICTS": subclass_verdicts_out,
         "GENERATED_AT": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     }
     js = "/* generated by catalog/scripts/build_tier_list.py — do not edit by hand */\n"
