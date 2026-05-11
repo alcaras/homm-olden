@@ -196,6 +196,39 @@ if barracks_path.exists():
         if units and units[0].get("sids"):
             barracks_unit[bid] = units[0]["sids"][0]
 
+# Hand-curated map-object → asset overrides for ids whose default candidates
+# below don't resolve. Each entry inserts an extra candidate at the *front*
+# of the list so the override wins. Verified against resources.assets +
+# sharedassets*.assets in the May 2026 build.
+MAP_OBJECT_OVERRIDES: dict[str, list[str]] = {
+    # Use the actual building diffuse where the id is a placeholder name.
+    "camp_fire":            ["campfire_diffuse"],
+    "portal_one":           ["portal_1_diffuse"],
+    "chimerologist":        ["Chimerists_Lair_diffuse"],
+    "the_gorge":            ["gorge_diffuse"],
+    "gladiator_arena":      ["hell_light_arena_diffuse"],
+    "lost_library":         ["endless_library_diffuse"],
+    "mana_well":            ["autumn_well_01_diffuse"],
+    "huntsmans_camp":       ["temporary_camp"],
+    "unforgotten_grave":    ["graves_diffuse"],
+    # Existing _icon-suffixed sprites the default candidate list missed.
+    "mysterious_stone":     ["mysterious_stone_icon"],
+    "beer_fountain":        ["beer_fountain_buff_icon"],
+    # Numbered neutral barracks where the unit→texture mapping isn't a
+    # straight substring (typos in shipped asset names, synonym swaps).
+    "barracks_neutral_1":   ["Scholars_House_diffuse"],          # Temple of Four Scholars
+    "barracks_neutral_2":   ["obsidian_dragon"],                 # Dragon Crag — no architecture asset, fall back to unit art
+    "barracks_neutral_3":   ["barracks_neutral_world_watcher"],  # Watcher Platform
+    "barracks_neutral_4":   ["barracks_neutral_coatle"],         # Pyramid (asset uses 'coatle')
+    "barracks_neutral_7":   ["barracks_neutral_giand_frog"],     # Blooming Marsh (asset typo 'giand')
+    "barracks_neutral_9":   ["barracks_neutral_dragonslayer"],   # Dragonslayer Base
+    "barracks_neutral_17":  ["barracks_neutral_fairy"],          # Pixie Tower (pixie ≈ fairy)
+    # No usable asset in the May 2026 build for: barracks_neutral_5 (Manticore
+    # tower), block_campaign, bronze_prayer, platinum_prayer, orb_observatory,
+    # research_laboratory. These render with the missing-image fallback.
+}
+
+
 mo_path = RAW / "Lang" / "english" / "texts" / "mapObjects.json"
 if mo_path.exists():
     for t in _load_tokens_raw(mo_path):
@@ -216,6 +249,9 @@ if mo_path.exists():
             unit_sid = barracks_unit[base]
             candidates.insert(1, f"barracks_neutral_{unit_sid}")
             candidates.insert(2, f"barracks_neutral_{unit_sid.replace('_upg','').replace('_alt','')}")
+        # Hand-curated overrides win — push to the front so they're tried first.
+        for ov in reversed(MAP_OBJECT_OVERRIDES.get(base, [])):
+            candidates.insert(0, ov)
         wanted.append((IMG / "map_objects" / base, candidates))
 
 
@@ -252,28 +288,46 @@ for p in (RAW / "DB" / "fractions_laws").glob("fractions_laws_table_*.json"):
         wanted.append((IMG / "laws" / fkey / num, ico))
 
 
-# ---------- Index resources.assets by name ----------
-print(f"loading {RESOURCES_ASSETS}…")
-env = UnityPy.load(str(RESOURCES_ASSETS))
-print(f"  {len(env.objects)} objects")
+# ---------- Index every bundle by texture/sprite name ----------
+# resources.assets carries the bulk of icons; sharedassets*.assets host
+# additional sprites + diffuse textures (Scholars_House_diffuse,
+# graves_diffuse, endless_library_diffuse, etc.) referenced by the map-object
+# overrides.
+import glob as _glob
+ASSET_BUNDLES = [str(RESOURCES_ASSETS)] + sorted(_glob.glob(
+    str(RESOURCES_ASSETS.parent / "sharedassets*.assets")))
 
-# Build name → object map. Prefer Texture2D over Sprite (full image vs atlas slice).
+# Build name → object map. Prefer Texture2D over Sprite (full image vs atlas
+# slice); resources.assets matches win over sharedassets matches for backward
+# compatibility with the prior single-bundle indexing.
 by_name_tex: dict[str, object] = {}
 by_name_spr: dict[str, object] = {}
-for o in env.objects:
-    if o.type.name not in ("Texture2D", "Sprite"):
-        continue
+for bundle in ASSET_BUNDLES:
+    print(f"loading {Path(bundle).name}…")
     try:
-        d = o.read()
-        n = getattr(d, "m_Name", "") or ""
-    except Exception:
+        env_b = UnityPy.load(bundle)
+    except Exception as e:
+        print(f"  skip ({e})")
         continue
-    if not n:
-        continue
-    if o.type.name == "Texture2D":
-        by_name_tex.setdefault(n, o)
-    else:
-        by_name_spr.setdefault(n, o)
+    n_obj = 0
+    for o in env_b.objects:
+        if o.type.name not in ("Texture2D", "Sprite"):
+            continue
+        try:
+            d = o.read()
+            n = getattr(d, "m_Name", "") or ""
+        except Exception:
+            continue
+        if not n:
+            continue
+        n_obj += 1
+        if o.type.name == "Texture2D":
+            by_name_tex.setdefault(n, o)
+        else:
+            by_name_spr.setdefault(n, o)
+    print(f"  +{n_obj} textures/sprites")
+print(f"index: {len(by_name_tex):,} Texture2D · {len(by_name_spr):,} Sprite")
+env = None  # legacy reference removed; downstream uses the name maps above.
 
 
 # ---------- Extract ----------
