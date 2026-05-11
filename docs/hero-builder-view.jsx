@@ -83,6 +83,8 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     skills: { ...initialSkills },
     pending: null,   // { stat, offered: [skill, skill], levelTarget }
     log: [],         // [{ level, stat, skillName, skillLvlAfter }]
+    items: {},       // { slot: artifactId }
+    pickerSlot: null,// which slot's picker is currently open
   }), [hero, initialSkills]);
 
   const [sim, setSim] = React.useState(initialState);
@@ -183,6 +185,42 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
   };
 
   const reset = () => setSim(initialState());
+
+  // --- items / artifacts ---
+  const A = window.OE_ARTIFACTS_DATA;
+  const artifactsBySlot = React.useMemo(() => {
+    const g = {};
+    for (const a of (A?.ARTIFACTS || [])) {
+      (g[a.slot] = g[a.slot] || []).push(a);
+    }
+    // Sort each slot by rarity (legendary > epic > rare > common) then name.
+    const rOrder = { legendary: 0, epic: 1, rare: 2, common: 3 };
+    for (const k of Object.keys(g)) {
+      g[k].sort((x, y) =>
+        (rOrder[x.rarity] ?? 9) - (rOrder[y.rarity] ?? 9)
+        || x.name.localeCompare(y.name));
+    }
+    return g;
+  }, [A]);
+  const artifactById = React.useMemo(() => {
+    const m = {};
+    for (const a of (A?.ARTIFACTS || [])) m[a.id] = a;
+    return m;
+  }, [A]);
+
+  const openPicker = (slot) =>
+    setSim(prev => ({...prev, pickerSlot: prev.pickerSlot === slot ? null : slot}));
+  const equip = (slot, artifactId) =>
+    setSim(prev => ({
+      ...prev,
+      items: { ...prev.items, [slot]: artifactId },
+      pickerSlot: null,
+    }));
+  const unequip = (slot) =>
+    setSim(prev => {
+      const items = {...prev.items}; delete items[slot];
+      return {...prev, items};
+    });
 
   // --- derived ---
   const STAT_LABEL = { A: 'Attack', D: 'Defense', P: 'Power', K: 'Knowledge' };
@@ -287,6 +325,72 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
             </div>
           )}
           <button className="hb-btn hb-btn-sm" onClick={reroll}>Reroll offers</button>
+        </section>
+      )}
+
+      {/* === Equipped items === */}
+      {A && (
+        <section className="hb-section">
+          <h2>Items ({Object.keys(sim.items).length}/{A.SLOT_ORDER.length})</h2>
+          <div className="hb-slots">
+            {A.SLOT_ORDER.map(slot => {
+              const equipped = sim.items[slot] ? artifactById[sim.items[slot]] : null;
+              const open = sim.pickerSlot === slot;
+              return (
+                <div key={slot} className={'hb-slot' + (open ? ' open' : '') + (equipped ? ' filled' : ' empty')}>
+                  <button className="hb-slot-btn" onClick={() => openPicker(slot)}>
+                    <span className="hb-slot-lbl">{A.SLOT_LABEL[slot]}</span>
+                    {equipped ? (
+                      <>
+                        <img loading="lazy" className="hb-slot-img"
+                             src={`img/artifacts/${equipped.id}.png`} alt=""
+                             onError={(e)=>{e.target.style.visibility='hidden';}} />
+                        <span className={`hb-slot-name hb-rarity-${equipped.rarity}`}>
+                          {equipped.name}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="hb-slot-empty">— empty —</span>
+                    )}
+                  </button>
+                  {equipped && (
+                    <button className="hb-slot-x" onClick={() => unequip(slot)}
+                            title="Unequip">×</button>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Inline picker for the open slot */}
+          {sim.pickerSlot && (
+            <ArtifactPicker
+              slot={sim.pickerSlot}
+              slotLabel={A.SLOT_LABEL[sim.pickerSlot]}
+              candidates={artifactsBySlot[sim.pickerSlot] || []}
+              currentId={sim.items[sim.pickerSlot]}
+              onPick={(id) => equip(sim.pickerSlot, id)}
+              onClose={() => setSim(prev => ({...prev, pickerSlot: null}))}
+            />
+          )}
+
+          {/* Combined bonuses across all equipped items */}
+          {Object.keys(sim.items).length > 0 && (
+            <div className="hb-item-bonuses">
+              <div className="hb-base-eyebrow">Bonuses from equipped items</div>
+              <ul className="hb-bonus-list">
+                {Object.values(sim.items).map(id => artifactById[id]).filter(Boolean)
+                  .flatMap(a => (a.bonuses || []).map((b, i) => ({a, b, key: `${a.id}-${i}`})))
+                  .map(({a, b, key}) => (
+                    <li key={key}>
+                      <span className={`hb-rarity-${a.rarity}`}>{a.name}</span>
+                      <span className="hb-bonus-sep"> · </span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          )}
         </section>
       )}
 
@@ -457,6 +561,44 @@ const HeroPicker = ({ D, go }) => {
         ))}
       </div>
     </>
+  );
+};
+
+// ---- artifact picker (per-slot grid with rarity filter) ----
+const ArtifactPicker = ({ slot, slotLabel, candidates, currentId, onPick, onClose }) => {
+  const [rarity, setRarity] = React.useState('all');
+  const filtered = rarity === 'all' ? candidates : candidates.filter(a => a.rarity === rarity);
+
+  return (
+    <div className="hb-picker">
+      <div className="hb-picker-head">
+        <span className="hb-picker-title">{slotLabel} — pick an item</span>
+        <div className="hb-picker-filter">
+          {['all','legendary','epic','rare','common'].map(r => (
+            <button key={r}
+                    className={'hb-picker-rarity hb-rarity-' + r + (rarity === r ? ' active' : '')}
+                    onClick={() => setRarity(r)}>{r}</button>
+          ))}
+        </div>
+        <button className="hb-btn hb-btn-sm" onClick={onClose}>Close</button>
+      </div>
+      <div className="hb-picker-grid">
+        {filtered.map(a => (
+          <button key={a.id}
+                  className={'hb-art-card hb-rarity-' + a.rarity + (a.id === currentId ? ' selected' : '')}
+                  onClick={() => onPick(a.id)}
+                  title={a.bonuses?.join('\n') || a.desc || ''}>
+            <img loading="lazy" className="hb-art-icon"
+                 src={`img/artifacts/${a.id}.png`} alt=""
+                 onError={(e)=>{e.target.style.visibility='hidden';}} />
+            <span className="hb-art-name">{a.name}</span>
+            {a.bonuses?.length > 0 && (
+              <span className="hb-art-bonus">{a.bonuses[0]}</span>
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 };
 

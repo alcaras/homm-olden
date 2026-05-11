@@ -66,8 +66,12 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     skills: { ...initialSkills },
     pending: null,
     // { stat, offered: [skill, skill], levelTarget }
-    log: []
+    log: [],
     // [{ level, stat, skillName, skillLvlAfter }]
+    items: {},
+    // { slot: artifactId }
+    pickerSlot: null
+    // which slot's picker is currently open
   }), [hero, initialSkills]);
   const [sim, setSim] = React.useState(initialState);
   React.useEffect(() => {
@@ -157,6 +161,34 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
     });
   };
   const reset = () => setSim(initialState());
+  const A = window.OE_ARTIFACTS_DATA;
+  const artifactsBySlot = React.useMemo(() => {
+    const g = {};
+    for (const a of A?.ARTIFACTS || []) {
+      (g[a.slot] = g[a.slot] || []).push(a);
+    }
+    const rOrder = { legendary: 0, epic: 1, rare: 2, common: 3 };
+    for (const k of Object.keys(g)) {
+      g[k].sort((x, y) => (rOrder[x.rarity] ?? 9) - (rOrder[y.rarity] ?? 9) || x.name.localeCompare(y.name));
+    }
+    return g;
+  }, [A]);
+  const artifactById = React.useMemo(() => {
+    const m = {};
+    for (const a of A?.ARTIFACTS || []) m[a.id] = a;
+    return m;
+  }, [A]);
+  const openPicker = (slot) => setSim((prev) => ({ ...prev, pickerSlot: prev.pickerSlot === slot ? null : slot }));
+  const equip = (slot, artifactId) => setSim((prev) => ({
+    ...prev,
+    items: { ...prev.items, [slot]: artifactId },
+    pickerSlot: null
+  }));
+  const unequip = (slot) => setSim((prev) => {
+    const items = { ...prev.items };
+    delete items[slot];
+    return { ...prev, items };
+  });
   const STAT_LABEL = { A: "Attack", D: "Defense", P: "Power", K: "Knowledge" };
   const skillTotal = fullSkillPool.reduce((a, s) => a + s.chance, 0);
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", { className: "faction-page-actions" }, /* @__PURE__ */ React.createElement(
@@ -207,7 +239,40 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
       /* @__PURE__ */ React.createElement("span", { className: "hb-offer-lvl" }, cur === 0 ? "New" : `L${cur} \u2192`, " ", SKILL_LVL_LABEL[nextLvl]),
       /* @__PURE__ */ React.createElement("span", { className: "hb-offer-chance mono" }, (100 * s.chance / skillTotal).toFixed(1), "% weight")
     );
-  })), /* @__PURE__ */ React.createElement("button", { className: "hb-btn hb-btn-sm", onClick: reroll }, "Reroll offers")), /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Skills (", Object.keys(sim.skills).length, ")"), Object.keys(sim.skills).length === 0 ? /* @__PURE__ */ React.createElement("p", { className: "hb-foot" }, "No skills yet \u2014 level up to acquire.") : /* @__PURE__ */ React.createElement("div", { className: "hb-chips" }, Object.entries(sim.skills).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([name, lvl]) => {
+  })), /* @__PURE__ */ React.createElement("button", { className: "hb-btn hb-btn-sm", onClick: reroll }, "Reroll offers")), A && /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Items (", Object.keys(sim.items).length, "/", A.SLOT_ORDER.length, ")"), /* @__PURE__ */ React.createElement("div", { className: "hb-slots" }, A.SLOT_ORDER.map((slot) => {
+    const equipped = sim.items[slot] ? artifactById[sim.items[slot]] : null;
+    const open = sim.pickerSlot === slot;
+    return /* @__PURE__ */ React.createElement("div", { key: slot, className: "hb-slot" + (open ? " open" : "") + (equipped ? " filled" : " empty") }, /* @__PURE__ */ React.createElement("button", { className: "hb-slot-btn", onClick: () => openPicker(slot) }, /* @__PURE__ */ React.createElement("span", { className: "hb-slot-lbl" }, A.SLOT_LABEL[slot]), equipped ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
+      "img",
+      {
+        loading: "lazy",
+        className: "hb-slot-img",
+        src: `img/artifacts/${equipped.id}.png`,
+        alt: "",
+        onError: (e) => {
+          e.target.style.visibility = "hidden";
+        }
+      }
+    ), /* @__PURE__ */ React.createElement("span", { className: `hb-slot-name hb-rarity-${equipped.rarity}` }, equipped.name)) : /* @__PURE__ */ React.createElement("span", { className: "hb-slot-empty" }, "\u2014 empty \u2014")), equipped && /* @__PURE__ */ React.createElement(
+      "button",
+      {
+        className: "hb-slot-x",
+        onClick: () => unequip(slot),
+        title: "Unequip"
+      },
+      "\xD7"
+    ));
+  })), sim.pickerSlot && /* @__PURE__ */ React.createElement(
+    ArtifactPicker,
+    {
+      slot: sim.pickerSlot,
+      slotLabel: A.SLOT_LABEL[sim.pickerSlot],
+      candidates: artifactsBySlot[sim.pickerSlot] || [],
+      currentId: sim.items[sim.pickerSlot],
+      onPick: (id) => equip(sim.pickerSlot, id),
+      onClose: () => setSim((prev) => ({ ...prev, pickerSlot: null }))
+    }
+  ), Object.keys(sim.items).length > 0 && /* @__PURE__ */ React.createElement("div", { className: "hb-item-bonuses" }, /* @__PURE__ */ React.createElement("div", { className: "hb-base-eyebrow" }, "Bonuses from equipped items"), /* @__PURE__ */ React.createElement("ul", { className: "hb-bonus-list" }, Object.values(sim.items).map((id) => artifactById[id]).filter(Boolean).flatMap((a) => (a.bonuses || []).map((b, i) => ({ a, b, key: `${a.id}-${i}` }))).map(({ a, b, key }) => /* @__PURE__ */ React.createElement("li", { key }, /* @__PURE__ */ React.createElement("span", { className: `hb-rarity-${a.rarity}` }, a.name), /* @__PURE__ */ React.createElement("span", { className: "hb-bonus-sep" }, " \xB7 "), /* @__PURE__ */ React.createElement("span", null, b)))))), /* @__PURE__ */ React.createElement("section", { className: "hb-section" }, /* @__PURE__ */ React.createElement("h2", null, "Skills (", Object.keys(sim.skills).length, ")"), Object.keys(sim.skills).length === 0 ? /* @__PURE__ */ React.createElement("p", { className: "hb-foot" }, "No skills yet \u2014 level up to acquire.") : /* @__PURE__ */ React.createElement("div", { className: "hb-chips" }, Object.entries(sim.skills).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([name, lvl]) => {
     const grp = fullSkillPool.find((s) => s.name === name)?.group || "utility";
     const isStarting = (initialSkills[name] || 0) > 0;
     return /* @__PURE__ */ React.createElement("span", { key: name, className: `hb-skill-chip hb-skill-${grp}` }, /* @__PURE__ */ React.createElement("span", { className: `hb-skill-dot hb-skill-${grp}` }), name, " ", /* @__PURE__ */ React.createElement("b", null, "L", lvl), isStarting && /* @__PURE__ */ React.createElement("span", { className: "hb-skill-tag" }, "starting"));
@@ -303,6 +368,41 @@ const HeroPicker = ({ D, go }) => {
     ),
     /* @__PURE__ */ React.createElement("div", { className: "hb-hero-name" }, h.name),
     /* @__PURE__ */ React.createElement("div", { className: "hb-hero-spec" }, h.specialty)
+  ))));
+};
+const ArtifactPicker = ({ slot, slotLabel, candidates, currentId, onPick, onClose }) => {
+  const [rarity, setRarity] = React.useState("all");
+  const filtered = rarity === "all" ? candidates : candidates.filter((a) => a.rarity === rarity);
+  return /* @__PURE__ */ React.createElement("div", { className: "hb-picker" }, /* @__PURE__ */ React.createElement("div", { className: "hb-picker-head" }, /* @__PURE__ */ React.createElement("span", { className: "hb-picker-title" }, slotLabel, " \u2014 pick an item"), /* @__PURE__ */ React.createElement("div", { className: "hb-picker-filter" }, ["all", "legendary", "epic", "rare", "common"].map((r) => /* @__PURE__ */ React.createElement(
+    "button",
+    {
+      key: r,
+      className: "hb-picker-rarity hb-rarity-" + r + (rarity === r ? " active" : ""),
+      onClick: () => setRarity(r)
+    },
+    r
+  ))), /* @__PURE__ */ React.createElement("button", { className: "hb-btn hb-btn-sm", onClick: onClose }, "Close")), /* @__PURE__ */ React.createElement("div", { className: "hb-picker-grid" }, filtered.map((a) => /* @__PURE__ */ React.createElement(
+    "button",
+    {
+      key: a.id,
+      className: "hb-art-card hb-rarity-" + a.rarity + (a.id === currentId ? " selected" : ""),
+      onClick: () => onPick(a.id),
+      title: a.bonuses?.join("\n") || a.desc || ""
+    },
+    /* @__PURE__ */ React.createElement(
+      "img",
+      {
+        loading: "lazy",
+        className: "hb-art-icon",
+        src: `img/artifacts/${a.id}.png`,
+        alt: "",
+        onError: (e) => {
+          e.target.style.visibility = "hidden";
+        }
+      }
+    ),
+    /* @__PURE__ */ React.createElement("span", { className: "hb-art-name" }, a.name),
+    a.bonuses?.length > 0 && /* @__PURE__ */ React.createElement("span", { className: "hb-art-bonus" }, a.bonuses[0])
   ))));
 };
 window.HeroBuilderView = HeroBuilderView;
