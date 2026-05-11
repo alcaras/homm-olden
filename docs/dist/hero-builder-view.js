@@ -205,15 +205,7 @@ const HeroBuilderView = ({ heroId, initialQuery, go }) => {
   };
   const reroll = () => {
     if (!sim.pending) return;
-    let pool = [...eligible];
-    const offered = [];
-    for (let i = 0; i < 3 && pool.length > 0; i++) {
-      const pick = _weightedPick(pool);
-      if (!pick) break;
-      offered.push(pick);
-      pool = pool.filter((s) => s.name !== pick.name);
-    }
-    setSim((prev) => ({ ...prev, pending: { ...prev.pending, offered } }));
+    setSim((prev) => ({ ...prev, pending: { ...prev.pending, offered: buildOffer(prev.skills) } }));
   };
   const undoLastLevel = () => {
     setSim((prev) => {
