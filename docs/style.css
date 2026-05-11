@@ -2199,37 +2199,36 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 }
 .calc-totals-actions button:hover { border-color: var(--rule-bold); color: var(--ink); }
 
-.calc-cat { margin: 1.2rem 0; }
+.calc-cat { margin: 0.8rem 0 1rem; }
 .calc-cat h3 {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.14em;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.45rem;
 }
 .calc-buildings {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.5rem;
 }
 .calc-building {
   border: 1px solid var(--rule);
   background: var(--paper);
-  padding: 0.55rem 0.7rem;
-  border-radius: 2px;
+  padding: 0.4rem 0.55rem;
+  border-radius: 3px;
+  display: flex; flex-direction: column; gap: 0.3rem;
 }
+.calc-building.picked { border-color: var(--accent); box-shadow: inset 2px 0 0 var(--accent); }
 .calc-building-head {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  margin-bottom: 0.4rem;
-  border-bottom: 1px dotted var(--rule);
-  padding-bottom: 0.3rem;
+  gap: 0.5rem;
 }
 .calc-building-icon {
-  width: 36px; height: 36px;
+  width: 44px; height: 44px;
   object-fit: contain;
   background: var(--bg-warm);
   border: 1px solid var(--rule);
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 1px;
   flex-shrink: 0;
 }
@@ -2242,31 +2241,27 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .calc-building-name {
   font-family: Charter, Georgia, serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--ink);
   line-height: 1.15;
 }
-.calc-building-name.tight { font-size: 0.85rem; }
+.calc-building-name.tight { font-size: 0.82rem; }
 .calc-building-id {
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   color: var(--faint);
 }
-.calc-levels {
+/* Level chips render inline in a single row under the header. */
+.calc-level-chips {
   display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-.calc-level-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 .calc-level-effect {
   font-style: italic;
   color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.4;
-  padding-left: 0.5rem;
+  font-size: 0.76rem;
+  line-height: 1.35;
+  padding: 0.15rem 0.4rem;
   border-left: 2px solid var(--rule);
 }
 .calc-level-effect.active {
@@ -2279,20 +2274,19 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   color: var(--ink);
 }
 .calc-level-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 0.35rem 0.55rem;
+  gap: 0.35rem;
+  padding: 0.22rem 0.45rem;
   font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
   background: var(--bg);
   border: 1px solid var(--rule);
   cursor: pointer;
-  text-align: left;
-  border-radius: 2px;
+  border-radius: 3px;
   font-variant-numeric: tabular-nums;
   color: var(--ink-2);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
+  white-space: nowrap;
 }
 .calc-level-btn:hover { border-color: var(--rule-bold); color: var(--ink); }
 .calc-level-btn.active {
@@ -2306,15 +2300,15 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 }
 .calc-level-num {
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   letter-spacing: 0.04em;
+  opacity: 0.85;
 }
 .calc-level-cost {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.35em;
-  justify-content: flex-end;
-  font-size: 0.74rem;
+  gap: 0.25em;
+  font-size: 0.72rem;
 }
 .calc-cost {
   white-space: nowrap;
@@ -2328,11 +2322,11 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 
 /* ----- laws ----- */
 .calc-law-row {
-  margin: 1.2rem 0;
+  margin: 0.7rem 0;
   border: 1px solid var(--rule);
   background: var(--paper);
   border-left: 3px solid var(--accent-2);
-  padding: 0.7rem 0.9rem;
+  padding: 0.5rem 0.7rem;
 }
 .calc-law-row.locked {
   opacity: 0.65;
@@ -2341,15 +2335,15 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .calc-law-row-head {
   display: flex;
   align-items: baseline;
-  gap: 0.7rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
   border-bottom: 1px dotted var(--rule);
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.45rem;
 }
 .calc-law-row-num {
   font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -2357,61 +2351,64 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 }
 .calc-law-row-unlock {
   font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   color: var(--ink-2);
 }
 .calc-law-row-unlock b { color: var(--ink); font-weight: 600; }
 .calc-law-locked-note { color: var(--faint); margin-left: 0.4em; }
 
+/* Single auto-fill grid — no more A/B group split, more columns on wide screens. */
 .calc-law-groups {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
-}
-@media (max-width: 900px) { .calc-law-groups { grid-template-columns: 1fr; } }
-.calc-law-group {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 0.5rem;
 }
 .calc-law {
   border: 1px solid var(--rule);
   background: var(--bg);
-  padding: 0.5rem 0.7rem;
-  border-radius: 2px;
+  padding: 0.4rem 0.55rem;
+  border-radius: 3px;
+  display: flex; flex-direction: column; gap: 0.3rem;
 }
+.calc-law.picked { border-color: var(--accent-2); box-shadow: inset 2px 0 0 var(--accent-2); }
 .calc-law-head {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 .calc-law-icon {
-  width: 28px; height: 28px;
+  width: 44px; height: 44px;
   object-fit: contain;
   background: var(--bg-warm);
   border: 1px solid var(--rule);
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 1px;
   flex-shrink: 0;
 }
-.calc-law-head .calc-law-name { flex: 1; }
+.calc-law-titles {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
 .calc-law-name {
   font-family: Charter, Georgia, serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--ink);
+  line-height: 1.15;
 }
 .calc-law-num {
   font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   color: var(--faint);
 }
 .calc-law-desc {
   font-style: italic;
   color: var(--ink-2);
-  font-size: 0.82rem;
-  line-height: 1.4;
-  margin: 0.25rem 0 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  margin: 0.2rem 0;
 }
 
 /* ---------- per-faction unit browser ---------- */

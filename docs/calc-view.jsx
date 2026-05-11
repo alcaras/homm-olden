@@ -139,9 +139,14 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
           <div className="calc-buildings">
             {cat.buildings.map(b => {
               const cur = picked[b.sid] || 0;
+              // Show the highest-level effect when something's picked; otherwise
+              // preview the L1 effect so the card always carries meaning.
+              const shownLvl = cur > 0 ? b.levels[cur - 1] : b.levels[0];
+              const shownDesc = shownLvl?.descResolved
+                || (shownLvl?.desc || '').replace(/\{[0-9]+\}/g, '?');
               const isLong = b.shortId.length > 14;
               return (
-                <div key={b.sid} className="calc-building">
+                <div key={b.sid} className={'calc-building' + (cur > 0 ? ' picked' : '')}>
                   <div className="calc-building-head">
                     {b.levels[0]?.icon && (
                       <img loading="lazy" className="calc-building-icon"
@@ -150,45 +155,39 @@ const BuildingsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
                     )}
                     <div className="calc-building-titles">
                       <span className={'calc-building-name' + (isLong ? ' tight' : '')}>
-                        {b.levels[0].name}
+                        {shownLvl?.name || b.levels[0].name}
                       </span>
                       <span className="calc-building-id mono">{b.shortId}</span>
                     </div>
                   </div>
-                  <div className="calc-levels">
+                  <div className="calc-level-chips">
                     {b.levels.map(lvl => {
                       const active = cur >= lvl.level;
-                      // Prefer the placeholder-resolved desc (numbers from the
-                      // game's bonus block); fall back to '?'-rendered raw text.
                       const cleanedDesc = lvl.descResolved
                         || (lvl.desc || '').replace(/\{[0-9]+\}/g, '?');
                       return (
-                        <div key={lvl.level} className="calc-level-row">
-                          <button
-                            className={'calc-level-btn' + (active ? ' active' : '')}
-                            onClick={() => setBuildingLevel(b.sid, lvl.level)}
-                            title={lvl.name + (cleanedDesc ? '\n\n' + cleanedDesc : '')}>
-                            <span className="calc-level-num">L{lvl.level}</span>
-                            <span className="calc-level-cost">
-                              {Object.entries(lvl.costs).map(([r, v]) => (
-                                <span key={r} className={`calc-cost calc-cost-${r}`}>
-                                  {v.toLocaleString()}{abbreviateRes(r)}
-                                </span>
-                              ))}
-                            </span>
-                          </button>
-                          {cleanedDesc && (
-                            <div className={'calc-level-effect' + (active ? ' active' : '')}>
-                              {lvl.level > 1 && b.levels[0]?.name !== lvl.name && (
-                                <span className="calc-level-effect-name">{lvl.name}: </span>
-                              )}
-                              {cleanedDesc}
-                            </div>
-                          )}
-                        </div>
+                        <button
+                          key={lvl.level}
+                          className={'calc-level-btn' + (active ? ' active' : '')}
+                          onClick={() => setBuildingLevel(b.sid, lvl.level)}
+                          title={lvl.name + (cleanedDesc ? '\n\n' + cleanedDesc : '')}>
+                          <span className="calc-level-num">L{lvl.level}</span>
+                          <span className="calc-level-cost">
+                            {Object.entries(lvl.costs).map(([r, v]) => (
+                              <span key={r} className={`calc-cost calc-cost-${r}`}>
+                                {v.toLocaleString()}{abbreviateRes(r)}
+                              </span>
+                            ))}
+                          </span>
+                        </button>
                       );
                     })}
                   </div>
+                  {shownDesc && (
+                    <div className={'calc-level-effect' + (cur > 0 ? ' active' : '')}>
+                      {shownDesc}
+                    </div>
+                  )}
                 </div>
               );
             })}
@@ -275,46 +274,48 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
               </span>
             </div>
             <div className="calc-law-groups">
-              {row.groups.map((g, gi) => (
-                <div key={gi} className="calc-law-group">
-                  {g.laws.map(law => {
-                    const cur = picked[law.id] || 0;
-                    return (
-                      <div key={law.id} className="calc-law">
-                        <div className="calc-law-head">
-                          {law.icon && (
-                            <img loading="lazy" className="calc-law-icon"
-                                 src={law.icon} alt=""
-                                 onError={(e)=>{e.target.style.display='none';}} />
-                          )}
-                          <span className="calc-law-name">{law.name}</span>
-                          <span className="calc-law-num">#{law.num}</span>
-                        </div>
-                        <div className="calc-levels">
-                          {law.levels.map(lvl => {
-                            const active = cur >= lvl.level;
-                            return (
-                              <div key={lvl.level} className="calc-level-row">
-                                <button
-                                  className={'calc-level-btn calc-level-law' + (active ? ' active' : '')}
-                                  onClick={() => setLawLevel(law.id, lvl.level)}>
-                                  <span className="calc-level-num">L{lvl.level}</span>
-                                  <span className="calc-level-cost">{lvl.cost} LP</span>
-                                </button>
-                                {lvl.descResolved && (
-                                  <div className={'calc-level-effect' + (active ? ' active' : '')}>
-                                    {lvl.descResolved}
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
+              {row.groups.flatMap((g, gi) => g.laws.map(law => {
+                const cur = picked[law.id] || 0;
+                // Show the active level's effect, or L1's as preview.
+                const shownLvl = cur > 0 ? law.levels[cur - 1] : law.levels[0];
+                const shownDesc = shownLvl?.descResolved
+                  || (shownLvl?.desc || '').replace(/\{[0-9]+\}/g, '?');
+                return (
+                  <div key={law.id} className={'calc-law' + (cur > 0 ? ' picked' : '')}>
+                    <div className="calc-law-head">
+                      {law.icon && (
+                        <img loading="lazy" className="calc-law-icon"
+                             src={law.icon} alt=""
+                             onError={(e)=>{e.target.style.display='none';}} />
+                      )}
+                      <div className="calc-law-titles">
+                        <span className="calc-law-name">{law.name}</span>
+                        <span className="calc-law-num">#{law.num}</span>
                       </div>
-                    );
-                  })}
-                </div>
-              ))}
+                    </div>
+                    <div className="calc-level-chips">
+                      {law.levels.map(lvl => {
+                        const active = cur >= lvl.level;
+                        return (
+                          <button
+                            key={lvl.level}
+                            className={'calc-level-btn calc-level-law' + (active ? ' active' : '')}
+                            onClick={() => setLawLevel(law.id, lvl.level)}
+                            title={lvl.descResolved || ''}>
+                            <span className="calc-level-num">L{lvl.level}</span>
+                            <span className="calc-level-cost">{lvl.cost} LP</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {shownDesc && (
+                      <div className={'calc-level-effect' + (cur > 0 ? ' active' : '')}>
+                        {shownDesc}
+                      </div>
+                    )}
+                  </div>
+                );
+              }))}
             </div>
           </section>
         );
