@@ -2705,42 +2705,43 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 /* ---------- map templates view ---------- */
 .mt-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 0.5rem 0.7rem;
 }
+@media (max-width: 760px) { .mt-grid { grid-template-columns: 1fr; } }
 .mt-card {
   display: flex;
-  gap: 0.8rem;
-  padding: 0.8rem 1rem;
+  gap: 0.6rem;
+  padding: 0.5rem 0.7rem;
   border: 1px solid var(--rule);
   background: var(--paper);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .mt-img {
-  width: 200px; height: 200px;
+  width: 120px; height: 120px;
   object-fit: contain;
   background: var(--bg-warm);
   border: 1px solid var(--rule);
   border-radius: 2px;
-  padding: 4px;
+  padding: 3px;
   flex-shrink: 0;
 }
-@media (max-width: 760px) { .mt-img { width: 140px; height: 140px; } }
-.mt-body { flex: 1; min-width: 0; }
+@media (max-width: 760px) { .mt-img { width: 100px; height: 100px; } }
+.mt-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.3rem; }
 .mt-head {
   display: flex;
   align-items: baseline;
-  gap: 0.6rem;
+  gap: 0.4rem;
   flex-wrap: wrap;
-  margin-bottom: 0.4rem;
 }
 .mt-name {
   font-family: Charter, Georgia, serif;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 600;
   margin: 0;
   color: var(--ink);
   text-transform: none;
+  line-height: 1.2;
 }
 .mt-tags {
   display: flex;
@@ -2767,9 +2768,67 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 .mt-tag-size        { color: var(--muted); }
 .mt-tag-players     { color: var(--muted); font-variant-numeric: tabular-nums; }
 .mt-desc {
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   color: var(--ink-2);
-  line-height: 1.5;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* === Resources page (compact card grid) === */
+.res-section { margin: 0.6rem 0 1rem; }
+.res-section > h2 {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.2rem;
+  margin: 0 0 0.45rem;
+}
+.res-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.5rem 0.7rem;
+}
+.res-card {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  border-radius: 3px;
+}
+.res-img {
+  width: 56px; height: 56px;
+  object-fit: contain;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 2px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+.res-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+.res-name {
+  font-family: Charter, Georgia, serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.res-narr {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.35;
+}
+.res-narr em { color: var(--muted); font-style: italic; }
+.res-tactical {
+  font-size: 0.78rem;
+  color: var(--ink-2);
+  line-height: 1.35;
   margin: 0;
 }
 
