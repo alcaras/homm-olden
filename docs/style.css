@@ -2369,6 +2369,13 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
   padding: 0.4rem 0.55rem;
   border-radius: 3px;
   display: flex; flex-direction: column; gap: 0.3rem;
+  cursor: pointer;
+  transition: border-color 60ms, background 60ms;
+}
+.calc-law:hover { border-color: var(--rule-bold); background: var(--hover); }
+.calc-law:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 1px;
 }
 .calc-law.picked { border-color: var(--accent-2); box-shadow: inset 2px 0 0 var(--accent-2); }
 .calc-law-head {

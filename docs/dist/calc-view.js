@@ -163,6 +163,16 @@ const LawsCalc = ({
       return next;
     });
   };
+  const cycleLawLevel = (lawId, maxLevel) => {
+    setPicked((prev) => {
+      const cur = prev[lawId] || 0;
+      const next = { ...prev };
+      const newLevel = cur >= maxLevel ? 0 : cur + 1;
+      if (newLevel === 0) delete next[lawId];
+      else next[lawId] = newLevel;
+      return next;
+    });
+  };
   let lpTotal = 0;
   let levelsCount = 0;
   for (const [lid, lvl] of Object.entries(picked)) {
@@ -187,31 +197,53 @@ const LawsCalc = ({
       const cur = picked[law.id] || 0;
       const shownLvl = cur > 0 ? law.levels[cur - 1] : law.levels[0];
       const shownDesc = shownLvl?.descResolved || (shownLvl?.desc || "").replace(/\{[0-9]+\}/g, "?");
-      return /* @__PURE__ */ React.createElement("div", { key: law.id, className: "calc-law" + (cur > 0 ? " picked" : "") }, /* @__PURE__ */ React.createElement("div", { className: "calc-law-head" }, law.icon && /* @__PURE__ */ React.createElement(
-        "img",
+      return /* @__PURE__ */ React.createElement(
+        "div",
         {
-          loading: "lazy",
-          className: "calc-law-icon",
-          src: law.icon,
-          alt: "",
-          onError: (e) => {
-            e.target.style.display = "none";
-          }
-        }
-      ), /* @__PURE__ */ React.createElement("div", { className: "calc-law-titles" }, /* @__PURE__ */ React.createElement("span", { className: "calc-law-name" }, law.name), /* @__PURE__ */ React.createElement("span", { className: "calc-law-num" }, "#", law.num))), /* @__PURE__ */ React.createElement("div", { className: "calc-level-chips" }, law.levels.map((lvl) => {
-        const active = cur >= lvl.level;
-        return /* @__PURE__ */ React.createElement(
-          "button",
-          {
-            key: lvl.level,
-            className: "calc-level-btn calc-level-law" + (active ? " active" : ""),
-            onClick: () => setLawLevel(law.id, lvl.level),
-            title: lvl.descResolved || ""
+          key: law.id,
+          className: "calc-law" + (cur > 0 ? " picked" : ""),
+          role: "button",
+          tabIndex: 0,
+          title: cur < law.levels.length ? `Click to advance to L${cur + 1}` : "Click to reset",
+          onClick: (e) => {
+            if (e.target.closest(".calc-level-btn")) return;
+            cycleLawLevel(law.id, law.levels.length);
           },
-          /* @__PURE__ */ React.createElement("span", { className: "calc-level-num" }, "L", lvl.level),
-          /* @__PURE__ */ React.createElement("span", { className: "calc-level-cost" }, lvl.cost, " LP")
-        );
-      })), shownDesc && /* @__PURE__ */ React.createElement("div", { className: "calc-level-effect" + (cur > 0 ? " active" : "") }, shownDesc));
+          onKeyDown: (e) => {
+            if ((e.key === "Enter" || e.key === " ") && !e.target.closest(".calc-level-btn")) {
+              e.preventDefault();
+              cycleLawLevel(law.id, law.levels.length);
+            }
+          }
+        },
+        /* @__PURE__ */ React.createElement("div", { className: "calc-law-head" }, law.icon && /* @__PURE__ */ React.createElement(
+          "img",
+          {
+            loading: "lazy",
+            className: "calc-law-icon",
+            src: law.icon,
+            alt: "",
+            onError: (e) => {
+              e.target.style.display = "none";
+            }
+          }
+        ), /* @__PURE__ */ React.createElement("div", { className: "calc-law-titles" }, /* @__PURE__ */ React.createElement("span", { className: "calc-law-name" }, law.name), /* @__PURE__ */ React.createElement("span", { className: "calc-law-num" }, "#", law.num))),
+        /* @__PURE__ */ React.createElement("div", { className: "calc-level-chips" }, law.levels.map((lvl) => {
+          const active = cur >= lvl.level;
+          return /* @__PURE__ */ React.createElement(
+            "button",
+            {
+              key: lvl.level,
+              className: "calc-level-btn calc-level-law" + (active ? " active" : ""),
+              onClick: () => setLawLevel(law.id, lvl.level),
+              title: lvl.descResolved || ""
+            },
+            /* @__PURE__ */ React.createElement("span", { className: "calc-level-num" }, "L", lvl.level),
+            /* @__PURE__ */ React.createElement("span", { className: "calc-level-cost" }, lvl.cost, " LP")
+          );
+        })),
+        shownDesc && /* @__PURE__ */ React.createElement("div", { className: "calc-level-effect" + (cur > 0 ? " active" : "") }, shownDesc)
+      );
     }))));
   }));
 };

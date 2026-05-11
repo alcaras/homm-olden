@@ -215,6 +215,18 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
     });
   };
 
+  // Cycle: 0 → 1 → 2 → ... → max → 0. Used when the user clicks the card body
+  // (any non-chip area). Direct-pick still works via the level chips.
+  const cycleLawLevel = (lawId, maxLevel) => {
+    setPicked(prev => {
+      const cur = prev[lawId] || 0;
+      const next = {...prev};
+      const newLevel = cur >= maxLevel ? 0 : cur + 1;
+      if (newLevel === 0) delete next[lawId]; else next[lawId] = newLevel;
+      return next;
+    });
+  };
+
   let lpTotal = 0;
   let levelsCount = 0;
   for (const [lid, lvl] of Object.entries(picked)) {
@@ -281,7 +293,23 @@ const LawsCalc = ({ data, factionId, factionKey, fmeta, FACTIONS, go,
                 const shownDesc = shownLvl?.descResolved
                   || (shownLvl?.desc || '').replace(/\{[0-9]+\}/g, '?');
                 return (
-                  <div key={law.id} className={'calc-law' + (cur > 0 ? ' picked' : '')}>
+                  <div key={law.id} className={'calc-law' + (cur > 0 ? ' picked' : '')}
+                       role="button" tabIndex={0}
+                       title={cur < law.levels.length
+                         ? `Click to advance to L${cur + 1}`
+                         : 'Click to reset'}
+                       onClick={(e) => {
+                         // Level-chip clicks handle their own logic — don't double-fire.
+                         if (e.target.closest('.calc-level-btn')) return;
+                         cycleLawLevel(law.id, law.levels.length);
+                       }}
+                       onKeyDown={(e) => {
+                         if ((e.key === 'Enter' || e.key === ' ')
+                             && !e.target.closest('.calc-level-btn')) {
+                           e.preventDefault();
+                           cycleLawLevel(law.id, law.levels.length);
+                         }
+                       }}>
                     <div className="calc-law-head">
                       {law.icon && (
                         <img loading="lazy" className="calc-law-icon"
