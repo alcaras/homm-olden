@@ -8,7 +8,37 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_world_rightMouseCamera",
           "name": "Camera Movement",
-          "key": "Right Mouse (hold)"
+          "key": "Right Mouse"
+        },
+        {
+          "sid": "hotkeys_world_camera_down",
+          "name": "Camera: Move Down",
+          "key": "S"
+        },
+        {
+          "sid": "hotkeys_world_camera_left",
+          "name": "Camera: Move Left",
+          "key": "A"
+        },
+        {
+          "sid": "hotkeys_world_camera_right",
+          "name": "Camera: Move Right",
+          "key": "D"
+        },
+        {
+          "sid": "hotkeys_world_camera_up",
+          "name": "Camera: Move Up",
+          "key": "W"
+        },
+        {
+          "sid": "hotkeys_world_fogOfWar",
+          "name": "Change Fog of War",
+          "key": "\\"
+        },
+        {
+          "sid": "hotkeys_world_ChatWheel",
+          "name": "Chat Wheel",
+          "key": "Y"
         },
         {
           "sid": "hotkeys_world_SpaceSelect",
@@ -18,7 +48,7 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_world_TryContinueMove",
           "name": "Continue Movement",
-          "key": "_"
+          "key": "`"
         },
         {
           "sid": "hotkeys_world_EscapeSelect",
@@ -26,9 +56,14 @@ window.OE_HOTKEYS_DATA = {
           "key": "Esc"
         },
         {
+          "sid": "hotkeys_world_DeleteHero",
+          "name": "Delete Hero",
+          "key": "Ctrl + Alt + X"
+        },
+        {
           "sid": "hotkeys_world_DeleteUnitUI",
           "name": "Delete Stack",
-          "key": "Ctrl + D"
+          "key": "Ctrl + X"
         },
         {
           "sid": "hotkeys_world_Alt",
@@ -38,7 +73,12 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_world_EndTurn",
           "name": "End Turn",
-          "key": "E or Enter"
+          "key": "E"
+        },
+        {
+          "sid": "hotkeys_world_EndTurn_no_ui",
+          "name": "End Turn (No Confirmation)",
+          "key": "Shift + E"
         },
         {
           "sid": "hotkeys_world_leftMouseHero",
@@ -46,19 +86,24 @@ window.OE_HOTKEYS_DATA = {
           "key": "Left Mouse"
         },
         {
+          "sid": "hotkeys_world_HeroInventory",
+          "name": "Hero Window",
+          "key": "I or H"
+        },
+        {
           "sid": "hotkeys_world_Space",
           "name": "Interact with Nearest Object",
-          "key": "Space / Num5"
+          "key": "Space or Num 5"
         },
         {
           "sid": "hotkeys_world_HeroArrow",
           "name": "Move Hero",
-          "key": "Arrow Keys"
+          "key": "← + ↑ + → + ↓"
         },
         {
           "sid": "hotkeys_world_HeroArrowNum",
           "name": "Move Hero (Diagonals Allowed)",
-          "key": "Numpad 1-9"
+          "key": "Num 1 + Num 2 + Num 3 + Num 4 + Num 6 + Num 7 + Num 8 + Num 9"
         },
         {
           "sid": "hotkeys_world_Tab",
@@ -68,17 +113,12 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_world_MagicBookTurnRight",
           "name": "Next Page of Spellbook",
-          "key": ">"
+          "key": "]"
         },
         {
           "sid": "hotkeys_world_OpenLaws",
           "name": "Open Law Screen",
           "key": "L"
-        },
-        {
-          "sid": "hotkeys_world_OpenMarket",
-          "name": "Open Marketplace (if any)",
-          "key": "M"
         },
         {
           "sid": "hotkeys_world_OpenMagicGuild",
@@ -98,17 +138,27 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_world_MagicBookTurnLeft",
           "name": "Previous Page of Spellbook",
-          "key": "<"
+          "key": "["
+        },
+        {
+          "sid": "hotkeys_world_quick_load",
+          "name": "Quick Load",
+          "key": "F9"
+        },
+        {
+          "sid": "hotkeys_world_quick_save",
+          "name": "Quick Save",
+          "key": "F5"
         },
         {
           "sid": "hotkeys_world_SelectReward",
           "name": "Select Reward",
-          "key": "1 / 2 / 3 / 4"
+          "key": "1 + 2 + 3 + 4"
         },
         {
           "sid": "hotkeys_world_SelectSkill",
           "name": "Select Skill/Subskill on Level Up",
-          "key": "1 / 2 / 3"
+          "key": "1 + 2 + 3"
         },
         {
           "sid": "hotkeys_world_GismoZ",
@@ -126,168 +176,18 @@ window.OE_HOTKEYS_DATA = {
           "key": "C"
         },
         {
-          "sid": "hotkeys_world_camera_down",
-          "name": "Camera: Move Down",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_camera_left",
-          "name": "Camera: Move Left",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_camera_right",
-          "name": "Camera: Move Right",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_camera_up",
-          "name": "Camera: Move Up",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_fogOfWar",
-          "name": "Change Fog of War",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_ChatWheel",
-          "name": "Chat Wheel",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_DeleteHero",
-          "name": "Delete Hero",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_DeleteUnits",
-          "name": "Delete Stack",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_BalancedOneUnitFull",
-          "name": "Distribute Equally Among Available Slots",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_BalancedOneUnit",
-          "name": "Divide Equally",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_EndTurn_no_ui",
-          "name": "End Turn (No Confirmation)",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_OneUnitsAll",
-          "name": "Fill All Slots with Units",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_HeroInventoryOne",
-          "name": "Garrison Hero Window",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_CityHeroExchange",
-          "name": "Hero Interaction Screen",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_HeroInventory",
-          "name": "Hero Window",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_AllUnits",
-          "name": "Merge All Units into One Slot",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_TransferUnitsWithoutCurrentUnit",
-          "name": "Move All Except 1 Unit from Selected to Another Line",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_CitySwitchHeroes",
-          "name": "Move Hero to Another Line",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_TransferUnits",
-          "name": "Move Stack to Another Line",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_quick_load",
-          "name": "Quick Load",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_quick_save",
-          "name": "Quick Save",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_OneUnits",
-          "name": "Split 1 Unit",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_hero_trade_TransferTab",
-          "name": "Swap Full Army & Artifacts",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_hero_trade_TransferItemWithoutCurrentItem",
-          "name": "Transfer All Artifacts Except Selected",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_hero_trade_TransferUnitsWithoutCurrentUnit",
-          "name": "Transfer All Stacks Except Selected",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_hero_trade_TransferToLeft",
-          "name": "Transfer Full Army & Artifacts Left",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_hero_trade_TransferToTRight",
-          "name": "Transfer Full Army & Artifacts Right",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_hero_trade_TransferUnitsWithoutOneCurrentUnit",
-          "name": "Transfer Full Army Except 1 Unit from Selected",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_hero_trade_TransferItem",
-          "name": "Transfer Selected Artifact",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_hero_trade_TransferUnits",
-          "name": "Transfer Selected Stack",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_HeroInventoryTwo",
-          "name": "Visiting Hero Window",
-          "key": ""
-        },
-        {
           "sid": "hotkeys_world_zoomIn",
           "name": "Zoom In",
-          "key": ""
+          "key": "Middle Mouse"
         },
         {
           "sid": "hotkeys_world_zoomOut",
           "name": "Zoom Out",
+          "key": "Middle Mouse"
+        },
+        {
+          "sid": "hotkeys_world_OpenMarket",
+          "name": "Open Marketplace (if any)",
           "key": ""
         }
       ]
@@ -305,11 +205,6 @@ window.OE_HOTKEYS_DATA = {
           "sid": "hotkeys_city_OpenBuildingsWindow",
           "name": "Construction Menu",
           "key": "B"
-        },
-        {
-          "sid": "hotkeys_city_EndTurn",
-          "name": "End Turn",
-          "key": "E or Enter"
         },
         {
           "sid": "hotkeys_city_OpenLaws",
@@ -339,7 +234,7 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_city_HireAll",
           "name": "Recruit All",
-          "key": "X"
+          "key": "P"
         },
         {
           "sid": "hotkeys_city_unitHireAlt",
@@ -364,7 +259,7 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_city_StopCameraMove",
           "name": "Stop Cinematic Camera",
-          "key": "Click Mouse Button"
+          "key": "Left Mouse"
         },
         {
           "sid": "hotkeys_city_OpenTavern",
@@ -382,6 +277,11 @@ window.OE_HOTKEYS_DATA = {
           "key": "U"
         },
         {
+          "sid": "hotkeys_city_EndTurn",
+          "name": "End Turn",
+          "key": ""
+        },
+        {
           "sid": "hotkeys_city_unitHireOne",
           "name": "Recruit 1 Unit",
           "key": ""
@@ -393,6 +293,16 @@ window.OE_HOTKEYS_DATA = {
       "name": "Battle",
       "rows": [
         {
+          "sid": "hotkeys_battle_camera",
+          "name": "Alternative Battle Camera Position",
+          "key": "C or Middle Mouse"
+        },
+        {
+          "sid": "hotkeys_battle_quickBattle",
+          "name": "Autoplay Remaining Battle",
+          "key": "Shift + Q"
+        },
+        {
           "sid": "hotkeys_battle_OpenBattleLog",
           "name": "Battle Log",
           "key": "L"
@@ -400,7 +310,7 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_battle_TacticsComplete",
           "name": "End Tactics Phase",
-          "key": "Space or Enter"
+          "key": "Enter or Space"
         },
         {
           "sid": "hotkeys_battle_BattleEscape",
@@ -410,12 +320,12 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_battle_HeroStrike",
           "name": "Heroic Strike",
-          "key": "~"
+          "key": "`"
         },
         {
           "sid": "hotkeys_battle_MagicBookTurnRight",
           "name": "Next Page of Spellbook",
-          "key": ">"
+          "key": "."
         },
         {
           "sid": "hotkeys_battle_OpenMagicBook",
@@ -425,17 +335,17 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_battle_MagicBookTurnLeft",
           "name": "Previous Page of Spellbook",
-          "key": "<"
+          "key": ","
         },
         {
           "sid": "hotkeys_battle_UnitAbility",
           "name": "Select Creature Ability",
-          "key": "1 / 2 / 3 / 4 / 5"
+          "key": "1 + 2 + 3 + 4 + 5"
         },
         {
           "sid": "hotkeys_battle_HeroAbility",
           "name": "Select Hero Ability",
-          "key": "6 / 7 / 8 / 9 / 0"
+          "key": "0 + 6 + 7 + 8 + 9"
         },
         {
           "sid": "hotkeys_battle_UnitSkipTurn",
@@ -448,34 +358,24 @@ window.OE_HOTKEYS_DATA = {
           "key": "R"
         },
         {
+          "sid": "hotkeys_battle_autoBattle",
+          "name": "Switch to Auto-Battle",
+          "key": "A"
+        },
+        {
           "sid": "hotkeys_battle_UnitWait",
           "name": "Wait",
           "key": "W"
         },
         {
-          "sid": "hotkeys_battle_camera",
-          "name": "Alternative Battle Camera Position",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_battle_quickBattle",
-          "name": "Autoplay Remaining Battle",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_battle_autoBattle",
-          "name": "Switch to Auto-Battle",
-          "key": ""
-        },
-        {
           "sid": "hotkeys_battle_zoomIn",
           "name": "Zoom In",
-          "key": ""
+          "key": "Middle Mouse"
         },
         {
           "sid": "hotkeys_battle_zoomOut",
           "name": "Zoom Out",
-          "key": ""
+          "key": "Middle Mouse"
         }
       ]
     },
@@ -484,9 +384,9 @@ window.OE_HOTKEYS_DATA = {
       "name": "Hero and Garrison",
       "rows": [
         {
-          "sid": "hotkeys_world_and_city_hero_panel_DeleteUnits",
-          "name": "Delete Stack",
-          "key": "Ctrl + D + Left Mouse"
+          "sid": "hotkeys_world_and_city_hero_panel_BalancedOneUnitFull",
+          "name": "Distribute Equally Among Available Slots",
+          "key": "Shift + Right Mouse"
         },
         {
           "sid": "hotkeys_world_and_city_hero_panel_BalancedOneUnit",
@@ -497,6 +397,11 @@ window.OE_HOTKEYS_DATA = {
           "sid": "hotkeys_world_and_city_hero_panel_OneUnitsAll",
           "name": "Fill All Slots with Units",
           "key": "Ctrl + Shift + Left Mouse"
+        },
+        {
+          "sid": "hotkeys_world_and_city_hero_panel_HeroInventoryOne",
+          "name": "Garrison Hero Window",
+          "key": "Shift + I or Shift + H"
         },
         {
           "sid": "hotkeys_world_and_city_hero_panel_CityHeroExchange",
@@ -529,18 +434,13 @@ window.OE_HOTKEYS_DATA = {
           "key": "Ctrl + Left Mouse"
         },
         {
-          "sid": "hotkeys_world_and_city_hero_panel_BalancedOneUnitFull",
-          "name": "Distribute Equally Among Available Slots",
-          "key": ""
-        },
-        {
-          "sid": "hotkeys_world_and_city_hero_panel_HeroInventoryOne",
-          "name": "Garrison Hero Window",
-          "key": ""
-        },
-        {
           "sid": "hotkeys_world_and_city_hero_panel_HeroInventoryTwo",
           "name": "Visiting Hero Window",
+          "key": "Ctrl + I or Ctrl + H"
+        },
+        {
+          "sid": "hotkeys_world_and_city_hero_panel_DeleteUnits",
+          "name": "Delete Stack",
           "key": ""
         }
       ]
@@ -560,11 +460,6 @@ window.OE_HOTKEYS_DATA = {
           "key": "Ctrl + Alt + Right Mouse"
         },
         {
-          "sid": "hotkeys_world_hero_trade_TransferUnitsWithoutCurrentUnit",
-          "name": "Transfer All Stacks Except Selected",
-          "key": "Ctrl + Alt + Right Mouse"
-        },
-        {
           "sid": "hotkeys_world_hero_trade_TransferToLeft",
           "name": "Transfer Full Army & Artifacts Left",
           "key": "Ctrl + 1"
@@ -577,17 +472,22 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_world_hero_trade_TransferUnitsWithoutOneCurrentUnit",
           "name": "Transfer Full Army Except 1 Unit from Selected",
-          "key": "Ctrl + Alt + Left Mouse"
+          "key": "Ctrl + Alt + Right Mouse"
         },
         {
           "sid": "hotkeys_world_hero_trade_TransferItem",
           "name": "Transfer Selected Artifact",
-          "key": "Ctrl + Right Mouse"
+          "key": "Ctrl + Alt + Left Mouse"
         },
         {
           "sid": "hotkeys_world_hero_trade_TransferUnits",
           "name": "Transfer Selected Stack",
-          "key": "Ctrl + Right Mouse"
+          "key": "Ctrl + Alt + Left Mouse"
+        },
+        {
+          "sid": "hotkeys_world_hero_trade_TransferUnitsWithoutCurrentUnit",
+          "name": "Transfer All Stacks Except Selected",
+          "key": ""
         }
       ]
     },
@@ -598,7 +498,7 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_arena_Select",
           "name": "Select Skill, Spell, Artifact or Creature",
-          "key": "1 / 2 / 3"
+          "key": "1 + 2 + 3"
         }
       ]
     },
@@ -617,6 +517,11 @@ window.OE_HOTKEYS_DATA = {
           "key": "Esc"
         },
         {
+          "sid": "hotkeys_dialogs_and_tutorial_DialogNext",
+          "name": "Next Dialogue",
+          "key": "Space"
+        },
+        {
           "sid": "hotkeys_dialogs_and_tutorial_GuideNext",
           "name": "Next Tutorial Window",
           "key": "Space or →"
@@ -629,26 +534,21 @@ window.OE_HOTKEYS_DATA = {
         {
           "sid": "hotkeys_dialogs_and_tutorial_DalogAnswer",
           "name": "Select Answer",
-          "key": "1 / 2 / 3 / 4 / 5"
+          "key": "1 + 2 + 3 + 4 + 5"
         },
         {
           "sid": "hotkeys_dialogs_and_tutorial_DialogSkip",
           "name": "Skip Dialogue",
-          "key": "E"
+          "key": "Shift + R"
         },
         {
           "sid": "hotkeys_dialogs_and_tutorial_DialogSkipToAnswer",
           "name": "Skip Dialogue to Answer Selection",
-          "key": "A"
-        },
-        {
-          "sid": "hotkeys_dialogs_and_tutorial_DialogNext",
-          "name": "Next Dialogue",
-          "key": ""
+          "key": "Shift + A"
         }
       ]
     }
   ],
-  "TOTAL": 121,
-  "KEYED": 78
+  "TOTAL": 101,
+  "KEYED": 96
 };
