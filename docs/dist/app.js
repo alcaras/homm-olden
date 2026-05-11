@@ -282,7 +282,7 @@ const App = () => {
   } }, "Hotkeys"), /* @__PURE__ */ React.createElement("a", { className: tabActive("builder"), href: url("builder"), onClick: (e) => {
     e.preventDefault();
     go("builder");
-  } }, "Builder"), /* @__PURE__ */ React.createElement("a", { className: tabActive("tier"), href: url("tier"), onClick: (e) => {
+  } }, "Hero builder"), /* @__PURE__ */ React.createElement("a", { className: tabActive("tier"), href: url("tier"), onClick: (e) => {
     e.preventDefault();
     go("tier");
   } }, "Tier list"), /* @__PURE__ */ React.createElement("a", { className: tabActive("guides"), href: url("guides"), onClick: (e) => {
