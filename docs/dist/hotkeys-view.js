@@ -14,6 +14,18 @@ const _renderKey = (key) => {
 const HotkeysView = () => {
   const D = window.OE_HOTKEYS_DATA;
   if (!D) return /* @__PURE__ */ React.createElement("p", null, "Hotkeys data not loaded.");
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Hotkeys"), /* @__PURE__ */ React.createElement("p", { className: "hero-army", style: { maxWidth: "62em" } }, "Action names and section grouping are sourced from the game's localization files. Default key bindings come from the in-game", " ", /* @__PURE__ */ React.createElement("em", null, "Settings \u2192 Hotkeys"), " screen \u2014 entries shown as ", /* @__PURE__ */ React.createElement("span", { className: "hk-key-empty" }, "\u2014"), " ", "are real game actions whose default key isn't surfaced here yet. Customised in-game bindings will diverge from this list."), /* @__PURE__ */ React.createElement("div", { className: "hk-grid" }, D.SECTIONS.map((sec) => /* @__PURE__ */ React.createElement("section", { key: sec.id, className: "hk-section" }, /* @__PURE__ */ React.createElement("h2", { className: "hk-section-h" }, sec.name), /* @__PURE__ */ React.createElement("table", { className: "hk-table" }, /* @__PURE__ */ React.createElement("tbody", null, sec.rows.map((r) => /* @__PURE__ */ React.createElement("tr", { key: r.sid, className: r.key ? "" : "hk-row-unkeyed" }, /* @__PURE__ */ React.createElement("td", { className: "hk-name" }, r.name), /* @__PURE__ */ React.createElement("td", { className: "hk-key-cell" }, _renderKey(r.key))))))))), /* @__PURE__ */ React.createElement("p", { className: "combat-caveat", style: { marginTop: "1.5rem" } }, 'Reference card: "All Hotkeys for HoMM: Olden Era" by Kotletiy LLC. Verify against your in-game Settings \u2192 Hotkeys before remapping.'));
+  const [showUnkeyed, setShowUnkeyed] = React.useState(false);
+  const sections = D.SECTIONS.map((sec) => ({
+    ...sec,
+    rows: showUnkeyed ? sec.rows : sec.rows.filter((r) => r.key)
+  })).filter((s) => s.rows.length);
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "hk-head" }, /* @__PURE__ */ React.createElement("h1", null, "Hotkeys"), /* @__PURE__ */ React.createElement("label", { className: "hk-toggle" }, /* @__PURE__ */ React.createElement(
+    "input",
+    {
+      type: "checkbox",
+      checked: showUnkeyed,
+      onChange: (e) => setShowUnkeyed(e.target.checked)
+    }
+  ), /* @__PURE__ */ React.createElement("span", null, "Show actions without default keys"))), /* @__PURE__ */ React.createElement("div", { className: "hk-grid" }, sections.map((sec) => /* @__PURE__ */ React.createElement("section", { key: sec.id, className: "hk-section" }, /* @__PURE__ */ React.createElement("h2", { className: "hk-section-h" }, sec.name), /* @__PURE__ */ React.createElement("table", { className: "hk-table" }, /* @__PURE__ */ React.createElement("tbody", null, sec.rows.map((r) => /* @__PURE__ */ React.createElement("tr", { key: r.sid, className: r.key ? "" : "hk-row-unkeyed" }, /* @__PURE__ */ React.createElement("td", { className: "hk-name" }, r.name), /* @__PURE__ */ React.createElement("td", { className: "hk-key-cell" }, _renderKey(r.key))))))))));
 };
 window.HotkeysView = HotkeysView;

@@ -35,20 +35,28 @@ const _renderKey = (key) => {
 const HotkeysView = () => {
   const D = window.OE_HOTKEYS_DATA;
   if (!D) return <p>Hotkeys data not loaded.</p>;
+  const [showUnkeyed, setShowUnkeyed] = React.useState(false);
+
+  // Quick-reference: drop unkeyed rows by default so the page reads as a
+  // compact cheat sheet. A toggle reveals them for the curious.
+  const sections = D.SECTIONS.map(sec => ({
+    ...sec,
+    rows: showUnkeyed ? sec.rows : sec.rows.filter(r => r.key),
+  })).filter(s => s.rows.length);
 
   return (
     <>
-      <h1>Hotkeys</h1>
-      <p className="hero-army" style={{maxWidth:'62em'}}>
-        Action names and section grouping are sourced from the game's localization
-        files. Default key bindings come from the in-game{' '}
-        <em>Settings → Hotkeys</em> screen — entries shown as <span className="hk-key-empty">—</span>{' '}
-        are real game actions whose default key isn't surfaced here yet.
-        Customised in-game bindings will diverge from this list.
-      </p>
+      <div className="hk-head">
+        <h1>Hotkeys</h1>
+        <label className="hk-toggle">
+          <input type="checkbox" checked={showUnkeyed}
+                 onChange={e => setShowUnkeyed(e.target.checked)} />
+          <span>Show actions without default keys</span>
+        </label>
+      </div>
 
       <div className="hk-grid">
-        {D.SECTIONS.map(sec => (
+        {sections.map(sec => (
           <section key={sec.id} className="hk-section">
             <h2 className="hk-section-h">{sec.name}</h2>
             <table className="hk-table">
@@ -64,11 +72,6 @@ const HotkeysView = () => {
           </section>
         ))}
       </div>
-
-      <p className="combat-caveat" style={{marginTop:'1.5rem'}}>
-        Reference card: "All Hotkeys for HoMM: Olden Era" by Kotletiy LLC.
-        Verify against your in-game Settings → Hotkeys before remapping.
-      </p>
     </>
   );
 };
