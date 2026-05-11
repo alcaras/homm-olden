@@ -61,6 +61,31 @@ const SpellCard = ({ sp }) => {
         e.target.style.visibility = "hidden";
       }
     }
-  ), /* @__PURE__ */ React.createElement("div", { className: "spell-head-body" }, /* @__PURE__ */ React.createElement("div", { className: "spell-name-row" }, /* @__PURE__ */ React.createElement("h3", { className: "spell-name" }, sp.name), sp.scope === "world" && /* @__PURE__ */ React.createElement("span", { className: "spell-scope" }, "World")), /* @__PURE__ */ React.createElement("div", { className: "spell-meta" }, sp.magicType && /* @__PURE__ */ React.createElement("span", { className: "spell-magic-type" }, sp.magicType), /* @__PURE__ */ React.createElement("span", { className: "spell-mana" }, manaText)))), sp.desc && /* @__PURE__ */ React.createElement("p", { className: "spell-desc" }, sp.descResolved || sp.desc.replace(/\{[0-9]+\}/g, "?")), sp.starters?.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "spell-starters" }, /* @__PURE__ */ React.createElement("span", { className: "spell-starters-label" }, "Starting hero", sp.starters.length === 1 ? "" : "es", ":"), sp.starters.map((h) => /* @__PURE__ */ React.createElement("span", { key: h.id, className: `faction-pill faction-${h.faction}`, title: h.name }, h.name))));
+  ), /* @__PURE__ */ React.createElement("div", { className: "spell-head-body" }, /* @__PURE__ */ React.createElement("div", { className: "spell-name-row" }, /* @__PURE__ */ React.createElement("h3", { className: "spell-name" }, sp.name), sp.scope === "world" && /* @__PURE__ */ React.createElement("span", { className: "spell-scope" }, "World")), /* @__PURE__ */ React.createElement("div", { className: "spell-meta" }, sp.magicType && /* @__PURE__ */ React.createElement("span", { className: "spell-magic-type" }, sp.magicType), /* @__PURE__ */ React.createElement("span", { className: "spell-mana" }, manaText)))), sp.desc && /* @__PURE__ */ React.createElement("p", { className: "spell-desc" }, sp.descResolved || sp.desc.replace(/\{[0-9]+\}/g, "?")), sp.starters?.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "spell-starters" }, /* @__PURE__ */ React.createElement("span", { className: "spell-starters-label" }, "Starts on ", sp.starters.length === 1 ? "" : `${sp.starters.length} `, "hero", sp.starters.length === 1 ? "" : "es"), /* @__PURE__ */ React.createElement("div", { className: "spell-starter-chips" }, sp.starters.map((h) => /* @__PURE__ */ React.createElement(
+    "a",
+    {
+      key: h.id,
+      href: window.OE_routeToUrl(`hero/${h.id}`),
+      onClick: (e) => {
+        e.preventDefault();
+        if (window.OE_go) window.OE_go(`hero/${h.id}`);
+      },
+      className: `spell-starter-chip faction-${h.faction}`,
+      title: `${h.name} (${h.faction})`
+    },
+    /* @__PURE__ */ React.createElement(
+      "img",
+      {
+        loading: "lazy",
+        className: "spell-starter-portrait",
+        src: `img/heroes/${h.id}.png`,
+        alt: "",
+        onError: (e) => {
+          e.target.style.visibility = "hidden";
+        }
+      }
+    ),
+    /* @__PURE__ */ React.createElement("span", { className: "spell-starter-name" }, h.name)
+  )))));
 };
 window.SpellsView = SpellsView;

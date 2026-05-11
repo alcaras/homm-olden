@@ -187,6 +187,9 @@ const App = () => {
   React.useEffect(() => {
     document.title = titleFor(route);
   }, [route]);
+  React.useEffect(() => {
+    window.OE_go = go;
+  }, []);
   const meta = window.OE_DATA ? `${window.OE_DATA.HEROES.length} heroes \xB7 ${window.OE_DATA.SUBCLASSES.length} subclasses \xB7 ${window.OE_DATA.UNITS.length} units \xB7 ${window.OE_DATA.FACTIONS.length} factions` : "";
   const tabActive = (v) => route.view === v ? "active" : "";
   const url = (target) => routeToUrl(target, "");

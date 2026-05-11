@@ -123,12 +123,24 @@ const SpellCard = ({sp}) => {
       )}
       {sp.starters?.length > 0 && (
         <div className="spell-starters">
-          <span className="spell-starters-label">Starting hero{sp.starters.length === 1 ? '' : 'es'}:</span>
-          {sp.starters.map(h => (
-            <span key={h.id} className={`faction-pill faction-${h.faction}`} title={h.name}>
-              {h.name}
-            </span>
-          ))}
+          <span className="spell-starters-label">
+            Starts on {sp.starters.length === 1 ? '' : `${sp.starters.length} `}hero{sp.starters.length === 1 ? '' : 'es'}
+          </span>
+          <div className="spell-starter-chips">
+            {sp.starters.map(h => (
+              <a key={h.id}
+                 href={window.OE_routeToUrl(`hero/${h.id}`)}
+                 onClick={(e) => { e.preventDefault();
+                   if (window.OE_go) window.OE_go(`hero/${h.id}`); }}
+                 className={`spell-starter-chip faction-${h.faction}`}
+                 title={`${h.name} (${h.faction})`}>
+                <img loading="lazy" className="spell-starter-portrait"
+                     src={`img/heroes/${h.id}.png`} alt=""
+                     onError={(e)=>{e.target.style.visibility='hidden';}} />
+                <span className="spell-starter-name">{h.name}</span>
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </article>

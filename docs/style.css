@@ -2929,6 +2929,58 @@ a.faction-pill:hover { border-color: var(--rule-bold); }
 }
 .sub-effect b { color: var(--ink); font-weight: 600; }
 
+/* Starting-hero strip on spell cards — small portraits + names, replacing
+   the awkward faction-pill text chips. */
+.spell-starters {
+  margin-top: 0.5rem;
+  padding-top: 0.4rem;
+  border-top: 1px dotted var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.spell-starters-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.spell-starter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.spell-starter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.15rem 0.45rem 0.15rem 0.2rem;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink-2);
+  font-size: 0.74rem;
+  line-height: 1.3;
+  transition: border-color 60ms, color 60ms;
+}
+.spell-starter-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
+.spell-starter-portrait {
+  width: 22px; height: 22px;
+  object-fit: cover;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.spell-starter-chip.faction-temple     { border-color: oklch(0.5 0.12 35 / 0.5); }
+.spell-starter-chip.faction-necropolis { border-color: oklch(0.5 0.04 280 / 0.5); }
+.spell-starter-chip.faction-grove      { border-color: oklch(0.5 0.12 145 / 0.5); }
+.spell-starter-chip.faction-hive       { border-color: oklch(0.55 0.13 25 / 0.5); }
+.spell-starter-chip.faction-schism     { border-color: oklch(0.55 0.1 230 / 0.5); }
+.spell-starter-chip.faction-dungeon    { border-color: oklch(0.5 0.12 305 / 0.5); }
+
 /* lexiav verdict line under the subclass effect */
 .sub-card-head .tier-badge {
   margin-left: auto;

@@ -186,6 +186,10 @@ const App = () => {
     document.title = titleFor(route);
   }, [route]);
 
+  // Expose `go` so subview files (compiled separately) can navigate without
+  // needing to thread the prop through every component.
+  React.useEffect(() => { window.OE_go = go; }, []);
+
   const meta = window.OE_DATA
     ? `${window.OE_DATA.HEROES.length} heroes · ${window.OE_DATA.SUBCLASSES.length} subclasses · ${window.OE_DATA.UNITS.length} units · ${window.OE_DATA.FACTIONS.length} factions`
     : '';
