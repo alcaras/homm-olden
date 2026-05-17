@@ -43,7 +43,11 @@ const AstrologyView = ({ go }) => {
   const SIM_CAP = 1095; // 3 in-game years
 
   // Per city: the day each upgrade completes ('' = never; L1 is day 1).
-  const blankCity = () => ({ l2: '', l3: '', opt: '' });
+  //   l2/l3   – central-building level reached
+  //   opt2    – the L2 astrology optional pick (main_building_3, +500/day)
+  //   opt3    – the L3 astrology optional pick (main_building_6, +1000/day)
+  // opt2 and opt3 are independent build nodes and STACK with the base output.
+  const blankCity = () => ({ l2: '', l3: '', opt2: '', opt3: '' });
   const [cityList, setCityList] = React.useState([blankCity()]);
   const [lawFaction, setLawFaction] = React.useState('temple');
   const [lawDay, setLawDay] = React.useState('');     // '' = never enacted
@@ -77,12 +81,16 @@ const AstrologyView = ({ go }) => {
     if (l2 && d >= l2) return 2;
     return 1;
   };
+  // Optional astrology amounts: index by building level (L1=0,L2=500,L3=1000).
+  const OPT_L2 = A.CENTRAL_OPTIONAL[1] || 0;
+  const OPT_L3 = A.CENTRAL_OPTIONAL[2] || 0;
   const cityRateOnDay = (c, d) => {
     const lvl = cityLevelOnDay(c, d);
-    const base = A.CENTRAL_BUILDING[lvl - 1] || 0;
-    const optDay = parseDay(c.opt);
-    const opt = (optDay && d >= optDay) ? (A.CENTRAL_OPTIONAL[lvl - 1] || 0) : 0;
-    return base + opt;
+    let r = A.CENTRAL_BUILDING[lvl - 1] || 0;
+    const o2 = parseDay(c.opt2), o3 = parseDay(c.opt3);
+    if (o2 && d >= o2) r += OPT_L2;   // stacks
+    if (o3 && d >= o3) r += OPT_L3;   // stacks
+    return r;
   };
   const rateOnDay = (d) => {
     let r = 0;
@@ -191,8 +199,10 @@ const AstrologyView = ({ go }) => {
                           onChange={v => setCity(i, { l2: v })} />
                 <DayInput label="Build Lvl 3" value={c.l3}
                           onChange={v => setCity(i, { l3: v })} />
-                <DayInput label="Optional upg." value={c.opt}
-                          onChange={v => setCity(i, { opt: v })} />
+                <DayInput label={`L2 astro opt +${OPT_L2}`} value={c.opt2}
+                          onChange={v => setCity(i, { opt2: v })} />
+                <DayInput label={`L3 astro opt +${OPT_L3}`} value={c.opt3}
+                          onChange={v => setCity(i, { opt3: v })} />
                 <span className="astro-city-out mono">
                   ends {cityRateOnDay(c, SIM_CAP).toLocaleString()}/day
                   <span className="astro-city-sub">L1 from day 1 · now L{endLvl}</span>
@@ -340,10 +350,12 @@ const AstrologyView = ({ go }) => {
       <p className="combat-caveat">
         Reaching Insight <i>n</i> means hitting Astrology Level <i>n</i>+1
         (Level 1 at 0 XP grants no Insight). Central building L1/L2/L3 =
-        {' '}{A.CENTRAL_BUILDING.join('/')}/day; the optional upgrade adds
-        {' '}{A.CENTRAL_OPTIONAL.filter(Boolean).join('/')}/day at L2/L3
-        (n/a at L1). Calendar = 7 days/week, 4 weeks/month. Map objects and
-        rewards can also grant Astrology XP or Insight directly — not modelled.
+        {' '}{A.CENTRAL_BUILDING.join('/')}/day base. The L2 and L3 astrology
+        optional upgrades are <b>independent picks</b> (+{OPT_L2} and
+        {' '}+{OPT_L3}/day) that <b>stack</b> on top of the base — pick one
+        optional effect per level; the other options are gold or city XP.
+        Calendar = 7 days/week, 4 weeks/month. Map objects and rewards can
+        also grant Astrology XP or Insight directly — not modelled.
       </p>
     </>
   );

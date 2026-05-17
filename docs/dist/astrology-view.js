@@ -22,7 +22,7 @@ const AstrologyView = ({ go }) => {
   const D = window.OE_DATA;
   const ladder = A.LADDER;
   const SIM_CAP = 1095;
-  const blankCity = () => ({ l2: "", l3: "", opt: "" });
+  const blankCity = () => ({ l2: "", l3: "", opt2: "", opt3: "" });
   const [cityList, setCityList] = React.useState([blankCity()]);
   const [lawFaction, setLawFaction] = React.useState("temple");
   const [lawDay, setLawDay] = React.useState("");
@@ -51,12 +51,15 @@ const AstrologyView = ({ go }) => {
     if (l2 && d >= l2) return 2;
     return 1;
   };
+  const OPT_L2 = A.CENTRAL_OPTIONAL[1] || 0;
+  const OPT_L3 = A.CENTRAL_OPTIONAL[2] || 0;
   const cityRateOnDay = (c, d) => {
     const lvl = cityLevelOnDay(c, d);
-    const base = A.CENTRAL_BUILDING[lvl - 1] || 0;
-    const optDay = parseDay(c.opt);
-    const opt = optDay && d >= optDay ? A.CENTRAL_OPTIONAL[lvl - 1] || 0 : 0;
-    return base + opt;
+    let r = A.CENTRAL_BUILDING[lvl - 1] || 0;
+    const o2 = parseDay(c.opt2), o3 = parseDay(c.opt3);
+    if (o2 && d >= o2) r += OPT_L2;
+    if (o3 && d >= o3) r += OPT_L3;
+    return r;
   };
   const rateOnDay = (d) => {
     let r = 0;
@@ -147,9 +150,16 @@ const AstrologyView = ({ go }) => {
     ), /* @__PURE__ */ React.createElement(
       DayInput,
       {
-        label: "Optional upg.",
-        value: c.opt,
-        onChange: (v) => setCity(i, { opt: v })
+        label: `L2 astro opt +${OPT_L2}`,
+        value: c.opt2,
+        onChange: (v) => setCity(i, { opt2: v })
+      }
+    ), /* @__PURE__ */ React.createElement(
+      DayInput,
+      {
+        label: `L3 astro opt +${OPT_L3}`,
+        value: c.opt3,
+        onChange: (v) => setCity(i, { opt3: v })
       }
     ), /* @__PURE__ */ React.createElement("span", { className: "astro-city-out mono" }, "ends ", cityRateOnDay(c, SIM_CAP).toLocaleString(), "/day", /* @__PURE__ */ React.createElement("span", { className: "astro-city-sub" }, "L1 from day 1 \xB7 now L", endLvl)));
   })), /* @__PURE__ */ React.createElement("div", { className: "astro-lawrow" }, /* @__PURE__ */ React.createElement("div", { className: "astro-dayfield" }, /* @__PURE__ */ React.createElement("label", null, "Astrology law enacted"), /* @__PURE__ */ React.createElement(
@@ -220,6 +230,6 @@ const AstrologyView = ({ go }) => {
       )))),
       /* @__PURE__ */ React.createElement("div", { className: "astro-spell-state" }, target === 0 ? "\u2014" : target === 1 ? "Learned" : `L${target}`, target > 0 && /* @__PURE__ */ React.createElement("span", { className: "astro-spell-spent" }, spent, " insight"))
     );
-  })), insightNeeded > 0 && /* @__PURE__ */ React.createElement("div", { className: "astro-plan-summary" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", { className: "astro-plan-big" }, insightNeeded), /* @__PURE__ */ React.createElement("span", { className: "astro-plan-lbl" }, "Insight needed")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", { className: "astro-plan-big" }, dayForPlan === Infinity ? "\u2014" : fmtDayShort(dayForPlan)), /* @__PURE__ */ React.createElement("span", { className: "astro-plan-lbl" }, dayForPlan === Infinity ? "not reached within 3 years" : `affordable ${fmtDay(dayForPlan)}`)), /* @__PURE__ */ React.createElement("button", { className: "hb-btn hb-btn-sm", onClick: () => setPlan({}) }, "Clear plan"))), /* @__PURE__ */ React.createElement("p", { className: "combat-caveat" }, "Reaching Insight ", /* @__PURE__ */ React.createElement("i", null, "n"), " means hitting Astrology Level ", /* @__PURE__ */ React.createElement("i", null, "n"), "+1 (Level 1 at 0 XP grants no Insight). Central building L1/L2/L3 =", " ", A.CENTRAL_BUILDING.join("/"), "/day; the optional upgrade adds", " ", A.CENTRAL_OPTIONAL.filter(Boolean).join("/"), "/day at L2/L3 (n/a at L1). Calendar = 7 days/week, 4 weeks/month. Map objects and rewards can also grant Astrology XP or Insight directly \u2014 not modelled."));
+  })), insightNeeded > 0 && /* @__PURE__ */ React.createElement("div", { className: "astro-plan-summary" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", { className: "astro-plan-big" }, insightNeeded), /* @__PURE__ */ React.createElement("span", { className: "astro-plan-lbl" }, "Insight needed")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", { className: "astro-plan-big" }, dayForPlan === Infinity ? "\u2014" : fmtDayShort(dayForPlan)), /* @__PURE__ */ React.createElement("span", { className: "astro-plan-lbl" }, dayForPlan === Infinity ? "not reached within 3 years" : `affordable ${fmtDay(dayForPlan)}`)), /* @__PURE__ */ React.createElement("button", { className: "hb-btn hb-btn-sm", onClick: () => setPlan({}) }, "Clear plan"))), /* @__PURE__ */ React.createElement("p", { className: "combat-caveat" }, "Reaching Insight ", /* @__PURE__ */ React.createElement("i", null, "n"), " means hitting Astrology Level ", /* @__PURE__ */ React.createElement("i", null, "n"), "+1 (Level 1 at 0 XP grants no Insight). Central building L1/L2/L3 =", " ", A.CENTRAL_BUILDING.join("/"), "/day base. The L2 and L3 astrology optional upgrades are ", /* @__PURE__ */ React.createElement("b", null, "independent picks"), " (+", OPT_L2, " and", " ", "+", OPT_L3, "/day) that ", /* @__PURE__ */ React.createElement("b", null, "stack"), " on top of the base \u2014 pick one optional effect per level; the other options are gold or city XP. Calendar = 7 days/week, 4 weeks/month. Map objects and rewards can also grant Astrology XP or Insight directly \u2014 not modelled."));
 };
 window.AstrologyView = AstrologyView;
