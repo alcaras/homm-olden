@@ -9,7 +9,7 @@
 
 const SIMPLE_VIEWS = ['index', 'mechanics', 'factions',
                       'subclasses', 'skills', 'heroes', 'units',
-                      'tier', 'guides', 'draft', 'spells', 'combat', 'hotkeys', 'builder',
+                      'tier', 'guides', 'draft', 'spells', 'combat', 'hotkeys', 'builder', 'astrology',
                       'map-objects', 'map-templates', 'resources', 'artifacts'];
 
 // Detect the base path. On GitHub Pages this is '/homm-olden/'; locally '/'.
@@ -129,6 +129,7 @@ const titleFor = (route) => {
     case 'units':         return t('Units');
     case 'combat':        return t('Combat sim');
     case 'hotkeys':       return t('Hotkeys');
+    case 'astrology':     return t('Astrology & Insight');
     case 'builder': {
       if (!route.heroId) return t('Hero Level-Up Simulator');
       const h = window.OE_DATA?.HEROES?.find(x => x.id === route.heroId);
@@ -239,6 +240,7 @@ const App = () => {
         <a className={tabActive('combat')}     href={url('combat')}      onClick={(e)=>{e.preventDefault();go('combat');}}>Combat sim</a>
         <a className={tabActive('hotkeys')}    href={url('hotkeys')}     onClick={(e)=>{e.preventDefault();go('hotkeys');}}>Hotkeys</a>
         <a className={tabActive('builder')}    href={url('builder')}     onClick={(e)=>{e.preventDefault();go('builder');}}>Hero Level-Up Simulator</a>
+        <a className={tabActive('astrology')}  href={url('astrology')}   onClick={(e)=>{e.preventDefault();go('astrology');}}>Astrology &amp; Insight</a>
         <a className={tabActive('tier')}       href={url('tier')}        onClick={(e)=>{e.preventDefault();go('tier');}}>Tier list</a>
         <a className={tabActive('guides')}     href={url('guides')}      onClick={(e)=>{e.preventDefault();go('guides');}}>Guides</a>
         <a className={tabActive('draft')}      href={url('draft')}       onClick={(e)=>{e.preventDefault();go('draft');}}>Draft</a>
@@ -265,6 +267,7 @@ const App = () => {
       {route.view==='combat'     && <window.CombatView go={go} />}
       {route.view==='hotkeys'    && <window.HotkeysView />}
       {route.view==='builder'    && <window.HeroBuilderView heroId={route.heroId} initialQuery={route.query} go={go} />}
+      {route.view==='astrology'  && <window.AstrologyView go={go} />}
       {route.view==='tier'       && <window.TierView />}
       {route.view==='guides'     && <window.GuidesView />}
       {route.view==='draft'      && <window.DraftView />}

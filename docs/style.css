@@ -4630,3 +4630,155 @@ a.hb-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
   color: var(--muted);
   font-style: italic;
 }
+
+/* === Astrology & Insight planner === */
+.astro-section {
+  margin: 1rem 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.7rem 0.9rem;
+}
+.astro-section h2 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  border-bottom: 1px dotted var(--rule);
+  padding-bottom: 0.3rem;
+}
+.astro-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.6rem 0.9rem;
+  align-items: end;
+}
+.astro-field { display: flex; flex-direction: column; gap: 0.25rem; }
+.astro-field > label {
+  font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--muted); font-weight: 700;
+}
+.astro-check {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; color: var(--ink-2); cursor: pointer;
+}
+.astro-fac { margin-top: 0.25rem; }
+.astro-rate {
+  display: flex; align-items: baseline; gap: 0.5rem;
+  margin-top: 0.7rem; padding-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+}
+.astro-rate-val {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.7rem; font-weight: 700; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.astro-rate-lbl {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 600;
+}
+
+.astro-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.astro-table th {
+  text-align: left;
+  font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 700; color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.2rem 0.45rem;
+}
+.astro-table td {
+  padding: 0.18rem 0.45rem;
+  border-bottom: 1px dotted var(--rule);
+}
+.astro-table tr:last-child td { border-bottom: none; }
+.astro-table .astro-num { text-align: right; font-variant-numeric: tabular-nums; }
+.astro-row-plan td {
+  background: color-mix(in oklch, var(--accent) 14%, transparent);
+  font-weight: 600;
+}
+
+.astro-spells {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.4rem;
+}
+.astro-spell {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 0.15rem 0.6rem;
+  align-items: start;
+  padding: 0.5rem 0.6rem;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-left-width: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: var(--ink);
+}
+.astro-spell:hover { border-color: var(--rule-bold); background: var(--hover); }
+.astro-spell.picked { border-left-color: var(--accent); }
+.astro-spell-icon {
+  grid-row: 1 / span 3;
+  width: 44px; height: 44px;
+  object-fit: contain;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 2px;
+}
+.astro-spell-body { min-width: 0; }
+.astro-spell-head { display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap; }
+.astro-spell-name { font-weight: 600; font-size: 0.92rem; }
+.astro-spell-rank {
+  font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 700;
+}
+.astro-spell-desc {
+  font-size: 0.74rem; color: var(--muted);
+  line-height: 1.3; margin: 0.15rem 0;
+}
+.astro-spell-cost { display: flex; flex-wrap: wrap; gap: 0.2rem; }
+.astro-cost-chip {
+  font-size: 0.66rem;
+  padding: 0.05rem 0.35rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.astro-cost-chip.on {
+  background: var(--accent); color: var(--paper); border-color: var(--accent);
+}
+.astro-spell-state {
+  grid-column: 3;
+  text-align: right;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--ink);
+  display: flex; flex-direction: column; gap: 0.15rem;
+}
+.astro-spell-spent {
+  font-size: 0.66rem; color: var(--muted); font-weight: 500;
+  white-space: nowrap;
+}
+
+.astro-plan-summary {
+  display: flex; align-items: center; gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.7rem; padding-top: 0.6rem;
+  border-top: 1px solid var(--rule);
+}
+.astro-plan-summary > div { display: flex; flex-direction: column; }
+.astro-plan-big {
+  font-family: Charter, Georgia, serif;
+  font-size: 1.6rem; font-weight: 700; color: var(--accent);
+  font-variant-numeric: tabular-nums; line-height: 1;
+}
+.astro-plan-lbl {
+  font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 600; margin-top: 0.15rem;
+}
+@media (max-width: 600px) {
+  .astro-spell { grid-template-columns: 40px 1fr; }
+  .astro-spell-state { grid-column: 2; flex-direction: row; gap: 0.5rem; text-align: left; }
+}
