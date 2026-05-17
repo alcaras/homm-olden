@@ -44,6 +44,11 @@ window.OE_ASTROLOGY_DATA = {
     750,
     1000
   ],
+  "CENTRAL_OPTIONAL": [
+    0,
+    500,
+    1000
+  ],
   "LAWS": [
     {
       "faction": "dungeon",

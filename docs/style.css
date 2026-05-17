@@ -4782,3 +4782,57 @@ a.hb-chip:hover { border-color: var(--rule-bold); color: var(--ink); }
   .astro-spell { grid-template-columns: 40px 1fr; }
   .astro-spell-state { grid-column: 2; flex-direction: row; gap: 0.5rem; text-align: left; }
 }
+
+/* === Astrology: build-schedule layout === */
+.astro-section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  flex-wrap: wrap; gap: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.astro-section-head h2 { margin: 0; border: none; padding: 0; }
+.astro-citycount { display: inline-flex; align-items: center; gap: 0.5rem; }
+.astro-citycount > label {
+  font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--muted); font-weight: 700;
+}
+.astro-cities { display: flex; flex-direction: column; gap: 0.4rem; }
+.astro-city {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5rem 0.9rem;
+  padding: 0.5rem 0.6rem;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+}
+.astro-city-tag {
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink); align-self: center;
+  min-width: 3.5em;
+}
+.astro-dayfield { display: flex; flex-direction: column; gap: 0.15rem; }
+.astro-dayfield > label {
+  font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 700;
+}
+.astro-dayinput { width: 6.5em; }
+.astro-daycap {
+  font-size: 0.62rem; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  min-height: 0.9em;
+}
+.astro-city-out {
+  margin-left: auto; align-self: center;
+  font-size: 0.78rem; color: var(--ink-2);
+  display: flex; flex-direction: column; align-items: flex-end;
+  text-align: right;
+}
+.astro-city-sub { font-size: 0.64rem; color: var(--muted); }
+.astro-lawrow {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5rem 0.9rem;
+  margin-top: 0.6rem; padding-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+}
+.astro-law-note {
+  font-size: 0.72rem; color: var(--muted); align-self: center;
+}

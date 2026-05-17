@@ -83,16 +83,35 @@ def build():
     spells.sort(key=lambda s: (s["rank"], s["insightLearn"], s["name"]))
 
     # --- 3. Central-building astrology output per level (uniform across
-    #        factions, but read it rather than hardcode) ---
-    central = []
+    #        factions, but read it rather than hardcode). Two parts:
+    #        - base `bonusesPerLevel` astrology (always on)
+    #        - optional astrology effect from `optionalEffectsPerLevel`
+    #          (the central building's pick-one optional upgrade at L2/L3;
+    #          the other options are gold or city XP). Index aligns to
+    #          building level: idx 0 = L1, idx 1 = L2, idx 2 = L3.
+    central, central_opt = [], []
     hc = load_array(RAW / "DB" / "objects_logic" / "cities" / "human_city.json")
     main = (hc[0].get("mains") or [{}])[0] if hc else {}
     for bp in main.get("bonusesPerLevel", []):
+        amt = 0
         for b in bp.get("bonuses", []):
             if b.get("type") == "astrologyExp":
-                central.append(int(b["parameters"][0]))
+                amt = int(b["parameters"][0])
+        central.append(amt)
+    for oe in main.get("optionalEffectsPerLevel", []):
+        amt = 0
+        for eff in (oe.get("effects", []) if isinstance(oe, dict) else []):
+            for b in eff.get("bonuses", []):
+                if b.get("type") == "astrologyExp":
+                    amt = int(b["parameters"][0])
+        central_opt.append(amt)
     if not central:
         central = [500, 750, 1000]
+    if not central_opt:
+        central_opt = [0, 500, 1000]
+    # Pad optional to match level count.
+    while len(central_opt) < len(central):
+        central_opt.append(0)
 
     # --- 4. Per-faction astrology law ---
     laws = []
@@ -113,7 +132,9 @@ def build():
 
     payload = {
         "LADDER": ladder,                 # cumulative astrology XP per level
-        "CENTRAL_BUILDING": central,      # astrology/day at building L1/L2/L3
+        "CENTRAL_BUILDING": central,      # base astrology/day at building L1/L2/L3
+        "CENTRAL_OPTIONAL": central_opt,  # extra astrology/day if the optional
+                                          # upgrade is taken (L1/L2/L3)
         "LAWS": laws,                     # astrology-producing faction laws
         "SPELLS": spells,                 # insight-gated neutral global-map spells
         "RESOURCE": {
@@ -126,7 +147,7 @@ def build():
     OUT.write_text(js, encoding="utf-8")
     print(f"wrote {OUT}  ({len(js):,} bytes)")
     print(f"  ladder levels: {len(ladder)} (max {ladder[-1]:,} XP)")
-    print(f"  central/day:   {central}")
+    print(f"  central/day:   {central}  (+optional {central_opt})")
     print(f"  astrology laws: {len(laws)}")
     print(f"  insight spells: {len(spells)}")
     for s in spells:
